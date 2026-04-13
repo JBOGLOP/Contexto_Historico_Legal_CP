@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marco Político Global de los Cuidados Paliativos — Maestría UAN</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   CSS VARIABLES & RESET
+   ═══════════════════════════════════════════ */
+:root {
+  --primary: #1a5632;
+  --primary-light: #2d8a52;
+  --primary-pale: #e8f5ee;
+  --accent: #8b4513;
+  --accent-light: #a0522d;
+  --accent-pale: #fdf3eb;
+  --danger: #c0392b;
+  --danger-pale: #fdecea;
+  --warning: #d4a017;
+  --warning-pale: #fef9e7;
+  --info: #1a6b8a;
+  --info-pale: #e3f2f7;
+  --success: #27ae60;
+  --success-pale: #e8f8f0;
+  --text: #2c2c2c;
+  --text-light: #5a5a5a;
+  --text-muted: #888;
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --border: #e0ddd5;
+  --border-light: #f0ede5;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,.12);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --ff-body: 'Crimson Pro', Georgia, serif;
+  --ff-ui: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --transition: .25s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--ff-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════ */
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+.site-header {
+  background: linear-gradient(135deg, var(--primary) 0%, #0d3d1f 100%);
+  color: white;
+  padding: 40px 0 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 140%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.header-label {
+  font-family: var(--ff-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: 12px;
+}
+.header-title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.header-subtitle {
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  font-weight: 400;
+  opacity: .75;
+}
+.header-meta {
+  font-family: var(--ff-ui);
+  font-size: 12px;
+  opacity: .55;
+  margin-top: 14px;
+}
+
+/* ═══════════════════════════════════════════
+   PROGRESS BAR
+   ═══════════════════════════════════════════ */
+.progress-bar-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-light);
+  padding: 10px 0;
+}
+.progress-info {
+  font-family: var(--ff-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 6px;
+}
+.progress-track {
+  height: 6px;
+  background: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 3px;
+  width: 0%;
+  transition: width .5s ease;
+}
+
+/* ═══════════════════════════════════════════
+   STUDENT REGISTRATION
+   ═══════════════════════════════════════════ */
+.registration-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.registration-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 40px 36px;
+  max-width: 460px;
+  width: 100%;
+}
+.registration-card h2 {
+  font-family: var(--ff-ui);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.registration-card .reg-desc {
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--ff-ui);
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color var(--transition);
+}
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+}
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+.btn-primary:hover { background: var(--primary-light); }
+.btn-primary:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+.btn-accent {
+  background: var(--accent);
+  color: white;
+}
+.btn-accent:hover { background: var(--accent-light); }
+.btn-secondary {
+  background: transparent;
+  color: var(--text-light);
+  border: 1.5px solid var(--border);
+}
+.btn-secondary:hover {
+  background: var(--bg);
+  border-color: var(--text-muted);
+}
+.btn-success {
+  background: var(--success);
+  color: white;
+}
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+.btn-sm {
+  padding: 7px 16px;
+  font-size: 13px;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION CARDS
+   ═══════════════════════════════════════════ */
+.main-content {
+  padding: 30px 0 60px;
+}
+.section-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 16px;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+.section-card:hover {
+  box-shadow: var(--shadow-md);
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--transition);
+}
+.section-header:hover {
+  background: var(--primary-pale);
+}
+.section-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary-pale);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-ui);
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+.section-icon.completed {
+  background: var(--success);
+  color: white;
+}
+.section-title-area { flex: 1; }
+.section-title {
+  font-family: var(--ff-ui);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.section-subtitle {
+  font-family: var(--ff-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.section-chevron {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: transform var(--transition);
+}
+.section-chevron.open { transform: rotate(180deg); }
+.section-body {
+  display: none;
+  padding: 0 22px 24px;
+  border-top: 1px solid var(--border-light);
+}
+.section-body.open { display: block; }
+
+/* ═══════════════════════════════════════════
+   CONTENT STYLING
+   ═══════════════════════════════════════════ */
+.content-block {
+  padding-top: 20px;
+}
+.content-block h3 {
+  font-family: var(--ff-ui);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 24px 0 10px;
+}
+.content-block h3:first-child { margin-top: 0; }
+.content-block h4 {
+  font-family: var(--ff-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 18px 0 8px;
+}
+.content-block p {
+  margin-bottom: 12px;
+}
+.content-block ul, .content-block ol {
+  margin: 8px 0 14px 20px;
+}
+.content-block li {
+  margin-bottom: 4px;
+}
+
+/* Highlight boxes */
+.highlight-box {
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  margin: 16px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  border-left: 4px solid;
+}
+.highlight-box.info {
+  background: var(--info-pale);
+  border-color: var(--info);
+}
+.highlight-box.warning {
+  background: var(--warning-pale);
+  border-color: var(--warning);
+}
+.highlight-box.success {
+  background: var(--success-pale);
+  border-color: var(--success);
+}
+
+/* Data tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-family: var(--ff-ui);
+  font-size: 14px;
+}
+.data-table th {
+  background: var(--primary);
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+.data-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+.data-table tr:nth-child(even) td {
+  background: var(--bg);
+}
+
+/* ═══════════════════════════════════════════
+   QUIZ
+   ═══════════════════════════════════════════ */
+.quiz-container {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 2px dashed var(--border);
+}
+.quiz-title {
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.question-block {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 14px;
+}
+.question-text {
+  font-family: var(--ff-ui);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.option-label {
+  display: block;
+  padding: 10px 14px;
+  margin: 5px 0;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  transition: all var(--transition);
+  background: var(--surface);
+}
+.option-label:hover {
+  border-color: var(--primary);
+  background: var(--primary-pale);
+}
+.option-label input[type="radio"] {
+  display: none;
+}
+.option-label.selected-correct {
+  background: var(--success-pale);
+  border-color: var(--success);
+  color: #1a7a3e;
+}
+.option-label.selected-incorrect {
+  background: var(--danger-pale);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.option-label.disabled {
+  pointer-events: none;
+  opacity: .7;
+}
+.feedback-text {
+  display: none;
+  padding: 10px 14px;
+  margin-top: 8px;
+  border-radius: var(--radius);
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.feedback-text.correct {
+  background: var(--success-pale);
+  color: #1a6b3a;
+}
+.feedback-text.incorrect {
+  background: var(--danger-pale);
+  color: var(--danger);
+}
+.feedback-text.show { display: block; }
+
+/* ═══════════════════════════════════════════
+   CLINICAL CASE
+   ═══════════════════════════════════════════ */
+.case-section {
+  background: var(--accent-pale);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin: 24px 0;
+}
+.case-badge {
+  font-family: var(--ff-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.case-narrative {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 16px;
+  border-left: 3px solid var(--accent);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.case-decision h4 {
+  font-family: var(--ff-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.decision-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  margin: 6px 0;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.decision-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-pale);
+}
+.decision-btn.best {
+  background: var(--success-pale);
+  border-color: var(--success);
+}
+.decision-btn.suboptimal {
+  background: var(--warning-pale);
+  border-color: var(--warning);
+}
+.decision-btn.wrong {
+  background: var(--danger-pale);
+  border-color: var(--danger);
+}
+.decision-btn.disabled {
+  pointer-events: none;
+  opacity: .7;
+}
+.case-feedback {
+  display: none;
+  padding: 14px 16px;
+  margin-top: 10px;
+  border-radius: var(--radius);
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.case-feedback.show { display: block; }
+.case-stage { display: none; }
+.case-stage.active { display: block; }
+.case-result {
+  display: none;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  margin-top: 16px;
+}
+.case-score {
+  font-family: var(--ff-ui);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ═══════════════════════════════════════════
+   FINAL EXAM
+   ═══════════════════════════════════════════ */
+.exam-section {
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin: 30px 0;
+}
+.exam-locked {
+  text-align: center;
+  padding: 40px 20px;
+}
+.exam-locked .lock-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.exam-locked p {
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.exam-timer {
+  text-align: center;
+  padding: 12px;
+  background: var(--danger-pale);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  font-family: var(--ff-ui);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--danger);
+}
+.exam-timer.warning {
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .6; }
+}
+.exam-content { display: none; }
+.exam-content.active { display: block; }
+.exam-results {
+  display: none;
+  text-align: center;
+  padding: 30px;
+}
+.exam-score-big {
+  font-family: var(--ff-ui);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.exam-score-label {
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════
+   RESULTS / SEND
+   ═══════════════════════════════════════════ */
+.results-panel {
+  display: none;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--success);
+  padding: 28px;
+  margin: 30px 0;
+  text-align: center;
+}
+.results-panel h2 {
+  font-family: var(--ff-ui);
+  color: var(--success);
+  margin-bottom: 6px;
+}
+.results-summary {
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+.send-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════
+   TEACHER PANEL
+   ═══════════════════════════════════════════ */
+.teacher-panel {
+  display: none;
+  background: #fffde6;
+  border: 2px solid var(--warning);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin: 20px 0;
+}
+.teacher-panel.open { display: block; }
+.teacher-panel h3 {
+  font-family: var(--ff-ui);
+  color: var(--warning);
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.teacher-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-family: var(--ff-ui);
+  font-size: 14px;
+}
+.teacher-row label {
+  min-width: 150px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+.teacher-row input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--ff-ui);
+  font-size: 14px;
+}
+
+/* ═══════════════════════════════════════════
+   PASSWORD MODAL
+   ═══════════════════════════════════════════ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open {
+  display: flex;
+}
+.modal-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+.modal-card h3 {
+  font-family: var(--ff-ui);
+  margin-bottom: 16px;
+}
+.modal-card input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--ff-ui);
+  font-size: 15px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.modal-error {
+  color: var(--danger);
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  display: none;
+  margin-bottom: 10px;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.site-footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-family: var(--ff-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .section-header { padding: 14px 16px; }
+  .section-body { padding: 0 16px 20px; }
+  .case-section, .exam-section { padding: 20px 16px; }
+  .registration-card { padding: 28px 22px; }
+  .teacher-row { flex-direction: column; align-items: stretch; }
+  .teacher-row label { min-width: auto; }
+  .send-buttons { flex-direction: column; }
+  .send-buttons .btn { width: 100%; justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════ */
+@media print {
+  .progress-bar-container, .teacher-panel, .registration-overlay,
+  .quiz-container, .exam-section, .results-panel, .send-buttons { display: none !important; }
+  .section-body { display: block !important; }
+  .site-header { background: var(--primary) !important; -webkit-print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     REGISTRATION OVERLAY
+     ═══════════════════════════════════════════ -->
+<div class="registration-overlay" id="registrationOverlay">
+  <div class="registration-card">
+    <h2>📋 Registro del Estudiante</h2>
+    <p class="reg-desc">Complete sus datos para iniciar la sesión de aprendizaje. Estos datos se incluirán en el envío de resultados.</p>
+    <div class="form-group">
+      <label>Nombres</label>
+      <input type="text" id="regNombres" placeholder="Ingrese sus nombres" required>
+    </div>
+    <div class="form-group">
+      <label>Apellidos</label>
+      <input type="text" id="regApellidos" placeholder="Ingrese sus apellidos" required>
+    </div>
+    <div class="form-group">
+      <label>Código estudiantil o Cédula (CC)</label>
+      <input type="text" id="regID" placeholder="Número de identificación" required>
+    </div>
+    <div class="form-group">
+      <label>Correo electrónico</label>
+      <input type="email" id="regCorreo" placeholder="nombre@correo.com" required>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="submitRegistration()">Iniciar sesión de clase →</button>
+    <p id="regError" style="color:var(--danger);font-family:var(--ff-ui);font-size:13px;margin-top:10px;display:none;">
+      Complete todos los campos para continuar.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PASSWORD MODAL (TEACHER)
+     ═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="passwordModal">
+  <div class="modal-card">
+    <h3>🔐 Acceso Docente</h3>
+    <input type="password" id="teacherPassInput" placeholder="Contraseña" onkeydown="if(event.key==='Enter')checkTeacherPass()">
+    <p class="modal-error" id="passError">Contraseña incorrecta</p>
+    <button class="btn btn-primary btn-block" onclick="checkTeacherPass()">Acceder</button>
+    <button class="btn btn-secondary btn-block" onclick="closePasswordModal()" style="margin-top:8px;">Cancelar</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-label">Maestría en Cuidado Paliativo · UAN</div>
+    <h1 class="header-title">Marco Político Global de los<br>Cuidados Paliativos</h1>
+    <div class="header-subtitle">Unidad 2 · Tema 1 — Lineamientos y políticas globales (OMS, Banco Mundial, IAHPC)</div>
+    <div class="header-meta">Contexto Histórico y Legal de los Cuidados Paliativos · 37542001 · 2026-I</div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     PROGRESS BAR
+     ═══════════════════════════════════════════ -->
+<div class="progress-bar-container">
+  <div class="container">
+    <div class="progress-info" id="progressInfo">Progreso: 0 / 3 secciones completadas</div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     TEACHER PANEL (hidden by default)
+     ═══════════════════════════════════════════ -->
+<div class="container">
+  <div class="teacher-panel" id="teacherPanel">
+    <h3>⚙️ Panel del Docente</h3>
+    <div class="teacher-row">
+      <label>Hora de desbloqueo:</label>
+      <input type="time" id="cfgUnlockTime" value="08:00" onchange="APP.config.unlockTime=this.value">
+    </div>
+    <div class="teacher-row">
+      <label>Duración examen (min):</label>
+      <input type="number" id="cfgExamDuration" value="15" min="5" max="60" onchange="APP.config.examDuration=parseInt(this.value)">
+    </div>
+    <div class="teacher-row">
+      <label>Google Sheets URL:</label>
+      <input type="url" id="cfgSheetsURL" placeholder="https://script.google.com/macros/s/.../exec" onchange="APP.config.googleSheetsURL=this.value">
+    </div>
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn btn-accent btn-sm" onclick="forceUnlockExam()">🔓 Desbloquear examen</button>
+      <button class="btn btn-secondary btn-sm" onclick="exportResults()">📊 Exportar JSON</button>
+      <button class="btn btn-secondary btn-sm" onclick="document.getElementById('teacherPanel').classList.remove('open')">Cerrar panel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT
+     ═══════════════════════════════════════════ -->
+<main class="main-content">
+  <div class="container">
+
+    <!-- ── SECTION 1 ── -->
+    <div class="section-card" id="section1">
+      <div class="section-header" onclick="toggleSection('section1')">
+        <div class="section-icon" id="icon-section1">1</div>
+        <div class="section-title-area">
+          <div class="section-title">La Resolución WHA67.19 y el mandato global</div>
+          <div class="section-subtitle">Fundamentos del marco político mundial — 20 min</div>
+        </div>
+        <div class="section-chevron" id="chevron-section1">▼</div>
+      </div>
+      <div class="section-body" id="body-section1">
+        <div class="content-block">
+          <h3>El hito fundacional: WHA67.19 (2014)</h3>
+          <p>En mayo de 2014, la 67.ª Asamblea Mundial de la Salud adoptó por unanimidad la Resolución WHA67.19, titulada «Fortalecimiento de los cuidados paliativos como parte del tratamiento integral a lo largo de la vida». Este instrumento representa el primer reconocimiento formal por parte de la OMS de que los cuidados paliativos son un componente esencial de los sistemas de salud.</p>
+
+          <div class="highlight-box info">📌 <strong>Concepto clave:</strong> La WHA67.19 establece que los cuidados paliativos son una <em>obligación ética</em> de los sistemas de salud y un componente de la cobertura sanitaria universal, no un servicio opcional o complementario.</div>
+
+          <h4>Contenido central de la resolución</h4>
+          <p>La resolución insta a los Estados Miembros a integrar los cuidados paliativos en sus políticas sanitarias nacionales, garantizando el acceso a medicamentos esenciales — incluyendo analgésicos opioides — y promoviendo la formación del personal de salud en esta área.</p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Componente</th>
+                <th>Mandato principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Política sanitaria</td>
+                <td>Integrar CP en planes nacionales de salud y enfermedades no transmisibles</td>
+              </tr>
+              <tr>
+                <td>Medicamentos</td>
+                <td>Garantizar acceso a opioides y medicamentos esenciales para CP</td>
+              </tr>
+              <tr>
+                <td>Educación</td>
+                <td>Incluir CP en la formación pre y posgrado de profesionales de salud</td>
+              </tr>
+              <tr>
+                <td>Implementación</td>
+                <td>Integrar CP en todos los niveles de atención, incluyendo atención primaria</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="highlight-box warning">⚠️ <strong>Dato territorial:</strong> A pesar de este mandato global, en 2024 solo 3 de cada 10 pacientes que necesitan cuidados paliativos en Colombia reciben efectivamente esta atención (OCCP, 2024).</div>
+
+          <h3>De la resolución a la acción: el rol de la OMS</h3>
+          <p>La OMS ha desarrollado herramientas técnicas para apoyar la implementación de la WHA67.19, incluyendo la guía «Planificación e implantación de servicios de cuidados paliativos» y el modelo de salud pública basado en cuatro pilares: política, educación, disponibilidad de medicamentos y prestación de servicios.</p>
+        </div>
+
+        <!-- Quiz parcial 1 -->
+        <div class="quiz-container">
+          <div class="quiz-title">✏️ Verificación de comprensión</div>
+
+          <div class="question-block" id="q1">
+            <div class="question-text">1. ¿Cuál fue el año de adopción de la Resolución WHA67.19?</div>
+            <label class="option-label" onclick="answerQuiz('q1', this, false)">
+              <input type="radio" name="q1"> a) 2010
+            </label>
+            <label class="option-label" onclick="answerQuiz('q1', this, false)">
+              <input type="radio" name="q1"> b) 2012
+            </label>
+            <label class="option-label" onclick="answerQuiz('q1', this, true)">
+              <input type="radio" name="q1"> c) 2014
+            </label>
+            <label class="option-label" onclick="answerQuiz('q1', this, false)">
+              <input type="radio" name="q1"> d) 2016
+            </label>
+            <div class="feedback-text correct" id="q1-correct">✓ Correcto. La WHA67.19 fue adoptada en mayo de 2014 por la 67.ª Asamblea Mundial de la Salud.</div>
+            <div class="feedback-text incorrect" id="q1-incorrect">✗ Incorrecto. La resolución fue adoptada en 2014. Revise la primera sección del contenido.</div>
+          </div>
+
+          <div class="question-block" id="q2">
+            <div class="question-text">2. Según la WHA67.19, los cuidados paliativos son considerados:</div>
+            <label class="option-label" onclick="answerQuiz('q2', this, false)">
+              <input type="radio" name="q2"> a) Un servicio complementario opcional
+            </label>
+            <label class="option-label" onclick="answerQuiz('q2', this, true)">
+              <input type="radio" name="q2"> b) Un componente esencial del tratamiento integral a lo largo de la vida
+            </label>
+            <label class="option-label" onclick="answerQuiz('q2', this, false)">
+              <input type="radio" name="q2"> c) Una especialidad exclusiva para pacientes oncológicos terminales
+            </label>
+            <label class="option-label" onclick="answerQuiz('q2', this, false)">
+              <input type="radio" name="q2"> d) Un programa limitado al tercer nivel de atención
+            </label>
+            <div class="feedback-text correct" id="q2-correct">✓ Correcto. El título mismo de la resolución lo declara: «Fortalecimiento de los cuidados paliativos como parte del tratamiento integral a lo largo de la vida».</div>
+            <div class="feedback-text incorrect" id="q2-incorrect">✗ La resolución establece los CP como componente integral, no como servicio opcional ni restringido a una sola condición o nivel de atención.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2 ── -->
+    <div class="section-card" id="section2">
+      <div class="section-header" onclick="toggleSection('section2')">
+        <div class="section-icon" id="icon-section2">2</div>
+        <div class="section-title-area">
+          <div class="section-title">Organismos multilaterales y cuidados paliativos</div>
+          <div class="section-subtitle">Banco Mundial, BID, OCDE, IAHPC — 20 min</div>
+        </div>
+        <div class="section-chevron" id="chevron-section2">▼</div>
+      </div>
+      <div class="section-body" id="body-section2">
+        <div class="content-block">
+          <h3>El rol del Banco Mundial y el BID</h3>
+          <p>Los organismos financieros multilaterales han comenzado a incorporar los cuidados paliativos en sus agendas de financiamiento de salud, reconociendo que la cobertura sanitaria universal no puede lograrse sin incluir el manejo del dolor y el sufrimiento asociado a enfermedades graves.</p>
+
+          <div class="highlight-box info">📌 <strong>Concepto clave:</strong> La Comisión Lancet (2018) estimó que 61 millones de personas a nivel mundial experimentan «sufrimiento serio asociado a la salud» que podría aliviarse con acceso a cuidados paliativos y medicamentos esenciales.</div>
+
+          <h3>La OCDE y los indicadores de calidad</h3>
+          <p>La OCDE ha desarrollado indicadores de calidad en atención al final de la vida que permiten comparar el desempeño de los sistemas de salud de sus países miembros. Colombia, como país en proceso de adhesión a la OCDE, enfrenta el reto de alinear sus métricas con estos estándares.</p>
+
+          <h3>IAHPC: el estándar académico-clínico</h3>
+          <p>La Asociación Internacional de Hospicio y Cuidados Paliativos (IAHPC) ha contribuido con la definición consensuada de cuidados paliativos adoptada en 2020 (Radbruch et al.), la lista de medicamentos esenciales para CP, y estándares de formación para profesionales.</p>
+
+          <div class="highlight-box success">💡 <strong>Conexión territorial:</strong> Al analizar estos marcos globales, pregúntese: ¿qué tan alineado está el sistema de salud de <em>su</em> departamento con los estándares de la IAHPC? ¿Existen servicios de CP en el primer nivel de atención en su territorio?</div>
+        </div>
+
+        <!-- Quiz parcial 2 -->
+        <div class="quiz-container">
+          <div class="quiz-title">✏️ Verificación de comprensión</div>
+
+          <div class="question-block" id="q3">
+            <div class="question-text">3. La Comisión Lancet (2018) estimó que el sufrimiento serio asociado a la salud afecta a:</div>
+            <label class="option-label" onclick="answerQuiz('q3', this, false)">
+              <input type="radio" name="q3"> a) 10 millones de personas
+            </label>
+            <label class="option-label" onclick="answerQuiz('q3', this, false)">
+              <input type="radio" name="q3"> b) 25 millones de personas
+            </label>
+            <label class="option-label" onclick="answerQuiz('q3', this, true)">
+              <input type="radio" name="q3"> c) 61 millones de personas
+            </label>
+            <label class="option-label" onclick="answerQuiz('q3', this, false)">
+              <input type="radio" name="q3"> d) 100 millones de personas
+            </label>
+            <div class="feedback-text correct" id="q3-correct">✓ Correcto. La Comisión Lancet reportó esa cifra como evidencia de la magnitud de la necesidad insatisfecha a nivel global.</div>
+            <div class="feedback-text incorrect" id="q3-incorrect">✗ Revise el dato de la Comisión Lancet (2018). La cifra estimada es de 61 millones de personas con sufrimiento serio asociado a la salud.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 3 ── -->
+    <div class="section-card" id="section3">
+      <div class="section-header" onclick="toggleSection('section3')">
+        <div class="section-icon" id="icon-section3">3</div>
+        <div class="section-title-area">
+          <div class="section-title">De la política global a la brecha territorial</div>
+          <div class="section-subtitle">La paradoja colombiana como caso de análisis — 15 min</div>
+        </div>
+        <div class="section-chevron" id="chevron-section3">▼</div>
+      </div>
+      <div class="section-body" id="body-section3">
+        <div class="content-block">
+          <h3>La «paradoja colombiana»</h3>
+          <p>Colombia cuenta con uno de los marcos legislativos más avanzados de América Latina en materia de cuidados paliativos — incluyendo la Ley 1733 de 2014, el modelo PAIS/MAITE, y guías de práctica clínica especializadas. Sin embargo, la implementación territorial muestra brechas profundas.</p>
+
+          <div class="highlight-box warning">⚠️ <strong>Dato crítico:</strong> Según el Atlas ALCP 2025, América Latina tiene un ratio de 2,6 servicios de CP por millón de habitantes, frente a un estándar OMS de 20 por millón. Colombia no escapa a esta brecha.</div>
+
+          <h4>Indicadores que evidencian la brecha</h4>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Indicador</th>
+                <th>Dato</th>
+                <th>Fuente</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Acceso efectivo a CP</td>
+                <td>Solo 3 de cada 10 pacientes reciben CP</td>
+                <td>OCCP, 2024</td>
+              </tr>
+              <tr>
+                <td>Brecha en opioides</td>
+                <td>~90 veces entre Bogotá y departamentos amazónicos</td>
+                <td>OCCP, 2024</td>
+              </tr>
+              <tr>
+                <td>Servicios CP / millón</td>
+                <td>2,6 (LATAM) vs. 20 (meta OMS)</td>
+                <td>Atlas ALCP, 2025</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="highlight-box success">💡 <strong>Reflexión para su territorio:</strong> ¿Cuántos servicios de cuidados paliativos existen en su departamento? ¿Se ofrecen en el primer nivel de atención? ¿Qué barreras concretas ha observado en su práctica profesional?</div>
+        </div>
+
+        <!-- Quiz parcial 3 -->
+        <div class="quiz-container">
+          <div class="quiz-title">✏️ Verificación de comprensión</div>
+
+          <div class="question-block" id="q4">
+            <div class="question-text">4. La brecha en acceso a opioides entre Bogotá y los departamentos amazónicos es de aproximadamente:</div>
+            <label class="option-label" onclick="answerQuiz('q4', this, false)">
+              <input type="radio" name="q4"> a) 5 veces
+            </label>
+            <label class="option-label" onclick="answerQuiz('q4', this, false)">
+              <input type="radio" name="q4"> b) 20 veces
+            </label>
+            <label class="option-label" onclick="answerQuiz('q4', this, true)">
+              <input type="radio" name="q4"> c) 90 veces
+            </label>
+            <label class="option-label" onclick="answerQuiz('q4', this, false)">
+              <input type="radio" name="q4"> d) 200 veces
+            </label>
+            <div class="feedback-text correct" id="q4-correct">✓ Correcto. El OCCP 2024 documenta una brecha de aproximadamente 90 veces en el acceso a opioides, evidenciando la inequidad territorial.</div>
+            <div class="feedback-text incorrect" id="q4-incorrect">✗ Revise los datos del Informe Técnico OCCP 2024. La brecha documentada es de aproximadamente 90 veces.</div>
+          </div>
+
+          <div class="question-block" id="q5">
+            <div class="question-text">5. ¿Qué término describe mejor la situación de Colombia frente a los CP?</div>
+            <label class="option-label" onclick="answerQuiz('q5', this, false)">
+              <input type="radio" name="q5"> a) Ausencia total de legislación
+            </label>
+            <label class="option-label" onclick="answerQuiz('q5', this, false)">
+              <input type="radio" name="q5"> b) Implementación completa y equitativa
+            </label>
+            <label class="option-label" onclick="answerQuiz('q5', this, true)">
+              <input type="radio" name="q5"> c) Marco legislativo avanzado con déficits en implementación territorial
+            </label>
+            <label class="option-label" onclick="answerQuiz('q5', this, false)">
+              <input type="radio" name="q5"> d) Legislación restrictiva que impide el acceso a opioides
+            </label>
+            <div class="feedback-text correct" id="q5-correct">✓ Correcto. Esta es la esencia de la «paradoja colombiana»: legislación avanzada coexistiendo con déficits significativos en implementación territorial, especialmente en acceso a opioides y servicios de CP en el primer nivel de atención.</div>
+            <div class="feedback-text incorrect" id="q5-incorrect">✗ Colombia tiene legislación avanzada (Ley 1733/2014, PAIS/MAITE), pero la implementación territorial es profundamente desigual. Esa es la paradoja central del curso.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CLINICAL CASE ── -->
+    <div class="section-card" id="sectionCase">
+      <div class="section-header" onclick="toggleSection('sectionCase')">
+        <div class="section-icon" id="icon-sectionCase">🩺</div>
+        <div class="section-title-area">
+          <div class="section-title">Caso clínico interactivo</div>
+          <div class="section-subtitle">Aplicación del marco político a un escenario territorial — 15 min</div>
+        </div>
+        <div class="section-chevron" id="chevron-sectionCase">▼</div>
+      </div>
+      <div class="section-body" id="body-sectionCase">
+        <div class="case-section">
+          <div class="case-badge">📋 Caso clínico: gestión territorial de cuidados paliativos</div>
+
+          <!-- Stage 1 -->
+          <div class="case-stage active" id="caseStage1">
+            <div class="case-narrative">
+              <strong>Presentación:</strong><br>
+              Usted es coordinador(a) de un programa de atención primaria en un municipio del departamento del Caquetá. Recibe la solicitud de una familia cuyo padre, de 68 años, tiene diagnóstico de cáncer gástrico avanzado con dolor severo no controlado. La familia solicita atención paliativa domiciliaria. El hospital local no cuenta con servicio de cuidados paliativos ni con disponibilidad de opioides fuertes.
+            </div>
+            <div class="case-decision">
+              <h4>¿Cuál es su primera acción como coordinador(a)?</h4>
+              <button class="decision-btn" onclick="caseDecide(1, this, 'best')">
+                A) Activar la ruta de referencia al nivel de mayor complejidad invocando la Ley 1733/2014 y la resolución RIAS correspondiente para garantizar el acceso
+              </button>
+              <button class="decision-btn" onclick="caseDecide(1, this, 'suboptimal')">
+                B) Prescribir analgésicos no opioides disponibles localmente y esperar a que el dolor se controle
+              </button>
+              <button class="decision-btn" onclick="caseDecide(1, this, 'wrong')">
+                C) Informar a la familia que los cuidados paliativos no están disponibles en la zona y que deben trasladarse a Bogotá por su cuenta
+              </button>
+            </div>
+            <div class="case-feedback" id="caseFeedback1"></div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="case-stage" id="caseStage2">
+            <div class="case-narrative">
+              <strong>Evolución:</strong><br>
+              La EPS autoriza la referencia, pero el hospital de segundo nivel más cercano (a 3 horas de distancia) tampoco tiene morfina disponible. El paciente continúa con dolor EVA 9/10. La familia está desesperada y ha considerado remedios no convencionales para el dolor.
+            </div>
+            <div class="case-decision">
+              <h4>¿Qué estrategia adopta usted?</h4>
+              <button class="decision-btn" onclick="caseDecide(2, this, 'best')">
+                A) Contactar al Observatorio Colombiano de CP (OCCP) y la Secretaría de Salud departamental para reportar la situación como barrera de acceso a opioides, y gestionar telemedicina con un servicio de CP
+              </button>
+              <button class="decision-btn" onclick="caseDecide(2, this, 'suboptimal')">
+                B) Solicitar a la EPS el traslado del paciente a un hospital de tercer nivel en Bogotá
+              </button>
+              <button class="decision-btn" onclick="caseDecide(2, this, 'wrong')">
+                C) Aceptar la situación como una limitación del sistema que no puede resolverse localmente
+              </button>
+            </div>
+            <div class="case-feedback" id="caseFeedback2"></div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="case-stage" id="caseStage3">
+            <div class="case-narrative">
+              <strong>Desenlace:</strong><br>
+              Tras la gestión, se logra acceso a teleconsulta con un servicio de CP en Neiva. Se prescribe morfina oral y se coordina con la farmacia del hospital departamental para su dispensación. El dolor se controla parcialmente (EVA 5/10 → 3/10 en 48 horas). La familia recibe orientación sobre cuidado domiciliario.
+            </div>
+            <div class="case-decision">
+              <h4>Para fortalecer el sistema a futuro, ¿qué acción de incidencia propone?</h4>
+              <button class="decision-btn" onclick="caseDecide(3, this, 'best')">
+                A) Documentar el caso como evidencia de barrera de acceso y presentarlo ante la Mesa Territorial de Cuidados Paliativos del departamento para incidir en la política local
+              </button>
+              <button class="decision-btn" onclick="caseDecide(3, this, 'suboptimal')">
+                B) Proponer al hospital local que incluya opioides en su petitorio de medicamentos
+              </button>
+              <button class="decision-btn" onclick="caseDecide(3, this, 'wrong')">
+                C) Considerar el caso resuelto y no tomar acciones adicionales
+              </button>
+            </div>
+            <div class="case-feedback" id="caseFeedback3"></div>
+          </div>
+
+          <!-- Case result -->
+          <div class="case-result" id="caseResult">
+            <p style="font-family:var(--ff-ui);font-size:14px;color:var(--text-muted);margin-bottom:8px;">Puntaje del caso clínico</p>
+            <div class="case-score" id="caseScoreDisplay">0/3</div>
+            <p style="font-family:var(--ff-ui);font-size:13px;color:var(--text-light);margin-top:12px;" id="caseSummary"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FINAL EXAM ── -->
+    <div class="section-card" id="sectionExam">
+      <div class="section-header" onclick="toggleSection('sectionExam')">
+        <div class="section-icon" id="icon-sectionExam">📝</div>
+        <div class="section-title-area">
+          <div class="section-title">Evaluación final</div>
+          <div class="section-subtitle">5 preguntas · Temporizador activo · Envío automático</div>
+        </div>
+        <div class="section-chevron" id="chevron-sectionExam">▼</div>
+      </div>
+      <div class="section-body" id="body-sectionExam">
+        <div class="exam-section">
+          <!-- Locked state -->
+          <div class="exam-locked" id="examLocked">
+            <div class="lock-icon">🔒</div>
+            <p>La evaluación se desbloqueará a las <strong id="examUnlockDisplay">08:00</strong></p>
+            <p style="margin-top:8px;font-size:12px;">Hora actual: <span id="currentTimeDisplay">--:--</span></p>
+            <button class="btn btn-secondary btn-sm" style="margin-top:16px;" onclick="showPasswordModal('exam')">🔑 Desbloqueo manual (docente)</button>
+          </div>
+
+          <!-- Exam content -->
+          <div class="exam-content" id="examContent">
+            <div class="exam-timer" id="examTimer">⏱ 15:00</div>
+
+            <div class="question-block" id="eq1">
+              <div class="question-text">1. La Resolución WHA67.19 fue adoptada por la Asamblea Mundial de la Salud en el año:</div>
+              <label class="option-label" onclick="examAnswer('eq1','a',this)"><input type="radio" name="eq1"> a) 2010</label>
+              <label class="option-label" onclick="examAnswer('eq1','b',this)"><input type="radio" name="eq1"> b) 2014</label>
+              <label class="option-label" onclick="examAnswer('eq1','c',this)"><input type="radio" name="eq1"> c) 2018</label>
+              <label class="option-label" onclick="examAnswer('eq1','d',this)"><input type="radio" name="eq1"> d) 2020</label>
+            </div>
+
+            <div class="question-block" id="eq2">
+              <div class="question-text">2. Según la Comisión Lancet (2018), ¿cuántas personas experimentan sufrimiento serio asociado a la salud que podría aliviarse con cuidados paliativos?</div>
+              <label class="option-label" onclick="examAnswer('eq2','a',this)"><input type="radio" name="eq2"> a) 20 millones</label>
+              <label class="option-label" onclick="examAnswer('eq2','b',this)"><input type="radio" name="eq2"> b) 61 millones</label>
+              <label class="option-label" onclick="examAnswer('eq2','c',this)"><input type="radio" name="eq2"> c) 90 millones</label>
+              <label class="option-label" onclick="examAnswer('eq2','d',this)"><input type="radio" name="eq2"> d) 120 millones</label>
+            </div>
+
+            <div class="question-block" id="eq3">
+              <div class="question-text">3. ¿Cuál de las siguientes NO es una de las estrategias que la WHA67.19 insta a implementar?</div>
+              <label class="option-label" onclick="examAnswer('eq3','a',this)"><input type="radio" name="eq3"> a) Integrar CP en planes nacionales de salud</label>
+              <label class="option-label" onclick="examAnswer('eq3','b',this)"><input type="radio" name="eq3"> b) Garantizar acceso a medicamentos opioides</label>
+              <label class="option-label" onclick="examAnswer('eq3','c',this)"><input type="radio" name="eq3"> c) Crear hospitales exclusivos para cuidados paliativos</label>
+              <label class="option-label" onclick="examAnswer('eq3','d',this)"><input type="radio" name="eq3"> d) Incluir CP en la formación de profesionales de salud</label>
+            </div>
+
+            <div class="question-block" id="eq4">
+              <div class="question-text">4. La brecha en acceso a opioides entre Bogotá y los departamentos amazónicos colombianos es de aproximadamente:</div>
+              <label class="option-label" onclick="examAnswer('eq4','a',this)"><input type="radio" name="eq4"> a) 10 veces</label>
+              <label class="option-label" onclick="examAnswer('eq4','b',this)"><input type="radio" name="eq4"> b) 30 veces</label>
+              <label class="option-label" onclick="examAnswer('eq4','c',this)"><input type="radio" name="eq4"> c) 90 veces</label>
+              <label class="option-label" onclick="examAnswer('eq4','d',this)"><input type="radio" name="eq4"> d) 150 veces</label>
+            </div>
+
+            <div class="question-block" id="eq5">
+              <div class="question-text">5. La «paradoja colombiana» en cuidados paliativos se refiere a:</div>
+              <label class="option-label" onclick="examAnswer('eq5','a',this)"><input type="radio" name="eq5"> a) La ausencia de legislación sobre CP en Colombia</label>
+              <label class="option-label" onclick="examAnswer('eq5','b',this)"><input type="radio" name="eq5"> b) La coexistencia de un marco legislativo avanzado con déficits graves en implementación territorial</label>
+              <label class="option-label" onclick="examAnswer('eq5','c',this)"><input type="radio" name="eq5"> c) El exceso de servicios de CP que genera desperdicio de recursos</label>
+              <label class="option-label" onclick="examAnswer('eq5','d',this)"><input type="radio" name="eq5"> d) La prohibición legal de opioides en territorio colombiano</label>
+            </div>
+
+            <div style="text-align:center;margin-top:24px;">
+              <button class="btn btn-primary" onclick="submitExam()">📤 Enviar evaluación</button>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="exam-results" id="examResults">
+            <div class="exam-score-label">Resultado de la evaluación</div>
+            <div class="exam-score-big" id="examScoreDisplay">0/5</div>
+            <p style="font-family:var(--ff-ui);font-size:14px;color:var(--text-light);margin-top:12px;" id="examFeedbackSummary"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RESULTS PANEL ── -->
+    <div class="results-panel" id="resultsPanel">
+      <h2>✅ Sesión completada</h2>
+      <div class="results-summary" id="resultsSummary">
+        Cargando resumen...
+      </div>
+      <div class="send-buttons">
+        <button class="btn btn-success" onclick="sendToSheets()">📊 Enviar a Google Sheets</button>
+        <button class="btn btn-accent" onclick="sendByEmail()">📧 Enviar por correo</button>
+        <button class="btn btn-secondary" onclick="copyToClipboard()">📋 Copiar al portapapeles</button>
+        <button class="btn btn-secondary" onclick="sendByWhatsApp()">💬 Enviar por WhatsApp</button>
+      </div>
+      <p id="sendStatus" style="font-family:var(--ff-ui);font-size:13px;margin-top:14px;color:var(--success);display:none;"></p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Maestría en Cuidado Paliativo · Universidad Antonio Nariño · 2026</p>
+    <p style="margin-top:4px;">Plataforma de Clases Interactivas · GNU-GPL v3</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+// ─── CONFIGURATION ───
+const APP = {
+  config: {
+    teacherEmail: 'jwbogoyal@gmail.com',
+    teacherPass: 'docente2026',
+    unlockTime: '08:00',
+    examDuration: 15,  // minutes
+    googleSheetsURL: '', // ← Pegar aquí la URL del Apps Script
+    quizTotal: 5,
+    examTotal: 5,
+    examCorrectAnswers: { eq1: 'b', eq2: 'b', eq3: 'c', eq4: 'c', eq5: 'b' },
+  },
+  student: { nombres: '', apellidos: '', id: '', correo: '' },
+  state: {
+    quizCorrect: 0,
+    quizAnswered: 0,
+    caseScore: 0,
+    caseStage: 1,
+    caseTotal: 3,
+    examAnswers: {},
+    examCorrect: 0,
+    examSubmitted: false,
+    examTimerInterval: null,
+    examTimeLeft: 0,
+    sectionsCompleted: new Set(),
+    totalSections: 3,
+  },
+  caseMessages: {
+    1: {
+      best: '✅ Excelente. Invocar la Ley 1733/2014 y activar la ruta de referencia es la acción correcta. El paciente tiene derecho legal a recibir cuidados paliativos y usted está ejerciendo la gestión normativa apropiada.',
+      suboptimal: '⚠️ Parcialmente correcto. Los analgésicos no opioides son insuficientes para dolor severo oncológico. Si bien es una medida temporal, no resuelve la necesidad de acceso a opioides fuertes como manda la escalera analgésica de la OMS.',
+      wrong: '❌ Incorrecto. La Ley 1733/2014 establece que los cuidados paliativos son un derecho. No es aceptable derivar la responsabilidad a la familia. El sistema debe garantizar el acceso.'
+    },
+    2: {
+      best: '✅ Excelente. Articular múltiples actores del sistema (OCCP, Secretaría, telemedicina) demuestra gestión integral. La barrera de acceso a opioides debe reportarse formalmente para visibilizar la inequidad territorial.',
+      suboptimal: '⚠️ Parcialmente correcto. El traslado a Bogotá es una opción, pero desconoce las barreras logísticas y económicas de una familia del Caquetá. La telemedicina y la gestión local son más sostenibles y equitativas.',
+      wrong: '❌ Incorrecto. Aceptar la situación perpetúa la inequidad. La WHA67.19 y la Ley 1733 obligan a los sistemas de salud a buscar soluciones activas, no a resignarse.'
+    },
+    3: {
+      best: '✅ Excelente. Documentar y presentar el caso ante la Mesa Territorial convierte una situación individual en evidencia para la política pública. Este es el ejercicio de incidencia que los marcos globales (WHA67.19) y nacionales (PAIS/MAITE) promueven.',
+      suboptimal: '⚠️ Parcialmente correcto. Incluir opioides en el petitorio es necesario pero insuficiente si no hay formación del personal ni una ruta de atención paliativa estructurada.',
+      wrong: '❌ Incorrecto. Dar por resuelto el caso sin acción sistémica garantiza que se repita. La incidencia en política pública es una competencia esencial del profesional de CP (SABER HACER).'
+    }
+  }
+};
+
+// ─── REGISTRATION ───
+function submitRegistration() {
+  const n = document.getElementById('regNombres').value.trim();
+  const a = document.getElementById('regApellidos').value.trim();
+  const id = document.getElementById('regID').value.trim();
+  const c = document.getElementById('regCorreo').value.trim();
+  if (!n || !a || !id || !c) {
+    document.getElementById('regError').style.display = 'block';
+    return;
+  }
+  APP.student = { nombres: n, apellidos: a, id: id, correo: c };
+  document.getElementById('registrationOverlay').style.display = 'none';
+}
+
+// ─── TEACHER PANEL ───
+function showPasswordModal(purpose) {
+  APP._passPurpose = purpose;
+  document.getElementById('passwordModal').classList.add('open');
+  document.getElementById('teacherPassInput').value = '';
+  document.getElementById('passError').style.display = 'none';
+  document.getElementById('teacherPassInput').focus();
+}
+function closePasswordModal() {
+  document.getElementById('passwordModal').classList.remove('open');
+}
+function checkTeacherPass() {
+  const val = document.getElementById('teacherPassInput').value;
+  if (val === APP.config.teacherPass) {
+    closePasswordModal();
+    if (APP._passPurpose === 'panel') {
+      document.getElementById('teacherPanel').classList.add('open');
+    } else if (APP._passPurpose === 'exam') {
+      startExam();
+    }
+  } else {
+    document.getElementById('passError').style.display = 'block';
+  }
+}
+
+// Keyboard shortcut: Ctrl+Shift+D
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+    e.preventDefault();
+    showPasswordModal('panel');
+  }
+});
+// URL param: ?docente=true
+if (new URLSearchParams(window.location.search).get('docente') === 'true') {
+  showPasswordModal('panel');
+}
+
+function forceUnlockExam() { startExam(); }
+
+function exportResults() {
+  const data = buildResultsData();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `resultados_${APP.student.id || 'sin_registro'}_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+}
+
+// ─── SECTION TOGGLE ───
+function toggleSection(id) {
+  const body = document.getElementById('body-' + id);
+  const chevron = document.getElementById('chevron-' + id);
+  body.classList.toggle('open');
+  chevron.classList.toggle('open');
+}
+
+// ─── QUIZ ───
+function answerQuiz(qId, label, isCorrect) {
+  const block = document.getElementById(qId);
+  if (block.dataset.answered) return;
+  block.dataset.answered = 'true';
+  APP.state.quizAnswered++;
+
+  const labels = block.querySelectorAll('.option-label');
+  labels.forEach(l => l.classList.add('disabled'));
+
+  if (isCorrect) {
+    label.classList.add('selected-correct');
+    document.getElementById(qId + '-correct').classList.add('show');
+    APP.state.quizCorrect++;
+  } else {
+    label.classList.add('selected-incorrect');
+    document.getElementById(qId + '-incorrect').classList.add('show');
+  }
+
+  checkSectionCompletion(qId);
+  updateProgress();
+}
+
+function checkSectionCompletion(qId) {
+  const sectionMap = {
+    q1: 'section1', q2: 'section1',
+    q3: 'section2',
+    q4: 'section3', q5: 'section3'
+  };
+  const section = sectionMap[qId];
+  if (!section) return;
+
+  const questionSets = {
+    section1: ['q1', 'q2'],
+    section2: ['q3'],
+    section3: ['q4', 'q5']
+  };
+
+  const allAnswered = questionSets[section].every(q => document.getElementById(q).dataset.answered);
+  if (allAnswered) {
+    APP.state.sectionsCompleted.add(section);
+    document.getElementById('icon-' + section).textContent = '✓';
+    document.getElementById('icon-' + section).classList.add('completed');
+  }
+}
+
+function updateProgress() {
+  const count = APP.state.sectionsCompleted.size;
+  const pct = (count / APP.state.totalSections) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressInfo').textContent =
+    `Progreso: ${count} / ${APP.state.totalSections} secciones completadas`;
+}
+
+// ─── CLINICAL CASE ───
+function caseDecide(stage, btn, quality) {
+  const stageEl = document.getElementById('caseStage' + stage);
+  if (stageEl.dataset.decided) return;
+  stageEl.dataset.decided = 'true';
+
+  const btns = stageEl.querySelectorAll('.decision-btn');
+  btns.forEach(b => { b.classList.add('disabled'); });
+  btn.classList.add(quality);
+
+  const feedback = document.getElementById('caseFeedback' + stage);
+  feedback.innerHTML = APP.caseMessages[stage][quality];
+  feedback.className = 'case-feedback show';
+  if (quality === 'best') {
+    feedback.style.background = 'var(--success-pale)';
+    feedback.style.color = '#1a6b3a';
+    APP.state.caseScore++;
+  } else if (quality === 'suboptimal') {
+    feedback.style.background = 'var(--warning-pale)';
+    feedback.style.color = '#8a6d00';
+  } else {
+    feedback.style.background = 'var(--danger-pale)';
+    feedback.style.color = 'var(--danger)';
+  }
+
+  // Advance to next stage after delay
+  setTimeout(() => {
+    const nextStage = stage + 1;
+    if (nextStage <= APP.state.caseTotal) {
+      document.getElementById('caseStage' + nextStage).classList.add('active');
+      document.getElementById('caseStage' + nextStage).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      // Show result
+      const result = document.getElementById('caseResult');
+      result.style.display = 'block';
+      document.getElementById('caseScoreDisplay').textContent =
+        APP.state.caseScore + '/' + APP.state.caseTotal;
+      let msg = '';
+      if (APP.state.caseScore === 3) msg = 'Excelente manejo del caso. Demuestra competencia en gestión territorial de CP.';
+      else if (APP.state.caseScore === 2) msg = 'Buen manejo general, con oportunidades de mejora en la articulación de actores o en la incidencia sistémica.';
+      else msg = 'Revise los marcos normativos aplicables. La gestión territorial requiere articular legislación, actores y evidencia.';
+      document.getElementById('caseSummary').textContent = msg;
+    }
+  }, 1500);
+}
+
+// ─── EXAM ───
+function checkExamUnlock() {
+  const now = new Date();
+  const [h, m] = APP.config.unlockTime.split(':').map(Number);
+  const current = now.getHours() * 60 + now.getMinutes();
+  const unlock = h * 60 + m;
+  document.getElementById('currentTimeDisplay').textContent =
+    now.toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' });
+
+  if (current >= unlock) {
+    startExam();
+  }
+}
+
+function startExam() {
+  document.getElementById('examLocked').style.display = 'none';
+  document.getElementById('examContent').classList.add('active');
+  APP.state.examTimeLeft = APP.config.examDuration * 60;
+  updateExamTimer();
+  APP.state.examTimerInterval = setInterval(() => {
+    APP.state.examTimeLeft--;
+    updateExamTimer();
+    if (APP.state.examTimeLeft <= 0) {
+      clearInterval(APP.state.examTimerInterval);
+      submitExam();
+    }
+  }, 1000);
+}
+
+function updateExamTimer() {
+  const m = Math.floor(APP.state.examTimeLeft / 60);
+  const s = APP.state.examTimeLeft % 60;
+  const display = `⏱ ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  const el = document.getElementById('examTimer');
+  el.textContent = display;
+  if (APP.state.examTimeLeft <= 60) el.classList.add('warning');
+}
+
+function examAnswer(qId, letter, label) {
+  if (APP.state.examSubmitted) return;
+  const block = document.getElementById(qId);
+  block.querySelectorAll('.option-label').forEach(l => {
+    l.style.background = '';
+    l.style.borderColor = 'var(--border)';
+    l.style.fontWeight = '';
+  });
+  label.style.background = 'var(--primary-pale)';
+  label.style.borderColor = 'var(--primary)';
+  label.style.fontWeight = '600';
+  APP.state.examAnswers[qId] = letter;
+}
+
+function submitExam() {
+  if (APP.state.examSubmitted) return;
+  APP.state.examSubmitted = true;
+  clearInterval(APP.state.examTimerInterval);
+
+  // Grade
+  APP.state.examCorrect = 0;
+  for (const [qId, correct] of Object.entries(APP.config.examCorrectAnswers)) {
+    const block = document.getElementById(qId);
+    const labels = block.querySelectorAll('.option-label');
+    labels.forEach(l => l.classList.add('disabled'));
+
+    const userAns = APP.state.examAnswers[qId];
+    if (userAns === correct) {
+      APP.state.examCorrect++;
+      // Highlight correct
+      labels[['a','b','c','d'].indexOf(correct)].classList.add('selected-correct');
+    } else {
+      if (userAns) {
+        labels[['a','b','c','d'].indexOf(userAns)].classList.add('selected-incorrect');
+      }
+      labels[['a','b','c','d'].indexOf(correct)].classList.add('selected-correct');
+    }
+  }
+
+  // Show results
+  document.getElementById('examContent').classList.remove('active');
+  document.getElementById('examResults').style.display = 'block';
+  document.getElementById('examScoreDisplay').textContent =
+    APP.state.examCorrect + '/' + APP.config.examTotal;
+
+  const pct = (APP.state.examCorrect / APP.config.examTotal) * 100;
+  let msg = '';
+  if (pct >= 80) msg = 'Excelente dominio del contenido.';
+  else if (pct >= 60) msg = 'Buen desempeño. Revise las preguntas donde falló.';
+  else msg = 'Se recomienda revisar el material y repetir el estudio de la sesión.';
+  document.getElementById('examFeedbackSummary').textContent = `${pct.toFixed(0)}% — ${msg}`;
+
+  // Show results panel
+  showResultsPanel();
+}
+
+// ─── RESULTS ───
+function buildResultsData() {
+  const globalScore = (
+    (APP.state.quizCorrect / APP.config.quizTotal) * 30 +
+    (APP.state.caseScore / APP.state.caseTotal) * 30 +
+    (APP.state.examCorrect / APP.config.examTotal) * 40
+  ).toFixed(1);
+
+  return {
+    fecha: new Date().toLocaleString('es-CO'),
+    nombres: APP.student.nombres,
+    apellidos: APP.student.apellidos,
+    id: APP.student.id,
+    correo: APP.student.correo,
+    quizCorrectas: APP.state.quizCorrect,
+    quizTotal: APP.config.quizTotal,
+    casoClinico: APP.state.caseScore + '/' + APP.state.caseTotal,
+    examenCorrectas: APP.state.examCorrect,
+    examenTotal: APP.config.examTotal,
+    puntajeGlobal: globalScore + '%'
+  };
+}
+
+function showResultsPanel() {
+  const data = buildResultsData();
+  document.getElementById('resultsSummary').innerHTML = `
+    <strong>${data.nombres} ${data.apellidos}</strong> (${data.id})<br>
+    Quiz: ${data.quizCorrectas}/${data.quizTotal} · Caso clínico: ${data.casoClinico} · Examen: ${data.examenCorrectas}/${data.examenTotal}<br>
+    <strong style="font-size:18px;color:var(--primary);">Puntaje global: ${data.puntajeGlobal}</strong>
+  `;
+  document.getElementById('resultsPanel').style.display = 'block';
+  document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth' });
+}
+
+function sendToSheets() {
+  const url = APP.config.googleSheetsURL;
+  if (!url) {
+    showSendStatus('⚠️ No se ha configurado la URL de Google Sheets. Configure en el panel docente.', 'var(--warning)');
+    return;
+  }
+  const data = buildResultsData();
+  showSendStatus('📤 Enviando...', 'var(--info)');
+
+  fetch(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(() => showSendStatus('✅ Resultados enviados a Google Sheets exitosamente.', 'var(--success)'))
+  .catch(() => showSendStatus('❌ Error al enviar. Intente copiar al portapapeles.', 'var(--danger)'));
+}
+
+function sendByEmail() {
+  const d = buildResultsData();
+  const subject = encodeURIComponent(`Resultados - ${d.nombres} ${d.apellidos} - Marco Político CP`);
+  const body = encodeURIComponent(
+    `RESULTADOS DE SESIÓN\n` +
+    `═══════════════════\n` +
+    `Estudiante: ${d.nombres} ${d.apellidos}\n` +
+    `ID: ${d.id}\n` +
+    `Correo: ${d.correo}\n` +
+    `Fecha: ${d.fecha}\n\n` +
+    `Quiz: ${d.quizCorrectas}/${d.quizTotal}\n` +
+    `Caso clínico: ${d.casoClinico}\n` +
+    `Examen: ${d.examenCorrectas}/${d.examenTotal}\n` +
+    `Puntaje global: ${d.puntajeGlobal}\n`
+  );
+  window.open(`mailto:${APP.config.teacherEmail}?subject=${subject}&body=${body}`);
+}
+
+function copyToClipboard() {
+  const d = buildResultsData();
+  const text =
+    `📊 RESULTADOS\n` +
+    `Estudiante: ${d.nombres} ${d.apellidos}\n` +
+    `ID: ${d.id} | Correo: ${d.correo}\n` +
+    `Fecha: ${d.fecha}\n` +
+    `Quiz: ${d.quizCorrectas}/${d.quizTotal}\n` +
+    `Caso: ${d.casoClinico}\n` +
+    `Examen: ${d.examenCorrectas}/${d.examenTotal}\n` +
+    `GLOBAL: ${d.puntajeGlobal}`;
+  navigator.clipboard.writeText(text)
+    .then(() => showSendStatus('✅ Copiado al portapapeles.', 'var(--success)'))
+    .catch(() => showSendStatus('❌ Error al copiar. Intente con otro método.', 'var(--danger)'));
+}
+
+function sendByWhatsApp() {
+  const d = buildResultsData();
+  const text = encodeURIComponent(
+    `📊 *Resultados — Marco Político CP*\n` +
+    `👤 ${d.nombres} ${d.apellidos} (${d.id})\n` +
+    `📅 ${d.fecha}\n` +
+    `✏️ Quiz: ${d.quizCorrectas}/${d.quizTotal}\n` +
+    `🩺 Caso: ${d.casoClinico}\n` +
+    `📝 Examen: ${d.examenCorrectas}/${d.examenTotal}\n` +
+    `🎯 *Global: ${d.puntajeGlobal}*`
+  );
+  window.open(`https://wa.me/?text=${text}`);
+}
+
+function showSendStatus(msg, color) {
+  const el = document.getElementById('sendStatus');
+  el.textContent = msg;
+  el.style.color = color;
+  el.style.display = 'block';
+}
+
+// ─── EXAM UNLOCK CHECK (every 30s) ───
+document.getElementById('examUnlockDisplay').textContent = APP.config.unlockTime;
+setInterval(checkExamUnlock, 30000);
+checkExamUnlock();
+
+// ─── AUTO-SEND ON EXAM SUBMIT ───
+// If Sheets URL is configured, auto-send when exam is submitted
+const originalSubmitExam = submitExam;
+
+</script>
+</body>
+</html>
