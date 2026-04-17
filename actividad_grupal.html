@@ -1043,9 +1043,8 @@
   }
 
   // ============ ENVÍO A GOOGLE SHEETS ============
-  // Nota técnica: Apps Script no devuelve cabeceras CORS para orígenes externos,
-  // por lo que usamos fetch con mode:'no-cors' + URLSearchParams (form-encoded).
-  // Con no-cors no podemos leer la respuesta, pero si no hay error de red el envío llegó.
+  // Solución CORS: GET con parámetros en la URL.
+  // Un fetch GET con mode:'no-cors' siempre pasa — no hay preflight, no hay bloqueo.
   function enviarASheets() {
     if (!state.group) {
       alert('Primero selecciona tu grupo en el Paso 02.');
@@ -1070,29 +1069,25 @@
     statusEl.textContent = '⏳ Enviando respuestas a Google Sheets...';
     btnEl.disabled = true;
 
-    // Usamos URLSearchParams para enviar como form-data (compatible con no-cors)
+    // Construir URL con parámetros GET (evita CORS completamente)
     const params = new URLSearchParams({
+      action:           'guardar',
       grupo:            state.group,
       p1_clasificacion: clasificacion,
       p2_caso:          p2,
       p3_colombia:      p3,
       p4_territorial:   p4
     });
+    const url = APP_SHEETS_URL + '?' + params.toString();
 
-    fetch(APP_SHEETS_URL, {
-      method:  'POST',
-      mode:    'no-cors',           // evita el bloqueo CORS
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body:    params.toString()
-    })
+    fetch(url, { method: 'GET', mode: 'no-cors' })
     .then(() => {
-      // Con no-cors la respuesta siempre es "opaque" — si llegamos aquí, se envió
+      // Con no-cors la respuesta es opaca pero si no hay error de red, llegó
       statusEl.className   = 'send-status ok';
       statusEl.textContent = '✓ Respuestas enviadas correctamente a Google Sheets. Ahora pueden ver la síntesis para la plenaria.';
       setTimeout(() => goToStep(5), 1500);
     })
     .catch(err => {
-      // Solo llega aquí si hay error de red real (sin internet, URL inválida, etc.)
       statusEl.className   = 'send-status error';
       statusEl.textContent = '✗ Error de conexión. Verifiquen que tienen internet y vuelvan a intentar. (' + err + ')';
     })
