@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividad grupal · Doña Carmen · Unidad 3, Tema 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --ink-soft:#3a3a3a;
+    --paper:#fbfaf7;
+    --paper-alt:#f3f1ea;
+    --line:#d9d4c7;
+    --accent:#5a3a1e;
+    --accent-soft:#b8945f;
+    --hard-law:#7a2b2b;
+    --soft-law:#4a6b8a;
+    --g1:#0e6b66;
+    --g2:#2e5f9e;
+    --g3:#c55a1a;
+    --g4:#6a3d91;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Source Serif 4', Georgia, serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  .label, nav, button, .tag, .meta, .chip, .step, .btn{
+    font-family:'DM Sans', system-ui, sans-serif;
+  }
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+
+  /* ============ HEADER ============ */
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:30px 0 26px;
+  }
+  .breadcrumb{
+    font-family:'DM Sans', sans-serif;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  h1{
+    font-size:34px;
+    line-height:1.15;
+    font-weight:700;
+    letter-spacing:-.01em;
+    margin-bottom:8px;
+  }
+  .subtitle{
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:18px;
+    margin-bottom:18px;
+  }
+  .timer-bar{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    padding:14px 20px;
+    background:var(--paper-alt);
+    border-left:3px solid var(--accent);
+    border-radius:0 4px 4px 0;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+  }
+  .timer-bar .t-item{display:flex;align-items:center;gap:6px}
+  .timer-bar .t-label{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  .timer-bar .t-val{color:var(--ink);font-weight:500}
+  .timer-display{
+    margin-left:auto;
+    font-family:'DM Sans',sans-serif;
+    font-weight:700;
+    font-size:22px;
+    color:var(--accent);
+    background:#fff;
+    padding:8px 16px;
+    border-radius:4px;
+    border:1px solid var(--line);
+    min-width:110px;
+    text-align:center;
+  }
+  .timer-display.running{color:#c55a1a;background:#fff5ed;border-color:#e8b79e}
+  .timer-display.done{color:#7a2b2b;background:#f5e3e3;border-color:#e0bfbf}
+  .timer-btn{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:8px 14px;
+    border-radius:4px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.04em;
+    cursor:pointer;
+    transition:opacity .15s;
+  }
+  .timer-btn:hover{opacity:.85}
+  .timer-btn.reset{background:#888}
+
+  /* ============ STEPS NAV ============ */
+  main{padding:36px 0 80px}
+
+  .step-nav{
+    display:flex;
+    gap:8px;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+  }
+  .step{
+    flex:1;
+    min-width:140px;
+    background:#fff;
+    border:1px solid var(--line);
+    padding:12px 16px;
+    border-radius:4px;
+    cursor:pointer;
+    transition:all .2s;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .step:hover{border-color:var(--accent-soft)}
+  .step.active{border-color:var(--accent);background:var(--paper-alt);border-left:4px solid var(--accent)}
+  .step-num{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--paper-alt);
+    color:var(--ink-soft);
+    font-weight:700;
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .step.active .step-num{background:var(--accent);color:#fff}
+  .step-label{font-size:12px;color:var(--ink-soft);font-weight:500;line-height:1.3}
+  .step.active .step-label{color:var(--ink);font-weight:600}
+
+  .step-panel{display:none;animation:fadeIn .3s ease}
+  .step-panel.active{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  h2{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:8px;
+    letter-spacing:-.005em;
+    color:var(--accent);
+  }
+  h2 .sub-num{
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    color:var(--accent-soft);
+    font-weight:600;
+    letter-spacing:.1em;
+    display:block;
+    margin-bottom:4px;
+  }
+  h3{
+    font-size:19px;
+    font-weight:600;
+    margin:28px 0 12px;
+    color:var(--ink);
+  }
+  h4{
+    font-family:'DM Sans',sans-serif;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin:22px 0 10px;
+    color:var(--accent);
+  }
+  p{margin-bottom:12px}
+  .lede{font-size:17px;color:var(--ink-soft);font-style:italic;margin-bottom:22px}
+
+  /* ============ CASO ============ */
+  .caso-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--hard-law);
+    padding:28px 32px;
+    border-radius:4px;
+    margin:20px 0;
+    font-size:16.5px;
+    line-height:1.75;
+  }
+  .caso-box .caso-tag{
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    color:var(--hard-law);
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:12px;
+    display:block;
+  }
+  .caso-box p{font-style:italic;color:var(--ink)}
+  .caso-box p:last-child{margin-bottom:0}
+
+  /* ============ GROUP SELECTOR ============ */
+  .group-selector{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+    margin:20px 0 30px;
+  }
+  @media(max-width:760px){.group-selector{grid-template-columns:repeat(2,1fr)}}
+  .group-btn{
+    background:#fff;
+    border:2px solid var(--line);
+    padding:16px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:all .2s;
+    text-align:center;
+  }
+  .group-btn:hover{transform:translateY(-2px)}
+  .group-btn.g1{border-color:var(--g1)}
+  .group-btn.g2{border-color:var(--g2)}
+  .group-btn.g3{border-color:var(--g3)}
+  .group-btn.g4{border-color:var(--g4)}
+  .group-btn.active{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+  }
+  .group-btn.g1.active{background:var(--g1);color:#fff}
+  .group-btn.g2.active{background:var(--g2);color:#fff}
+  .group-btn.g3.active{background:var(--g3);color:#fff}
+  .group-btn.g4.active{background:var(--g4);color:#fff}
+  .group-btn .g-chip{
+    font-family:'DM Sans',sans-serif;
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:.12em;
+    margin-bottom:6px;
+  }
+  .group-btn.g1 .g-chip{color:var(--g1)}
+  .group-btn.g2 .g-chip{color:var(--g2)}
+  .group-btn.g3 .g-chip{color:var(--g3)}
+  .group-btn.g4 .g-chip{color:var(--g4)}
+  .group-btn.active .g-chip{color:#fff}
+  .group-btn .g-inst{
+    font-family:'Source Serif 4',serif;
+    font-size:14px;
+    font-weight:600;
+    line-height:1.3;
+  }
+  .group-btn .g-members{
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    margin-top:6px;
+    opacity:.7;
+  }
+
+  /* ============ INSTRUMENT DETAIL ============ */
+  .inst-detail{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:24px 28px;
+    margin-top:16px;
+    display:none;
+  }
+  .inst-detail.visible{display:block}
+  .inst-detail .inst-header{
+    border-bottom:2px solid;
+    padding-bottom:14px;
+    margin-bottom:18px;
+  }
+  .inst-detail[data-grp="G1"] .inst-header{border-color:var(--g1)}
+  .inst-detail[data-grp="G2"] .inst-header{border-color:var(--g2)}
+  .inst-detail[data-grp="G3"] .inst-header{border-color:var(--g3)}
+  .inst-detail[data-grp="G4"] .inst-header{border-color:var(--g4)}
+  .inst-detail .inst-chip{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    letter-spacing:.12em;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .inst-detail[data-grp="G1"] .inst-chip{color:var(--g1)}
+  .inst-detail[data-grp="G2"] .inst-chip{color:var(--g2)}
+  .inst-detail[data-grp="G3"] .inst-chip{color:var(--g3)}
+  .inst-detail[data-grp="G4"] .inst-chip{color:var(--g4)}
+  .inst-detail .inst-title{
+    font-size:22px;
+    font-weight:700;
+    line-height:1.25;
+    margin-bottom:4px;
+  }
+  .inst-detail .inst-source{
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .inst-key-fact{
+    background:var(--paper-alt);
+    padding:14px 18px;
+    border-radius:4px;
+    margin:14px 0;
+    font-size:14.5px;
+    line-height:1.6;
+  }
+  .inst-key-fact strong{color:var(--accent)}
+
+  /* ============ CONSIGNA ============ */
+  .consigna-box{
+    background:linear-gradient(135deg, #fbf5e7 0%, #f5ecd3 100%);
+    border-left:4px solid var(--accent);
+    padding:24px 28px;
+    border-radius:4px;
+    margin:20px 0;
+    font-size:16.5px;
+    line-height:1.7;
+  }
+  .consigna-box p{font-style:italic}
+  .consigna-box p:last-child{margin-bottom:0}
+
+  /* ============ PREGUNTAS / FORM ============ */
+  .form-container{
+    margin-top:24px;
+  }
+  .question-block{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:22px 26px;
+    margin-bottom:18px;
+    transition:border-color .2s;
+  }
+  .question-block:focus-within{border-color:var(--accent)}
+  .question-block .q-num{
+    display:inline-block;
+    width:28px;
+    height:28px;
+    background:var(--accent);
+    color:#fff;
+    border-radius:50%;
+    text-align:center;
+    line-height:28px;
+    font-family:'DM Sans',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    margin-right:10px;
+    vertical-align:middle;
+  }
+  .question-block .q-title{
+    display:inline-block;
+    font-family:'DM Sans',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
+    vertical-align:middle;
+  }
+  .question-block .q-hint{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin:10px 0 12px;
+    padding-left:38px;
+    line-height:1.55;
+  }
+  .question-block textarea{
+    width:100%;
+    min-height:110px;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:15px;
+    line-height:1.6;
+    color:var(--ink);
+    background:var(--paper);
+    resize:vertical;
+    transition:border-color .2s;
+  }
+  .question-block textarea:focus{
+    outline:none;
+    border-color:var(--accent);
+    background:#fff;
+  }
+
+  /* Choice chips for Q1 */
+  .choice-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+    flex-wrap:wrap;
+  }
+  .choice-chip{
+    font-family:'DM Sans',sans-serif;
+    padding:8px 14px;
+    border:1.5px solid var(--line);
+    border-radius:20px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:500;
+    background:#fff;
+    color:var(--ink-soft);
+    transition:all .2s;
+  }
+  .choice-chip:hover{border-color:var(--accent-soft)}
+  .choice-chip.selected.hard{
+    background:#f5e3e3;
+    color:var(--hard-law);
+    border-color:var(--hard-law);
+    font-weight:700;
+  }
+  .choice-chip.selected.soft{
+    background:#e4eaf2;
+    color:var(--soft-law);
+    border-color:var(--soft-law);
+    font-weight:700;
+  }
+
+  /* ============ ACTIONS ============ */
+  .actions-bar{
+    margin-top:30px;
+    padding:20px 24px;
+    background:var(--paper-alt);
+    border-radius:6px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .actions-bar .action-label{
+    font-family:'DM Sans',sans-serif;
+    font-size:11.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+    margin-right:auto;
+  }
+  .btn{
+    font-family:'DM Sans',sans-serif;
+    padding:11px 20px;
+    border-radius:4px;
+    border:none;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.04em;
+    transition:opacity .15s, transform .15s;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-secondary{background:#fff;color:var(--accent);border:1.5px solid var(--accent)}
+  .btn-ghost{background:transparent;color:var(--ink-soft);border:1px solid var(--line)}
+
+  /* ============ SUMMARY ============ */
+  .summary-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:26px 30px;
+    margin-top:20px;
+  }
+  .summary-card h3{margin-top:0}
+  .summary-item{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .summary-item:last-child{border-bottom:none}
+  .summary-item .s-label{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .summary-item .s-content{
+    font-size:15px;
+    line-height:1.6;
+    white-space:pre-wrap;
+    color:var(--ink);
+  }
+  .summary-item .s-empty{font-style:italic;color:var(--accent-soft);font-size:14px}
+
+  /* ============ REFLEXION PROMPT ============ */
+  .reflex-prompt{
+    background:#fffef5;
+    border:1px dashed #c4a95e;
+    padding:18px 22px;
+    border-radius:4px;
+    margin:20px 0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .reflex-prompt::before{
+    content:'REFLEXIÓN 2 · SABER HACER';
+    font-family:'DM Sans',sans-serif;
+    font-size:10px;
+    letter-spacing:.14em;
+    font-weight:700;
+    color:#8c6d20;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  /* ============ SAVED INDICATOR ============ */
+  .saved-indicator{
+    font-family:'DM Sans',sans-serif;
+    font-size:11.5px;
+    color:var(--g1);
+    font-weight:600;
+    opacity:0;
+    transition:opacity .3s;
+  }
+  .saved-indicator.visible{opacity:1}
+
+  @media print {
+    .timer-bar, .step-nav, .actions-bar, .group-selector, header{display:none}
+    .step-panel{display:block !important;page-break-before:always}
+    .step-panel:first-of-type{page-break-before:auto}
+    .inst-detail{display:block !important;page-break-inside:avoid}
+    body{background:#fff}
+  }
+  @media (max-width:680px){
+    h1{font-size:26px}
+    .step-nav{gap:6px}
+    .step{min-width:100px;padding:10px 12px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="breadcrumb">Unidad 3 · Tema 1 · Sesión 24/04/2026 · Breakout rooms (9:08–9:28)</div>
+    <h1>Actividad grupal · El caso de Doña Carmen</h1>
+    <p class="subtitle">Análisis de naturaleza jurídica inducido por el caso clínico</p>
+
+    <div class="timer-bar">
+      <div class="t-item"><span class="t-label">Duración</span><span class="t-val">20 minutos</span></div>
+      <div class="t-item"><span class="t-label">Modalidad</span><span class="t-val">Trabajo colaborativo por grupo</span></div>
+      <div class="t-item"><span class="t-label">Plenaria</span><span class="t-val">9:28 a.m. · 3 min por grupo</span></div>
+      <div id="timerDisplay" class="timer-display">20:00</div>
+      <button id="timerBtn" class="timer-btn">Iniciar</button>
+      <button id="timerReset" class="timer-btn reset">Reiniciar</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <!-- STEP NAV -->
+  <div class="step-nav">
+    <div class="step active" data-step="1">
+      <div class="step-num">1</div>
+      <div class="step-label">Caso detonador</div>
+    </div>
+    <div class="step" data-step="2">
+      <div class="step-num">2</div>
+      <div class="step-label">Elegir mi grupo</div>
+    </div>
+    <div class="step" data-step="3">
+      <div class="step-num">3</div>
+      <div class="step-label">Mi instrumento</div>
+    </div>
+    <div class="step" data-step="4">
+      <div class="step-num">4</div>
+      <div class="step-label">Consigna y análisis</div>
+    </div>
+    <div class="step" data-step="5">
+      <div class="step-num">5</div>
+      <div class="step-label">Síntesis para plenaria</div>
+    </div>
+  </div>
+
+  <!-- STEP 1: CASO -->
+  <section class="step-panel active" data-panel="1">
+    <h2><span class="sub-num">PASO 01</span>El caso clínico</h2>
+    <p class="lede">Lee el caso con atención. No se anticipan respuestas: las hipótesis emergen del análisis jurídico que harás con tu grupo.</p>
+
+    <div class="caso-box">
+      <span class="caso-tag">Caso · Doña Carmen · Caquetá</span>
+      <p>«Doña Carmen, 62 años, diagnóstico de cáncer gástrico estadio IV, reside en un municipio disperso del Caquetá. Lleva tres días con dolor oncológico EVA 9/10. El médico del hospital de primer nivel prescribe morfina oral de liberación inmediata. La farmacia del hospital no tiene el medicamento: nunca lo ha tenido. El sistema de referencia hacia Florencia tardará al menos 72 horas.»</p>
+      <p>«La hija de Doña Carmen pregunta al médico: <em>‘Doctor, ¿no hay una ley que nos proteja? ¿No tiene mi mamá derecho a que no la dejen sufrir así?’</em>»</p>
+    </div>
+
+    <h3>Preguntas socráticas iniciales</h3>
+    <p>Antes de abrir los breakout rooms, el docente planteó cuatro preguntas. No hay que responderlas aquí: quedan como brújula para el análisis grupal.</p>
+    <ol style="list-style:none;padding:0;margin:16px 0">
+      <li style="padding:10px 14px 10px 18px;background:var(--paper-alt);border-left:3px solid var(--accent);margin-bottom:8px;font-size:15px">1 · ¿Qué derechos fundamentales están en juego?</li>
+      <li style="padding:10px 14px 10px 18px;background:var(--paper-alt);border-left:3px solid var(--accent);margin-bottom:8px;font-size:15px">2 · ¿Existe alguna norma internacional que obligue a Colombia a garantizar este acceso?</li>
+      <li style="padding:10px 14px 10px 18px;background:var(--paper-alt);border-left:3px solid var(--accent);margin-bottom:8px;font-size:15px">3 · ¿Qué tipo de norma sería: recomendación, política u obligación legal exigible?</li>
+      <li style="padding:10px 14px 10px 18px;background:var(--paper-alt);border-left:3px solid var(--accent);margin-bottom:8px;font-size:15px">4 · ¿Se podría argumentar que Doña Carmen está siendo sometida a un trato cruel por omisión del Estado?</li>
+    </ol>
+
+    <div class="reflex-prompt">
+      Antes de entrar al trabajo grupal, dedica un minuto de reflexión silenciosa. Desde tu territorio, <strong>¿has vivido una situación similar a la de Doña Carmen?</strong> ¿Qué hiciste? ¿Qué norma internacional te habría respaldado? Esta pregunta atravesará todo el análisis que sigue.
+    </div>
+
+    <div class="actions-bar">
+      <span class="action-label">Siguiente paso</span>
+      <button class="btn btn-primary" onclick="goToStep(2)">Elegir mi grupo →</button>
+    </div>
+  </section>
+
+  <!-- STEP 2: GRUPO -->
+  <section class="step-panel" data-panel="2">
+    <h2><span class="sub-num">PASO 02</span>Selecciona tu grupo</h2>
+    <p class="lede">Cada grupo recibe un instrumento internacional distinto. Los cuatro ángulos se complementan en la plenaria para construir el marco de las cinco vías jurídicas.</p>
+
+    <div class="group-selector">
+      <div class="group-btn g1" data-grp="G1">
+        <div class="g-chip">GRUPO 1 · OPS/PAHO</div>
+        <div class="g-inst">WHA67.19</div>
+        <div class="g-members">Giraldo · Sierra · Herrera</div>
+      </div>
+      <div class="group-btn g2" data-grp="G2">
+        <div class="g-chip">GRUPO 2 · CEPAL/RIAS</div>
+        <div class="g-inst">Convención A-70</div>
+        <div class="g-members">Rodríguez · Vega · Rennis</div>
+      </div>
+      <div class="group-btn g3" data-grp="G3">
+        <div class="g-chip">GRUPO 3 · ALCP/GPC</div>
+        <div class="g-inst">Informe Méndez</div>
+        <div class="g-members">Reales · Maradiaga · Montero</div>
+      </div>
+      <div class="group-btn g4" data-grp="G4">
+        <div class="g-chip">GRUPO 4 · Mesa Territorial</div>
+        <div class="g-inst">Res. 53/4 y 54/6 CND</div>
+        <div class="g-members">Ruiz · Manrique · Cháux</div>
+      </div>
+    </div>
+
+    <p style="font-size:14px;color:var(--ink-soft);margin-top:20px">Una vez seleccionado el grupo, el siguiente paso cargará la ficha técnica del instrumento asignado con los datos esenciales para el análisis.</p>
+
+    <div class="actions-bar">
+      <button class="btn btn-ghost" onclick="goToStep(1)">← Volver al caso</button>
+      <span class="action-label" style="margin-left:auto">Siguiente paso</span>
+      <button class="btn btn-primary" onclick="goToStep(3)">Ver mi instrumento →</button>
+    </div>
+  </section>
+
+  <!-- STEP 3: INSTRUMENTO -->
+  <section class="step-panel" data-panel="3">
+    <h2><span class="sub-num">PASO 03</span>Mi instrumento asignado</h2>
+    <p class="lede">Ficha técnica del instrumento. Esta información es el punto de partida para el análisis: amplíala con fuentes primarias si lo consideran necesario.</p>
+
+    <div id="noGroupMsg" style="padding:30px;background:var(--paper-alt);border-radius:6px;text-align:center;color:var(--ink-soft);font-style:italic">
+      Primero selecciona tu grupo en el Paso 02.
+    </div>
+
+    <!-- G1 -->
+    <div class="inst-detail" data-grp="G1">
+      <div class="inst-header">
+        <div class="inst-chip">GRUPO 1 · WHA67.19</div>
+        <div class="inst-title">Resolución WHA67.19 (2014)</div>
+        <div class="inst-source">Fortalecimiento de los cuidados paliativos como componente de una atención integral durante el curso de la vida · 67ª Asamblea Mundial de la Salud · OMS</div>
+      </div>
+
+      <h4>Naturaleza jurídica</h4>
+      <p>Resolución de la Asamblea Mundial de la Salud (AMS). <strong>Soft law con obligaciones programáticas</strong>: no es un tratado vinculante, pero genera compromisos políticos y programáticos para los Estados Miembros de la OMS, incluido Colombia.</p>
+
+      <h4>Contenido relevante</h4>
+      <p>Primera resolución mundial específicamente dedicada a cuidados paliativos. Insta a los Estados Miembros a integrar los CP como <strong>componente básico de los sistemas de salud</strong>, con énfasis en atención primaria en salud (APS) y atención comunitaria/domiciliaria.</p>
+
+      <div class="inst-key-fact">
+        <strong>Dato clave para la discusión.</strong> Este instrumento ya lo trabajaron en la Unidad 2 <em>como política</em>. El reto de hoy es reexaminarlo <em>como instrumento jurídico</em>: si no es vinculante, ¿qué fuerza tiene? ¿Qué tipo de obligación concreta genera para el Ministerio de Salud y para las secretarías departamentales? ¿Puede el paciente invocarla ante un juez?
+      </div>
+
+      <h4>Hilo con la paradoja colombiana</h4>
+      <p>Colombia adoptó la Ley 1733 apenas cuatro meses después de la WHA67.19. La pregunta es: en la década posterior, ¿ha traducido Colombia la obligación programática de la WHA67.19 en presupuesto, servicios y medicamentos disponibles en sus 32 departamentos?</p>
+    </div>
+
+    <!-- G2 -->
+    <div class="inst-detail" data-grp="G2">
+      <div class="inst-header">
+        <div class="inst-chip">GRUPO 2 · CONVENCIÓN A-70</div>
+        <div class="inst-title">Convención Interamericana sobre la Protección de los Derechos Humanos de las Personas Mayores (A-70)</div>
+        <div class="inst-source">OEA · adoptada en Washington, 15 de junio de 2015 · Primer tratado internacional vinculante específico sobre derechos de personas mayores</div>
+      </div>
+
+      <h4>Naturaleza jurídica</h4>
+      <p><strong>Hard law · Tratado interamericano vinculante.</strong> Único instrumento del sistema interamericano que menciona cuidados paliativos explícitamente (Art. 2, definición; Art. 6, derecho a la vida y a una vida digna; Art. 12, cuidados de largo plazo incluyendo CP). Incluye mecanismo de peticiones individuales ante la CIDH (Art. 36).</p>
+
+      <h4>Contenido relevante para CP</h4>
+      <p>El <strong>Art. 12</strong> obliga a los Estados Parte a garantizar cuidados paliativos en los servicios de cuidado a largo plazo. El <strong>Art. 19</strong> (derecho a la salud) refuerza la obligación de acceso a medicamentos esenciales sin discriminación, incluida la discriminación territorial.</p>
+
+      <div class="inst-key-fact">
+        <strong>Actualización verificada al 17/04/2026.</strong> Colombia aprobó la Convención mediante la Ley 2055 del 10 de septiembre de 2020. La Corte Constitucional la declaró exequible en la Sentencia C-395 del 19 de noviembre de 2021. El 13 de septiembre de 2022, el Ministro de Relaciones Exteriores firmó el instrumento de adhesión, y el 27 de septiembre de 2022 la Viceministra de Asuntos Multilaterales lo depositó ante el Secretario General de la OEA en Washington. <strong>La Convención está vigente para Colombia</strong> y genera obligaciones exigibles ante el sistema interamericano.
+      </div>
+
+      <h4>Hilo con la paradoja colombiana</h4>
+      <p>El encuadre pedagógico original (previo a la verificación) asumía que Colombia no la había ratificado. El ángulo actualizado es más potente: <em>Colombia es Estado Parte de un tratado interamericano vinculante que la obliga a garantizar CP para personas mayores</em>. Doña Carmen tiene 62 años: está plenamente cubierta por el ámbito personal del tratado. La pregunta crítica es por qué la obligación vinculante no se traduce en acceso real en el Caquetá, y qué mecanismos de exigibilidad (incluida la petición individual ante la CIDH) podrían activarse.</p>
+    </div>
+
+    <!-- G3 -->
+    <div class="inst-detail" data-grp="G3">
+      <div class="inst-header">
+        <div class="inst-chip">GRUPO 3 · INFORME MÉNDEZ</div>
+        <div class="inst-title">Informe del Relator Especial sobre la tortura · A/HRC/22/53 (2013)</div>
+        <div class="inst-source">Juan E. Méndez · Consejo de Derechos Humanos de las Naciones Unidas · 22º período de sesiones</div>
+      </div>
+
+      <h4>Naturaleza jurídica</h4>
+      <p><strong>Soft law con fuerza persuasiva</strong>. Informe temático de un relator especial de Naciones Unidas. No es vinculante per se, pero interpreta autoritativamente obligaciones bajo tratados vinculantes (Convención contra la Tortura, PIDCP, PIDESC) y ha sido citado por tribunales y órganos de tratados como criterio interpretativo.</p>
+
+      <h4>Contenido relevante para CP</h4>
+      <p>El informe profundiza la tesis presentada por el Relator Nowak en 2009 (A/HRC/10/44): la denegación del alivio del dolor puede constituir <strong>trato cruel, inhumano o degradante</strong>. Méndez argumenta que esto aplica <em>incluso por omisión y negligencia estatal</em>: cuando el Estado tiene o debería tener conocimiento del sufrimiento evitable y no actúa, la omisión puede configurar trato cruel.</p>
+
+      <div class="inst-key-fact">
+        <strong>Dato clave para la discusión.</strong> El OCCP 2024 documenta la brecha de acceso a opioides entre Bogotá y los departamentos amazónicos (~90 veces). El Estado colombiano <em>tiene conocimiento</em> de esta brecha. ¿Configura esto el umbral de omisión descrito por Méndez? Este es el argumento jurídico más provocador del marco internacional: la posibilidad de que la inequidad territorial documentada constituya una violación sistémica del Art. 7 del PIDCP.
+      </div>
+
+      <h4>Hilo con la paradoja colombiana</h4>
+      <p>G3 trabaja el eje ALCP/Atlas/GPC. Los datos de sus departamentos (Córdoba, Huila, Eje Cafetero) permiten preguntar: si hay municipios sin morfina oral disponible y el Ministerio conoce este dato, ¿qué responsabilidad jurídica se configura? ¿Ha sido invocado alguna vez el Art. 7 del PIDCP en una acción de tutela por negación de CP en Colombia?</p>
+    </div>
+
+    <!-- G4 -->
+    <div class="inst-detail" data-grp="G4">
+      <div class="inst-header">
+        <div class="inst-chip">GRUPO 4 · RES. 53/4 y 54/6 CND</div>
+        <div class="inst-title">Resoluciones 53/4 (2010) y 54/6 (2011) de la Comisión de Estupefacientes</div>
+        <div class="inst-source">Comisión de Estupefacientes (CND) · ECOSOC · Naciones Unidas</div>
+      </div>
+
+      <h4>Naturaleza jurídica</h4>
+      <p><strong>Soft law</strong>. Resoluciones de la Comisión de Estupefacientes, órgano subsidiario del ECOSOC. No son vinculantes, pero concretan las obligaciones derivadas de la Convención Única sobre Estupefacientes de 1961 (tratado vinculante que Colombia ratificó) en cuanto a la disponibilidad adecuada de sustancias fiscalizadas para fines médicos y científicos.</p>
+
+      <h4>Contenido relevante para CP</h4>
+      <p>Las dos resoluciones reafirman la <strong>doble obligación</strong> de los Estados Parte del régimen internacional de fiscalización de drogas: <em>(a)</em> garantizar la disponibilidad adecuada de sustancias fiscalizadas (incluidos opioides como morfina, fentanilo, metadona) para fines médicos; y <em>(b)</em> prevenir el desvío y el abuso. La Convención Única de 1961 ya recogía ambas obligaciones en su preámbulo; estas resoluciones responden a la asimetría histórica que ha privilegiado el control sobre el acceso.</p>
+
+      <div class="inst-key-fact">
+        <strong>Dato clave para la discusión.</strong> La brecha de opioides entre Bogotá (~18 mg/cápita) y departamentos amazónicos (~0.19 mg/cápita) — aproximadamente 90 veces — no es un accidente: es la huella territorial de que Colombia ha cumplido una de las dos obligaciones (control) mucho más agresivamente que la otra (acceso). Este es el núcleo normativo de la paradoja colombiana que G4 ha mapeado transversalmente durante todo el curso.
+      </div>
+
+      <h4>Hilo con la paradoja colombiana</h4>
+      <p>El rol de síntesis territorial de G4 permite tejer los cuatro análisis grupales con el dato empírico que conocen: ¿en qué municipios de sus departamentos la morfina oral es accesible en la farmacia del primer nivel? ¿Qué barreras administrativas (cupos, libros de control, trámites) dificultan la prescripción en zona dispersa? La resolución 2005/25 del ECOSOC (complementaria) es un respaldo adicional para argumentar que el cumplimiento asimétrico viola las obligaciones internacionales del Estado.</p>
+    </div>
+
+    <div class="actions-bar">
+      <button class="btn btn-ghost" onclick="goToStep(2)">← Cambiar de grupo</button>
+      <span class="action-label" style="margin-left:auto">Siguiente paso</span>
+      <button class="btn btn-primary" onclick="goToStep(4)">Comenzar análisis →</button>
+    </div>
+  </section>
+
+  <!-- STEP 4: CONSIGNA + FORM -->
+  <section class="step-panel" data-panel="4">
+    <h2><span class="sub-num">PASO 04</span>Consigna y análisis</h2>
+
+    <div class="consigna-box">
+      <p><strong>Doña Carmen espera.</strong> Su grupo ha recibido un instrumento jurídico internacional que podría protegerla. Tienen 20 minutos para responder cuatro preguntas y preparar una intervención de 3 minutos para la plenaria. Las respuestas quedan guardadas en este navegador mientras dure la sesión, y pueden exportarse al final.</p>
+    </div>
+
+    <div class="form-container">
+
+      <!-- Q1 -->
+      <div class="question-block">
+        <div><span class="q-num">1</span><span class="q-title">Clasificación jurídica</span></div>
+        <p class="q-hint">¿El instrumento es <strong>hard law</strong> (tratado vinculante, genera obligaciones exigibles ante un tribunal internacional) o <strong>soft law</strong> (recomendación, declaración, informe, resolución no vinculante pero con fuerza persuasiva o programática)? ¿Qué tipo de obligación genera? Fundamenten la clasificación.</p>
+        <div class="choice-row">
+          <span class="choice-chip hard" data-field="q1_choice" data-val="hard">Hard law</span>
+          <span class="choice-chip soft" data-field="q1_choice" data-val="soft">Soft law</span>
+          <span class="choice-chip" data-field="q1_choice" data-val="mixto">Naturaleza mixta / híbrida</span>
+        </div>
+        <textarea data-field="q1_text" placeholder="Fundamentación de la clasificación: ¿qué tipo de órgano lo emite? ¿genera obligaciones exigibles ante qué instancia? ¿qué tipo de obligación concreta genera para Colombia?"></textarea>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-block">
+        <div><span class="q-num">2</span><span class="q-title">Aplicación al caso</span></div>
+        <p class="q-hint">¿Este instrumento protege a Doña Carmen? ¿Qué argumento jurídico le darían a su hija si preguntara «¿no hay una ley que nos proteja?». Sean concretos: citen artículo o párrafo del instrumento si corresponde.</p>
+        <textarea data-field="q2_text" placeholder="Respuesta jurídica concreta para la hija de Doña Carmen, anclada en el instrumento..."></textarea>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-block">
+        <div><span class="q-num">3</span><span class="q-title">Obligación para Colombia</span></div>
+        <p class="q-hint">¿Qué debería hacer Colombia para cumplir con este instrumento? ¿Lo está haciendo? Apoyen su respuesta en evidencia: datos del OCCP 2024, Atlas ALCP 2025, Ley 1733, normas secundarias, brechas conocidas en sus territorios.</p>
+        <textarea data-field="q3_text" placeholder="Obligación concreta del Estado + diagnóstico de cumplimiento con evidencia..."></textarea>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-block">
+        <div><span class="q-num">4</span><span class="q-title">Conexión territorial</span></div>
+        <p class="q-hint">Desde la realidad de sus departamentos de ejercicio profesional, ¿qué evidencia tienen de cumplimiento o incumplimiento de esta obligación? ¿Han vivido un caso como el de Doña Carmen? Concreten departamento, municipio (si aplica) y situación observada.</p>
+        <textarea data-field="q4_text" placeholder="Evidencia territorial desde el ejercicio profesional: departamento, municipio, situación observada..."></textarea>
+      </div>
+
+    </div>
+
+    <div class="actions-bar">
+      <button class="btn btn-ghost" onclick="goToStep(3)">← Revisar instrumento</button>
+      <span class="saved-indicator" id="savedMsg">✓ Guardado en este navegador</span>
+      <button class="btn btn-secondary" onclick="clearForm()">Limpiar respuestas</button>
+      <button class="btn btn-primary" onclick="goToStep(5)">Ver síntesis para plenaria →</button>
+    </div>
+  </section>
+
+  <!-- STEP 5: SYNTHESIS -->
+  <section class="step-panel" data-panel="5">
+    <h2><span class="sub-num">PASO 05</span>Síntesis para la plenaria</h2>
+    <p class="lede">A las 9:28 cada grupo tendrá 3 minutos para presentar sus hallazgos al pleno. Esta vista agrupa las cuatro respuestas en un formato listo para leer o exportar.</p>
+
+    <div class="summary-card" id="summaryCard">
+      <h3 id="summaryTitle">Síntesis</h3>
+
+      <div class="summary-item">
+        <div class="s-label">① Clasificación jurídica</div>
+        <div class="s-content" id="sum_q1"></div>
+      </div>
+
+      <div class="summary-item">
+        <div class="s-label">② Aplicación al caso de Doña Carmen</div>
+        <div class="s-content" id="sum_q2"></div>
+      </div>
+
+      <div class="summary-item">
+        <div class="s-label">③ Obligación para Colombia y nivel de cumplimiento</div>
+        <div class="s-content" id="sum_q3"></div>
+      </div>
+
+      <div class="summary-item">
+        <div class="s-label">④ Conexión territorial</div>
+        <div class="s-content" id="sum_q4"></div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;padding:20px 24px;background:var(--paper-alt);border-radius:6px;font-size:14.5px;color:var(--ink-soft);line-height:1.6">
+      <strong style="color:var(--accent)">Para la plenaria (3 min):</strong> empezar por la clasificación jurídica en una frase; luego dar el argumento central de aplicación al caso; cerrar con la conexión territorial más potente. El docente sistematizará las cuatro respuestas en el marco de las cinco vías jurídicas — la exposición teórica emerge del análisis grupal, no al revés.
+    </div>
+
+    <div class="actions-bar">
+      <button class="btn btn-ghost" onclick="goToStep(4)">← Ajustar respuestas</button>
+      <span class="action-label" style="margin-left:auto">Exportar</span>
+      <button class="btn btn-secondary" onclick="window.print()">Imprimir / PDF</button>
+      <button class="btn btn-primary" onclick="copySummary()">Copiar texto</button>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<script>
+  // ============ STEP NAV ============
+  const steps = document.querySelectorAll('.step');
+  const panels = document.querySelectorAll('.step-panel');
+  function goToStep(n){
+    steps.forEach(s => s.classList.toggle('active', +s.dataset.step === n));
+    panels.forEach(p => p.classList.toggle('active', +p.dataset.panel === n));
+    if(n === 5) renderSummary();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  steps.forEach(s => s.addEventListener('click', () => goToStep(+s.dataset.step)));
+
+  // ============ GROUP SELECTION ============
+  const groupBtns = document.querySelectorAll('.group-btn');
+  const instDetails = document.querySelectorAll('.inst-detail');
+  const noGroupMsg = document.getElementById('noGroupMsg');
+
+  function selectGroup(grp){
+    groupBtns.forEach(b => b.classList.toggle('active', b.dataset.grp === grp));
+    instDetails.forEach(d => d.classList.toggle('visible', d.dataset.grp === grp));
+    noGroupMsg.style.display = grp ? 'none' : 'block';
+    state.group = grp;
+    persist();
+  }
+  groupBtns.forEach(b => b.addEventListener('click', () => selectGroup(b.dataset.grp)));
+
+  // ============ STATE PERSIST (sessionStorage via in-memory mirror) ============
+  // Note: using in-memory state only (no localStorage/sessionStorage per artifact constraints)
+  const state = {
+    group: null,
+    q1_choice: null,
+    q1_text: '',
+    q2_text: '',
+    q3_text: '',
+    q4_text: ''
+  };
+
+  const savedMsg = document.getElementById('savedMsg');
+  let saveTimer;
+  function persist(){
+    clearTimeout(saveTimer);
+    savedMsg.classList.add('visible');
+    saveTimer = setTimeout(() => savedMsg.classList.remove('visible'), 1200);
+  }
+
+  // Choice chips
+  document.querySelectorAll('.choice-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const field = chip.dataset.field;
+      const val = chip.dataset.val;
+      document.querySelectorAll(`.choice-chip[data-field="${field}"]`).forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      state[field] = val;
+      persist();
+    });
+  });
+
+  // Textareas
+  document.querySelectorAll('textarea[data-field]').forEach(ta => {
+    ta.addEventListener('input', () => {
+      state[ta.dataset.field] = ta.value;
+      persist();
+    });
+  });
+
+  function clearForm(){
+    if(!confirm('¿Borrar todas las respuestas del formulario?')) return;
+    document.querySelectorAll('textarea[data-field]').forEach(ta => { ta.value = ''; state[ta.dataset.field] = ''; });
+    document.querySelectorAll('.choice-chip').forEach(c => c.classList.remove('selected'));
+    state.q1_choice = null;
+    persist();
+  }
+
+  // ============ SUMMARY ============
+  const instTitles = {
+    G1: 'GRUPO 1 · WHA67.19 (2014)',
+    G2: 'GRUPO 2 · Convención Interamericana A-70 (2015)',
+    G3: 'GRUPO 3 · Informe Méndez · A/HRC/22/53 (2013)',
+    G4: 'GRUPO 4 · Res. 53/4 y 54/6 de la Comisión de Estupefacientes (2010–2011)'
+  };
+  const choiceLabels = { hard:'Hard law', soft:'Soft law', mixto:'Naturaleza mixta / híbrida' };
+
+  function renderSummary(){
+    document.getElementById('summaryTitle').textContent = state.group ? 'Síntesis · ' + instTitles[state.group] : 'Síntesis (selecciona tu grupo primero)';
+
+    const q1Prefix = state.q1_choice ? `[${choiceLabels[state.q1_choice]}] ` : '';
+    setContent('sum_q1', q1Prefix + state.q1_text);
+    setContent('sum_q2', state.q2_text);
+    setContent('sum_q3', state.q3_text);
+    setContent('sum_q4', state.q4_text);
+  }
+  function setContent(id, text){
+    const el = document.getElementById(id);
+    if(text && text.trim()){
+      el.textContent = text;
+      el.classList.remove('s-empty');
+    } else {
+      el.innerHTML = '<span class="s-empty">— Sin respuesta aún —</span>';
+    }
+  }
+
+  function copySummary(){
+    const title = state.group ? instTitles[state.group] : 'Grupo sin seleccionar';
+    const q1 = (state.q1_choice ? `[${choiceLabels[state.q1_choice]}] ` : '') + (state.q1_text || '—');
+    const lines = [
+      'Análisis grupal · Doña Carmen · Unidad 3, Tema 1',
+      title,
+      '',
+      '① CLASIFICACIÓN JURÍDICA',
+      q1,
+      '',
+      '② APLICACIÓN AL CASO',
+      state.q2_text || '—',
+      '',
+      '③ OBLIGACIÓN PARA COLOMBIA',
+      state.q3_text || '—',
+      '',
+      '④ CONEXIÓN TERRITORIAL',
+      state.q4_text || '—'
+    ];
+    const text = lines.join('\n');
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Síntesis copiada al portapapeles. Ya puedes pegarla en el chat de la plenaria o en un documento.');
+    }).catch(() => {
+      // Fallback
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      alert('Síntesis copiada al portapapeles.');
+    });
+  }
+
+  // ============ TIMER ============
+  const TIMER_SECONDS = 20 * 60;
+  let remaining = TIMER_SECONDS;
+  let interval = null;
+  const timerDisplay = document.getElementById('timerDisplay');
+  const timerBtn = document.getElementById('timerBtn');
+  const timerReset = document.getElementById('timerReset');
+
+  function formatTime(s){
+    const m = Math.floor(s/60).toString().padStart(2,'0');
+    const sec = (s%60).toString().padStart(2,'0');
+    return `${m}:${sec}`;
+  }
+  function updateDisplay(){
+    timerDisplay.textContent = formatTime(remaining);
+    timerDisplay.classList.toggle('running', interval !== null && remaining > 0);
+    timerDisplay.classList.toggle('done', remaining === 0);
+  }
+  function tick(){
+    remaining--;
+    updateDisplay();
+    if(remaining <= 0){
+      clearInterval(interval);
+      interval = null;
+      timerBtn.textContent = 'Tiempo agotado';
+      timerBtn.disabled = true;
+      updateDisplay();
+    }
+  }
+  timerBtn.addEventListener('click', () => {
+    if(interval){
+      clearInterval(interval);
+      interval = null;
+      timerBtn.textContent = 'Reanudar';
+      updateDisplay();
+    } else if(remaining > 0){
+      interval = setInterval(tick, 1000);
+      timerBtn.textContent = 'Pausar';
+      updateDisplay();
+    }
+  });
+  timerReset.addEventListener('click', () => {
+    clearInterval(interval);
+    interval = null;
+    remaining = TIMER_SECONDS;
+    timerBtn.textContent = 'Iniciar';
+    timerBtn.disabled = false;
+    updateDisplay();
+  });
+  updateDisplay();
+</script>
+
+</body>
+</html>

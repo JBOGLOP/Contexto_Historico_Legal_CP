@@ -1,0 +1,2994 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Clase · Unidad 3, Tema 1 · Legislación internacional en CP</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --ink-soft:#3a3a3a;
+    --paper:#fbfaf7;
+    --paper-alt:#f3f1ea;
+    --line:#d9d4c7;
+    --accent:#5a3a1e;        /* legal / jurídico: marrón tierra */
+    --accent-soft:#b8945f;
+    --hard-law:#7a2b2b;       /* rojo oscuro: vinculante */
+    --soft-law:#4a6b8a;       /* azul gris: no vinculante */
+    --g1:#0e6b66;             /* teal */
+    --g2:#2e5f9e;             /* azul */
+    --g3:#c55a1a;             /* naranja */
+    --g4:#6a3d91;             /* púrpura */
+    --highlight:#f4ecc4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Source Serif 4', Georgia, serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  .label, nav, button, .tag, .meta, th, .group-chip, .time-col, .indicador-label, .vía-label{
+    font-family:'DM Sans', system-ui, sans-serif;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+  /* ============ HEADER ============ */
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:36px 0 28px;
+  }
+  .breadcrumb{
+    font-family:'DM Sans', sans-serif;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:14px;
+  }
+  h1{
+    font-size:38px;
+    line-height:1.15;
+    font-weight:700;
+    letter-spacing:-.01em;
+    margin-bottom:10px;
+  }
+  .subtitle{
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:20px;
+    margin-bottom:22px;
+  }
+  .meta-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:14px 28px;
+    padding:18px 22px;
+    background:var(--paper-alt);
+    border-left:3px solid var(--accent);
+    border-radius:0 4px 4px 0;
+  }
+  .meta-item{font-size:14px}
+  .meta-label{
+    font-family:'DM Sans', sans-serif;
+    font-size:10.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:block;
+    margin-bottom:3px;
+  }
+  .meta-val{color:var(--ink);font-weight:500}
+
+  /* ============ TAB NAV ============ */
+  nav.tabs{
+    position:sticky;
+    top:0;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    z-index:50;
+    margin-top:28px;
+  }
+  .tabs-inner{
+    display:flex;
+    gap:2px;
+    overflow-x:auto;
+    padding:0 28px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .tab-btn{
+    background:none;
+    border:none;
+    font-size:13px;
+    font-weight:500;
+    padding:16px 14px;
+    color:var(--ink-soft);
+    cursor:pointer;
+    border-bottom:3px solid transparent;
+    white-space:nowrap;
+    transition:all .2s;
+    letter-spacing:.01em;
+  }
+  .tab-btn:hover{color:var(--ink);background:var(--paper-alt)}
+  .tab-btn.active{
+    color:var(--accent);
+    border-bottom-color:var(--accent);
+    font-weight:600;
+  }
+  .tab-btn .num{
+    display:inline-block;
+    font-size:10px;
+    color:var(--accent-soft);
+    margin-right:6px;
+    font-weight:600;
+    letter-spacing:.05em;
+  }
+
+  /* ============ SECTIONS ============ */
+  main{padding:50px 0 80px}
+  section.tab-panel{display:none;animation:fadeIn .3s ease}
+  section.tab-panel.active{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  h2{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:10px;
+    letter-spacing:-.005em;
+    color:var(--accent);
+  }
+  h2 .h2-num{
+    font-family:'DM Sans',sans-serif;
+    font-size:14px;
+    color:var(--accent-soft);
+    font-weight:600;
+    letter-spacing:.1em;
+    display:block;
+    margin-bottom:4px;
+  }
+  h3{
+    font-size:21px;
+    font-weight:600;
+    margin:36px 0 12px;
+    color:var(--ink);
+    letter-spacing:-.005em;
+  }
+  h4{
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin:26px 0 10px;
+    color:var(--accent);
+  }
+  p{margin-bottom:14px}
+  p + p{margin-top:-4px}
+  .lede{font-size:17.5px;color:var(--ink-soft);font-style:italic;margin-bottom:26px}
+
+  /* ============ COMPETENCIAS ============ */
+  .comp-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:18px;
+    margin-top:18px;
+  }
+  .comp-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:4px solid var(--accent);
+    padding:22px 22px 24px;
+    border-radius:4px;
+  }
+  .comp-card .comp-tag{
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    font-weight:700;
+    color:var(--accent);
+    display:block;
+    margin-bottom:4px;
+  }
+  .comp-card .comp-name{
+    font-family:'DM Sans',sans-serif;
+    font-weight:700;
+    font-size:16px;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .comp-card p{font-size:15px;line-height:1.6;margin:0}
+
+  /* ============ SEQUENCE TABLE ============ */
+  .bloque{
+    margin-top:34px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .bloque-header{
+    background:var(--accent);
+    color:#fff;
+    padding:16px 22px;
+    font-family:'DM Sans',sans-serif;
+  }
+  .bloque-header .bloque-tag{
+    font-size:11px;
+    letter-spacing:.14em;
+    opacity:.8;
+    display:block;
+    margin-bottom:3px;
+  }
+  .bloque-header .bloque-title{
+    font-size:17px;
+    font-weight:600;
+  }
+  .bloque-header .bloque-time{
+    font-size:13px;
+    opacity:.9;
+    margin-left:10px;
+  }
+  .seq-row{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    border-bottom:1px solid var(--line);
+  }
+  .seq-row:last-child{border-bottom:none}
+  .seq-time{
+    background:var(--paper-alt);
+    padding:18px 14px;
+    font-family:'DM Sans',sans-serif;
+    font-size:12px;
+    font-weight:600;
+    color:var(--accent);
+    border-right:1px solid var(--line);
+  }
+  .seq-time .momento{
+    font-size:10.5px;
+    color:var(--ink-soft);
+    font-weight:500;
+    letter-spacing:.05em;
+    margin-top:6px;
+    display:block;
+    line-height:1.4;
+  }
+  .seq-body{padding:18px 22px}
+  .seq-body .seq-activity{font-size:15px;margin-bottom:10px}
+  .seq-body .seq-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+  }
+  .seq-tag{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    padding:3px 9px;
+    border-radius:12px;
+    background:var(--paper-alt);
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+  }
+  .seq-tag.estrategia{background:#eef2f0;color:var(--g1);border-color:#c8dcd7}
+  .seq-tag.indicador{background:#f6eadb;color:var(--g3);border-color:#e8d0ad}
+
+  /* ============ CONVERGENCIA ============ */
+  .convergencia-callout{
+    background:linear-gradient(135deg, #fbf5e7 0%, #f5ecd3 100%);
+    border:1px solid #e8d8a8;
+    border-left:4px solid var(--accent);
+    padding:22px 26px;
+    border-radius:4px;
+    margin:24px 0;
+  }
+  .convergencia-callout .narrativa{
+    font-style:italic;
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink);
+  }
+  .timeline{
+    margin:28px 0;
+    position:relative;
+  }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    left:90px;
+    top:12px;
+    bottom:12px;
+    width:2px;
+    background:var(--accent-soft);
+  }
+  .hito{
+    display:grid;
+    grid-template-columns:90px 24px 1fr;
+    gap:0 14px;
+    margin-bottom:18px;
+    align-items:start;
+  }
+  .hito-fecha{
+    font-family:'DM Sans',sans-serif;
+    font-weight:700;
+    font-size:12px;
+    color:var(--accent);
+    padding-top:2px;
+    text-align:right;
+  }
+  .hito-dot{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:var(--accent);
+    margin:5px auto 0;
+    box-shadow:0 0 0 3px var(--paper);
+    position:relative;
+    z-index:1;
+  }
+  .hito-body{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:12px 16px;
+    border-radius:4px;
+  }
+  .hito-body strong{color:var(--accent)}
+  .hito-body .hito-aporte{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+
+  /* ============ MAPA INSTRUMENTOS ============ */
+  .via{
+    margin-top:34px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .via-header{
+    padding:16px 22px;
+    font-family:'DM Sans',sans-serif;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .via-num{
+    background:var(--accent);
+    color:#fff;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:14px;
+    flex-shrink:0;
+  }
+  .via-title{
+    font-weight:600;
+    font-size:16px;
+    color:var(--ink);
+  }
+  .via-subtitle{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+  table.instruments{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  table.instruments th{
+    text-align:left;
+    padding:10px 14px;
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--paper-alt);
+    border-bottom:1px solid var(--line);
+    font-weight:600;
+    vertical-align:top;
+  }
+  table.instruments td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+    line-height:1.55;
+  }
+  table.instruments tr:last-child td{border-bottom:none}
+  .nat-hard, .nat-soft{
+    display:inline-block;
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.06em;
+    padding:3px 8px;
+    border-radius:3px;
+  }
+  .nat-hard{background:#f5e3e3;color:var(--hard-law);border:1px solid #e0bfbf}
+  .nat-soft{background:#e4eaf2;color:var(--soft-law);border:1px solid #c2cfdf}
+  td .inst-name{font-weight:600;color:var(--ink)}
+  td .inst-year{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    color:var(--accent-soft);
+    display:block;
+    margin-top:2px;
+  }
+
+  /* ============ CASO CLÍNICO ============ */
+  .caso-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--hard-law);
+    padding:26px 30px;
+    border-radius:4px;
+    margin:20px 0;
+    font-size:16.5px;
+    line-height:1.75;
+  }
+  .caso-box .caso-tag{
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    color:var(--hard-law);
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    display:block;
+  }
+  .caso-box p{font-style:italic;color:var(--ink)}
+
+  .preguntas-socraticas{
+    background:var(--paper-alt);
+    padding:20px 24px;
+    border-radius:4px;
+    margin:18px 0;
+  }
+  .preguntas-socraticas h4{margin-top:0;color:var(--accent)}
+  .preguntas-socraticas ol{
+    list-style:none;
+    counter-reset:preg;
+  }
+  .preguntas-socraticas ol li{
+    counter-increment:preg;
+    position:relative;
+    padding-left:34px;
+    margin:10px 0;
+    font-size:15.5px;
+  }
+  .preguntas-socraticas ol li::before{
+    content:counter(preg);
+    position:absolute;
+    left:0;
+    top:-2px;
+    width:24px;
+    height:24px;
+    background:var(--accent);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'DM Sans',sans-serif;
+    font-size:12px;
+    font-weight:700;
+  }
+
+  /* ============ GROUP ASSIGN ============ */
+  .groups-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:16px;
+    margin-top:18px;
+  }
+  .group-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:4px solid var(--accent);
+    padding:20px 22px;
+    border-radius:4px;
+  }
+  .group-card.g1{border-top-color:var(--g1)}
+  .group-card.g2{border-top-color:var(--g2)}
+  .group-card.g3{border-top-color:var(--g3)}
+  .group-card.g4{border-top-color:var(--g4)}
+  .group-card .group-chip{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    letter-spacing:.12em;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .group-card.g1 .group-chip{color:var(--g1)}
+  .group-card.g2 .group-chip{color:var(--g2)}
+  .group-card.g3 .group-chip{color:var(--g3)}
+  .group-card.g4 .group-chip{color:var(--g4)}
+  .group-card .inst-assigned{
+    font-weight:700;
+    font-size:15px;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .group-card .rationale{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+  .group-card .members{
+    font-family:'DM Sans',sans-serif;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px dashed var(--line);
+  }
+
+  /* ============ REFLEXIONES ============ */
+  .reflex-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:16px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .reflex-table th{
+    background:var(--accent);
+    color:#fff;
+    text-align:left;
+    padding:12px 16px;
+    font-family:'DM Sans',sans-serif;
+    font-size:11.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .reflex-table td{
+    padding:14px 16px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+    font-size:14.5px;
+    line-height:1.6;
+  }
+  .reflex-table tr:last-child td{border-bottom:none}
+  .reflex-dim{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    letter-spacing:.08em;
+    font-weight:700;
+    color:var(--accent);
+  }
+
+  /* ============ LEGAL DESIGN ============ */
+  .legal-design-intro{
+    background:linear-gradient(135deg, #eef4f3 0%, #dee9e7 100%);
+    border-left:4px solid var(--g1);
+    padding:22px 26px;
+    border-radius:4px;
+    font-style:italic;
+    margin:20px 0;
+    font-size:16.5px;
+    color:var(--ink);
+  }
+
+  /* ============ CIERRE ============ */
+  .pregunta-cierre{
+    font-size:21px;
+    line-height:1.5;
+    font-style:italic;
+    padding:26px 30px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    border-radius:4px;
+    margin:22px 0;
+    color:var(--ink);
+  }
+
+  /* ============ NOTA DOCENTE ============ */
+  .nota-docente{
+    background:#fffef5;
+    border:1px dashed #c4a95e;
+    padding:18px 22px;
+    border-radius:4px;
+    margin:20px 0;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .nota-docente::before{
+    content:'NOTA DOCENTE';
+    font-family:'DM Sans',sans-serif;
+    font-size:10px;
+    letter-spacing:.14em;
+    font-weight:700;
+    color:#8c6d20;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  /* ============ ACTUALIZACIÓN CRÍTICA ============ */
+  .actualizacion-critica{
+    background:#fef0eb;
+    border:1px solid #e8b79e;
+    border-left:4px solid #c55a1a;
+    padding:20px 24px;
+    border-radius:4px;
+    margin:22px 0;
+  }
+  .actualizacion-critica::before{
+    content:'⚠ ACTUALIZACIÓN NORMATIVA VERIFICADA (17/04/2026)';
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    letter-spacing:.1em;
+    font-weight:700;
+    color:#a04616;
+    display:block;
+    margin-bottom:8px;
+  }
+  .actualizacion-critica p{font-size:14.5px;margin-bottom:8px}
+  .actualizacion-critica p:last-child{margin-bottom:0}
+
+  /* ============ CTA ACTIVIDAD ============ */
+  .cta-actividad{
+    background:linear-gradient(135deg, var(--accent) 0%, #4a2f18 100%);
+    color:#fff;
+    padding:30px 36px;
+    border-radius:8px;
+    margin:30px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .cta-actividad .cta-text{flex:1;min-width:280px}
+  .cta-actividad h3{color:#fff;margin:0 0 8px;font-size:20px}
+  .cta-actividad p{color:#f2ead8;margin:0;font-size:15px;line-height:1.5}
+  .cta-actividad a{
+    font-family:'DM Sans',sans-serif;
+    background:#fff;
+    color:var(--accent);
+    padding:14px 24px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:13.5px;
+    letter-spacing:.04em;
+    white-space:nowrap;
+    transition:transform .15s;
+  }
+  .cta-actividad a:hover{transform:translateY(-2px)}
+
+  /* ============ REFERENCIAS ============ */
+  .ref-list{
+    list-style:none;
+    margin-top:14px;
+  }
+  .ref-list li{
+    padding:10px 0 10px 28px;
+    border-bottom:1px solid var(--line);
+    text-indent:-28px;
+    font-size:14px;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+  .ref-list li:last-child{border-bottom:none}
+
+  /* print */
+  @media print {
+    nav.tabs{display:none}
+    section.tab-panel{display:block !important;page-break-before:always}
+    section.tab-panel:first-of-type{page-break-before:auto}
+    .cta-actividad{background:#f3f1ea;color:var(--ink);border:2px solid var(--accent)}
+    .cta-actividad h3, .cta-actividad p{color:var(--ink)}
+    .cta-actividad a{display:none}
+  }
+  @media (max-width:680px){
+    h1{font-size:28px}
+    .seq-row{grid-template-columns:70px 1fr}
+    .timeline::before{left:70px}
+    .hito{grid-template-columns:70px 24px 1fr}
+  }
+
+  /* ============ PANORAMA VISUAL COMPONENTS ============ */
+  .pregunta-transform{
+    display:grid;
+    grid-template-columns:1fr 60px 1fr;
+    gap:0;
+    align-items:center;
+    margin:28px 0 36px;
+  }
+  @media(max-width:680px){.pregunta-transform{grid-template-columns:1fr;gap:12px}}
+  .pregunta-box{
+    padding:22px 20px;
+    border-radius:10px;
+    text-align:center;
+    transition:transform .2s;
+  }
+  .pregunta-box:hover{transform:translateY(-3px)}
+  .pregunta-box.unidad2{
+    background:var(--paper-alt);
+    border:2px solid var(--soft-law);
+    opacity:.88;
+  }
+  .pregunta-box.unidad3{
+    background:#fff;
+    border:2px solid var(--hard-law);
+    box-shadow:0 4px 20px rgba(122,43,43,.12);
+  }
+  .pregunta-etiqueta{
+    font-family:'DM Sans',sans-serif;
+    font-size:9px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .pregunta-box.unidad2 .pregunta-etiqueta{color:var(--soft-law)}
+  .pregunta-box.unidad3 .pregunta-etiqueta{color:var(--hard-law)}
+  .pregunta-icon{font-size:28px;margin-bottom:8px;line-height:1}
+  .pregunta-texto{
+    font-family:'Source Serif 4',serif;
+    font-size:15px;
+    line-height:1.55;
+    margin-bottom:10px;
+  }
+  .pregunta-sub{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+    letter-spacing:.03em;
+  }
+  .pregunta-flecha{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:0 6px;
+  }
+  .flecha-linea{width:2px;height:20px;background:var(--accent-soft)}
+  .flecha-label{
+    font-family:'DM Sans',sans-serif;
+    font-size:8px;
+    text-align:center;
+    color:var(--accent);
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    line-height:1.4;
+  }
+  .flecha-punta{font-size:22px;color:var(--accent);line-height:1}
+
+  /* Mapa mental */
+  .mapa-titulo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin:10px 0 14px;
+  }
+  .mapa-label{
+    font-family:'DM Sans',sans-serif;
+    font-size:9.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#fff;
+    background:var(--accent);
+    padding:4px 10px;
+    border-radius:3px;
+    font-weight:700;
+    flex-shrink:0;
+  }
+  .mapa-titulo h3{margin:0;font-size:15px;color:var(--ink-soft)}
+  .mapa-mental-wrap{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 10px 8px;
+    margin-bottom:26px;
+    overflow:hidden;
+  }
+  .mapa-svg{width:100%;height:auto;max-height:420px;display:block}
+
+  /* Tarjetas bloque */
+  .bloques-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin:24px 0 30px;
+  }
+  @media(max-width:600px){.bloques-cards{grid-template-columns:1fr}}
+  .bloque-panorama-card{
+    border-radius:10px;
+    padding:22px 20px 18px;
+    border:1px solid var(--line);
+  }
+  .bloque-panorama-card.b1{
+    background:linear-gradient(135deg,#e8f4f3 0%,#fff 100%);
+    border-top:4px solid var(--g1);
+  }
+  .bloque-panorama-card.b2{
+    background:linear-gradient(135deg,#e8eef7 0%,#fff 100%);
+    border-top:4px solid var(--g2);
+  }
+  .bpc-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .bpc-tiempo{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--ink-soft);font-weight:500}
+  .bpc-tag{
+    font-family:'DM Sans',sans-serif;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:3px;
+  }
+  .b1 .bpc-tag{background:var(--g1);color:#fff}
+  .b2 .bpc-tag{background:var(--g2);color:#fff}
+  .bpc-titulo{font-family:'Source Serif 4',serif;font-size:16px;font-weight:700;margin-bottom:12px;color:var(--ink)}
+  .bpc-items{display:flex;flex-direction:column;gap:8px}
+  .bpc-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  .bpc-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:6px}
+  .b1 .bpc-dot{background:var(--g1)}
+  .b2 .bpc-dot{background:var(--g2)}
+
+  /* Mensaje clave visual */
+  .mensaje-clave-visual{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:4px solid var(--hard-law);
+    border-radius:0 0 10px 10px;
+    padding:24px 26px 20px;
+    margin:0 0 28px;
+  }
+  .mcv-eyebrow{
+    font-family:'DM Sans',sans-serif;
+    font-size:9.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--hard-law);
+    font-weight:700;
+    margin-bottom:18px;
+  }
+  .mcv-linea{
+    display:flex;
+    align-items:center;
+    gap:0;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    row-gap:10px;
+  }
+  .mcv-hito{
+    flex:1;
+    min-width:110px;
+    text-align:center;
+    padding:14px 10px;
+    border-radius:8px;
+    background:var(--paper-alt);
+    border:1px solid var(--line);
+  }
+  .mcv-hito.destacado{
+    background:linear-gradient(135deg,#5a3a1e,#7a4f2a);
+    border-color:#5a3a1e;
+    transform:scale(1.05);
+    box-shadow:0 6px 18px rgba(90,58,30,.22);
+  }
+  .mcv-hito.paradoja{
+    background:linear-gradient(135deg,#7a2b2b,#9e3a3a);
+    border-color:#7a2b2b;
+  }
+  .mcv-anio{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:6px;
+    line-height:1.3;
+  }
+  .mcv-hito.destacado .mcv-anio{color:rgba(255,255,255,.65)}
+  .mcv-hito.paradoja .mcv-anio{color:rgba(255,255,255,.65)}
+  .mcv-icono{font-size:22px;margin-bottom:6px;line-height:1}
+  .mcv-desc{font-size:12.5px;line-height:1.45}
+  .mcv-hito.destacado .mcv-desc,.mcv-hito.paradoja .mcv-desc{color:rgba(255,255,255,.92)}
+  .mcv-arrow{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0 6px;
+    flex-shrink:0;
+  }
+  .mcv-arrow-line{
+    width:2px;
+    height:30px;
+    background:var(--line);
+    position:relative;
+  }
+  .mcv-arrow-line::after{
+    content:'▼';
+    position:absolute;
+    bottom:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:10px;
+    color:var(--accent-soft);
+  }
+  .mcv-arrow-label{
+    font-family:'DM Sans',sans-serif;
+    font-size:9px;
+    color:var(--ink-soft);
+    text-align:center;
+    margin-top:16px;
+    line-height:1.4;
+    letter-spacing:.03em;
+  }
+  .mcv-pregunta{
+    text-align:center;
+    font-family:'Source Serif 4',serif;
+    font-size:17px;
+    color:var(--hard-law);
+    padding:14px 20px;
+    background:#f5e3e3;
+    border-radius:6px;
+    border-left:3px solid var(--hard-law);
+  }
+
+  /* ============ SECUENCIA INTERACTIVA · BLOQUE SELECTOR ============ */
+  .blq-selector{
+    display:flex;
+    align-items:stretch;
+    gap:0;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    margin:22px 0 30px;
+  }
+  .blq-btn{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    padding:20px 16px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+    transition:background .2s;
+    font-family:'DM Sans',sans-serif;
+  }
+  .blq-btn:hover{background:var(--paper-alt)}
+  .blq-btn.active{background:var(--paper-alt)}
+  .blq-btn.active .blq-btn-titulo{color:var(--accent)}
+  .blq-ico{font-size:24px;line-height:1}
+  .blq-btn-titulo{
+    font-size:14px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .blq-btn-sub{font-size:12px;color:var(--ink-soft)}
+  .blq-sep{width:1px;background:var(--line);align-self:stretch}
+  .blq-content{display:none}
+  .blq-content.active{display:block}
+
+  /* Progress bar */
+  .b1-progress{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+    margin:0 0 28px;
+    padding:12px 0;
+  }
+  .prog-dot{
+    width:32px;height:32px;
+    border-radius:50%;
+    border:2px solid var(--line);
+    background:#fff;
+    font-family:'DM Sans',sans-serif;
+    font-size:12px;
+    font-weight:700;
+    color:var(--ink-soft);
+    cursor:pointer;
+    transition:all .2s;
+    flex-shrink:0;
+  }
+  .prog-dot.active{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#fff;
+  }
+  .prog-dot.done{
+    background:var(--paper-alt);
+    border-color:var(--accent-soft);
+    color:var(--accent);
+  }
+  .prog-line{
+    flex:1;
+    height:2px;
+    background:var(--line);
+    max-width:80px;
+  }
+
+  /* Steps */
+  .b1-step{display:none;animation:fadeStep .35s ease}
+  .b1-step.active{display:block}
+  @keyframes fadeStep{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+  .step-badge{
+    display:inline-block;
+    font-family:'DM Sans',sans-serif;
+    font-size:9.5px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .step-badge.apertura{background:#e8f4f3;color:var(--g1)}
+  .step-badge.exposicion{background:#e8eef7;color:var(--g2)}
+  .step-badge.sintesis{background:#fef3e8;color:var(--g3)}
+  .step-badge.context{background:#f0ece8;color:var(--accent)}
+  .step-badge.transicion{background:#f3eefa;color:var(--g4)}
+
+  .step-titulo{font-size:24px;font-weight:700;margin:0 0 10px;color:var(--ink)}
+  .step-intro{font-size:15.5px;color:var(--ink-soft);margin-bottom:22px;line-height:1.65}
+
+  /* Apertura reflexiva */
+  .reflexion-central{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    margin-bottom:22px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .reflexion-u2{
+    background:var(--paper-alt);
+    padding:20px 24px;
+    border-bottom:1px solid var(--line);
+    opacity:.8;
+  }
+  .reflexion-arrow{
+    text-align:center;
+    font-size:22px;
+    color:var(--accent-soft);
+    padding:8px;
+    background:#fff;
+  }
+  .reflexion-u3{
+    background:#fff;
+    padding:20px 24px;
+    border-top:3px solid var(--hard-law);
+  }
+  .refl-etiq{
+    font-family:'DM Sans',sans-serif;
+    font-size:10px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .refl-q{
+    font-family:'Source Serif 4',serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .activacion-box{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    background:var(--highlight);
+    border:1px solid #d4c87a;
+    border-radius:8px;
+    padding:18px 20px;
+    margin-bottom:20px;
+  }
+  .activ-icon{font-size:24px;flex-shrink:0}
+  .activ-text{font-size:15px;line-height:1.6}
+
+  /* Hard/Soft law grid */
+  .hl-sl-grid{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    gap:0;
+    align-items:center;
+    margin:0 0 22px;
+  }
+  @media(max-width:620px){.hl-sl-grid{grid-template-columns:1fr;gap:12px}}
+  .hl-card{
+    border-radius:10px;
+    padding:22px 20px;
+    border:2px solid;
+  }
+  .hl-card.hard{
+    background:#fdf0f0;
+    border-color:var(--hard-law);
+  }
+  .hl-card.soft{
+    background:#eef2f9;
+    border-color:var(--soft-law);
+  }
+  .hl-icon{font-size:26px;margin-bottom:8px;line-height:1}
+  .hl-titulo{
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:3px;
+  }
+  .hl-card.hard .hl-titulo{color:var(--hard-law)}
+  .hl-card.soft .hl-titulo{color:var(--soft-law)}
+  .hl-sub{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+  .hl-lista{
+    list-style:none;
+    padding:0;
+    margin:0 0 14px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+  .hl-lista li{
+    font-size:13.5px;
+    padding-left:16px;
+    position:relative;
+    line-height:1.5;
+  }
+  .hl-lista li::before{content:'•';position:absolute;left:0;color:var(--accent-soft)}
+  .hl-ejemplo{
+    background:#fff;
+    border-radius:6px;
+    padding:10px 12px;
+    font-size:13px;
+  }
+  .hl-ej-label{
+    display:block;
+    font-family:'DM Sans',sans-serif;
+    font-size:9.5px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+  .hl-vs{
+    font-family:'DM Sans',sans-serif;
+    font-size:18px;
+    font-weight:700;
+    color:var(--accent-soft);
+    text-align:center;
+    padding:0 14px;
+  }
+  .reflexion-pivot{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--paper-alt);
+    border-left:3px solid var(--accent);
+    padding:16px 18px;
+    border-radius:0 6px 6px 0;
+    margin-bottom:22px;
+    font-size:15.5px;
+    line-height:1.6;
+  }
+  .pivot-icon{font-size:20px;flex-shrink:0}
+
+  /* Acordeón 5 vías */
+  .acord-titulo-mini{
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  .acordeon{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:20px}
+  .acord-item{border-bottom:1px solid var(--line);cursor:pointer}
+  .acord-item:last-child{border-bottom:none}
+  .acord-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 16px;
+    font-family:'DM Sans',sans-serif;
+    font-size:14px;
+    font-weight:600;
+    background:#fff;
+    transition:background .15s;
+  }
+  .acord-item:hover .acord-head,.acord-item.open .acord-head{background:var(--paper-alt)}
+  .acord-num{
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;
+    font-weight:700;
+    flex-shrink:0;
+  }
+  .acord-chevron{margin-left:auto;transition:transform .2s;color:var(--accent-soft)}
+  .acord-item.open .acord-chevron{transform:rotate(180deg)}
+  .acord-body{
+    display:none;
+    padding:14px 16px 14px 50px;
+    font-size:14px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    background:var(--paper-alt);
+    border-top:1px solid var(--line);
+  }
+  .acord-item.open .acord-body{display:block}
+
+  /* Timeline convergencia */
+  .conv-timeline{
+    position:relative;
+    padding-left:24px;
+    margin:0 0 22px;
+  }
+  .conv-timeline::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:20px;
+    bottom:20px;
+    width:3px;
+    background:linear-gradient(to bottom, var(--g1), var(--hard-law), var(--accent), var(--g4));
+    border-radius:2px;
+  }
+  .conv-hito{
+    display:grid;
+    grid-template-columns:70px 16px 1fr;
+    gap:0 14px;
+    margin-bottom:16px;
+    align-items:start;
+    animation:fadeStep .5s ease both;
+    animation-delay:var(--delay,0s);
+  }
+  .conv-fecha{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    color:var(--accent);
+    padding-top:12px;
+    text-align:right;
+    line-height:1.3;
+  }
+  .conv-dot{
+    width:16px;height:16px;
+    border-radius:50%;
+    margin-top:10px;
+    box-shadow:0 0 0 3px var(--paper);
+    position:relative;z-index:1;
+    flex-shrink:0;
+  }
+  .hard-dot{background:var(--hard-law)}
+  .soft-dot{background:var(--soft-law)}
+  .dest-dot{background:var(--accent);width:20px;height:20px;margin-top:8px}
+  .col-dot{background:var(--g4)}
+  .conv-body{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:12px 16px;
+  }
+  .conv-nombre{font-weight:700;font-size:14px;margin-bottom:2px}
+  .conv-org{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .conv-aporte{font-size:13.5px;color:var(--ink-soft);line-height:1.5;margin-bottom:8px}
+  .conv-badge{
+    display:inline-block;
+    font-family:'DM Sans',sans-serif;
+    font-size:9.5px;
+    font-weight:700;
+    letter-spacing:.06em;
+    padding:2px 8px;
+    border-radius:3px;
+  }
+  .hard-badge{background:#f5e3e3;color:var(--hard-law);border:1px solid #e0bfbf}
+  .soft-badge{background:#e4eaf2;color:var(--soft-law);border:1px solid #c2cfdf}
+  .col-badge{background:#f0ece8;color:var(--accent);border:1px solid var(--accent-soft)}
+  .destacado-hito .conv-body{border-color:var(--accent-soft);box-shadow:0 2px 10px rgba(184,148,95,.15)}
+  .colombia-hito .conv-body{border-color:var(--g4);border-left:3px solid var(--g4)}
+  .conv-mensaje{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:linear-gradient(135deg,#5a3a1e,#7a4f2a);
+    color:#fff;
+    border-radius:8px;
+    padding:18px 20px;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:20px;
+  }
+  .conv-msg-icon{font-size:20px;flex-shrink:0}
+
+  /* Contextualización */
+  .latam-grid{
+    display:grid;
+    grid-template-columns:1fr 1.4fr 1fr;
+    gap:14px;
+    margin-bottom:22px;
+  }
+  @media(max-width:600px){.latam-grid{grid-template-columns:1fr}}
+  .latam-stat{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px 16px;
+    text-align:center;
+  }
+  .latam-stat.destacado-stat{
+    background:linear-gradient(135deg,var(--paper-alt),#fff);
+    border-color:var(--accent-soft);
+    border-top:3px solid var(--accent);
+  }
+  .latam-num{
+    font-family:'Source Serif 4',serif;
+    font-size:40px;
+    font-weight:700;
+    color:var(--accent);
+    line-height:1;
+    margin-bottom:6px;
+  }
+  .latam-desc{font-size:13.5px;color:var(--ink-soft);margin-bottom:6px}
+  .latam-paises{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  .paradoja-box{
+    background:#fff;
+    border:1px solid #e0bfbf;
+    border-top:4px solid var(--hard-law);
+    border-radius:0 0 10px 10px;
+    padding:22px 22px 18px;
+    margin-bottom:20px;
+  }
+  .paradoja-titulo{
+    font-family:'DM Sans',sans-serif;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--hard-law);
+    margin-bottom:16px;
+  }
+  .paradoja-grid{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:16px;
+  }
+  .paradoja-item{
+    flex:1;
+    border-radius:8px;
+    padding:16px 14px;
+    text-align:center;
+  }
+  .paradoja-item.verde{background:#e8f4f0;border:1px solid #a8d4c2}
+  .paradoja-item.rojo{background:#f5e3e3;border:1px solid #e0bfbf}
+  .paradoja-flecha{font-size:24px;color:var(--hard-law);font-weight:700;flex-shrink:0}
+  .parad-label{
+    font-family:'DM Sans',sans-serif;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .parad-val{font-family:'Source Serif 4',serif;font-size:16px;font-weight:700;margin-bottom:3px}
+  .parad-sub{font-size:12px;color:var(--ink-soft)}
+  .paradoja-dato{
+    background:var(--paper-alt);
+    border-radius:6px;
+    padding:12px 14px;
+    font-size:13.5px;
+    line-height:1.55;
+    text-align:center;
+  }
+  .dato-fuente{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+  }
+
+  /* Síntesis final / Puente */
+  .sintesis-final{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:24px;
+  }
+  .sint-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    font-size:15.5px;
+    line-height:1.55;
+    padding:14px 16px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+  }
+  .sint-num{
+    width:26px;height:26px;
+    background:#e8f4f3;
+    color:var(--g1);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;
+    flex-shrink:0;
+  }
+  .puente-pregunta{
+    background:linear-gradient(135deg,#2e5f9e,#3a72b8);
+    color:#fff;
+    border-radius:10px;
+    padding:24px 24px;
+    text-align:center;
+    margin-bottom:22px;
+  }
+  .puente-icono{font-size:28px;margin-bottom:10px}
+  .puente-texto{font-size:16px;line-height:1.65}
+
+  /* Navegación pasos */
+  .step-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+  .step-prev,.step-next{
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    padding:10px 18px;
+    border-radius:6px;
+    border:1px solid var(--line);
+    cursor:pointer;
+    transition:all .2s;
+    background:#fff;
+    color:var(--ink);
+  }
+  .step-prev:hover{background:var(--paper-alt)}
+  .step-next{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .step-next:hover{background:#7a4f2a}
+  .step-next.blq-switch{background:var(--g2);border-color:var(--g2)}
+  .step-next.blq-switch:hover{background:#224a80}
+
+  /* Bloque 2 */
+  .b2-header{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    background:linear-gradient(135deg,#2e5f9e 0%,#3a72b8 100%);
+    color:#fff;
+    border-radius:10px;
+    padding:24px 24px;
+    margin-bottom:24px;
+  }
+  .b2-header-icon{font-size:32px;flex-shrink:0}
+  .b2-header-tag{
+    font-family:'DM Sans',sans-serif;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.7);
+    margin-bottom:6px;
+  }
+  .b2-header-titulo{
+    font-family:'Source Serif 4',serif;
+    font-size:20px;
+    font-weight:700;
+    margin:0;
+    color:#fff;
+    line-height:1.35;
+  }
+  .b2-caso{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--hard-law);
+    border-radius:0 8px 8px 0;
+    padding:22px 24px;
+    margin-bottom:22px;
+  }
+  .b2-caso-tag{
+    font-family:'DM Sans',sans-serif;
+    font-size:9.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--hard-law);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .b2-caso-nombre{
+    font-family:'Source Serif 4',serif;
+    font-size:20px;
+    font-weight:700;
+    margin:0 0 12px;
+  }
+  .b2-caso-datos{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .b2-caso-datos span{
+    font-family:'DM Sans',sans-serif;
+    font-size:12.5px;
+    background:var(--paper-alt);
+    border:1px solid var(--line);
+    padding:4px 10px;
+    border-radius:20px;
+  }
+  .b2-preguntas{}
+  .b2-preg-label{
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--hard-law);
+    margin-bottom:10px;
+  }
+  .b2-preg-lista{
+    list-style:none;
+    counter-reset:preg;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .b2-preg-lista li{
+    counter-increment:preg;
+    position:relative;
+    padding-left:36px;
+    font-size:15px;
+    line-height:1.55;
+  }
+  .b2-preg-lista li::before{
+    content:counter(preg);
+    position:absolute;left:0;top:0;
+    width:24px;height:24px;
+    background:var(--hard-law);
+    color:#fff;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;font-weight:700;
+  }
+  .b2-grupos-titulo{
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .b2-grupos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:12px;
+    margin-bottom:24px;
+  }
+  .b2-gcard{
+    border-radius:8px;
+    border:1px solid var(--line);
+    border-top:4px solid;
+    padding:16px 16px 14px;
+    background:#fff;
+  }
+  .b2-gcard.g1c{border-top-color:var(--g1)}
+  .b2-gcard.g2c{border-top-color:var(--g2)}
+  .b2-gcard.g3c{border-top-color:var(--g3)}
+  .b2-gcard.g4c{border-top-color:var(--g4)}
+  .b2-gtag{
+    display:inline-block;
+    font-family:'DM Sans',sans-serif;
+    font-size:10px;font-weight:700;
+    letter-spacing:.12em;
+    padding:2px 8px;
+    border-radius:3px;
+    color:#fff;
+    margin-bottom:8px;
+  }
+  .g1t{background:var(--g1)}
+  .g2t{background:var(--g2)}
+  .g3t{background:var(--g3)}
+  .g4t{background:var(--g4)}
+  .b2-gintegrantes{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .b2-ginstrumento{font-weight:700;font-size:15px;margin-bottom:4px}
+  .b2-gdetalle{font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+
+  /* ============ HITO LINKS ============ */
+  .hito-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:12px;
+  }
+  .hito-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'DM Sans',sans-serif;
+    font-size:12px;
+    font-weight:600;
+    text-decoration:none;
+    padding:6px 12px;
+    border-radius:5px;
+    transition:all .18s;
+    border:1.5px solid;
+    background:#fff;
+    color:var(--accent);
+    border-color:var(--accent-soft);
+  }
+  .hito-link:hover{
+    background:var(--accent);
+    color:#fff;
+    border-color:var(--accent);
+  }
+  .hito-link.hito-link-sec{
+    color:var(--soft-law);
+    border-color:#c2cfdf;
+    font-weight:500;
+  }
+  .hito-link.hito-link-sec:hover{
+    background:var(--soft-law);
+    color:#fff;
+    border-color:var(--soft-law);
+  }
+  .hito-link-ico{font-size:13px;line-height:1}
+
+  /* ============ INSTRUMENT TABLE LINKS ============ */
+  .inst-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+    margin-top:7px;
+  }
+  .inst-link{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;
+    font-weight:600;
+    text-decoration:none;
+    padding:3px 8px;
+    border-radius:4px;
+    transition:all .15s;
+    background:var(--paper-alt);
+    color:var(--soft-law);
+    border:1px solid #c2cfdf;
+    white-space:nowrap;
+  }
+  .inst-link:hover{
+    background:var(--soft-law);
+    color:#fff;
+    border-color:var(--soft-law);
+  }
+  .inst-link.inst-link-col{
+    color:var(--g4);
+    border-color:#d4c4e8;
+  }
+  .inst-link.inst-link-col:hover{
+    background:var(--g4);
+    color:#fff;
+    border-color:var(--g4);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="breadcrumb">Maestría en Cuidados Paliativos · UAN · 2026–I</div>
+    <h1>Plan de clase · Unidad 3 · Tema 1</h1>
+    <p class="subtitle">Introducción a la Unidad 3 + Legislación internacional en cuidados paliativos</p>
+
+    <div class="meta-grid">
+      <div class="meta-item"><span class="meta-label">Asignatura</span><span class="meta-val">Contexto Histórico y Legal de los CP (37542001)</span></div>
+      <div class="meta-item"><span class="meta-label">Fecha</span><span class="meta-val">24 de abril de 2026</span></div>
+      <div class="meta-item"><span class="meta-label">Modalidad</span><span class="meta-val">Sincrónica virtual (UAN)</span></div>
+      <div class="meta-item"><span class="meta-label">Duración</span><span class="meta-val">120 min · 8:00–10:00 a.m.</span></div>
+      <div class="meta-item"><span class="meta-label">Docente</span><span class="meta-val">Jorge</span></div>
+      <div class="meta-item"><span class="meta-label">Sesión siguiente</span><span class="meta-val">08/05/2026 (presencial) · Temas 2 y 3</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" data-tab="panorama"><span class="num">01</span>Panorama</button>
+    <!-- Tab Competencias oculto en versión estudiante -->
+    <button class="tab-btn" data-tab="secuencia"><span class="num">02</span>Secuencia</button>
+    <button class="tab-btn" data-tab="convergencia"><span class="num">04</span>Convergencia 2013–14</button>
+    <button class="tab-btn" data-tab="mapa"><span class="num">05</span>Mapa de instrumentos</button>
+    <button class="tab-btn" data-tab="actividad"><span class="num">06</span>Actividad grupal</button>
+    <button class="tab-btn" data-tab="legal-design"><span class="num">07</span>Legal Design</button>
+    <button class="tab-btn" data-tab="cierre"><span class="num">08</span>Cierre</button>
+    <button class="tab-btn" data-tab="referencias"><span class="num">09</span>Referencias</button>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<!-- ============ 01 PANORAMA ============ -->
+<section class="tab-panel active" id="panorama">
+  <h2><span class="h2-num">SECCIÓN 01</span>Panorama de la sesión</h2>
+  <p class="lede">De la política al derecho: en qué cambia la pregunta entre la Unidad 2 y la Unidad 3.</p>
+
+  <!-- === LA PREGUNTA QUE CAMBIA === -->
+  <div class="pregunta-transform">
+    <div class="pregunta-box unidad2">
+      <div class="pregunta-etiqueta">UNIDAD 2 · Pregunta anterior</div>
+      <div class="pregunta-icon">📋</div>
+      <div class="pregunta-texto">¿Qué <strong>políticas</strong> existen en el ámbito regional e internacional?</div>
+      <div class="pregunta-sub">Identificación · Descripción · Mapeo</div>
+    </div>
+    <div class="pregunta-flecha">
+      <div class="flecha-linea"></div>
+      <div class="flecha-label">LA PREGUNTA<br>TRANSFORMA</div>
+      <div class="flecha-punta">→</div>
+    </div>
+    <div class="pregunta-box unidad3">
+      <div class="pregunta-etiqueta">UNIDAD 3 · Pregunta nueva</div>
+      <div class="pregunta-icon">⚖️</div>
+      <div class="pregunta-texto">¿Cuáles de esos instrumentos generan <strong>obligaciones legales exigibles</strong> para Colombia?</div>
+      <div class="pregunta-sub">Análisis jurídico · Hard / Soft law · Exigibilidad</div>
+    </div>
+  </div>
+
+  <!-- === MAPA MENTAL DE LA SESIÓN === -->
+  <div class="mapa-titulo">
+    <span class="mapa-label">MAPA MENTAL</span>
+    <h3>Arquitectura de la sesión · 24 de abril · 120 minutos</h3>
+  </div>
+
+  <div class="mapa-mental-wrap">
+    <svg class="mapa-svg" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" aria-label="Mapa mental de la sesión">
+      <!-- Líneas de conexión - trazadas primero -->
+      <!-- Centro → Bloque 1 -->
+      <line x1="450" y1="240" x2="220" y2="140" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+      <!-- Centro → Bloque 2 -->
+      <line x1="450" y1="240" x2="680" y2="140" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+      <!-- Centro → Mensaje clave -->
+      <line x1="450" y1="240" x2="450" y2="360" stroke="#7a2b2b" stroke-width="2.5" opacity="0.5"/>
+      <!-- Bloque 1 → sub1 -->
+      <line x1="220" y1="140" x2="100" y2="52" stroke="#0e6b66" stroke-width="1.5" opacity="0.5"/>
+      <!-- Bloque 1 → sub2 -->
+      <line x1="220" y1="140" x2="220" y2="52" stroke="#0e6b66" stroke-width="1.5" opacity="0.5"/>
+      <!-- Bloque 1 → sub3 -->
+      <line x1="220" y1="140" x2="340" y2="52" stroke="#0e6b66" stroke-width="1.5" opacity="0.5"/>
+      <!-- Bloque 2 → sub1 -->
+      <line x1="680" y1="140" x2="560" y2="52" stroke="#2e5f9e" stroke-width="1.5" opacity="0.5"/>
+      <!-- Bloque 2 → sub2 -->
+      <line x1="680" y1="140" x2="680" y2="52" stroke="#2e5f9e" stroke-width="1.5" opacity="0.5"/>
+      <!-- Bloque 2 → sub3 -->
+      <line x1="680" y1="140" x2="800" y2="52" stroke="#2e5f9e" stroke-width="1.5" opacity="0.5"/>
+      <!-- Mensaje clave → paradoja -->
+      <line x1="450" y1="395" x2="300" y2="440" stroke="#7a2b2b" stroke-width="1.5" opacity="0.4"/>
+      <!-- Mensaje clave → pregunta -->
+      <line x1="450" y1="395" x2="600" y2="440" stroke="#7a2b2b" stroke-width="1.5" opacity="0.4"/>
+
+      <!-- Bloque 1 sub-nodos (arriba izquierda) -->
+      <rect x="30" y="16" width="140" height="36" rx="18" fill="#e8f4f3" stroke="#0e6b66" stroke-width="1.5"/>
+      <text x="100" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#0e6b66" font-weight="600">Hard law</text>
+      <text x="100" y="44" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#0e6b66">/  Soft law</text>
+
+      <rect x="148" y="16" width="144" height="36" rx="18" fill="#e8f4f3" stroke="#0e6b66" stroke-width="1.5"/>
+      <text x="220" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#0e6b66" font-weight="600">Convergencia</text>
+      <text x="220" y="44" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#0e6b66">2013–2014</text>
+
+      <rect x="270" y="16" width="140" height="36" rx="18" fill="#e8f4f3" stroke="#0e6b66" stroke-width="1.5"/>
+      <text x="340" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#0e6b66" font-weight="600">Colombia</text>
+      <text x="340" y="44" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#0e6b66">en el escenario</text>
+
+      <!-- BLOQUE 1 nodo principal -->
+      <rect x="110" y="100" width="220" height="80" rx="10" fill="#0e6b66" filter="url(#sombra)"/>
+      <text x="220" y="134" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="white" font-weight="700" letter-spacing="1">BLOQUE 1</text>
+      <text x="220" y="158" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="rgba(255,255,255,0.95)">De la política al derecho</text>
+
+      <!-- Bloque 2 sub-nodos (arriba derecha) -->
+      <rect x="490" y="16" width="140" height="36" rx="18" fill="#e8eef7" stroke="#2e5f9e" stroke-width="1.5"/>
+      <text x="560" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#2e5f9e" font-weight="600">Caso Doña</text>
+      <text x="560" y="44" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#2e5f9e">Carmen (Caquetá)</text>
+
+      <rect x="608" y="16" width="144" height="36" rx="18" fill="#e8eef7" stroke="#2e5f9e" stroke-width="1.5"/>
+      <text x="680" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#2e5f9e" font-weight="600">4 grupos ×</text>
+      <text x="680" y="44" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#2e5f9e">4 instrumentos</text>
+
+      <rect x="728" y="16" width="144" height="36" rx="18" fill="#e8eef7" stroke="#2e5f9e" stroke-width="1.5"/>
+      <text x="800" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#2e5f9e" font-weight="600">5 vías</text>
+      <text x="800" y="44" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#2e5f9e">jurídicas</text>
+
+      <!-- BLOQUE 2 nodo principal -->
+      <rect x="570" y="100" width="220" height="80" rx="10" fill="#2e5f9e" filter="url(#sombra)"/>
+      <text x="680" y="134" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="white" font-weight="700" letter-spacing="1">BLOQUE 2</text>
+      <text x="680" y="158" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="rgba(255,255,255,0.95)">ABP normativo · Doña Carmen</text>
+
+      <!-- NODO CENTRAL -->
+      <circle cx="450" cy="240" r="70" fill="#5a3a1e" filter="url(#sombra2)"/>
+      <text x="450" y="226" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="white" font-weight="700">Unidad 3</text>
+      <text x="450" y="244" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="rgba(255,255,255,0.9)">Legislación</text>
+      <text x="450" y="261" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="rgba(255,255,255,0.9)">Internacional</text>
+
+      <!-- MENSAJE CLAVE nodo -->
+      <rect x="310" y="325" width="280" height="70" rx="10" fill="#7a2b2b" filter="url(#sombra)"/>
+      <text x="450" y="350" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="white" font-weight="700" letter-spacing="0.5">MENSAJE CLAVE</text>
+      <text x="450" y="368" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">2013–2014: de la caridad</text>
+      <text x="450" y="385" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">al derecho humano exigible</text>
+
+      <!-- Nodos inferiores -->
+      <rect x="200" y="418" width="200" height="52" rx="26" fill="#f5e3e3" stroke="#7a2b2b" stroke-width="1.5"/>
+      <text x="300" y="439" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#7a2b2b" font-weight="600">La paradoja colombiana</text>
+      <text x="300" y="456" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#7a2b2b">ley sí · garantía no</text>
+
+      <rect x="500" y="418" width="200" height="52" rx="26" fill="#f5e3e3" stroke="#7a2b2b" stroke-width="1.5"/>
+      <text x="600" y="439" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#7a2b2b" font-weight="600">Pregunta abierta</text>
+      <text x="600" y="456" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9.5" fill="#7a2b2b">¿por qué sin morfina?</text>
+
+      <!-- Filtros SVG -->
+      <defs>
+        <filter id="sombra" x="-10%" y="-10%" width="120%" height="130%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,0.18)"/>
+        </filter>
+        <filter id="sombra2" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(90,58,30,0.35)"/>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- === BLOQUES EN TARJETAS === -->
+  <div class="bloques-cards">
+    <div class="bloque-panorama-card b1">
+      <div class="bpc-header">
+        <div class="bpc-tag">BLOQUE 1</div>
+      </div>
+      <div class="bpc-titulo">De la política al derecho</div>
+      <div class="bpc-items">
+        <div class="bpc-item"><span class="bpc-dot"></span>Distinción <em>hard law / soft law</em></div>
+        <div class="bpc-item"><span class="bpc-dot"></span>Convergencia normativa 2013–2014</div>
+        <div class="bpc-item"><span class="bpc-dot"></span>Colombia en el panorama latinoamericano</div>
+      </div>
+    </div>
+    <div class="bloque-panorama-card b2">
+      <div class="bpc-header">
+        <div class="bpc-tag">BLOQUE 2</div>
+      </div>
+      <div class="bpc-titulo">Las cinco vías jurídicas</div>
+      <div class="bpc-items">
+        <div class="bpc-item"><span class="bpc-dot"></span>Caso detonador: Doña Carmen · Caquetá</div>
+        <div class="bpc-item"><span class="bpc-dot"></span>4 grupos × 4 instrumentos internacionales</div>
+        <div class="bpc-item"><span class="bpc-dot"></span>Construcción colectiva del marco jurídico</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === MENSAJE CLAVE VISUAL === -->
+  <div class="mensaje-clave-visual">
+    <div class="mcv-eyebrow">MENSAJE CLAVE DE LA SESIÓN</div>
+    <div class="mcv-linea">
+      <div class="mcv-hito">
+        <div class="mcv-anio">Antes<br>de 2013</div>
+        <div class="mcv-icono">🤲</div>
+        <div class="mcv-desc">Cuidados paliativos como <strong>acto de caridad</strong></div>
+      </div>
+      <div class="mcv-arrow">
+        <div class="mcv-arrow-line"></div>
+        <div class="mcv-arrow-label">2013–2014<br>Ventana histórica</div>
+      </div>
+      <div class="mcv-hito destacado">
+        <div class="mcv-anio">2013<br>2014</div>
+        <div class="mcv-icono">⚖️</div>
+        <div class="mcv-desc">CP como <strong>derecho humano exigible</strong></div>
+      </div>
+      <div class="mcv-arrow">
+        <div class="mcv-arrow-line"></div>
+        <div class="mcv-arrow-label">10 años<br>después</div>
+      </div>
+      <div class="mcv-hito paradoja">
+        <div class="mcv-anio">Hoy</div>
+        <div class="mcv-icono">🗺️</div>
+        <div class="mcv-desc">Tenemos la ley · <strong>sin garantía territorial</strong></div>
+      </div>
+    </div>
+    <div class="mcv-pregunta">
+      <em>¿Por qué Doña Carmen sigue sin morfina?</em>
+    </div>
+  </div>
+
+  <div class="cta-actividad">
+    <div class="cta-text">
+      <h3>Herramienta HTML5 para la actividad grupal</h3>
+      <p>La actividad en breakout rooms (9:08–9:28) se realiza con una interfaz interactiva dedicada, con el caso, la consigna, el instrumento asignado y formularios de trabajo por grupo.</p>
+    </div>
+    <a href="actividad_grupal_u3_tema1.html" target="_blank">Abrir actividad →</a>
+  </div>
+
+  <div class="nota-docente">
+    Esta sesión introduce la distinción fundamental entre hard law y soft law como herramienta de análisis crítico del marco normativo. La exposición teórica de las cinco vías jurídicas no precede al análisis grupal: <strong>emerge de él</strong> (aula invertida aplicada a contenido jurídico). Los estudiantes ya conocen WHA67.19 de la Unidad 2 como política; hoy la reexaminan como soft law con obligaciones programáticas.
+  </div>
+</section>
+
+<!-- ============ 02 COMPETENCIAS ============ -->
+<!-- Sección 02 Competencias oculta en versión estudiante -->
+<section class="tab-panel" id="competencias" style="display:none">
+  <h2><span class="h2-num">SECCIÓN 02</span>Competencias a desarrollar</h2>
+  <p class="lede">Las competencias de esta sesión se derivan del marco competencial de la Unidad 3 (3.1, 3.2, 3.3) y se operacionalizan para el contenido específico de legislación internacional.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <span class="comp-tag">SABER · 3.1</span>
+      <div class="comp-name">Identificar y clasificar</div>
+      <p>Los instrumentos jurídicos internacionales que fundamentan el derecho a los cuidados paliativos, distinguiendo entre instrumentos vinculantes (<em>hard law</em>) y orientaciones normativas (<em>soft law</em>), y reconociendo las cinco vías jurídicas de fundamentación: derecho a la salud, prohibición de la tortura, derechos de poblaciones específicas, fiscalización de drogas y soft law global.</p>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-tag">SABER HACER · 3.2</span>
+      <div class="comp-name">Relacionar</div>
+      <p>El marco jurídico internacional con las brechas territoriales de acceso a cuidados paliativos y opioides en Colombia, analizando cómo la existencia de obligaciones internacionales vinculantes coexiste con la inequidad en la implementación departamental.</p>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-tag">SER · 3.3</span>
+      <div class="comp-name">Asumir una posición crítica y responsable</div>
+      <p>Frente al marco legal vigente, reconociendo que el profesional de salud no es solo un ejecutor de normas sino un agente de garantía del derecho a los cuidados paliativos en su territorio de ejercicio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 SECUENCIA ============ -->
+<section class="tab-panel" id="secuencia">
+  <h2><span class="h2-num">SECCIÓN 02</span>Recorrido de la sesión</h2>
+  <p class="lede">Dos bloques. En el primero construimos el marco conceptual; en el segundo lo ponemos a prueba con un caso real.</p>
+
+  <!-- BLOQUES SELECTOR -->
+  <div class="blq-selector">
+    <button class="blq-btn active" id="btn-b1" onclick="showBloque('b1')">
+      <span class="blq-ico">📖</span>
+      <span class="blq-btn-titulo">Bloque 1</span>
+      <span class="blq-btn-sub">De la política al derecho</span>
+    </button>
+    <div class="blq-sep"></div>
+    <button class="blq-btn" id="btn-b2" onclick="showBloque('b2')">
+      <span class="blq-ico">⚖️</span>
+      <span class="blq-btn-titulo">Bloque 2</span>
+      <span class="blq-btn-sub">Las cinco vías jurídicas</span>
+    </button>
+  </div>
+
+  <!-- ===== BLOQUE 1 ===== -->
+  <div id="blq-b1" class="blq-content active">
+
+    <!-- Indicador de progreso -->
+    <div class="b1-progress" id="b1progress">
+      <button class="prog-dot active" onclick="goStep(0)" title="Apertura reflexiva">1</button>
+      <div class="prog-line"></div>
+      <button class="prog-dot" onclick="goStep(1)" title="Hard law / Soft law">2</button>
+      <div class="prog-line"></div>
+      <button class="prog-dot" onclick="goStep(2)" title="Convergencia 2013–2014">3</button>
+      <div class="prog-line"></div>
+      <button class="prog-dot" onclick="goStep(3)" title="Colombia en perspectiva">4</button>
+      <div class="prog-line"></div>
+      <button class="prog-dot" onclick="goStep(4)" title="Puente al Bloque 2">5</button>
+    </div>
+
+    <!-- ===== PASO 1: Apertura reflexiva ===== -->
+    <div class="b1-step active" id="step-0">
+      <div class="step-badge apertura">Apertura reflexiva</div>
+      <h3 class="step-titulo">¿Política o derecho?</h3>
+
+      <div class="reflexion-central">
+        <div class="reflexion-u2">
+          <div class="refl-etiq">Unidad 2 — preguntamos:</div>
+          <div class="refl-q">¿Qué <em>políticas</em> existen en el ámbito regional e internacional?</div>
+        </div>
+        <div class="reflexion-arrow">↓</div>
+        <div class="reflexion-u3">
+          <div class="refl-etiq">Unidad 3 — ahora preguntamos:</div>
+          <div class="refl-q">¿Cuáles de esos instrumentos generan <strong>obligaciones legales exigibles</strong> para Colombia?</div>
+        </div>
+      </div>
+
+      <div class="activacion-box">
+        <div class="activ-icon">💬</div>
+        <div class="activ-text">
+          <strong>Activación en chat (1 min)</strong><br>
+          Escribe en el chat un instrumento de la Unidad 2 que recuerdes y di si crees que es <em>vinculante</em> o no vinculante para Colombia.
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <span></span>
+        <button class="step-next" onclick="goStep(1)">Siguiente: Hard law / Soft law →</button>
+      </div>
+    </div>
+
+    <!-- ===== PASO 2: Hard law / Soft law ===== -->
+    <div class="b1-step" id="step-1">
+      <div class="step-badge exposicion">Marco conceptual</div>
+      <h3 class="step-titulo">Hard law · Soft law</h3>
+      <p class="step-intro">No todos los instrumentos internacionales son iguales. La distinción clave determina qué puede exigirle un ciudadano al Estado.</p>
+
+      <div class="hl-sl-grid">
+        <div class="hl-card hard">
+          <div class="hl-icon">🔴</div>
+          <div class="hl-titulo">Hard Law</div>
+          <div class="hl-sub">Derecho duro · Vinculante</div>
+          <ul class="hl-lista">
+            <li>Genera obligaciones jurídicamente exigibles</li>
+            <li>El Estado puede ser declarado responsable</li>
+            <li>Ejemplo: tratados ratificados, convenciones</li>
+          </ul>
+          <div class="hl-ejemplo">
+            <span class="hl-ej-label">Ejemplo en la sesión:</span>
+            Convención Interamericana A-70
+          </div>
+        </div>
+        <div class="hl-vs">vs.</div>
+        <div class="hl-card soft">
+          <div class="hl-icon">🔵</div>
+          <div class="hl-titulo">Soft Law</div>
+          <div class="hl-sub">Derecho blando · Orientador</div>
+          <ul class="hl-lista">
+            <li>Genera compromisos políticos y morales</li>
+            <li>No es directamente justiciable</li>
+            <li>Ejemplo: resoluciones, recomendaciones</li>
+          </ul>
+          <div class="hl-ejemplo">
+            <span class="hl-ej-label">Ejemplo en la sesión:</span>
+            WHA67.19 (OMS, 2014)
+          </div>
+        </div>
+      </div>
+
+      <div class="reflexion-pivot">
+        <div class="pivot-icon">🗺️</div>
+        <div class="pivot-text"><strong>Para un paciente en Caquetá:</strong> ¿qué diferencia práctica tiene que el instrumento que debería protegerlo sea hard law o soft law?</div>
+      </div>
+
+      <!-- Acordeón: 5 vías jurídicas (preview) -->
+      <div class="acord-titulo-mini">Las cinco vías jurídicas — construiremos estas juntos hoy:</div>
+      <div class="acordeon" id="vias-acord">
+        <div class="acord-item" onclick="toggleAcord(this)">
+          <div class="acord-head"><span class="acord-num">1</span> Derecho a la salud <span class="acord-chevron">▾</span></div>
+          <div class="acord-body">Fundamentación desde el derecho al más alto nivel de salud (PIDESC Art. 12). Los cuidados paliativos como componente del derecho a la salud integral.</div>
+        </div>
+        <div class="acord-item" onclick="toggleAcord(this)">
+          <div class="acord-head"><span class="acord-num">2</span> Prohibición de la tortura <span class="acord-chevron">▾</span></div>
+          <div class="acord-body">Informe Méndez (A/HRC/22/53, 2013): negar el alivio del dolor puede constituir trato cruel, inhumano o degradante. Obligación negativa del Estado.</div>
+        </div>
+        <div class="acord-item" onclick="toggleAcord(this)">
+          <div class="acord-head"><span class="acord-num">3</span> Derechos de poblaciones específicas <span class="acord-chevron">▾</span></div>
+          <div class="acord-body">Convención sobre los derechos de las personas con discapacidad. Consenso de Montevideo (CEPAL, 2013) para personas mayores.</div>
+        </div>
+        <div class="acord-item" onclick="toggleAcord(this)">
+          <div class="acord-head"><span class="acord-num">4</span> Fiscalización de drogas <span class="acord-chevron">▾</span></div>
+          <div class="acord-body">Resoluciones 53/4 y 54/6 de la Comisión de Estupefacientes (ONU): garantizar acceso a opioides con fines médicos. Brecha Colombia: Bogotá ~18 mg/cápita vs. amazonia ~0.19 mg/cápita.</div>
+        </div>
+        <div class="acord-item" onclick="toggleAcord(this)">
+          <div class="acord-head"><span class="acord-num">5</span> Soft law global <span class="acord-chevron">▾</span></div>
+          <div class="acord-body">WHA67.19 (OMS, 2014): resolución mundial sobre CP. CD62.R8 (OPS, 2025). Generan compromisos programáticos aunque no sean directamente justiciables.</div>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button class="step-prev" onclick="goStep(0)">← Apertura</button>
+        <button class="step-next" onclick="goStep(2)">Siguiente: Convergencia 2013–2014 →</button>
+      </div>
+    </div>
+
+    <!-- ===== PASO 3: Convergencia 2013–2014 ===== -->
+    <div class="b1-step" id="step-2">
+      <div class="step-badge sintesis">Síntesis histórica</div>
+      <h3 class="step-titulo">La ventana 2013–2014</h3>
+      <p class="step-intro">En solo 14 meses, seis instrumentos de distinta naturaleza jurídica convergieron en un mismo mensaje: el acceso a los cuidados paliativos es un derecho humano.</p>
+
+      <div class="conv-timeline">
+        <div class="conv-hito" style="--delay:0.1s">
+          <div class="conv-fecha">Feb. 2013</div>
+          <div class="conv-dot hard-dot"></div>
+          <div class="conv-body">
+            <div class="conv-nombre">Informe Méndez · A/HRC/22/53</div>
+            <div class="conv-org">Relator Especial ONU · Tortura</div>
+            <div class="conv-aporte">Negar el alivio del dolor = trato inhumano o degradante</div>
+            <span class="conv-badge hard-badge">Hard Law</span>
+          </div>
+        </div>
+        <div class="conv-hito" style="--delay:0.2s">
+          <div class="conv-fecha">Ago. 2013</div>
+          <div class="conv-dot soft-dot"></div>
+          <div class="conv-body">
+            <div class="conv-nombre">Consenso de Montevideo · Medida C.29</div>
+            <div class="conv-org">CEPAL · Conferencia Regional</div>
+            <div class="conv-aporte">Garantizar CP para una muerte digna</div>
+            <span class="conv-badge soft-badge">Soft Law</span>
+          </div>
+        </div>
+        <div class="conv-hito" style="--delay:0.3s">
+          <div class="conv-fecha">Sep. 2013</div>
+          <div class="conv-dot soft-dot"></div>
+          <div class="conv-body">
+            <div class="conv-nombre">Resolución CD52.R9</div>
+            <div class="conv-org">OPS · Consejo Directivo</div>
+            <div class="conv-aporte">Plan de acción regional ENT con CP; antecedente regional de WHA67.19</div>
+            <span class="conv-badge soft-badge">Soft Law</span>
+          </div>
+        </div>
+        <div class="conv-hito destacado-hito" style="--delay:0.4s">
+          <div class="conv-fecha">May. 2014</div>
+          <div class="conv-dot dest-dot"></div>
+          <div class="conv-body">
+            <div class="conv-nombre">Resolución WHA67.19</div>
+            <div class="conv-org">67ª Asamblea Mundial de la Salud · OMS</div>
+            <div class="conv-aporte">Primera resolución mundial sobre CP como componente básico de los sistemas de salud</div>
+            <span class="conv-badge soft-badge">Soft Law</span>
+          </div>
+        </div>
+        <div class="conv-hito colombia-hito" style="--delay:0.5s">
+          <div class="conv-fecha">Sep. 2014</div>
+          <div class="conv-dot col-dot"></div>
+          <div class="conv-body">
+            <div class="conv-nombre">Ley 1733 · Ley Consuelo Devis Saavedra</div>
+            <div class="conv-org">🇨🇴 Congreso de Colombia</div>
+            <div class="conv-aporte">Colombia regula los servicios de CP — uno de solo 5 países latinoamericanos con ley específica</div>
+            <span class="conv-badge col-badge">Colombia actúa</span>
+          </div>
+        </div>
+        <div class="conv-hito" style="--delay:0.6s">
+          <div class="conv-fecha">2014</div>
+          <div class="conv-dot soft-dot"></div>
+          <div class="conv-body">
+            <div class="conv-nombre">CM/Rec(2014)2</div>
+            <div class="conv-org">Consejo de Europa · Comité de Ministros</div>
+            <div class="conv-aporte">CP como expresión de la dignidad humana en todas las etapas de la vida</div>
+            <span class="conv-badge soft-badge">Soft Law</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="conv-mensaje">
+        <div class="conv-msg-icon">💡</div>
+        <div>Entre 2013 y 2014 los cuidados paliativos <strong>pasaron del ámbito de la caridad al ámbito del derecho humano exigible</strong>. Colombia fue actor activo de ese momento histórico.</div>
+      </div>
+
+      <div class="step-nav">
+        <button class="step-prev" onclick="goStep(1)">← Hard/Soft law</button>
+        <button class="step-next" onclick="goStep(3)">Siguiente: Colombia en perspectiva →</button>
+      </div>
+    </div>
+
+    <!-- ===== PASO 4: Contextualización ===== -->
+    <div class="b1-step" id="step-3">
+      <div class="step-badge context">Contextualización</div>
+      <h3 class="step-titulo">Colombia en perspectiva latinoamericana</h3>
+      <p class="step-intro">Datos del Atlas ALCP 2025 — ¿dónde está Colombia en el mapa regional?</p>
+
+      <div class="latam-grid">
+        <div class="latam-stat">
+          <div class="latam-num">~20</div>
+          <div class="latam-desc">países en América Latina</div>
+        </div>
+        <div class="latam-stat destacado-stat">
+          <div class="latam-num">5</div>
+          <div class="latam-desc">países con <strong>ley específica</strong> de CP</div>
+          <div class="latam-paises">Chile · Colombia · Costa Rica · México · Perú</div>
+        </div>
+        <div class="latam-stat">
+          <div class="latam-num">10</div>
+          <div class="latam-desc">reportan programa nacional</div>
+        </div>
+      </div>
+
+      <div class="paradoja-box">
+        <div class="paradoja-titulo">⚠️ La paradoja colombiana</div>
+        <div class="paradoja-grid">
+          <div class="paradoja-item verde">
+            <div class="parad-label">Colombia tiene</div>
+            <div class="parad-val">La ley</div>
+            <div class="parad-sub">Ley 1733 de 2014</div>
+          </div>
+          <div class="paradoja-flecha">≠</div>
+          <div class="paradoja-item rojo">
+            <div class="parad-label">Colombia no garantiza</div>
+            <div class="parad-val">El derecho efectivo</div>
+            <div class="parad-sub">en todo el territorio</div>
+          </div>
+        </div>
+        <div class="paradoja-dato">
+          Bogotá ~18 mg morfina/cápita · Departamentos amazónicos ~0.19 mg/cápita<br>
+          <strong>Brecha aproximada: ×90</strong> <span class="dato-fuente">(OCCP, 2024)</span>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button class="step-prev" onclick="goStep(2)">← Convergencia 2013–2014</button>
+        <button class="step-next" onclick="goStep(4)">Siguiente: Puente al Bloque 2 →</button>
+      </div>
+    </div>
+
+    <!-- ===== PASO 5: Transición ===== -->
+    <div class="b1-step" id="step-4">
+      <div class="step-badge transicion">Puente · Bloque 2</div>
+      <h3 class="step-titulo">Lo que construimos hasta aquí</h3>
+
+      <div class="sintesis-final">
+        <div class="sint-item">
+          <div class="sint-num">✓</div>
+          <div>La diferencia entre <strong>tener una política</strong> y tener una <strong>obligación jurídica exigible</strong></div>
+        </div>
+        <div class="sint-item">
+          <div class="sint-num">✓</div>
+          <div>La distinción <strong>hard law / soft law</strong> y sus consecuencias prácticas</div>
+        </div>
+        <div class="sint-item">
+          <div class="sint-num">✓</div>
+          <div>La <strong>ventana histórica 2013–2014</strong>: cuando los CP pasaron a ser derecho humano</div>
+        </div>
+        <div class="sint-item">
+          <div class="sint-num">✓</div>
+          <div>La <strong>paradoja colombiana</strong>: ley sí, garantía territorial no</div>
+        </div>
+      </div>
+
+      <div class="puente-pregunta">
+        <div class="puente-icono">↓</div>
+        <div class="puente-texto">
+          Ahora vamos a mapear exactamente cuáles son esas obligaciones internacionales y qué significan para el caso de <strong>Doña Carmen</strong>.
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button class="step-prev" onclick="goStep(3)">← Colombia en perspectiva</button>
+        <button class="step-next blq-switch" onclick="showBloque('b2')">Ir al Bloque 2 →</button>
+      </div>
+    </div>
+
+  </div><!-- /blq-b1 -->
+
+  <!-- ===== BLOQUE 2 ===== -->
+  <div id="blq-b2" class="blq-content">
+    <div class="b2-header">
+      <div class="b2-header-icon">⚖️</div>
+      <div>
+        <div class="b2-header-tag">BLOQUE 2 · Tema 1</div>
+        <h3 class="b2-header-titulo">Las cinco vías jurídicas, construidas desde el caso de Doña Carmen</h3>
+      </div>
+    </div>
+
+    <!-- Caso detonador -->
+    <div class="b2-caso">
+      <div class="b2-caso-tag">📋 Caso detonador</div>
+      <h4 class="b2-caso-nombre">Doña Carmen</h4>
+      <div class="b2-caso-datos">
+        <span>Cáncer gástrico estadio IV</span>
+        <span>Dolor EVA 9/10</span>
+        <span>Municipio disperso · Caquetá</span>
+        <span>Sin morfina en farmacia</span>
+        <span>72 h de referencia</span>
+      </div>
+      <div class="b2-preguntas">
+        <div class="b2-preg-label">Preguntas que guían el análisis:</div>
+        <ol class="b2-preg-lista">
+          <li>¿Qué derecho(s) está viendo vulnerado en este caso?</li>
+          <li>¿El instrumento asignado a su grupo protege a Doña Carmen?</li>
+          <li>¿Qué obligación genera para Colombia?</li>
+          <li>¿Hay un dato empírico de su departamento que conecte con este caso?</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Asignaciones por grupo -->
+    <div class="b2-grupos-titulo">Instrumentos asignados por grupo</div>
+    <div class="b2-grupos">
+      <div class="b2-gcard g1c">
+        <div class="b2-gtag g1t">G1</div>
+        <div class="b2-gintegrantes">Giraldo · Sierra · Herrera</div>
+        <div class="b2-ginstrumento">WHA67.19</div>
+        <div class="b2-gdetalle">Resolución OMS, 2014<br><span class="nat-soft">Soft Law</span></div>
+      </div>
+      <div class="b2-gcard g2c">
+        <div class="b2-gtag g2t">G2</div>
+        <div class="b2-gintegrantes">Rodríguez · Vega · Rennis</div>
+        <div class="b2-ginstrumento">Convención A-70</div>
+        <div class="b2-gdetalle">Convención Interamericana<br><span class="nat-hard">Hard Law</span></div>
+      </div>
+      <div class="b2-gcard g3c">
+        <div class="b2-gtag g3t">G3</div>
+        <div class="b2-gintegrantes">Reales · Maradiaga · Montero</div>
+        <div class="b2-ginstrumento">Informe Méndez</div>
+        <div class="b2-gdetalle">A/HRC/22/53, ONU, 2013<br><span class="nat-hard">Hard Law</span></div>
+      </div>
+      <div class="b2-gcard g4c">
+        <div class="b2-gtag g4t">G4</div>
+        <div class="b2-gintegrantes">Ruiz · Manrique · Cháux</div>
+        <div class="b2-ginstrumento">Res. 53/4 y 54/6</div>
+        <div class="b2-gdetalle">Comisión de Estupefacientes<br><span class="nat-soft">Soft Law</span></div>
+      </div>
+    </div>
+
+    <div class="cta-actividad">
+      <div class="cta-text">
+        <h3>Herramienta interactiva para el trabajo grupal</h3>
+        <p>Cada grupo accede a su sala de trabajo con el caso, el instrumento asignado y los formularios de análisis.</p>
+      </div>
+      <a href="actividad_grupal_u3_tema1.html" target="_blank">Abrir actividad grupal →</a>
+    </div>
+
+  </div><!-- /blq-b2 -->
+
+</section>
+
+
+<!-- ============ 04 CONVERGENCIA ============ -->
+<section class="tab-panel" id="convergencia">
+  <h2><span class="h2-num">SECCIÓN 04</span>Guía de la exposición docente: la convergencia 2013–2014</h2>
+  <p class="lede">Material exclusivo del docente. La convergencia no debe presentarse como dato conocido por los estudiantes, sino como una síntesis original que revela el patrón histórico subyacente.</p>
+
+  <h3>Narrativa sugerida</h3>
+  <div class="convergencia-callout">
+    <p class="narrativa">«Entre agosto de 2013 y septiembre de 2014 — apenas 14 meses — ocurrió algo sin precedentes en la historia de los cuidados paliativos. Seis instrumentos de distinta naturaleza jurídica, provenientes de órganos diferentes del sistema internacional, convergieron en un mismo mensaje: <strong>negar el acceso a los cuidados paliativos y al alivio del dolor no es solo una falla de política pública; es una violación de derechos humanos.</strong>»</p>
+  </div>
+
+  <h3>Los seis hitos (cronológico)</h3>
+  <div class="timeline">
+    <div class="hito">
+      <div class="hito-fecha">Feb. 2013</div>
+      <div class="hito-dot"></div>
+      <div class="hito-body">
+        <strong>A/HRC/22/53 · Informe Méndez</strong> (Relator Especial sobre la Tortura, ONU)
+        <div class="hito-aporte">Negar el alivio del dolor constituye trato cruel, inhumano o degradante, incluso como acto de omisión y negligencia estatal.</div>
+        <div class="hito-links">
+          <a href="https://www.ohchr.org/Documents/HRBodies/HRCouncil/RegularSession/Session22/A-HRC-22-53_sp.pdf" target="_blank" class="hito-link">
+            <span class="hito-link-ico">📄</span> Texto completo (OHCHR · PDF español)
+          </a>
+          <a href="https://www.refworld.org/es/ref/infortem/cdhonu/2013/es/90541" target="_blank" class="hito-link hito-link-sec">
+            <span class="hito-link-ico">🔗</span> Refworld (referencia y metadatos)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hito">
+      <div class="hito-fecha">Ago. 2013</div>
+      <div class="hito-dot"></div>
+      <div class="hito-body">
+        <strong>Consenso de Montevideo · Medida C.29</strong> (CEPAL)
+        <div class="hito-aporte">Compromiso de garantizar acceso a CP para una muerte digna, en el marco de los derechos de las personas mayores.</div>
+        <div class="hito-links">
+          <a href="https://www.cepal.org/es/publicaciones/21835-consenso-montevideo-poblacion-desarrollo" target="_blank" class="hito-link">
+            <span class="hito-link-ico">📄</span> Publicación oficial CEPAL
+          </a>
+          <a href="https://repositorio.cepal.org/handle/11362/21884" target="_blank" class="hito-link hito-link-sec">
+            <span class="hito-link-ico">🔗</span> Repositorio CEPAL (descarga directa)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hito">
+      <div class="hito-fecha">Sep. 2013</div>
+      <div class="hito-dot"></div>
+      <div class="hito-body">
+        <strong>Resolución CD52.R9</strong> (OPS/OMS, Consejo Directivo)
+        <div class="hito-aporte">Plan de acción regional sobre ENT con mención a cuidados paliativos; antecedente regional de la WHA67.19.</div>
+        <div class="hito-links">
+          <a href="https://www.paho.org/es/temas/cuidados-paliativos" target="_blank" class="hito-link">
+            <span class="hito-link-ico">🌐</span> OPS · Página de cuidados paliativos
+          </a>
+          <a href="https://iris.paho.org/handle/10665.2/52784" target="_blank" class="hito-link hito-link-sec">
+            <span class="hito-link-ico">📄</span> IRIS PAHO · Repositorio OPS
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hito">
+      <div class="hito-fecha">May. 2014</div>
+      <div class="hito-dot"></div>
+      <div class="hito-body">
+        <strong>Resolución WHA67.19</strong> (67ª Asamblea Mundial de la Salud, OMS)
+        <div class="hito-aporte">Primera resolución mundial sobre CP: insta a ampliar el acceso como componente básico de los sistemas de salud.</div>
+        <div class="hito-links">
+          <a href="https://apps.who.int/gb/ebwha/pdf_files/wha67/a67_r19-sp.pdf" target="_blank" class="hito-link">
+            <span class="hito-link-ico">📄</span> Texto oficial OMS (PDF español)
+          </a>
+          <a href="https://apps.who.int/gb/ebwha/pdf_files/WHA67/A67_R19-en.pdf" target="_blank" class="hito-link hito-link-sec">
+            <span class="hito-link-ico">📄</span> Versión inglesa (WHO · PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hito">
+      <div class="hito-fecha">Sep. 2014</div>
+      <div class="hito-dot"></div>
+      <div class="hito-body">
+        <strong>Ley 1733 de 2014 · Ley Consuelo Devis Saavedra</strong> (Congreso de Colombia)
+        <div class="hito-aporte">Regula los servicios de cuidados paliativos en Colombia. Uno de los 5 países latinoamericanos con ley específica.</div>
+        <div class="hito-links">
+          <a href="http://www.secretariasenado.gov.co/senado/basedoc/ley_1733_2014.html" target="_blank" class="hito-link">
+            <span class="hito-link-ico">🏛️</span> Secretaría del Senado de Colombia
+          </a>
+          <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=59379" target="_blank" class="hito-link hito-link-sec">
+            <span class="hito-link-ico">🔗</span> Función Pública · Gestor normativo
+          </a>
+          <a href="https://www.cancilleria.gov.co/sites/default/files/Normograma/docs/pdf/ley_1733_2014.pdf" target="_blank" class="hito-link hito-link-sec">
+            <span class="hito-link-ico">📄</span> Cancillería · PDF oficial
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hito">
+      <div class="hito-fecha">2014</div>
+      <div class="hito-dot"></div>
+      <div class="hito-body">
+        <strong>CM/Rec(2014)2</strong> (Comité de Ministros, Consejo de Europa)
+        <div class="hito-aporte">Recomienda garantizar CP como expresión de la dignidad humana en todas las etapas de la vida.</div>
+        <div class="hito-links">
+          <a href="https://www.coe.int/en/web/human-rights-intergovernmental-cooperation/reference-texts" target="_blank" class="hito-link">
+            <span class="hito-link-ico">🌐</span> Consejo de Europa · Textos de referencia
+          </a>
+          <a href="https://assembly.coe.int/nw/xml/XRef/Xref-XML2HTML-en.asp?fileid=25057&lang=en" target="_blank" class="hito-link hito-link-sec">
+            <span class="hito-link-ico">📄</span> PACE · Contexto parlamentario (inglés)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Conexión con la paradoja colombiana</h3>
+  <p>Colombia fue actor activo de este momento histórico: adoptó la Ley 1733 apenas meses después de la WHA67.19. Sin embargo, una década después, la brecha de acceso a opioides entre Bogotá (~18 mg/cápita) y departamentos amazónicos (~0.19 mg/cápita) es de aproximadamente 90 veces. Solo 3 de cada 10 pacientes que necesitan CP los reciben efectivamente (OCCP, 2024).</p>
+
+  <div class="pregunta-cierre">«Colombia fue parte de este momento histórico en 2014. Han pasado más de diez años. Desde la realidad de sus departamentos: <strong>¿se cumplió la promesa?</strong>»</div>
+</section>
+
+<!-- ============ 05 MAPA INSTRUMENTOS ============ -->
+<section class="tab-panel" id="mapa">
+  <h2><span class="h2-num">SECCIÓN 05</span>Mapa de instrumentos jurídicos internacionales</h2>
+  <p class="lede">Se presenta en pantalla compartida durante la plenaria del Bloque 2. Los estudiantes pueden descargarlo para completar la columna de implicación para Colombia desde sus propios territorios.</p>
+
+  <!-- VIA 1 -->
+  <div class="via">
+    <div class="via-header">
+      <div class="via-num">1</div>
+      <div>
+        <div class="via-title">Derecho a la salud</div>
+        <div class="via-subtitle">Fundamentación desde el derecho al más alto nivel posible de salud física y mental</div>
+      </div>
+    </div>
+    <table class="instruments">
+      <thead>
+        <tr>
+          <th style="width:22%">Instrumento</th>
+          <th style="width:12%">Año</th>
+          <th style="width:14%">Naturaleza</th>
+          <th style="width:26%">Contenido relevante para CP</th>
+          <th style="width:26%">Implicación para Colombia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="inst-name">PIDESC · Art. 12</span><span class="inst-year">ONU Asamblea General</span><div class="inst-links"><a href="https://www.ohchr.org/es/instruments-mechanisms/instruments/international-covenant-economic-social-and-cultural-rights" target="_blank" class="inst-link">🔗 OHCHR</a></div></td>
+          <td>1966/1976</td>
+          <td><span class="nat-hard">Hard law · tratado</span></td>
+          <td>Derecho al más alto nivel posible de salud física y mental.</td>
+          <td>Colombia ratificó el PIDESC. El derecho a la salud incluye acceso a CP según la interpretación del CESCR.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">Observación General No. 14</span><span class="inst-year">CESCR (Comité DESC)</span><div class="inst-links"><a href="https://www.acnur.org/fileadmin/Documentos/BDL/2001/1451.pdf" target="_blank" class="inst-link">📄 PDF español</a></div></td>
+          <td>2000</td>
+          <td><span class="nat-soft">Soft law interpretativo</span></td>
+          <td>El derecho a la salud incluye acceso a cuidados paliativos como componente del derecho a morir con dignidad.</td>
+          <td>Obliga a Colombia a garantizar acceso a CP dentro de su sistema de salud.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">CEDAW · Rec. Gral. No. 27</span><span class="inst-year">Comité CEDAW</span><div class="inst-links"><a href="https://www.ohchr.org/en/documents/general-comments-and-recommendations/general-recommendation-no-27-older-women-and" target="_blank" class="inst-link">🔗 OHCHR</a></div></td>
+          <td>2010</td>
+          <td><span class="nat-soft">Soft law interpretativo</span></td>
+          <td>Mujeres mayores: acceso a CP como parte del derecho a la salud con perspectiva de género.</td>
+          <td>Colombia, parte de CEDAW, debe considerar el acceso diferencial de mujeres mayores a CP.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">CRC · Obs. Gral. No. 15</span><span class="inst-year">Comité Derechos del Niño</span><div class="inst-links"><a href="https://www.ohchr.org/en/documents/general-comments-and-recommendations/crccgc152013-general-comment-no15-2013-right" target="_blank" class="inst-link">🔗 OHCHR</a></div></td>
+          <td>2013</td>
+          <td><span class="nat-soft">Soft law interpretativo</span></td>
+          <td>El derecho del niño a la salud incluye cuidados paliativos pediátricos.</td>
+          <td>Obliga a garantizar CP pediátricos; brecha crítica en departamentos sin oncología pediátrica.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">Lista de Medicamentos Esenciales OMS</span><span class="inst-year">OMS · actualizada</span><div class="inst-links"><a href="https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.02" target="_blank" class="inst-link">🔗 WHO (23ª ed.)</a></div></td>
+          <td>Periódica</td>
+          <td><span class="nat-soft">Referencia técnica</span></td>
+          <td>Sección 2: Dolor y CP. Incluye morfina (todas las formulaciones), hidromorfona, oxicodona, fentanilo, metadona.</td>
+          <td>Colombia debe garantizar disponibilidad de estos medicamentos en todo el territorio.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- VIA 2 -->
+  <div class="via">
+    <div class="via-header">
+      <div class="via-num">2</div>
+      <div>
+        <div class="via-title">Prohibición de la tortura y tratos crueles</div>
+        <div class="via-subtitle">La denegación del alivio del dolor como trato cruel, inhumano o degradante</div>
+      </div>
+    </div>
+    <table class="instruments">
+      <thead>
+        <tr>
+          <th style="width:22%">Instrumento</th>
+          <th style="width:12%">Año</th>
+          <th style="width:14%">Naturaleza</th>
+          <th style="width:26%">Contenido relevante para CP</th>
+          <th style="width:26%">Implicación para Colombia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="inst-name">Informe Relator Nowak · A/HRC/10/44</span><span class="inst-year">Relator ONU sobre la Tortura</span><div class="inst-links"><a href="https://www.ohchr.org/en/documents/thematic-reports/ahrc1044-report-special-rapporteur-torture-and-other-cruel-inhuman-or" target="_blank" class="inst-link">🔗 OHCHR</a></div></td>
+          <td>2009</td>
+          <td><span class="nat-soft">Soft law persuasivo</span></td>
+          <td>La denegación de acceso al alivio del dolor constituye trato cruel, inhumano o degradante.</td>
+          <td>Aplica directamente a la brecha de opioides entre departamentos colombianos.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">Informe Relator Méndez · A/HRC/22/53</span><span class="inst-year">Relator ONU sobre la Tortura</span><div class="inst-links"><a href="https://www.ohchr.org/Documents/HRBodies/HRCouncil/RegularSession/Session22/A-HRC-22-53_sp.pdf" target="_blank" class="inst-link">📄 PDF español</a></div></td>
+          <td>2013</td>
+          <td><span class="nat-soft">Soft law persuasivo</span></td>
+          <td>Profundiza: la omisión estatal en garantizar alivio del dolor, cuando el Estado tiene o debería tener conocimiento del sufrimiento, constituye trato cruel incluso como acto de negligencia.</td>
+          <td>Colombia tiene conocimiento de la brecha (OCCP 2024). La inacción podría configurar responsabilidad estatal.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">ACNUDH · Informe</span><span class="inst-year">Alto Comisionado DDHH ONU</span><div class="inst-links"><a href="https://www.ohchr.org/es/about-us/high-commissioner" target="_blank" class="inst-link">🔗 ACNUDH</a></div></td>
+          <td>2015</td>
+          <td><span class="nat-soft">Soft law</span></td>
+          <td>Acceso a medicamentos fiscalizados es parte crítica del derecho a la salud.</td>
+          <td>Refuerza la obligación de garantizar opioides para fines médicos.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- VIA 3 -->
+  <div class="via">
+    <div class="via-header">
+      <div class="via-num">3</div>
+      <div>
+        <div class="via-title">Derechos de poblaciones específicas</div>
+        <div class="via-subtitle">Instrumentos enfocados en personas mayores y grupos vulnerables</div>
+      </div>
+    </div>
+    <table class="instruments">
+      <thead>
+        <tr>
+          <th style="width:22%">Instrumento</th>
+          <th style="width:12%">Año</th>
+          <th style="width:14%">Naturaleza</th>
+          <th style="width:26%">Contenido relevante para CP</th>
+          <th style="width:26%">Implicación para Colombia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="inst-name">Convención Interamericana A-70</span><span class="inst-year">OEA</span><div class="inst-links"><a href="https://www.oas.org/es/sla/ddi/tratados_multilaterales_interamericanos_A-70_derechos_humanos_personas_mayores.asp" target="_blank" class="inst-link">🔗 OEA oficial</a> <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=98430" target="_blank" class="inst-link inst-link-col">🇨🇴 Ley 2055/2020</a></div></td>
+          <td>2015</td>
+          <td><span class="nat-hard">Hard law · tratado</span></td>
+          <td>Define CP explícitamente (Art. 2). Art. 12: los Estados deben garantizar CP en servicios de cuidado a largo plazo. Único instrumento vinculante del sistema interamericano que menciona CP.</td>
+          <td><strong>Colombia depositó el instrumento de adhesión el 27 de septiembre de 2022.</strong> Vigente para Colombia. Aprobada por Ley 2055 de 2020, declarada exequible por Sentencia C-395 de 2021. Genera obligaciones exigibles ante el sistema interamericano.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">Resolución 48/3 CDH</span><span class="inst-year">Consejo DDHH ONU</span><div class="inst-links"><a href="https://www.ohchr.org/en/documents/resolutions/ahrcres483" target="_blank" class="inst-link">🔗 OHCHR</a></div></td>
+          <td>2021</td>
+          <td><span class="nat-soft">Soft law</span></td>
+          <td>Derechos humanos de personas de edad: mención explícita de CP. Pide a los Estados aprobar políticas y leyes que garanticen CP.</td>
+          <td>Refuerza la obligación política de Colombia de integrar CP en la atención a personas mayores.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="actualizacion-critica">
+    <p><strong>Hallazgo pedagógico para G2.</strong> La nota al pie del plan original pide al docente verificar el estado de ratificación de la Convención A-70 antes de la sesión. Verificación realizada al 17/04/2026: Colombia aprobó la Convención por la Ley 2055 del 10 de septiembre de 2020; la Corte Constitucional la declaró exequible en Sentencia C-395 del 19 de noviembre de 2021; y el Ministro de Relaciones Exteriores firmó el instrumento de adhesión el 13 de septiembre de 2022, depositándolo ante el Secretario General de la OEA el 27 de septiembre de 2022.</p>
+    <p>La Convención es <strong>vinculante para Colombia</strong>. Esto modifica el encuadre original del análisis grupal de G2: el reto ya no es «Colombia no la ha ratificado, ¿qué implica eso?», sino <em>«Colombia la ratificó; ¿qué obligaciones exigibles genera eso y por qué la brecha territorial persiste pese al instrumento vinculante?»</em> — un ángulo aún más potente para la tensión obligación jurídica ↔ realidad territorial.</p>
+  </div>
+
+  <!-- VIA 4 -->
+  <div class="via">
+    <div class="via-header">
+      <div class="via-num">4</div>
+      <div>
+        <div class="via-title">Fiscalización internacional de drogas y doble obligación</div>
+        <div class="via-subtitle">Tensión entre control de sustancias y garantía de acceso médico a opioides</div>
+      </div>
+    </div>
+    <table class="instruments">
+      <thead>
+        <tr>
+          <th style="width:22%">Instrumento</th>
+          <th style="width:12%">Año</th>
+          <th style="width:14%">Naturaleza</th>
+          <th style="width:26%">Contenido relevante para CP</th>
+          <th style="width:26%">Implicación para Colombia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="inst-name">Resoluciones 53/4 y 54/6</span><span class="inst-year">Comisión de Estupefacientes · ECOSOC</span><div class="inst-links"><a href="https://www.unodc.org/unodc/en/commissions/CND/session/19_Session_2010/CND-2010-session.html" target="_blank" class="inst-link">🔗 UNODC · CND 2010</a></div></td>
+          <td>2010–2011</td>
+          <td><span class="nat-soft">Soft law</span></td>
+          <td>Disponibilidad adecuada de sustancias fiscalizadas para fines médicos y científicos, evitando desvío y abuso.</td>
+          <td>Colombia debe equilibrar control de sustancias con garantía de acceso médico a opioides.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">Resolución 2005/25 ECOSOC</span><span class="inst-year">Consejo Económico y Social ONU</span><div class="inst-links"><a href="https://digitallibrary.un.org/record/555104" target="_blank" class="inst-link">🔗 UN Digital Library</a></div></td>
+          <td>2005</td>
+          <td><span class="nat-soft">Soft law</span></td>
+          <td>Tratamiento del dolor mediante analgésicos opioides: los países deben garantizar su disponibilidad.</td>
+          <td>Fundamento normativo directo para la política de opioides en Colombia.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">UNGASS 2016</span><span class="inst-year">Asamblea General ONU</span><div class="inst-links"><a href="https://www.unodc.org/documents/postungass2016/outcome/V1603301-S.pdf" target="_blank" class="inst-link">📄 PDF español</a></div></td>
+          <td>2016</td>
+          <td><span class="nat-soft">Soft law · documento final</span></td>
+          <td>Reafirmación de la doble obligación: garantizar disponibilidad para fines médicos Y prevenir abuso/desvío.</td>
+          <td>La asimetría histórica (más énfasis en control que en acceso) es la raíz normativa de la brecha de opioides.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- VIA 5 -->
+  <div class="via">
+    <div class="via-header">
+      <div class="via-num">5</div>
+      <div>
+        <div class="via-title">Soft law global con fuerza normativa</div>
+        <div class="via-subtitle">Instrumentos no vinculantes que generan obligaciones programáticas</div>
+      </div>
+    </div>
+    <table class="instruments">
+      <thead>
+        <tr>
+          <th style="width:22%">Instrumento</th>
+          <th style="width:12%">Año</th>
+          <th style="width:14%">Naturaleza</th>
+          <th style="width:26%">Contenido relevante para CP</th>
+          <th style="width:26%">Implicación para Colombia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="inst-name">WHA67.19</span><span class="inst-year">67ª Asamblea Mundial de la Salud · OMS</span><div class="inst-links"><a href="https://apps.who.int/gb/ebwha/pdf_files/wha67/a67_r19-sp.pdf" target="_blank" class="inst-link">📄 PDF español</a></div></td>
+          <td>2014</td>
+          <td><span class="nat-soft">Soft law · obligaciones programáticas</span></td>
+          <td>Primera resolución mundial sobre CP. Insta a integrar CP como componente básico de los sistemas de salud, con énfasis en APS y atención comunitaria/domiciliaria.</td>
+          <td>Ya trabajada en Unidad 2 como política. Ahora se reexamina: no es vinculante per se, pero genera obligaciones programáticas para Colombia como Estado Miembro.</td>
+        </tr>
+        <tr>
+          <td><span class="inst-name">CM/Rec(2014)2</span><span class="inst-year">Consejo de Europa</span><div class="inst-links"><a href="https://www.coe.int/en/web/human-rights-intergovernmental-cooperation/reference-texts" target="_blank" class="inst-link">🔗 CoE</a></div></td>
+          <td>2014</td>
+          <td><span class="nat-soft">Soft law · recomendación</span></td>
+          <td>CP como expresión de la dignidad humana en todas las etapas de la vida, incluidos enfermos terminales.</td>
+          <td>No aplica directamente a Colombia (no es miembro del Consejo de Europa), pero es referente comparativo para la región.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 06 ACTIVIDAD ============ -->
+<section class="tab-panel" id="actividad">
+  <h2><span class="h2-num">SECCIÓN 06</span>Micro-caso clínico detonador y actividad grupal</h2>
+  <p class="lede">El caso activa la búsqueda normativa. La exposición teórica no precede al análisis: emerge de él.</p>
+
+  <h3>Caso detonador: acceso a opioides en territorio disperso</h3>
+  <div class="caso-box">
+    <span class="caso-tag">Caso · Doña Carmen · Caquetá</span>
+    <p>«Doña Carmen, 62 años, diagnóstico de cáncer gástrico estadio IV, reside en un municipio disperso del Caquetá. Lleva tres días con dolor oncológico EVA 9/10. El médico del hospital de primer nivel prescribe morfina oral. La farmacia del hospital no tiene el medicamento: nunca lo ha tenido. El sistema de referencia hacia Florencia tardará al menos 72 horas. La hija de Doña Carmen pregunta al médico: <em>‘Doctor, ¿no hay una ley que nos proteja? ¿No tiene mi mamá derecho a que no la dejen sufrir así?’</em>»</p>
+  </div>
+
+  <div class="preguntas-socraticas">
+    <h4>Preguntas:</h4>
+    <ol>
+      <li>¿Qué derechos fundamentales están en juego en este caso?</li>
+      <li>¿Existe alguna norma internacional —no colombiana, internacional— que obligue a Colombia a garantizar este acceso?</li>
+      <li>¿Qué tipo de norma sería: una recomendación, una política o una obligación legal exigible?</li>
+      <li>¿Se podría argumentar que Doña Carmen está siendo sometida a un trato cruel por omisión del Estado?</li>
+    </ol>
+  </div>
+
+  <h3>Actividad grupal: análisis de naturaleza jurídica inducido por el caso</h3>
+  <p>Duración: <strong>20 minutos</strong> en breakout rooms. Cada grupo recibe un instrumento internacional y debe analizarlo en relación con el caso de Doña Carmen respondiendo cuatro preguntas: <strong>(1)</strong> Clasificación hard/soft law; <strong>(2)</strong> Aplicación al caso y argumento para la hija de Doña Carmen; <strong>(3)</strong> Obligación para Colombia y nivel de cumplimiento; <strong>(4)</strong> Conexión territorial con los departamentos de ejercicio profesional.</p>
+
+  <h4>Asignación de instrumentos por grupo</h4>
+  <div class="groups-grid">
+    <div class="group-card g1">
+      <div class="group-chip">GRUPO 1 · OPS/PAHO ↔ PAIS-MAITE</div>
+      <div class="inst-assigned">WHA67.19 (2014)</div>
+      <div class="rationale">Coherente con su eje OPS/MAITE del curso. Ya conocen este instrumento como política; ahora deben reexaminarlo como soft law. El reto es argumentar qué tipo de obligación genera si no es vinculante.</div>
+      <div class="members">Giraldo · Sierra · Herrera</div>
+    </div>
+
+    <div class="group-card g2">
+      <div class="group-chip">GRUPO 2 · CEPAL ↔ RIAS colombianas</div>
+      <div class="inst-assigned">Convención Interamericana A-70 (OEA, 2015)</div>
+      <div class="rationale">Coherente con su eje CEPAL/RIAS. Único instrumento vinculante del sistema interamericano que menciona CP explícitamente. Reto actualizado: Colombia ratificó en 2022 — ¿qué obligaciones exigibles genera esto y por qué la brecha persiste?</div>
+      <div class="members">Rodríguez · Vega · Rennis</div>
+    </div>
+
+    <div class="group-card g3">
+      <div class="group-chip">GRUPO 3 · ALCP/Atlas ↔ GPC No. 58</div>
+      <div class="inst-assigned">Informe Relator Méndez · A/HRC/22/53 (2013)</div>
+      <div class="rationale">Coherente con su eje ALCP/GPC. El argumento de la tortura por omisión es el más provocador del marco jurídico. Conecta directamente con la brecha de opioides en sus territorios.</div>
+      <div class="members">Reales · Maradiaga · Montero</div>
+    </div>
+
+    <div class="group-card g4">
+      <div class="group-chip">GRUPO 4 · Mesa de Integración Territorial</div>
+      <div class="inst-assigned">Res. 53/4 y 54/6 Comisión de Estupefacientes</div>
+      <div class="rationale">Coherente con su rol de síntesis territorial. La doble obligación (acceso médico vs. control de abuso) es el núcleo normativo de la brecha de opioides que han mapeado transversalmente.</div>
+      <div class="members">Ruiz · Manrique · Cháux</div>
+    </div>
+  </div>
+
+  <div class="nota-docente" style="margin-top:26px">
+    <strong>Orientaciones durante los breakout rooms.</strong> Visitar cada sala brevemente (2–3 minutos). No dar respuestas: hacer preguntas orientadoras. Si un grupo clasifica erróneamente, preguntar: «¿Un Estado puede ser demandado ante un tribunal internacional por incumplir este instrumento? ¿Qué les dice eso sobre su naturaleza jurídica?» Si un grupo no logra la conexión territorial, facilitar con datos específicos: «¿Cuántos servicios de CP hay en su departamento? ¿Hay acceso a morfina oral en su municipio?» <strong>Atención especial a G2:</strong> ahora que Colombia es parte de la Convención A-70 (adhesión depositada el 27/09/2022), si el grupo no llega al análisis de por qué la brecha persiste pese al tratado vinculante, orientar hacia el Art. 12 y la figura de las peticiones individuales ante la CIDH (Art. 36).
+  </div>
+
+  <div class="cta-actividad">
+    <div class="cta-text">
+      <h3>Herramienta HTML5 para los breakout rooms</h3>
+      <p>Archivo interactivo independiente con el caso, la consigna, tarjetas por grupo con su instrumento asignado y formulario de trabajo exportable. Listo para compartir en pantalla o enviar por chat al inicio del minuto 9:08.</p>
+    </div>
+    <a href="actividad_grupal_u3_tema1.html" target="_blank">Abrir actividad →</a>
+  </div>
+</section>
+
+<!-- Sección 07 Reflexión guiada oculta en versión estudiante -->
+<section class="tab-panel" id="reflexion" style="display:none">
+  <h2><span class="h2-num">SECCIÓN 07</span>Momentos de reflexión guiada</h2>
+  <p class="lede">Tres momentos distribuidos a lo largo de la sesión, anclados en las dimensiones SER / SABER / SABER HACER.</p>
+
+  <table class="reflex-table">
+    <thead>
+      <tr>
+        <th style="width:18%">Momento</th>
+        <th style="width:14%">Dimensión</th>
+        <th style="width:48%">Pregunta orientadora</th>
+        <th style="width:20%">Duración / Formato</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>8:00–8:10</td>
+        <td><span class="reflex-dim">SABER · 3.1</span></td>
+        <td>¿Qué diferencia percibo entre una política pública y una norma jurídica? ¿Alguno de los instrumentos que conocí en la Unidad 2 me genera una obligación legal exigible?</td>
+        <td>3 min · Chat</td>
+      </tr>
+      <tr>
+        <td>9:00–9:08 <em>(micro-caso)</em></td>
+        <td><span class="reflex-dim">SABER HACER · 3.2</span></td>
+        <td>Desde mi territorio, ¿he vivido una situación similar a la de Doña Carmen? ¿Qué hice? ¿Qué norma internacional me habría respaldado?</td>
+        <td>2 min · Reflexión silenciosa antes de breakout</td>
+      </tr>
+      <tr>
+        <td>9:50–10:00</td>
+        <td><span class="reflex-dim">SER · 3.3</span></td>
+        <td>¿Qué responsabilidad tengo yo, como profesional de salud, frente a este marco legal? ¿Soy solo un ejecutor de normas o soy un agente de garantía del derecho a los cuidados paliativos en mi territorio?</td>
+        <td>3 min · Respuesta escrita en chat (cierre)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 08 LEGAL DESIGN ============ -->
+<section class="tab-panel" id="legal-design">
+  <h2><span class="h2-num">SECCIÓN 08</span>Tarea aplicable · Legal Design Thinking</h2>
+  <p class="lede">Se asigna en el minuto 9:42 y los grupos la traen resuelta a la sesión presencial del 8 de mayo.</p>
+
+  <div class="legal-design-intro">
+    Una norma que nadie entiende ni aplica es, en la práctica, <strong>una norma que no existe</strong>. La tarea exige transformar el instrumento jurídico analizado en un producto comprensible y aplicable para alguien que no es abogado.
+  </div>
+
+  <h3>Consigna</h3>
+  <p>Cada grupo debe transformar el instrumento jurídico que analizó en esta sesión en un <strong>producto de Legal Design</strong> dirigido a un usuario final concreto. El producto debe hacer comprensible y aplicable la norma para alguien que no es abogado.</p>
+
+  <h4>Asignación por grupo</h4>
+  <div class="groups-grid">
+    <div class="group-card g1">
+      <div class="group-chip">GRUPO 1</div>
+      <div class="inst-assigned">WHA67.19 (2014)</div>
+      <div class="rationale"><strong>Producto:</strong> Infografía de una página: ¿qué derechos tiene mi paciente según la OMS?<br><br><strong>Usuario final:</strong> Paciente y familia en contexto paliativo.</div>
+    </div>
+
+    <div class="group-card g2">
+      <div class="group-chip">GRUPO 2</div>
+      <div class="inst-assigned">Convención Interamericana A-70</div>
+      <div class="rationale"><strong>Producto:</strong> Ficha comparativa: derechos de las personas mayores en CP según la Convención vs. realidad colombiana.<br><br><strong>Usuario final:</strong> Secretaría de salud departamental / Comité de envejecimiento.</div>
+    </div>
+
+    <div class="group-card g3">
+      <div class="group-chip">GRUPO 3</div>
+      <div class="inst-assigned">Informe Méndez A/HRC/22/53</div>
+      <div class="rationale"><strong>Producto:</strong> Flujograma: ¿cuándo la denegación de alivio del dolor puede constituir trato cruel? Ruta de acción para el profesional.<br><br><strong>Usuario final:</strong> Equipo de salud en IPS de primer y segundo nivel.</div>
+    </div>
+
+    <div class="group-card g4">
+      <div class="group-chip">GRUPO 4</div>
+      <div class="inst-assigned">Res. 53/4 y 54/6 CND</div>
+      <div class="rationale"><strong>Producto:</strong> Mapa de rutas: cómo prescribir y dispensar opioides en zona rural colombiana, con la normativa internacional como respaldo.<br><br><strong>Usuario final:</strong> Médico de atención primaria en municipio disperso.</div>
+    </div>
+  </div>
+
+  <h3>Criterios de evaluación del producto</h3>
+  <p><strong>Precisión jurídica</strong> — ¿El contenido es fiel al instrumento original? · <strong>Accesibilidad</strong> — ¿El usuario final lo entendería sin formación jurídica? · <strong>Aplicabilidad territorial</strong> — ¿Conecta con la realidad de al menos un departamento del grupo? · <strong>Utilidad práctica</strong> — ¿El profesional de salud podría usarlo en su IPS o secretaría de salud?</p>
+
+  <!-- Nota docente oculta en versión estudiante -->
+  <div class="nota-docente" style="display:none">
+    Este producto no es evaluado con nota en esta sesión, pero será insumo para el análisis de la sesión del 8 de mayo y puede integrarse en el Producto Final del curso (30%).
+  </div>
+</section>
+<section class="tab-panel" id="cierre">
+  <h2><span class="h2-num">SECCIÓN 09</span>Cierre de la sesión y apertura hacia el Tema 2</h2>
+  <p class="lede">Síntesis de hallazgos y pregunta abierta hacia la sesión presencial del 8 de mayo.</p>
+
+  <h3>Síntesis de hallazgos</h3>
+  <p>El docente sintetiza en pantalla compartida los resultados de la plenaria, organizados por las 5 vías jurídicas que emergieron del análisis colectivo. El caso de Doña Carmen se retoma como hilo conductor:</p>
+  <ul style="list-style:none;padding-left:0;margin:16px 0">
+    <li style="padding:10px 0 10px 28px;border-left:3px solid var(--accent);background:#fff;margin-bottom:8px;padding-right:16px"><strong>Vía 2 (Méndez, 2013)</strong> permitía argumentar que su sufrimiento configura trato cruel por omisión.</li>
+    <li style="padding:10px 0 10px 28px;border-left:3px solid var(--accent);background:#fff;margin-bottom:8px;padding-right:16px"><strong>Vía 4 (fiscalización de drogas)</strong> revela que la doble obligación no se cumple en su municipio.</li>
+    <li style="padding:10px 0 10px 28px;border-left:3px solid var(--accent);background:#fff;margin-bottom:8px;padding-right:16px"><strong>Convención A-70</strong> la protegería explícitamente: Colombia ya es Estado Parte (adhesión depositada 27/09/2022) y la obligación del Art. 12 es exigible.</li>
+  </ul>
+
+  <h3>Pregunta abierta de transición</h3>
+  <div class="pregunta-cierre">«Si existe un marco jurídico internacional que reconoce los CP como derecho humano, que prohíbe la denegación del alivio del dolor, y que obliga a los Estados a garantizar el acceso a medicamentos esenciales... <strong>¿por qué Doña Carmen sigue sin morfina?</strong> Esta pregunta nos acompañará en las próximas sesiones, cuando analicemos cómo cinco países latinoamericanos tradujeron —o no— estas obligaciones en legislación nacional.»</div>
+
+  <!-- Cierre con Bonilla Sierra - reservado versión docente -->
+  <div style="display:none">
+    <h3>Cierre con Bonilla Sierra (2021)</h3>
+    <p>Si no se presentó ya en el minuto 9:42, el docente pregunta: «¿Algún grupo ha revisado una fuente del curso que conecte directamente el marco jurídico internacional con la realidad de los cuidados paliativos en América Latina?» Si ningún grupo la menciona (como ha ocurrido hasta ahora), el docente presenta Bonilla Sierra (2021) — <em>«Cuidados paliativos en Latinoamérica»</em>, Revista de Nutrición Clínica y Metabolismo, 4(2), doi:10.35454/rncm.v4n2.226 — como lectura obligatoria pendiente para la sesión del 8 de mayo.</p>
+  </div>
+
+  <h3>Apertura hacia la sesión del 8 de mayo</h3>
+  <p>La sesión siguiente (presencial) abordará el Tema 2 (legislación en cuidados paliativos en Latinoamérica) y el Tema 3 (leyes, decretos y resoluciones nacionales de Colombia). Los estudiantes llegarán con: <strong>(a)</strong> el marco jurídico internacional como base, <strong>(b)</strong> la pregunta abierta de por qué Doña Carmen sigue sin morfina, <strong>(c)</strong> su producto de Legal Design Thinking, y <strong>(d)</strong> la lectura de Bonilla Sierra (2021).</p>
+</section>
+
+<!-- ============ 10 REFERENCIAS ============ -->
+<section class="tab-panel" id="referencias">
+  <h2><span class="h2-num">SECCIÓN 10</span>Referencias bibliográficas</h2>
+  <p class="lede">Formato APA 7. Se incluyen las fuentes obligatorias del curso y fuentes complementarias verificadas.</p>
+
+  <ul class="ref-list">
+    <li>Alto Comisionado de las Naciones Unidas para los Derechos Humanos. (2015). <em>Estudio sobre las repercusiones del problema mundial de las drogas en el ejercicio de los derechos humanos</em> (A/HRC/30/65). Consejo de Derechos Humanos, 30º período de sesiones.</li>
+    <li>Asamblea Mundial de la Salud. (2014). <em>Resolución WHA67.19: Fortalecimiento de los cuidados paliativos como componente de una atención integral durante el curso de la vida</em>.</li>
+    <li>Bonilla Sierra, P. (2021). Cuidados paliativos en Latinoamérica. <em>Revista de Nutrición Clínica y Metabolismo</em>, <em>4</em>(2). https://doi.org/10.35454/rncm.v4n2.226</li>
+    <li>Brennan, F. (2007). Palliative care as an international human right. <em>Journal of Pain and Symptom Management</em>, <em>33</em>(5), 494–499. https://doi.org/10.1016/j.jpainsymman.2007.02.022</li>
+    <li>Comité de Derechos Económicos, Sociales y Culturales. (2000). <em>Observación General No. 14: El derecho al disfrute del más alto nivel posible de salud</em> (E/C.12/2000/4).</li>
+    <li>Congreso de la República de Colombia. (2014). <em>Ley 1733 de 2014 (Ley Consuelo Devis Saavedra)</em>. Diario Oficial.</li>
+    <li>Congreso de la República de Colombia. (2020). <em>Ley 2055 de 2020 · Por medio de la cual se aprueba la Convención Interamericana sobre la Protección de los Derechos Humanos de las Personas Mayores</em>. Diario Oficial.</li>
+    <li>Consejo de Derechos Humanos de las Naciones Unidas. (2013). <em>Informe del Relator Especial sobre la tortura y otros tratos o penas crueles, inhumanos o degradantes, Juan E. Méndez</em> (A/HRC/22/53).</li>
+    <li>Consejo de Derechos Humanos de las Naciones Unidas. (2021). <em>Derechos humanos para personas de edad</em> (A/HRC/RES/48/3).</li>
+    <li>Corte Constitucional de Colombia. (2021). <em>Sentencia C-395 de 2021</em> (revisión de la Ley 2055 de 2020).</li>
+    <li>Ezer, T., Lohman, D., y de Luca, G. B. (2018). Legal support for palliative care patients. <em>Journal of Pain and Symptom Management</em>, <em>55</em>(2S), S157–S162.</li>
+    <li>Naciones Unidas. (2009). <em>Informe del Relator Especial sobre la tortura, Manfred Nowak</em> (A/HRC/10/44).</li>
+    <li>Observatorio Colombiano de Cuidados Paliativos. (2024). <em>Informe técnico 2024</em>. http://occp.com.co/</li>
+    <li>Organización de los Estados Americanos. (2015). <em>Convención Interamericana sobre la Protección de los Derechos Humanos de las Personas Mayores (A-70)</em>.</li>
+    <li>Organización Mundial de la Salud. (2021). <em>Planificación e implantación de servicios de cuidados paliativos: Guía para directores de programa</em>.</li>
+    <li>Pastrana, T. (2022). Cuidados paliativos y derechos humanos de las personas mayores. En CEPAL, <em>Visión multidisciplinaria de los derechos humanos de las personas mayores</em> (LC/CRE.5/3).</li>
+    <li>Pastrana, T., De Lima, L., Sánchez-Cárdenas, M., y otros. (2025). <em>Atlas de cuidados paliativos de las Américas 2025</em>. Asociación Latinoamericana de Cuidados Paliativos (ALCP).</li>
+  </ul>
+
+  <div class="nota-docente" style="margin-top:30px">
+    <strong>Verificación de fuentes.</strong> Todas las referencias han sido verificadas contra los documentos del proyecto del curso y contra las correcciones técnicas acumuladas durante el diseño instruccional. La sigla «CD58.R22» (inexistente) no aparece en este documento. La RIAS de cuidado paliativo no se menciona como instrumento autónomo. La WHA67.19 se reexamina desde su naturaleza jurídica, no se repite como contenido de la Unidad 2. El estado de adhesión de Colombia a la Convención A-70 (27 de septiembre de 2022) fue verificado el 17 de abril de 2026 contra fuentes oficiales del Ministerio de Salud y Protección Social, la Cancillería de Colombia, la OEA y la CIDH.
+  </div>
+</section>
+
+</div>
+</main>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.tab;
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+
+  /* Bloque selector */
+  function showBloque(b) {
+    document.querySelectorAll('.blq-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.blq-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('blq-' + b).classList.add('active');
+    document.getElementById('btn-' + b).classList.add('active');
+    window.scrollTo({top: document.getElementById('secuencia').offsetTop - 60, behavior:'smooth'});
+  }
+
+  /* Step navigation */
+  let currentStep = 0;
+  const totalSteps = 5;
+
+  function goStep(n) {
+    // Hide current
+    document.querySelectorAll('.b1-step').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.prog-dot').forEach((dot, i) => {
+      dot.classList.remove('active','done');
+      if (i < n) dot.classList.add('done');
+      if (i === n) dot.classList.add('active');
+    });
+    document.getElementById('step-' + n).classList.add('active');
+    currentStep = n;
+    // Scroll to top of secuencia
+    const top = document.getElementById('secuencia').offsetTop - 70;
+    window.scrollTo({top, behavior:'smooth'});
+  }
+
+  /* Acordeón */
+  function toggleAcord(item) {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.acord-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+
+</body>
+</html>
