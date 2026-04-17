@@ -1043,11 +1043,10 @@
   }
 
   // ============ ENVÍO A GOOGLE SHEETS ============
-  // Técnica: <img src="URL"> — los navegadores nunca bloquean la carga de imágenes
-  // por CORS (no hay preflight, no hay restricción de origen).
-  // El Apps Script recibe el GET, escribe en Sheets y devuelve cualquier cosa
-  // (el navegador lo interpreta como imagen fallida, pero los datos ya llegaron).
-  function enviarASheets() {
+  // Técnica probada: fetch POST con mode:'no-cors' y body JSON sin Content-Type.
+  // Sin Content-Type, el navegador usa text/plain por defecto, que es el único
+  // formato que Apps Script acepta con no-cors sin que el body quede vacío.
+  async function enviarASheets() {
     if (!state.group) {
       alert('Primero selecciona tu grupo en el Paso 02.');
       return;
@@ -1071,46 +1070,34 @@
     statusEl.textContent = '⏳ Enviando respuestas a Google Sheets...';
     btnEl.disabled = true;
 
-    const params = new URLSearchParams({
-      action:           'guardar',
-      grupo:            state.group,
-      p1_clasificacion: clasificacion,
-      p2_caso:          p2,
-      p3_colombia:      p3,
-      p4_territorial:   p4
-    });
-    const url = APP_SHEETS_URL + '?' + params.toString();
+    try {
+      const payload = {
+        timestamp:        new Date().toISOString(),
+        grupo:            state.group,
+        p1_clasificacion: clasificacion,
+        p2_caso:          p2,
+        p3_colombia:      p3,
+        p4_territorial:   p4
+      };
 
-    // Crear imagen invisible — dispara el GET sin restricción CORS
-    const img = new Image();
-    let responded = false;
+      // Sin Content-Type en headers → el navegador envía text/plain por defecto
+      // (único formato que Apps Script acepta con no-cors manteniendo el body)
+      await fetch(APP_SHEETS_URL, {
+        method: 'POST',
+        mode:   'no-cors',
+        body:   JSON.stringify(payload)
+      });
 
-    const confirmar = () => {
-      if (responded) return;
-      responded = true;
-      // El script recibió la petición (img.onerror = respuesta no-imagen, pero datos guardados)
       statusEl.className   = 'send-status ok';
       statusEl.textContent = '✓ Respuestas enviadas correctamente a Google Sheets. Ahora pueden ver la síntesis para la plenaria.';
-      btnEl.disabled = false;
       setTimeout(() => goToStep(5), 1500);
-    };
 
-    const fallar = () => {
-      if (responded) return;
-      responded = true;
+    } catch (err) {
       statusEl.className   = 'send-status error';
-      statusEl.textContent = '✗ Error de conexión. Verifiquen que tienen internet y vuelvan a intentar.';
+      statusEl.textContent = '✗ No se pudo enviar. Verifiquen su conexión y vuelvan a intentar.';
+    } finally {
       btnEl.disabled = false;
-    };
-
-    img.onload  = confirmar;  // si devolviera una imagen válida
-    img.onerror = confirmar;  // Apps Script devuelve JSON, no imagen → onerror, pero los datos SÍ llegaron
-    img.src = url;
-
-    // Timeout de seguridad: si no responde en 8 seg, asumir éxito igual
-    setTimeout(() => {
-      if (!responded) confirmar();
-    }, 8000);
+    }
   }
 
   // ============ TIMER ============
