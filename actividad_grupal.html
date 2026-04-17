@@ -590,7 +590,7 @@
 
 <header>
   <div class="wrap">
-    <div class="breadcrumb">Unidad 3 · Tema 1 · Sesión 24/04/2026 · Breakout rooms (9:08–9:28)</div>
+    <div class="breadcrumb">Unidad 3 · Tema 1 · Sesión 24/04/2026 · Breakout rooms (9:08–9:28) · <a href="https://jboglop.github.io/Contexto_Historico_Legal_CP/legal_internacional.html" style="color:var(--accent);text-decoration:none;" target="_blank">← Plan de clase</a></div>
     <h1>Actividad grupal · El caso de Doña Carmen</h1>
     <p class="subtitle">Análisis de naturaleza jurídica inducido por el caso clínico</p>
 
@@ -1043,6 +1043,9 @@
   }
 
   // ============ ENVÍO A GOOGLE SHEETS ============
+  // Nota técnica: Apps Script no devuelve cabeceras CORS para orígenes externos,
+  // por lo que usamos fetch con mode:'no-cors' + URLSearchParams (form-encoded).
+  // Con no-cors no podemos leer la respuesta, pero si no hay error de red el envío llegó.
   function enviarASheets() {
     if (!state.group) {
       alert('Primero selecciona tu grupo en el Paso 02.');
@@ -1060,14 +1063,6 @@
       return;
     }
 
-    const payload = {
-      grupo:            state.group,
-      p1_clasificacion: clasificacion,
-      p2_caso:          p2,
-      p3_colombia:      p3,
-      p4_territorial:   p4
-    };
-
     const statusEl = document.getElementById('sendStatus');
     const btnEl    = document.getElementById('btnSheets');
 
@@ -1075,24 +1070,29 @@
     statusEl.textContent = '⏳ Enviando respuestas a Google Sheets...';
     btnEl.disabled = true;
 
+    // Usamos URLSearchParams para enviar como form-data (compatible con no-cors)
+    const params = new URLSearchParams({
+      grupo:            state.group,
+      p1_clasificacion: clasificacion,
+      p2_caso:          p2,
+      p3_colombia:      p3,
+      p4_territorial:   p4
+    });
+
     fetch(APP_SHEETS_URL, {
       method:  'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body:    JSON.stringify(payload)
+      mode:    'no-cors',           // evita el bloqueo CORS
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body:    params.toString()
     })
-    .then(r => r.json())
-    .then(data => {
-      if (data.ok) {
-        statusEl.className   = 'send-status ok';
-        statusEl.textContent = '✓ ' + data.mensaje + ' Ahora pueden ver la síntesis para la plenaria.';
-        // Avanzar automáticamente al paso 5 tras 1.5 s
-        setTimeout(() => goToStep(5), 1500);
-      } else {
-        statusEl.className   = 'send-status error';
-        statusEl.textContent = '✗ Error al guardar: ' + (data.error || 'desconocido. Intenten de nuevo.');
-      }
+    .then(() => {
+      // Con no-cors la respuesta siempre es "opaque" — si llegamos aquí, se envió
+      statusEl.className   = 'send-status ok';
+      statusEl.textContent = '✓ Respuestas enviadas correctamente a Google Sheets. Ahora pueden ver la síntesis para la plenaria.';
+      setTimeout(() => goToStep(5), 1500);
     })
     .catch(err => {
+      // Solo llega aquí si hay error de red real (sin internet, URL inválida, etc.)
       statusEl.className   = 'send-status error';
       statusEl.textContent = '✗ Error de conexión. Verifiquen que tienen internet y vuelvan a intentar. (' + err + ')';
     })
