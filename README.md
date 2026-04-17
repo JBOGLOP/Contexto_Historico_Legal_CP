@@ -49,26 +49,6 @@ La actividad grupal corresponde a la sesión sincrónica del **24 de abril de 20
 
 ---
 
-## ⚙️ Integración con Google Sheets
-
-Las respuestas de la actividad grupal se envían automáticamente a una hoja de Google Sheets mediante Google Apps Script. El docente puede verificar las respuestas desde el menú **📋 Actividad CP → Verificar respuestas** directamente en la hoja.
-
-> El App Script no se publica en este repositorio por contener referencias a hojas privadas.
-
----
-
-## 🗂️ Estructura del repositorio
-
-```
-Contexto_Historico_Legal_CP/
-│
-├── README.md                    ← Este archivo
-├── legal_internacional.html     ← Plan de clase (Unidad 3, Tema 1)
-└── actividad_grupal.html        ← Actividad grupal (caso Doña Carmen)
-```
-
----
-
 ## 📚 Fuentes e instrumentos jurídicos
 
 - **WHA67.19** (OMS, 2014) — Primera resolución mundial sobre CP · [PDF español](https://apps.who.int/gb/ebwha/pdf_files/wha67/a67_r19-sp.pdf)
