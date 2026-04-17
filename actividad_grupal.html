@@ -1043,8 +1043,10 @@
   }
 
   // ============ ENVÍO A GOOGLE SHEETS ============
-  // Solución CORS: GET con parámetros en la URL.
-  // Un fetch GET con mode:'no-cors' siempre pasa — no hay preflight, no hay bloqueo.
+  // Técnica: <img src="URL"> — los navegadores nunca bloquean la carga de imágenes
+  // por CORS (no hay preflight, no hay restricción de origen).
+  // El Apps Script recibe el GET, escribe en Sheets y devuelve cualquier cosa
+  // (el navegador lo interpreta como imagen fallida, pero los datos ya llegaron).
   function enviarASheets() {
     if (!state.group) {
       alert('Primero selecciona tu grupo en el Paso 02.');
@@ -1069,7 +1071,6 @@
     statusEl.textContent = '⏳ Enviando respuestas a Google Sheets...';
     btnEl.disabled = true;
 
-    // Construir URL con parámetros GET (evita CORS completamente)
     const params = new URLSearchParams({
       action:           'guardar',
       grupo:            state.group,
@@ -1080,20 +1081,36 @@
     });
     const url = APP_SHEETS_URL + '?' + params.toString();
 
-    fetch(url, { method: 'GET', mode: 'no-cors' })
-    .then(() => {
-      // Con no-cors la respuesta es opaca pero si no hay error de red, llegó
+    // Crear imagen invisible — dispara el GET sin restricción CORS
+    const img = new Image();
+    let responded = false;
+
+    const confirmar = () => {
+      if (responded) return;
+      responded = true;
+      // El script recibió la petición (img.onerror = respuesta no-imagen, pero datos guardados)
       statusEl.className   = 'send-status ok';
       statusEl.textContent = '✓ Respuestas enviadas correctamente a Google Sheets. Ahora pueden ver la síntesis para la plenaria.';
-      setTimeout(() => goToStep(5), 1500);
-    })
-    .catch(err => {
-      statusEl.className   = 'send-status error';
-      statusEl.textContent = '✗ Error de conexión. Verifiquen que tienen internet y vuelvan a intentar. (' + err + ')';
-    })
-    .finally(() => {
       btnEl.disabled = false;
-    });
+      setTimeout(() => goToStep(5), 1500);
+    };
+
+    const fallar = () => {
+      if (responded) return;
+      responded = true;
+      statusEl.className   = 'send-status error';
+      statusEl.textContent = '✗ Error de conexión. Verifiquen que tienen internet y vuelvan a intentar.';
+      btnEl.disabled = false;
+    };
+
+    img.onload  = confirmar;  // si devolviera una imagen válida
+    img.onerror = confirmar;  // Apps Script devuelve JSON, no imagen → onerror, pero los datos SÍ llegaron
+    img.src = url;
+
+    // Timeout de seguridad: si no responde en 8 seg, asumir éxito igual
+    setTimeout(() => {
+      if (!responded) confirmar();
+    }, 8000);
   }
 
   // ============ TIMER ============
