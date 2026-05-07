@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marco normativo y jurisprudencial de los cuidados paliativos en Colombia 2023-2026 · UAN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1F4E79;
+  --primary-light: #2E75B6;
+  --accent: #C00000;
+  --accent-soft: #E36C09;
+  --gray: #595959;
+  --gray-light: #A6A6A6;
+  --bg: #F8F8F6;
+  --bg-card: #FFFFFF;
+  --bg-soft: #F2F2F2;
+  --bg-blue: #DDEBF7;
+  --bg-yellow: #FFF2CC;
+  --bg-red: #FCE4D6;
+  --bg-green: #E2EFDA;
+  --bg-purple: #E4D6F0;
+
+  /* Líneas jurisprudenciales */
+  --linea1: #7030A0;
+  --linea1-soft: #E4D6F0;
+  --linea2: #1F4E79;
+  --linea2-soft: #DDEBF7;
+  --linea3: #00B050;
+  --linea3-soft: #E2EFDA;
+
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.65;
+  color: #1a1a1a;
+  background: var(--bg);
+}
+
+/* ============ HEADER STICKY ============ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 14px 0;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+}
+.brand small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--gray);
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+.nav-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.nav-tab {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  background: white;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.nav-tab:hover { border-color: var(--primary-light); color: var(--primary); }
+.nav-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* ============ HERO ============ */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 32px 60px;
+}
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--primary-light);
+}
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--gray);
+  max-width: 820px;
+  margin-bottom: 32px;
+}
+.hero-meta {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+.hero-meta strong { color: var(--primary); font-weight: 600; }
+
+/* ============ SECCIONES ============ */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 32px;
+  scroll-margin-top: 90px;
+}
+.section-header {
+  margin-bottom: 36px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 16px;
+}
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.section-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+.section-intro {
+  max-width: 880px;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+  color: #2a2a2a;
+}
+
+/* ============ CAPAS NORMATIVAS ============ */
+.layer-block {
+  background: var(--bg-card);
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 28px 30px;
+  margin-bottom: 22px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border-left: 6px solid var(--primary);
+}
+.layer-block.regional { border-left-color: var(--primary-light); }
+.layer-block.colombia { border-left-color: var(--accent); }
+.layer-block.observatorio { border-left-color: var(--accent-soft); }
+
+.layer-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin-bottom: 6px;
+}
+.layer-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.layer-block p { margin-bottom: 12px; font-size: 1rem; }
+
+/* ============ BOTONES DE CONSULTA NORMATIVA ============ */
+.norma-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+  margin: 18px 0 4px;
+}
+.norma-card {
+  background: var(--bg-soft);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.norma-card:hover {
+  border-color: var(--primary-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.norma-card .norma-tag {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.norma-card .norma-titulo {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.35;
+}
+.norma-card .norma-meta {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--gray);
+}
+.consulta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 999px;
+  transition: all 0.15s ease;
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+}
+.consulta-btn:hover {
+  background: var(--primary-light);
+  transform: translateX(2px);
+}
+.consulta-btn::after {
+  content: "→";
+  font-weight: 700;
+}
+
+/* ============ TABLA ADHESIÓN A-70 ============ */
+.adhesion-box {
+  background: linear-gradient(135deg, var(--bg-blue) 0%, white 100%);
+  border-radius: 10px;
+  border: 1px solid var(--primary-light);
+  padding: 24px 28px;
+  margin: 18px 0;
+}
+.adhesion-box h4 {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.adhesion-box ul { list-style: none; padding: 0; }
+.adhesion-box li {
+  padding: 6px 0 6px 22px;
+  position: relative;
+  font-size: 0.96rem;
+}
+.adhesion-box li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* ============ DASHBOARD CHART ============ */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+.chart-card {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  padding: 22px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.chart-card h4 {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+.chart-wrapper {
+  position: relative;
+  height: 280px;
+}
+
+/* ============ FILTROS DE LÍNEA ============ */
+.linea-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  align-items: center;
+}
+.linea-filters .label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  margin-right: 6px;
+}
+.linea-pill {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 999px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  color: var(--gray);
+}
+.linea-pill:hover { border-color: var(--primary); }
+.linea-pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+.linea-pill[data-linea="1"].active { background: var(--linea1); border-color: var(--linea1); }
+.linea-pill[data-linea="2"].active { background: var(--linea2); border-color: var(--linea2); }
+.linea-pill[data-linea="3"].active { background: var(--linea3); border-color: var(--linea3); }
+
+/* ============ FICHAS DE SENTENCIA ============ */
+.sentencia-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.sentencia-card {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  border-left: 6px solid var(--linea-color, var(--primary));
+  padding: 26px 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: all 0.2s ease;
+}
+.sentencia-card.hidden { display: none; }
+.sentencia-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+.sentencia-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.sentencia-id {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--linea-color);
+  letter-spacing: 0.04em;
+}
+.sentencia-linea-tag {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--linea-soft);
+  color: var(--linea-color);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.sentencia-titulo {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--linea-color);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+.sentencia-mp {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-style: italic;
+}
+.sentencia-section {
+  margin-top: 18px;
+}
+.sentencia-section h5 {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--linea-color);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+}
+.sentencia-section p { font-size: 0.96rem; margin-bottom: 8px; }
+.sentencia-section ul { list-style: none; padding: 0; }
+.sentencia-section li {
+  padding: 4px 0 4px 18px;
+  position: relative;
+  font-size: 0.95rem;
+}
+.sentencia-section li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--linea-color);
+  font-weight: bold;
+}
+.cita-textual {
+  font-style: italic;
+  background: var(--linea-soft);
+  padding: 10px 16px;
+  border-left: 3px solid var(--linea-color);
+  border-radius: 4px;
+  margin: 8px 0;
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+.cita-textual::before { content: "« "; font-weight: bold; color: var(--linea-color); }
+.cita-textual::after { content: " »"; font-weight: bold; color: var(--linea-color); }
+
+.aplicabilidad-box {
+  background: linear-gradient(135deg, var(--bg-yellow) 0%, white 100%);
+  border-left: 4px solid var(--accent-soft);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+.aplicabilidad-box strong { color: var(--accent-soft); }
+
+.sentencia-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ============ DESCRIPCIÓN DE LÍNEA ============ */
+.linea-intro {
+  background: var(--linea-soft);
+  border-left: 5px solid var(--linea-color);
+  padding: 18px 24px;
+  border-radius: 6px;
+  margin: 24px 0 18px;
+}
+.linea-intro h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--linea-color);
+  margin-bottom: 8px;
+}
+.linea-intro p { font-size: 0.96rem; }
+
+/* ============ VACÍOS BOX ============ */
+.vacio-box {
+  background: white;
+  border: 2px dashed var(--gray-light);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin: 22px 0;
+}
+.vacio-box h4 {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+.vacio-box ul { list-style: none; padding: 0; }
+.vacio-box li {
+  padding: 6px 0 6px 24px;
+  position: relative;
+  font-size: 0.96rem;
+}
+.vacio-box li::before {
+  content: "○";
+  position: absolute;
+  left: 0;
+  color: var(--gray);
+  font-weight: bold;
+}
+
+/* ============ SÍNTESIS PEDAGÓGICA ============ */
+.sintesis-block {
+  background: linear-gradient(135deg, var(--bg-red) 0%, white 50%);
+  border-radius: 12px;
+  border: 1px solid var(--accent);
+  padding: 36px 40px;
+  margin-top: 32px;
+}
+.sintesis-block .eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.sintesis-block h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.sintesis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.sintesis-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px 22px;
+  border-top: 4px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.sintesis-card .num {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.sintesis-card h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+.sintesis-card p { font-size: 0.94rem; color: #2a2a2a; }
+
+/* ============ ARGUMENTOS DOÑA CARMEN ============ */
+.argumentos-list {
+  counter-reset: arg;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 24px 0;
+}
+.argumento {
+  background: white;
+  border-radius: 8px;
+  padding: 18px 22px 18px 70px;
+  border: 1px solid #e8e8e8;
+  border-left: 5px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  position: relative;
+  counter-increment: arg;
+}
+.argumento::before {
+  content: counter(arg);
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--accent);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.argumento h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+.argumento p { font-size: 0.94rem; }
+
+/* ============ DOCENTE TOGGLE ============ */
+.docente-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  transition: all 0.2s ease;
+}
+.docente-toggle:hover { background: var(--primary-light); }
+.docente-toggle.active { background: var(--accent); }
+
+.docente-only {
+  display: none;
+  background: linear-gradient(135deg, var(--bg-yellow) 0%, white 100%);
+  border-left: 4px solid var(--accent-soft);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 14px 0;
+  font-size: 0.93rem;
+}
+.docente-only::before {
+  content: "👁 NOTA DOCENTE — ";
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-soft);
+}
+body.docente-mode .docente-only { display: block; }
+
+/* ============ FOOTER ============ */
+footer {
+  margin-top: 80px;
+  padding: 40px 32px;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+footer .footer-meta { opacity: 0.85; }
+footer .actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+footer button {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+footer button:hover { background: rgba(255,255,255,0.25); }
+
+section { animation: fadeIn 0.4s ease both; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media print {
+  .site-header, footer, .docente-toggle, .linea-filters { display: none !important; }
+  body { background: white; }
+  section { padding: 20px 0; max-width: 100%; }
+  .sentencia-card { page-break-inside: avoid; }
+  body.docente-mode .docente-only { display: block; }
+}
+
+@media (max-width: 700px) {
+  .hero { padding: 50px 22px 40px; }
+  section { padding: 40px 22px; }
+  .layer-block, .sentencia-card, .sintesis-block { padding: 20px 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      Marco normativo y jurisprudencial · UAN
+      <small>Maestría en Cuidados Paliativos · 2026-I</small>
+    </div>
+    <nav class="nav-tabs">
+      <button class="nav-tab" data-target="regional">1. Regional</button>
+      <button class="nav-tab" data-target="colombia">2. Colombia</button>
+      <button class="nav-tab" data-target="jurisprudencia">3. Jurisprudencia</button>
+      <button class="nav-tab" data-target="vacios">4. Vacíos</button>
+      <button class="nav-tab" data-target="sintesis">5. Síntesis</button>
+      <button class="nav-tab" data-target="referencias">6. Referencias</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-eyebrow">Investigación profunda · Sesión 8 de mayo de 2026 · Aula invertida</div>
+  <h1>Cuidados paliativos en Colombia<br><em>marco normativo y jurisprudencial 2023–2026</em></h1>
+  <p class="hero-subtitle">La paradoja colombiana —legislación avanzada conviviendo con implementación territorial fracturada— se confirma documentalmente en cada capa del andamiaje jurídico. Este informe verifica con enlaces oficiales todo el marco regional e interno, sistematiza dieciséis sentencias constitucionales pivote del periodo 2023–2026, documenta el vacío jurisprudencial del Consejo de Estado y de la Corte Suprema de Justicia, y traduce los hallazgos en argumentos exigibles para el caso pedagógico de Doña Carmen.</p>
+  <div class="hero-meta">
+    <span><strong>Profesor</strong> Jorge Bogoya</span>
+    <span><strong>Curso</strong> Contexto Histórico y Legal de los Cuidados Paliativos · 37542001</span>
+    <span><strong>Cierre documental</strong> 7 de mayo de 2026</span>
+  </div>
+</div>
+
+<!-- ============ CORRECCIONES NUMÉRICAS ============ -->
+<section style="padding-top: 0;">
+  <div class="layer-block" style="border-left-color: var(--accent-soft); background: linear-gradient(135deg, var(--bg-yellow) 0%, white 100%);">
+    <div class="layer-eyebrow">Verificación previa · Discrepancias detectadas</div>
+    <h3 class="layer-title">Cuatro correcciones numéricas confirmadas en fuentes primarias</h3>
+    <p>La investigación detectó discrepancias entre algunas referencias circulantes y los registros oficiales. Se corrigen explícitamente:</p>
+    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+      <li style="padding: 8px 0 8px 22px; position: relative; font-size: 0.96rem;"><span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span> La sentencia de control constitucional de la Ley aprobatoria de la Convención Interamericana A-70 es <strong>C-395 de 2021</strong>, no C-345.</li>
+      <li style="padding: 8px 0 8px 22px; position: relative; font-size: 0.96rem;"><span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span> La signatura del Consenso de Montevideo (versión accesible 2022) es <strong>LC/CRPD.5/3</strong>, no LC/CRE.5/3.</li>
+      <li style="padding: 8px 0 8px 22px; position: relative; font-size: 0.96rem;"><span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span> La guía colombiana es la <strong>Guía de Práctica Clínica sobre Cuidados Paliativos – Adopción 2016</strong>, sin numeración oficial "58".</li>
+      <li style="padding: 8px 0 8px 22px; position: relative; font-size: 0.96rem;"><span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span> La supuesta "Sentencia C-164 de 2025" no existe en la Relatoría: corresponde a la <strong>Sentencia C-164 de 2022</strong> sobre asistencia médica al suicidio.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 1: REGIONAL ============ -->
+<section id="regional">
+  <div class="section-header">
+    <div class="section-eyebrow">Primera capa · Marco internacional y regional</div>
+    <h2>Marco regional latinoamericano e internacional verificado</h2>
+  </div>
+  <p class="section-intro">El sistema interamericano y mundial provee a Colombia un piso normativo robusto sobre cuidados paliativos, derecho a la salud y acceso a opioides esenciales. Cada instrumento siguiente fue verificado en su fuente oficial primaria al cierre documental.</p>
+
+  <div class="layer-block regional">
+    <div class="layer-eyebrow">Organización Mundial de la Salud (OMS)</div>
+    <h3 class="layer-title">Resolución WHA67.19 de 2014 — Asamblea Mundial de la Salud</h3>
+    <p>Adoptada el 24 de mayo de 2014 con el título oficial <em>Fortalecimiento de los cuidados paliativos como parte del tratamiento integral a lo largo de la vida</em>. Constituye la primera resolución mundial específica sobre la materia y obliga a los Estados miembros a integrar paliación en todos los niveles de atención, garantizar acceso a opioides esenciales y financiar la formación profesional.</p>
+    <div class="docente-only">El año 2014 es un punto de convergencia normativa internacional clave: la WHA67.19 (mayo) coincide con la sanción de la Ley 1733 colombiana (septiembre) y el Consenso de Montevideo del año anterior (agosto 2013). Reservar como cierre interpretativo de la sesión.</div>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">OMS · Resolución</div>
+        <div class="norma-titulo">WHA67.19 — Fortalecimiento de los cuidados paliativos</div>
+        <div class="norma-meta">24 de mayo de 2014 · Asamblea Mundial de la Salud · Repositorio IRIS</div>
+        <a class="consulta-btn" href="https://apps.who.int/gb/ebwha/pdf_files/wha67/a67_r19-sp.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">OMS · Repositorio</div>
+        <div class="norma-titulo">Informe de la Secretaría OMS sobre cuidados paliativos</div>
+        <div class="norma-meta">Documento de referencia · IRIS / handle 10665/170558</div>
+        <a class="consulta-btn" href="https://apps.who.int/iris/handle/10665/170558" target="_blank" rel="noopener">Consultar repositorio IRIS</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block regional">
+    <div class="layer-eyebrow">Organización Panamericana de la Salud (OPS)</div>
+    <h3 class="layer-title">Plan de acción regional sobre enfermedades no transmisibles</h3>
+    <p>La Organización Panamericana de la Salud (OPS) consolidó el compromiso regional. La <strong>Resolución CD52.R9 de 2013</strong> aprobó el plan 2013-2019 y por primera vez integró los cuidados paliativos como componente del continuo de atención. El 62.° Consejo Directivo aprobó en octubre de 2025 la <strong>Resolución CD62.R8</strong> y el documento CD62/8, que ubica los cuidados paliativos en la <strong>Línea Estratégica 2 del continuo asistencial</strong>.</p>
+    <p><em>Aclaración técnica:</em> la Resolución CD52.R9 no es una resolución específica de cuidados paliativos como a veces se cita: es plan general de enfermedades no transmisibles que los incorpora.</p>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">OPS · Resolución</div>
+        <div class="norma-titulo">CD52.R9 — Plan de acción 2013-2019</div>
+        <div class="norma-meta">52.° Consejo Directivo · 2013</div>
+        <a class="consulta-btn" href="https://www3.paho.org/hq/dmdocuments/2015/plan-accion-prevencion-control-ent-americas.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">OPS · Resolución</div>
+        <div class="norma-titulo">CD62.R8 — Plan de acción 2025-2030</div>
+        <div class="norma-meta">62.° Consejo Directivo · Octubre 2025 · Documento CD62/8</div>
+        <a class="consulta-btn" href="https://iris.paho.org/bitstream/handle/10665.2/68708/CD62-8-s-plan-prevencion-control-ent.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block regional">
+    <div class="layer-eyebrow">Comisión Económica para América Latina y el Caribe (CEPAL)</div>
+    <h3 class="layer-title">Consenso de Montevideo sobre Población y Desarrollo</h3>
+    <p>Adoptado del 12 al 15 de agosto de 2013. Su Capítulo C demanda servicios sociosanitarios integrales para personas mayores con enfermedades crónicas. La versión accesible 2022 se encuentra bajo signatura <strong>LC/CRPD.5/3</strong>.</p>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">CEPAL · Consenso</div>
+        <div class="norma-titulo">Consenso de Montevideo sobre Población y Desarrollo</div>
+        <div class="norma-meta">Quinta Reunión Conferencia Regional · 2013 · Versión inglesa publicada</div>
+        <a class="consulta-btn" href="https://www.cepal.org/en/publications/21860-montevideo-consensus-population-and-development" target="_blank" rel="noopener">Consultar publicación CEPAL</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">CEPAL · Versión accesible</div>
+        <div class="norma-titulo">Consenso de Montevideo — versión accesible</div>
+        <div class="norma-meta">Signatura LC/CRPD.5/3 · 2022</div>
+        <a class="consulta-btn" href="https://crpd.cepal.org/5/es/documentos/consenso-montevideo-poblacion-desarrollo-version-accesible" target="_blank" rel="noopener">Consultar versión accesible</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block regional">
+    <div class="layer-eyebrow">Asociación Latinoamericana de Cuidados Paliativos (ALCP)</div>
+    <h3 class="layer-title">Atlas de Cuidados Paliativos en Latinoamérica</h3>
+    <p>El Atlas 2020, segunda edición, sistematiza información de diecinueve países en seis dimensiones de desarrollo paliativo. Al 7 de mayo de 2026 <strong>no se ha publicado el Atlas 2025 de la Asociación Latinoamericana de Cuidados Paliativos</strong>: el ciclo editorial del Atlas (2012, 2020) sugiere periodicidad cercana a ocho años. El Atlas regional más reciente es el <em>Atlas de Cuidados Paliativos de las Américas 2025</em>, producido por la Universidad de Navarra (UNAV/ATLANTES) en alianza con ALCP, IAHPC, WHPCA y OPS, que cubre 35 países y reporta 10.526 servicios.</p>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">ALCP · Atlas</div>
+        <div class="norma-titulo">Atlas de Cuidados Paliativos en Latinoamérica 2020</div>
+        <div class="norma-meta">Segunda edición · 19 países</div>
+        <a class="consulta-btn" href="https://cuidadospaliativos.org/recursos/publicaciones/atlas-de-cuidados-paliativos-de-latinoamerica/" target="_blank" rel="noopener">Consultar Atlas ALCP</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block regional">
+    <div class="layer-eyebrow">Junta Internacional de Fiscalización de Estupefacientes</div>
+    <h3 class="layer-title">Disponibilidad de opioides medicinales — Informes 2024 y 2025</h3>
+    <p>La Junta Internacional de Fiscalización de Estupefacientes (JIFE, conocida también por su sigla en inglés INCB) documenta con rigor la persistente disparidad regional en consumo de opioides medicinales. Los informes recientes reiteran que la oferta mundial excede las necesidades comunicadas pero los pacientes carecen de acceso real, atribuyendo la disparidad a estimaciones nacionales inexactas.</p>
+    <div class="adhesion-box">
+      <h4>Disparidad documentada (S-DDDpM = dosis diarias definidas con fines estadísticos por millón de habitantes)</h4>
+      <ul>
+        <li><strong>América del Norte:</strong> aproximadamente 15 467 S-DDDpM</li>
+        <li><strong>África, Asia Meridional, Centroamérica y el Caribe:</strong> menos de 220 S-DDDpM</li>
+      </ul>
+    </div>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">JIFE · Informe</div>
+        <div class="norma-titulo">Informe Anual JIFE 2023</div>
+        <div class="norma-meta">E/INCB/2023/1 · español</div>
+        <a class="consulta-btn" href="https://www.incb.org/documents/Publications/AnnualReports/AR2023/Annual_Report/E_INCB_2023_1_spa.pdf" target="_blank" rel="noopener">Consultar Informe 2023</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">JIFE · Informe</div>
+        <div class="norma-titulo">Informe Anual JIFE 2024</div>
+        <div class="norma-meta">E/INCB/2024/1 · español</div>
+        <a class="consulta-btn" href="https://www.incb.org/incb/uploads/documents/Publications/AnnualReports/AR2024/Annual_Report/E_INCB_2024_1_spa.pdf" target="_blank" rel="noopener">Consultar Informe 2024</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block regional" style="border-left-color: var(--accent);">
+    <div class="layer-eyebrow">Organización de los Estados Americanos (OEA) · Pieza crítica</div>
+    <h3 class="layer-title">Convención Interamericana A-70 sobre la Protección de los Derechos Humanos de las Personas Mayores</h3>
+    <p>Adoptada el 15 de junio de 2015. Su <strong>artículo 19, literal m</strong>, establece la obligación de los Estados Parte de garantizar disponibilidad y acceso a medicamentos esenciales reconocidos por la Organización Mundial de la Salud (OMS), incluyendo los fiscalizados necesarios para los cuidados paliativos. <strong>Es el primer instrumento internacional jurídicamente vinculante con esa obligación específica.</strong></p>
+
+    <div class="adhesion-box">
+      <h4>Adhesión colombiana — datos verificados</h4>
+      <ul>
+        <li>Firma del instrumento de adhesión: <strong>13 de septiembre de 2022</strong> por el Ministro de Relaciones Exteriores Álvaro Leyva Durán</li>
+        <li>Depósito ante la Secretaría General de la Organización de los Estados Americanos: <strong>27 de septiembre de 2022</strong></li>
+        <li>Ley aprobatoria: <strong>Ley 2055 de 2020</strong></li>
+        <li>Control constitucional: <strong>Sentencia C-395 de 2021</strong> (no C-345 como circulaba en algunas referencias)</li>
+        <li>Declaraciones interpretativas formuladas: dos (sobre la naturaleza progresiva de los derechos económicos, sociales y culturales, y sobre los artículos 4, 6 y 18)</li>
+        <li><strong>El artículo 19 literal m sobre medicamentos fiscalizados queda fuera de las declaraciones interpretativas</strong>: Colombia se obliga plenamente, sin reserva ni condicionamiento, a garantizar acceso a opioides para cuidados paliativos</li>
+      </ul>
+    </div>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">OEA · Tratado</div>
+        <div class="norma-titulo">Convención Interamericana A-70 — texto completo</div>
+        <div class="norma-meta">15 de junio de 2015 · Departamento de Derecho Internacional</div>
+        <a class="consulta-btn" href="https://www.oas.org/es/sla/ddi/docs/tratados_multilaterales_interamericanos_a-70_derechos_humanos_personas_mayores.pdf" target="_blank" rel="noopener">Consultar PDF tratado</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">OEA · Estado de firmas</div>
+        <div class="norma-titulo">Estado de firmas y ratificaciones A-70</div>
+        <div class="norma-meta">Departamento de Derecho Internacional · OEA</div>
+        <a class="consulta-btn" href="https://www.oas.org/es/sla/ddi/tratados_multilaterales_interamericanos_A-70_derechos_humanos_personas_mayores_firmas.asp" target="_blank" rel="noopener">Consultar estado oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Cancillería Colombia</div>
+        <div class="norma-titulo">Acto de adhesión — comunicado oficial</div>
+        <div class="norma-meta">Ministerio de Relaciones Exteriores · 13/9/2022</div>
+        <a class="consulta-btn" href="https://www.cancilleria.gov.co/newsroom/news/ministro-alvaro-leyva-duran-firmo-adhesion-convencion-interamericana-proteccion" target="_blank" rel="noopener">Consultar comunicado</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Ley aprobatoria</div>
+        <div class="norma-titulo">Ley 2055 de 2020 — Aprobación Convención A-70</div>
+        <div class="norma-meta">Función Pública · Gestor Normativo</div>
+        <a class="consulta-btn" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=141981" target="_blank" rel="noopener">Consultar Ley 2055</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Corte Constitucional</div>
+        <div class="norma-titulo">Sentencia C-395 de 2021 — Control Convención A-70</div>
+        <div class="norma-meta">Sala Plena · 2021</div>
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2021/c-395-21.htm" target="_blank" rel="noopener">Consultar sentencia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 2: COLOMBIA ============ -->
+<section id="colombia">
+  <div class="section-header">
+    <div class="section-eyebrow">Segunda capa · Marco normativo interno colombiano</div>
+    <h2>Andamiaje normativo colombiano vigente al 7 de mayo de 2026</h2>
+  </div>
+  <p class="section-intro">El armazón interno se sostiene sobre tres niveles: <strong>constitucional, legal y reglamentario</strong>. Cada cuerpo normativo siguiente fue verificado en su fuente oficial primaria. Donde una resolución ha sido derogada o sustituida, se indica explícitamente la norma vigente.</p>
+
+  <div class="layer-block colombia">
+    <div class="layer-eyebrow">Nivel constitucional</div>
+    <h3 class="layer-title">Constitución Política de Colombia de 1991</h3>
+    <p>Los <strong>artículos 11, 12 y 49</strong> son el sustrato jurisprudencial. El artículo 12, sobre prohibición de tratos crueles, inhumanos o degradantes, ha sido el fundamento clave de la línea jurisprudencial sobre denegación del dolor inaugurada por la Sentencia C-233 de 2021 (magistrada ponente Diana Fajardo Rivera).</p>
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Constitución</div>
+        <div class="norma-titulo">Constitución Política de Colombia de 1991</div>
+        <div class="norma-meta">Sistema Único de Información Normativa (SUIN-Juriscol)</div>
+        <a class="consulta-btn" href="https://www.suin-juriscol.gov.co/viewDocument.asp?id=1687988" target="_blank" rel="noopener">Consultar Constitución</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block colombia">
+    <div class="layer-eyebrow">Nivel legal · Cuerpo central</div>
+    <h3 class="layer-title">Leyes vigentes sobre cuidados paliativos y derecho a la salud</h3>
+    <p>La <strong>Ley 1733 de 2014, denominada Ley Consuelo Devis Saavedra</strong>, regula los servicios de cuidados paliativos para enfermedades terminales, crónicas, degenerativas e irreversibles. Su artículo 8 garantiza acceso a medicamentos opioides 24/7 mediante autorizaciones del Fondo Nacional de Estupefacientes (FNE), y su artículo 7 fue modificado por la <strong>Ley 2241 de 2022</strong>, que fortaleció la formación universitaria y de posgrado. La <strong>Ley Estatutaria 1751 de 2015</strong> consagra explícitamente la paliación como prestación obligatoria del derecho fundamental a la salud en su artículo 2.</p>
+    <p>Tres leyes recientes amplían el ecosistema: la <strong>Ley 2055 de 2020</strong> aprueba la Convención Interamericana A-70; la <strong>Ley 2297 de 2023</strong> regula los derechos del cuidador o asistente personal; la <strong>Ley 2360 de 2024</strong> modifica la Ley 1384 de 2010 y refuerza la atención integral del paciente oncológico, invocada en la Sentencia T-377 de 2024.</p>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Ley · Pieza central</div>
+        <div class="norma-titulo">Ley 1733 de 2014 — Ley Consuelo Devis Saavedra</div>
+        <div class="norma-meta">Cuidados paliativos · 8 de septiembre de 2014</div>
+        <a class="consulta-btn" href="https://www.suin-juriscol.gov.co/viewDocument.asp?ruta=Leyes/1687420" target="_blank" rel="noopener">Consultar SUIN-Juriscol</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Ley · PDF Cancillería</div>
+        <div class="norma-titulo">Ley 1733 de 2014 — versión PDF oficial</div>
+        <div class="norma-meta">Normograma Cancillería</div>
+        <a class="consulta-btn" href="https://www.cancilleria.gov.co/sites/default/files/Normograma/docs/pdf/ley_1733_2014.pdf" target="_blank" rel="noopener">Consultar PDF</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Ley Estatutaria</div>
+        <div class="norma-titulo">Ley Estatutaria 1751 de 2015 — Derecho fundamental a la salud</div>
+        <div class="norma-meta">Integralidad · Artículo 2 — paliación obligatoria</div>
+        <a class="consulta-btn" href="https://www.suin-juriscol.gov.co/viewDocument.asp?ruta=Leyes/30019746" target="_blank" rel="noopener">Consultar SUIN-Juriscol</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Ley · Sistema general</div>
+        <div class="norma-titulo">Ley 100 de 1993 — Sistema General de Seguridad Social en Salud</div>
+        <div class="norma-meta">Marco general SGSSS</div>
+        <a class="consulta-btn" href="https://www.suin-juriscol.gov.co/viewDocument.asp?ruta=Leyes/1598622" target="_blank" rel="noopener">Consultar SUIN-Juriscol</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Ley · Aprobatoria A-70</div>
+        <div class="norma-titulo">Ley 2055 de 2020 — Aprueba Convención Interamericana A-70</div>
+        <div class="norma-meta">Personas mayores · Función Pública</div>
+        <a class="consulta-btn" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=141981" target="_blank" rel="noopener">Consultar gestor normativo</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Ley · Modificatoria</div>
+        <div class="norma-titulo">Ley 2241 de 2022 — Formación obligatoria en cuidados paliativos</div>
+        <div class="norma-meta">Modifica Art. 7 Ley 1733/2014</div>
+        <a class="consulta-btn" href="https://www.suin-juriscol.gov.co/viewDocument.asp?id=30044407" target="_blank" rel="noopener">Consultar SUIN-Juriscol</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Ley · Cuidador</div>
+        <div class="norma-titulo">Ley 2297 de 2023 — Derechos del cuidador o asistente personal</div>
+        <div class="norma-meta">Unidad de Gestión Pensional y Parafiscales (UGPP)</div>
+        <a class="consulta-btn" href="https://www.ugpp.gov.co/sites/default/files/Normas/LEY_2297_DE_2023.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Ley · Oncología integral</div>
+        <div class="norma-titulo">Ley 2360 de 2024 — Atención integral oncológica</div>
+        <div class="norma-meta">Modifica Ley 1384 de 2010 · Ley Sandra Ceballos</div>
+        <a class="consulta-btn" href="https://www.suin-juriscol.gov.co/viewDocument.asp?ruta=Leyes/30048148" target="_blank" rel="noopener">Consultar SUIN-Juriscol</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block colombia">
+    <div class="layer-eyebrow">Nivel reglamentario · Decretos y resoluciones</div>
+    <h3 class="layer-title">Reglamentación operativa vigente</h3>
+    <p>El <strong>Decreto 780 de 2016</strong> compila la normativa del sector salud (Decreto Único Reglamentario). El <strong>Decreto 681 de 2022</strong> adicionó el capítulo de la Política Pública Nacional de Envejecimiento y Vejez 2022-2031, cuyo Eje 4 trata de cuidados paliativos para personas mayores.</p>
+    <p>La <strong>Resolución 2626 de 2019</strong> modifica la Política de Atención Integral en Salud (PAIS) y adopta el Modelo de Acción Integral Territorial (MAITE), incluyendo paliación en el ámbito territorial. La <strong>Resolución 3280 de 2018</strong> adopta los lineamientos técnicos de las Rutas Integrales de Atención en Salud (RIAS) e incorpora paliación entre las acciones obligatorias. La <strong>Resolución 229 de 2020</strong> define la carta de derechos al final de la vida.</p>
+    <div class="docente-only">El Plan Decenal de Salud Pública vigente es la Resolución 1035 de 2022 (período 2022-2031), modificada por la Resolución 2367 de 2023. La Resolución 1841 de 2013 (Plan Decenal 2012-2021) ya no está vigente. La Resolución 113 de 2020 sobre certificación de discapacidad fue derogada por la Resolución 1239 de 2022 y actualizada por la Resolución 1197 de 2024.</div>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Decreto compilatorio</div>
+        <div class="norma-titulo">Decreto 780 de 2016 — Decreto Único Reglamentario del Sector Salud</div>
+        <div class="norma-meta">Función Pública · Gestor Normativo</div>
+        <a class="consulta-btn" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=77813" target="_blank" rel="noopener">Consultar gestor normativo</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Resolución · MAITE</div>
+        <div class="norma-titulo">Resolución 2626 de 2019 — Modifica Política de Atención Integral en Salud (PAIS) — adopta MAITE</div>
+        <div class="norma-meta">Ministerio de Salud y Protección Social</div>
+        <a class="consulta-btn" href="https://www.minsalud.gov.co/Normatividad_Nuevo/Resoluci%C3%B3n%20No.%202626%20de%202019.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Resolución · RIAS</div>
+        <div class="norma-titulo">Resolución 3280 de 2018 — Rutas Integrales de Atención en Salud (RIAS)</div>
+        <div class="norma-meta">Lineamientos técnicos</div>
+        <a class="consulta-btn" href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/DIJ/resolucion-3280-de-2018.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Resolución · Carta derechos</div>
+        <div class="norma-titulo">Resolución 229 de 2020 — Carta de derechos y deberes</div>
+        <div class="norma-meta">Derechos al final de la vida</div>
+        <a class="consulta-btn" href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/DIJ/resolucion-229-de-2020.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Resolución · Plan Decenal</div>
+        <div class="norma-titulo">Plan Decenal de Salud Pública 2022-2031</div>
+        <div class="norma-meta">Resolución 1035 de 2022 modificada por Resolución 2367 de 2023</div>
+        <a class="consulta-btn" href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/ED/PSP/documento-plan-decenal-salud-publica-2022-2031-may2022.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Guía clínica</div>
+        <div class="norma-titulo">Guía de Práctica Clínica sobre Cuidados Paliativos – Adopción 2016</div>
+        <div class="norma-meta">Ministerio de Salud · IETS · Instituto Nacional de Cancerología</div>
+        <a class="consulta-btn" href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/CA/gpc-completa-cuidados-paliativos-adopcion.pdf" target="_blank" rel="noopener">Consultar PDF oficial</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Documento CONPES</div>
+        <div class="norma-titulo">CONPES 4143 de 2025 — Política Nacional de Cuidado</div>
+        <div class="norma-meta">Departamento Nacional de Planeación · Plan a 10 años</div>
+        <a class="consulta-btn" href="https://sisconpes.dnp.gov.co/SisCONPESWeb/ctmp/2024-11-13%20Documento%20CONPES%20Pol%C3%ADtica%20Nacional%20de%20Cuidado.pdf" target="_blank" rel="noopener">Consultar PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block colombia" style="border-left-color: var(--accent);">
+    <div class="layer-eyebrow">Régimen de muerte digna · Tres ciclos sucesivos</div>
+    <h3 class="layer-title">Resolución 813 del 28 de abril de 2026 — régimen unificado actualmente vigente</h3>
+    <p>La regulación específica del derecho a morir con dignidad ha sufrido tres ciclos. La <strong>Resolución 1216 de 2015</strong> fue derogada por la <strong>Resolución 971 de 2021</strong>, que desarrolló la eutanasia para mayores de 18 años. La <strong>Resolución 825 de 2018</strong> reglamentó el procedimiento para niñas, niños y adolescentes. <strong>Ambas fueron derogadas por la Resolución 813 del 28 de abril de 2026</strong> del Ministerio de Salud y Protección Social, expedida diez días antes de la sesión académica del 8 de mayo, que unifica eutanasia, adecuación del esfuerzo terapéutico y cuidados paliativos, elimina el requisito de fase terminal y recoge las órdenes de las Sentencias T-445 de 2024, T-057 de 2025 y T-438 de 2025.</p>
+    <div class="docente-only">La Resolución 813 de 2026 es la pieza más reciente del armazón. Conviene presentarla como evidencia viva de que la jurisprudencia constitucional opera como motor de la reglamentación administrativa, validando empíricamente la enseñanza sobre el carácter dialógico —y no simplemente declarativo— del derecho.</div>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Resolución · Vigente</div>
+        <div class="norma-titulo">Resolución 813 de 2026 — Régimen unificado de muerte digna</div>
+        <div class="norma-meta">28 de abril de 2026 · MinSalud · Versión publicada</div>
+        <a class="consulta-btn" href="https://consultorsalud.com/wp-content/uploads/2026/04/Resolucion-No-813-de-2026-1.pdf" target="_blank" rel="noopener">Consultar PDF</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Resolución · Derogada</div>
+        <div class="norma-titulo">Resolución 971 de 2021 — Eutanasia adultos (derogada)</div>
+        <div class="norma-meta">Reemplazada por Resolución 813 de 2026</div>
+        <a class="consulta-btn" href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/DIJ/resolucion-971-de-2021.pdf" target="_blank" rel="noopener">Consultar texto histórico</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Análisis · Resolución 813</div>
+        <div class="norma-titulo">Análisis técnico de la Resolución 813 de 2026</div>
+        <div class="norma-meta">Consultorsalud · Cambios estructurales</div>
+        <a class="consulta-btn" href="https://consultorsalud.com/minsalud-fija-nuevas-reglas-para-eutanasia/" target="_blank" rel="noopener">Consultar análisis</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block observatorio">
+    <div class="layer-eyebrow">Tercera capa · Observatorio empírico</div>
+    <h3 class="layer-title">Observatorio Colombiano de Cuidados Paliativos — la paradoja en cifras</h3>
+    <p>El <strong>Observatorio Colombiano de Cuidados Paliativos (OCCP)</strong> —proyecto de la Universidad El Bosque con la Universidad de La Sabana, la Asociación Colombiana de Cuidados Paliativos, el Instituto Nacional de Cancerología, el Fondo Nacional de Estupefacientes y la Organización Panamericana de la Salud Colombia— documenta que <strong>seis departamentos (San Andrés y Providencia, Putumayo, Guainía, Vaupés, Vichada y Amazonas) carecían de servicios de cuidados paliativos</strong> inscritos en el Registro Especial de Prestadores de Servicios de Salud (REPS) hasta 2019, y que <strong>solo tres de cada diez pacientes con necesidad paliativa accede a la atención</strong>.</p>
+
+    <div class="dashboard-grid">
+      <div class="chart-card">
+        <h4>Disparidad territorial de servicios — Atlas Américas 2025</h4>
+        <div class="chart-wrapper"><canvas id="chartTasa"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h4>Cobertura efectiva estimada — comparación regional</h4>
+        <div class="chart-wrapper"><canvas id="chartCobertura"></canvas></div>
+      </div>
+    </div>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Observatorio</div>
+        <div class="norma-titulo">Observatorio Colombiano de Cuidados Paliativos — sitio oficial</div>
+        <div class="norma-meta">Universidad El Bosque · Página principal</div>
+        <a class="consulta-btn" href="https://www.occp.com.co/" target="_blank" rel="noopener">Consultar OCCP</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Observatorio</div>
+        <div class="norma-titulo">Acerca del Observatorio Colombiano de Cuidados Paliativos</div>
+        <div class="norma-meta">Universidad El Bosque · Facultad de Enfermería</div>
+        <a class="consulta-btn" href="https://www.unbosque.edu.co/enfermeria/producto-academico/Observatorio-Colombiano-de-Cuidados-Paliativos" target="_blank" rel="noopener">Consultar institucional</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 3: JURISPRUDENCIA ============ -->
+<section id="jurisprudencia">
+  <div class="section-header">
+    <div class="section-eyebrow">Tercera capa · Jurisprudencia constitucional 2023-2026</div>
+    <h2>Dieciséis sentencias pivote en tres líneas temáticas</h2>
+  </div>
+  <p class="section-intro">La Corte Constitucional ha proferido al menos dieciséis sentencias relevantes en el periodo 2023-2026. Cada ficha siguiente fue verificada en la Relatoría oficial. Use los filtros para explorar por línea temática.</p>
+
+  <div class="linea-filters">
+    <span class="label">Filtrar por línea</span>
+    <button class="linea-pill active" data-linea="all">Todas</button>
+    <button class="linea-pill" data-linea="1">Línea 1 · Muerte digna y discapacidad</button>
+    <button class="linea-pill" data-linea="2">Línea 2 · Opioides e integralidad oncológica</button>
+    <button class="linea-pill" data-linea="3">Línea 3 · Cuidador y enfermería domiciliaria</button>
+  </div>
+
+  <!-- ============ LÍNEA 1 ============ -->
+  <div class="linea-intro" style="--linea-color: var(--linea1); --linea-soft: var(--linea1-soft);">
+    <h3>Línea 1 · Muerte digna, eutanasia y discapacidad</h3>
+    <p>Tres sentencias del periodo redefinen los estándares: T-445/2024 ordena al Ministerio de Salud actualizar la Resolución 971/2021 por contradecir la C-233/2021; T-057/2025 declara inconstitucional la exclusión absoluta de menores con discapacidad cognitiva del procedimiento de eutanasia; T-438/2025 introduce la categoría de "apoyos interpretativos de la voluntad" que sustituye al consentimiento sustituto.</p>
+  </div>
+
+  <div class="sentencia-grid" id="grid-sentencias">
+
+    <!-- T-445/2024 -->
+    <article class="sentencia-card" data-linea="1" style="--linea-color: var(--linea1); --linea-soft: var(--linea1-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Cuarta de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-445 de 2024</h3>
+          <div class="sentencia-mp">21 de octubre de 2024 · Magistrado ponente: Vladimir Fernández Andrade · Expediente T-9.891.016</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 1 · Muerte digna</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos del caso</h5>
+        <p>Clara, mujer de 66 años con adenocarcinoma metastásico, residente en Cali y afiliada al régimen subsidiado de Nueva Empresa Promotora de Salud (EPS), solicitó eutanasia ante el Comité Técnico-Científico para la Muerte Digna de la Fundación Valle del Lili. El Comité negó el procedimiento alegando ausencia de "signos terminales" y cuestionó la validez del consentimiento por el dolor severo que la accionante padecía.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Problema jurídico</h5>
+        <p>¿Puede un Comité Técnico-Científico exigir el cumplimiento del requisito de fase terminal —contenido en la Resolución 971 de 2021— cuando la Sentencia C-233 de 2021 lo eliminó como condición de acceso? ¿Constituye el dolor un argumento legítimo para cuestionar la capacidad de consentir?</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">En lugar de cuestionar la capacidad de la accionante por el dolor que le producía su enfermedad…</div>
+        <div class="cita-textual">…hizo una valoración indebida del consentimiento expresado por la accionante…</div>
+        <div class="cita-textual">…la Resolución 971 de 2021… debe armonizarse con los presupuestos jurisprudenciales…</div>
+        <p>La exigencia de fase terminal contradice la Sentencia C-233 de 2021. El dolor severo no constituye argumento legítimo de incapacidad para consentir; al contrario, refuerza la necesidad del procedimiento. Los Comités no pueden aplicar literalmente una reglamentación desactualizada respecto del precedente constitucional.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Decisión y órdenes</h5>
+        <p>Tutela los derechos a la dignidad humana, a morir dignamente y a la salud de la accionante. <strong>Ordena al Ministerio de Salud y Protección Social actualizar la Resolución 971 de 2021</strong> en plazo de dos meses para armonizarla con la C-233/2021. Esta orden desencadenó la expedición posterior de la Resolución 813 de 2026.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Conexión con jurisprudencia previa</h5>
+        <p>Aplicación directa de C-233/2021 (eliminación de terminalidad como requisito) y T-970/2014 (derecho fundamental a morir dignamente). Refuerza la doctrina T-060/2020 sobre cuidados paliativos como ejercicio pleno —no condición previa— del derecho a morir dignamente.</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad al caso Doña Carmen:</strong> la Empresa Promotora de Salud (EPS) no puede condicionar la atención paliativa al agotamiento terapéutico ni instrumentalizar el dolor como argumento de incapacidad para consentir. El dolor severo refuerza —no debilita— la exigibilidad de la atención.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2024/t-445-24.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+        <a class="consulta-btn" href="https://www.desclab.com/post/sentencia445" target="_blank" rel="noopener">Análisis crítico DescLAB</a>
+      </div>
+    </article>
+
+    <!-- T-057/2025 -->
+    <article class="sentencia-card" data-linea="1" style="--linea-color: var(--linea1); --linea-soft: var(--linea1-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Novena de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-057 de 2025</h3>
+          <div class="sentencia-mp">14 de febrero de 2025 · Magistrado ponente: José Fernando Reyes Cuartas · Expediente T-9.457.619</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 1 · Discapacidad</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos del caso</h5>
+        <p>Mateo, adolescente de 16 años residente en Floridablanca (Santander), padecía epilepsia focal refractaria, parálisis cerebral y discapacidad cognitiva profunda. Su madre solicitó eutanasia a Salud EPS, que la negó invocando los numerales 3.4 a 3.6 de la Resolución 825 de 2018, los cuales excluyen a menores con discapacidad cognitiva del procedimiento.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Problema jurídico</h5>
+        <p>¿Es constitucional la exclusión categórica de niños, niñas y adolescentes con discapacidad cognitiva del procedimiento de muerte digna? ¿Cómo articular el principio de presunción de capacidad jurídica con la imposibilidad fáctica de manifestación autónoma de la voluntad?</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">…lo procedente es que, en cada caso… se estudie si la solicitud reúne los requisitos…</div>
+        <div class="cita-textual">…debe presumirse la capacidad jurídica de las personas en situación de discapacidad…</div>
+        <div class="cita-textual">…la forma de garantizar el derecho… no se concreta precipitando su muerte, sino aliviando su sufrimiento</div>
+        <p>La exclusión absoluta es <strong>inconstitucional</strong>: contradice la Convención sobre los Derechos de las Personas con Discapacidad (Ley 1346 de 2009) y la Ley 1996 de 2019 sobre capacidad jurídica plena. En el caso concreto, sin embargo, no se acreditó voluntad interpretable, por lo que la decisión adecuada fue <strong>reforzar los cuidados paliativos pediátricos</strong>.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Decisión y órdenes</h5>
+        <p>Declara inaplicable la exclusión categórica de la Resolución 825 de 2018 e <strong>insta al Ministerio de Salud y Protección Social a actualizar la regulación</strong> en cumplimiento del estándar internacional de capacidad jurídica plena. Ordena reforzar la atención paliativa pediátrica en el caso concreto.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Conexión con jurisprudencia previa</h5>
+        <p>Recoge T-544/2017 (M.P. Gloria Stella Ortiz Delgado) sobre eutanasia para niños, niñas y adolescentes; aplica el modelo social de discapacidad consagrado por la Ley 1996 de 2019; articula con T-721/2017 (M.P. Antonio José Lizarazo Ocampo) sobre cuidados paliativos pediátricos. Anticipa la doctrina de los apoyos interpretativos consolidada en T-438/2025.</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad al caso Doña Carmen:</strong> refuerza la prevalencia de la autonomía y consagra el deber estatal de aliviar el sufrimiento aun cuando no proceda el procedimiento de eutanasia, incluyendo zonas remotas como Caquetá. El cuidado paliativo es exigible incluso cuando otras formas de muerte digna no aplican.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2025/t-057-25.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+        <a class="consulta-btn" href="https://geneticayderecho.uexternado.edu.co/la-sentencia-t-057-de-2025-de-la-corte-constitucional-y-la-revision-del-derecho-a-morir-dignamente-para-ninos-ninas-y-adolescentes-con-discapacidad-intelectual/" target="_blank" rel="noopener">Análisis Universidad Externado</a>
+      </div>
+    </article>
+
+    <!-- T-438/2025 -->
+    <article class="sentencia-card" data-linea="1" style="--linea-color: var(--linea1); --linea-soft: var(--linea1-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Primera de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-438 de 2025</h3>
+          <div class="sentencia-mp">23 de octubre de 2025 · Magistrada ponente: Natalia Ángel Cabo · Expediente T-10.705.209</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 1 · Apoyos interpretativos</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos del caso</h5>
+        <p>Raúl, residente en Ibagué (Tolima), se encontraba en estado de mínima conciencia tras un evento neurológico. Su madre invocó manifestaciones verbales previas del paciente sobre no querer estar postrado para solicitar el procedimiento de muerte digna.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Problema jurídico</h5>
+        <p>¿Cómo procede la solicitud de muerte digna respecto de personas que han perdido la capacidad de manifestar su voluntad actual? ¿Qué estándares deben aplicarse para reconstruir esa voluntad sin sustituirla?</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">…apoyo interpretativo de la voluntad… se alinea de mejor manera con estándares internacionales…</div>
+        <div class="cita-textual">…las personas con discapacidad… tienen derecho a decidir, en iguales condiciones que las demás personas, sobre todos los aspectos de su vida</div>
+        <p>Introduce la categoría más sofisticada del periodo: los <strong>"apoyos interpretativos de la voluntad"</strong>, que sustituyen la figura del consentimiento sustituto. La Corte identifica tres escenarios:</p>
+        <ul>
+          <li>Voluntad expresada antes de la pérdida de conciencia (procede el procedimiento con apoyos interpretativos).</li>
+          <li>Voluntad inferible por trayectoria vital del paciente (procede con análisis riguroso).</li>
+          <li>Voluntad nunca expresada ni inferible (no procede el procedimiento; se refuerzan cuidados paliativos).</li>
+        </ul>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Decisión y órdenes</h5>
+        <p>Tutela los derechos invocados con la metodología del apoyo interpretativo. <strong>Ordena al Ministerio de Salud incorporar la nueva categoría doctrinal</strong> en la futura reglamentación. Tendrá impacto directo en la implementación de la Resolución 813 de 2026.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Conexión con jurisprudencia previa</h5>
+        <p>Aplica los principios de la Ley 1996 de 2019 sobre régimen de capacidad jurídica de personas con discapacidad. Articula con T-057/2025 ampliando la doctrina de apoyos a casos de pérdida sobreviniente de conciencia. Reemplaza la categoría tradicional de "consentimiento sustituto" usada en T-721/2017.</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad al caso Doña Carmen:</strong> en escenarios de progresión clínica con eventual pérdida de conciencia, la voluntad anticipada de Doña Carmen (expresada en estado lúcido) operará bajo el régimen de apoyos interpretativos. El cuidado paliativo opera siempre, en los tres escenarios doctrinales identificados.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2025/T-438-25.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+        <a class="consulta-btn" href="https://prime.tirant.com/co/actualidad-prime/corte-constitucional-redefine-estandares-para-garantizar-el-derecho-a-morir-dignamente-de-personas-con-discapacidad/" target="_blank" rel="noopener">Análisis Tirant Prime</a>
+        <a class="consulta-btn" href="https://fepasde.com/noticias/muerte-digna-colombia/" target="_blank" rel="noopener">Análisis FEPASDE</a>
+      </div>
+    </article>
+
+    <!-- ============ LÍNEA 2 ============ -->
+    <div class="linea-intro" style="--linea-color: var(--linea2); --linea-soft: var(--linea2-soft); grid-column: 1 / -1;">
+      <h3>Línea 2 · Acceso a opioides, integralidad oncológica y no-desplazamiento</h3>
+      <p>Cuatro sentencias del periodo consolidan la doctrina más directamente aplicable al caso de Doña Carmen: T-285/2024 rechaza la "barrera del estupefaciente" como excusa de desabastecimiento; T-377/2024 establece la doctrina del no-desplazamiento; T-289/2025 invoca operativamente el artículo 19 literal m de la Convención A-70; T-380/2024 consagra la integralidad de los efectos paliativos y curativos.</p>
+    </div>
+
+    <!-- T-285/2024 -->
+    <article class="sentencia-card" data-linea="2" style="--linea-color: var(--linea2); --linea-soft: var(--linea2-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Primera de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-285 de 2024</h3>
+          <div class="sentencia-mp">17 de julio de 2024 · Magistrada ponente: Natalia Ángel Cabo · Expedientes acumulados T-9.980.109, T-9.990.930, T-10.002.344, T-10.049.796</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 2 · Opioides</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos del caso</h5>
+        <p>En el expediente T-10.049.796, EPS Sanitas negó la entrega de morfina clorhidrato 3 %, clonazepam 2,5 mg y metadona prescritos a un paciente con cuidados paliativos, alegando indisponibilidad logística del estupefaciente. Los demás expedientes acumulados involucraban negativas similares por barreras administrativas.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Problema jurídico</h5>
+        <p>¿Puede una Empresa Promotora de Salud (EPS) excusar el no suministro de opioides esenciales alegando indisponibilidad logística o barreras propias del régimen de fiscalización? ¿Cuál es el contenido sustantivo de la "integralidad" como deber prestacional?</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">…las entidades… están obligadas a suministrar medicamentos de manera integral, oportuna y continua</div>
+        <div class="cita-textual">…la exigencia de desplazarse a otros municipios… puede tornarse en una carga desproporcionada</div>
+        <div class="cita-textual">…todo servicio o medicamento que no esté expresamente excluido, se entiende incluido</div>
+        <p>La Corte rechaza expresamente la <strong>"barrera del estupefaciente" como excusa</strong>. La EPS debe activar mecanismos alternativos: solicitudes al Fondo Nacional de Estupefacientes (FNE), sustitución farmacológicamente equivalente o coordinación con otra Institución Prestadora de Salud (IPS). La indisponibilidad logística no es eximente del deber prestacional.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Decisión y órdenes</h5>
+        <p>Tutela los derechos a la salud y a la dignidad de los accionantes. Ordena la entrega inmediata de los medicamentos y exhorta al Ministerio de Salud a establecer protocolos de contingencia para evitar desabastecimientos territoriales en cuidados paliativos.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Conexión con jurisprudencia previa</h5>
+        <p>Aplica el principio de integralidad consagrado en el artículo 6 literal j de la Ley Estatutaria 1751 de 2015. Recoge la doctrina de la T-760/2008 sobre obligaciones de las EPS. Articula con la Ley 1733 de 2014 artículo 8 (acceso 24/7 a opioides).</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad directa a Doña Carmen:</strong> la EPS no puede alegar que la morfina "no está disponible" en el municipio remoto del Caquetá. Debe activar el Fondo Nacional de Estupefacientes, sustituir farmacológicamente o coordinar con IPS de otra ciudad. La indisponibilidad logística no exime del deber prestacional.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2024/t-285-24.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+        <a class="consulta-btn" href="https://normograma.supersalud.gov.co/compilacion/docs/t-285_2024.htm" target="_blank" rel="noopener">Compilación Supersalud</a>
+      </div>
+    </article>
+
+    <!-- T-377/2024 -->
+    <article class="sentencia-card" data-linea="2" style="--linea-color: var(--linea2); --linea-soft: var(--linea2-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Tercera de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-377 de 2024</h3>
+          <div class="sentencia-mp">10 de septiembre de 2024 · Magistrada ponente: Diana Fajardo Rivera · Expedientes acumulados T-10.065.192, T-10.095.277, T-10.095.283</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 2 · No-desplazamiento</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos del caso</h5>
+        <p>Laura, mujer de 70 años residente en Villamaría (Caldas), con tumor maligno de colon, enfermedad renal crónica en hemodiálisis y prescripción de cuidados paliativos, denunció no recibir los medicamentos ni la atención domiciliaria en su municipio de residencia. La EPS exigía desplazamiento a Manizales.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Problema jurídico</h5>
+        <p>¿Constituye carga desproporcionada exigir al paciente con enfermedad oncológica avanzada y cuidados paliativos desplazarse a otro municipio para recibir medicamentos prescritos? ¿Qué deberes específicos derivan de la Ley 2360 de 2024 sobre atención integral oncológica?</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">Esta violación es muy grave si se trata de una persona con cáncer u otras enfermedades catastróficas</div>
+        <div class="cita-textual">…las EPS violan el derecho a la salud… si no toman medidas para garantizar el acceso a los medicamentos prescritos en el municipio de residencia</div>
+        <p>La Corte consolida la <strong>doctrina del no-desplazamiento como estándar territorial exigible</strong>: la geografía no puede ser excusa para que la EPS difiera la entrega de medicamentos esenciales. Articula expresamente la <strong>Ley 2360 de 2024</strong> (atención integral del cáncer) con la doctrina previa sobre integralidad.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Decisión y órdenes</h5>
+        <p>Tutela los derechos invocados. Ordena entrega de medicamentos en el municipio de residencia. Cuando la entrega física no sea factible, debe la EPS costear desplazamiento, acompañante y alojamiento del paciente. Exhorta al Ministerio de Salud a fortalecer la red territorial de prestación.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Conexión con jurisprudencia previa</h5>
+        <p>Aplica T-285/2024 (integralidad). Articula con la Ley 2360 de 2024. Recoge la doctrina de la Sentencia C-313 de 2014 (control de la Ley Estatutaria 1751/2015) sobre el deber de continuidad asistencial.</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad directa a Doña Carmen:</strong> la EPS <strong>no puede exigir desplazamiento a Florencia</strong> para reclamar morfina; debe entregarla en el municipio de residencia o, alternativamente, costear desplazamiento, acompañante y alojamiento. El cáncer gástrico avanzado activa el deber reforzado por la Ley 2360 de 2024.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2024/t-377-24.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+        <a class="consulta-btn" href="https://consultorsalud.com/tratamiento-cancer-retrasado-incompleto-corte/" target="_blank" rel="noopener">Análisis Consultorsalud</a>
+      </div>
+    </article>
+
+    <!-- T-289/2025 -->
+    <article class="sentencia-card" data-linea="2" style="--linea-color: var(--linea2); --linea-soft: var(--linea2-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Sexta de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-289 de 2025</h3>
+          <div class="sentencia-mp">2 de julio de 2025 · Magistrado ponente: Miguel Polo Rosero · Expediente T-10.853.366</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 2 · Convención A-70</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos del caso</h5>
+        <p>Claudia, mujer de 70 años residente en San Jacinto (Bolívar), con carcinoma invasor de seno estadio IIIC con metástasis pulmonar y pleural, fue excluida del programa de atención domiciliaria por la Empresa Promotora de Salud Sierra Nevada, aplicando rígidamente la escala Barthel para excluirla del beneficio.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Problema jurídico</h5>
+        <p>¿Puede una EPS excluir a una persona mayor con cáncer avanzado del programa domiciliario aplicando rígidamente escalas funcionales? ¿Qué deber estatal específico deriva del artículo 19 literal m de la Convención Interamericana A-70 sobre acceso a medicamentos fiscalizados para personas mayores?</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">…es una obligación de las EPS conformar su red de prestación de servicios en aquellos municipios que no reciben la UPC adicional…</div>
+        <div class="cita-textual">…garantizar la disponibilidad y acceso a los medicamentos reconocidos como esenciales por la Organización Mundial de la Salud, contando con los necesarios para los cuidados paliativos</div>
+        <div class="cita-textual">…la persona mayor tiene derecho a su salud física y mental, sin ningún tipo de discriminación</div>
+        <p>Esta sentencia es la <strong>primera invocación robusta del artículo 19 de la Convención Interamericana A-70</strong> para fundamentar el deber estatal de garantizar opioides esenciales. La Corte cita literalmente el literal m sobre disponibilidad de medicamentos fiscalizados para cuidados paliativos. Las escalas funcionales no pueden aplicarse rígidamente para excluir programas paliativos.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Decisión y órdenes</h5>
+        <p>Tutela los derechos invocados. Ordena la inclusión inmediata de la accionante en el programa domiciliario y entrega de medicamentos paliativos. <strong>Reitera el deber estatal de conformar redes de prestación territorial</strong> en municipios sin UPC adicional, invocando expresamente la Convención A-70.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Conexión con jurisprudencia previa</h5>
+        <p>Aplica directamente la Convención A-70 (instrumento vinculante en Colombia desde el 27/9/2022). Articula con T-285/2024 y T-377/2024. Refuerza la doctrina de la Ley Estatutaria 1751 de 2015 sobre integralidad, leída ahora con el filtro del derecho convencional.</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad directa a Doña Carmen — argumento de oro:</strong> Caquetá es zona de dispersión geográfica sin UPC adicional. La Convención A-70 obliga al Estado colombiano a garantizar opioides esenciales para cuidados paliativos en personas mayores aun en territorios remotos. Las escalas funcionales (Barthel u otras) no pueden aplicarse rígidamente para excluir el programa domiciliario.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2025/t-289-25.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+      </div>
+    </article>
+
+    <!-- T-380/2024 (resumen breve para no exceder, pero conservando la estructura) -->
+    <article class="sentencia-card" data-linea="2" style="--linea-color: var(--linea2); --linea-soft: var(--linea2-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Segunda de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-380 de 2024</h3>
+          <div class="sentencia-mp">Septiembre de 2024 · Magistrado ponente: Juan Carlos Cortés González</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 2 · Integralidad</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos y problema jurídico</h5>
+        <p>Negativa de suministro del medicamento Pertuzumab a paciente con cáncer de mama metastásico. La EPS argumentó pertinencia exclusivamente "curativa" y desconocía el componente paliativo.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">…la negación del medicamento Pertuzumab… genera una fragmentación en el servicio de salud…</div>
+        <div class="cita-textual">…pone en riesgo los efectos paliativos y curativos del tratamiento</div>
+        <p>La Corte consagra que <strong>el efecto paliativo del tratamiento es jurídicamente exigible, no accesorio</strong>: la división entre lo curativo y lo paliativo, cuando un mismo medicamento produce ambos efectos, vulnera la integralidad. La fragmentación discursiva del tratamiento no puede ser excusa de la negativa.</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad al caso Doña Carmen:</strong> los medicamentos prescritos para el manejo del dolor oncológico tienen efectos simultáneamente paliativos y, en algunos esquemas, antineoplásicos. La EPS no puede negar uno alegando finalidad exclusiva del otro. La integralidad oncológica exigida por la Ley 2360 de 2024 absorbe ambos componentes.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2024/t-380-24.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+      </div>
+    </article>
+
+    <!-- ============ LÍNEA 3 ============ -->
+    <div class="linea-intro" style="--linea-color: var(--linea3); --linea-soft: var(--linea3-soft); grid-column: 1 / -1;">
+      <h3>Línea 3 · Cuidador, enfermería domiciliaria y pediatría paliativa</h3>
+      <p>Tres sentencias clave del periodo consolidan la doctrina sobre el régimen del cuidador y la enfermería domiciliaria: T-191/2024 distingue entre enfermería domiciliaria (prestación incluida en el plan de beneficios) y cuidador (servicio complementario excepcional); T-184/2024 desarrolla los tres requisitos del cuidador para personas mayores; T-446/2024, T-016/2025, T-319/2025 y T-348/2025 completan la línea con asimetría de género reconocida.</p>
+    </div>
+
+    <!-- T-191/2024 -->
+    <article class="sentencia-card" data-linea="3" style="--linea-color: var(--linea3); --linea-soft: var(--linea3-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Octava de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-191 de 2024</h3>
+          <div class="sentencia-mp">24 de mayo de 2024 · Magistrada ponente: Cristina Pardo Schlesinger · Expediente T-9.706.404</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 3 · Pediatría</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos del caso</h5>
+        <p>Félix, lactante de seis meses afiliado a Nueva Empresa Promotora de Salud, perteneciente a la comunidad indígena O'pa, padecía enfermedad de la orina en jarabe de arce con prescripción de cuidados paliativos. La familia solicitó tanto enfermería domiciliaria como cuidador no profesional.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Problema jurídico</h5>
+        <p>¿Cuál es la diferencia entre enfermería domiciliaria y cuidador en el régimen colombiano? ¿Cuándo procede uno u otro? ¿Cómo se concilia el carácter paliativo no terminal en pediatría con el régimen general?</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">…brindar unas condiciones dignas para poder sobrellevar los síntomas</div>
+        <div class="cita-textual">…depende del criterio y autonomía médica y no de los deseos del paciente o familiar</div>
+        <p>La Corte distingue dos figuras claramente: <strong>enfermería domiciliaria</strong> (prestación incluida en el plan de beneficios cuando lo prescribe el médico tratante) y <strong>cuidador</strong> (servicio complementario excepcional). Reafirma el carácter paliativo no terminal en pediatría, conforme la clasificación de la Asociación para Niños con Condiciones que Amenazan la Vida (ACT/Together for Short Lives).</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad al caso Doña Carmen:</strong> el médico tratante puede y debe prescribir enfermería domiciliaria como prestación incluida del plan de beneficios. El cuidador familiar opera complementariamente con el régimen de la Ley 2297 de 2023. La distinción técnica entre las dos figuras es fundamental para la formulación de la pretensión judicial.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2024/t-191-24.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+      </div>
+    </article>
+
+    <!-- T-184/2024 -->
+    <article class="sentencia-card" data-linea="3" style="--linea-color: var(--linea3); --linea-soft: var(--linea3-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Sala Cuarta de Revisión</div>
+          <h3 class="sentencia-titulo">Sentencia T-184 de 2024</h3>
+          <div class="sentencia-mp">21 de mayo de 2024 · Magistrado ponente: Vladimir Fernández Andrade · Expedientes acumulados T-9.790.030, T-9.793.396, T-9.802.738, T-9.811.031</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 3 · Cuidador</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Hechos del caso</h5>
+        <p>Cuatro casos acumulados de personas mayores con dependencia funcional severa cuyas familias no podían asumir el cuidado: por edad avanzada del cónyuge, por incapacidad económica, por dispersión geográfica de los hijos o por simultaneidad con otras cargas asistenciales.</p>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Ratio decidendi y extractos textuales</h5>
+        <div class="cita-textual">…las personas mayores tienen los mismos derechos humanos y libertades fundamentales que otras personas</div>
+        <div class="cita-textual">…cuidados paliativos de la persona mayor a fin de propiciar el disfrute del más alto nivel de bienestar…</div>
+        <div class="cita-textual">…cuando el principal obligado se ve imposibilitado materialmente… la carga se traslada al Estado</div>
+        <p>La Corte consolida la doctrina del cuidador para personas mayores con <strong>tres requisitos</strong>: (1) necesidad acreditada del cuidador, (2) imposibilidad material de la familia, (3) compromiso de la dignidad. Cita expresamente la Convención A-70 e invoca la doctrina del traslado subsidiario de la carga al Estado.</p>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad al caso Doña Carmen:</strong> si la familia de Doña Carmen acredita imposibilidad material para asumir cuidado integral 24/7 (por geografía, economía o cargas asistenciales múltiples), la carga se traslada al Estado. La Convención A-70 refuerza explícitamente este deber para personas mayores.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2024/t-184-24.htm" target="_blank" rel="noopener">Consultar sentencia oficial</a>
+      </div>
+    </article>
+
+    <!-- T-446/2024 + complemento -->
+    <article class="sentencia-card" data-linea="3" style="--linea-color: var(--linea3); --linea-soft: var(--linea3-soft);">
+      <div class="sentencia-header">
+        <div>
+          <div class="sentencia-id">Corte Constitucional · Conjunto T-446/2024 + T-016/2025 + T-319/2025 + T-348/2025</div>
+          <h3 class="sentencia-titulo">Línea jurisprudencial complementaria sobre cuidador 2024-2025</h3>
+          <div class="sentencia-mp">Diversas magistraturas · Cristina Pardo Schlesinger, Paola Andrea Meneses Mosquera</div>
+        </div>
+        <span class="sentencia-linea-tag">Línea 3 · Asimetría de género</span>
+      </div>
+
+      <div class="sentencia-section">
+        <h5>Aporte conjunto al cuerpo doctrinal</h5>
+        <p>Estas cuatro sentencias completan la línea sobre cuidador para personas mayores y con discapacidad. Aportan tres elementos clave:</p>
+        <ul>
+          <li><strong>Reconocimiento explícito de la asimetría de género en el cuidado:</strong> el 80%+ de los cuidadores informales en Colombia son mujeres, lo que configura un patrón estructural de discriminación.</li>
+          <li><strong>Responsabilidad estatal cuando la red familiar también es vulnerable:</strong> el Estado no puede invocar la existencia de familia si esa familia carece de capacidad económica o sanitaria para sostener el cuidado.</li>
+          <li><strong>Articulación con el Sistema Nacional de Cuidado</strong> (Ley 2281 de 2023, Ley 2294 de 2023 — Plan Nacional de Desarrollo, CONPES 4143 de 2025) como horizonte de garantía progresiva.</li>
+        </ul>
+      </div>
+
+      <div class="aplicabilidad-box">
+        <strong>Aplicabilidad al caso Doña Carmen:</strong> si la cuidadora principal de Doña Carmen es una hija o nuera (escenario predominante en Caquetá), aplica el reconocimiento de asimetría de género y la articulación con el Sistema Nacional de Cuidado para reclamar apoyos y subsidios complementarios.
+      </div>
+
+      <div class="sentencia-actions">
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2024/T-446-24.htm" target="_blank" rel="noopener">T-446 de 2024</a>
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/2024/t-077-24.htm" target="_blank" rel="noopener">T-077 de 2024 (relacionada)</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 4: VACÍOS ============ -->
+<section id="vacios">
+  <div class="section-header">
+    <div class="section-eyebrow">Cuarta capa · Vacíos jurisprudenciales</div>
+    <h2>Consejo de Estado y Corte Suprema: el silencio que también enseña</h2>
+  </div>
+  <p class="section-intro">El Consejo de Estado y la Corte Suprema de Justicia presentan un vacío jurisprudencial estructural en cuidados paliativos durante 2023-2026. Ese vacío es pedagógicamente significativo: la regulación judicial colombiana del fin de vida es competencia material casi exclusiva de la jurisdicción constitucional.</p>
+
+  <div class="layer-block colombia">
+    <div class="layer-eyebrow">Consejo de Estado · Sección Tercera</div>
+    <h3 class="layer-title">El precedente vivo: caso 44174 de 2020 (Ligia Idrobo)</h3>
+    <p>El Consejo de Estado en su Sección Tercera <strong>no ha proferido en 2023-2026 sentencias que repliquen explícitamente la doctrina del caso pivote 44174 de 2020</strong>. El vacío es estructural: la acción de reparación directa requiere agotamiento de instancias y los procesos tardan entre seis y doce años; la litigiosidad sobre paliación se ha desplazado masivamente hacia la jurisdicción constitucional vía tutela.</p>
+    <p>El caso pivote sigue vigente: <strong>Consejo de Estado, Sala de lo Contencioso Administrativo, Sección Tercera, Subsección B, consejero ponente Alberto Montaña Plata, 5 de marzo de 2020, radicación 19001-23-31-000-2008-00348-01</strong>. La paciente con cáncer gástrico terminal en Popayán falleció sin acceso a paracentesis paliativa pese a fallo de tutela favorable. La ratio establece que <strong>la omisión de tratamiento paliativo configura daño antijurídico autónomo</strong> a la dignidad de la paciente y de su núcleo familiar.</p>
+
+    <div class="cita-textual" style="--linea-color: var(--accent); background: var(--bg-red); border-left-color: var(--accent);">Se trataba en este caso de un cuidado paliativo, aunque con incidencia cierta y determinante sobre la expectativa de vida de la desahuciada</div>
+    <div class="cita-textual" style="--linea-color: var(--accent); background: var(--bg-red); border-left-color: var(--accent);">Omisión en el suministro de tratamiento paliativo. Principio de mitigación del daño</div>
+
+    <p>Régimen aplicado: falla probada del servicio bajo el artículo 90 constitucional. <strong>Es el precedente directo más sólido para una eventual demanda de reparación directa por la familia de Doña Carmen.</strong></p>
+
+    <div class="docente-only">Los Autos A-503 de 2023, A-561 de 2024, A-858 de 2024 y A-1168 de 2024 de la Corte Constitucional sobre conflictos de competencias consolidan la regla de que la jurisdicción contencioso-administrativa es competente cuando se demanda a entidades públicas concomitantemente con privadas en responsabilidad médica. El A-858 de 2024 incluso refirió un caso contra la Secretaría Departamental de Salud del Caquetá, evidenciando litigiosidad estructural en el departamento del caso pedagógico.</div>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Consejo de Estado · Precedente</div>
+        <div class="norma-titulo">Sentencia 44174 de 2020 — Caso Ligia Idrobo</div>
+        <div class="norma-meta">Radicación 19001-23-31-000-2008-00348-01 · Subsección B</div>
+        <a class="consulta-btn" href="https://normograma.supersalud.gov.co/compilacion/docs/19001-23-31-000-2008-00348-01(44174).htm" target="_blank" rel="noopener">Consultar providencia</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block colombia">
+    <div class="layer-eyebrow">Corte Suprema de Justicia · Salas de Casación</div>
+    <h3 class="layer-title">Vacío jurisprudencial robusto · Sentencia SC072-2025 como apoyo analógico</h3>
+    <p>La Corte Suprema de Justicia, en sus Salas de Casación Penal, Civil y Laboral, presenta también un <strong>vacío jurisprudencial robusto</strong> en cuidados paliativos. La única providencia del periodo con utilidad pedagógica indirecta es la <strong>Sentencia SC072-2025 del 27 de marzo de 2025</strong> (Sala de Casación Civil, Agraria y Rural, magistrado ponente Octavio Augusto Tejeiro Duque, radicación 66001-31-03-004-2013-00141-01), que consolida la doctrina de la responsabilidad civil médica solidaria y reconoce de forma autónoma el <strong>daño a la salud</strong> como categoría indemnizable distinta del daño moral y del daño a la vida de relación.</p>
+    <p>Aplicada analógicamente, abre vía indemnizatoria si el sistema falla en garantizar morfina y cuidado paliativo integral.</p>
+
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Corte Suprema · Casación Civil</div>
+        <div class="norma-titulo">Sentencia SC072-2025 — Daño a la salud autónomo</div>
+        <div class="norma-meta">27 de marzo de 2025 · M.P. Octavio Augusto Tejeiro Duque</div>
+        <a class="consulta-btn" href="https://losabogados.com.co/sentencia-sc072-2025-danos-morales-dano-vida-relacion/" target="_blank" rel="noopener">Análisis sentencia</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Análisis técnico</div>
+        <div class="norma-titulo">Centro Colombiano de Derecho Procesal Constitucional</div>
+        <div class="norma-meta">Comentario académico SC072-2025</div>
+        <a class="consulta-btn" href="https://ccdpc.org.co/sentencia-sc72-2025-de-la-corte-suprema-de-justicia-del-27-de-marzo-de-2025/" target="_blank" rel="noopener">Consultar análisis</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="vacio-box">
+    <h4>Cuatro vacíos jurisprudenciales identificados al cierre documental</h4>
+    <ul>
+      <li><strong>Ausencia de sentencia constitucional 2023-2026 con casos específicos en Caquetá, Chocó, Vichada, Amazonas, Guainía o Putumayo</strong> sobre acceso a opioides para cuidados paliativos. Las Sentencias T-285/2024, T-377/2024 y T-289/2025 ofrecen los principios aplicables, pero no jurisprudencia situada en estos territorios.</li>
+      <li><strong>Ausencia de sentencia que aborde directamente la "denegación del dolor" como tortura</strong> conforme al artículo 12 constitucional posterior a la Sentencia C-233 de 2021. La línea jurisprudencial está abierta argumentalmente pero no ha sido reiterada con esa formulación expresa.</li>
+      <li><strong>Ausencia de pronunciamiento sobre asistencia médica al suicidio en paciente no terminal con sufrimiento psíquico:</strong> el caso Catalina Giraldo (psicóloga de 30 años, EPS Sanitas) está pendiente de selección por la Sala de Selección de la Corte Constitucional.</li>
+      <li><strong>Ausencia de jurisprudencia del Consejo de Estado que repita expresamente la doctrina del caso 44174/2020.</strong> El precedente sigue vivo pero sin reiteración explícita.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 5: SÍNTESIS Y APLICACIÓN ============ -->
+<section id="sintesis">
+  <div class="section-header">
+    <div class="section-eyebrow">Quinta capa · Síntesis pedagógica</div>
+    <h2>Recuadro de síntesis para la sesión del 8 de mayo</h2>
+  </div>
+
+  <div class="sintesis-block">
+    <div class="eyebrow">Cinco categorías analíticas emergentes 2023-2026</div>
+    <h3>Líneas jurisprudenciales del periodo</h3>
+    <p>La doctrina constitucional emergente puede sintetizarse en cinco categorías analíticas que cierran las puertas a las excusas administrativas más comunes que enfrentan pacientes como Doña Carmen.</p>
+
+    <div class="sintesis-grid">
+      <div class="sintesis-card">
+        <div class="num">01</div>
+        <h4>No-desplazamiento como estándar territorial</h4>
+        <p>La geografía no puede ser excusa para que la EPS difiera la entrega de medicamentos esenciales. Sentencias T-377/2024 y T-289/2025.</p>
+      </div>
+      <div class="sintesis-card">
+        <div class="num">02</div>
+        <h4>Inexcusabilidad de la indisponibilidad del opioide</h4>
+        <p>La EPS debe activar mecanismos alternativos del Fondo Nacional de Estupefacientes y sustitución farmacológica. Sentencia T-285/2024.</p>
+      </div>
+      <div class="sintesis-card">
+        <div class="num">03</div>
+        <h4>Cuidados paliativos como derecho autónomo</h4>
+        <p>Simultáneo a otras formas de muerte digna, no como condición previa a la eutanasia. Sentencias T-445/2024 y T-057/2025.</p>
+      </div>
+      <div class="sintesis-card">
+        <div class="num">04</div>
+        <h4>Apoyos interpretativos de la voluntad</h4>
+        <p>Nueva categoría que sustituye al consentimiento sustituto en personas con discapacidad cognitiva. Sentencia T-438/2025.</p>
+      </div>
+      <div class="sintesis-card">
+        <div class="num">05</div>
+        <h4>Invocación operativa del artículo 19 A-70</h4>
+        <p>Deber estatal específico de garantizar opioides esenciales para personas mayores. Sentencias T-289/2025, T-077/2024, T-184/2024.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 50px;">
+    <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; color: var(--primary); margin-bottom: 16px; letter-spacing: -0.01em;">Siete argumentos exigibles para Doña Carmen</h3>
+    <p style="font-size: 1.05rem; color: #2a2a2a; max-width: 880px; margin-bottom: 24px;">La estrategia jurídica integral combina los siguientes argumentos. Cada uno debe articularse en una eventual acción de tutela o, subsidiariamente, en demanda de reparación directa.</p>
+
+    <div class="argumentos-list">
+      <div class="argumento">
+        <h4>Inexcusabilidad del desabastecimiento de morfina</h4>
+        <p>Invocando Sentencia T-285 de 2024. La EPS debe activar mecanismos alternativos del Fondo Nacional de Estupefacientes, sustitución farmacológica equivalente o coordinación con Institución Prestadora de Salud (IPS) de otra ciudad. La indisponibilidad logística no es eximente del deber prestacional.</p>
+      </div>
+      <div class="argumento">
+        <h4>Prohibición del desplazamiento al paciente</h4>
+        <p>Invocando Sentencia T-377 de 2024 y la Ley 2360 de 2024 sobre atención integral oncológica. La entrega de medicamentos debe efectuarse en el municipio de residencia o, alternativamente, costear desplazamiento, acompañante y alojamiento del paciente.</p>
+      </div>
+      <div class="argumento">
+        <h4>Deber estatal de garantizar opioides esenciales</h4>
+        <p>Bajo el artículo 19 literal m de la Convención Interamericana A-70 (instrumento vinculante en Colombia desde el 27 de septiembre de 2022, sin reserva ni declaración interpretativa que lo limite). Reforzado operativamente por la Sentencia T-289 de 2025.</p>
+      </div>
+      <div class="argumento">
+        <h4>Derecho autónomo a cuidados paliativos</h4>
+        <p>Ley 1733 de 2014 (artículos 1, 4, 6 y 8) y Ley Estatutaria 1751 de 2015 artículo 2 (paliación como prestación obligatoria del derecho fundamental a la salud, principio de integralidad).</p>
+      </div>
+      <div class="argumento">
+        <h4>Integralidad oncológica</h4>
+        <p>Los efectos paliativos y curativos son indivisibles. Invocando T-380 de 2024, T-377 de 2024 y la Ley 2360 de 2024. La fragmentación discursiva del tratamiento por la EPS no puede ser excusa de la negativa.</p>
+      </div>
+      <div class="argumento">
+        <h4>Enfermería domiciliaria y cuidador</h4>
+        <p>Si la red familiar es insuficiente, invocando Sentencias T-184 de 2024, T-191 de 2024, T-446 de 2024 y T-016 de 2025. La carga se traslada al Estado conforme la doctrina del cuidador para personas mayores reforzada por la Convención A-70.</p>
+      </div>
+      <div class="argumento">
+        <h4>Eventual reparación directa</h4>
+        <p>Invocando el caso 44174 de 2020 (Idrobo) y la doctrina del daño a la salud autónomo (SC072 de 2025). Demanda conjunta a la EPS, la Empresa Social del Estado regional, la Secretaría Departamental de Salud del Caquetá y el Ministerio de Salud, bajo los Autos A-503/2023, A-561/2024 y A-858/2024 sobre competencia concurrente.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block" style="margin-top: 40px; border-left-color: var(--primary); background: linear-gradient(135deg, var(--bg-blue) 0%, white 50%);">
+    <div class="layer-eyebrow">Recomendaciones pedagógicas</div>
+    <h3 class="layer-title">Cómo trabajar esta jurisprudencia con los grupos del curso</h3>
+    <p>Para los doce o trece estudiantes provenientes de departamentos heterogéneos (Caquetá, Tolima, Córdoba, Santander, Huila, Eje Cafetero, Bogotá), conviene presentar la jurisprudencia organizada en las tres líneas (muerte digna, opioides, cuidador), con tabla comparativa de las sentencias y mapa territorial que muestre la <strong>ausencia de fallos específicos en sus departamentos como vacío jurisprudencial exigible</strong>.</p>
+    <p>La sesión debe enfatizar que <strong>la paradoja colombiana se resuelve, jurídicamente, mediante litigiosidad estructural —tutelas colectivas, acciones populares, interlocución con Defensoría del Pueblo y organizaciones como DescLAB— más que individual</strong>, porque la regulación administrativa no se ha traducido en disponibilidad efectiva de morfina en territorios remotos. La Resolución 813 de 2026, expedida diez días antes de la sesión, debe presentarse como evidencia viva de que la jurisprudencia constitucional opera como motor de la reglamentación administrativa.</p>
+    <div class="docente-only">Cierre interpretativo sugerido para la sesión: invitar a cada grupo a identificar un caso de su departamento (o su práctica clínica) que pudiera ser objeto de tutela invocando alguna de las cinco categorías analíticas emergentes. Esto consolida el vínculo entre jurisprudencia abstracta y práctica territorial situada.</div>
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 6: REFERENCIAS BIBLIOGRÁFICAS ============ -->
+<section id="referencias">
+  <div class="section-header">
+    <div class="section-eyebrow">Sexta capa · Referencias y consulta</div>
+    <h2>Bibliografía verificada y enlaces de consulta</h2>
+  </div>
+  <p class="section-intro">Todas las normas, instrumentos internacionales, sentencias y documentos técnicos citados en este informe fueron verificados en su fuente oficial primaria al cierre documental del 7 de mayo de 2026. Se incluye también literatura secundaria académica de apoyo.</p>
+
+  <div class="layer-block">
+    <div class="layer-eyebrow">Literatura académica de apoyo</div>
+    <h3 class="layer-title">Estudios y análisis</h3>
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Artículo · SciELO</div>
+        <div class="norma-titulo">Derecho fundamental a una muerte digna en Colombia</div>
+        <div class="norma-meta">Una corrección jurisprudencial a la omisión legislativa</div>
+        <a class="consulta-btn" href="http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0122-98932024000200035" target="_blank" rel="noopener">Consultar artículo</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Artículo · PubMed Central</div>
+        <div class="norma-titulo">Política pública en cuidados paliativos en Colombia</div>
+        <div class="norma-meta">Implicaciones sobre servicios, opioides y educación</div>
+        <a class="consulta-btn" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11559323/" target="_blank" rel="noopener">Consultar artículo</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Libro · ACCP</div>
+        <div class="norma-titulo">Soporte y cuidados paliativos en cáncer</div>
+        <div class="norma-meta">Asociación Colombiana de Cuidados Paliativos · 2024</div>
+        <a class="consulta-btn" href="https://www.accpaliativos.com/wp-content/uploads/2024/12/Libro-Soporte-y-cuidados-paliativos.pdf" target="_blank" rel="noopener">Consultar libro</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Manual técnico · OPS</div>
+        <div class="norma-titulo">Planificación e implantación de servicios de cuidados paliativos</div>
+        <div class="norma-meta">Guía para directores de programa · OPS 2020</div>
+        <a class="consulta-btn" href="https://cuidadospaliativos.uc.cl/wp-content/uploads/2023/05/OPS-2020-Planificacion-e-implantacion-de-servicios-de-cuidados-paliativos.-Guia-para-directores-de-programa.pdf" target="_blank" rel="noopener">Consultar manual</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Reportaje · VICE</div>
+        <div class="norma-titulo">Sufrir no es normal: el derecho a no morir con dolor en Colombia</div>
+        <div class="norma-meta">Periodismo de profundidad · contexto territorial</div>
+        <a class="consulta-btn" href="https://www.vice.com/es/article/sufrir-no-es-normal-el-derecho-a-no-morir-con-dolor-en-colombia/" target="_blank" rel="noopener">Consultar reportaje</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Defensoría del Pueblo</div>
+        <div class="norma-titulo">Convención A-70 — Análisis institucional</div>
+        <div class="norma-meta">Los derechos humanos no envejecen</div>
+        <a class="consulta-btn" href="https://repositorio.defensoria.gov.co/handle/20.500.13061/457" target="_blank" rel="noopener">Consultar documento</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer-block" style="border-left-color: var(--accent-soft);">
+    <div class="layer-eyebrow">Buscadores oficiales para consulta jurisprudencial</div>
+    <h3 class="layer-title">Acceso directo a relatorías y bases jurídicas</h3>
+    <div class="norma-list">
+      <div class="norma-card">
+        <div class="norma-tag">Buscador oficial</div>
+        <div class="norma-titulo">Relatoría · Corte Constitucional de Colombia</div>
+        <div class="norma-meta">Sentencias de tutela, unificación y constitucionalidad</div>
+        <a class="consulta-btn" href="https://www.corteconstitucional.gov.co/relatoria/" target="_blank" rel="noopener">Acceder al buscador</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Buscador oficial</div>
+        <div class="norma-titulo">Consejo de Estado de Colombia</div>
+        <div class="norma-meta">Sala de lo Contencioso Administrativo</div>
+        <a class="consulta-btn" href="https://www.consejodeestado.gov.co/" target="_blank" rel="noopener">Acceder al buscador</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Buscador oficial</div>
+        <div class="norma-titulo">Corte Suprema de Justicia de Colombia</div>
+        <div class="norma-meta">Salas de Casación Penal, Civil, Laboral</div>
+        <a class="consulta-btn" href="https://cortesuprema.gov.co/corte/" target="_blank" rel="noopener">Acceder al buscador</a>
+      </div>
+      <div class="norma-card">
+        <div class="norma-tag">Sistema oficial</div>
+        <div class="norma-titulo">Sistema Único de Información Normativa (SUIN-Juriscol)</div>
+        <div class="norma-meta">Ministerio de Justicia y del Derecho</div>
+        <a class="consulta-btn" href="https://www.suin-juriscol.gov.co/" target="_blank" rel="noopener">Acceder a SUIN</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing-quote" style="margin: 60px auto 40px; max-width: 880px; padding: 40px 32px; text-align: center; background: linear-gradient(135deg, var(--bg-red) 0%, white 100%); border-radius: 12px; border: 1px solid #e8e8e8;">
+    <blockquote style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; color: var(--accent); line-height: 1.4;">"La tarea de los profesionales formados en la maestría no es esperar nueva legislación —el andamiaje ya existe— sino operativizar judicial y administrativamente lo que el ordenamiento ya garantiza, especialmente en los departamentos donde el consumo de morfina equivalente per cápita sigue cercano a cero."</blockquote>
+    <cite style="display: block; font-style: normal; font-family: var(--font-sans); font-size: 0.85rem; color: var(--gray); margin-top: 16px; letter-spacing: 0.04em;">— Conclusión de cierre · Investigación profunda 2026</cite>
+  </div>
+</section>
+
+<button class="docente-toggle" id="docenteToggle" title="Activar/desactivar notas docentes">👁 Modo docente</button>
+
+<footer>
+  <div class="footer-meta">Universidad Antonio Nariño · Facultad de Enfermería · Maestría en Cuidados Paliativos 2026-I<br>
+  Curso: Contexto Histórico y Legal de los Cuidados Paliativos (37542001) · Profesor: Jorge Bogoya · Cierre documental: 7 de mayo de 2026<br>
+  Investigación profunda con verificación en fuentes primarias y oficiales.</div>
+  <div class="actions">
+    <button onclick="window.print()">Imprimir / Guardar como PDF</button>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Volver al inicio</button>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+// ============ NAV TABS ============
+document.querySelectorAll('.nav-tab').forEach(t => {
+  t.addEventListener('click', () => {
+    const target = document.getElementById(t.dataset.target);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+const sections = ['regional', 'colombia', 'jurisprudencia', 'vacios', 'sintesis', 'referencias'];
+function updateActiveNav() {
+  let current = '';
+  for (const id of sections) {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 110) current = id;
+  }
+  document.querySelectorAll('.nav-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.target === current);
+  });
+}
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+// ============ FILTROS DE LÍNEA ============
+document.querySelectorAll('.linea-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const linea = pill.dataset.linea;
+    document.querySelectorAll('.linea-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    document.querySelectorAll('.sentencia-card').forEach(card => {
+      card.classList.toggle('hidden', linea !== 'all' && card.dataset.linea !== linea);
+    });
+    document.querySelectorAll('.linea-intro').forEach(intro => {
+      const introColor = intro.style.getPropertyValue('--linea-color');
+      const matches = {
+        'var(--linea1)': '1',
+        'var(--linea2)': '2',
+        'var(--linea3)': '3'
+      };
+      const introLinea = matches[introColor] || '';
+      intro.style.display = (linea === 'all' || introLinea === linea) ? '' : 'none';
+    });
+  });
+});
+
+// ============ DOCENTE TOGGLE ============
+const docenteBtn = document.getElementById('docenteToggle');
+docenteBtn.addEventListener('click', () => {
+  document.body.classList.toggle('docente-mode');
+  docenteBtn.classList.toggle('active');
+  docenteBtn.textContent = document.body.classList.contains('docente-mode')
+    ? '👁 Modo docente activo'
+    : '👁 Modo docente';
+});
+
+// ============ CHARTS ============
+window.addEventListener('load', () => {
+  const fontFamily = '"DM Sans", sans-serif';
+  Chart.defaults.font.family = fontFamily;
+  Chart.defaults.color = '#595959';
+
+  // Tasa de servicios por 100.000 hab — comparación regional
+  const ctxTasa = document.getElementById('chartTasa');
+  if (ctxTasa) {
+    new Chart(ctxTasa, {
+      type: 'bar',
+      data: {
+        labels: ['Uruguay', 'Costa Rica', 'Chile', 'Argentina', 'Colombia', 'México'],
+        datasets: [{
+          label: 'Servicios por 100.000 habitantes',
+          data: [2.3, 1.5, 1.34, 1.2, 0.2, 0.16],
+          backgroundColor: ['#0038A8', '#002B7F', '#C8102E', '#0072BB', '#C00000', '#006847'],
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.parsed.y} servicios / 100.000 hab`
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Servicios / 100.000 habitantes' },
+            grid: { color: '#f0f0f0' }
+          },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  // Cobertura efectiva
+  const ctxCob = document.getElementById('chartCobertura');
+  if (ctxCob) {
+    new Chart(ctxCob, {
+      type: 'doughnut',
+      data: {
+        labels: ['Cubierta', 'Sin cobertura'],
+        datasets: [{
+          data: [30, 70],
+          backgroundColor: ['#1F4E79', '#C00000'],
+          borderColor: '#fff',
+          borderWidth: 3,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '60%',
+        plugins: {
+          legend: { position: 'bottom' },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.label}: ${ctx.parsed}%`
+            }
+          },
+          title: {
+            display: true,
+            text: 'Colombia ~30% (estimación OCCP)',
+            font: { size: 13 }
+          }
+        }
+      }
+    });
+  }
+});
+
+updateActiveNav();
+</script>
+
+</body>
+</html>
