@@ -35,7 +35,7 @@ Análisis del marco legislativo colombiano e internacional, jurisprudencia de la
 | Archivo | Descripción |
 |---|---|
 | [`sesion_marco_normativo_jurisprudencial_uan_2...`](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesion_marco_normativo_jurisprudencial_uan_2026.html) | Sesión interactiva sobre marco normativo y jurisprudencial · con informe integrador de respuestas grupales |
-| [`marco_normativo_jurisprudencial_cp_2023_202...`](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/marco_normativo_jurisprudencial_cp_2023_2025.docx) | Documento de referencia · marco normativo y jurisprudencial CP 2023–2025 |
+| [`marco_normativo_jurisprudencial_cp_2023_202...`](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/marco_normativo_jurisprudencial_cp_2023_2026.docx) | Documento de referencia · marco normativo y jurisprudencial CP 2023–2025 |
 
 ---
 
