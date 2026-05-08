@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividad personal · Documento de Voluntad Anticipada · UAN 2026-I</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1F4E79;
+  --primary-light: #2E75B6;
+  --accent: #C00000;
+  --accent-soft: #E36C09;
+  --gray: #595959;
+  --gray-light: #A6A6A6;
+  --bg: #F8F8F6;
+  --bg-card: #FFFFFF;
+  --bg-soft: #F2F2F2;
+  --bg-blue: #DDEBF7;
+  --bg-yellow: #FFF2CC;
+  --bg-red: #FCE4D6;
+  --bg-green: #E2EFDA;
+  --bg-purple: #E4D6F0;
+
+  --m0: #595959;
+  --m1: #1F4E79;
+  --m2: #7030A0;
+  --m3: #E36C09;
+  --m4: #00B050;
+  --m5: #C00000;
+
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.65;
+  color: #1a1a1a;
+  background: var(--bg);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 14px 0;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+}
+.brand small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--gray);
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+.timer-display {
+  font-family: var(--font-sans);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.timer-clock {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+  min-width: 80px;
+  text-align: center;
+}
+.timer-controls { display: flex; gap: 6px; }
+.timer-btn {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border: 1px solid var(--primary);
+  background: white;
+  color: var(--primary);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.timer-btn:hover { background: var(--primary); color: white; }
+.timer-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 32px 40px;
+}
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--primary-light);
+}
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--gray);
+  max-width: 800px;
+  margin-bottom: 28px;
+}
+.hero-meta {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+.hero-meta strong { color: var(--primary); font-weight: 600; }
+
+.momento-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 20px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.momento-pill {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  background: white;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.momento-pill:hover { border-color: var(--primary); color: var(--primary); }
+.momento-pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+.momento-pill .num { font-weight: 700; opacity: 0.85; margin-right: 6px; }
+
+.momento {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 32px;
+  scroll-margin-top: 110px;
+}
+.momento-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 3px solid var(--m-color);
+  padding-bottom: 16px;
+  margin-bottom: 26px;
+}
+.momento-title-block { flex: 1; }
+.momento-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.momento-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--m-color);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+.momento-time {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: white;
+  background: var(--m-color);
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+.momento-objetivo {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--m-color) 8%, white) 0%, white 100%);
+  border-left: 5px solid var(--m-color);
+  padding: 16px 22px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+.momento-objetivo .label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--m-color);
+  margin-bottom: 6px;
+}
+.momento-objetivo p { font-size: 0.96rem; color: #2a2a2a; }
+
+.card {
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  padding: 22px 26px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.card.with-accent { border-left: 5px solid var(--m-color); }
+.card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--m-color);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.card h4 {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--m-color);
+  margin: 16px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eee;
+}
+.card p { margin-bottom: 10px; font-size: 0.96rem; }
+.card ul, .card ol { margin: 8px 0 12px 22px; }
+.card li { margin-bottom: 6px; font-size: 0.94rem; }
+.card strong { color: var(--m-color); }
+
+.timer-interno {
+  background: linear-gradient(135deg, var(--m-color) 0%, color-mix(in srgb, var(--m-color) 70%, black) 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.timer-interno .label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+.timer-interno .clock {
+  font-family: var(--font-sans);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+.timer-interno button {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.timer-interno button:hover { background: rgba(255,255,255,0.3); }
+
+.checklist-20 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 14px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.checklist-20 thead th {
+  background: var(--m-color);
+  color: white;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 11px 10px;
+  text-align: left;
+}
+.checklist-20 thead th.center { text-align: center; }
+.checklist-20 td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.85rem;
+}
+.checklist-20 tbody tr:hover { background: var(--bg-soft); }
+.checklist-20 td.num {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--m-color);
+  width: 38px;
+}
+.checklist-20 td.cat {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  width: 50px;
+}
+.checklist-20 td.center { text-align: center; }
+.checklist-20 input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--m-color);
+}
+
+.checklist {
+  background: var(--bg-yellow);
+  border-radius: 8px;
+  padding: 16px 22px;
+  margin: 14px 0;
+}
+.checklist h5 {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-soft);
+  margin-bottom: 10px;
+}
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 5px 0;
+  font-size: 0.93rem;
+  cursor: pointer;
+}
+.checklist input[type="checkbox"] {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--accent-soft);
+}
+.checklist label:has(input:checked) { color: var(--gray); text-decoration: line-through; }
+
+.instructivo {
+  background: white;
+  border: 2px dashed var(--m-color);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.instructivo h4 {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--m-color);
+  margin-bottom: 12px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.instructivo ol { counter-reset: instr; list-style: none; padding-left: 0; }
+.instructivo ol li {
+  counter-increment: instr;
+  padding: 9px 0 9px 42px;
+  position: relative;
+  border-bottom: 1px dashed #eee;
+  font-size: 0.95rem;
+}
+.instructivo ol li:last-child { border-bottom: none; }
+.instructivo ol li::before {
+  content: counter(instr);
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--m-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.86rem;
+}
+
+.reflexion-area {
+  background: var(--bg-purple);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.reflexion-area h4 {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--m2);
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.reflexion-area textarea {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.55;
+  background: white;
+  resize: vertical;
+}
+.reflexion-area textarea:focus {
+  outline: none;
+  border-color: var(--m2);
+  box-shadow: 0 0 0 3px rgba(112,48,160,0.15);
+}
+
+.frase-destacada {
+  background: linear-gradient(135deg, var(--bg-red) 0%, white 100%);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 20px 0;
+  text-align: center;
+}
+.frase-destacada blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.18rem;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+.downloads-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--m-color);
+  color: white;
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.download-btn:hover { transform: translateY(-1px); opacity: 0.92; }
+.download-btn::after { content: " ⬇"; }
+
+.consulta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: white;
+  color: var(--m-color);
+  text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--m-color);
+  margin: 4px 4px 0 0;
+}
+.consulta-btn:hover { background: var(--m-color); color: white; }
+.consulta-btn::after { content: " →"; }
+
+.seccion-plantilla {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  border-top: 5px solid var(--m-color);
+  padding: 20px 24px;
+  margin: 14px 0;
+}
+.seccion-plantilla h4 {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--m-color);
+  margin-bottom: 4px;
+}
+.seccion-plantilla h5 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--m-color);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.seccion-plantilla p { font-size: 0.92rem; color: #444; margin-bottom: 8px; }
+.seccion-plantilla .vars {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--gray);
+  background: var(--bg-soft);
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.docente-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.docente-toggle:hover { background: #a00000; }
+.docente-toggle.active { background: var(--m4); }
+
+.docente-only { display: none; }
+body.docente-mode .docente-only {
+  display: block;
+  background: linear-gradient(0deg, var(--bg-green) 0%, white 100%);
+  border-left: 5px solid var(--m4);
+  padding: 16px 20px;
+  border-radius: 6px;
+  margin: 12px 0;
+}
+body.docente-mode .docente-only::before {
+  content: "Notas para el docente";
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--m4);
+  margin-bottom: 8px;
+}
+
+footer {
+  margin-top: 60px;
+  padding: 36px 32px;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+footer .footer-meta { opacity: 0.85; line-height: 1.6; }
+footer .actions { margin-top: 16px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+footer button {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+footer button:hover { background: rgba(255,255,255,0.25); }
+
+@media print {
+  .site-header, .momento-nav, .docente-toggle, footer .actions, .timer-interno button { display: none !important; }
+  body { background: white; }
+  .momento { padding: 20px 0; max-width: 100%; page-break-inside: avoid; }
+  .docente-only { display: block !important; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      Actividad personal · Documento de Voluntad Anticipada
+      <small>Maestría en Cuidados Paliativos · UAN 2026-I · 8 de mayo de 2026</small>
+    </div>
+    <div class="timer-display">
+      <div class="timer-clock" id="global-clock">58:00</div>
+      <div class="timer-controls">
+        <button class="timer-btn" id="btn-start">Iniciar</button>
+        <button class="timer-btn" id="btn-pause">Pausa</button>
+        <button class="timer-btn" id="btn-reset">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+  <nav class="momento-nav">
+    <button class="momento-pill active" data-momento="0"><span class="num">0</span>Apertura · 5 min</button>
+    <button class="momento-pill" data-momento="1"><span class="num">1</span>Análisis crítico · 12 min</button>
+    <button class="momento-pill" data-momento="2"><span class="num">2</span>Plantilla profesional · 20 min</button>
+    <button class="momento-pill" data-momento="3"><span class="num">3</span>Reflexión · 3 min</button>
+    <button class="momento-pill" data-momento="4"><span class="num">4</span>Voluntad personal · 15 min</button>
+    <button class="momento-pill" data-momento="5"><span class="num">5</span>Cierre · 3 min</button>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">Actividad sincrónica presencial · individual · 58 minutos</div>
+  <h1>Construir mi propio Documento de Voluntad Anticipada<br><em>con rigor científico y validez normativa</em></h1>
+  <p class="hero-subtitle">Una secuencia compacta en seis momentos para que cada estudiante, de forma individual, analice críticamente formularios reales, construya una plantilla profesional bajo Resolución 2665 de 2018, y elabore su propio Documento de Voluntad Anticipada conforme estándares nacionales e internacionales. Producto: dos artefactos personales — una plantilla profesional validada y una voluntad anticipada propia.</p>
+  <div class="hero-meta">
+    <span><strong>Modalidad</strong> Individual presencial</span>
+    <span><strong>Marco normativo</strong> Resolución 2665 de 2018</span>
+    <span><strong>Marco metodológico</strong> Castro-Vargas et al. 2024</span>
+    <span><strong>Duración</strong> 58 minutos</span>
+  </div>
+</div>
+
+<!-- ============ MOMENTO 0 — APERTURA ============ -->
+<section class="momento" id="momento-0" style="--m-color: var(--m0);">
+  <div class="momento-header">
+    <div class="momento-title-block">
+      <div class="momento-eyebrow">Momento 0 · 0:00 — 0:05</div>
+      <h2 class="momento-title">Apertura · Encuadre normativo y científico</h2>
+    </div>
+    <div class="momento-time">5 minutos</div>
+  </div>
+
+  <div class="momento-objetivo">
+    <div class="label">Objetivo del momento</div>
+    <p>Establecer por qué un Documento de Voluntad Anticipada requiere rigor científico, normativo y ético, y por qué la calidad técnica del formulario condiciona la efectividad del derecho a morir dignamente y a recibir cuidados paliativos.</p>
+  </div>
+
+  <div class="card with-accent">
+    <h3>El problema de partida</h3>
+    <p>En Colombia, la Resolución 2665 de 2018 reglamenta parcialmente la Ley 1733 de 2014 sobre el Documento de Voluntad Anticipada (DVA). Sin embargo, la evidencia empírica muestra una brecha entre la norma y los formularios efectivamente en circulación.</p>
+
+    <h4>Hallazgo de referencia · Castro-Vargas et al. (2024)</h4>
+    <p>Estudio publicado en <em>Colombian Journal of Anesthesiology</em>, vol. 52 e1093, que evaluó <strong>24 formularios de DVA</strong> en circulación en Colombia con una lista de verificación de 20 variables:</p>
+    <ul>
+      <li>El formulario más completo cumplía solamente <strong>14 de 20 variables</strong>.</li>
+      <li>El <strong>70% de los formularios</strong> contenía un máximo de 10 variables.</li>
+    </ul>
+    <p style="margin-top: 8px;">Hoy usted producirá un documento que supere este techo.</p>
+  </div>
+
+  <div class="card">
+    <h3>Tres preguntas para abrir la conversación</h3>
+    <ol>
+      <li>¿Cuál es la diferencia entre un consentimiento informado y un Documento de Voluntad Anticipada?</li>
+      <li>¿Por qué la Resolución 2665 de 2018 exige formalización (notario, dos testigos o médico tratante) y no se conforma con que el paciente firme solo?</li>
+      <li>Si una persona pierde la conciencia mañana, ¿qué tipo de información debería contener su DVA para que el equipo tratante sepa qué hacer?</li>
+    </ol>
+  </div>
+
+  <div class="docente-only">
+    <strong>Notas pedagógicas para el momento 0.</strong>
+    <ul style="margin-top: 8px;">
+      <li>Tiempo de exposición docente máximo: 3 minutos. Reservar 2 minutos para que los estudiantes respondan oralmente las tres preguntas (por turnos breves, sin discusión grupal extendida).</li>
+      <li>Conexión transversal: este momento articula con la sesión sobre marco normativo y jurisprudencia (T-438 de 2025 sobre apoyos interpretativos de la voluntad).</li>
+      <li>Aclaración clave a hacer si los estudiantes no la formulan: el consentimiento informado opera <em>ahora</em> sobre una intervención concreta; el DVA opera <em>después</em>, cuando la persona ya no puede decidir.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MOMENTO 1 — ANÁLISIS CRÍTICO INDIVIDUAL ============ -->
+<section class="momento" id="momento-1" style="--m-color: var(--m1);">
+  <div class="momento-header">
+    <div class="momento-title-block">
+      <div class="momento-eyebrow">Momento 1 · 0:05 — 0:17</div>
+      <h2 class="momento-title">Análisis crítico individual · 20 variables aplicadas</h2>
+    </div>
+    <div class="momento-time">12 minutos</div>
+  </div>
+
+  <div class="momento-objetivo">
+    <div class="label">Objetivo del momento</div>
+    <p>Analizar de forma individual y silenciosa un formulario real de DVA en circulación, aplicando la lista de verificación de 20 variables. Identificar los déficits estructurales que convierten un formulario en insuficiente.</p>
+  </div>
+
+  <div class="timer-interno">
+    <div>
+      <div class="label">Cronómetro del momento 1</div>
+      <div class="clock" id="clock-m1">12:00</div>
+    </div>
+    <button onclick="toggleMomentoTimer(1, 12)">Iniciar / Pausar</button>
+  </div>
+
+  <div class="instructivo">
+    <h4>Instrucciones · trabajo individual silencioso</h4>
+    <ol>
+      <li>Acceda al formulario real asignado mediante uno de los enlaces oficiales del cuadro de abajo. Lectura individual.</li>
+      <li>Aplique la lista de verificación de 20 variables marcando «Cumple» o «No cumple» para cada una.</li>
+      <li>Sume las variables cumplidas. Compare su resultado con el techo del estudio: 14 variables fue el máximo entre los 24 formularios analizados.</li>
+      <li>Anote en el espacio de reflexión las tres omisiones que considera más graves y su consecuencia clínica.</li>
+    </ol>
+  </div>
+
+  <div class="card with-accent">
+    <h3>Formularios reales para analizar</h3>
+    <p>Acceda a uno o dos de los siguientes formularios oficiales en circulación y aplique la lista. Recomendado: comparar uno institucional con uno de plataforma ciudadana.</p>
+    <div class="downloads-row">
+      <a class="consulta-btn" href="https://dmd.org.co/dva-digital/" target="_blank" rel="noopener">DMD Colombia · plataforma digital</a>
+      <a class="consulta-btn" href="https://www.minsalud.gov.co/sites/rid/lists/bibliotecadigital/ride/vs/pp/abece-voluntad-anticipada.pdf" target="_blank" rel="noopener">ABECÉ DVA · MinSalud</a>
+      <a class="consulta-btn" href="https://www.minsalud.gov.co/Normatividad_Nuevo/Resoluci%C3%B3n%20No.%202665%20de%202018.pdf" target="_blank" rel="noopener">Resolución 2665 de 2018</a>
+      <a class="consulta-btn" href="https://www.revcolanest.com.co/index.php/rca/article/download/1093/2373/4206" target="_blank" rel="noopener">Estudio Castro-Vargas et al. 2024</a>
+    </div>
+  </div>
+
+  <div class="card with-accent">
+    <h3>Lista de verificación de 20 variables</h3>
+    <p>Cuatro categorías: <strong>L · Legal/normativa · M · Clínico-médica · P · Personal · F · Formalización</strong>.</p>
+
+    <table class="checklist-20">
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th>Variable</th>
+          <th class="cat">Cat.</th>
+          <th class="center">Cumple</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td>Datos completos de identificación del otorgante</td><td class="cat">L</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">2</td><td>Declaración expresa de capacidad mental</td><td class="cat">L</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">3</td><td>Declaración de ausencia de coacción</td><td class="cat">L</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">4</td><td>Manifestación de voluntad informada</td><td class="cat">L</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">5</td><td>Decisiones específicas en escenarios clínicos diferenciados</td><td class="cat">M</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">6</td><td>Designación de representante legal o testigos</td><td class="cat">L</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">7</td><td>Indicaciones explícitas sobre cuidados paliativos</td><td class="cat">M</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">8</td><td>Indicaciones sobre adecuación del esfuerzo terapéutico</td><td class="cat">M</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">9</td><td>Indicaciones sobre manejo del dolor (escalera analgésica OMS)</td><td class="cat">M</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">10</td><td>Indicaciones sobre soporte vital</td><td class="cat">M</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">11</td><td>Indicaciones sobre nutrición e hidratación artificial</td><td class="cat">M</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">12</td><td>Indicaciones sobre reanimación cardiopulmonar</td><td class="cat">M</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">13</td><td>Indicaciones sobre sedación paliativa</td><td class="cat">M</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">14</td><td>Disposiciones sobre donación de órganos (Ley 1805 de 2016)</td><td class="cat">P</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">15</td><td>Disposiciones funerarias y rituales preferidos</td><td class="cat">P</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">16</td><td>Apoyos espirituales, religiosos o existenciales</td><td class="cat">P</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">17</td><td>Modalidad de formalización elegida</td><td class="cat">F</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">18</td><td>Cláusula explícita de revocabilidad</td><td class="cat">F</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">19</td><td>Provisión de anexión a la historia clínica</td><td class="cat">F</td><td class="center"><input type="checkbox"></td></tr>
+        <tr><td class="num">20</td><td>Fecha, lugar y firma del otorgante</td><td class="cat">F</td><td class="center"><input type="checkbox"></td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 14px; font-size: 0.9rem; color: var(--gray);"><strong>Recordatorio.</strong> Una variable «cumple» si está presente, redactada de manera operativa (no como simple mención) y articulada con el resto del documento.</p>
+  </div>
+
+  <div class="reflexion-area">
+    <h4>Anote sus tres omisiones más graves</h4>
+    <p style="margin-bottom: 10px; font-size: 0.93rem;">Si una persona en estado crítico llenara el formulario que acaba de evaluar, ¿qué decisiones quedarían sin respuesta? ¿Qué espacio quedaría para la interpretación discrecional?</p>
+    <textarea placeholder="1. Omisión: ... · Consecuencia: ...&#10;2. Omisión: ... · Consecuencia: ...&#10;3. Omisión: ... · Consecuencia: ..."></textarea>
+  </div>
+
+  <div class="docente-only">
+    <strong>Notas pedagógicas para el momento 1.</strong>
+    <ul style="margin-top: 8px;">
+      <li>Materiales: imprimir la lista de 20 variables × 13 estudiantes. Asegurar acceso a internet en aula para consulta de los formularios.</li>
+      <li>Si algún estudiante no tiene dispositivo, prever 2-3 copias impresas del formulario DMD Colombia y del de DesClab.</li>
+      <li>Riesgo a evitar: confundir «cumple» con «menciona». La diferencia es operacional vs. nominal — un buen formulario no solo nombra «cuidados paliativos», sino que pregunta al otorgante decisiones específicas.</li>
+      <li>Cierre del momento (un minuto): mencionar el dato del 70% del estudio. Esa es la barra que la plantilla del momento 2 debe superar.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MOMENTO 2 — PLANTILLA PROFESIONAL ============ -->
+<section class="momento" id="momento-2" style="--m-color: var(--m2);">
+  <div class="momento-header">
+    <div class="momento-title-block">
+      <div class="momento-eyebrow">Momento 2 · 0:17 — 0:37</div>
+      <h2 class="momento-title">Plantilla profesional · construcción individual</h2>
+    </div>
+    <div class="momento-time">20 minutos</div>
+  </div>
+
+  <div class="momento-objetivo">
+    <div class="label">Objetivo del momento</div>
+    <p>Producir individualmente una plantilla profesional de Documento de Voluntad Anticipada que cumpla las 20 variables del listado, redactada de manera operativa (no enunciativa) bajo Resolución 2665 de 2018 y articulada con marcos internacionales convergentes.</p>
+  </div>
+
+  <div class="timer-interno">
+    <div>
+      <div class="label">Cronómetro del momento 2</div>
+      <div class="clock" id="clock-m2">20:00</div>
+    </div>
+    <button onclick="toggleMomentoTimer(2, 20)">Iniciar / Pausar</button>
+  </div>
+
+  <div class="instructivo">
+    <h4>Instrucciones · trabajo individual</h4>
+    <ol>
+      <li>Descargue la plantilla base en Word desde el enlace de abajo. Tres minutos.</li>
+      <li>Diligencie las cuatro secciones de la plantilla, completando cada cláusula con redacción operativa. Quince minutos.</li>
+      <li>Verifique con la lista de 20 variables que su plantilla las cumpla todas. Dos minutos.</li>
+    </ol>
+  </div>
+
+  <div class="card with-accent">
+    <h3>Las cuatro secciones de la plantilla</h3>
+    <p>Construya cada sección con cláusulas operativas — decisiones específicas que el equipo tratante pueda aplicar sin ambigüedad.</p>
+
+    <div class="seccion-plantilla" style="--m-color: var(--m1);">
+      <h4>Sección I</h4>
+      <h5>Identificación, capacidad y manifestación de voluntad</h5>
+      <p>Datos del otorgante, declaración de capacidad mental, ausencia de coacción, voluntad informada y designación de representante o testigos.</p>
+      <span class="vars">Variables: 1 · 2 · 3 · 4 · 6</span>
+    </div>
+
+    <div class="seccion-plantilla" style="--m-color: var(--m2);">
+      <h4>Sección II</h4>
+      <h5>Escenarios clínicos diferenciados y soporte vital</h5>
+      <p>Tres escenarios diferenciados (oncológico avanzado · lesión neurológica grave · fragilidad geriátrica con falla orgánica) con decisiones operativas sobre soporte vital, reanimación, nutrición e hidratación artificial.</p>
+      <span class="vars">Variables: 5 · 10 · 11 · 12</span>
+    </div>
+
+    <div class="seccion-plantilla" style="--m-color: var(--m3);">
+      <h4>Sección III</h4>
+      <h5>Cuidados paliativos, dolor y sedación</h5>
+      <p>Cláusulas operativas sobre cuidados paliativos integrales, adecuación del esfuerzo terapéutico, manejo del dolor con escalera analgésica de la OMS y opioides, sedación paliativa proporcional.</p>
+      <span class="vars">Variables: 7 · 8 · 9 · 13</span>
+    </div>
+
+    <div class="seccion-plantilla" style="--m-color: var(--m4);">
+      <h4>Sección IV</h4>
+      <h5>Disposiciones personales y formalización</h5>
+      <p>Donación de órganos (Ley 1805 de 2016), disposiciones funerarias, apoyos espirituales o existenciales, modalidad de formalización elegida, cláusula de revocabilidad operativa, anexión a historia clínica, lugar, fecha y firma.</p>
+      <span class="vars">Variables: 14 · 15 · 16 · 17 · 18 · 19 · 20</span>
+    </div>
+
+    <div class="downloads-row" style="margin-top: 18px;">
+      <a class="download-btn" href="https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/plantilla_dva_base.docx" target="_blank" rel="noopener">Descargar plantilla base (Word)</a>
+      <a class="download-btn" href="https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/fundamentacion_dva.docx" target="_blank" rel="noopener">Descargar fundamentación (Word)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recordatorio · cláusulas operativas vs. enunciativas</h3>
+    <p>La diferencia entre un DVA mediocre y uno excelente está aquí.</p>
+    <ul>
+      <li><strong>Enunciativa (insuficiente):</strong> «El otorgante manifiesta su voluntad sobre cuidados paliativos.»</li>
+      <li><strong>Operativa (suficiente):</strong> «El otorgante manifiesta que ☐ acepta · ☐ rechaza la sedación paliativa proporcional en caso de sufrimiento refractario, conforme escalera analgésica de la Organización Mundial de la Salud y la Guía de Práctica Clínica sobre Cuidados Paliativos – Adopción 2016 del MinSalud-IETS-INC.»</li>
+    </ul>
+  </div>
+
+  <div class="frase-destacada">
+    <blockquote>"La calidad de un Documento de Voluntad Anticipada se mide en lo que el equipo tratante puede hacer cuando el paciente ya no puede hablar."</blockquote>
+  </div>
+
+  <div class="docente-only">
+    <strong>Notas pedagógicas para el momento 2.</strong>
+    <ul style="margin-top: 8px;">
+      <li>Indispensable: que los estudiantes tengan dispositivo personal con Word o equivalente para diligenciar la plantilla.</li>
+      <li>Riesgo a evitar: cláusulas declarativas. Hacer una corrección modelo en pizarra al inicio del momento, mostrando el ejemplo enunciativo vs. operativo de la sección «recordatorio».</li>
+      <li>Si un estudiante avanza muy rápido, pedirle que amplíe la sección II con un cuarto escenario (accidente con politraumatismo, por ejemplo).</li>
+      <li>Si un estudiante se atasca, sugerirle que empiece por la sección IV (más mecánica) y termine con la II (más reflexiva).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MOMENTO 3 — REFLEXIÓN BREVE ============ -->
+<section class="momento" id="momento-3" style="--m-color: var(--m3);">
+  <div class="momento-header">
+    <div class="momento-title-block">
+      <div class="momento-eyebrow">Momento 3 · 0:37 — 0:40</div>
+      <h2 class="momento-title">Reflexión breve · transición al ejercicio personal</h2>
+    </div>
+    <div class="momento-time">3 minutos</div>
+  </div>
+
+  <div class="momento-objetivo">
+    <div class="label">Objetivo del momento</div>
+    <p>Sensibilizar antes de pasar al diligenciamiento personal. Sin esta breve pausa reflexiva, la voluntad personal del momento 4 corre el riesgo de convertirse en un ejercicio mecánico de marcar casillas, perdiendo la autenticidad que distingue un DVA real de un formulario diligenciado.</p>
+  </div>
+
+  <div class="timer-interno">
+    <div>
+      <div class="label">Cronómetro del momento 3</div>
+      <div class="clock" id="clock-m3">3:00</div>
+    </div>
+    <button onclick="toggleMomentoTimer(3, 3)">Iniciar / Pausar</button>
+  </div>
+
+  <div class="frase-destacada">
+    <blockquote>"Lo que va a llenar en los próximos minutos no es un formulario académico. Es la conversación más importante que puede tener consigo mismo: si yo perdiera la conciencia mañana, ¿qué quiero que pase?"</blockquote>
+  </div>
+
+  <div class="reflexion-area">
+    <h4>Una sola pregunta de anclaje</h4>
+    <p style="margin-bottom: 10px; font-size: 0.95rem;">Anote en una sola frase: <strong>la decisión clínica sobre la que tengo más certeza</strong>, y <strong>la decisión clínica sobre la que tengo más incertidumbre</strong>. Esto le servirá de mapa para el momento 4.</p>
+    <textarea placeholder="Certeza absoluta: ...&#10;Mayor incertidumbre: ..."></textarea>
+  </div>
+
+  <div class="docente-only">
+    <strong>Notas pedagógicas para el momento 3.</strong>
+    <ul style="margin-top: 8px;">
+      <li>Tres minutos exactos. No alargar. La función es de bisagra, no de elaboración.</li>
+      <li>Antes de iniciar, decir explícitamente: «Lo que escriban aquí no se va a leer en voz alta. Es para ustedes.» Esto baja la ansiedad de exposición y permite franqueza.</li>
+      <li>Si algún estudiante manifiesta «no se me ocurre nada porque soy joven y sano», recordarle que la Resolución 2665 (artículo 3°) establece expresamente que el DVA aplica a personas sanas y enfermas. Casos de jurisprudencia reciente confirman su pertinencia (T-239 de 2023).</li>
+      <li>Esta reducción del momento (de 10 a 3 minutos) es deliberada: en una actividad individual y compacta, la sensibilización corta es suficiente para activar la transición al rol existencial.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MOMENTO 4 — VOLUNTAD ANTICIPADA PERSONAL ============ -->
+<section class="momento" id="momento-4" style="--m-color: var(--m4);">
+  <div class="momento-header">
+    <div class="momento-title-block">
+      <div class="momento-eyebrow">Momento 4 · 0:40 — 0:55</div>
+      <h2 class="momento-title">Documento de Voluntad Anticipada personal</h2>
+    </div>
+    <div class="momento-time">15 minutos</div>
+  </div>
+
+  <div class="momento-objetivo">
+    <div class="label">Objetivo del momento</div>
+    <p>Cada estudiante diligencia su propio Documento de Voluntad Anticipada usando la plantilla profesional construida en el momento 2 y los anclajes reflexivos del momento 3. El producto es individual, confidencial y formalmente válido bajo Resolución 2665 de 2018.</p>
+  </div>
+
+  <div class="timer-interno">
+    <div>
+      <div class="label">Cronómetro del momento 4</div>
+      <div class="clock" id="clock-m4">15:00</div>
+    </div>
+    <button onclick="toggleMomentoTimer(4, 15)">Iniciar / Pausar</button>
+  </div>
+
+  <div class="instructivo">
+    <h4>Procedimiento de los 15 minutos</h4>
+    <ol>
+      <li>Use su plantilla del momento 2 como base. Sustituya los corchetes <em>[HINT]</em> con sus propias decisiones, preferencias y razones. Doce minutos en silencio.</li>
+      <li>Verifique con la lista de 20 variables que su voluntad cumpla todas. Dos minutos.</li>
+      <li>Anote al final qué modalidad de formalización elegiría si decidiera hacerlo realmente: notario por escritura pública, dos testigos cualificados, o médico tratante. Argumente brevemente. Un minuto.</li>
+    </ol>
+  </div>
+
+  <div class="card with-accent">
+    <h3>Confidencialidad absoluta del producto</h3>
+    <p>El documento personal es estrictamente suyo. El docente no lo recoge, no lo revisa, no lo evalúa. La evaluación de la actividad recae sobre la <strong>plantilla profesional</strong> producida en el momento 2 y sobre la participación reflexiva en los momentos 3 y 5.</p>
+    <p>Si decide en el futuro formalizar realmente su DVA, puede llevarlo a notaría conforme el artículo 5° de la Resolución 2665 de 2018. La actividad académica termina al cerrar el momento 5, pero el ejercicio existencial puede continuar.</p>
+  </div>
+
+  <div class="checklist">
+    <h5>Lista de verificación rápida antes de cerrar</h5>
+    <label><input type="checkbox"> Mi documento contiene las 20 variables del listado.</label>
+    <label><input type="checkbox"> Mis decisiones clínicas son operativas, no enunciativas.</label>
+    <label><input type="checkbox"> Mi documento incluye al menos tres escenarios clínicos diferenciados.</label>
+    <label><input type="checkbox"> Cada cláusula clínica menciona el sustento normativo (Ley, Resolución, Guía).</label>
+    <label><input type="checkbox"> Elegí explícitamente una modalidad de formalización y argumenté por qué.</label>
+    <label><input type="checkbox"> Incluí cláusula de revocabilidad operativa (no solo enunciativa).</label>
+    <label><input type="checkbox"> Decidí si incluyo donación de órganos (Ley 1805 de 2016).</label>
+    <label><input type="checkbox"> Mi documento podría ser anexado a una historia clínica y aplicado sin ambigüedad.</label>
+  </div>
+
+  <div class="docente-only">
+    <strong>Notas pedagógicas para el momento 4.</strong>
+    <ul style="margin-top: 8px;">
+      <li>Este es el momento más íntimo de la actividad. Bajar el volumen de la voz, no acercarse a los estudiantes salvo que pidan ayuda, no comentar lo que escriben.</li>
+      <li>Si un estudiante manifiesta dificultad emocional para llenarlo, ofrecer la opción de hacerlo desde un escenario hipotético desplazado: «hágalo como si fuera para una persona de cincuenta años más». Esto preserva el aprendizaje sin forzar la introspección.</li>
+      <li>Confidencialidad absoluta. Ningún estudiante debe sentirse obligado a compartir su producto.</li>
+      <li>15 minutos pueden parecer pocos. Justamente por eso el momento 2 (plantilla) toma 20 minutos: cuando el estudiante llega aquí, ya tiene la estructura clara y solo está sustituyendo los corchetes con sus decisiones reales.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MOMENTO 5 — CIERRE ============ -->
+<section class="momento" id="momento-5" style="--m-color: var(--m5);">
+  <div class="momento-header">
+    <div class="momento-title-block">
+      <div class="momento-eyebrow">Momento 5 · 0:55 — 0:58</div>
+      <h2 class="momento-title">Cierre · autoverificación y tarea</h2>
+    </div>
+    <div class="momento-time">3 minutos</div>
+  </div>
+
+  <div class="momento-objetivo">
+    <div class="label">Objetivo del momento</div>
+    <p>Cerrar la actividad con autoverificación silenciosa del producto, formular la tarea posterior a la sesión y articular con la sesión completa de marco normativo y jurisprudencia.</p>
+  </div>
+
+  <div class="timer-interno">
+    <div>
+      <div class="label">Cronómetro del momento 5</div>
+      <div class="clock" id="clock-m5">3:00</div>
+    </div>
+    <button onclick="toggleMomentoTimer(5, 3)">Iniciar / Pausar</button>
+  </div>
+
+  <div class="card with-accent">
+    <h3>Tres preguntas finales para autoverificación silenciosa</h3>
+    <ol>
+      <li>¿Mi plantilla profesional supera el techo del 70% identificado en Castro-Vargas et al. 2024 (más de 14 variables operativamente cumplidas)?</li>
+      <li>¿Mi voluntad anticipada personal sería aplicable por un equipo tratante sin necesidad de interpretación discrecional?</li>
+      <li>¿Sobre qué decisión sentí mayor dificultad al diligenciar, y qué dice eso de mi formación profesional?</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>Tarea posterior a la sesión</h3>
+    <ul>
+      <li><strong>Entrega digital:</strong> cada estudiante envía su <em>plantilla profesional</em> diligenciada (no la voluntad personal) en el plazo definido por el docente. Esta es la pieza evaluable.</li>
+      <li><strong>Lectura sugerida:</strong> Castro-Vargas et al. (2024), artículo completo; y Rietjens et al. (2017), <em>Definition and recommendations for advance care planning</em>, EAPC White Paper en <em>The Lancet Oncology</em>.</li>
+      <li><strong>Reflexión opcional:</strong> el documento personal del momento 4 puede ser formalizado posteriormente en notaría si el estudiante lo decide. La actividad académica termina aquí, pero el ejercicio existencial puede continuar.</li>
+    </ul>
+  </div>
+
+  <div class="frase-destacada">
+    <blockquote>"Hoy hicimos dos cosas: aprendimos a construir un Documento de Voluntad Anticipada profesionalmente válido, y nos preguntamos qué pondríamos en el nuestro. Las dos preguntas son la misma pregunta vista desde dos ángulos: qué significa, en cuidados paliativos, respetar realmente la autonomía."</blockquote>
+  </div>
+
+  <div class="docente-only">
+    <strong>Notas pedagógicas para el momento 5.</strong>
+    <ul style="margin-top: 8px;">
+      <li>Tres minutos exactos. Cierre rápido y limpio, no abrir nuevas discusiones.</li>
+      <li>Producto evaluable: la plantilla profesional individual de cada estudiante. La voluntad personal del momento 4 NO se entrega, NO se evalúa.</li>
+      <li>Si queda tiempo (no probable), permitir un solo testimonio voluntario: «¿qué decisión les costó más, sin necesidad de mostrar el documento?»</li>
+      <li>Cerrar con la frase destacada o con una pregunta abierta para la próxima sesión. No cerrar con el dato cuantitativo.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-meta">
+    Universidad Antonio Nariño · Facultad de Enfermería · Maestría en Cuidados Paliativos 2026-I<br>
+    Curso: Contexto Histórico y Legal de los Cuidados Paliativos (37542001)<br>
+    Profesor: Jorge Bogoya López · Sesión presencial 8 de mayo de 2026<br>
+    Marco normativo: Resolución 2665 de 2018 · Marco metodológico: Castro-Vargas, Castaño-Castrillón y Riveros-Pérez (2024)
+  </div>
+  <div class="footer-meta" style="margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.2);">
+    <strong>Materiales del curso · descarga directa</strong><br>
+    <a href="https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/plantilla_dva_base.docx" style="color:#fff;text-decoration:underline;" target="_blank" rel="noopener">plantilla_dva_base.docx</a> ·
+    <a href="https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/fundamentacion_dva.docx" style="color:#fff;text-decoration:underline;" target="_blank" rel="noopener">fundamentacion_dva.docx</a> ·
+    <a href="https://jboglop.github.io/Contexto_Historico_Legal_CP/sesion_marco_normativo_jurisprudencial_uan_2026.html" style="color:#fff;text-decoration:underline;" target="_blank" rel="noopener">sesión sobre marco normativo y jurisprudencial</a> ·
+    <a href="https://github.com/JBOGLOP/Contexto_Historico_Legal_CP" style="color:#fff;text-decoration:underline;" target="_blank" rel="noopener">repositorio completo en GitHub</a>
+  </div>
+  <div class="actions">
+    <button onclick="window.print()">Imprimir o guardar como PDF</button>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Volver al inicio</button>
+    <button onclick="document.body.classList.toggle('docente-mode')">Alternar notas docente</button>
+  </div>
+</footer>
+
+<button class="docente-toggle" onclick="document.body.classList.toggle('docente-mode'); this.classList.toggle('active')">Modo docente</button>
+
+<script>
+let globalTimer = null;
+let globalSeconds = 58 * 60;
+let timerRunning = false;
+
+function formatTime(secs) {
+  const m = Math.floor(secs / 60).toString().padStart(2,'0');
+  const s = (secs % 60).toString().padStart(2,'0');
+  return `${m}:${s}`;
+}
+
+function tickGlobal() {
+  if (!timerRunning) return;
+  if (globalSeconds <= 0) { stopGlobal(); return; }
+  globalSeconds--;
+  document.getElementById('global-clock').textContent = formatTime(globalSeconds);
+}
+
+function startGlobal() {
+  if (timerRunning) return;
+  timerRunning = true;
+  document.getElementById('btn-start').classList.add('active');
+  document.getElementById('btn-pause').classList.remove('active');
+  globalTimer = setInterval(tickGlobal, 1000);
+}
+
+function pauseGlobal() {
+  timerRunning = false;
+  if (globalTimer) clearInterval(globalTimer);
+  document.getElementById('btn-pause').classList.add('active');
+  document.getElementById('btn-start').classList.remove('active');
+}
+
+function stopGlobal() { pauseGlobal(); }
+
+function resetGlobal() {
+  pauseGlobal();
+  globalSeconds = 58 * 60;
+  document.getElementById('global-clock').textContent = formatTime(globalSeconds);
+  document.getElementById('btn-start').classList.remove('active');
+  document.getElementById('btn-pause').classList.remove('active');
+}
+
+document.getElementById('btn-start').addEventListener('click', startGlobal);
+document.getElementById('btn-pause').addEventListener('click', pauseGlobal);
+document.getElementById('btn-reset').addEventListener('click', resetGlobal);
+
+const momentoTimers = {};
+function toggleMomentoTimer(num, minutes) {
+  const el = document.getElementById('clock-m' + num);
+  if (!momentoTimers[num]) {
+    momentoTimers[num] = { seconds: minutes * 60, running: false, interval: null };
+  }
+  const t = momentoTimers[num];
+  if (t.running) {
+    t.running = false;
+    if (t.interval) clearInterval(t.interval);
+  } else {
+    t.running = true;
+    t.interval = setInterval(() => {
+      if (t.seconds <= 0) { clearInterval(t.interval); t.running = false; el.style.color = '#FFD700'; return; }
+      t.seconds--;
+      el.textContent = formatTime(t.seconds);
+    }, 1000);
+  }
+}
+
+document.querySelectorAll('.momento-pill').forEach(p => {
+  p.addEventListener('click', () => {
+    document.querySelectorAll('.momento-pill').forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    const target = document.getElementById('momento-' + p.dataset.momento);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+const momentoSecs = ['momento-0','momento-1','momento-2','momento-3','momento-4','momento-5'];
+function updateActiveMomento() {
+  let current = 'momento-0';
+  for (const id of momentoSecs) {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 130) current = id;
+  }
+  document.querySelectorAll('.momento-pill').forEach(p => {
+    p.classList.toggle('active', 'momento-' + p.dataset.momento === current);
+  });
+}
+window.addEventListener('scroll', updateActiveMomento, { passive: true });
+</script>
+
+</body>
+</html>
