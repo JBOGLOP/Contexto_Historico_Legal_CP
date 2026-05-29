@@ -51,11 +51,5 @@ Solo los profesionales que realizan directamente el procedimiento pueden objetar
 
 ---
 
-## Materiales del curso
-
-← [Inicio del curso](https://jboglop.github.io/Contexto_Historico_Legal_CP/) · [Marco normativo y jurisprudencial](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesion_marco_normativo_jurisprudencial_uan_2026.html) · [Actividad DVA](https://jboglop.github.io/Contexto_Historico_Legal_CP/actividad_dva_personal.html) · [Repositorio completo](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP)
-
----
-
 **Maestría en Cuidados Paliativos · Universidad Antonio Nariño · 2026-I**  
 Curso: Contexto Histórico y Legal de los Cuidados Paliativos (37542001)
