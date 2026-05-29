@@ -7,10 +7,9 @@ Primer régimen unificado de muerte digna en Colombia
 
 ## 📄 Acceso al documento
 
-| Recurso | Enlace |
-|---------|--------|
-| **Análisis estructurado (HTML)** | [Abrir →](https://jboglop.github.io/Contexto_Historico_Legal_CP/Res_813/index_res813.html) |
-| **Texto oficial de la Resolución (PDF)** | [Descargar ↓](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/Res_813/Resolucion-No-813-de-2026-1.pdf) |
+🔗 **[Abrir análisis estructurado (HTML)](https://jboglop.github.io/Contexto_Historico_Legal_CP/Res_813/index_res813.html)**
+
+⬇ **[Descargar texto oficial de la Resolución 813 (PDF)](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/Res_813/Resolucion-No-813-de-2026-1.pdf)**
 
 ---
 
