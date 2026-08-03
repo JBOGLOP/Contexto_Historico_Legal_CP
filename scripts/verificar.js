@@ -106,7 +106,9 @@ titulo('3 · Rastros de datos personales  (§7.3)');
     [/\b\d{1,2}[.,]\d{1,2}\s*\/\s*5[.,]0\b/g, 'nota sobre 5,0',              'duro'],
     [/app\.tactiq\.io|otter\.ai|fireflies\.ai/gi, 'enlace a transcripción',  'duro'],
     [/Meeting started:|Participants:/g,        'cabecera de transcripción',  'duro'],
-    [/\b[\w.%-]+@(?!ejemplo|example)[\w.-]+\.[a-z]{2,}\b/gi, 'correo electrónico', 'duro'],
+    // El correo institucional del docente es público y debe aparecer.
+    // Lo que no puede aparecer es el de ningún estudiante.
+    [/\b(?!jbogoya63@uan\.edu\.co)[\w.%-]+@(?!ejemplo|example)[\w.-]+\.[a-z]{2,}\b/gi, 'correo electrónico', 'duro'],
     [/conformaci[oó]n de grupos/gi,           'sección «conformación de grupos»', 'blando'],
     [/integrantes\s*:/gi,                     'lista de integrantes',        'blando'],
   ];
@@ -148,6 +150,12 @@ titulo('4 · Lenguaje de la asignatura  (§7.4)');
       if (EXCEPCIONES.test(ctx)) EXCEPCIONES.lastIndex = 0;
       // ¿Es paráfrasis de una norma o sentencia? Entonces se conserva.
       const norma = /\b(Ley|Sentencia|Resoluci[oó]n|Decreto|Convenci[oó]n|art[íi]culo|C-\d|T-\d)\b/i.test(ctx);
+      // ¿Se está enunciando la propia regla? «X, no Y» / «en vez de Y».
+      // Es el falso positivo del §7.4: el término aparece porque se discute
+      // la palabra, no porque se use.
+      const menciona = /\b(no|nunca|jam[áa]s|en (?:vez|lugar) de|antes que|frente a)\b[^.]{0,40}$/i
+                         .test(ctx.slice(0, ctx.indexOf(m[0])));
+      if (menciona) { console.log(gris('  ok    ') + `${rel(f)}  —  «${m[0]}» enuncia la regla, no la infringe`); continue; }
       console.log((norma ? amar('  CITA  ') : rojo('  TERM  ')) + `${rel(f)}  —  «${m[0]}»`);
       console.log(gris(`          …${ctx.slice(0, 150)}…`));
       console.log(gris(norma ? '          → parafrasea una norma: CONSERVAR, verificar a mano'

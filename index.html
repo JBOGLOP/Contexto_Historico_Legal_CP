@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contexto Histórico y Legal de los Cuidados Paliativos · Maestría en Cuidado Paliativo · UAN</title>
+<meta name="description" content="Material del curso Contexto Histórico y Legal de los Cuidados Paliativos (37542001), Maestría en Cuidado Paliativo, Universidad Antonio Nariño. Semestre 2026-I.">
+<style>
+/* === tokens.css (copia en línea · ver _shared/tokens.css) ================= */
+:root{
+  --terracota:#B85C3C; --terracota-dark:#9C4830; --terracota-soft:#EFD5C8;
+  --salvia:#7A8B6F;    --salvia-dark:#5C6E54;    --salvia-soft:#D9E0D2;
+  --arena:#C4A876;     --arena-dark:#8B7B5C;     --arena-deep:#6B5B40; --arena-soft:#F5EEDD;
+  --ambar:#D4A547;     --ambar-dark:#A07930;     --ambar-deep:#6B4F0F; --ambar-soft:#F4E4BC;
+  --charcoal:#2D2D2D;  --gris:#595959;           --gris-claro:#8A8A8A;
+  --blanco:#FFFFFF;    --crema:#FAF6EF;
+  --shadow-soft:0 2px 8px rgba(45,45,45,.08);
+  --shadow-medium:0 6px 20px rgba(45,45,45,.12);
+  --radius:12px; --radius-sm:8px;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  --mono:'Courier New',monospace;
+  --serif:Georgia,serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; font-family:var(--sans); color:var(--charcoal);
+  background:var(--crema); line-height:1.6;
+}
+:focus-visible{outline:3px solid var(--terracota); outline-offset:2px}
+a{color:var(--terracota-dark)}
+.envoltura{max-width:64rem; margin:0 auto; padding:0 1.25rem}
+
+.saltar{
+  position:absolute; left:-9999px; top:0; background:var(--charcoal); color:var(--crema);
+  padding:.6rem 1rem; border-radius:0 0 var(--radius-sm) 0; z-index:10;
+}
+.saltar:focus{left:0}
+
+/* --- Cabecera ----------------------------------------------------------- */
+.hero{
+  background:linear-gradient(160deg,var(--crema) 0%,var(--salvia-soft) 50%,var(--terracota-soft) 100%);
+  padding:clamp(2.5rem,7vw,4.5rem) 0 clamp(2rem,5vw,3rem);
+  border-bottom:1px solid rgba(45,45,45,.08);
+}
+.hero__eyebrow{
+  font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--terracota-dark); font-weight:700; margin:0 0 .5rem;
+}
+h1{font-size:clamp(1.75rem,5vw,3rem); line-height:1.12; letter-spacing:-.02em; margin:0 0 .6rem}
+.hero__sub{font-size:1.05rem; color:var(--gris); max-width:60ch; margin:0}
+.vertebral{
+  font-family:var(--serif); font-style:italic;
+  font-size:clamp(1.02rem,2.4vw,1.4rem); color:var(--terracota-dark);
+  border-left:4px solid var(--terracota); padding:.5em 0 .5em 1.1em;
+  max-width:56ch; margin:1.6rem 0 0;
+}
+.vertebral span{display:block; font-style:normal; font-family:var(--sans);
+  font-size:.82rem; color:var(--gris); margin-top:.7em}
+.meta{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.5rem}
+.chip{
+  background:var(--blanco); border:1px solid rgba(45,45,45,.1); border-radius:999px;
+  padding:.32rem .9rem; font-size:.84rem; box-shadow:var(--shadow-soft);
+}
+
+/* --- Secciones ---------------------------------------------------------- */
+section{padding:clamp(2rem,5vw,3.25rem) 0}
+h2{font-size:clamp(1.3rem,3vw,1.85rem); margin:0 0 .35rem; color:var(--charcoal)}
+.seccion__intro{color:var(--gris); max-width:64ch; margin:0 0 1.5rem}
+
+/* --- Cifras ------------------------------------------------------------- */
+.cifras{display:grid; gap:.7rem; grid-template-columns:repeat(auto-fit,minmax(11rem,1fr))}
+.cifra{
+  background:var(--blanco); border-radius:var(--radius-sm); padding:1rem 1.1rem;
+  box-shadow:var(--shadow-soft); border-top:3px solid var(--terracota);
+}
+.cifra__dato{font-size:1.6rem; font-weight:700; line-height:1.1; color:var(--terracota-dark)}
+.cifra__que{font-size:.85rem; color:var(--gris); margin-top:.3rem}
+.cifra__fuente{font-size:.72rem; color:var(--gris-claro); font-family:var(--mono); margin-top:.45rem}
+
+/* --- Anclajes ----------------------------------------------------------- */
+.anclajes{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.anclaje{
+  background:var(--blanco); border-radius:var(--radius); padding:1.1rem 1.25rem;
+  box-shadow:var(--shadow-soft); border-left:4px solid var(--salvia);
+}
+.anclaje h3{margin:0 0 .4rem; font-size:1.02rem; color:var(--salvia-dark)}
+.anclaje p{margin:0; font-size:.92rem; color:var(--gris)}
+
+/* --- Unidades y sesiones ------------------------------------------------ */
+.unidad{margin-bottom:2.25rem}
+.unidad__cabeza{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.75rem;
+  padding-bottom:.5rem; margin-bottom:1rem;
+  border-bottom:2px solid var(--u-color,var(--gris-claro));
+}
+.unidad__num{
+  font-family:var(--mono); font-size:.75rem; letter-spacing:.1em; text-transform:uppercase;
+  font-weight:700; color:var(--u-dark,var(--gris));
+}
+.unidad__titulo{font-size:1.12rem; font-weight:700; margin:0}
+.unidad__nota{font-size:.85rem; color:var(--gris); margin-left:auto}
+
+.sesiones{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(19rem,1fr))}
+.sesion{
+  display:flex; flex-direction:column; background:var(--blanco); border-radius:var(--radius);
+  padding:1.1rem 1.25rem; box-shadow:var(--shadow-soft);
+  border-top:3px solid var(--u-color,var(--gris-claro));
+}
+.sesion--pendiente{background:rgba(255,255,255,.6); border-top-style:dashed}
+.sesion__alto{display:flex; align-items:baseline; gap:.6rem; margin-bottom:.15rem}
+.sesion__num{
+  font-family:var(--mono); font-weight:700; font-size:.8rem;
+  color:var(--u-dark,var(--gris)); white-space:nowrap;
+}
+.sesion__fecha{font-size:.78rem; color:var(--gris); margin-left:auto; white-space:nowrap}
+.sesion h3{margin:0 0 .35rem; font-size:1.04rem; line-height:1.3}
+.sesion__tema{font-size:.9rem; color:var(--gris); margin:0 0 .7rem}
+.sesion__hitos{
+  list-style:none; padding:0; margin:0 0 .8rem; font-size:.84rem; color:var(--gris); flex:1;
+}
+.sesion__hitos li{padding-left:1rem; position:relative; margin-bottom:.25rem}
+.sesion__hitos li::before{
+  content:'·'; position:absolute; left:.25rem; color:var(--u-color,var(--gris-claro));
+  font-weight:700; font-size:1.2em; line-height:1;
+}
+.enlaces{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:auto}
+.enlace{
+  font-size:.82rem; font-weight:600; text-decoration:none;
+  border:1px solid var(--u-color,var(--gris-claro)); color:var(--u-dark,var(--gris));
+  border-radius:999px; padding:.28rem .8rem; transition:background .15s ease;
+}
+.enlace:hover{background:var(--u-soft,var(--crema))}
+.enlace--principal{background:var(--u-dark,var(--gris)); color:var(--blanco); border-color:transparent}
+.enlace--principal:hover{background:var(--charcoal)}
+.estado{
+  display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.06em;
+  text-transform:uppercase; padding:.16em .6em; border-radius:4px;
+}
+.estado--publicada{background:var(--salvia-soft); color:var(--salvia-dark)}
+.estado--pendiente{background:var(--arena-soft); color:var(--arena-deep)}
+
+/* Color por unidad: el color significa algo, no decora. */
+.u1{--u-color:var(--salvia);    --u-dark:var(--salvia-dark);    --u-soft:var(--salvia-soft)}
+.u2{--u-color:var(--ambar);     --u-dark:var(--ambar-deep);     --u-soft:var(--ambar-soft)}
+.u3{--u-color:var(--terracota); --u-dark:var(--terracota-dark); --u-soft:var(--terracota-soft)}
+
+/* --- Evaluación --------------------------------------------------------- */
+.cortes{display:grid; gap:.8rem; grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.corte{
+  background:var(--blanco); border-radius:var(--radius-sm); padding:1rem 1.1rem;
+  box-shadow:var(--shadow-soft); border-left:4px solid var(--arena);
+}
+.corte__peso{font-size:1.5rem; font-weight:700; color:var(--arena-deep); line-height:1}
+.corte h3{margin:.35rem 0 .3rem; font-size:.98rem}
+.corte p{margin:0; font-size:.87rem; color:var(--gris)}
+
+/* --- Normativa ---------------------------------------------------------- */
+.normas{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.norma{
+  background:var(--blanco); border-radius:var(--radius-sm);
+  padding:1rem 1.15rem; box-shadow:var(--shadow-soft);
+}
+.norma h3{
+  margin:0 0 .5rem; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terracota-dark);
+}
+.norma ul{margin:0; padding-left:1.1rem; font-size:.88rem; color:var(--gris)}
+.norma li{margin-bottom:.3rem}
+
+/* --- Aviso -------------------------------------------------------------- */
+.nota{
+  background:var(--blanco); border-left:4px solid var(--arena);
+  border-radius:var(--radius-sm); padding:1rem 1.2rem; box-shadow:var(--shadow-soft);
+  font-size:.92rem; color:var(--gris); max-width:64ch;
+}
+.nota strong{color:var(--charcoal)}
+
+/* --- Pie ---------------------------------------------------------------- */
+footer{
+  background:var(--charcoal); color:var(--crema); margin-top:2rem;
+  padding:2.25rem 0; font-size:.88rem;
+}
+footer a{color:var(--arena-soft)}
+footer p{margin:0 0 .5rem; max-width:64ch}
+.footer__legal{color:#B8B8B8; font-size:.82rem; margin-top:1rem}
+
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<a class="saltar" href="#sesiones">Saltar al recorrido de sesiones</a>
+
+<header class="hero">
+  <div class="envoltura">
+    <p class="hero__eyebrow">Maestría en Cuidado Paliativo · Facultad de Enfermería · UAN</p>
+    <h1>Contexto Histórico y Legal de los Cuidados Paliativos</h1>
+    <p class="hero__sub">
+      Del hospicio medieval a la Resolución 813 de 2026. Un recorrido por cómo el cuidado
+      de quien va a morir pasó de ser obra de caridad a ser derecho exigible — y por qué,
+      en Colombia, tener el derecho todavía no significa recibir el cuidado.
+    </p>
+
+    <p class="vertebral">
+      Colombia depositó su adhesión a la Convención Interamericana A-70 el 27 de septiembre
+      de 2022. Es <em>hard law</em> vinculante. Y sin embargo la brecha de acceso a morfina
+      oral entre Bogotá y los departamentos amazónicos sigue siendo del orden de 90 a 1.
+      ¿Por qué el instrumento vinculante no cierra la brecha territorial?
+      <span>La paradoja colombiana · pregunta que atraviesa las tres unidades</span>
+    </p>
+
+    <div class="meta">
+      <span class="chip">Código 37542001</span>
+      <span class="chip">Plan 2377</span>
+      <span class="chip">2 créditos · 96 horas</span>
+      <span class="chip">8 sesiones · feb–may 2026</span>
+      <span class="chip">Semestre 2026-I</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="envoltura">
+    <h2>De qué trata</h2>
+    <p class="seccion__intro">
+      La asignatura recorre tres capas que se sostienen una sobre otra: primero de dónde
+      viene el cuidado paliativo, después qué políticas lo ordenan, y por último qué normas
+      lo hacen exigible. El recorrido termina donde empieza el problema real: un derecho
+      reconocido que no llega a todos los territorios.
+    </p>
+
+    <div class="anclajes">
+      <div class="anclaje">
+        <h3>Unidad 1 · De dónde viene</h3>
+        <p>
+          El hospicio medieval no tenía finalidad clínica sino caritativa. La historia va de
+          ahí a Cicely Saunders y St Christopher's, y de ahí a América Latina y a Colombia.
+        </p>
+      </div>
+      <div class="anclaje">
+        <h3>Unidad 2 · Quién lo ordena</h3>
+        <p>
+          Los marcos de política que definen qué debe existir: OMS, Banco Mundial, OCDE e
+          IAHPC en lo global; OPS, CEPAL y ALCP en la región; PAIS MAITE, RIAS y las guías
+          de práctica clínica en Colombia.
+        </p>
+      </div>
+      <div class="anclaje">
+        <h3>Unidad 3 · Qué lo hace exigible</h3>
+        <p>
+          La diferencia entre una recomendación y una obligación. Tratados vinculantes,
+          leyes, resoluciones y la jurisprudencia de la Corte Constitucional desde 1997.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>La brecha, en cifras</h2>
+    <p class="seccion__intro">
+      Estos son los datos sobre los que se discute durante el semestre. No ilustran la clase:
+      son el material con el que se trabaja.
+    </p>
+
+    <div class="cifras">
+      <div class="cifra">
+        <p class="cifra__dato">90 : 1</p>
+        <p class="cifra__que">Razón de acceso a morfina oral entre Bogotá y los departamentos amazónicos</p>
+        <p class="cifra__fuente">OCCP 2024</p>
+      </div>
+      <div class="cifra">
+        <p class="cifra__dato">645</p>
+        <p class="cifra__que">S-DDD de opioides por millón de habitantes y día en Colombia, frente a 428 de promedio latinoamericano</p>
+        <p class="cifra__fuente">Atlas de CP de las Américas</p>
+      </div>
+      <div class="cifra">
+        <p class="cifra__dato">9</p>
+        <p class="cifra__que">Equipos de cuidado paliativo pediátrico en Colombia, para 6.410 niños y adolescentes con sufrimiento grave</p>
+        <p class="cifra__fuente">Atlas de CP de las Américas</p>
+      </div>
+      <div class="cifra">
+        <p class="cifra__dato">2014</p>
+        <p class="cifra__que">Ley 1733, «Consuelo Devis Saavedra». Colombia es uno de los cinco países latinoamericanos con ley específica de cuidados paliativos</p>
+        <p class="cifra__fuente">Congreso de Colombia</p>
+      </div>
+    </div>
+
+    <p class="nota" style="margin-top:1.25rem">
+      <strong>La tensión que organiza el curso.</strong> Colombia está por encima del promedio
+      regional en consumo total de opioides y tiene una de las legislaciones más completas de
+      América Latina. Las dos cosas son ciertas al mismo tiempo que la disponibilidad real en
+      zonas rurales es de entre 0 % y 10 %. La pregunta del semestre no es qué le falta a la
+      ley, sino por qué la ley no basta.
+    </p>
+  </div>
+</section>
+
+<section id="sesiones">
+  <div class="envoltura">
+    <h2>Las ocho sesiones</h2>
+    <p class="seccion__intro">
+      El color indica la unidad. Las sesiones marcadas como pendientes se dictaron: lo que
+      falta es publicar aquí su material, que hoy vive en el archivo del curso.
+    </p>
+
+    <!-- ================= UNIDAD 1 ================= -->
+    <div class="unidad u1">
+      <div class="unidad__cabeza">
+        <span class="unidad__num">Unidad 1</span>
+        <h3 class="unidad__titulo">Contexto histórico de los cuidados paliativos</h3>
+        <span class="unidad__nota">Sesiones 1 – 3</span>
+      </div>
+
+      <div class="sesiones">
+
+        <article class="sesion sesion--pendiente">
+          <div class="sesion__alto">
+            <span class="sesion__num">Sesión 1</span>
+            <span class="sesion__fecha">6 feb 2026 · presencial</span>
+          </div>
+          <h3>Presentación y antecedentes</h3>
+          <p class="sesion__tema">Tema 1 · Antecedentes históricos, evolución de la definición y principios del cuidado paliativo.</p>
+          <ul class="sesion__hitos">
+            <li>De la «muerte doméstica» medieval al cambio de objetivo de la medicina en el siglo XX</li>
+            <li>Los hospicios: finalidad caritativa antes que clínica</li>
+            <li>Actividad preparatoria: la propia historia en la historia</li>
+          </ul>
+          <p class="enlaces"><span class="estado estado--pendiente">Por publicar</span></p>
+        </article>
+
+        <article class="sesion sesion--pendiente">
+          <div class="sesion__alto">
+            <span class="sesion__num">Sesión 2</span>
+            <span class="sesion__fecha">20 feb 2026 · sincrónico</span>
+          </div>
+          <h3>Genealogía del cuidado</h3>
+          <p class="sesion__tema">Tema 2 · Historia de los cuidados paliativos a nivel internacional.</p>
+          <ul class="sesion__hitos">
+            <li>Del Hospice du Grand-Saint-Bernard a los hospicios de Dublín y Londres</li>
+            <li>Cicely Saunders y la fundación de St Christopher's Hospice</li>
+            <li>El Movimiento Hospice como origen del cuidado paliativo moderno</li>
+          </ul>
+          <p class="enlaces"><span class="estado estado--pendiente">Por publicar</span></p>
+        </article>
+
+        <article class="sesion sesion--pendiente">
+          <div class="sesion__alto">
+            <span class="sesion__num">Sesión 3</span>
+            <span class="sesion__fecha">6 mar 2026 · presencial</span>
+          </div>
+          <h3>Cuidados paliativos en América Latina</h3>
+          <p class="sesion__tema">Tema 3 · Historia de los cuidados paliativos en Latinoamérica. Tema 4 · Colombia.</p>
+          <ul class="sesion__hitos">
+            <li>Cuatro modelos de referencia regional: Costa Rica, Argentina, Uruguay y Chile</li>
+            <li>Colombia ante el espejo: qué muestra la comparación</li>
+            <li>Desglose normativo colombiano</li>
+            <li>Se enuncia el primer producto: diagnóstico territorial y hoja de ruta</li>
+          </ul>
+          <p class="enlaces"><span class="estado estado--pendiente">Por publicar</span></p>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ================= UNIDAD 2 ================= -->
+    <div class="unidad u2">
+      <div class="unidad__cabeza">
+        <span class="unidad__num">Unidad 2</span>
+        <h3 class="unidad__titulo">Marco político de los cuidados paliativos</h3>
+        <span class="unidad__nota">Sesiones 4 – 5</span>
+      </div>
+
+      <div class="sesiones">
+
+        <article class="sesion sesion--pendiente">
+          <div class="sesion__alto">
+            <span class="sesion__num">Sesión 4</span>
+            <span class="sesion__fecha">20 mar 2026 · sincrónico</span>
+          </div>
+          <h3>Marcos globales de política pública</h3>
+          <p class="sesion__tema">Cierre de la Unidad 1 e introducción a la Unidad 2. Topic 1 · Directrices globales.</p>
+          <ul class="sesion__hitos">
+            <li>OMS, Banco Mundial, BID, OCDE e IAHPC</li>
+            <li>Resolución WHA67.19: el cuidado paliativo como componente del sistema de salud</li>
+            <li>Entrega del primer producto · 35 %</li>
+          </ul>
+          <p class="enlaces"><span class="estado estado--pendiente">Por publicar</span></p>
+        </article>
+
+        <article class="sesion sesion--pendiente">
+          <div class="sesion__alto">
+            <span class="sesion__num">Sesión 5</span>
+            <span class="sesion__fecha">10 abr 2026 · presencial</span>
+          </div>
+          <h3>De la región a Colombia</h3>
+          <p class="sesion__tema">Topic 2 · OPS, CEPAL y ALCP. Topic 3 · PAIS MAITE, RIAS y guías de práctica clínica.</p>
+          <ul class="sesion__hitos">
+            <li>Aula invertida: cada grupo trabaja un eje y pregunta a los demás</li>
+            <li>Cuatro ejes — OPS/MAITE · CEPAL/RIAS · ALCP/GPC · mesa de integración territorial</li>
+            <li>Verificación de fuentes académicas como parte del ejercicio</li>
+          </ul>
+          <p class="enlaces"><span class="estado estado--pendiente">Por publicar</span></p>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ================= UNIDAD 3 ================= -->
+    <div class="unidad u3">
+      <div class="unidad__cabeza">
+        <span class="unidad__num">Unidad 3</span>
+        <h3 class="unidad__titulo">Marco legal de los cuidados paliativos</h3>
+        <span class="unidad__nota">Sesiones 6 – 8</span>
+      </div>
+
+      <div class="sesiones">
+
+        <article class="sesion sesion--pendiente">
+          <div class="sesion__alto">
+            <span class="sesion__num">Sesión 6</span>
+            <span class="sesion__fecha">24 abr 2026 · sincrónico</span>
+          </div>
+          <h3>Legislación internacional</h3>
+          <p class="sesion__tema">Tema 1 · Legislación internacional y latinoamericana en cuidados paliativos.</p>
+          <ul class="sesion__hitos">
+            <li>La diferencia entre <em>hard law</em> y <em>soft law</em>, y por qué decide el caso</li>
+            <li>Convención Interamericana A-70, CDPD y Consenso de Montevideo</li>
+            <li>Caso Doña Carmen: 62 años, cáncer gástrico estadio IV, municipio disperso del Caquetá, sin morfina en la farmacia del hospital</li>
+            <li>Entrega del segundo producto · 35 %</li>
+          </ul>
+          <p class="enlaces"><span class="estado estado--pendiente">Por publicar</span></p>
+        </article>
+
+        <article class="sesion">
+          <div class="sesion__alto">
+            <span class="sesion__num">Sesión 7</span>
+            <span class="sesion__fecha">8 may 2026 · presencial</span>
+          </div>
+          <h3>Marco normativo colombiano y voluntad anticipada</h3>
+          <p class="sesion__tema">Tema 2 · Legislación en Colombia. Tema 3 · Enfoque de derechos humanos.</p>
+          <ul class="sesion__hitos">
+            <li>Jurisprudencia de la Corte Constitucional, 1997 – 2025</li>
+            <li>El Documento de Voluntad Anticipada bajo la Resolución 2665 de 2018</li>
+            <li>Ninguno de los 24 formularios colombianos evaluados superó 14 de 20 variables; el 70 % no pasó de 10</li>
+          </ul>
+          <p class="enlaces">
+            <a class="enlace enlace--principal" href="actividad_dva_personal.html">Sesión · voluntad anticipada</a>
+            <a class="enlace" href="sesion_marco_normativo_jurisprudencial_uan_2026.html">Marco normativo</a>
+            <a class="enlace" href="marco_normativo_jurisprudencial_cp_2023_2026.html">Jurisprudencia 2023–2026</a>
+            <a class="enlace" href="plantilla_dva_personal.docx">Plantilla DVA</a>
+            <a class="enlace" href="fundamentacion_dva.docx">Fundamentación</a>
+          </p>
+        </article>
+
+        <article class="sesion">
+          <div class="sesion__alto">
+            <span class="sesion__num">Sesión 8</span>
+            <span class="sesion__fecha">29 may 2026 · sincrónico</span>
+          </div>
+          <h3>Resolución 813 de 2026 y cierre</h3>
+          <p class="sesion__tema">Tema 4 · Enfoque de derechos humanos y avances tecnológicos. Cierre del curso.</p>
+          <ul class="sesion__hitos">
+            <li>Qué cambia la Resolución 813 respecto del régimen anterior de muerte digna</li>
+            <li>El caso Doña Carmen releído con la norma nueva</li>
+            <li>Entrega del producto final · 30 %</li>
+          </ul>
+          <p class="enlaces">
+            <a class="enlace enlace--principal" href="Res_813/index_res813.html">Análisis interactivo</a>
+            <a class="enlace" href="Res_813/Resolucion-No-813-de-2026-1.pdf">Texto oficial (PDF)</a>
+          </p>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Evaluación</h2>
+    <p class="seccion__intro">
+      Tres cortes. Cada producto exige aplicar lo de la unidad a un territorio concreto, no
+      resumirlo.
+    </p>
+    <div class="cortes">
+      <div class="corte">
+        <p class="corte__peso">35 %</p>
+        <h3>Primer producto</h3>
+        <p>Diagnóstico territorial y hoja de ruta: ¿qué necesita Colombia para llegar al nivel 4?</p>
+      </div>
+      <div class="corte">
+        <p class="corte__peso">35 %</p>
+        <h3>Segundo producto</h3>
+        <p>Revisión de artículo científico y análisis de los marcos globales de política pública.</p>
+      </div>
+      <div class="corte">
+        <p class="corte__peso">30 %</p>
+        <h3>Producto final</h3>
+        <p>Documento de voluntad anticipada propio y análisis de la Resolución 813 de 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Marco normativo de referencia</h2>
+    <p class="seccion__intro">
+      Las normas y sentencias sobre las que se trabaja durante el semestre.
+    </p>
+    <div class="normas">
+      <div class="norma">
+        <h3>Nacional</h3>
+        <ul>
+          <li>Ley 1733 de 2014 · Consuelo Devis Saavedra</li>
+          <li>Ley Estatutaria 1751 de 2015</li>
+          <li>Resolución 2665 de 2018 · voluntad anticipada</li>
+          <li>Resolución 813 de 2026</li>
+          <li>Resolución 2626 de 2019 · PAIS MAITE</li>
+          <li>Resolución 3280 de 2018 · RIAS</li>
+          <li>GPC MinSalud n.º 58 de 2016</li>
+          <li>Ley 1996 de 2019 · Ley 1805 de 2016</li>
+        </ul>
+      </div>
+      <div class="norma">
+        <h3>Internacional</h3>
+        <ul>
+          <li>Convención Interamericana A-70 (OEA, 2015) · Colombia adhirió el 27/09/2022</li>
+          <li>Convención sobre los Derechos de las Personas con Discapacidad</li>
+          <li>Resolución WHA67.19 de la Asamblea Mundial de la Salud</li>
+          <li>Resolución CD62.R8 de la OPS (2025)</li>
+          <li>EAPC · White Paper sobre planificación anticipada (Rietjens et al., 2017)</li>
+        </ul>
+      </div>
+      <div class="norma">
+        <h3>Jurisprudencia</h3>
+        <ul>
+          <li>C-239 de 1997 · fundacional en muerte digna</li>
+          <li>C-233 de 2014 · C-233 de 2021 · C-395 de 2021</li>
+          <li>T-970 de 2014 · T-544 de 2017 · T-060 de 2020</li>
+          <li>T-289 de 2025 · T-438 de 2025</li>
+          <li>Consejo de Estado 44174 de 2020</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Sobre este sitio</h2>
+    <p class="nota">
+      <strong>Todo abre sin conexión.</strong> Cada página de este curso es un archivo
+      autocontenido: se descarga, se abre con doble clic y funciona sin servidor y sin
+      internet. Es una decisión deliberada, porque parte de los estudiantes ejerce en
+      municipios donde la conectividad no se puede dar por supuesta.
+    </p>
+    <p class="nota" style="margin-top:1rem">
+      <strong>Sin datos de estudiantes.</strong> Este repositorio es público. El material
+      docente que aquí se publica no contiene nombres, códigos ni calificaciones. Los casos
+      territoriales que aparecen en las clases están generalizados a propósito: describen un
+      patrón, no a una persona.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="envoltura">
+    <p>
+      <strong>Contexto Histórico y Legal de los Cuidados Paliativos</strong> · Código 37542001 ·
+      Plan de estudios 2377<br>
+      Maestría en Cuidado Paliativo · Facultad de Enfermería · Universidad Antonio Nariño
+    </p>
+    <p>
+      Docente: Jorge Wilhem Bogoya López ·
+      <a href="mailto:jbogoya63@uan.edu.co">jbogoya63@uan.edu.co</a>
+    </p>
+    <p class="footer__legal">
+      Semestre 2026-I · Material docente de acceso abierto. Las normas y sentencias citadas
+      son documentos públicos; la bibliografía de terceros se referencia, no se reproduce.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
