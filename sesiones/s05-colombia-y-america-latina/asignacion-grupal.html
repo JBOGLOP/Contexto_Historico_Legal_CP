@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asignación Grupal — Puente entre Sesiones | UAN 2026-I</title>
+<style>
+:root {
+  --teal-900:#0d4a4a; --teal-700:#1a7373; --teal-600:#1f8787; --teal-500:#2a9d8f;
+  --teal-100:#d4f0ec; --teal-50:#edf9f7;
+  --gold:#c5943a; --gold-lt:#f2d98c;
+  --ink:#1a2732; --ink-mid:#2e4057; --ink-soft:#4a6275; --ink-mute:#7a9aad;
+  --white:#fff; --surface:#f5f8f9; --border:#cce0dc;
+  --red-soft:#c0392b;
+  --font-head:Georgia, 'Times New Roman', serif;
+  --font-body:Georgia, 'Times New Roman', serif;
+  --radius:8px;
+  --shadow:0 2px 16px rgba(13,74,74,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);line-height:1.75;max-width:920px;margin:0 auto;padding:0 24px 80px}
+
+/* HEADER */
+.hero{background:linear-gradient(135deg,var(--teal-900) 0%,var(--teal-700) 60%,var(--teal-500) 100%);padding:48px 48px 40px;border-radius:0 0 var(--radius) var(--radius);margin-bottom:40px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;border:40px solid rgba(255,255,255,.04)}
+.hero .eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--teal-100);font-weight:600;margin-bottom:12px}
+.hero h1{font-family:var(--font-head);font-size:2rem;color:var(--white);line-height:1.2;margin-bottom:8px}
+.hero h1 em{font-style:italic;color:var(--gold-lt)}
+.hero .sub{font-size:.92rem;color:rgba(255,255,255,.7);font-style:italic;max-width:560px}
+.hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:5px 12px;font-size:.74rem;color:rgba(255,255,255,.9)}
+.chip strong{color:var(--gold-lt)}
+
+/* SECTIONS */
+.section{margin-bottom:48px}
+.section-tag{font-size:.64rem;text-transform:uppercase;letter-spacing:.14em;color:var(--teal-500);font-weight:700;margin-bottom:6px}
+.section h2{font-family:var(--font-head);font-size:1.5rem;color:var(--teal-900);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.section h3{font-family:var(--font-head);font-size:1.15rem;color:var(--teal-700);margin:20px 0 10px}
+
+p{margin-bottom:14px}
+
+/* ARCO VISUAL */
+.arco{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:20px 0 28px}
+.arco-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;position:relative;box-shadow:var(--shadow)}
+.arco-item .week{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--teal-500);font-weight:700}
+.arco-item .date{font-size:.7rem;color:var(--ink-mute)}
+.arco-item .title{font-size:.82rem;color:var(--ink);font-weight:600;margin-top:4px;line-height:1.3}
+.arco-item.active{border-color:var(--gold);border-width:2px;background:linear-gradient(135deg,#fffdf5,#fff8e7)}
+.arco-item.active::before{content:'HOY';position:absolute;top:-8px;right:10px;background:var(--gold);color:var(--white);font-size:.55rem;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:.08em}
+.arco-item.next{border-color:var(--teal-500);border-width:2px}
+.arco-item.next::before{content:'SIGUIENTE';position:absolute;top:-8px;right:10px;background:var(--teal-500);color:var(--white);font-size:.55rem;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:.08em}
+.arco-arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--teal-500)}
+
+/* GRUPO CARDS */
+.grupo-grid{display:grid;grid-template-columns:1fr;gap:20px;margin:24px 0}
+.grupo-card{border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
+.grupo-header{padding:16px 20px;display:flex;align-items:center;gap:14px}
+.grupo-letter{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1.3rem;color:var(--white);flex-shrink:0}
+.grupo-header .info{}
+.grupo-header .role{font-weight:700;font-size:.95rem;color:var(--ink);line-height:1.2}
+.grupo-header .rep{font-size:.76rem;color:var(--ink-soft);font-style:italic}
+.grupo-body{padding:18px 20px;background:var(--white);border-top:1px solid var(--border);font-size:.88rem;color:var(--ink-mid);line-height:1.7}
+.grupo-body h4{font-family:var(--font-head);font-size:1rem;color:var(--ink);margin-bottom:8px}
+.grupo-body ul{padding-left:20px;margin:8px 0}
+.grupo-body li{margin-bottom:6px}
+.grupo-body .ref-box{background:var(--teal-50);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;margin-top:14px;font-size:.82rem}
+.grupo-body .ref-box strong{color:var(--teal-700)}
+
+.g1 .grupo-header{background:#e8f5f3} .g1 .grupo-letter{background:var(--teal-600)}
+.g2 .grupo-header{background:#eef3fb} .g2 .grupo-letter{background:#2471a3}
+.g3 .grupo-header{background:#fdf3e7} .g3 .grupo-letter{background:#e67e22}
+.g4 .grupo-header{background:#f4ecf7} .g4 .grupo-letter{background:#7d3c98}
+
+/* TIMELINE TABLE */
+.time-table{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin:16px 0}
+.time-table th{background:var(--teal-900);color:var(--white);padding:10px 14px;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.time-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink-mid)}
+.time-table tr:last-child td{border-bottom:none}
+.time-table .time{font-weight:600;color:var(--teal-700);white-space:nowrap}
+
+/* QUOTE */
+.quote-box{background:linear-gradient(135deg,var(--teal-50),#f0f7f5);border-left:4px solid var(--teal-500);border-radius:0 var(--radius) var(--radius) 0;padding:18px 22px;margin:20px 0;font-style:italic;color:var(--ink-mid);line-height:1.65}
+.quote-box .src{font-style:normal;font-size:.78rem;color:var(--ink-soft);margin-top:8px;display:block}
+
+/* NOTE */
+.nota{background:#fffbf0;border:1px solid #f0d98c;border-radius:var(--radius);padding:14px 18px;font-size:.84rem;color:#6b4c00;line-height:1.6;margin:16px 0}
+.nota strong{color:#4a3300}
+
+/* PRINT */
+@media print{body{max-width:100%;padding:0 20px}.hero{padding:24px 32px;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:600px){.arco{grid-template-columns:1fr 1fr}.hero{padding:28px 20px}.hero h1{font-size:1.5rem}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida: cada
+   archivo trae su propia paleta y no puede depender de ella. */
+.nav-sesion{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D;color:#FAF6EF;padding:.55rem 1rem;font-size:.82rem;display:flex;
+  flex-wrap:wrap;align-items:center;gap:.3rem .6rem;line-height:1.6}
+.nav-sesion a{color:#F5EEDD;text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876;font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876;outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style></head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 5"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 5 &middot; 10 abr 2026</span><a href="index.html">Plan de sesión</a><span class="ns-actual" aria-current="page">Asignación grupal</span><a href="g1-ops-maite.html">G1 · OPS/MAITE</a><a href="g2-cepal-rias.html">G2 · CEPAL/RIAS</a><a href="g3-alcp-gpc.html">G3 · ALCP/GPC</a><a href="g4-mesa-integracion.html">G4 · Mesa territorial</a><a href="../s04-marcos-globales/index.html">&larr; Sesi&oacute;n 4</a></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="eyebrow">Asignatura: Contexto Histórico y Legal de los Cuidados Paliativos · 2026-I</div>
+  <h1>Puente entre sesiones:<br><em>De la política pública al marco legal</em></h1>
+  <p class="sub">Asignación grupal para presentaciones formales — sesión del 24 de abril de 2026</p>
+  <div class="chips">
+    <div class="chip">📌 <strong>Asignada en:</strong> 10 de abril (presencial)</div>
+    <div class="chip">📅 <strong>Presentación:</strong> 24 de abril (sincrónico)</div>
+    <div class="chip">👥 <strong>4 grupos</strong> · 3 integrantes c/u</div>
+    <div class="chip">⏱ <strong>12 min</strong> por grupo + 18 min cierre docente</div>
+  </div>
+</header>
+
+<!-- 1. ENCUADRE: ARCO DEL CURSO -->
+<section class="section">
+  <div class="section-tag">01 — Encuadre curricular</div>
+  <h2>El arco de aprendizaje: de dónde venimos, dónde estamos, hacia dónde vamos</h2>
+
+  <p>Esta asignación se entrega al cierre de la sesión presencial del 10 de abril. Los grupos ya tienen el recorrido completo de la Unidad 1 y casi toda la Unidad 2 como base. Lo que se pide no es investigación nueva desde cero, sino <strong>síntesis integradora</strong>: articular lo aprendido en un argumento coherente que conecte la política pública (Unidad 2) con el marco legal (Unidad 3) que empieza el 24 de abril.</p>
+
+  <div class="arco">
+    <div class="arco-item">
+      <div class="week">Semana 1 · Presencial</div>
+      <div class="date">6 feb 2026</div>
+      <div class="title">Antecedentes históricos · Movimiento Hospice · Definición y principios</div>
+    </div>
+    <div class="arco-item">
+      <div class="week">Semana 3 · Sincrónico</div>
+      <div class="date">20 feb 2026</div>
+      <div class="title">Historia internacional · Saunders · Modelos comparados</div>
+    </div>
+    <div class="arco-item">
+      <div class="week">Semana 5–7 · Presencial + Sincrónico</div>
+      <div class="date">6 y 20 mar 2026</div>
+      <div class="title">Latinoamérica y Colombia · Marcos globales (OMS, BM, BID, OCDE, IAHPC) · Entrega 1er Producto (35%)</div>
+    </div>
+    <div class="arco-item active">
+      <div class="week">Semana 9 · Presencial</div>
+      <div class="date">10 abr 2026</div>
+      <div class="title">OPS, CEPAL, ALCP + PAIS MAITE, RIAS, GPC · Caso Caquetá · Debate</div>
+    </div>
+    <div class="arco-item next">
+      <div class="week">Semana 11 · Sincrónico</div>
+      <div class="date">24 abr 2026</div>
+      <div class="title">Presentaciones grupales + Introducción Unidad 3: Marco Legal + Entrega 2do Producto (35%)</div>
+    </div>
+  </div>
+
+  <h3>¿Qué saben ya los estudiantes?</h3>
+  <p>Para el 10 de abril, cada estudiante ha recorrido una secuencia que va desde los hospicios medievales y Cicely Saunders hasta los datos del OCCP 2024 sobre brecha de opioides en Caquetá. Han representado organismos internacionales en la «Cumbre en el Territorio» (sesión del 20 de marzo), han construido una línea de tiempo territorial como primer producto evaluativo, y han trabajado la matriz comparativa entre instrumentos regionales (OPS, CEPAL, ALCP) y nacionales (PAIS MAITE, RIAS, GPC). La pregunta central que queda abierta es: <strong>¿qué ocurre cuando la política pública se convierte —o no se convierte— en norma jurídica con fuerza vinculante?</strong> Esa es la pregunta que las presentaciones del 24 de abril deben empezar a responder.</p>
+</section>
+
+<!-- 2. FUENTE COMPARTIDA -->
+<section class="section">
+  <div class="section-tag">02 — Fuente compartida obligatoria</div>
+  <h2>Lectura común para los cuatro grupos</h2>
+
+  <div class="quote-box">
+    «Los cuidados paliativos intervienen para recordarnos que, incluso si no podemos curar, todavía podemos proporcionar cuidados. Si no podemos arreglar, hay cosas increíblemente importantes que podemos hacer para apoyar a los pacientes y sus familias, minimizar el sufrimiento, apoyar las dudas espirituales, para traer significado y valor.»
+    <span class="src">— Dr. Mark Stoltenberg, Massachusetts General Hospital / Harvard Medical School, asesor OPS en cuidados paliativos. En: OPS/PAHO, «Cuidados paliativos en las Américas» (2021).</span>
+  </div>
+
+  <p><strong>Todos los grupos deben leer:</strong></p>
+  <p>OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Historias OPS. Disponible en: <a href="https://www.paho.org/es/historias/cuidados-paliativos-americas" target="_blank">https://www.paho.org/es/historias/cuidados-paliativos-americas</a></p>
+
+  <p>Este artículo institucional de la OPS recoge las voces de la Dra. Patricia Bonilla (presidenta de la ALCP, docente e investigadora de la Universidad Técnica Particular de Loja, Ecuador) y el Dr. Mark Stoltenberg (Harvard Medical School, asesor OPS). Aborda cuatro ejes que atraviesan las presentaciones de todos los grupos:</p>
+
+  <ul>
+    <li><strong>Acceso:</strong> menos del 10% de quienes necesitan CP los reciben en el mundo; apenas el 7% en Latinoamérica.</li>
+    <li><strong>Opioides:</strong> la disponibilidad mejoró en la última década pero se deterioró con la pandemia de COVID-19, afectando morfina y midazolam.</li>
+    <li><strong>Talento humano:</strong> la escasez de formación especializada es la barrera más transversal; el Proyecto ECHO ofrece un modelo de tele-mentoría.</li>
+    <li><strong>Cuidado en el domicilio:</strong> los voluntarios y el cuidado comunitario son esenciales para llevar CP donde el sistema formal no alcanza.</li>
+  </ul>
+
+  <div class="nota">
+    <strong>Instrucción:</strong> Cada grupo debe citar esta fuente al menos una vez en su presentación, vinculándola con su tema específico. No se trata de resumir el artículo sino de usar las voces de Bonilla y Stoltenberg como evidencia que refuerce el argumento propio.
+  </div>
+</section>
+
+<!-- 3. ASIGNACIÓN POR GRUPOS -->
+<section class="section">
+  <div class="section-tag">03 — Temas asignados</div>
+  <h2>Un tema por grupo: cuatro caras del mismo puente</h2>
+
+  <p>Los cuatro temas están diseñados como piezas de un mismo rompecabezas. Cada grupo responde una pregunta distinta, pero todas convergen en el tránsito de la Unidad 2 (política pública) a la Unidad 3 (marco legal). Al escuchar las cuatro presentaciones, la clase tendrá un panorama articulado de las tensiones entre la norma y la realidad que la legislación colombiana intenta resolver.</p>
+
+  <div class="grupo-grid">
+
+    <!-- GRUPO A -->
+    <div class="grupo-card g1">
+      <div class="grupo-header">
+        <div class="grupo-letter">A</div>
+        <div class="info">
+          <div class="role">De la resolución al derecho: ¿por qué la política pública necesita convertirse en ley?</div>
+          <div class="rep">El tránsito de los instrumentos orientadores a los instrumentos vinculantes</div>
+        </div>
+      </div>
+      <div class="grupo-body">
+        <h4>Pregunta central</h4>
+        <p>¿Qué pueden hacer los instrumentos de política pública (OPS CD62.R8, CEPAL, ALCP) que las leyes no pueden, y qué pueden hacer las leyes (Ley 1733/2014, Ley 1751/2015) que las políticas no pueden? ¿Dónde está la frontera entre orientar y obligar?</p>
+
+        <h4>Desarrollo esperado</h4>
+        <ul>
+          <li>Distinguir la naturaleza jurídica de una resolución de la OPS (orientadora, no vinculante para el nivel subnacional) frente a una ley colombiana (vinculante, con mecanismos de exigibilidad).</li>
+          <li>Analizar cómo la WHA67.19 (2014) y la Ley 1733 (2014) se aprobaron el mismo año: ¿coincidencia o influencia? ¿Qué dice eso sobre la relación entre marcos globales y legislación nacional?</li>
+          <li>Identificar al menos un ejemplo de su territorio donde la existencia de la ley no ha sido suficiente para garantizar el derecho, y proponer qué tipo de instrumento complementario (reglamentario, presupuestal, de vigilancia) sería necesario.</li>
+          <li>Incorporar la perspectiva de la Dra. Bonilla sobre el 7% de acceso en Latinoamérica: ¿es un problema de falta de leyes o de falta de implementación?</li>
+        </ul>
+
+        <div class="ref-box">
+          <strong>Fuentes mínimas:</strong> Resolución WHA67.19 (2014) · Resolución CD62.R8 OPS (2025) · Ley 1733/2014 · Ley 1751/2015 (Ley Estatutaria de Salud) · OPS, «Cuidados paliativos en las Américas» (2021) · Al menos 1 fuente de las trabajadas en la sesión del 10 de abril (CEPAL, Atlas ALCP 2025, o OCCP 2024).
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPO B -->
+    <div class="grupo-card g2">
+      <div class="grupo-header">
+        <div class="grupo-letter">B</div>
+        <div class="info">
+          <div class="role">Opioides como derecho: el marco jurídico del acceso al alivio del dolor</div>
+          <div class="rep">De la JIFE a la farmacia del municipio categoría 6</div>
+        </div>
+      </div>
+      <div class="grupo-body">
+        <h4>Pregunta central</h4>
+        <p>¿Qué cadena normativa conecta la prescripción de morfina oral en un municipio del Caquetá con las resoluciones de la OMS, los reportes de la JIFE/INCB, y la regulación colombiana? ¿En qué eslabón se rompe esa cadena y qué consecuencias tiene para el paciente?</p>
+
+        <h4>Desarrollo esperado</h4>
+        <ul>
+          <li>Reconstruir la «cadena del opioide»: JIFE/INCB (cuotas internacionales) → Fondo Nacional de Estupefacientes (distribución nacional) → EPS (compra y dispensación) → IPS / farmacia (disponibilidad local) → prescriptor (formación y decisión clínica) → paciente (acceso real).</li>
+          <li>Identificar la Circular 022/2016 (distribución 24/7) y la Resolución 1478/2006 como eslabones regulatorios colombianos. ¿Se cumplen en sus territorios?</li>
+          <li>Usar los datos de brecha: 18,12 mg EMO en Bogotá vs. 0,2 mg en la región Amazonía. ¿Es un problema legal, logístico, formativo o los tres?</li>
+          <li>Conectar con el testimonio de la Dra. Bonilla sobre el deterioro del acceso a morfina y midazolam durante la pandemia: ¿qué reveló la pandemia sobre la fragilidad de la cadena de suministro?</li>
+          <li>Proponer al menos una reforma regulatoria o práctica que podría mejorar el acceso en un territorio periférico concreto (el suyo).</li>
+        </ul>
+
+        <div class="ref-box">
+          <strong>Fuentes mínimas:</strong> JIFE/INCB E/INCB/2024/2 · León et al. (2024), <em>J Global Health</em> · León et al. (2022), <em>Rev Col Anestesiología</em> · Circular 022/2016 · OCCP 2024 · OPS, «Cuidados paliativos en las Américas» (2021).
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPO C -->
+    <div class="grupo-card g3">
+      <div class="grupo-header">
+        <div class="grupo-letter">C</div>
+        <div class="info">
+          <div class="role">El profesional de primer nivel: responsabilidad legal, formación ausente y modelos de capacitación</div>
+          <div class="rep">Task-shifting, ECHO y la GPC 2016 como herramientas para el territorio</div>
+        </div>
+      </div>
+      <div class="grupo-body">
+        <h4>Pregunta central</h4>
+        <p>Si en 15 de los 16 municipios de Caquetá no hay paliativista ni especialista en dolor, ¿quién asume la responsabilidad legal y clínica de los cuidados paliativos? ¿Qué herramientas normativas, formativas y tecnológicas existen para que el profesional de primer nivel pueda cumplir ese rol sin exponerse ni exponer al paciente?</p>
+
+        <h4>Desarrollo esperado</h4>
+        <ul>
+          <li>Analizar el concepto de <em>task-shifting</em> (delegación de funciones) tal como lo propone el párrafo 11 del informe A67/31 de la OMS: ¿cómo se traduce en Colombia? ¿La GPC 2016 (GPC No. 58) autoriza al profesional no especialista a manejar opioides básicos?</li>
+          <li>Examinar la GPC 2016 como instrumento de habilitación: sus apartados de «ajustes para el contexto colombiano» y su potencial como guía para primer nivel.</li>
+          <li>Presentar el <strong>Proyecto ECHO</strong> (descrito en el artículo de la OPS) como modelo de tele-mentoría: ¿cómo funciona? ¿Podría implementarse en sus territorios?</li>
+          <li>Reflexionar desde la experiencia propia: ¿han recibido formación en cuidados paliativos? ¿Conocían la GPC antes de esta asignatura? ¿Qué barreras identifican para aplicarla?</li>
+          <li>Proponer un esquema de capacitación viable (realista en recursos y tiempo) para profesionales de primer nivel en un departamento periférico.</li>
+        </ul>
+
+        <div class="ref-box">
+          <strong>Fuentes mínimas:</strong> GPC No. 58 MinSalud-IETS (2016) · Informe A67/31 OMS (párrafo 11, task-shifting) · Lineamientos para la Atención Integral en CP, MinSalud (2018) · OPS, «Cuidados paliativos en las Américas» (2021) — sección Proyecto ECHO · Vargas-Escobar et al. (2022), <em>Inquiry</em> (barreras territoriales).
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPO D -->
+    <div class="grupo-card g4">
+      <div class="grupo-header">
+        <div class="grupo-letter">D</div>
+        <div class="info">
+          <div class="role">Cuidado paliativo domiciliario y comunitario: entre la Ley 2241/2022 y la realidad del territorio</div>
+          <div class="rep">Telemedicina, voluntariado y redes de cuidado donde el Estado no llega</div>
+        </div>
+      </div>
+      <div class="grupo-body">
+        <h4>Pregunta central</h4>
+        <p>La Ley 2241/2022 incorporó la telemedicina y la teleasistencia al marco de cuidados paliativos en Colombia. ¿Es esta ley una solución estructural para los territorios periféricos o un parche que no resuelve la ausencia de servicios presenciales? ¿Qué rol cumple el cuidado comunitario (voluntarios, familias, redes locales) donde ni el Estado ni la tecnología alcanzan?</p>
+
+        <h4>Desarrollo esperado</h4>
+        <ul>
+          <li>Analizar la <strong>Ley 2241 de 2022</strong>: qué modifica del artículo 7 de la Ley 1733/2014, qué posibilidades abre y qué limitaciones tiene (conectividad, dispositivos, alfabetización digital en zonas rurales).</li>
+          <li>Conectar con la CEPAL y su propuesta de «sociedad del cuidado»: el cuidado de largo plazo como derecho que incluye a cuidadores informales (mayoritariamente mujeres).</li>
+          <li>Presentar la experiencia del <strong>cuidado domiciliario y voluntariado</strong> descrita por el Dr. Stoltenberg en el artículo de la OPS: «los voluntarios son esenciales para que la atención domiciliaria sea una pieza central».</li>
+          <li>Contrastar modelos: la experiencia de Argentina, Uruguay y Colombia mencionada por la Dra. Bonilla (donde existe trabajo social y apoyo domiciliario) frente a territorios donde no existe nada.</li>
+          <li>Reflexionar: en su territorio, ¿quién cuida a los pacientes paliativos en casa? ¿Qué apoyo reciben esas personas? ¿Qué derecho les asiste y qué norma los protege (o los abandona)?</li>
+        </ul>
+
+        <div class="ref-box">
+          <strong>Fuentes mínimas:</strong> Ley 2241/2022 · Ley 1733/2014 (Art. 7 original y modificado) · CEPAL LC/CRE.5/3 (2022) · CEPAL LC/CRM.15/3 (2022), «La sociedad del cuidado» · OPS, «Cuidados paliativos en las Américas» (2021) · Atlas ALCP 2025 (datos de servicios domiciliarios por país).
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FORMATO DE PRESENTACIÓN -->
+<section class="section">
+  <div class="section-tag">04 — Formato y tiempos</div>
+  <h2>Protocolo de presentación — Sesión sincrónica del 24 de abril de 2026</h2>
+
+  <p>Las presentaciones se realizan al inicio de la sesión sincrónica del 24 de abril, <strong>antes</strong> de la introducción a la Unidad 3 por parte del docente. Esto es intencional: las presentaciones de los estudiantes son el puente que abre la puerta al marco legal. El docente no introduce la Unidad 3; los estudiantes la inauguran con sus análisis.</p>
+
+  <table class="time-table">
+    <thead>
+      <tr>
+        <th style="width:100px">Tiempo</th>
+        <th style="width:130px">Momento</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="time">8:00–8:05<br>(5 min)</td>
+        <td>Encuadre docente</td>
+        <td>El docente contextualiza: «En la sesión del 10 de abril trabajamos los instrumentos de política pública. Hoy, sus compañeros van a mostrar dónde esos instrumentos se convierten en ley —o dónde fallan en hacerlo». No hay exposición teórica; los grupos hablan primero.</td>
+      </tr>
+      <tr>
+        <td class="time">8:05–8:17<br>(12 min)</td>
+        <td><strong>Grupo A</strong></td>
+        <td><strong>8 min de presentación</strong> + 4 min de preguntas del auditorio (los otros 3 grupos pueden preguntar; el docente modera). Regla: al menos 1 pregunta debe venir de otro grupo, no del docente.</td>
+      </tr>
+      <tr>
+        <td class="time">8:17–8:29<br>(12 min)</td>
+        <td><strong>Grupo B</strong></td>
+        <td>Misma estructura: 8 min presentación + 4 min preguntas.</td>
+      </tr>
+      <tr>
+        <td class="time">8:29–8:41<br>(12 min)</td>
+        <td><strong>Grupo C</strong></td>
+        <td>Misma estructura: 8 min presentación + 4 min preguntas.</td>
+      </tr>
+      <tr>
+        <td class="time">8:41–8:53<br>(12 min)</td>
+        <td><strong>Grupo D</strong></td>
+        <td>Misma estructura: 8 min presentación + 4 min preguntas.</td>
+      </tr>
+      <tr>
+        <td class="time">8:53–9:05<br>(12 min)</td>
+        <td><strong>Cierre docente:<br>tejiendo los hilos</strong></td>
+        <td>El docente no repite lo dicho. En su lugar: <strong>(a)</strong> identifica en voz alta 3 convergencias entre las presentaciones; <strong>(b)</strong> nombra 2 tensiones no resueltas que la Unidad 3 deberá abordar; <strong>(c)</strong> anuncia la pregunta articuladora de la Unidad 3: <em>«Si la legislación colombiana es una de las más avanzadas de la región, ¿por qué el 70% de los pacientes terminales muere sin cuidados paliativos?»</em>; <strong>(d)</strong> conecta con el Tema 1 de la Unidad 3: Legislación internacional en cuidados paliativos.</td>
+      </tr>
+      <tr>
+        <td class="time">9:05–9:10<br>(5 min)</td>
+        <td>Transición</td>
+        <td>Pausa breve. Entrega del Segundo Producto (si es digital, verificar recepción). Inicio de la segunda hora con el contenido de la Unidad 3.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Especificaciones de la presentación</h3>
+  <ul>
+    <li><strong>Formato:</strong> Presentación con apoyo visual (PowerPoint, Canva, Google Slides o equivalente). Máximo 10 láminas. Mínimo 6.</li>
+    <li><strong>Duración estricta:</strong> 8 minutos. El docente mostrará cronómetro. A los 7 minutos se da aviso; a los 8, se corta.</li>
+    <li><strong>Participación:</strong> Los tres integrantes del grupo deben intervenir oralmente al menos una vez.</li>
+    <li><strong>Citación:</strong> Cada presentación debe citar al menos 4 fuentes en formato APA 7 (incluida la fuente compartida de la OPS).</li>
+    <li><strong>Anclaje territorial:</strong> Cada presentación debe incluir al menos un ejemplo o dato del territorio de ejercicio de uno de los integrantes del grupo.</li>
+    <li><strong>Reflexión SER:</strong> La última lámina debe responder (en 2-3 oraciones): <em>«¿Qué nos enseña este análisis sobre nuestra responsabilidad como profesionales de salud en nuestros territorios?»</em></li>
+  </ul>
+</section>
+
+<!-- 5. EVALUACIÓN -->
+<section class="section">
+  <div class="section-tag">05 — Evaluación</div>
+  <h2>Criterios de valoración</h2>
+
+  <p>Esta presentación forma parte del componente de <strong>aula invertida (10%)</strong> del Segundo Corte (35%). La valoración es formativa y sumativa: el docente entrega retroalimentación oral inmediata al cierre y calificación numérica dentro de la semana siguiente.</p>
+
+  <table class="time-table">
+    <thead>
+      <tr>
+        <th>Criterio</th>
+        <th style="width:100px">Peso</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Dominio conceptual (SABER)</strong></td>
+        <td>30%</td>
+        <td>Precisión en la identificación de instrumentos de política y/o normas legales. Distinción clara entre lo orientador y lo vinculante. Uso correcto de fuentes.</td>
+      </tr>
+      <tr>
+        <td><strong>Anclaje territorial (SABER HACER)</strong></td>
+        <td>25%</td>
+        <td>Conexión explícita del análisis con un territorio concreto. Uso de datos (OCCP, Atlas ALCP, ASIS departamental) para sustentar el argumento. Propuesta de acción viable.</td>
+      </tr>
+      <tr>
+        <td><strong>Articulación argumentativa</strong></td>
+        <td>20%</td>
+        <td>Coherencia interna de la presentación. Hilo conductor claro. Capacidad de responder preguntas del auditorio con solidez.</td>
+      </tr>
+      <tr>
+        <td><strong>Reflexión ética (SER)</strong></td>
+        <td>15%</td>
+        <td>Profundidad de la reflexión final sobre responsabilidad profesional. Conexión entre lo normativo y lo humano. Evidencia de posicionamiento ético propio.</td>
+      </tr>
+      <tr>
+        <td><strong>Calidad formal</strong></td>
+        <td>10%</td>
+        <td>Cumplimiento de tiempos. Participación de los tres integrantes. Calidad visual del apoyo. Citación APA 7. Expresión oral clara.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 6. CONEXIONES PEDAGÓGICAS -->
+<section class="section">
+  <div class="section-tag">06 — Conexiones pedagógicas</div>
+  <h2>Cómo se conectan los cuatro temas entre sí y con la Unidad 3</h2>
+
+  <p>Los cuatro temas no son independientes; son cuatro ángulos de la misma paradoja colombiana:</p>
+
+  <ul>
+    <li><strong>Grupo A</strong> establece la distinción fundante: política pública ≠ ley. Sin esta distinción, los otros tres análisis carecen de marco.</li>
+    <li><strong>Grupo B</strong> aplica esa distinción al caso más tangible: el opioide que llega (o no llega) a la farmacia del municipio. Es el test empírico de la brecha entre norma y realidad.</li>
+    <li><strong>Grupo C</strong> pone el foco en el actor humano: el profesional que debe ejecutar la ley sin tener la formación ni los recursos que la ley supone. Es el eslabón más vulnerable de la cadena.</li>
+    <li><strong>Grupo D</strong> amplía la mirada hacia lo que está más allá del sistema formal: la familia, el voluntario, el cuidador comunitario. Es la frontera donde la norma se encuentra con la vida.</li>
+  </ul>
+
+  <p>Cuando el docente cierre las presentaciones, la clase habrá recorrido un arco completo: desde la arquitectura internacional de la política pública (Grupo A) hasta el lecho del paciente en el domicilio rural (Grupo D), pasando por la cadena de suministro de opioides (Grupo B) y la formación del profesional (Grupo C). Ese arco es exactamente el terreno que la Unidad 3 —marco legal— necesita para aterrizar con sentido.</p>
+
+  <div class="quote-box">
+    «Actualmente menos de un 10% de las personas que requieren cuidados paliativos en el continuo de la atención en el mundo los reciben, y apenas un 7% lo recibe en Latinoamérica.»
+    <span class="src">— Dra. Patricia Bonilla, presidenta de la ALCP. En: OPS/PAHO, «Cuidados paliativos en las Américas» (2021).</span>
+  </div>
+
+  <div class="nota">
+    <strong>Nota al docente:</strong> Si el tiempo lo permite, al cierre de las presentaciones puede pedir un ejercicio relámpago: «Cada grupo, en una oración, díganos: ¿qué ley específica mencionaría si tuviera que hablar con el gobernador de su departamento mañana?». Esto anticipa la Unidad 3 y revela cuánto del marco legal los estudiantes ya han absorbido por ósmosis a través de la política pública trabajada en la Unidad 2.
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div style="margin-top:48px;padding:20px 0;border-top:2px solid var(--border);text-align:center;font-size:.78rem;color:var(--ink-mute)">
+  Maestría en Cuidados Paliativos · Facultad de Enfermería · Universidad Antonio Nariño · 2026-I<br>
+  Docente: Jorge · Documento de asignación grupal · Sesión del 10 de abril de 2026 · v1
+</div>
+
+</body>
+</html>

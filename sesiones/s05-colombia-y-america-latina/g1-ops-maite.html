@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grupo 1 — OPS y MAITE · 10 abr 2026 · UAN</title>
+<style>
+:root{
+  --gc:#1a7373;--gcd:#0d4a4a;--gcm:#145858;--gcl:#d4f0ec;--gc0:#edf9f7;
+  --g:#c5943a;--gl:#f2d98c;--go:#fffdf5;
+  --r2:#c0392b;
+  --ink:#1a2732;--im:#2e4057;--is:#4a6275;
+  --w:#fff;--sf:#f5f8f9;--bd:#cce0dc;--bd2:#e2edef;--r:6px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia, 'Times New Roman', serif;color:var(--ink);background:var(--sf);max-width:860px;margin:0 auto;padding:0 22px 80px;line-height:1.74;font-size:.94rem}
+header{background:linear-gradient(135deg,var(--gcd) 0%,var(--gcm) 55%,#1d7a6a 100%);color:var(--w);padding:32px 36px 26px;border-radius:0 0 12px 12px;margin-bottom:28px;position:relative;overflow:hidden}
+header::after{content:'';position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
+.lbl{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gl);margin-bottom:7px}
+header h1{font-size:1.48rem;font-weight:700;line-height:1.26;margin-bottom:5px}
+.sub{font-size:.85rem;color:rgba(255,255,255,.73);font-style:italic;margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:6px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.67rem}
+.pills span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);padding:3px 9px;border-radius:20px}
+.pills b{color:var(--gl)}
+.integ{display:flex;flex-wrap:wrap;gap:0;background:var(--w);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:24px;overflow:hidden}
+.integ-item{flex:1;min-width:200px;padding:12px 16px;border-right:1px solid var(--bd)}
+.integ-item:last-child{border-right:none}
+.integ-item .rol{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.63rem;font-weight:700;color:var(--gc);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.integ-item .nombre{font-weight:600;font-size:.91rem;color:var(--ink)}
+.integ-item .cod{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.73rem;color:var(--is)}
+h2{font-size:1.1rem;color:var(--gcd);margin:26px 0 10px;padding-bottom:5px;border-bottom:2px solid var(--bd)}
+h3{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.93rem;font-weight:600;color:var(--gcm);margin:13px 0 5px}
+p{margin-bottom:9px}
+ul,ol{padding-left:22px;margin:5px 0 10px}
+li{margin-bottom:4px}
+a{color:var(--gc);text-underline-offset:3px}
+strong{color:var(--ink)}
+.box{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:15px 17px;margin:11px 0;box-shadow:0 1px 5px rgba(0,0,0,.04)}
+.box.teal{border-left:4px solid var(--gc);background:var(--gc0)}
+.box.gold{border-left:4px solid var(--g);background:var(--go)}
+.box.warn{border-left:4px solid var(--r2);background:#fff8f7}
+.tag{display:inline-block;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.6rem;padding:2px 6px;border-radius:2px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;vertical-align:middle;margin-right:3px}
+.tag-t{background:#e8daef;color:#6c3483}
+.tag-c{background:var(--gcl);color:var(--gcd)}
+.tag-p{background:#fdebd0;color:#935116}
+.lectura{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:13px 15px;margin:9px 0}
+.lectura .num{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.66rem;font-weight:700;color:var(--gc);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.lectura .titulo{font-weight:600;font-size:.91rem;color:var(--ink);margin-bottom:5px}
+.lectura .guia{font-size:.84rem;color:var(--im);line-height:1.62}
+.pqs{counter-reset:pq;list-style:none;padding:0}
+.pqs li{counter-increment:pq;display:flex;gap:10px;margin-bottom:10px;background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;font-size:.9rem;color:var(--im)}
+.pqs li::before{content:counter(pq);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-weight:700;font-size:.88rem;color:var(--w);background:var(--gc);min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:10px 0}
+th{background:var(--gcd);color:var(--w);padding:7px 11px;text-align:left;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.67rem;text-transform:uppercase;letter-spacing:.07em}
+td{padding:8px 11px;border-bottom:1px solid var(--bd2);background:var(--w);vertical-align:top}
+.tm{font-weight:600;color:var(--gc);white-space:nowrap;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.8rem}
+.hrow td{background:#f7fbfa;text-align:center;font-style:italic;color:var(--g);font-weight:600;font-size:.82rem}
+.refs p{font-size:.82rem;line-height:1.65;margin-bottom:7px;padding-left:18px;text-indent:-18px}
+.print-btn{position:fixed;bottom:20px;right:20px;background:var(--gc);color:var(--w);border:none;padding:10px 18px;border-radius:30px;cursor:pointer;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.78rem;font-weight:600;box-shadow:0 3px 14px rgba(0,0,0,.2)}
+@media print{.print-btn{display:none}header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.integ{break-inside:avoid}}
+@media(max-width:580px){header{padding:20px}header h1{font-size:1.2rem}.integ-item{min-width:160px}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida: cada
+   archivo trae su propia paleta y no puede depender de ella. */
+.nav-sesion{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D;color:#FAF6EF;padding:.55rem 1rem;font-size:.82rem;display:flex;
+  flex-wrap:wrap;align-items:center;gap:.3rem .6rem;line-height:1.6}
+.nav-sesion a{color:#F5EEDD;text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876;font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876;outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style></head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 5"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 5 &middot; 10 abr 2026</span><a href="index.html">Plan de sesión</a><a href="asignacion-grupal.html">Asignación grupal</a><span class="ns-actual" aria-current="page">G1 · OPS/MAITE</span><a href="g2-cepal-rias.html">G2 · CEPAL/RIAS</a><a href="g3-alcp-gpc.html">G3 · ALCP/GPC</a><a href="g4-mesa-integracion.html">G4 · Mesa territorial</a><a href="../s04-marcos-globales/index.html">&larr; Sesi&oacute;n 4</a></nav>
+
+<header>
+  <div class="lbl">Aula invertida · Grupo 1 · Sesión presencial 10 de abril de 2026 · UAN Maestría en Cuidado Paliativo</div>
+  <h1>OPS y MAITE: de la agenda regional de ENT al modelo territorial colombiano</h1>
+  <div class="sub">Unidad 2 · Topics 2 y 3 — Marco regional OPS (CD62.R8) ↔ Política nacional Colombia (PAIS / MAITE)</div>
+  <div class="pills">
+    <span>📅 <b>Clase:</b> 10 abr 2026 · 8:00–10:00 am · Presencial</span>
+    <span>📖 <b>Lecturas:</b> Antes del 10 de abril</span>
+    <span>🎤 <b>Exposición:</b> 8:47–8:59 am · 8 min + 4 min preguntas</span>
+  </div>
+</header>
+<!-- ROL -->
+<h2>¿Qué analiza este grupo?</h2>
+<div class="box teal">
+  <p>Este grupo trabaja el eje <strong>OPS como organismo rector regional</strong> y la <strong>política colombiana PAIS-MAITE</strong> como su expresión territorial. La pregunta central es si Colombia traduce fielmente la orientación de la OPS o si algo se pierde en esa traducción. Un hallazgo central que deben explorar: <strong>la OPS nunca ha adoptado una resolución regional exclusiva sobre cuidados paliativos</strong> (a diferencia de la OMS, que sí lo hizo con la WHA67.19 en 2014). ¿Qué implica eso?</p>
+</div>
+
+<div class="box gold">
+  <h3 style="color:var(--g);margin:0 0 6px">Pregunta articuladora</h3>
+  <p style="font-style:italic;font-size:.96rem">«¿Por qué los cuidados paliativos no tienen una resolución regional propia en la OPS? ¿Cómo aparecen integrados en el Plan de Acción de ENT 2025-2030 (CD62.R8)? ¿Qué significa que Colombia incluya "paliación y muerte digna" en el MAITE sin que exista una línea de acción autónoma de cuidados paliativos?»</p>
+</div>
+
+<!-- LECTURA COMPARTIDA -->
+<h2>Lectura compartida — TODOS los grupos</h2>
+<div class="lectura">
+  <div class="num"><span class="tag tag-t">Todos los grupos</span> Lectura 1</div>
+  <div class="titulo">OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Historias OPS.</div>
+  <div class="guia">Entrevista con la Dra. Patricia Bonilla (presidenta ALCP, Ecuador) y el Dr. Mark Stoltenberg (Harvard/OPS). Cubre acceso — solo el <strong>7% de quienes necesitan CP en Latinoamérica los reciben</strong> —, disponibilidad de opioides, formación de talento humano, Proyecto ECHO y cuidado domiciliario. Es una lectura corta pero densa. <strong>Cada grupo debe citarla al menos una vez en su exposición.</strong></div>
+  <p style="margin-top:8px"><a href="https://www.paho.org/es/historias/cuidados-paliativos-americas" target="_blank">paho.org/es/historias/cuidados-paliativos-americas</a></p>
+</div>
+
+<!-- LECTURAS ESPECÍFICAS -->
+<h2>Lecturas específicas del Grupo 1 <span class="tag tag-c">Trabajo en casa · Antes del 10 abr</span></h2>
+
+<div class="lectura">
+  <div class="num">Lectura 2</div>
+  <div class="titulo">OPS/PAHO. (2025). <em>Cuidados paliativos — Página temática y Resolución CD62.R8.</em> Organización Panamericana de la Salud.</div>
+  <div class="guia">Explora la página temática de CP de la OPS. Luego busca la <strong>Resolución CD62.R8</strong> (Plan de Acción ENT 2025-2030, aprobada el 1 de octubre de 2025 en el 62.° Consejo Directivo). Nota técnica clave: la CD62.R8 es la resolución formal; el documento técnico de fondo es el <em>CD62/8</em>. Los cuidados paliativos aparecen en el <strong>párrafo 15 de la Línea Estratégica 2</strong> del CD62/8 (integración de ENT en APS). <strong>No existe en la OPS una resolución regional exclusiva sobre CP</strong> equivalente a la WHA67.19 de la OMS.</div>
+  <p style="margin-top:7px"><a href="https://www.paho.org/es/temas/cuidados-paliativos" target="_blank">paho.org/es/temas/cuidados-paliativos</a></p>
+</div>
+
+<div class="lectura">
+  <div class="num">Lectura 3</div>
+  <div class="titulo">OPS/PAHO. (2020). <em>Planificación e implantación de servicios de cuidados paliativos: Guía para directores de programa.</em> Organización Panamericana de la Salud / OMS.</div>
+  <div class="guia">Este es el documento técnico más completo que la OPS tiene sobre CP — no es una resolución sino una guía de implementación. Leer los <strong>capítulos 1 y 2</strong> (introducción y contexto de política). Identifica: ¿qué propone para sistemas con recursos limitados? ¿qué rol tienen la APS y el cuidado domiciliario? ¿qué acciones se recomiendan para países como Colombia?</div>
+  <p style="margin-top:7px"><a href="https://iris.paho.org/handle/10665.2/52784" target="_blank">iris.paho.org/handle/10665.2/52784</a></p>
+</div>
+
+<div class="lectura">
+  <div class="num">Lectura 4 <span class="tag tag-p">Impreso · Entregado por el docente</span></div>
+  <div class="titulo">MinSalud Colombia. (2019, 27 sept.). <em>Resolución 2626: Por la cual se modifica la Política de Atención Integral en Salud (PAIS) y se adopta el Modelo de Acción Integral Territorial (MAITE).</em></div>
+  <div class="guia">Leer los <strong>artículos 1 al 8</strong>. Puntos de atención obligados: <strong>Art. 2</strong> — el ámbito de aplicación incluye "paliación y muerte digna"; <strong>Art. 4</strong> — definición de la PAIS; <strong>Art. 8</strong> — las ocho líneas mínimas de acción del MAITE (aseguramiento, salud pública, prestación de servicios, talento humano, financiamiento, enfoque diferencial, intersectorialidad, gobernanza). Pregunta: ¿en cuál de estas líneas caben los CP? ¿por qué no tienen línea propia?</div>
+  <p style="margin-top:7px;font-size:.81rem;color:var(--is)">PDF oficial: minsalud.gov.co — Biblioteca Digital → Resolución 2626 de 2019.</p>
+</div>
+
+<div class="box warn" style="margin-top:16px">
+  <h3 style="color:var(--r2);margin:0 0 5px">⚠ Corrección — referencia inexistente en circulación</h3>
+  <p style="font-size:.87rem">En algunos materiales del curso aparece citada la <strong>"Resolución CD58.R22"</strong> como plan de acción de ENT 2019-2025 de la OPS. Esa resolución <strong>no existe</strong> en los archivos del Consejo Directivo de la OPS. El plan de acción regional anterior fue adoptado mediante la <em>Resolución CD52.R9</em> (52.° Consejo Directivo, 2013) para el período 2013-2019. El plan vigente es el aprobado mediante la <strong>CD62.R8</strong> (1 de octubre de 2025). Cuando encuentren esta referencia errónea en la bibliografía, corrijanla.</p>
+</div>
+
+<!-- PREGUNTAS -->
+<h2>Para llegar preparado/a — responde antes de clase</h2>
+<p style="font-size:.84rem;color:var(--is);margin-bottom:12px">Los tres integrantes deben haber reflexionado individualmente sobre estas preguntas. No es necesario escribir respuestas largas: basta con poder argumentarlas oralmente en clase.</p>
+
+<ol class="pqs">
+  <li>¿Qué es la Resolución CD62.R8 y cuál es su naturaleza jurídica? ¿Es vinculante para Colombia? ¿En qué parte del documento CD62/8 aparecen explícitamente los cuidados paliativos y con qué énfasis?</li>
+  <li>La OPS nunca ha adoptado una resolución regional exclusiva sobre cuidados paliativos (a diferencia de la WHA67.19 de la OMS, mayo de 2014). ¿Qué consecuencias tiene para los países de la región que los CP no tengan un instrumento rector propio en la OPS?</li>
+  <li>¿Qué propone la Guía OPS (2020) para planificar servicios de CP en países con recursos limitados? ¿Cuál de sus recomendaciones es más urgente para el contexto de tu departamento?</li>
+  <li>¿Qué dice el Art. 2 de la Resolución 2626 sobre "paliación y muerte digna"? ¿En cuál de las 8 líneas de acción del MAITE se puede ubicar la paliación? ¿Qué significa que no exista una línea propia?</li>
+  <li>¿Cómo se expresa (o no) la "paliación" en la realidad de tu departamento? ¿Tienes evidencia de que tu secretaría de salud haya incluido indicadores de CP en el Plan de Acción e Implementación del MAITE (PAIM)?</li>
+</ol>
+
+<!-- EN CLASE -->
+<h2>¿Qué harán en clase el 10 de abril?</h2>
+
+<table>
+<thead><tr><th style="width:110px">Hora</th><th>Qué hace el Grupo 1</th></tr></thead>
+<tbody>
+<tr><td class="tm">8:00–8:10</td><td><strong>Encuadre.</strong> Cada integrante dice en una frase lo que leyó y qué le sorprendió o generó preguntas.</td></tr>
+<tr><td class="tm">8:10–8:30</td><td><strong>Fase 1 — Estructura teórica (20 min).</strong> El grupo articula los dos instrumentos: ¿qué es la CD62.R8 y qué dice sobre CP? ¿qué es el MAITE y dónde están los CP? ¿cómo se conectan ambos y qué se pierde en esa conexión?</td></tr>
+<tr><td class="tm">8:30–8:45</td><td><strong>Fase 2 — Territorio (15 min).</strong> Cada integrante aporta desde su departamento: ¿cómo se refleja la "paliación" en mi territorio? ¿existe PAIM con indicadores de CP? ¿qué barreras identifico?</td></tr>
+<tr class="hrow"><td colspan="2">— Transición 2 min —</td></tr>
+<tr><td class="tm">8:47–8:59</td><td><strong>Exposición del Grupo 1 (12 min).</strong> 8 min de presentación + 4 min de preguntas del Grupo 4 y apertura. <strong>Los tres integrantes deben intervenir oralmente.</strong> No se requiere PowerPoint; se permite tablero, papelógrafo u oral estructurado. Si usan diapositivas: máximo 5 láminas.</td></tr>
+</tbody>
+</table>
+
+<div class="box gold" style="margin-top:14px">
+  <h3 style="color:var(--g);margin:0 0 7px">Estructura sugerida para los 8 minutos de exposición</h3>
+  <ol style="font-size:.88rem;color:var(--im)">
+    <li><strong>Min 0–1:</strong> ¿Por qué los CP no tienen resolución propia en la OPS? Contexto del vacío normativo regional.</li>
+    <li><strong>Min 1–3:</strong> La CD62.R8 y la Guía OPS (2020) — cómo y con qué peso aparecen los CP en el marco de ENT.</li>
+    <li><strong>Min 3–5:</strong> El MAITE — "paliación y muerte digna" en el continuo de atención. ¿En qué línea opera?</li>
+    <li><strong>Min 5–7:</strong> Lo que se pierde en la traducción y evidencia desde sus territorios.</li>
+    <li><strong>Min 7–8:</strong> Cita la lectura compartida (Bonilla/Stoltenberg, 2021) y plantea la pregunta articuladora para el debate.</li>
+  </ol>
+</div>
+
+<!-- REFERENCIAS -->
+<h2>Referencias (APA 7)</h2>
+<div class="box refs">
+  <p>OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Organización Panamericana de la Salud. https://www.paho.org/es/historias/cuidados-paliativos-americas</p>
+  <p>OPS/PAHO. (2025, octubre). <em>Resolución CD62.R8: Plan de acción sobre la prevención y el control de las enfermedades no transmisibles 2025-2030.</em> 62.° Consejo Directivo, 77.ª Sesión del Comité Regional de la OMS para las Américas. Organización Panamericana de la Salud.</p>
+  <p>OPS/PAHO. (2020). <em>Planificación e implantación de servicios de cuidados paliativos: Guía para directores de programa.</em> Organización Panamericana de la Salud. https://iris.paho.org/handle/10665.2/52784</p>
+  <p>Ministerio de Salud y Protección Social. (2019, 27 de septiembre). <em>Resolución 2626: Por la cual se modifica la Política de Atención Integral en Salud (PAIS) y se adopta el Modelo de Acción Integral Territorial (MAITE).</em> Ministerio de Salud y Protección Social de Colombia.</p>
+</div>
+
+<p style="font-size:.75rem;color:var(--is);margin-top:12px;text-align:center">Maestría en Cuidados Paliativos · Facultad de Enfermería · Universidad Antonio Nariño · 2026-I</p>
+<button class="print-btn" onclick="window.print()">🖨 Imprimir</button>
+</body>
+</html>
