@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo 1 — Costa Rica: Cuidados Paliativos</title>
+<style>
+:root {
+  --bg: #f0f5f3;
+  --surface: #ffffff;
+  --surface2: #e8f0ed;
+  --surface3: #dce8e3;
+  --card: #ffffff;
+  --border: #c8d8d0;
+  --border-light: #b0c8bc;
+  --text: #2c3e36;
+  --text-muted: #5a7268;
+  --heading: #1a2e24;
+  --white: #ffffff;
+  --primary: #0d7a5f;
+  --primary-light: #10a37f;
+  --primary-dim: #086b52;
+  --teal: #0891b2;
+  --sky: #0284c7;
+  --blue: #2563eb;
+  --indigo: #4f46e5;
+  --amber: #d97706;
+  --orange: #ea580c;
+  --rose: #e11d48;
+  --red: #dc2626;
+  --green: #16a34a;
+  --accent: #0d9488;
+  --serif:Georgia, 'Times New Roman', serif;
+  --sans:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --mono:ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(13,122,95,.08);
+  --shadow-lg: 0 8px 30px rgba(13,122,95,.12);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.72;
+  font-size: 15.5px;
+}
+
+/* ═══ HERO ═══ */
+.hero {
+  background: linear-gradient(135deg, #064e3b 0%, #0d7a5f 40%, #0891b2 100%);
+  color: white;
+  padding: 4rem 2rem 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+.hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.hero .flag { font-size: 4rem; margin-bottom: .5rem; }
+.hero .tag {
+  display: inline-block;
+  padding: .3rem 1.2rem;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 999px;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  margin-bottom: .8rem;
+}
+.hero .subtitle { font-size: 1rem; opacity: .85; max-width: 600px; margin: 0 auto 1.5rem; font-weight: 300; }
+.hero-badges { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
+.hero-badges span {
+  font-size: .72rem;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  padding: .3rem .8rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ═══ NAV ═══ */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: .5rem 1rem;
+  display: flex;
+  gap: .3rem;
+  overflow-x: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sticky-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .35rem .7rem;
+  border-radius: 6px;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.sticky-nav a:hover, .sticky-nav a.active { color: var(--primary); background: rgba(13,122,95,.06); }
+
+/* ═══ LAYOUT ═══ */
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+section { padding: 3.5rem 0; }
+
+.section-label {
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: .4rem;
+  font-family: var(--mono);
+}
+.section-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: .82rem;
+  margin-right: .6rem;
+  vertical-align: middle;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--heading);
+  margin-bottom: .5rem;
+  line-height: 1.2;
+}
+h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--heading);
+  margin: 1.8rem 0 .5rem;
+}
+h4 {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 1.2rem 0 .4rem;
+  font-family: var(--mono);
+}
+p { margin-bottom: .9rem; }
+.lead { font-size: 1rem; color: var(--text-muted); font-weight: 300; }
+
+/* ═══ CARDS ═══ */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  margin: .8rem 0;
+  box-shadow: var(--shadow);
+  transition: box-shadow .3s, transform .25s;
+}
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: .8rem;
+  margin: 1.2rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-card .big {
+  font-family: var(--mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: .2rem;
+}
+.stat-card .label { font-size: .75rem; color: var(--text-muted); line-height: 1.35; }
+
+/* ═══ TIMELINE ═══ */
+.timeline { position: relative; margin: 1.5rem 0; padding-left: 2.2rem; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: .5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--teal), var(--accent));
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: .8rem 1rem;
+  background: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -1.95rem;
+  top: 1rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--bg);
+  z-index: 2;
+}
+.tl-item.key { border-left: 3px solid var(--amber); }
+.tl-item.key::before { background: var(--amber); }
+.tl-year { font-family: var(--mono); font-size: .75rem; color: var(--primary); font-weight: 700; }
+.tl-title { font-weight: 700; color: var(--heading); font-size: .88rem; }
+.tl-desc { font-size: .8rem; color: var(--text-muted); margin-top: .1rem; line-height: 1.45; }
+
+/* ═══ DATA TABLE ═══ */
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0;
+  font-size: .82rem;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.data-table thead th {
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  padding: .6rem .7rem;
+  text-align: left;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.data-table td {
+  padding: .55rem .7rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(13,122,95,.02); }
+
+/* ═══ BADGES ═══ */
+.badge {
+  display: inline-block;
+  padding: .15rem .5rem;
+  border-radius: 4px;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.badge.fort { background: #dcfce7; color: #166534; }
+.badge.avance { background: #fef3c7; color: #92400e; }
+.badge.brecha { background: #fce7f3; color: #9d174d; }
+.badge.info { background: #dbeafe; color: #1e40af; }
+
+/* ═══ CALLOUT ═══ */
+.callout {
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  font-size: .88rem;
+  border-left: 4px solid;
+}
+.callout.highlight { background: #ecfdf5; border-color: var(--primary); }
+.callout.warn { background: #fffbeb; border-color: var(--amber); }
+.callout.lesson { background: #eff6ff; border-color: var(--sky); }
+.callout.danger { background: #fff1f2; border-color: var(--rose); }
+
+/* ═══ SOURCE LIST ═══ */
+.source-list { list-style: none; margin: .6rem 0; }
+.source-list li {
+  padding: .3rem 0 .3rem .8rem;
+  font-size: .76rem;
+  color: var(--text-muted);
+  position: relative;
+  line-height: 1.45;
+}
+.source-list li::before { content: '■'; position: absolute; left: 0; color: var(--primary); font-size: .5rem; top: .45rem; }
+
+/* ═══ DIVIDER ═══ */
+.divider { height: 1px; background: linear-gradient(to right, transparent, var(--border), transparent); margin: 2rem 0; }
+
+/* ═══ FOOTER ═══ */
+footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--text-muted);
+  font-size: .76rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface2);
+}
+footer .uni { font-weight: 700; color: var(--heading); font-size: .85rem; }
+
+/* ═══ QUOTE ═══ */
+.quote-block {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.quote-block::before {
+  content: '"';
+  font-family: var(--serif);
+  font-size: 5rem;
+  color: var(--primary);
+  opacity: .1;
+  display: block;
+  line-height: .5;
+}
+.quote-text {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--heading);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+  .hero { padding: 3rem 1.5rem 2.5rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .sticky-nav { justify-content: flex-start; }
+  .data-table { font-size: .75rem; }
+}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida a propósito:
+   no depende de los tokens de cada archivo, que son distintos entre sí. */
+.nav-sesion{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D; color:#FAF6EF; padding:.55rem 1rem; font-size:.82rem;
+  display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .6rem; line-height:1.6;
+}
+.nav-sesion a{color:#F5EEDD; text-decoration:none; border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876; font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876; outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 3"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 3 &middot; 6 mar 2026</span><a href="index.html">Panorama regional</a><span class="ns-actual" aria-current="page">Costa Rica</span><a href="argentina.html">Argentina</a><a href="uruguay.html">Uruguay</a><a href="chile.html">Chile</a><a href="colombia-ante-el-espejo.html">Colombia ante el espejo</a><a href="desglose-normativo-colombia.html">Desglose normativo</a><a href="primer-corte-diagnostico-territorial.html">Primer corte</a></nav>
+
+<!-- ████ HERO ████ -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="flag">🇨🇷</div>
+    <span class="tag">Grupo 1 · Actividad Colaborativa</span>
+    <h1>Costa Rica: Modelo de Cuidados Paliativos</h1>
+    <p class="subtitle">Investigación rigurosa de los 6 lineamientos sobre CP en Costa Rica — país clasificado Nivel 4 en el Atlas de las Américas 2025</p>
+    <div class="hero-badges">
+      <span>📊 Nivel 4 — Integración Avanzada</span>
+      <span>🏥 3.0 servicios / 100K hab.</span>
+      <span>📜 Ley 10348 (2022)</span>
+      <span>🎓 Especialidad reconocida UCR</span>
+    </div>
+  </div>
+</header>
+
+<!-- ████ NAV ████ -->
+<nav class="sticky-nav">
+  <a href="#historia">1. Historia</a>
+  <a href="#normatividad">2. Normatividad</a>
+  <a href="#logros">3. Logros</a>
+  <a href="#estadisticas">4. Estadísticas</a>
+  <a href="#opioides">5. Opioides</a>
+  <a href="#educacion">6. Educación</a>
+  <a href="#leccion">Lección Territorial</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
+
+<!-- ████ 1. HISTORIA ████ -->
+<section id="historia">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">1</span> Lineamiento</span>
+    <h2>Historia de los Cuidados Paliativos en Costa Rica</h2>
+    <p class="lead">Desde los primeros pasos en 1987 hasta convertirse en uno de los modelos más consolidados de Latinoamérica, Costa Rica ha construido un sistema integrado en la seguridad social.</p>
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-year">1987</span> <span class="tl-title">Primeros pasos en CP</span><div class="tl-desc">Inicio informal de actividades de cuidados paliativos en Costa Rica, rompiendo el paradigma exclusivamente curativo. La OMS había incorporado oficialmente el concepto de CP en 1980.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">1991</span> <span class="tl-title">Hospital Calderón Guardia — Clínica del Dolor</span><div class="tl-desc">Se inician formalmente los CP en el Hospital Rafael Ángel Calderón Guardia de San José. La Clínica del Dolor comienza atención a pacientes con cáncer avanzado, con enfoque multidisciplinario incluyendo atención domiciliaria.</div></div>
+
+      <div class="tl-item"><span class="tl-year">1994</span> <span class="tl-title">Fundación Pro-Clínica del Dolor</span><div class="tl-desc">Se constituye la Fundación que brinda soporte económico y logístico, permitiendo ampliar la capacidad física y de recursos humanos. La Clínica aumentó las disciplinas involucradas y las referencias de todo el país.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">1999</span> <span class="tl-title">Centro Nacional de Control del Dolor y CP (CNCDyCP)</span><div class="tl-desc">La Clínica del Dolor se transforma en centro de referencia nacional dentro de la CCSS (Caja Costarricense de Seguro Social). Es un hito: CP integrado en la seguridad social universal, no solo en hospitales privados.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2000–2010</span> <span class="tl-title">Expansión territorial: 24 Clínicas del Dolor</span><div class="tl-desc">Se crean progresivamente 24 Clínicas del Dolor y CP en todo el país, ubicadas según la incidencia regional de cáncer. El modelo incluye consulta externa, atención domiciliaria y apoyo multidisciplinario. El CNCDyCP se consolida también como centro de docencia e investigación.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2008</span> <span class="tl-title">Medicina Paliativa como especialidad</span><div class="tl-desc">El Colegio de Médicos y Cirujanos reconoce la Medicina Paliativa como especialidad médica. Costa Rica se une a Argentina, Colombia y otros países con este reconocimiento.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2017–2021</span> <span class="tl-title">PAD institucionalizado</span><div class="tl-desc">El Programa de Atención Domiciliaria (PAD) del CNCDyCP atendió 1.869 personas nuevas (2017–2021). El 68% fueron oncológicos, 14.6% neurodegenerativos, 10.9% enfermedades crónicas avanzadas.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">2022</span> <span class="tl-title">⭐ Ley 10348 de Cuidados Paliativos</span><div class="tl-desc">La Asamblea Legislativa aprueba la primera ley específica de CP. Reconoce los CP como derecho dentro del sistema de salud, ampliando cobertura más allá de pacientes oncológicos. Incluye voluntad anticipada y sedación paliativa.</div></div>
+    </div>
+
+    <div class="callout highlight">
+      🔑 <strong>Dato clave:</strong> Costa Rica es uno de los pocos países de LATAM donde los CP nacieron DENTRO de la seguridad social pública (CCSS), no en hospitales privados o fundaciones externas. Esto explica su alto nivel de integración.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 2. NORMATIVIDAD ████ -->
+<section id="normatividad">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">2</span> Lineamiento</span>
+    <h2>Marco Legal y Normatividad</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>📜 Ley 10348 (2022)</h4>
+        <p>Ley de Cuidados Paliativos. Establece el derecho a CP para personas con enfermedades terminales, crónicas, degenerativas e irreversibles. Incluye voluntad anticipada, sedación paliativa y derecho a acompañamiento familiar.</p>
+      </div>
+      <div class="card">
+        <h4>🏛️ Decreto 34560-S</h4>
+        <p>Normas para la habilitación de establecimientos que brindan CP en modalidad ambulatoria y domiciliar. Establece estándares de infraestructura, recurso humano y procesos de atención.</p>
+      </div>
+      <div class="card">
+        <h4>📋 Plan Nacional CP y Control del Dolor</h4>
+        <p>El Ministerio de Salud cuenta con un Plan Nacional de CP integrado al Plan Nacional para el Control del Cáncer 2007–2016 y sus actualizaciones. La CCSS implementa el modelo operativo.</p>
+      </div>
+    </div>
+
+    <h3>Marco institucional</h3>
+    <table class="data-table">
+      <thead><tr><th>Componente</th><th>Detalle</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Ley específica de CP</td><td>Ley 10348/2022</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>CP en ley general de salud</td><td>Incluido en Ley General de Salud</td><td><span class="badge fort">Sí</span></td></tr>
+        <tr><td>Autoridad en MdS</td><td>Dirección de Servicios de Salud + CCSS</td><td><span class="badge fort">Completa</span></td></tr>
+        <tr><td>Plan o estrategia nacional</td><td>Plan Nacional CP y Control del Dolor</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>CP en paquete básico salud</td><td>Incluido en CCSS (seguridad social universal)</td><td><span class="badge fort">Sí</span></td></tr>
+        <tr><td>Voluntad anticipada</td><td>Regulada en Ley 10348/2022</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Eutanasia</td><td>No regulada. Proyecto de ley presentado (2019)</td><td><span class="badge avance">En discusión</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout lesson">
+      📌 <strong>Comparación con Colombia:</strong> Costa Rica tiene autoridad completa en el MdS dedicada a CP, mientras Colombia tiene gestión fragmentada (Subdirección ENT sin departamento CP propio). Ambos países tienen ley específica, pero Costa Rica la tiene integrada en su sistema de seguridad social universal (CCSS).
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 3. LOGROS ████ -->
+<section id="logros">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">3</span> Lineamiento</span>
+    <h2>Logros Principales</h2>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big">3.0</div><div class="label">Servicios CP / 100K hab.<br><small>Supera recomendación OMS (2/100K)</small></div></div>
+      <div class="stat-card"><div class="big">14.74</div><div class="label">Equipos CP / millón hab.<br><small>2.° en LATAM (Atlas 2020)</small></div></div>
+      <div class="stat-card"><div class="big">24+</div><div class="label">Clínicas del Dolor en todo el país</div></div>
+      <div class="stat-card"><div class="big">7</div><div class="label">Servicios pediátricos CP<br><small>Atlas Américas 2025</small></div></div>
+    </div>
+
+    <h3>Logros verificables con fuente</h3>
+    <div class="card">
+      <h4>🏆 Modelo integrado CCSS</h4>
+      <p>Es el único país de Centroamérica con CP completamente integrados en la seguridad social. El CNCDyCP funciona como centro de referencia nacional con consulta externa, atención domiciliaria, docencia e investigación. Fuente: López de Behm & Morales Alpízar (2005), Medicina Paliativa, 12(2), 92–98.</p>
+    </div>
+    <div class="card">
+      <h4>🌎 Referente regional</h4>
+      <p>Costa Rica es identificado junto con Chile y Argentina como uno de los países de mayor desarrollo de CP en LATAM. Tiene la 2.ª tasa más alta de equipos CP por millón de habitantes (14.74), solo superado por Uruguay (24.5). Fuente: Atlas CP Latinoamérica 2020 (ALCP/IAHPC/U. Navarra).</p>
+    </div>
+    <div class="card">
+      <h4>📊 Supera recomendación OMS</h4>
+      <p>Con 3.0 servicios por 100K habitantes, Costa Rica es uno de solo 4 países en las Américas que supera la recomendación de 2 servicios/100K (junto con Chile, EE.UU. y Uruguay). Fuente: Atlas CP Américas 2025 (U. Navarra).</p>
+    </div>
+    <div class="card">
+      <h4>🏠 Programa domiciliario consolidado</h4>
+      <p>El PAD del CNCDyCP tiene más de 30 años de experiencia (desde 1991). Opera con 3 equipos (enfermera, médico, chofer) y ofrece terapias especializadas a domicilio (fisioterapia, respiratoria, trabajo social, nutrición, psicología). Fuente: Researchgate, Caracterización del PAD CNCDyCP (2024).</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 4. ESTADÍSTICAS ████ -->
+<section id="estadisticas">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">4</span> Lineamiento</span>
+    <h2>Estadísticas Clave</h2>
+
+    <table class="data-table">
+      <thead><tr><th>Indicador</th><th>Valor</th><th>Fuente</th></tr></thead>
+      <tbody>
+        <tr><td>Población</td><td>5.2 millones</td><td>DANE estimaciones</td></tr>
+        <tr><td>Clasificación CP</td><td><span class="badge fort">Nivel 4</span> — Integración avanzada</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Servicios CP especializados</td><td>~155 (3.0/100K hab.)</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Equipos CP / millón hab.</td><td>14.74</td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>Servicios pediátricos CP</td><td>7</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Clínicas del Dolor</td><td>24+</td><td>Brenes & Brenes (2013)</td></tr>
+        <tr><td>Opioides S-DDD</td><td>385 / millón hab. / día</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Morfina oral 1er nivel</td><td>70–100% disponibilidad</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>CP obligatorio Medicina</td><td>0 de 8 facultades</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>CP obligatorio Enfermería</td><td>0 de 6 facultades</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Especialidad médica reconocida</td><td>Sí (desde 2008)</td><td>Colegio Médicos CR</td></tr>
+        <tr><td>Sociedad civil</td><td>2 asociaciones CP activas</td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>Personas con SHS (sufrimiento grave)</td><td>~16.500/año estimado</td><td>Comisión Lancet / OMS</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn">
+      ⚠️ <strong>Paradoja educativa:</strong> Pese a su alto desarrollo en servicios, Costa Rica tiene 0% de CP obligatorio tanto en Medicina como en Enfermería. Esto contrasta con Colombia donde el 65% de facultades de enfermería incluyen CP obligatorio.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 5. OPIOIDES ████ -->
+<section id="opioides">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">5</span> Lineamiento</span>
+    <h2>Acceso a Opioides</h2>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big" style="color:var(--amber)">385</div><div class="label">S-DDD / millón hab. / día<br><small>Colombia: 645</small></div></div>
+      <div class="stat-card"><div class="big" style="color:var(--green)">70–100%</div><div class="label">Morfina oral en 1er nivel<br><small>Colombia: 0–10%</small></div></div>
+    </div>
+
+    <div class="card">
+      <h4>📋 Formulario nacional de opioides</h4>
+      <p>Costa Rica cuenta con un formulario nacional de opioides actualizado periódicamente dentro de la CCSS. La disponibilidad de morfina oral de liberación inmediata en centros de atención primaria urbanos alcanza el 70–100%, lo que la posiciona junto a Uruguay como líder regional en acceso.</p>
+      <p>Pese a que el consumo total (S-DDD 385) es menor que el de Colombia (645) y significativamente menor que Chile (1.896), la <strong>disponibilidad real en primer nivel</strong> es dramáticamente superior: el paciente en zona rural de Costa Rica tiene acceso a morfina oral, mientras que en Colombia ese acceso es 0–10%.</p>
+    </div>
+
+    <div class="card">
+      <h4>🔄 Colaboración prescriptores-reguladores</h4>
+      <p>El Atlas LATAM 2020 identifica a Costa Rica (junto con El Salvador y Uruguay) entre los países con mejor colaboración entre prescriptores de opioides y reguladores. Esto facilita prescripción sin barreras burocráticas excesivas, a diferencia de países como Brasil, Guatemala o Venezuela donde la colaboración es deficiente.</p>
+    </div>
+
+    <div class="callout highlight">
+      💡 <strong>Lección clave para Colombia:</strong> No se trata solo de consumo total de opioides sino de <em>disponibilidad en primer nivel de atención</em>. Costa Rica demuestra que un país puede tener menor consumo total per cápita pero garantizar que la morfina oral llegue al 70–100% de los centros de atención primaria.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 6. EDUCACIÓN ████ -->
+<section id="educacion">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">6</span> Lineamiento</span>
+    <h2>Educación e Investigación</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>🎓 Pregrado</h4>
+        <p>CP no es obligatorio en ninguna de las 8 facultades de Medicina ni en las 6 de Enfermería. Esto representa una brecha significativa considerando el nivel de desarrollo de servicios del país. La Ley 10348 busca cambiar esta situación.</p>
+      </div>
+      <div class="card">
+        <h4>🏥 Posgrado y especialidad</h4>
+        <p>Medicina Paliativa está reconocida como especialidad médica desde 2008 por el Colegio de Médicos y Cirujanos. La Universidad de Costa Rica (UCR) ofrece Postgrado en Medicina Paliativa del Adulto. Costa Rica destaca por incluir formación para equipos interdisciplinares.</p>
+      </div>
+      <div class="card">
+        <h4>🔬 Investigación</h4>
+        <p>El CNCDyCP cuenta con un programa de investigación consolidado. Costa Rica tiene cooperaciones internacionales con Honduras y otros países centroamericanos. Participa en redes ALCP, FEDOPACC y FEDELAT.</p>
+      </div>
+    </div>
+
+    <h3>Comparación educativa con Colombia</h3>
+    <table class="data-table">
+      <thead><tr><th>Indicador</th><th>🇨🇷 Costa Rica</th><th>🇨🇴 Colombia</th></tr></thead>
+      <tbody>
+        <tr><td>CP obligatorio en Medicina</td><td>0/8 (0%)</td><td>6/63 (9.5%)</td></tr>
+        <tr><td>CP obligatorio en Enfermería</td><td>0/6 (0%)</td><td><span class="badge fort">15/23 (65%)</span></td></tr>
+        <tr><td>Especialidad médica reconocida</td><td><span class="badge fort">Sí (2008)</span></td><td><span class="badge fort">Sí</span></td></tr>
+        <tr><td>Programas de especialización</td><td>1 (UCR)</td><td>10 programas</td></tr>
+        <tr><td>Formación interdisciplinar</td><td><span class="badge fort">Sí (destacado)</span></td><td>Emergente</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ LECCIÓN TERRITORIAL ████ -->
+<section id="leccion">
+  <div class="container fade-in">
+    <span class="section-label">🎯 Cierre obligatorio</span>
+    <h2>Lección para Mi Territorio</h2>
+    <p class="lead">Cada integrante del Grupo 1 debe conectar lo aprendido de Costa Rica con su departamento colombiano.</p>
+
+    <div class="quote-block">
+      <p class="quote-text">Costa Rica demuestra que integrar los CP en la seguridad social universal, con un centro de referencia nacional y clínicas territoriales, genera cobertura real. La pregunta para Colombia es: ¿cómo replicar este modelo en un país 10 veces más grande y con fragmentación EPS-IPS?</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card" style="border-left:4px solid var(--primary)">
+        <h4 style="color:var(--primary)">Transferencia 1: Formulario nacional de opioides</h4>
+        <p>Si Costa Rica logra 70–100% de disponibilidad de morfina oral en primer nivel con un formulario actualizado periódicamente, ¿por qué Colombia tiene 0–10%? ¿Qué barrera concreta impide que su departamento tenga acceso?</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--teal)">
+        <h4 style="color:var(--teal)">Transferencia 2: Centro de referencia con clínicas territoriales</h4>
+        <p>El modelo CNCDyCP → 24 Clínicas del Dolor podría adaptarse en Colombia: un centro departamental (Bogotá, Medellín) con nodos en municipios intermedios. ¿Existe algo similar en su territorio?</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--amber)">
+        <h4 style="color:var(--amber)">Transferencia 3: Atención domiciliaria institucionalizada</h4>
+        <p>El PAD de Costa Rica tiene 30+ años con equipos (enfermera + médico + chofer). En su IPS, ¿existe atención domiciliaria paliativa? ¿Qué necesitaría para implementarla?</p>
+      </div>
+    </div>
+
+    <div class="callout lesson">
+      🗣️ <strong>Formato del cierre en exposición (2 min):</strong> Cada integrante nombra UNA transferencia concreta de Costa Rica que podría funcionar en su departamento, explica POR QUÉ y qué barrera habría que superar.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ FUENTES ████ -->
+<section id="fuentes">
+  <div class="container fade-in">
+    <span class="section-label">Bibliografía</span>
+    <h2>Fuentes de Consulta</h2>
+    <ul class="source-list">
+      <li>Tripodoro, V. et al. (2025). <em>Atlas de Cuidados Paliativos de las Américas.</em> Reporte País Costa Rica. Houston: IAHPC Press.</li>
+      <li>Pastrana, T. et al. (2021). <em>Atlas de Cuidados Paliativos en Latinoamérica 2020.</em> 2.ª ed. ALCP/IAHPC/U. Navarra.</li>
+      <li>López de Behm, E. & Morales Alpízar, C. (2005). Historia de los CP en Costa Rica en la Seguridad Social. <em>Med. Paliat.</em>, 12(2), 92–98.</li>
+      <li>Brenes Fernández, M. et al. (2013). Pasado y presente de los CP en Costa Rica. <em>Rev Med Costa Rica Centroam</em>, LXX(605).</li>
+      <li>Asamblea Legislativa, República de Costa Rica. Ley 10348 — Ley de Cuidados Paliativos (2022).</li>
+      <li>Programa de Atención Domiciliaria (PAD) del CNCDyCP. Caracterización enero 2017–agosto 2021. Researchgate (2024).</li>
+      <li>Bonilla, P. (2021). Cuidados paliativos en Latinoamérica. <em>Rev Nutr Clín Metab</em>, 4(2), 4–13.</li>
+      <li>Universidad de Navarra / ATLANTES. Atlas de CP en las Américas 2025. Presentado II Cumbre ALCP, 31 oct. 2025.</li>
+      <li>Ministerio de Salud Costa Rica. Plan Nacional de Cuidados Paliativos y Control del Dolor.</li>
+      <li>Colegio de Médicos y Cirujanos de Costa Rica. Reconocimiento especialidad Medicina Paliativa (2008).</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p class="uni">Universidad Antonio Nariño — Facultad de Enfermería</p>
+  <p>Maestría en Cuidados Paliativos · Asignatura: Contexto Histórico y Legal de los Cuidados Paliativos</p>
+  <p>Grupo 1 · Actividad: CP en Latinoamérica — País Nivel 4 · 6 de marzo de 2026</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const secs = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.sticky-nav a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo 2 — Argentina: Cuidados Paliativos</title>
+<style>
+:root{--bg:#f0f3f8;--surface:#fff;--surface2:#e6ecf4;--surface3:#dae3ef;--card:#fff;--border:#c4d0de;--border-light:#a8b8cc;--text:#2a3444;--text-muted:#5a6a7e;--heading:#1a2433;--white:#fff;--primary:#1d4ed8;--primary-light:#3b82f6;--primary-dim:#1e3a8a;--teal:#0891b2;--sky:#0284c7;--blue:#2563eb;--indigo:#4f46e5;--amber:#d97706;--orange:#ea580c;--rose:#e11d48;--red:#dc2626;--green:#16a34a;--accent:#6366f1;--serif:Georgia, 'Times New Roman', serif;--sans:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;--mono:ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace;--radius:12px;--shadow:0 2px 12px rgba(29,78,216,.07);--shadow-lg:0 8px 30px rgba(29,78,216,.1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;font-size:15.5px}
+.hero{background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 40%,#6366f1 100%);color:white;padding:4rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");z-index:0}
+.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+.hero .flag{font-size:4rem;margin-bottom:.5rem}.hero .tag{display:inline-block;padding:.3rem 1.2rem;border:1px solid rgba(255,255,255,.4);border-radius:999px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;font-weight:700}
+.hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.15;margin-bottom:.8rem}
+.hero .subtitle{font-size:1rem;opacity:.85;max-width:600px;margin:0 auto 1.5rem;font-weight:300}
+.hero-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.hero-badges span{font-size:.72rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:.3rem .8rem;border-radius:999px;font-weight:600}
+.sticky-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:.5rem 1rem;display:flex;gap:.3rem;overflow-x:auto;justify-content:center;flex-wrap:wrap}
+.sticky-nav a{color:var(--text-muted);text-decoration:none;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.35rem .7rem;border-radius:6px;transition:all .2s;white-space:nowrap}
+.sticky-nav a:hover,.sticky-nav a.active{color:var(--primary);background:rgba(29,78,216,.06)}
+.container{max-width:960px;margin:0 auto;padding:0 1.5rem}section{padding:3.5rem 0}
+.section-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:700;margin-bottom:.4rem;font-family:var(--mono)}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;background:var(--primary);color:white;border-radius:50%;font-family:var(--mono);font-weight:700;font-size:.82rem;margin-right:.6rem;vertical-align:middle}
+h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--heading);margin-bottom:.5rem;line-height:1.2}
+h3{font-family:var(--serif);font-size:1.15rem;color:var(--heading);margin:1.8rem 0 .5rem}
+h4{font-size:.82rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin:1.2rem 0 .4rem;font-family:var(--mono)}
+p{margin-bottom:.9rem}.lead{font-size:1rem;color:var(--text-muted);font-weight:300}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;margin:.8rem 0;box-shadow:var(--shadow);transition:box-shadow .3s,transform .25s}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin:1.2rem 0}
+.stat-card{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:var(--radius);padding:1.2rem;text-align:center}
+.stat-card .big{font-family:var(--mono);font-size:1.8rem;font-weight:700;color:var(--primary);line-height:1.1;margin-bottom:.2rem}
+.stat-card .label{font-size:.75rem;color:var(--text-muted);line-height:1.35}
+.timeline{position:relative;margin:1.5rem 0;padding-left:2.2rem}
+.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--primary),var(--accent),var(--teal))}
+.tl-item{position:relative;margin-bottom:1rem;padding:.8rem 1rem;background:var(--white);border-radius:8px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.tl-item::before{content:'';position:absolute;left:-1.95rem;top:1rem;width:10px;height:10px;border-radius:50%;background:var(--primary);border:2px solid var(--bg);z-index:2}
+.tl-item.key{border-left:3px solid var(--amber)}.tl-item.key::before{background:var(--amber)}
+.tl-year{font-family:var(--mono);font-size:.75rem;color:var(--primary);font-weight:700}
+.tl-title{font-weight:700;color:var(--heading);font-size:.88rem}
+.tl-desc{font-size:.8rem;color:var(--text-muted);margin-top:.1rem;line-height:1.45}
+.data-table{width:100%;border-collapse:separate;border-spacing:0;margin:1rem 0;font-size:.82rem;background:white;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.data-table thead th{background:var(--primary);color:white;font-weight:700;padding:.6rem .7rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+.data-table td{padding:.55rem .7rem;border-bottom:1px solid var(--border);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}.data-table tr:hover td{background:rgba(29,78,216,.02)}
+.badge{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.badge.fort{background:#dcfce7;color:#166534}.badge.avance{background:#fef3c7;color:#92400e}.badge.brecha{background:#fce7f3;color:#9d174d}.badge.info{background:#dbeafe;color:#1e40af}
+.callout{border-radius:8px;padding:1rem 1.2rem;margin:1rem 0;font-size:.88rem;border-left:4px solid}
+.callout.highlight{background:#eff6ff;border-color:var(--primary)}.callout.warn{background:#fffbeb;border-color:var(--amber)}.callout.lesson{background:#f0fdf4;border-color:var(--green)}.callout.danger{background:#fff1f2;border-color:var(--rose)}
+.source-list{list-style:none;margin:.6rem 0}.source-list li{padding:.3rem 0 .3rem .8rem;font-size:.76rem;color:var(--text-muted);position:relative;line-height:1.45}
+.source-list li::before{content:'■';position:absolute;left:0;color:var(--primary);font-size:.5rem;top:.45rem}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:2rem 0}
+footer{text-align:center;padding:2.5rem 1.5rem;color:var(--text-muted);font-size:.76rem;border-top:1px solid var(--border);background:var(--surface2)}
+footer .uni{font-weight:700;color:var(--heading);font-size:.85rem}
+.quote-block{text-align:center;padding:2rem 1.5rem;margin:1.5rem 0}
+.quote-block::before{content:'"';font-family:var(--serif);font-size:5rem;color:var(--primary);opacity:.1;display:block;line-height:.5}
+.quote-text{font-family:var(--serif);font-size:1.15rem;color:var(--heading);font-style:italic;max-width:600px;margin:0 auto;line-height:1.5}
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.hero{padding:3rem 1.5rem 2.5rem}.card-grid{grid-template-columns:1fr}.sticky-nav{justify-content:flex-start}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida a propósito:
+   no depende de los tokens de cada archivo, que son distintos entre sí. */
+.nav-sesion{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D; color:#FAF6EF; padding:.55rem 1rem; font-size:.82rem;
+  display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .6rem; line-height:1.6;
+}
+.nav-sesion a{color:#F5EEDD; text-decoration:none; border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876; font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876; outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 3"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 3 &middot; 6 mar 2026</span><a href="index.html">Panorama regional</a><a href="costa-rica.html">Costa Rica</a><span class="ns-actual" aria-current="page">Argentina</span><a href="uruguay.html">Uruguay</a><a href="chile.html">Chile</a><a href="colombia-ante-el-espejo.html">Colombia ante el espejo</a><a href="desglose-normativo-colombia.html">Desglose normativo</a><a href="primer-corte-diagnostico-territorial.html">Primer corte</a></nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="flag">🇦🇷</div>
+    <span class="tag">Grupo 2 · Actividad Colaborativa</span>
+    <h1>Argentina: Cuidados Paliativos</h1>
+    <p class="subtitle">Investigación rigurosa de los 6 lineamientos — País Nivel 4 con Ley 27678/2022, pionero en CP pediátricos (59 equipos) y líder en producción de opioides</p>
+    <div class="hero-badges">
+      <span>📊 Nivel 4 — Integración Avanzada</span>
+      <span>💊 S-DDD: 1.268</span>
+      <span>📜 Ley 27678 (2022)</span>
+      <span>👶 59 equipos pediátricos CP</span>
+    </div>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <a href="#historia">1. Historia</a>
+  <a href="#normatividad">2. Normatividad</a>
+  <a href="#logros">3. Logros</a>
+  <a href="#estadisticas">4. Estadísticas</a>
+  <a href="#opioides">5. Opioides</a>
+  <a href="#educacion">6. Educación</a>
+  <a href="#leccion">Lección Territorial</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
+
+<!-- ████ 1. HISTORIA ████ -->
+<section id="historia">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">1</span> Lineamiento</span>
+    <h2>Historia de los Cuidados Paliativos en Argentina</h2>
+    <p class="lead">Argentina tiene una de las historias más ricas de CP en LATAM, iniciada en los años 80 con el trabajo pionero del Dr. Roberto Wenk y consolidada con la Ley 27678 en 2022.</p>
+
+    <div class="timeline">
+      <div class="tl-item key"><span class="tl-year">~1985</span> <span class="tl-title">Dr. Roberto Wenk — Cuidado domiciliario pionero</span><div class="tl-desc">El Dr. Wenk comenzó a prestar cuidado domiciliario paliativo en San Nicolás, convirtiéndose en uno de los fundadores de la disciplina en LATAM. Fundó el Programa Argentino de Medicina Paliativa (PAMPA).</div></div>
+
+      <div class="tl-item"><span class="tl-year">1990s</span> <span class="tl-title">Fundación FEMEBA y primeras unidades</span><div class="tl-desc">Se crean las primeras unidades de CP en hospitales públicos. La Fundación FEMEBA y el Instituto Nacional del Cáncer desarrollan programas de formación. Argentina empieza a liderar el desarrollo de CP en la región.</div></div>
+
+      <div class="tl-item"><span class="tl-year">1999</span> <span class="tl-title">Primera legislación provincial (Buenos Aires)</span><div class="tl-desc">La Provincia de Buenos Aires sanciona la Ley 12347, primera legislación provincial sobre CP. Le siguen Córdoba (2002), Río Negro (2003), Misiones (2006) y otras hasta 13 provincias con leyes propias.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2001</span> <span class="tl-title">Resolución 934 — Organización CP</span><div class="tl-desc">El Ministerio de Salud de la Nación emite la Resolución 934/2001 sobre organización y funcionamiento en CP. Primera norma nacional sobre la materia.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2002</span> <span class="tl-title">CP incluidos en cobertura de salud</span><div class="tl-desc">Los CP se incluyen en la cobertura de salud a nivel nacional, garantizando prestaciones para pacientes con enfermedades amenazantes.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2009–2012</span> <span class="tl-title">CP como derecho + Ley 26529</span><div class="tl-desc">La Ley 26529/2009 (Derechos del Paciente) y su modificación por Ley 26742/2012 ("muerte digna") reconocen expresamente los CP como derecho del paciente. Se incluye el derecho a rechazar tratamientos y voluntad anticipada.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2016</span> <span class="tl-title">Programa Nacional de Cuidados Paliativos</span><div class="tl-desc">Resolución 1253-E/2016 crea el Programa Nacional de CP. Resolución 357/2016 establece Directrices de Organización y Funcionamiento en CP.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">2022</span> <span class="tl-title">⭐ Ley Nacional 27678 de Cuidados Paliativos</span><div class="tl-desc">Sancionada 5 de julio, promulgada 21 de julio. Define los CP como modelo de atención, promueve acceso a medicamentos, formación profesional y cobertura obligatoria en los ámbitos público, privado y seguridad social.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2023</span> <span class="tl-title">Reglamentación — Decreto 311/2023</span><div class="tl-desc">El Poder Ejecutivo reglamenta la Ley 27678. Al 31 de mayo 2023, seis provincias habían adherido. La adhesión provincial es requisito para la implementación efectiva.</div></div>
+    </div>
+
+    <div class="callout highlight">
+      🔑 <strong>Dato clave:</strong> Argentina construyó su sistema de CP desde las provincias hacia la nación: 13 leyes provinciales entre 1999–2019 <em>antes</em> de la ley nacional de 2022. Esto contrasta con Colombia, donde la Ley 1733/2014 vino primero pero la implementación departamental sigue siendo desigual.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 2. NORMATIVIDAD ████ -->
+<section id="normatividad">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">2</span> Lineamiento</span>
+    <h2>Marco Legal y Normatividad</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>📜 Ley 27678 (2022)</h4>
+        <p>Ley Nacional de CP. Garantiza acceso a prestaciones integrales en ámbito público, privado y seguridad social. Promueve formación, acceso a opioides, equipos interdisciplinarios y cobertura desde el período perinatal hasta personas mayores.</p>
+      </div>
+      <div class="card">
+        <h4>⚖️ Ley 26742 (2012) — "Muerte digna"</h4>
+        <p>Modifica Ley 26529 de Derechos del Paciente. Reconoce derecho a rechazar tratamientos, voluntad anticipada y CP como componente esencial del derecho a morir con dignidad.</p>
+      </div>
+      <div class="card">
+        <h4>🏛️ 125 normas vinculadas CP</h4>
+        <p>Según Lafferriere (2023, Rev Arg Salud Pública): 26 normas nacionales + 89 provinciales + decretos reglamentarios. Argentina tiene el corpus normativo más extenso de CP en LATAM.</p>
+      </div>
+    </div>
+
+    <h3>Estructura normativa</h3>
+    <table class="data-table">
+      <thead><tr><th>Componente</th><th>Detalle</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Ley nacional específica CP</td><td>Ley 27678/2022 + Decreto 311/2023</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Programa Nacional CP</td><td>Res. 1253-E/2016</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Autoridad MdS</td><td>Programa Nacional CP en el Ministerio</td><td><span class="badge avance">Parcial</span></td></tr>
+        <tr><td>Leyes provinciales</td><td>13 provincias con ley propia (1999–2019)</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Adhesión ley nacional</td><td>6 de 23 provincias (al 31/05/2023)</td><td><span class="badge avance">En proceso</span></td></tr>
+        <tr><td>Voluntad anticipada</td><td>Ley 26529/2009, mod. 26742/2012</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Eutanasia</td><td>No regulada</td><td><span class="badge brecha">No</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout lesson">
+      📌 <strong>Comparación con Colombia:</strong> Argentina tiene 125 normas CP vs. 25+ de Colombia. Argentina reconoce CP como derecho desde 2012, Colombia desde 2014 (Ley 1733). Sin embargo, el desafío argentino es similar al colombiano: la norma existe pero solo 6 de 23 provincias han adherido a la ley nacional.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 3. LOGROS ████ -->
+<section id="logros">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">3</span> Lineamiento</span>
+    <h2>Logros Principales</h2>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big">59</div><div class="label">Equipos CP pediátricos<br><small>Líder absoluto en LATAM</small></div></div>
+      <div class="stat-card"><div class="big">1.268</div><div class="label">S-DDD opioides/millón/día<br><small>2.° en LATAM (Atlas 2025)</small></div></div>
+      <div class="stat-card"><div class="big">125</div><div class="label">Normas jurídicas sobre CP<br><small>Corpus más extenso región</small></div></div>
+      <div class="stat-card"><div class="big">762.7</div><div class="label">Kg opioides distribuidos<br><small>2.° en LATAM después de Brasil</small></div></div>
+    </div>
+
+    <div class="card">
+      <h4>👶 Líder en CP pediátricos</h4>
+      <p>Con 59 equipos de CP pediátricos, Argentina es el líder absoluto en LATAM. Para comparar: Chile tiene 21, Uruguay 17, Colombia solo 9. El Programa Nacional del Niño con Cáncer (Ley 27674) y las Directrices de UCI Pediátricas (Res. 747/2014) dan soporte legal. Fuente: Atlas Américas 2025.</p>
+    </div>
+    <div class="card">
+      <h4>💊 PrAO — Acceso descentralizado a opioides</h4>
+      <p>Argentina implementó la inclusión de preparados magistrales de morfina y oxicodona en la Farmacopea Nacional, instruyendo a farmacéuticos hospitalarios y comunitarios. El Programa de Acceso a Opioides (PrAO) de ANMAT facilita el acceso descentralizado. Fuente: Atlas LATAM 2020.</p>
+    </div>
+    <div class="card">
+      <h4>🏥 Red federal de CP</h4>
+      <p>Argentina tiene equipos de apoyo hospitalario (0.199/100K hab., la tasa más alta en LATAM según Atlas 2020), becas del Instituto Nacional del Cáncer para formación e investigación, y subsidios específicos (Hospital Udaondo recibió USD 450.000 para investigación clínica).</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 4. ESTADÍSTICAS ████ -->
+<section id="estadisticas">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">4</span> Lineamiento</span>
+    <h2>Estadísticas Clave</h2>
+
+    <table class="data-table">
+      <thead><tr><th>Indicador</th><th>Valor</th><th>Fuente</th></tr></thead>
+      <tbody>
+        <tr><td>Población</td><td>46.2 millones</td><td>INDEC</td></tr>
+        <tr><td>Clasificación CP</td><td><span class="badge fort">Nivel 4</span></td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Equipos CP pediátricos</td><td><span class="badge fort">59</span> (líder LATAM)</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Equipos apoyo hospitalario</td><td>0.199/100K hab. (tasa más alta LATAM)</td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>Opioides S-DDD</td><td>1.268 / millón hab. / día</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Morfina oral 1er nivel</td><td>30–70% disponibilidad</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>CP obligatorio Medicina</td><td>No disponible / variable por universidad</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Especialidad médica reconocida</td><td><span class="badge fort">Sí</span></td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>Cooperaciones internacionales</td><td>11 (mayor número en LATAM)</td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>Normas jurídicas CP</td><td>125 (26 nacionales + 89 provinciales)</td><td>Lafferriere (2023)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 5. OPIOIDES ████ -->
+<section id="opioides">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">5</span> Lineamiento</span>
+    <h2>Acceso a Opioides</h2>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big" style="color:var(--primary)">1.268</div><div class="label">S-DDD / millón hab. / día<br><small>Colombia: 645 | LATAM promedio: ~1.313</small></div></div>
+      <div class="stat-card"><div class="big" style="color:var(--amber)">30–70%</div><div class="label">Morfina oral en 1er nivel<br><small>Colombia: 0–10%</small></div></div>
+    </div>
+
+    <div class="card">
+      <h4>📋 Farmacopea Nacional y PrAO</h4>
+      <p>La ANMAT (Administración Nacional de Medicamentos) facilitó el acceso incluyendo preparados magistrales de morfina y oxicodona en la Farmacopea Nacional. Se instruye a farmacéuticos hospitalarios y comunitarios en preparación y dispensa. Becas del Instituto Nacional del Cáncer financian investigación sobre acceso.</p>
+      <p>La distribución total (762.7 kg) posiciona a Argentina como 2.° en LATAM después de Brasil (1.385 kg). Sin embargo, la disponibilidad en primer nivel (30–70%) indica que aún hay brechas entre zonas urbanas y rurales, especialmente en provincias del NOA y NEA.</p>
+    </div>
+
+    <div class="callout highlight">
+      💡 <strong>Lección para Colombia:</strong> El modelo PrAO argentino descentraliza el acceso a opioides a nivel provincial/departamental, con apoyo de la Farmacopea Nacional para preparados magistrales. Colombia podría replicar este modelo para superar la barrera del 0–10% de morfina oral en primer nivel.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ 6. EDUCACIÓN ████ -->
+<section id="educacion">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">6</span> Lineamiento</span>
+    <h2>Educación e Investigación</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>🎓 Formación e investigación</h4>
+        <p>Medicina Paliativa es especialidad reconocida. Becas gubernamentales de formación clínica (Beca Carrillo Oñativia del Ministerio de Salud, Instituto Nacional del Cáncer). Argentina reporta 11 cooperaciones internacionales (la mayor cantidad en LATAM) con instituciones de EE.UU., España, Gran Bretaña y Canadá.</p>
+      </div>
+      <div class="card">
+        <h4>🔬 Producción científica</h4>
+        <p>Nivel emergente pero creciente. El Hospital Udaondo fue seleccionado por el INC con máxima puntuación para subsidio de investigación clínica (USD 450.000). Congresos nacionales regulares organizados por la Asociación Argentina de Medicina y Cuidados Paliativos (AAMyCP).</p>
+      </div>
+    </div>
+
+    <h3>Comparación educativa con Colombia</h3>
+    <table class="data-table">
+      <thead><tr><th>Indicador</th><th>🇦🇷 Argentina</th><th>🇨🇴 Colombia</th></tr></thead>
+      <tbody>
+        <tr><td>CP obligatorio Medicina</td><td>N/D (variable)</td><td>6/63 (9.5%)</td></tr>
+        <tr><td>CP obligatorio Enfermería</td><td>N/D</td><td><span class="badge fort">15/23 (65%)</span></td></tr>
+        <tr><td>Especialidad médica</td><td><span class="badge fort">Sí</span></td><td><span class="badge fort">Sí</span></td></tr>
+        <tr><td>CP pediátricos equipos</td><td><span class="badge fort">59</span></td><td><span class="badge brecha">9</span></td></tr>
+        <tr><td>Cooperaciones internacionales</td><td><span class="badge fort">11</span></td><td>4</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████ LECCIÓN ████ -->
+<section id="leccion">
+  <div class="container fade-in">
+    <span class="section-label">🎯 Cierre obligatorio</span>
+    <h2>Lección para Mi Territorio</h2>
+
+    <div class="quote-block">
+      <p class="quote-text">Argentina demuestra que construir desde las provincias funciona: 13 leyes provinciales antes de la nacional. ¿Colombia podría empoderar a las gobernaciones para crear programas departamentales de CP sin esperar al Ministerio?</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card" style="border-left:4px solid var(--primary)">
+        <h4 style="color:var(--primary)">Transferencia 1: PrAO — Acceso descentralizado opioides</h4>
+        <p>El modelo de Farmacopea Nacional + instrucción a farmacéuticos para preparados magistrales podría aplicarse en Colombia para superar la barrera del 0–10% de morfina oral en primer nivel.</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--accent)">
+        <h4 style="color:var(--accent)">Transferencia 2: CP Pediátricos — 59 equipos</h4>
+        <p>Colombia tiene solo 9 equipos para 6.410 NNA con sufrimiento grave. El modelo argentino de red federal pediátrica con subsidios del INC podría replicarse.</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--amber)">
+        <h4 style="color:var(--amber)">Transferencia 3: Legislación provincial como motor</h4>
+        <p>Antes de la ley nacional, 13 provincias argentinas ya tenían leyes de CP. ¿Su departamento podría impulsar una ordenanza departamental de CP?</p>
+      </div>
+    </div>
+
+    <div class="callout lesson">
+      🗣️ <strong>Cierre exposición (2 min):</strong> Cada integrante nombra UNA transferencia de Argentina viable en su territorio y la barrera principal a superar.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="fuentes">
+  <div class="container fade-in">
+    <span class="section-label">Bibliografía</span>
+    <h2>Fuentes de Consulta</h2>
+    <ul class="source-list">
+      <li>Tripodoro, V. et al. (2025). <em>Atlas de Cuidados Paliativos de las Américas.</em> Reporte País Argentina. Houston: IAHPC Press.</li>
+      <li>Pastrana, T. et al. (2021). <em>Atlas CP en Latinoamérica 2020.</em> 2.ª ed. ALCP/IAHPC/U. Navarra.</li>
+      <li>Ley 27678 (2022). Cuidados Paliativos. Honorable Congreso de la Nación Argentina. B.O. 21/07/2022.</li>
+      <li>Decreto 311/2023. Reglamentación Ley 27678. Poder Ejecutivo Nacional.</li>
+      <li>Lafferriere, J. N. (2023). Los CP en la normativa jurídica sobre salud en Argentina. <em>Rev Arg Salud Pública</em>, 15, e113.</li>
+      <li>Ley 26529/2009 (Derechos del Paciente) y Ley 26742/2012 (mod. "muerte digna").</li>
+      <li>Resolución 1253-E/2016. Programa Nacional de CP. Ministerio de Salud Argentina.</li>
+      <li>Bonilla, P. (2021). Cuidados paliativos en Latinoamérica. <em>Rev Nutr Clín Metab</em>, 4(2), 4–13.</li>
+      <li>FLACSO Argentina (2022). Ley Nacional de CP en Argentina — Análisis.</li>
+      <li>LegisAlud Argentina. Atlas normativo CP. legisalud.gov.ar/atlas/cuidados_paliativos.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p class="uni">Universidad Antonio Nariño — Facultad de Enfermería</p>
+  <p>Maestría en Cuidados Paliativos · Grupo 2 · País: Argentina · 6 de marzo de 2026</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add('visible')})},{threshold:.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const secs=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.sticky-nav a');
+window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{window.scrollY>=s.offsetTop-100&&(c=s.id)});navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c))});
+</script>
+</body>
+</html>

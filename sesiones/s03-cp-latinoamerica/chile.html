@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo 4 — Chile: Cuidados Paliativos</title>
+<style>
+:root{--bg:#f5f0f0;--surface:#fff;--surface2:#ede4e4;--card:#fff;--border:#d4c4c4;--text:#3a2828;--text-muted:#6e5555;--heading:#2a1818;--white:#fff;--primary:#b91c1c;--primary-light:#ef4444;--primary-dim:#991b1b;--teal:#0891b2;--sky:#0284c7;--blue:#2563eb;--amber:#d97706;--rose:#e11d48;--green:#16a34a;--accent:#dc2626;--serif:Georgia, 'Times New Roman', serif;--sans:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;--mono:ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace;--radius:12px;--shadow:0 2px 12px rgba(185,28,28,.06);--shadow-lg:0 8px 30px rgba(185,28,28,.09)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;font-size:15.5px}
+.hero{background:linear-gradient(135deg,#7f1d1d 0%,#b91c1c 40%,#0284c7 100%);color:white;padding:4rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");z-index:0}
+.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+.hero .flag{font-size:4rem;margin-bottom:.5rem}.hero .tag{display:inline-block;padding:.3rem 1.2rem;border:1px solid rgba(255,255,255,.4);border-radius:999px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;font-weight:700}
+.hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.15;margin-bottom:.8rem}
+.hero .subtitle{font-size:1rem;opacity:.85;max-width:600px;margin:0 auto 1.5rem;font-weight:300}
+.hero-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.hero-badges span{font-size:.72rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:.3rem .8rem;border-radius:999px;font-weight:600}
+.sticky-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:.5rem 1rem;display:flex;gap:.3rem;overflow-x:auto;justify-content:center;flex-wrap:wrap}
+.sticky-nav a{color:var(--text-muted);text-decoration:none;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.35rem .7rem;border-radius:6px;transition:all .2s;white-space:nowrap}
+.sticky-nav a:hover,.sticky-nav a.active{color:var(--primary);background:rgba(185,28,28,.06)}
+.container{max-width:960px;margin:0 auto;padding:0 1.5rem}section{padding:3.5rem 0}
+.section-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:700;margin-bottom:.4rem;font-family:var(--mono)}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;background:var(--primary);color:white;border-radius:50%;font-family:var(--mono);font-weight:700;font-size:.82rem;margin-right:.6rem;vertical-align:middle}
+h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--heading);margin-bottom:.5rem;line-height:1.2}
+h3{font-family:var(--serif);font-size:1.15rem;color:var(--heading);margin:1.8rem 0 .5rem}
+h4{font-size:.82rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin:1.2rem 0 .4rem;font-family:var(--mono)}
+p{margin-bottom:.9rem}.lead{font-size:1rem;color:var(--text-muted);font-weight:300}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;margin:.8rem 0;box-shadow:var(--shadow);transition:box-shadow .3s,transform .25s}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin:1.2rem 0}
+.stat-card{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:1px solid #fecaca;border-radius:var(--radius);padding:1.2rem;text-align:center}
+.stat-card .big{font-family:var(--mono);font-size:1.8rem;font-weight:700;color:var(--primary);line-height:1.1;margin-bottom:.2rem}
+.stat-card .label{font-size:.75rem;color:var(--text-muted);line-height:1.35}
+.timeline{position:relative;margin:1.5rem 0;padding-left:2.2rem}
+.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--primary),var(--sky),var(--teal))}
+.tl-item{position:relative;margin-bottom:1rem;padding:.8rem 1rem;background:var(--white);border-radius:8px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.tl-item::before{content:'';position:absolute;left:-1.95rem;top:1rem;width:10px;height:10px;border-radius:50%;background:var(--primary);border:2px solid var(--bg);z-index:2}
+.tl-item.key{border-left:3px solid var(--amber)}.tl-item.key::before{background:var(--amber)}
+.tl-year{font-family:var(--mono);font-size:.75rem;color:var(--primary);font-weight:700}
+.tl-title{font-weight:700;color:var(--heading);font-size:.88rem}
+.tl-desc{font-size:.8rem;color:var(--text-muted);margin-top:.1rem;line-height:1.45}
+.data-table{width:100%;border-collapse:separate;border-spacing:0;margin:1rem 0;font-size:.82rem;background:white;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.data-table thead th{background:var(--primary);color:white;font-weight:700;padding:.6rem .7rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+.data-table td{padding:.55rem .7rem;border-bottom:1px solid var(--border);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}.data-table tr:hover td{background:rgba(185,28,28,.02)}
+.badge{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.badge.fort{background:#dcfce7;color:#166534}.badge.avance{background:#fef3c7;color:#92400e}.badge.brecha{background:#fce7f3;color:#9d174d}.badge.info{background:#dbeafe;color:#1e40af}
+.callout{border-radius:8px;padding:1rem 1.2rem;margin:1rem 0;font-size:.88rem;border-left:4px solid}
+.callout.highlight{background:#fef2f2;border-color:var(--primary)}.callout.warn{background:#fffbeb;border-color:var(--amber)}.callout.lesson{background:#eff6ff;border-color:var(--sky)}.callout.danger{background:#fff1f2;border-color:var(--rose)}
+.source-list{list-style:none;margin:.6rem 0}.source-list li{padding:.3rem 0 .3rem .8rem;font-size:.76rem;color:var(--text-muted);position:relative;line-height:1.45}
+.source-list li::before{content:'■';position:absolute;left:0;color:var(--primary);font-size:.5rem;top:.45rem}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:2rem 0}
+footer{text-align:center;padding:2.5rem 1.5rem;color:var(--text-muted);font-size:.76rem;border-top:1px solid var(--border);background:var(--surface2)}
+footer .uni{font-weight:700;color:var(--heading);font-size:.85rem}
+.quote-block{text-align:center;padding:2rem 1.5rem;margin:1.5rem 0}
+.quote-block::before{content:'"';font-family:var(--serif);font-size:5rem;color:var(--primary);opacity:.1;display:block;line-height:.5}
+.quote-text{font-family:var(--serif);font-size:1.15rem;color:var(--heading);font-style:italic;max-width:600px;margin:0 auto;line-height:1.5}
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.hero{padding:3rem 1.5rem 2.5rem}.card-grid{grid-template-columns:1fr}.sticky-nav{justify-content:flex-start}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida a propósito:
+   no depende de los tokens de cada archivo, que son distintos entre sí. */
+.nav-sesion{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D; color:#FAF6EF; padding:.55rem 1rem; font-size:.82rem;
+  display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .6rem; line-height:1.6;
+}
+.nav-sesion a{color:#F5EEDD; text-decoration:none; border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876; font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876; outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 3"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 3 &middot; 6 mar 2026</span><a href="index.html">Panorama regional</a><a href="costa-rica.html">Costa Rica</a><a href="argentina.html">Argentina</a><a href="uruguay.html">Uruguay</a><span class="ns-actual" aria-current="page">Chile</span><a href="colombia-ante-el-espejo.html">Colombia ante el espejo</a><a href="desglose-normativo-colombia.html">Desglose normativo</a><a href="primer-corte-diagnostico-territorial.html">Primer corte</a></nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="flag">🇨🇱</div>
+    <span class="tag">Grupo 4 · Actividad Colaborativa</span>
+    <h1>Chile: Programa Pionero de Alivio del Dolor</h1>
+    <p class="subtitle">Desde 1994 con el Programa Nacional de Alivio del Dolor, garantía GES desde 2005 y Ley 21375/2021. Líder en consumo de opioides (S-DDD: 1.896)</p>
+    <div class="hero-badges">
+      <span>📊 Nivel 4 — Integración Avanzada</span>
+      <span>💊 S-DDD: 1.896 (1.° LATAM)</span>
+      <span>📜 Ley 21375 (2021)</span>
+      <span>🏥 136 unidades CP hospitalarias</span>
+    </div>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <a href="#historia">1. Historia</a>
+  <a href="#normatividad">2. Normatividad</a>
+  <a href="#logros">3. Logros</a>
+  <a href="#estadisticas">4. Estadísticas</a>
+  <a href="#opioides">5. Opioides</a>
+  <a href="#educacion">6. Educación</a>
+  <a href="#leccion">Lección Territorial</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
+
+<section id="historia">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">1</span> Lineamiento</span>
+    <h2>Historia de los Cuidados Paliativos en Chile</h2>
+    <p class="lead">Chile construyó su sistema de CP desde el cáncer, con un programa ministerial desde 1994 y la garantía GES desde 2005, expandiéndose a no oncológicos con la Ley 21375 en 2021.</p>
+
+    <div class="timeline">
+      <div class="tl-item key"><span class="tl-year">1994</span> <span class="tl-title">⭐ Programa Nacional de Alivio del Dolor por Cáncer Terminal y CP</span><div class="tl-desc">El MINSAL crea el primer programa nacional de CP en Chile, uno de los más tempranos en LATAM. Se enfoca en pacientes con cáncer terminal, estableciendo protocolos de evaluación, tratamiento y control de síntomas. Incluye conformación de unidades de CP en hospitales.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">2005</span> <span class="tl-title">⭐ Garantía GES — AUGE/GES N.° 4</span><div class="tl-desc">Los CP se incluyen como Garantía Explícita en Salud (GES), Problema de Salud N.° 4: "Alivio del dolor y cuidados paliativos por cáncer avanzado". Garantiza acceso oportuno y protección financiera a todo paciente con diagnóstico confirmado de cáncer, de cualquier edad. Chile se convierte en el primer país de LATAM en garantizar CP por ley con financiamiento explícito.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2016</span> <span class="tl-title">Ampliación GES — Dolor no progresivo</span><div class="tl-desc">La garantía GES se amplía a pacientes con dolor por cáncer no progresivo, expandiendo la cobertura más allá de la fase terminal.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">2021 (oct.)</span> <span class="tl-title">⭐ Ley 21375 — Cuidados Paliativos Universales</span><div class="tl-desc">Promulgada por el Presidente Piñera. Consagra como derecho universal el acceso a CP para TODAS las personas con enfermedades terminales o graves (no solo oncológicas). Vigencia: 21 de marzo de 2022. Presupuesto: $13 mil millones CLP para profesionales, fármacos e insumos. La OPS la celebra como hito regional.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2022</span> <span class="tl-title">Lineamientos MINSAL + Decreto 41</span><div class="tl-desc">El MINSAL emite los Lineamientos para el Modelo de Atención de CP Universales. El Decreto 41/2023 define prestaciones mínimas, modelos de atención institucional y domiciliario, y niveles de complejidad. Se proyecta sumar 5.000 pacientes no oncológicos el primer año.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2023–2025</span> <span class="tl-title">Implementación y evaluación</span><div class="tl-desc">El enfoque paliativo transiciona hacia enfermedades crónicas en contexto de multimorbilidad, dependencia y fragilidad. 136 unidades de CP existentes en hospitales de distintos niveles de complejidad se amplían progresivamente. BCN Chile publica informe de evaluación sobre implementación.</div></div>
+    </div>
+
+    <div class="callout highlight">
+      🔑 <strong>Dato clave:</strong> Chile es el país de LATAM con mayor trayectoria de CP financiados con presupuesto explícito del Estado: desde 2005 la GES garantiza CP con protección financiera. Esto significa que el paciente NO paga por los CP — un modelo muy distinto al fragmentado EPS-IPS de Colombia.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="normatividad">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">2</span> Lineamiento</span>
+    <h2>Marco Legal y Normatividad</h2>
+
+    <table class="data-table">
+      <thead><tr><th>Componente</th><th>Detalle</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Programa Nacional CP</td><td>Desde 1994 (MINSAL) — 30+ años</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Garantía GES CP</td><td>Problema N.° 4 desde 2005, ampliado 2016</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Ley CP Universales</td><td>Ley 21375/2021 (vigencia marzo 2022)</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Autoridad MINSAL</td><td>DIPRECE + Subsecretaría Redes Asistenciales</td><td><span class="badge avance">Parcial</span></td></tr>
+        <tr><td>Decreto reglamentario</td><td>Decreto 41/2023 — Prestaciones mínimas</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Voluntad anticipada (PDA)</td><td>Regulada Ley 20584 + Ley 21375</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Eutanasia</td><td>No regulada</td><td><span class="badge brecha">No</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="card">
+      <h4>📋 Ley 21375 — Derechos del paciente CP</h4>
+      <p>El artículo 3° consagra expresamente: acceso a CP según la autoridad sanitaria; información oportuna y comprensible sobre diagnóstico, pronóstico y tratamientos; acompañamiento por familiares o persona designada; apoyo educativo y psicológico a cuidadores no remunerados incluso después del fallecimiento; y autonomía del paciente en decisiones (Ley 20584). Fuente: BCN Chile, Informe CP Universales (2025).</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="logros">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">3</span> Lineamiento</span>
+    <h2>Logros Principales</h2>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big">1.896</div><div class="label">S-DDD opioides/millón/día<br><small>1.° en LATAM (Atlas 2025)</small></div></div>
+      <div class="stat-card"><div class="big">136</div><div class="label">Unidades CP hospitalarias<br><small>Distintos niveles complejidad</small></div></div>
+      <div class="stat-card"><div class="big">13.41</div><div class="label">Equipos CP / millón hab.<br><small>3.° en LATAM (Atlas 2020)</small></div></div>
+      <div class="stat-card"><div class="big">21</div><div class="label">Servicios pediátricos CP<br><small>Atlas Américas 2025</small></div></div>
+    </div>
+
+    <div class="card">
+      <h4>🏆 GES: Modelo de financiamiento garantizado</h4>
+      <p>El sistema GES es el diferenciador de Chile: desde 2005, los CP para cáncer tienen garantía explícita de acceso, oportunidad, protección financiera y calidad. Con la Ley 21375, se extiende a enfermedades no oncológicas con $13 mil millones CLP de presupuesto. Es el modelo más robusto de financiamiento CP en LATAM.</p>
+    </div>
+    <div class="card">
+      <h4>💊 Líder en consumo de opioides</h4>
+      <p>Con 1.896 S-DDD/millón/día, Chile tiene el mayor consumo de opioides de LATAM, casi 3 veces el de Colombia (645) y superior al promedio regional (1.313). Esto refleja una cultura de prescripción más permisiva respaldada por el programa nacional y la GES. Fuente: Atlas Américas 2025.</p>
+    </div>
+    <div class="card">
+      <h4>🏥 Articulación oncológico + no oncológico</h4>
+      <p>Chile tiene la experiencia más larga de LATAM en transicionar CP de "solo oncológicos" a "universales". Los Lineamientos MINSAL 2022 definen un modelo de atención integral con niveles de complejidad proporcionales a las necesidades del paciente. Fuente: MINSAL Chile, Lineamientos Modelo Atención CP Universales (2022).</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="estadisticas">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">4</span> Lineamiento</span>
+    <h2>Estadísticas Clave</h2>
+
+    <table class="data-table">
+      <thead><tr><th>Indicador</th><th>Valor</th><th>Fuente</th></tr></thead>
+      <tbody>
+        <tr><td>Población</td><td>19.5 millones</td><td>INE Chile</td></tr>
+        <tr><td>Clasificación CP</td><td><span class="badge fort">Nivel 4</span></td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Unidades CP hospitalarias</td><td>136</td><td>MINSAL Chile (2021)</td></tr>
+        <tr><td>Equipos CP / millón hab.</td><td>13.41 (3.° LATAM)</td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>Servicios pediátricos CP</td><td>21</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Opioides S-DDD</td><td><span class="badge fort">1.896</span> / millón hab. / día (1.° LATAM)</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Morfina oral 1er nivel</td><td>30–70% disponibilidad</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>CP obligatorio Medicina</td><td>N/D (en proceso)</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Especialidad médica</td><td>En proceso de reconocimiento</td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>GES CP cáncer</td><td>Desde 2005 — 20+ años</td><td>Superintendencia Salud Chile</td></tr>
+        <tr><td>Presupuesto CP 2022</td><td>$13 mil millones CLP</td><td>MINSAL Chile</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="opioides">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">5</span> Lineamiento</span>
+    <h2>Acceso a Opioides</h2>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big" style="color:var(--primary)">1.896</div><div class="label">S-DDD / millón hab. / día<br><small>Colombia: 645 | LATAM prom.: ~1.313</small></div></div>
+      <div class="stat-card"><div class="big" style="color:var(--amber)">30–70%</div><div class="label">Morfina oral en 1er nivel<br><small>Colombia: 0–10%</small></div></div>
+    </div>
+
+    <div class="card">
+      <h4>💊 El mayor consumo de opioides de LATAM</h4>
+      <p>Chile consume 1.896 S-DDD/millón/día, el más alto de Latinoamérica y significativamente superior al promedio regional. El programa GES garantiza financiamiento para fármacos (incluidos opioides) desde 2005. La disponibilidad de morfina oral en primer nivel (30–70%) es superior a Colombia (0–10%) pero inferior a Costa Rica y Uruguay (70–100%).</p>
+      <p>El alto consumo se explica por: programa nacional con 30+ años, GES con protección financiera que elimina barrera económica, 136 unidades hospitalarias con prescripción activa, y orientaciones técnicas actualizadas del MINSAL.</p>
+    </div>
+
+    <div class="callout highlight">
+      💡 <strong>Lección para Colombia:</strong> Chile demuestra que el financiamiento garantizado (GES) es el motor del acceso a opioides. Cuando el paciente no paga, la barrera económica desaparece. Colombia tiene los CP en el POS pero la fragmentación EPS-IPS crea barreras que Chile resolvió con la GES centralizada.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="educacion">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">6</span> Lineamiento</span>
+    <h2>Educación e Investigación</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>🎓 Formación en proceso</h4>
+        <p>La Medicina Paliativa se encuentra en proceso de reconocimiento como especialidad. La Ley 21375 incluye la formación como eje de implementación. La experiencia del Programa Nacional de Alivio del Dolor (30+ años) ha generado capacidad profesional significativa en los hospitales públicos.</p>
+      </div>
+      <div class="card">
+        <h4>🔬 Investigación y evaluación</h4>
+        <p>Chile tiene producción científica creciente. La BCN publicó en 2025 un informe evaluativo completo sobre implementación de CP universales. Estudios como el de Talcahuano (2022–2023) evalúan la implementación de la Ley 21375 en terreno, identificando fortalezas (voluntad del personal) y debilidades (falta de lineamientos claros y recursos).</p>
+      </div>
+    </div>
+
+    <h3>Comparación educativa con Colombia</h3>
+    <table class="data-table">
+      <thead><tr><th>Indicador</th><th>🇨🇱 Chile</th><th>🇨🇴 Colombia</th></tr></thead>
+      <tbody>
+        <tr><td>CP obligatorio Medicina</td><td>N/D (en proceso)</td><td>6/63 (9.5%)</td></tr>
+        <tr><td>CP obligatorio Enfermería</td><td>N/D</td><td><span class="badge fort">15/23 (65%)</span></td></tr>
+        <tr><td>Especialidad médica</td><td><span class="badge avance">En proceso</span></td><td><span class="badge fort">Sí</span></td></tr>
+        <tr><td>CP pediátricos equipos</td><td>21</td><td><span class="badge brecha">9</span></td></tr>
+        <tr><td>Programa nacional CP</td><td><span class="badge fort">30+ años (1994)</span></td><td>Plan 2022–2026</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="leccion">
+  <div class="container fade-in">
+    <span class="section-label">🎯 Cierre obligatorio</span>
+    <h2>Lección para Mi Territorio</h2>
+
+    <div class="quote-block">
+      <p class="quote-text">Chile demuestra que 30 años de programa nacional + financiamiento GES garantizado producen la mayor cobertura de opioides y la red más extensa de CP oncológicos de LATAM. El desafío ahora es la universalización a no oncológicos — exactamente donde Colombia también necesita crecer.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card" style="border-left:4px solid var(--primary)">
+        <h4 style="color:var(--primary)">Transferencia 1: Modelo GES — Financiamiento garantizado</h4>
+        <p>En Chile, el paciente con cáncer tiene CP garantizados sin costo directo desde 2005. ¿Cómo podría Colombia garantizar financiamiento explícito para CP, superando la fragmentación EPS-IPS? ¿Podría crearse una "GES colombiana" para CP?</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--sky)">
+        <h4 style="color:var(--sky)">Transferencia 2: Articulación oncológico + no oncológico</h4>
+        <p>Chile lleva 30 años con CP oncológicos y ahora amplía a no oncológicos con estructura ministerial. Colombia necesita esa misma transición: la Ley 1733 cubre ambos, pero la implementación sigue centrada en cáncer.</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--amber)">
+        <h4 style="color:var(--amber)">Transferencia 3: 136 unidades hospitalarias + niveles complejidad</h4>
+        <p>Chile organiza sus 136 unidades en niveles de complejidad proporcionales. ¿Su departamento tiene unidad de CP hospitalaria? ¿A qué nivel de complejidad pertenece?</p>
+      </div>
+    </div>
+
+    <div class="callout lesson">
+      🗣️ <strong>Cierre exposición (2 min):</strong> Cada integrante nombra UNA transferencia de Chile viable en su territorio y la barrera principal a superar.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="fuentes">
+  <div class="container fade-in">
+    <span class="section-label">Bibliografía</span>
+    <h2>Fuentes de Consulta</h2>
+    <ul class="source-list">
+      <li>Tripodoro, V. et al. (2025). <em>Atlas de Cuidados Paliativos de las Américas.</em> Reporte País Chile. Houston: IAHPC Press.</li>
+      <li>Pastrana, T. et al. (2021). <em>Atlas CP en Latinoamérica 2020.</em> 2.ª ed. ALCP/IAHPC/U. Navarra.</li>
+      <li>Ley 21375/2021 — CP Universales. BCN Chile. bcn.cl/leychile/navegar?idNorma=1166846.</li>
+      <li>OPS/OMS (2 dic. 2021). Chile: nueva ley consagra como derecho universal el acceso a CP.</li>
+      <li>MINSAL Chile (2021). Nueva ley consagra como derecho universal los CP.</li>
+      <li>MINSAL Chile (2022). Lineamientos Modelo Atención CP Universales. DIPRECE.</li>
+      <li>Decreto 41/2023 MINSAL. Reglamento Ley 21375. Prestaciones mínimas CP.</li>
+      <li>BCN Chile (2025). <em>Cuidados paliativos universales en Chile.</em> Informe evaluativo.</li>
+      <li>MINSAL Chile (2023). Implementación Ley 21375. Presentación Senado.</li>
+      <li>Rossetti J. et al. (2023). La Ley de CP universales según el personal de salud: Talcahuano. <em>Rev Chil Atenc Prim Salud Fam.</em></li>
+      <li>Bonilla, P. (2021). Cuidados paliativos en Latinoamérica. <em>Rev Nutr Clín Metab</em>, 4(2), 4–13.</li>
+      <li>Superintendencia de Salud Chile. Garantías GES — Problema N.° 4.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p class="uni">Universidad Antonio Nariño — Facultad de Enfermería</p>
+  <p>Maestría en Cuidados Paliativos · Grupo 4 · País: Chile · 6 de marzo de 2026</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add('visible')})},{threshold:.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const secs=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.sticky-nav a');
+window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{window.scrollY>=s.offsetTop-100&&(c=s.id)});navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c))});
+</script>
+</body>
+</html>

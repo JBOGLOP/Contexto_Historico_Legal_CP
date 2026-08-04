@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desglose Normativo — Colombia ante el Espejo</title>
+<style>
+:root {
+  --bg: #f0f7fa;
+  --surface: #e6f0f5;
+  --surface2: #dce9f0;
+  --card: #ffffff;
+  --border: #bcd4e6;
+  --text: #2c4356;
+  --text-muted: #5a7a8f;
+  --heading: #0f2b3d;
+  --emerald: #059669;
+  --emerald-dim: #047857;
+  --sky: #0284c7;
+  --blue: #0369a1;
+  --indigo: #4338ca;
+  --violet: #6d28d9;
+  --amber: #b45309;
+  --rose: #be123c;
+  --serif:Georgia, 'Times New Roman', serif;
+  --sans:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --mono:ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace;
+  --radius: 12px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+
+/* HERO */
+.hero { text-align: center; padding: 4rem 2rem 3rem; background: linear-gradient(to bottom, #dce9f0, var(--bg)); border-bottom: 1px solid var(--border); }
+.hero .tag { display: inline-block; padding: .4rem 1.5rem; border: 1px solid var(--emerald); color: var(--emerald); border-radius: 999px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 1.5rem; }
+.hero h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); color: var(--heading); line-height: 1.1; margin-bottom: 1rem; font-weight: 900; }
+.hero p { color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.05rem; margin-bottom: 1.5rem; }
+.hero .source { font-size: .85rem; color: var(--text-muted); font-style: italic; }
+
+/* CONTAINER & LAYOUT */
+.container { max-width: 1080px; margin: 0 auto; padding: 3rem 1.5rem; }
+.section-label { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--emerald); font-weight: 700; font-family: var(--mono); }
+h2 { font-family: var(--serif); font-size: 2.4rem; color: var(--heading); margin-bottom: 1rem; font-weight: 700; }
+h3 { font-family: var(--serif); font-size: 1.6rem; color: var(--heading); margin: 2rem 0 1rem; font-weight: 700; }
+
+/* FASES */
+.phase-bar { display: flex; gap: 1rem; border-radius: var(--radius); overflow: hidden; margin: 2rem 0 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.phase-bar .phase { flex: 1; padding: 1.8rem; display: flex; flex-direction: column; justify-content: center; transition: transform 0.2s; }
+.phase-bar .phase:hover { transform: translateY(-4px); }
+.phase-bar .phase:first-child { background: rgba(67,56,202,.08); }
+.phase-bar .phase:nth-child(2) { background: rgba(5,150,105,.08); }
+.phase-bar .phase:last-child { background: rgba(180,83,9,.08); }
+.phase-title { font-weight: 700; font-size: .9rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem; }
+.phase-years { font-family: var(--mono); font-size: 1.2rem; color: var(--heading); font-weight: 700; margin-bottom: .6rem; }
+.phase-desc { font-size: .88rem; color: var(--text-muted); line-height: 1.5; }
+
+/* TABS */
+.tabs { display: flex; gap: .5rem; margin: 2rem 0 1.5rem; flex-wrap: wrap; }
+.tab-btn {
+  background: var(--surface2);
+  border: 2px solid var(--border);
+  color: var(--text-muted);
+  padding: .65rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: .85rem;
+  font-weight: 600;
+  transition: all .25s;
+}
+.tab-btn:hover { border-color: var(--emerald-dim); color: var(--text); transform: translateY(-2px); }
+.tab-btn.active { background: var(--emerald); border-color: var(--emerald); color: white; }
+.tab-content { display: none; animation: fadeIn 0.4s ease; }
+.tab-content.active { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* TIMELINE MEJORADO */
+.timeline { display: flex; flex-direction: column; gap: 1rem; }
+.tl-item { 
+  background: var(--card); 
+  border: 2px solid var(--border); 
+  border-radius: 10px; 
+  padding: 1.5rem 1.8rem; 
+  display: grid; 
+  grid-template-columns: 80px 1fr; 
+  gap: 1.5rem; 
+  align-items: start; 
+  transition: all 0.25s;
+  position: relative;
+}
+.tl-item:hover { 
+  border-color: var(--emerald); 
+  transform: translateX(6px); 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.tl-item.key { 
+  border-left: 5px solid var(--amber); 
+  background: linear-gradient(to right, rgba(180,83,9,.03), var(--card));
+}
+
+/* Código de color por fase */
+.tl-item.fase-fundacional { border-left-color: var(--indigo); }
+.tl-item.fase-consolidacion { border-left-color: var(--emerald); }
+.tl-item.fase-ampliacion { border-left-color: var(--amber); }
+
+.tl-year { 
+  font-family: var(--mono); 
+  font-weight: 700; 
+  color: var(--emerald); 
+  font-size: 1.1rem;
+  background: rgba(5,150,105,.08);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  text-align: center;
+  align-self: start;
+}
+.tl-content { display: flex; flex-direction: column; gap: 0.5rem; }
+.tl-norm { 
+  font-weight: 700; 
+  color: var(--heading); 
+  font-size: 1.1rem;
+  font-family: var(--serif);
+  line-height: 1.3;
+}
+.tl-desc { 
+  font-size: .95rem; 
+  color: var(--text-muted); 
+  line-height: 1.6; 
+}
+.tl-badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.3rem;
+}
+.tl-badge.fundacional { background: rgba(67,56,202,.1); color: var(--indigo); }
+.tl-badge.consolidacion { background: rgba(5,150,105,.1); color: var(--emerald); }
+.tl-badge.ampliacion { background: rgba(180,83,9,.1); color: var(--amber); }
+
+/* CARDS DIDÁCTICAS EXPANDIDAS */
+.law-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 2rem; position: relative; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; gap: 1.2rem; }
+.law-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,40,80,.08); border-color: var(--emerald-dim); }
+.law-card.estrella { border-left: 5px solid var(--amber); background: rgba(180,83,9,0.01); }
+.law-card.piedra { border-left: 5px solid var(--emerald); background: rgba(5,150,105,0.02); }
+
+.law-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.2rem; border-bottom: 2px solid var(--surface2); padding-bottom: 1.2rem; }
+.law-year { font-family: var(--mono); font-size: 1.7rem; font-weight: 700; color: var(--emerald); }
+.law-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--heading); margin-top: 0.3rem; line-height: 1.2; }
+.law-badge { padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--surface2); color: var(--text); }
+.law-badge.fundacional { background: rgba(67,56,202,.1); color: var(--indigo); }
+.law-badge.piedra { background: var(--emerald); color: white; }
+.law-badge.consolidacion { background: rgba(5,150,105,.1); color: var(--emerald); }
+.law-badge.ampliacion { background: rgba(180,83,9,.1); color: var(--amber); }
+
+.law-body { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
+@media(min-width: 768px) { .law-body { grid-template-columns: 2fr 1fr; } }
+
+.law-desc { font-size: 1rem; color: var(--text); }
+.law-desc ul { margin-top: 0.7rem; padding-left: 1.4rem; }
+.law-desc li { margin-bottom: 0.5rem; color: var(--text-muted); line-height: 1.6; }
+.law-desc strong { color: var(--heading); }
+
+.law-highlight { background: var(--surface); padding: 1.2rem; border-radius: 8px; border-left: 4px solid var(--sky); font-size: 0.9rem; line-height: 1.6; }
+.law-highlight.warn { border-left-color: var(--amber); background: rgba(180,83,9,.04); }
+.law-highlight.critical { border-left-color: var(--rose); background: rgba(190,18,60,.04); }
+.law-highlight strong { color: var(--heading); display: block; margin-bottom: 0.5rem; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75rem; }
+
+.callout {
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  font-size: .95rem;
+  border: 2px solid;
+  line-height: 1.6;
+}
+.callout.info { background: rgba(2,132,199,.06); border-color: rgba(2,132,199,.3); }
+.callout.warn { background: rgba(180,83,9,.06); border-color: rgba(180,83,9,.3); }
+
+/* FOOTER */
+footer { text-align: center; padding: 2.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; line-height: 1.8; }
+footer strong { color: var(--heading); }
+
+@media (max-width: 768px) {
+  .phase-bar { flex-direction: column; }
+  .law-body { grid-template-columns: 1fr; }
+  .tl-item { grid-template-columns: 1fr; }
+}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida a propósito:
+   no depende de los tokens de cada archivo, que son distintos entre sí. */
+.nav-sesion{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D; color:#FAF6EF; padding:.55rem 1rem; font-size:.82rem;
+  display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .6rem; line-height:1.6;
+}
+.nav-sesion a{color:#F5EEDD; text-decoration:none; border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876; font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876; outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 3"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 3 &middot; 6 mar 2026</span><a href="index.html">Panorama regional</a><a href="costa-rica.html">Costa Rica</a><a href="argentina.html">Argentina</a><a href="uruguay.html">Uruguay</a><a href="chile.html">Chile</a><a href="colombia-ante-el-espejo.html">Colombia ante el espejo</a><span class="ns-actual" aria-current="page">Desglose normativo</span><a href="primer-corte-diagnostico-territorial.html">Primer corte</a></nav>
+
+<header class="hero">
+  <span class="tag">Sesión 3 · Material de Clase</span>
+  <h1>Desglose Normativo</h1>
+  <p>25 normas en 17 años: de la invisibilidad a la consolidación del derecho en Cuidados Paliativos</p>
+  <p class="source">Fuente: OCCP — Infografía cronológica de políticas públicas (2006–2023)</p>
+</header>
+
+<div class="container">
+  <span class="section-label">Línea de Tiempo Analítica</span>
+  <h2>Las Tres Fases del Cuidado Paliativo en Colombia</h2>
+  
+  <div class="phase-bar">
+    <div class="phase">
+      <div class="phase-title" style="color:var(--indigo)">1. Fase Fundacional</div>
+      <div class="phase-years">2006 — 2013</div>
+      <div class="phase-desc">Los CP se ven apenas como un componente secundario del tratamiento del cáncer, sin autonomía propia. Primera mención legislativa en Ley Sandra Ceballos (2010).</div>
+    </div>
+    <div class="phase">
+      <div class="phase-title" style="color:var(--emerald)">2. Consolidación</div>
+      <div class="phase-years">2014 — 2018</div>
+      <div class="phase-desc">Nace la Ley 1733 "Consuelo Devis Saavedra", la piedra angular que estructura los CP como un derecho autónomo para múltiples patologías crónicas, terminales e irreversibles.</div>
+    </div>
+    <div class="phase">
+      <div class="phase-title" style="color:var(--amber)">3. Ampliación y Brechas</div>
+      <div class="phase-years">2019 — 2023</div>
+      <div class="phase-desc">Se regula la eutanasia (2021), el rol del cuidador (2023) y la obligatoriedad educativa (2022). La ley avanza rápido, pero la implementación territorial se queda atrás.</div>
+    </div>
+  </div>
+
+  <div class="callout info">
+    📊 <strong>Nota metodológica:</strong> Colombia cuenta con 25+ normas que impactan directamente los cuidados paliativos. Esta selección presenta las más significativas organizadas cronológicamente, con dos vistas: cronología completa y solo hitos clave para análisis rápido.
+  </div>
+
+  <span class="section-label">Vista Interactiva</span>
+  <h2>Cronología Normativa Completa</h2>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('tab-all',this)">📋 Cronología completa (25 normas)</button>
+    <button class="tab-btn" onclick="showTab('tab-key',this)">⭐ Solo hitos clave (7 normas)</button>
+    <button class="tab-btn" onclick="showTab('tab-expanded',this)">📖 Análisis expandido (9 normas)</button>
+  </div>
+
+  <div id="tab-all" class="tab-content active">
+    <div class="callout info" style="margin-bottom: 1.5rem;">
+      <strong>Código de colores por fase:</strong><br>
+      <span style="display: inline-block; width: 4px; height: 16px; background: var(--indigo); margin: 0 0.3rem; vertical-align: middle;"></span> Fundacional (2006-2013) · 
+      <span style="display: inline-block; width: 4px; height: 16px; background: var(--emerald); margin: 0 0.3rem; vertical-align: middle;"></span> Consolidación (2014-2018) · 
+      <span style="display: inline-block; width: 4px; height: 16px; background: var(--amber); margin: 0 0.3rem; vertical-align: middle;"></span> Ampliación (2019-2023) · 
+      <span style="display: inline-block; padding: 0.2rem 0.5rem; background: rgba(180,83,9,.1); border-left: 5px solid var(--amber); border-radius: 4px; font-size: 0.85rem; margin-left: 0.5rem;">★ Hito clave</span>
+    </div>
+    
+    <div class="timeline">
+      <div class="tl-item fase-ampliacion">
+        <span class="tl-year">2023</span>
+        <div class="tl-content">
+          <span class="tl-norm">Ley 2297</span>
+          <div class="tl-desc">Acceso al servicio de cuidador. Visibiliza el rol no médico en el cuidado domiciliario, pilar del soporte paliativo continuo.</div>
+          <span class="tl-badge ampliacion">Red de Apoyo</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-ampliacion">
+        <span class="tl-year">2022</span>
+        <div class="tl-content">
+          <span class="tl-norm">Ley 2241</span>
+          <div class="tl-desc">Fortalece educación en CP. Obliga integrar CP en planes de estudio de Ciencias de la Salud, Psicología y Trabajo Social. Modifica Art. 7 Ley 1733. Reconoce explícitamente <strong>telemedicina y tele-asistencia</strong> para CP.</div>
+          <span class="tl-badge ampliacion">Educación y Telesalud</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-ampliacion">
+        <span class="tl-year">2021</span>
+        <div class="tl-content">
+          <span class="tl-norm">Resolución 971</span>
+          <div class="tl-desc">Recepción, trámite y reporte de solicitudes de <strong>eutanasia</strong>. Regula el funcionamiento del "Comité Científico-Interdisciplinario para el Derecho a Morir con Dignidad".</div>
+          <span class="tl-badge ampliacion">Fin de la Vida</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-ampliacion">
+        <span class="tl-year">2020</span>
+        <div class="tl-content">
+          <span class="tl-norm">Ley 2055 + Res. 315</span>
+          <div class="tl-desc">Convención derechos personas mayores + Actualización listados sustancias fiscalizadas (base regulatoria opioides).</div>
+          <span class="tl-badge ampliacion">Medicamentos</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-ampliacion">
+        <span class="tl-year">2019</span>
+        <div class="tl-content">
+          <span class="tl-norm">Resolución 3100</span>
+          <div class="tl-desc">Habilitación de prestadores de servicios de salud. Define requisitos técnicos para IPS que ofrecen CP.</div>
+          <span class="tl-badge ampliacion">Servicios</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-consolidacion">
+        <span class="tl-year">2018</span>
+        <div class="tl-content">
+          <span class="tl-norm">Resolución 2665 + Lineamientos MdS</span>
+          <div class="tl-desc"><strong>Documento de Voluntad Anticipada (DVA):</strong> reglamenta operativamente quién, cómo y ante quién se puede formalizar. + Guía técnica nacional para atención integral en CP.</div>
+          <span class="tl-badge consolidacion">Autonomía</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-consolidacion">
+        <span class="tl-year">2018</span>
+        <div class="tl-content">
+          <span class="tl-norm">Resolución 285</span>
+          <div class="tl-desc">Derecho a morir con dignidad de Niños, Niñas y Adolescentes. Extiende la garantía constitucional a población pediátrica.</div>
+          <span class="tl-badge consolidacion">Pediátrico</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-consolidacion">
+        <span class="tl-year">2017</span>
+        <div class="tl-content">
+          <span class="tl-norm">Res. 3202 + 1477</span>
+          <div class="tl-desc">Manual de Rutas Integrales de Atención en Salud (RIAS) + Habilitación unidades funcionales para atención integral del cáncer.</div>
+          <span class="tl-badge consolidacion">Rutas de Atención</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-consolidacion">
+        <span class="tl-year">2016</span>
+        <div class="tl-content">
+          <span class="tl-norm">Circulares 022 y 023</span>
+          <div class="tl-desc"><strong>022:</strong> Garantiza acceso efectivo a opioides. <strong>023:</strong> Establece directrices sobre derechos de pacientes en CP. Desarrollo directo y práctico de Ley 1733.</div>
+          <span class="tl-badge consolidacion">Reglamentación</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-consolidacion">
+        <span class="tl-year">2016</span>
+        <div class="tl-content">
+          <span class="tl-norm">Res. 1441, 1416, 429</span>
+          <div class="tl-desc">Habilitación redes de prestadores + Manual inscripción IPS + Política Atención Integral en Salud (PAIS).</div>
+          <span class="tl-badge consolidacion">Habilitación</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-consolidacion">
+        <span class="tl-year">2015</span>
+        <div class="tl-content">
+          <span class="tl-norm">Ley Estatutaria 1751</span>
+          <div class="tl-desc">Eleva la salud a la categoría de <strong>derecho fundamental autónomo e irrenunciable.</strong> Sustento constitucional supremo para acceso universal a CP.</div>
+          <span class="tl-badge consolidacion">Derecho Fundamental</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-consolidacion" style="border-left-width: 6px; background: linear-gradient(to right, rgba(5,150,105,.05), var(--card));">
+        <span class="tl-year" style="background: var(--emerald); color: white;">2014</span>
+        <div class="tl-content">
+          <span class="tl-norm" style="color: var(--emerald); font-size: 1.2rem;">⭐ Ley 1733 — Consuelo Devis Saavedra</span>
+          <div class="tl-desc" style="color: var(--text);"><strong>PIEDRA ANGULAR.</strong> Regula CP para enfermedades terminales, crónicas, degenerativas e irreversibles. Define derecho a información, segunda opinión y firma de voluntad anticipada. Anterior a Argentina (2022), Chile (2021), Costa Rica (2022). Solo Uruguay (2008) la precede en la región.</div>
+          <span class="tl-badge consolidacion" style="background: var(--emerald); color: white;">PIEDRA ANGULAR</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-fundacional">
+        <span class="tl-year">2013</span>
+        <div class="tl-content">
+          <span class="tl-norm">Res. 1841 y 1383</span>
+          <div class="tl-desc">Plan Decenal Salud Pública 2012–2021 + Plan Decenal Control del Cáncer 2012–2021.</div>
+          <span class="tl-badge fundacional">Planificación</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-fundacional">
+        <span class="tl-year">2010</span>
+        <div class="tl-content">
+          <span class="tl-norm">⭐ Ley 1384 — Sandra Ceballos</span>
+          <div class="tl-desc"><strong>Primera mención legislativa explícita de CP en el país.</strong> Ley enfocada en atención integral del cáncer, menciona alivio del dolor como parte fundamental del tratamiento.</div>
+          <span class="tl-badge fundacional">Oncología</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-fundacional">
+        <span class="tl-year">2007</span>
+        <div class="tl-content">
+          <span class="tl-norm">Decreto 4747</span>
+          <div class="tl-desc">Relaciones entre prestadores de servicios de salud y entidades responsables de pago de servicios de salud.</div>
+          <span class="tl-badge fundacional">Sistema</span>
+        </div>
+      </div>
+      
+      <div class="tl-item fase-fundacional">
+        <span class="tl-year">2006</span>
+        <div class="tl-content">
+          <span class="tl-norm">Resolución 1478</span>
+          <div class="tl-desc">Control y vigilancia de sustancias fiscalizadas en el país. <strong>Base regulatoria de toda la cadena de opioides en Colombia.</strong></div>
+          <span class="tl-badge fundacional">Control de Medicamentos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-key" class="tab-content">
+    <div class="timeline">
+      <div class="tl-item key fase-ampliacion">
+        <span class="tl-year">2022</span>
+        <div class="tl-content">
+          <span class="tl-norm">Ley 2241</span>
+          <div class="tl-desc">Obligatoriedad educación CP en programas salud, psicología, trabajo social. Reconocimiento explícito de <strong>telemedicina</strong> para CP.</div>
+          <span class="tl-badge ampliacion">Educación y Telesalud</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-ampliacion">
+        <span class="tl-year">2021</span>
+        <div class="tl-content">
+          <span class="tl-norm">Resolución 971</span>
+          <div class="tl-desc">Reglamentación del procedimiento de <strong>eutanasia</strong>. Colombia: único país de los 5 modelos analizados con eutanasia regulada.</div>
+          <span class="tl-badge ampliacion">Fin de la Vida</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-consolidacion">
+        <span class="tl-year">2018</span>
+        <div class="tl-content">
+          <span class="tl-norm">Resolución 2665</span>
+          <div class="tl-desc"><strong>Documento de Voluntad Anticipada (DVA).</strong> Actualmente solo 10,5% de IPS tienen formularios activos.</div>
+          <span class="tl-badge consolidacion">Autonomía</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-consolidacion">
+        <span class="tl-year">2015</span>
+        <div class="tl-content">
+          <span class="tl-norm">Ley Estatutaria 1751</span>
+          <div class="tl-desc">Salud como derecho fundamental. Piso constitucional para exigir CP universales.</div>
+          <span class="tl-badge consolidacion">Derecho Fundamental</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-consolidacion" style="border-left-width: 6px; background: linear-gradient(to right, rgba(5,150,105,.05), var(--card));">
+        <span class="tl-year" style="background: var(--emerald); color: white;">2014</span>
+        <div class="tl-content">
+          <span class="tl-norm" style="color: var(--emerald); font-size: 1.2rem;">⭐ Ley 1733 — Consuelo Devis Saavedra</span>
+          <div class="tl-desc" style="color: var(--text);">Piedra angular de los CP en Colombia. Pionera regional: solo Uruguay (2008) la antecede.</div>
+          <span class="tl-badge consolidacion" style="background: var(--emerald); color: white;">PIEDRA ANGULAR</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-fundacional">
+        <span class="tl-year">2010</span>
+        <div class="tl-content">
+          <span class="tl-norm">⭐ Ley 1384 — Sandra Ceballos</span>
+          <div class="tl-desc">Primera mención legislativa de CP (vinculados a oncología).</div>
+          <span class="tl-badge fundacional">Oncología</span>
+        </div>
+      </div>
+      
+      <div class="tl-item key fase-fundacional">
+        <span class="tl-year">2006</span>
+        <div class="tl-content">
+          <span class="tl-norm">Resolución 1478</span>
+          <div class="tl-desc">Base regulatoria opioides. Sin esta norma, el manejo del dolor severo no tendría piso legal.</div>
+          <span class="tl-badge fundacional">Control de Medicamentos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-expanded" class="tab-content">
+    <h3>Análisis Expandido de las 9 Normas Esenciales</h3>
+
+    <div class="law-card">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2006</div>
+          <div class="law-title">Resolución 1478</div>
+        </div>
+        <span class="law-badge fundacional">Control de Medicamentos</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Establece el control y vigilancia de sustancias fiscalizadas en el país, creando las bases regulatorias de toda la cadena de opioides.</p>
+          <ul>
+            <li>Define cómo se prescriben, despachan y controlan los medicamentos especiales</li>
+            <li>Crea el marco para el Fondo Nacional de Estupefacientes (FNE)</li>
+            <li>Establece requisitos para prescriptores y dispensadores</li>
+          </ul>
+        </div>
+        <div class="law-highlight">
+          <strong>¿Por qué es importante?</strong>
+          Es la base regulatoria de toda la cadena de opioides en Colombia. Sin esta norma, el manejo del dolor severo no tendría piso legal para la morfina, hidromorfona, metadona y otros opioides esenciales.
+        </div>
+      </div>
+    </div>
+
+    <div class="law-card estrella">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2010</div>
+          <div class="law-title">Ley 1384 (Ley Sandra Ceballos)</div>
+        </div>
+        <span class="law-badge fundacional">Oncología</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Ley enfocada en la atención integral del cáncer en Colombia, que por primera vez menciona explícitamente los cuidados paliativos.</p>
+          <ul>
+            <li>Menciona el alivio del dolor como parte fundamental del tratamiento oncológico</li>
+            <li>Establece que los pacientes con cáncer tienen derecho a CP</li>
+            <li>Crea la base para integrar CP en la ruta oncológica</li>
+          </ul>
+        </div>
+        <div class="law-highlight">
+          <strong>Hito Histórico</strong>
+          Es la primera mención legislativa explícita de los Cuidados Paliativos en el país, aunque todavía subordinados al diagnóstico oncológico. Este es el punto de partida de la genealogía normativa que llevará a la Ley 1733.
+        </div>
+      </div>
+    </div>
+
+    <div class="law-card piedra">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2014</div>
+          <div class="law-title">Ley 1733 (Ley Consuelo Devis Saavedra)</div>
+        </div>
+        <span class="law-badge piedra">⭐ PIEDRA ANGULAR</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Regula el derecho a recibir cuidados paliativos en el país, <strong>desvinculándolos de ser exclusivos para el cáncer</strong>.</p>
+          <ul>
+            <li>Incluye enfermedades terminales, crónicas, degenerativas e irreversibles de cualquier etiología</li>
+            <li>Define el derecho a la información sobre su estado de salud y pronóstico</li>
+            <li>Establece el derecho a la segunda opinión médica</li>
+            <li>Crea el marco legal para el Documento de Voluntad Anticipada (DVA)</li>
+            <li>Garantiza el derecho al alivio del dolor y otros síntomas</li>
+          </ul>
+        </div>
+        <div class="law-highlight">
+          <strong>Para reflexionar en clase</strong>
+          Esta ley es anterior a las leyes de Argentina (2022), Chile (2021) y Costa Rica (2022). Solo Uruguay (2008) nos precede en la región. Colombia fue pionera en el papel. La pregunta crítica para los estudiantes es: ¿somos también pioneros en la práctica? Los datos del OCCP sugieren que no: morfina oral 0-10%, DVA al 10,5%, brechas territoriales de 95 veces entre Bogotá y Amazonas.
+        </div>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2015</div>
+          <div class="law-title">Ley Estatutaria 1751</div>
+        </div>
+        <span class="law-badge consolidacion">Derecho Fundamental</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Eleva la salud a la categoría de <strong>derecho fundamental autónomo e irrenunciable</strong>, independiente y no subordinado a otros derechos.</p>
+          <ul>
+            <li>Crea el sustento constitucional más alto para la salud en Colombia</li>
+            <li>Permite que los CP sean exigibles mediante tutela</li>
+            <li>Establece que el Estado debe garantizar disponibilidad, accesibilidad, aceptabilidad y calidad</li>
+          </ul>
+        </div>
+        <div class="law-highlight">
+          <strong>Impacto en CP</strong>
+          Al ser la salud un derecho fundamental, se genera el sustento constitucional supremo para exigir el acceso universal a los Cuidados Paliativos. Esto significa que un paciente en Caquetá, Córdoba o Guajira puede exigir por tutela acceso a morfina, a un equipo paliativo o a atención domiciliaria — independientemente de las barreras territoriales o administrativas.
+        </div>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2016</div>
+          <div class="law-title">Circulares 022 y 023</div>
+        </div>
+        <span class="law-badge consolidacion">Reglamentación</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Desarrollo directo y práctico de la Ley 1733, con dos circulares complementarias:</p>
+          <ul>
+            <li><strong>Circular 022:</strong> Garantiza el acceso efectivo a medicamentos opioides para el control del dolor</li>
+            <li><strong>023:</strong> Establece directrices claras sobre los derechos de los pacientes en CP</li>
+            <li>Ambas buscan operativizar la Ley 1733 en el sistema de salud</li>
+          </ul>
+        </div>
+        <div class="law-highlight warn">
+          <strong>Paradoja territorial</strong>
+          A pesar de la circular 022 que garantiza acceso a opioides, hoy la disponibilidad de morfina oral en el primer nivel urbano y rural sigue siendo del 0-10% según datos del OCCP. La norma existe, pero la cadena de suministro falla en el territorio. Este es un ejemplo perfecto de la tensión entre "norma que avanza" e "implementación que no".
+        </div>
+      </div>
+    </div>
+
+    <div class="law-card estrella">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2018</div>
+          <div class="law-title">Resolución 2665</div>
+        </div>
+        <span class="law-badge consolidacion">Autonomía</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Reglamenta operativamente el <strong>Documento de Voluntad Anticipada (DVA)</strong>, cumpliendo el mandato de la Ley 1733.</p>
+          <ul>
+            <li>Define quién puede firmar un DVA (cualquier persona mayor de 18 años en pleno uso de facultades)</li>
+            <li>Establece cómo se formaliza (ante notario o ante dos testigos)</li>
+            <li>Determina ante quién se presenta (médico tratante e IPS)</li>
+            <li>Regula cuándo y cómo se ejecuta</li>
+          </ul>
+        </div>
+        <div class="law-highlight critical">
+          <strong>Dato de la realidad</strong>
+          Actualmente, solo el 10,5% de las IPS cuentan con formularios activos de DVA. Esto significa que el 89,5% de las instituciones de salud en Colombia no están preparadas para recibir, gestionar y respetar la voluntad anticipada de sus pacientes. La norma existe desde 2018, pero la implementación sigue siendo marginal.
+        </div>
+      </div>
+    </div>
+
+    <div class="law-card estrella">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2021</div>
+          <div class="law-title">Resolución 971</div>
+        </div>
+        <span class="law-badge ampliacion">Fin de la vida</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Establece el protocolo para la recepción, trámite y reporte de solicitudes de <strong>eutanasia</strong>.</p>
+          <ul>
+            <li>Regula el funcionamiento del "Comité Científico-Interdisciplinario para el Derecho a Morir con Dignidad"</li>
+            <li>Define los requisitos, tiempos y procedimientos</li>
+            <li>Establece mecanismos de reporte al Ministerio de Salud</li>
+            <li>Crea salvaguardas para proteger tanto al paciente como al equipo de salud</li>
+          </ul>
+        </div>
+        <div class="law-highlight">
+          <strong>Tensión Ética</strong>
+          Colombia es el único de los 5 modelos analizados (Costa Rica, Argentina, Uruguay, Chile, Colombia) con eutanasia regulada. Esto genera una tensión ética particular para el enfermero/a paliativista, que puede acompañar simultáneamente a un paciente que solicita eutanasia Y recibe CP. La eutanasia NO es lo opuesto a los CP — son parte del mismo continuo de atención al final de la vida. Sin embargo, en departamentos como Caquetá, Tolima o Córdoba, el acceso a ambos derechos es limitado, generando un doble abandono.
+        </div>
+      </div>
+    </div>
+
+    <div class="law-card estrella">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2022</div>
+          <div class="law-title">Ley 2241</div>
+        </div>
+        <span class="law-badge ampliacion">Educación y Telesalud</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Obliga a integrar los CP en los planes de estudio universitarios y reconoce la telemedicina como herramienta válida para CP.</p>
+          <ul>
+            <li>Aplica para Ciencias de la Salud, Psicología y Trabajo Social</li>
+            <li>Modifica el artículo 7 de la Ley 1733 para fortalecer el componente educativo</li>
+            <li>Reconoce explícitamente la <strong>telemedicina y tele-asistencia</strong> para CP</li>
+            <li>Permite que pacientes y familias soliciten monitoreo permanente vía telemedicina</li>
+          </ul>
+        </div>
+        <div class="law-highlight warn">
+          <strong>El reto formativo</strong>
+          La ley busca cerrar una brecha enorme: hoy solo el 9,5% de las facultades de medicina tienen CP como materia obligatoria (6 de 63), mientras que en enfermería alcanza el 65% (15 de 23). Esta asimetría es reveladora: enfermería lidera la formación paliativa en el país. La Ley 2241 intenta nivelar el campo, pero su implementación tomará años. Pregunta para los estudiantes: ¿cómo puede enfermería ser el motor de cambio mientras medicina se pone al día?
+        </div>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-header">
+        <div>
+          <div class="law-year">2023</div>
+          <div class="law-title">Ley 2297</div>
+        </div>
+        <span class="law-badge ampliacion">Red de Apoyo</span>
+      </div>
+      <div class="law-body">
+        <div class="law-desc">
+          <p>Garantiza el acceso al servicio de <strong>cuidador</strong> y protege sus derechos.</p>
+          <ul>
+            <li>Visibiliza el rol no médico en el cuidado en casa, un pilar del soporte paliativo continuo</li>
+            <li>Establece que el sistema debe capacitar y apoyar a los cuidadores primarios</li>
+            <li>Reconoce que la familia es parte esencial del equipo de cuidado</li>
+          </ul>
+        </div>
+        <div class="law-highlight">
+          <strong>Visión integral</strong>
+          La norma reconoce que el sistema de salud no puede sostener el cuidado paliativo sin proteger y capacitar a la familia/cuidador primario. En un país donde el 60% de las personas mueren sin acceso a CP formales, los cuidadores informales (familiares, vecinos, amigos) son quienes sostienen el cuidado. Esta ley busca profesionalizar ese rol y garantizarle apoyo del sistema.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="callout warn" style="max-width: 1080px; margin: 2rem auto;">
+  ⚖️ <strong>Reflexión Final para la Clase:</strong> Colombia tiene 25+ normas que regulan los cuidados paliativos. Tenemos leyes pioneras, marco constitucional sólido, y regulación de temas complejos como eutanasia y voluntad anticipada. Sin embargo, los datos territoriales muestran una realidad muy diferente: morfina oral al 0-10%, diferencias de 95 veces entre Bogotá y Amazonas, solo 9 equipos pediátricos para 6.410 NNA con sufrimiento grave. <strong>La pregunta no es "¿qué le falta a la ley?" sino "¿qué puedo hacer yo con lo que ya existe?"</strong> Cada estudiante, desde su territorio, tiene el desafío de convertir estas normas en realidad.
+</div>
+
+<footer>
+  <p>Material preparado para la sesión del <strong>6 de marzo de 2026</strong></p>
+  <p><strong>Maestría en Cuidados Paliativos</strong> · Universidad Antonio Nariño · Facultad de Enfermería</p>
+  <p style="margin-top: 1rem; opacity: 0.7;">Profesor: Jorge Wilhem Bogoya López</p>
+</footer>
+
+<script>
+function showTab(tabId, btn) {
+  // Hide all tab contents
+  document.querySelectorAll('.tab-content').forEach(content => {
+    content.classList.remove('active');
+  });
+  
+  // Remove active class from all buttons
+  document.querySelectorAll('.tab-btn').forEach(button => {
+    button.classList.remove('active');
+  });
+  
+  // Show selected tab
+  document.getElementById(tabId).classList.add('active');
+  
+  // Add active class to clicked button
+  btn.classList.add('active');
+  
+  // Smooth scroll to content
+  setTimeout(() => {
+    document.getElementById(tabId).scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 100);
+}
+</script>
+
+</body>
+</html>
