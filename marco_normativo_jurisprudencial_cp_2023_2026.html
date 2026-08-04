@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marco normativo y jurisprudencial de los cuidados paliativos en Colombia 2023-2026 · UAN</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --primary: #1F4E79;
@@ -32,8 +29,8 @@
   --linea3: #00B050;
   --linea3-soft: #E2EFDA;
 
-  --font-serif: "Source Serif 4", Georgia, serif;
-  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1129,12 +1126,95 @@ section { animation: fadeIn 0.4s ease both; }
 
     <div class="dashboard-grid">
       <div class="chart-card">
-        <h4>Disparidad territorial de servicios — Atlas Américas 2025</h4>
-        <div class="chart-wrapper"><canvas id="chartTasa"></canvas></div>
+        <h4 id="tit-tasa">Disparidad territorial de servicios — Atlas Américas 2025</h4>
+        <div class="chart-wrapper">
+          <!-- SVG en línea: el gráfico es estático, no necesita librería.
+               Ver docs/METODO §6 — portabilidad sin conexión. -->
+          <svg viewBox="0 0 600 300" role="img" aria-labelledby="tit-tasa desc-tasa"
+               style="width:100%;height:100%">
+            <desc id="desc-tasa">Servicios de cuidados paliativos por cada 100.000 habitantes:
+              Uruguay 2,3 · Costa Rica 1,5 · Chile 1,34 · Argentina 1,2 · Colombia 0,2 · México 0,16.</desc>
+            <g font-family="var(--font-sans)" font-size="11" fill="#595959">
+              <!-- rejilla y eje Y -->
+              <g stroke="#f0f0f0" stroke-width="1">
+                <line x1="56" y1="250" x2="590" y2="250" stroke="#d8d8d8"/>
+                <line x1="56" y1="202" x2="590" y2="202"/>
+                <line x1="56" y1="154" x2="590" y2="154"/>
+                <line x1="56" y1="106" x2="590" y2="106"/>
+                <line x1="56" y1="58"  x2="590" y2="58"/>
+                <line x1="56" y1="10"  x2="590" y2="10"/>
+              </g>
+              <g text-anchor="end" fill="#8a8a8a">
+                <text x="50" y="254">0</text>
+                <text x="50" y="206">0,5</text>
+                <text x="50" y="158">1,0</text>
+                <text x="50" y="110">1,5</text>
+                <text x="50" y="62">2,0</text>
+                <text x="50" y="14">2,5</text>
+              </g>
+              <!-- barras: 96 px por unidad, base en y=250 -->
+              <g>
+                <rect x="72"  y="29"  width="52" height="221" fill="#0038A8" rx="4"/>
+                <rect x="158" y="106" width="52" height="144" fill="#002B7F" rx="4"/>
+                <rect x="244" y="121" width="52" height="129" fill="#C8102E" rx="4"/>
+                <rect x="330" y="135" width="52" height="115" fill="#0072BB" rx="4"/>
+                <rect x="416" y="231" width="52" height="19"  fill="#C00000" rx="4"/>
+                <rect x="502" y="235" width="52" height="15"  fill="#006847" rx="4"/>
+              </g>
+              <!-- valores -->
+              <g text-anchor="middle" font-weight="700" fill="#2d2d2d">
+                <text x="98"  y="23">2,3</text>
+                <text x="184" y="100">1,5</text>
+                <text x="270" y="115">1,34</text>
+                <text x="356" y="129">1,2</text>
+                <text x="442" y="225">0,2</text>
+                <text x="528" y="229">0,16</text>
+              </g>
+              <!-- países -->
+              <g text-anchor="middle" font-size="11.5">
+                <text x="98"  y="268">Uruguay</text>
+                <text x="184" y="268">Costa Rica</text>
+                <text x="270" y="268">Chile</text>
+                <text x="356" y="268">Argentina</text>
+                <text x="442" y="268" font-weight="700" fill="#C00000">Colombia</text>
+                <text x="528" y="268">México</text>
+              </g>
+              <text x="10" y="150" text-anchor="middle" fill="#8a8a8a" font-size="10.5"
+                    transform="rotate(-90 10 150)">Servicios / 100.000 hab.</text>
+            </g>
+          </svg>
+        </div>
       </div>
       <div class="chart-card">
-        <h4>Cobertura efectiva estimada — comparación regional</h4>
-        <div class="chart-wrapper"><canvas id="chartCobertura"></canvas></div>
+        <h4 id="tit-cob">Cobertura efectiva estimada — comparación regional</h4>
+        <div class="chart-wrapper">
+          <svg viewBox="0 0 300 300" role="img" aria-labelledby="tit-cob desc-cob"
+               style="width:100%;height:100%">
+            <desc id="desc-cob">Cobertura efectiva de cuidados paliativos en Colombia:
+              aproximadamente el 30 % de quienes lo necesitan accede a la atención; el 70 % no.
+              Estimación del Observatorio Colombiano de Cuidados Paliativos.</desc>
+            <g font-family="var(--font-sans)">
+              <!-- Donut por stroke-dasharray. r=70 → circunferencia 439,8.
+                   30 % = 131,9  ·  70 % = 307,9 -->
+              <g transform="rotate(-90 150 130)" fill="none" stroke-width="42">
+                <circle cx="150" cy="130" r="70" stroke="#C00000"
+                        stroke-dasharray="307.9 439.8" stroke-dashoffset="-131.9"/>
+                <circle cx="150" cy="130" r="70" stroke="#1F4E79"
+                        stroke-dasharray="131.9 439.8"/>
+              </g>
+              <text x="150" y="124" text-anchor="middle" font-size="34" font-weight="700" fill="#1F4E79">30 %</text>
+              <text x="150" y="146" text-anchor="middle" font-size="11.5" fill="#8a8a8a">accede</text>
+              <g font-size="12" fill="#595959">
+                <rect x="52"  y="238" width="12" height="12" fill="#1F4E79" rx="2"/>
+                <text x="70"  y="248">Cubierta 30 %</text>
+                <rect x="168" y="238" width="12" height="12" fill="#C00000" rx="2"/>
+                <text x="186" y="248">Sin cobertura 70 %</text>
+              </g>
+              <text x="150" y="274" text-anchor="middle" font-size="12" fill="#2d2d2d"
+                    font-weight="600">Colombia ~30 % (estimación OCCP)</text>
+            </g>
+          </svg>
+        </div>
       </div>
     </div>
 
@@ -1874,7 +1954,6 @@ section { animation: fadeIn 0.4s ease both; }
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 // ============ NAV TABS ============
 document.querySelectorAll('.nav-tab').forEach(t => {
@@ -1927,85 +2006,6 @@ docenteBtn.addEventListener('click', () => {
   docenteBtn.textContent = document.body.classList.contains('docente-mode')
     ? '👁 Modo docente activo'
     : '👁 Modo docente';
-});
-
-// ============ CHARTS ============
-window.addEventListener('load', () => {
-  const fontFamily = '"DM Sans", sans-serif';
-  Chart.defaults.font.family = fontFamily;
-  Chart.defaults.color = '#595959';
-
-  // Tasa de servicios por 100.000 hab — comparación regional
-  const ctxTasa = document.getElementById('chartTasa');
-  if (ctxTasa) {
-    new Chart(ctxTasa, {
-      type: 'bar',
-      data: {
-        labels: ['Uruguay', 'Costa Rica', 'Chile', 'Argentina', 'Colombia', 'México'],
-        datasets: [{
-          label: 'Servicios por 100.000 habitantes',
-          data: [2.3, 1.5, 1.34, 1.2, 0.2, 0.16],
-          backgroundColor: ['#0038A8', '#002B7F', '#C8102E', '#0072BB', '#C00000', '#006847'],
-          borderRadius: 4,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => `${ctx.parsed.y} servicios / 100.000 hab`
-            }
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: { display: true, text: 'Servicios / 100.000 habitantes' },
-            grid: { color: '#f0f0f0' }
-          },
-          x: { grid: { display: false } }
-        }
-      }
-    });
-  }
-
-  // Cobertura efectiva
-  const ctxCob = document.getElementById('chartCobertura');
-  if (ctxCob) {
-    new Chart(ctxCob, {
-      type: 'doughnut',
-      data: {
-        labels: ['Cubierta', 'Sin cobertura'],
-        datasets: [{
-          data: [30, 70],
-          backgroundColor: ['#1F4E79', '#C00000'],
-          borderColor: '#fff',
-          borderWidth: 3,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '60%',
-        plugins: {
-          legend: { position: 'bottom' },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => `${ctx.label}: ${ctx.parsed}%`
-            }
-          },
-          title: {
-            display: true,
-            text: 'Colombia ~30% (estimación OCCP)',
-            font: { size: 13 }
-          }
-        }
-      }
-    });
-  }
 });
 
 updateActiveNav();
