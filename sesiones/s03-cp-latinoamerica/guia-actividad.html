@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía de actividad · Colombia ante el espejo · Sesión 3 · UAN 2026-I</title>
+<meta name="description" content="Guía de la segunda parte de la sesión 3: radiografía de Colombia en el Atlas de CP de las Américas 2025 y cronología normativa 2006-2023.">
+<style>
+/* === tokens.css (copia en línea · ver _shared/tokens.css) · Unidad 1 → salvia */
+:root{
+  --terracota:#B85C3C; --terracota-dark:#9C4830; --terracota-soft:#EFD5C8;
+  --salvia:#7A8B6F;    --salvia-dark:#5C6E54;    --salvia-soft:#D9E0D2;
+  --arena:#C4A876;     --arena-dark:#8B7B5C;     --arena-deep:#6B5B40; --arena-soft:#F5EEDD;
+  --ambar:#D4A547;     --ambar-dark:#A07930;     --ambar-deep:#6B4F0F; --ambar-soft:#F4E4BC;
+  --charcoal:#2D2D2D;  --gris:#595959;           --gris-claro:#8A8A8A;
+  --blanco:#FFFFFF;    --crema:#FAF6EF;
+  --shadow-soft:0 2px 8px rgba(45,45,45,.08);
+  --radius:12px; --radius-sm:8px;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --mono:'Courier New',monospace;
+  --serif:Georgia,'Times New Roman',serif;
+  --acento:var(--salvia); --acento-dark:var(--salvia-dark); --acento-soft:var(--salvia-soft);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--charcoal);background:var(--crema);line-height:1.62}
+:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+a{color:var(--acento-dark)}
+.envoltura{max-width:56rem;margin:0 auto;padding:0 1.25rem}
+
+.nav-sesion{font-family:var(--sans);background:var(--charcoal);color:var(--crema);
+  padding:.55rem 1rem;font-size:.82rem;display:flex;flex-wrap:wrap;align-items:center;
+  gap:.3rem .6rem;line-height:1.6}
+.nav-sesion a{color:var(--arena-soft);text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:var(--arena)}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:var(--gris-claro)}
+.nav-sesion .ns-actual{color:var(--arena);font-weight:700}
+@media print{.nav-sesion{display:none}}
+
+.saltar{position:absolute;left:-9999px;background:var(--charcoal);color:var(--crema);padding:.6rem 1rem;z-index:10}
+.saltar:focus{left:0}
+
+.hero{background:linear-gradient(160deg,var(--crema) 0%,var(--salvia-soft) 100%);
+  padding:clamp(2rem,6vw,3.25rem) 0 clamp(1.4rem,4vw,2.2rem);border-bottom:1px solid rgba(45,45,45,.08)}
+.hero__eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--acento-dark);font-weight:700;margin:0 0 .5rem}
+h1{font-size:clamp(1.5rem,4.2vw,2.4rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 .6rem}
+.hero__sub{font-size:1rem;color:var(--gris);max-width:56ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.1rem}
+.chip{background:var(--blanco);border:1px solid rgba(45,45,45,.1);border-radius:999px;
+  padding:.28rem .85rem;font-size:.82rem;box-shadow:var(--shadow-soft)}
+
+section{padding:clamp(1.6rem,4vw,2.5rem) 0}
+h2{font-size:clamp(1.2rem,3vw,1.6rem);margin:0 0 .3rem;color:var(--charcoal)}
+h3{font-size:1rem;margin:0 0 .35rem;color:var(--acento-dark)}
+p{max-width:62ch}
+.intro{color:var(--gris);max-width:62ch;margin:0 0 1.3rem}
+
+.tabla-envoltura{overflow-x:auto;margin-top:1rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:32rem;background:var(--blanco);
+  border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-soft);font-size:.88rem}
+caption{text-align:left;font-size:.84rem;color:var(--gris);padding:0 0 .5rem}
+th,td{padding:.6rem .8rem;text-align:left;vertical-align:top;border-bottom:1px solid #ECE6DC}
+thead th{background:var(--acento-soft);color:var(--acento-dark);font-size:.76rem;
+  letter-spacing:.05em;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:none}
+td.anno{font-family:var(--mono);font-weight:700;color:var(--acento-dark);white-space:nowrap}
+td .norma{font-weight:700;display:block}
+.score{font-family:var(--mono);font-weight:700;white-space:nowrap}
+.s1{color:#B54343}.s2{color:var(--arena-deep)}.s3{color:var(--ambar-deep)}.s4{color:var(--salvia-dark)}
+
+.fases{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:1rem}
+.fase{background:var(--blanco);border-radius:var(--radius);padding:1.05rem 1.2rem;
+  box-shadow:var(--shadow-soft);border-top:3px solid var(--acento)}
+.fase .ep{font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.06em;color:var(--gris-claro)}
+.fase h3{margin:.25rem 0 .35rem}
+.fase p{margin:0;font-size:.9rem;color:var(--gris)}
+
+.competencias{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.comp{background:var(--blanco);border-radius:var(--radius-sm);padding:.9rem 1.05rem;
+  box-shadow:var(--shadow-soft);border-left:3px solid var(--acento)}
+.comp .dim{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.08em;color:var(--acento-dark)}
+.comp p{margin:.3rem 0 0;font-size:.88rem;color:var(--gris)}
+
+.provocadora{background:var(--ambar-soft);border-left:5px solid var(--ambar);
+  border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-top:1.2rem;max-width:60ch}
+.provocadora .n{font-family:var(--mono);font-size:.73rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ambar-deep);display:block;margin-bottom:.3rem}
+.provocadora p{margin:0;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--charcoal)}
+
+.nota{background:var(--blanco);border-left:4px solid var(--arena);border-radius:var(--radius-sm);
+  padding:1rem 1.2rem;box-shadow:var(--shadow-soft);font-size:.91rem;color:var(--gris);max-width:62ch}
+.nota strong{color:var(--charcoal)}
+
+.por-verificar{background:var(--ambar-soft);border-left:3px solid var(--ambar);
+  border-radius:var(--radius-sm);padding:.7rem .95rem;margin:.7rem 0 0;font-size:.85rem;
+  color:var(--ambar-deep);max-width:62ch}
+.por-verificar strong{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em}
+.por-verificar ul{margin:.4rem 0 0;padding-left:1.1rem}
+
+footer{background:var(--charcoal);color:var(--crema);margin-top:2rem;padding:2rem 0;font-size:.87rem}
+footer a{color:var(--arena-soft)}
+footer p{margin:0 0 .5rem;max-width:62ch}
+.footer__legal{color:#B8B8B8;font-size:.8rem;margin-top:.9rem}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<nav class="nav-sesion" aria-label="Navegación de la sesión 3">
+  <a class="ns-curso" href="../../index.html">← Contexto Histórico y Legal</a>
+  <span class="ns-meta">Sesión 3 · 6 mar 2026</span>
+  <a href="index.html">Panorama regional</a>
+  <a href="colombia-ante-el-espejo.html">Colombia ante el espejo</a>
+  <span class="ns-actual" aria-current="page">Guía de actividad</span>
+  <a href="desglose-normativo-colombia.html">Desglose normativo</a>
+  <a href="primer-corte-diagnostico-territorial.html">Primer corte</a>
+</nav>
+
+<header class="hero">
+  <div class="envoltura">
+    <p class="hero__eyebrow">Sesión 3 · segunda parte · presencial</p>
+    <h1>Colombia ante el espejo</h1>
+    <p class="hero__sub">
+      Guía de la segunda parte de la sesión, posterior a las exposiciones por grupo. Poner a
+      Colombia frente al espejo de los cuatro modelos latinoamericanos, y conectar ese
+      diagnóstico nacional con la realidad de cada territorio.
+    </p>
+    <div class="meta">
+      <span class="chip">6 de marzo de 2026</span>
+      <span class="chip">50 minutos</span>
+      <span class="chip">Foro guiado + actividad territorial</span>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section>
+  <div class="envoltura">
+    <h2>Qué se moviliza</h2>
+    <div class="competencias">
+      <div class="comp">
+        <span class="dim">SER</span>
+        <p>Postura crítica y propositiva frente a las brechas de Colombia, sin conformismo ni derrotismo: reconocer los avances y los desafíos pendientes.</p>
+      </div>
+      <div class="comp">
+        <span class="dim">SABER</span>
+        <p>Integrar los datos del Atlas 2025 con los diagnósticos territoriales de sesiones previas, comparando de forma fundamentada con los cuatro modelos.</p>
+      </div>
+      <div class="comp">
+        <span class="dim">SABER HACER</span>
+        <p>Formular al menos una propuesta concreta y viable para fortalecer los CP en el propio territorio, articulando lecciones internacionales con condiciones locales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Colombia en el Atlas de CP de las Américas 2025</h2>
+    <p class="intro">
+      Radiografía del país según el reporte de Colombia en el Atlas (Tripodoro et al., 2025,
+      pp. 238–245). Se presenta como insumo del foro, no como conclusión.
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption>Datos generales del país</caption>
+        <thead><tr><th scope="col">Variable</th><th scope="col">Dato</th></tr></thead>
+        <tbody>
+          <tr><td>Población (2024)</td><td>52.886.363 habitantes</td></tr>
+          <tr><td>PIB per cápita (2023)</td><td>US$ 6.947</td></tr>
+          <tr><td>Nivel de ingreso (Banco Mundial)</td><td>Mediano alto</td></tr>
+          <tr><td>Índice de Desarrollo Humano</td><td>Puesto 83 de 191 países</td></tr>
+          <tr><td>Gasto en salud per cápita (2021)</td><td>US$ 557,54</td></tr>
+          <tr><td>Cobertura sanitaria universal (2021)</td><td>80 / 100</td></tr>
+          <tr><td>Enfermeras y enfermeros por 1.000 hab.</td><td>6,03</td></tr>
+          <tr><td>Personas con sufrimiento grave</td><td>107.900 · de ellas 6.410 pediátricas</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption>Marco Global de la OMS para el desarrollo de los CP · puntuación de Colombia (escala 1–4)</caption>
+        <thead>
+          <tr><th scope="col">Dimensión</th><th scope="col">Valor</th><th scope="col">Score</th><th scope="col">Hallazgo del Atlas</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>A.</strong> Empoderamiento comunitario</td><td>Fuerte</td><td class="score s4">4/4</td><td>ACCP, ASOCUPAC, OCCP y organizaciones civiles promueven derechos y acompañamiento.</td></tr>
+          <tr><td><strong>B.</strong> Políticas de salud · plan nacional</td><td>Actualizado</td><td class="score s4">4/4</td><td>Ley 1733/2014 y Ley 1384/2010. Plan nacional en implementación. Pero los CP quedaron omitidos del Plan Decenal 2022–2031.</td></tr>
+          <tr><td><strong>B.</strong> Autoridad nacional de CP en el Ministerio</td><td>Incompleta</td><td class="score s3">3/4</td><td>Bajo la Subdirección de ENT. No existe departamento específico; la gestión recae en autoridades locales y aseguradores.</td></tr>
+          <tr><td><strong>B.</strong> CP en el paquete básico de salud</td><td>En lista esencial</td><td class="score s3">3/4</td><td>Incluidos por decreto pero no en la ley general de sanidad. Vacíos en la Ley 1438/2011.</td></tr>
+          <tr><td><strong>C.</strong> Investigación</td><td>Emergente</td><td class="score s2">2/4</td><td>180 artículos en PubMed en cinco años; ajustado por población, nivel emergente. Varios autores clave residen fuera del país.</td></tr>
+          <tr><td><strong>C.</strong> Congresos nacionales</td><td>Anuales</td><td class="score s4">4/4</td><td>La ACCP organiza congresos anuales. Congreso Latinoamericano ALCP en Cartagena, marzo de 2024.</td></tr>
+          <tr><td><strong>D.</strong> Medicamentos esenciales · urbano</td><td>10–30 %</td><td class="score s2">2/4</td><td>Distribución inequitativa. Cobertura cercana al 100 % en grandes ciudades y escasez marcada en otras áreas.</td></tr>
+          <tr><td><strong>D.</strong> Morfina oral de liberación inmediata · urbano</td><td>0–10 %</td><td class="score s1">1/4</td><td>Uno de los opioides menos disponibles. Barreras identificadas desde 2008 que siguen sin resolverse.</td></tr>
+          <tr><td><strong>D.</strong> Morfina oral de liberación inmediata · rural</td><td>0–10 %</td><td class="score s1">1/4</td><td>Prácticamente inaccesible en zonas rurales.</td></tr>
+          <tr><td><strong>E.</strong> Medicina · CP obligatorio</td><td>6 de 63 facultades</td><td class="score">—</td><td>Solo el 9,5 % incluye CP como obligatorio; 4 más lo ofrecen como electiva.</td></tr>
+          <tr><td><strong>E.</strong> Enfermería · CP obligatorio</td><td>15 de 23 facultades</td><td class="score">—</td><td>65 % de las facultades de enfermería. Fortaleza relativa del país.</td></tr>
+          <tr><td><strong>E.</strong> Especialización oficial</td><td>Reconocida</td><td class="score s4">4/4</td><td>9 programas de especialización médica. Primera especialidad en CP pediátricos creada en 2024.</td></tr>
+          <tr><td><strong>F.</strong> Distribución geográfica</td><td>Desigual</td><td class="score s3">3/4</td><td>Concentración en grandes ciudades y disponibilidad prácticamente nula en algunas regiones.</td></tr>
+          <tr><td><strong>F.</strong> Servicios pediátricos</td><td>9 equipos</td><td class="score">—</td><td>Insuficiente. Se reportan 133 servicios domiciliarios.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="por-verificar">
+      <strong>[DATOS POR VERIFICAR]</strong>
+      <p style="margin:.4rem 0 0;color:inherit">
+        Tres cifras de esta radiografía <strong>no concuerdan con las que se usaron en el
+        material de clase</strong>. No se han armonizado aquí: la decisión es del docente y
+        requiere volver a la fuente primaria.
+      </p>
+      <ul>
+        <li><strong>Consumo de opioides.</strong> Colombia registra 645 S-DDD. La guía original lo sitúa <em>por debajo</em> del promedio latinoamericano, que cifra en 1.313 S-DDD. El material de clase lo sitúa <em>por encima</em> de un promedio de 428 S-DDD. Las dos lecturas invierten el argumento.</li>
+        <li><strong>Nivel en el Atlas.</strong> La guía clasifica a Colombia en Nivel 4 «con brechas». El material de clase la describe como país «establecido», nivel 3 de 5 en la escala OMS, y la actividad evaluativa se titula «¿qué necesita Colombia para llegar al Nivel 4?».</li>
+        <li><strong>Tasa de servicios.</strong> La guía indica 627 servicios y una tasa de 1,18 por 100.000 habitantes, frente a una mediana regional de 0,33. Un gráfico del curso usa 0,2 por 100.000 para Colombia. La aritmética —627 ÷ 52.886.363 × 100.000— da 1,186.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Cronología normativa colombiana</h2>
+    <p class="intro">
+      El marco que configuró el ecosistema actual de los cuidados paliativos, según el informe
+      técnico del Observatorio Colombiano de Cuidados Paliativos. Es el insumo central para
+      construir la línea de tiempo evaluativa.
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption>Normas con impacto en el desarrollo de los CP en Colombia, 2006–2023</caption>
+        <thead><tr><th scope="col">Año</th><th scope="col">Norma</th><th scope="col">Contenido y alcance</th></tr></thead>
+        <tbody>
+          <tr><td class="anno">2023</td><td><span class="norma">Ley 2297</span></td><td>Medidas efectivas para garantizar el acceso al servicio de cuidador.</td></tr>
+          <tr><td class="anno">2022</td><td><span class="norma">Ley 2241</span></td><td>Fortalece la educación en cuidados paliativos. Hito para la formación académica nacional.</td></tr>
+          <tr><td class="anno">2021</td><td><span class="norma">Resolución 971</span></td><td>Recepción, trámite y reporte de solicitudes de eutanasia; organización del Comité para hacer Efectivo el Derecho a Morir con Dignidad.</td></tr>
+          <tr><td class="anno">2020</td><td><span class="norma">Ley 2055</span></td><td>Convención interamericana sobre la protección de los derechos humanos de las personas mayores.</td></tr>
+          <tr><td class="anno">2020</td><td><span class="norma">Resolución 315</span></td><td>Actualiza los listados de estupefacientes, psicotrópicos y sustancias sometidas a fiscalización.</td></tr>
+          <tr><td class="anno">2019</td><td><span class="norma">Resolución 3100</span></td><td>Condiciones de inscripción de prestadores y habilitación de servicios de salud.</td></tr>
+          <tr><td class="anno">2018</td><td><span class="norma">Lineamientos MinSalud</span></td><td>Lineamientos para la Atención Integral en Cuidados Paliativos. Guía técnica nacional.</td></tr>
+          <tr><td class="anno">2018</td><td><span class="norma">Resolución 2665</span></td><td>Reglamenta el derecho a suscribir el Documento de Voluntad Anticipada. Instrumento clave de autonomía.</td></tr>
+          <tr><td class="anno">2018</td><td><span class="norma">Resolución 285</span></td><td>Procedimiento para hacer efectivo el derecho a morir con dignidad de niñas, niños y adolescentes.</td></tr>
+          <tr><td class="anno">2017</td><td><span class="norma">Resolución 3202</span></td><td>Manual metodológico para elaborar e implementar las Rutas Integrales de Atención en Salud (RIAS).</td></tr>
+          <tr><td class="anno">2017</td><td><span class="norma">Resolución 1477</span></td><td>Habilitación de unidades funcionales para atención integral de cáncer del adulto e infantil.</td></tr>
+          <tr><td class="anno">2016</td><td><span class="norma">Circular 023</span></td><td>Garantía de los derechos de quienes requieren cuidados paliativos. Desarrollo reglamentario directo de la Ley 1733.</td></tr>
+          <tr><td class="anno">2016</td><td><span class="norma">Circular 022</span></td><td>Lineamientos para la gestión de acceso a medicamentos opioides para manejo del dolor.</td></tr>
+          <tr><td class="anno">2016</td><td><span class="norma">Resolución 1441</span></td><td>Habilitación de Redes Integrales de Prestadores de Servicios de Salud.</td></tr>
+          <tr><td class="anno">2016</td><td><span class="norma">Resolución 429</span></td><td>Reglamenta la Política de Atención Integral en Salud (PAIS).</td></tr>
+          <tr><td class="anno">2015</td><td><span class="norma">Ley Estatutaria 1751</span></td><td>Regula el derecho fundamental a la salud. Marco constitucional que sustenta el acceso a CP.</td></tr>
+          <tr><td class="anno">2015</td><td><span class="norma">Resolución 518</span></td><td>Gestión en salud pública; Plan de Salud Pública de Intervenciones Colectivas.</td></tr>
+          <tr><td class="anno">2014</td><td><span class="norma">Ley 1733 · Consuelo Devis Saavedra</span></td><td><strong>Piedra angular del marco normativo colombiano.</strong> Regula los servicios de cuidados paliativos para el manejo integral de personas con enfermedades terminales, crónicas, degenerativas e irreversibles en cualquier fase, con alto impacto en la calidad de vida.</td></tr>
+          <tr><td class="anno">2013</td><td><span class="norma">Resolución 1841</span></td><td>Plan Decenal de Salud Pública.</td></tr>
+          <tr><td class="anno">2013</td><td><span class="norma">Resolución 1383</span></td><td>Plan Decenal para el Control del Cáncer en Colombia.</td></tr>
+          <tr><td class="anno">2010</td><td><span class="norma">Ley 1384 · Sandra Ceballos</span></td><td>Atención integral del cáncer, incluidos los cuidados paliativos. <strong>Primera mención legislativa explícita de CP.</strong></td></tr>
+          <tr><td class="anno">2007</td><td><span class="norma">Decreto 4747</span></td><td>Relaciones entre prestadores de servicios de salud y entidades responsables del pago.</td></tr>
+          <tr><td class="anno">2006</td><td><span class="norma">Resolución 1478</span></td><td>Control y vigilancia de sustancias sometidas a fiscalización. <strong>Base regulatoria de los opioides.</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="margin-top:2rem">Tres fases, leídas críticamente</h2>
+    <div class="fases">
+      <div class="fase">
+        <p class="ep">2006 – 2013</p>
+        <h3>Fase fundacional</h3>
+        <p>Regulación de sustancias fiscalizadas, atención integral del cáncer y planes decenales. Los CP aparecen como componente del cáncer, no como disciplina autónoma.</p>
+      </div>
+      <div class="fase">
+        <p class="ep">2014 – 2018</p>
+        <h3>Consolidación legal</h3>
+        <p>La Ley 1733 establece los CP como derecho. Le siguen las circulares reglamentarias, la habilitación de servicios, los lineamientos de atención integral, el DVA y el derecho a morir con dignidad de menores. Es el período de mayor productividad normativa.</p>
+      </div>
+      <div class="fase">
+        <p class="ep">2019 – 2023</p>
+        <h3>Ampliación y brechas</h3>
+        <p>Se regula la eutanasia, se fortalece la educación y se garantiza el acceso a cuidadores. Pero persiste la distancia entre la norma escrita y la implementación: la morfina oral sigue en 0–10 % de disponibilidad y los CP quedaron fuera del Plan Decenal 2022–2031.</p>
+      </div>
+    </div>
+
+    <div class="provocadora">
+      <span class="n">Pregunta para el foro</span>
+      <p>
+        ¿Cuántas de estas normas conocen? ¿Cuáles se aplican efectivamente en la institución
+        donde ejercen? Esa distancia entre la norma y la realidad es precisamente lo que
+        diferencia a Colombia de los países de referencia.
+      </p>
+    </div>
+
+    <p class="nota" style="margin-top:1.3rem">
+      <strong>Hacia dónde va esta guía.</strong> Todo lo anterior alimenta la construcción de la
+      <a href="primer-corte-diagnostico-territorial.html">línea de tiempo evaluativa del primer
+      corte</a>, en la que cada grupo analiza una dimensión del desarrollo de los CP en Colombia
+      usando como lente comparativo los cuatro modelos estudiados.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="envoltura">
+    <p>
+      <strong>Guía de actividad · Colombia ante el espejo</strong> · Sesión 3, segunda parte<br>
+      Contexto Histórico y Legal de los Cuidados Paliativos · Código 37542001 ·
+      Maestría en Cuidado Paliativo · Facultad de Enfermería · Universidad Antonio Nariño
+    </p>
+    <p>
+      Docente: Jorge Wilhem Bogoya López ·
+      <a href="mailto:jbogoya63@uan.edu.co">jbogoya63@uan.edu.co</a>
+    </p>
+    <p class="footer__legal">
+      Datos del Atlas de Cuidados Paliativos de las Américas 2025 y del informe técnico del
+      Observatorio Colombiano de Cuidados Paliativos. Las cifras en conflicto con otros
+      materiales del curso están rotuladas como pendientes de verificación, no armonizadas.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
