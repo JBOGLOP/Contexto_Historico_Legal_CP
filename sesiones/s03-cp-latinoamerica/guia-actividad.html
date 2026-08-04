@@ -98,6 +98,14 @@ td .norma{font-weight:700;display:block}
 .por-verificar strong{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em}
 .por-verificar ul{margin:.4rem 0 0;padding-left:1.1rem}
 
+/* Nota metodológica: criterio ya resuelto por el docente. Distinta del
+   bloque ámbar de arriba, que marca lo que sigue en disputa. */
+.nota-metodologica{background:var(--blanco);border-left:4px solid var(--arena);
+  border-radius:var(--radius-sm);padding:.95rem 1.2rem;margin:1.1rem 0 0;max-width:64ch;
+  font-size:.88rem;line-height:1.62;color:var(--gris);box-shadow:var(--shadow-soft)}
+.nota-metodologica p{margin:0;max-width:none}
+.nota-metodologica strong{color:var(--charcoal)}
+
 footer{background:var(--charcoal);color:var(--crema);margin-top:2rem;padding:2rem 0;font-size:.87rem}
 footer a{color:var(--arena-soft)}
 footer p{margin:0 0 .5rem;max-width:62ch}
@@ -208,16 +216,31 @@ footer p{margin:0 0 .5rem;max-width:62ch}
       </table>
     </div>
 
+    <aside id="nota-sddd" class="nota-metodologica">
+      <p>
+        <strong>Nota metodológica · el promedio de referencia.</strong>
+        El promedio latinoamericano de referencia es <strong>428&nbsp;S-DDD/millón/día</strong>
+        (Atlas de Cuidados Paliativos de las Américas). Las cifras globales o hemisféricas que
+        incluyen a Norteamérica elevan el indicador por encima de <strong>1.300&nbsp;S-DDD</strong>,
+        pero distorsionan la comparación entre sistemas de salud con contextos socioeconómicos
+        similares a los de Colombia.
+      </p>
+      <p style="margin-top:.6rem">
+        Colombia registra <strong>645&nbsp;S-DDD</strong>: por encima del promedio latinoamericano
+        y por debajo del hemisférico. Cuando en otros materiales aparezca un promedio superior a
+        1.300, se trata del agregado hemisférico, no del latinoamericano.
+      </p>
+    </aside>
+
     <div class="por-verificar">
       <strong>[DATOS POR VERIFICAR]</strong>
       <p style="margin:.4rem 0 0;color:inherit">
-        Tres cifras de esta radiografía <strong>no concuerdan con las que se usaron en el
+        Dos cifras de esta radiografía <strong>no concuerdan con las que se usaron en el
         material de clase</strong>. No se han armonizado aquí: la decisión es del docente y
         requiere volver a la fuente primaria.
       </p>
       <ul>
-        <li><strong>Consumo de opioides.</strong> Colombia registra 645 S-DDD. La guía original lo sitúa <em>por debajo</em> del promedio latinoamericano, que cifra en 1.313 S-DDD. El material de clase lo sitúa <em>por encima</em> de un promedio de 428 S-DDD. Las dos lecturas invierten el argumento.</li>
-        <li><strong>Nivel en el Atlas.</strong> La guía clasifica a Colombia en Nivel 4 «con brechas». El material de clase la describe como país «establecido», nivel 3 de 5 en la escala OMS, y la actividad evaluativa se titula «¿qué necesita Colombia para llegar al Nivel 4?».</li>
+        <li><strong>Nivel en el Atlas.</strong> La guía clasifica a Colombia en Nivel 4 «con brechas». El material de clase la describe como país «establecido», nivel 3 de 5 en la escala OMS, y la actividad evaluativa se titula «¿qué necesita Colombia para llegar al Nivel 4?». Podrían ser dos escalas distintas usadas indistintamente.</li>
         <li><strong>Tasa de servicios.</strong> La guía indica 627 servicios y una tasa de 1,18 por 100.000 habitantes, frente a una mediana regional de 0,33. Un gráfico del curso usa 0,2 por 100.000 para Colombia. La aritmética —627 ÷ 52.886.363 × 100.000— da 1,186.</li>
       </ul>
     </div>

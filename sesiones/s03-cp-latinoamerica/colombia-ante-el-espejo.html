@@ -763,6 +763,17 @@ footer .uni { font-weight: 700; color: var(--heading); font-size: .88rem; }
   .region-bar { height: auto; flex-direction: column; }
   .region-bar .rb-seg { padding: .4rem .6rem; }
 }
+
+/* Nota metodológica — añadida al homologar. Aclara qué promedio se usa
+   y por qué, sin alterar ninguna cifra del material original. */
+.ref-nota{text-decoration:none;font-weight:700}
+.nota-metodologica{
+  background:#FDF6E3; border-left:4px solid #C4A876; border-radius:8px;
+  padding:.9rem 1.15rem; margin:1rem 0 0; max-width:64ch;
+  font-size:.87rem; line-height:1.6;
+}
+.nota-metodologica p{margin:0}
+.nota-metodologica:target{box-shadow:0 0 0 3px rgba(196,168,118,.45)}
 </style>
 <style>
 /* Navegación de sesión — añadida al homologar. Autocontenida a propósito:
@@ -881,7 +892,7 @@ footer .uni { font-weight: 700; color: var(--heading); font-size: .88rem; }
         <tr><td>Producción científica</td><td>180 artículos PubMed (5 años)</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> Nivel emergente ajustado a población</td></tr>
         <tr><td>Congresos y eventos</td><td>Congreso anual ACCP; ALCP Cartagena 2024</td><td><span class="score s4">4</span></td><td><span class="badge fort">Fortaleza</span></td></tr>
         <tr class="section-row"><td colspan="4"><h4>D. Medicamentos</h4></td></tr>
-        <tr><td>Consumo opioides (S-DDD)</td><td>645 / millón hab. / día</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> Promedio LATAM: 1.313</td></tr>
+        <tr><td>Consumo opioides (S-DDD)</td><td>645 / millón hab. / día</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> Promedio LATAM: 428 <a href="#nota-sddd" class="ref-nota" aria-label="Ver nota metodológica sobre el promedio">&#8239;<sup>[nota]</sup></a> &middot; hemisférico: 1.313</td></tr>
         <tr><td>Medicamentos esenciales (urbano)</td><td>10–30% disponibilidad</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> ~100% grandes ciudades, escasez en el resto</td></tr>
         <tr><td>Morfina oral (urbano)</td><td>0–10%</td><td><span class="score s1">1</span></td><td><span class="badge brecha">Brecha crítica</span> Uno de los opioides menos disponibles</td></tr>
         <tr><td>Morfina oral (rural)</td><td>0–10%</td><td><span class="score s1">1</span></td><td><span class="badge brecha">Brecha crítica</span> Prácticamente inaccesible</td></tr>
@@ -895,6 +906,9 @@ footer .uni { font-weight: 700; color: var(--heading); font-size: .88rem; }
         <tr><td>Servicios pediátricos</td><td>9 equipos especializados</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> Solo 133 domiciliarios / 6.410 NNA con SHS</td></tr>
       </tbody>
     </table>
+<aside id="nota-sddd" class="nota-metodologica">
+  <p><strong>Nota metodológica &middot; el promedio de referencia.</strong> El promedio latinoamericano de referencia es <strong>428 S-DDD/mill&oacute;n/d&iacute;a</strong> (Atlas de Cuidados Paliativos de las Am&eacute;ricas). Las cifras globales o hemisf&eacute;ricas que incluyen a Norteam&eacute;rica elevan el indicador por encima de <strong>1.300 S-DDD</strong>, pero distorsionan la comparaci&oacute;n entre sistemas de salud con contextos socioecon&oacute;micos similares a los de Colombia. Cuando en otros materiales aparezca un promedio superior a 1.300, se trata del agregado hemisf&eacute;rico, no del latinoamericano.</p>
+</aside>
     </div>
 
     <h3>Consumo de opioides per cápita por región (OCCP, 2024)</h3>
