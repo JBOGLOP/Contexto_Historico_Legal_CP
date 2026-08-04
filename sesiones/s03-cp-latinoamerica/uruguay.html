@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo 3 — Uruguay: Cuidados Paliativos</title>
+<style>
+:root{--bg:#f0f7f4;--surface:#fff;--surface2:#e2efe8;--card:#fff;--border:#bbd4c8;--text:#243832;--text-muted:#4d6e60;--heading:#162822;--white:#fff;--primary:#047857;--primary-light:#10b981;--primary-dim:#065f46;--teal:#0d9488;--sky:#0284c7;--blue:#2563eb;--amber:#d97706;--rose:#e11d48;--green:#16a34a;--accent:#059669;--serif:Georgia, 'Times New Roman', serif;--sans:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;--mono:ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace;--radius:12px;--shadow:0 2px 12px rgba(4,120,87,.07);--shadow-lg:0 8px 30px rgba(4,120,87,.1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;font-size:15.5px}
+.hero{background:linear-gradient(135deg,#065f46 0%,#047857 40%,#0d9488 100%);color:white;padding:4rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");z-index:0}
+.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+.hero .flag{font-size:4rem;margin-bottom:.5rem}.hero .tag{display:inline-block;padding:.3rem 1.2rem;border:1px solid rgba(255,255,255,.4);border-radius:999px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;font-weight:700}
+.hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.15;margin-bottom:.8rem}
+.hero .subtitle{font-size:1rem;opacity:.85;max-width:600px;margin:0 auto 1.5rem;font-weight:300}
+.hero-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.hero-badges span{font-size:.72rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:.3rem .8rem;border-radius:999px;font-weight:600}
+.sticky-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:.5rem 1rem;display:flex;gap:.3rem;overflow-x:auto;justify-content:center;flex-wrap:wrap}
+.sticky-nav a{color:var(--text-muted);text-decoration:none;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.35rem .7rem;border-radius:6px;transition:all .2s;white-space:nowrap}
+.sticky-nav a:hover,.sticky-nav a.active{color:var(--primary);background:rgba(4,120,87,.06)}
+.container{max-width:960px;margin:0 auto;padding:0 1.5rem}section{padding:3.5rem 0}
+.section-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:700;margin-bottom:.4rem;font-family:var(--mono)}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;background:var(--primary);color:white;border-radius:50%;font-family:var(--mono);font-weight:700;font-size:.82rem;margin-right:.6rem;vertical-align:middle}
+h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--heading);margin-bottom:.5rem;line-height:1.2}
+h3{font-family:var(--serif);font-size:1.15rem;color:var(--heading);margin:1.8rem 0 .5rem}
+h4{font-size:.82rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin:1.2rem 0 .4rem;font-family:var(--mono)}
+p{margin-bottom:.9rem}.lead{font-size:1rem;color:var(--text-muted);font-weight:300}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;margin:.8rem 0;box-shadow:var(--shadow);transition:box-shadow .3s,transform .25s}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin:1.2rem 0}
+.stat-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #a7f3d0;border-radius:var(--radius);padding:1.2rem;text-align:center}
+.stat-card .big{font-family:var(--mono);font-size:1.8rem;font-weight:700;color:var(--primary);line-height:1.1;margin-bottom:.2rem}
+.stat-card .label{font-size:.75rem;color:var(--text-muted);line-height:1.35}
+.timeline{position:relative;margin:1.5rem 0;padding-left:2.2rem}
+.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--primary),var(--teal),var(--accent))}
+.tl-item{position:relative;margin-bottom:1rem;padding:.8rem 1rem;background:var(--white);border-radius:8px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.tl-item::before{content:'';position:absolute;left:-1.95rem;top:1rem;width:10px;height:10px;border-radius:50%;background:var(--primary);border:2px solid var(--bg);z-index:2}
+.tl-item.key{border-left:3px solid var(--amber)}.tl-item.key::before{background:var(--amber)}
+.tl-year{font-family:var(--mono);font-size:.75rem;color:var(--primary);font-weight:700}
+.tl-title{font-weight:700;color:var(--heading);font-size:.88rem}
+.tl-desc{font-size:.8rem;color:var(--text-muted);margin-top:.1rem;line-height:1.45}
+.data-table{width:100%;border-collapse:separate;border-spacing:0;margin:1rem 0;font-size:.82rem;background:white;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.data-table thead th{background:var(--primary);color:white;font-weight:700;padding:.6rem .7rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+.data-table td{padding:.55rem .7rem;border-bottom:1px solid var(--border);vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}.data-table tr:hover td{background:rgba(4,120,87,.02)}
+.badge{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.badge.fort{background:#dcfce7;color:#166534}.badge.avance{background:#fef3c7;color:#92400e}.badge.brecha{background:#fce7f3;color:#9d174d}.badge.info{background:#dbeafe;color:#1e40af}
+.callout{border-radius:8px;padding:1rem 1.2rem;margin:1rem 0;font-size:.88rem;border-left:4px solid}
+.callout.highlight{background:#ecfdf5;border-color:var(--primary)}.callout.warn{background:#fffbeb;border-color:var(--amber)}.callout.lesson{background:#eff6ff;border-color:var(--sky)}.callout.danger{background:#fff1f2;border-color:var(--rose)}
+.source-list{list-style:none;margin:.6rem 0}.source-list li{padding:.3rem 0 .3rem .8rem;font-size:.76rem;color:var(--text-muted);position:relative;line-height:1.45}
+.source-list li::before{content:'■';position:absolute;left:0;color:var(--primary);font-size:.5rem;top:.45rem}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:2rem 0}
+footer{text-align:center;padding:2.5rem 1.5rem;color:var(--text-muted);font-size:.76rem;border-top:1px solid var(--border);background:var(--surface2)}
+footer .uni{font-weight:700;color:var(--heading);font-size:.85rem}
+.quote-block{text-align:center;padding:2rem 1.5rem;margin:1.5rem 0}
+.quote-block::before{content:'"';font-family:var(--serif);font-size:5rem;color:var(--primary);opacity:.1;display:block;line-height:.5}
+.quote-text{font-family:var(--serif);font-size:1.15rem;color:var(--heading);font-style:italic;max-width:600px;margin:0 auto;line-height:1.5}
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.hero{padding:3rem 1.5rem 2.5rem}.card-grid{grid-template-columns:1fr}.sticky-nav{justify-content:flex-start}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida a propósito:
+   no depende de los tokens de cada archivo, que son distintos entre sí. */
+.nav-sesion{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D; color:#FAF6EF; padding:.55rem 1rem; font-size:.82rem;
+  display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .6rem; line-height:1.6;
+}
+.nav-sesion a{color:#F5EEDD; text-decoration:none; border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876; font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876; outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 3"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 3 &middot; 6 mar 2026</span><a href="index.html">Panorama regional</a><a href="costa-rica.html">Costa Rica</a><a href="argentina.html">Argentina</a><span class="ns-actual" aria-current="page">Uruguay</span><a href="chile.html">Chile</a><a href="colombia-ante-el-espejo.html">Colombia ante el espejo</a><a href="guia-actividad.html">Guía de actividad</a><a href="desglose-normativo-colombia.html">Desglose normativo</a><a href="primer-corte-diagnostico-territorial.html">Primer corte</a></nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="flag">🇺🇾</div>
+    <span class="tag">Grupo 3 · Actividad Colaborativa</span>
+    <h1>Uruguay: Referente OMS en Cuidados Paliativos</h1>
+    <p class="subtitle">País elegido por la OMS como referente regional en LATAM. Líder en equipos CP/millón hab., CP obligatorio al 100% en Medicina y Ley 20179/2023</p>
+    <div class="hero-badges">
+      <span>📊 Nivel 4 — Integración Avanzada</span>
+      <span>🏅 Referente OMS LATAM (2023)</span>
+      <span>📜 Ley 20179 (2023)</span>
+      <span>🎓 CP obligatorio 100% Medicina</span>
+    </div>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <a href="#historia">1. Historia</a>
+  <a href="#normatividad">2. Normatividad</a>
+  <a href="#logros">3. Logros</a>
+  <a href="#estadisticas">4. Estadísticas</a>
+  <a href="#opioides">5. Opioides</a>
+  <a href="#educacion">6. Educación</a>
+  <a href="#leccion">Lección Territorial</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
+
+<section id="historia">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">1</span> Lineamiento</span>
+    <h2>Historia de los Cuidados Paliativos en Uruguay</h2>
+    <p class="lead">Uruguay, con solo 3.5 millones de habitantes, ha construido el sistema de CP más desarrollado de Latinoamérica per cápita, siendo elegido por la OMS como referente regional en 2023.</p>
+
+    <div class="timeline">
+      <div class="tl-item key"><span class="tl-year">~1990s</span> <span class="tl-title">Primera unidad domiciliaria CP</span><div class="tl-desc">Se crea la primera unidad de CP domiciliarios del país, vinculada al Servicio de Oncología Clínica del Hospital de Clínicas (Universidad de la República). Fue pensada como equipo de control de síntomas y apoyo al paciente con cáncer avanzado y su familia, fundamentalmente a domicilio.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2000s</span> <span class="tl-title">Plan Nacional de Cuidados Paliativos (PNCP)</span><div class="tl-desc">El MSP crea el PNCP con 4 lineamientos estratégicos: formación profesional, disponibilidad de opioides en todas las instituciones, organización asistencial en red, y sensibilización (proyecto "Hacia una asistencia sin dolor"). El plan se diseñó para cubrir todo el país en 3 años con formación escalonada por niveles.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">2008</span> <span class="tl-title">⭐ Ley 18335 — CP como derecho</span><div class="tl-desc">La Ley de Derechos y Obligaciones de Pacientes y Usuarios de Servicios de Salud establece que toda persona tiene derecho a atención integral que incluya CP. Es la primera mención legislativa de CP como derecho en Uruguay, anterior a las leyes de Colombia (2014), Chile (2021), Argentina (2022) y Costa Rica (2022).</div></div>
+
+      <div class="tl-item"><span class="tl-year">2009</span> <span class="tl-title">Ley 18473 — Voluntad anticipada</span><div class="tl-desc">Regula las decisiones anticipadas en el ámbito de la atención médica. Permite a toda persona mayor de edad expresar su voluntad anticipada sobre tratamientos y CP futuros.</div></div>
+
+      <div class="tl-item"><span class="tl-year">2013–2023</span> <span class="tl-title">Expansión territorial y formación</span><div class="tl-desc">El MSP implementa cursos nacionales de capacitación en CP (4 ediciones hasta 2023), formación para equipos INAU (niñez), y extensión de servicios al interior del país. Uruguay alcanza la tasa más alta de equipos CP/millón hab. en LATAM: 24.5.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">2023 (sept.)</span> <span class="tl-title">🏅 OMS elige a Uruguay como referente regional</span><div class="tl-desc">Una delegación de la OMS visita Uruguay y lo selecciona como referente en CP para América Latina. Se evalúa la situación según indicadores OMS y se reconoce el modelo uruguayo como ejemplo para la región.</div></div>
+
+      <div class="tl-item key"><span class="tl-year">2023 (dic.)</span> <span class="tl-title">⭐ Ley 20179 — Cuidados Paliativos Integral</span><div class="tl-desc">Firmada por el Presidente Lacalle Pou. Declara el derecho universal a CP para todas las personas con enfermedades graves, progresivas y avanzadas. Incluye sedación paliativa, adecuación del esfuerzo terapéutico, equipos interdisciplinarios obligatorios, y cobertura en todo el territorio nacional.</div></div>
+    </div>
+
+    <div class="callout highlight">
+      🔑 <strong>Dato clave:</strong> Uruguay es el ÚNICO país de los 5 comparados (con Colombia) que ya tenía CP como derecho legal desde 2008, 6 años antes que Colombia (Ley 1733/2014). Su trayectoria es: derecho primero → Plan Nacional → cobertura universal → reconocimiento OMS.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="normatividad">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">2</span> Lineamiento</span>
+    <h2>Marco Legal y Normatividad</h2>
+
+    <table class="data-table">
+      <thead><tr><th>Componente</th><th>Detalle</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Ley CP como derecho</td><td>Ley 18335/2008 (la más antigua de los 5 países)</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Ley específica CP</td><td>Ley 20179/2023 — CP Integral</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Voluntad anticipada</td><td>Ley 18473/2009</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Autoridad MdS</td><td>Coordinación CP en MSP (Dra. Gabriela Píriz)</td><td><span class="badge fort">Completa</span></td></tr>
+        <tr><td>Plan Nacional CP</td><td>PNCP del MSP — 4 lineamientos estratégicos</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Sedación paliativa</td><td>Regulada en Ley 20179/2023</td><td><span class="badge fort">Vigente</span></td></tr>
+        <tr><td>Eutanasia</td><td>No regulada</td><td><span class="badge brecha">No</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="card">
+      <h4>📋 Ley 20179/2023 — Puntos destacados</h4>
+      <p>La ley define sedación paliativa como la disminución deliberada del nivel de conciencia mediante fármacos para evitar sufrimiento intenso por síntomas refractarios. Incluye: derecho universal a CP desde etapa prenatal; equipos interdisciplinarios obligatorios (médicos, enfermeras, psicólogos, trabajadores sociales especializados); respeto a decisiones anticipadas (Ley 18473); deber del equipo de reconocer la etapa de agonía y evitar futilidad terapéutica; y cobertura en todo el territorio nacional.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="logros">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">3</span> Lineamiento</span>
+    <h2>Logros Principales</h2>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big">24.5</div><div class="label">Equipos CP / millón hab.<br><small>Tasa más alta en LATAM</small></div></div>
+      <div class="stat-card"><div class="big">100%</div><div class="label">CP obligatorio en Medicina<br><small>Único en LATAM con 100%</small></div></div>
+      <div class="stat-card"><div class="big">17</div><div class="label">Servicios pediátricos CP<br><small>2.° per cápita en LATAM</small></div></div>
+      <div class="stat-card"><div class="big">🏅</div><div class="label">Referente OMS en LATAM<br><small>Seleccionado septiembre 2023</small></div></div>
+    </div>
+
+    <div class="card">
+      <h4>🌟 Modelo referente OMS</h4>
+      <p>En septiembre 2023, una delegación de la OMS visitó Uruguay y lo eligió como referente regional. El MSP publicó un informe completo con los indicadores OMS del país. Uruguay demuestra que un país pequeño y con recursos limitados puede construir un sistema de CP de clase mundial cuando hay voluntad política sostenida.</p>
+    </div>
+    <div class="card">
+      <h4>📊 Mejor colaboración prescriptores-reguladores</h4>
+      <p>Junto con El Salvador, Uruguay tiene la mejor colaboración entre prescriptores de opioides y reguladores en LATAM (Atlas 2020). Esto minimiza barreras burocráticas para acceso a analgésicos, modelo opuesto a países donde el miedo regulatorio limita la prescripción.</p>
+    </div>
+    <div class="card">
+      <h4>🌎 Cooperación Sur-Sur</h4>
+      <p>Uruguay participó en noviembre 2024 en intercambio OPS de experiencias de telesalud con Colombia y Bolivia. Comparte su modelo de telemedicina (MSP/ASSE/AGECIC) como estrategia para CP remotos.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="estadisticas">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">4</span> Lineamiento</span>
+    <h2>Estadísticas Clave</h2>
+
+    <table class="data-table">
+      <thead><tr><th>Indicador</th><th>Valor</th><th>Fuente</th></tr></thead>
+      <tbody>
+        <tr><td>Población</td><td>3.5 millones</td><td>INE Uruguay</td></tr>
+        <tr><td>Clasificación CP</td><td><span class="badge fort">Nivel 4</span></td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Equipos CP / millón hab.</td><td><span class="badge fort">24.5</span> (1.° LATAM)</td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>CP pediátricos (menores 15 años) / millón</td><td><span class="badge fort">19.3</span> (1.° LATAM)</td><td>Atlas LATAM 2020</td></tr>
+        <tr><td>Servicios pediátricos CP</td><td>17</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Opioides S-DDD</td><td>728 / millón hab. / día</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>Morfina oral 1er nivel</td><td><span class="badge fort">70–100%</span> disponibilidad</td><td>Atlas Américas 2025</td></tr>
+        <tr><td>CP obligatorio Medicina</td><td><span class="badge fort">100%</span></td><td>Atlas Américas 2025</td></tr>
+        <tr><td>DVA/PDA nacional</td><td><span class="badge fort">Sí</span> (Ley 18473/2009)</td><td>Legislación vigente</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="opioides">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">5</span> Lineamiento</span>
+    <h2>Acceso a Opioides</h2>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big" style="color:var(--amber)">728</div><div class="label">S-DDD / millón hab. / día<br><small>Colombia: 645</small></div></div>
+      <div class="stat-card"><div class="big" style="color:var(--green)">70–100%</div><div class="label">Morfina oral en 1er nivel<br><small>Colombia: 0–10%</small></div></div>
+    </div>
+
+    <div class="card">
+      <h4>💊 Disponibilidad y modelo</h4>
+      <p>El PNCP tiene como segundo lineamiento estratégico la "disponibilidad de opioides en todas las instituciones". Uruguay garantiza morfina oral de liberación inmediata en centros de atención primaria urbanos al 70–100%, al igual que Costa Rica. El MSP publicó en 2023 un informe específico sobre consumo de opioides del país.</p>
+      <p>La clave del modelo uruguayo es la <strong>articulación formación-acceso</strong>: profesionales formados en CP (100% en Medicina) prescriben con confianza, y la regulación no obstaculiza. La mejor colaboración prescriptores-reguladores de la región facilita que el acceso sea real, no solo formal.</p>
+    </div>
+
+    <div class="callout highlight">
+      💡 <strong>Lección para Colombia:</strong> Uruguay muestra que la formación médica obligatoria en CP (100%) y la colaboración prescriptores-reguladores son tan importantes como la disponibilidad física de los medicamentos. En Colombia, solo el 9.5% de facultades de Medicina incluyen CP obligatorio — los médicos no prescriben opioides porque no saben hacerlo.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="educacion">
+  <div class="container fade-in">
+    <span class="section-label"><span class="section-num">6</span> Lineamiento</span>
+    <h2>Educación e Investigación</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>🎓 CP obligatorio al 100%</h4>
+        <p>Uruguay es el único país de LATAM donde el 100% de las facultades de Medicina incluyen CP como contenido obligatorio. Además, destaca por incluir formación para equipos interdisciplinares (Atlas 2020, junto con El Salvador y Costa Rica).</p>
+      </div>
+      <div class="card">
+        <h4>📚 Formación continua MSP</h4>
+        <p>4 ediciones del curso nacional de capacitación en CP (última en 2023). Formación específica para equipos de INAU (niñez y adolescencia). El MSP coordina directamente la formación con la academia.</p>
+      </div>
+    </div>
+
+    <h3>Comparación educativa con Colombia</h3>
+    <table class="data-table">
+      <thead><tr><th>Indicador</th><th>🇺🇾 Uruguay</th><th>🇨🇴 Colombia</th></tr></thead>
+      <tbody>
+        <tr><td>CP obligatorio Medicina</td><td><span class="badge fort">100%</span></td><td>6/63 (9.5%)</td></tr>
+        <tr><td>CP obligatorio Enfermería</td><td>N/D</td><td><span class="badge fort">15/23 (65%)</span></td></tr>
+        <tr><td>Voluntad anticipada (DVA/PDA)</td><td><span class="badge fort">Ley 2009</span></td><td>Res. 2665/2018 (10.5% uso)</td></tr>
+        <tr><td>CP pediátricos equipos</td><td>17</td><td><span class="badge brecha">9</span></td></tr>
+        <tr><td>Referente OMS</td><td><span class="badge fort">Sí (2023)</span></td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="leccion">
+  <div class="container fade-in">
+    <span class="section-label">🎯 Cierre obligatorio</span>
+    <h2>Lección para Mi Territorio</h2>
+
+    <div class="quote-block">
+      <p class="quote-text">Si Uruguay, con 3.5 millones de habitantes y recursos limitados, logró 100% de CP obligatorio en Medicina, la tasa más alta de equipos/millón en LATAM y reconocimiento OMS, la excusa del "no se puede" desaparece. La clave fue voluntad política sostenida.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card" style="border-left:4px solid var(--primary)">
+        <h4 style="color:var(--primary)">Transferencia 1: CP obligatorio al 100% en Medicina</h4>
+        <p>La Ley 2241/2022 en Colombia busca esto. Uruguay ya lo logró. ¿Qué falta en Colombia para que el 90.5% restante de facultades de Medicina incluyan CP? ¿Es un problema de currículo, de docentes o de voluntad universitaria?</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--teal)">
+        <h4 style="color:var(--teal)">Transferencia 2: CP en Plan Decenal</h4>
+        <p>Uruguay integra CP en su plan de salud nacional. El Plan Decenal de Salud Pública 2022–2031 de Colombia OMITE los CP. ¿Cómo incidir para que se incluyan en la próxima actualización?</p>
+      </div>
+      <div class="card" style="border-left:4px solid var(--amber)">
+        <h4 style="color:var(--amber)">Transferencia 3: Articulación formación-acceso opioides</h4>
+        <p>Uruguay demuestra que formar médicos en CP + facilitar regulación = acceso real a opioides. En su departamento, ¿los médicos saben prescribir opioides? ¿La regulación facilita o dificulta?</p>
+      </div>
+    </div>
+
+    <div class="callout lesson">
+      🗣️ <strong>Cierre exposición (2 min):</strong> Cada integrante nombra UNA transferencia de Uruguay viable en su territorio y la barrera principal a superar.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="fuentes">
+  <div class="container fade-in">
+    <span class="section-label">Bibliografía</span>
+    <h2>Fuentes de Consulta</h2>
+    <ul class="source-list">
+      <li>Tripodoro, V. et al. (2025). <em>Atlas de Cuidados Paliativos de las Américas.</em> Reporte País Uruguay. Houston: IAHPC Press.</li>
+      <li>Pastrana, T. et al. (2021). <em>Atlas CP en Latinoamérica 2020.</em> 2.ª ed. ALCP/IAHPC/U. Navarra.</li>
+      <li>Ley 20179/2023 — Cuidados Paliativos Integral. República Oriental del Uruguay.</li>
+      <li>Ley 18335/2008 — Derechos y Obligaciones de Pacientes y Usuarios. Uruguay.</li>
+      <li>Ley 18473/2009 — Voluntad Anticipada. Uruguay.</li>
+      <li>MSP Uruguay. Plan Nacional de Cuidados Paliativos (PNCP). Campus Virtual OPS.</li>
+      <li>MSP Uruguay (2023). Informe sobre consumo de opioides en Uruguay.</li>
+      <li>MSP Uruguay (2023). Informe situación CP según indicadores OMS.</li>
+      <li>OPS/OMS (2023). Uruguay elegido referente regional en CP para América Latina.</li>
+      <li>OPS/OMS (nov. 2024). Intercambio experiencias telesalud Colombia-Uruguay-Bolivia.</li>
+      <li>Bonilla, P. (2021). Cuidados paliativos en Latinoamérica. <em>Rev Nutr Clín Metab</em>, 4(2), 4–13.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p class="uni">Universidad Antonio Nariño — Facultad de Enfermería</p>
+  <p>Maestría en Cuidados Paliativos · Grupo 3 · País: Uruguay · 6 de marzo de 2026</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add('visible')})},{threshold:.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+const secs=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.sticky-nav a');
+window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{window.scrollY>=s.offsetTop-100&&(c=s.id)});navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c))});
+</script>
+</body>
+</html>

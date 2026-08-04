@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuidados Paliativos en Latinoamérica — Cuatro Modelos de Referencia Regional</title>
+<style>
+:root {
+  --teal-50: #f0fdfa;
+  --teal-100: #ccfbf1;
+  --teal-200: #99f6e4;
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-700: #0f766e;
+  --teal-800: #115e59;
+  --teal-900: #134e4a;
+  --sky-50: #f0f9ff;
+  --sky-100: #e0f2fe;
+  --sky-200: #bae6fd;
+  --sky-300: #7dd3fc;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+  --sky-600: #0284c7;
+  --sky-700: #0369a1;
+  --sky-800: #075985;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --amber-100: #fef3c7;
+  --amber-200: #fde68a;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+  --rose-100: #ffe4e6;
+  --rose-500: #f43f5e;
+  --emerald-100: #d1fae5;
+  --emerald-600: #059669;
+  --violet-100: #ede9fe;
+  --violet-600: #7c3aed;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--slate-50);
+  color: var(--slate-800);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* === HEADER === */
+.hero {
+  background: linear-gradient(135deg, var(--teal-800) 0%, var(--sky-800) 50%, var(--teal-700) 100%);
+  color: white;
+  padding: 3rem 2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(45,212,191,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-content { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-uni {
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+.hero h1 {
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.hero-sub {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.82rem;
+  opacity: 0.75;
+}
+.hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
+
+/* === NAV TABS === */
+.tab-nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background: var(--slate-50);
+  z-index: 100;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+.tab-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--slate-200);
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.tab-btn:hover { border-color: var(--teal-400); color: var(--teal-700); }
+.tab-btn.active {
+  background: var(--teal-700);
+  color: white;
+  border-color: var(--teal-700);
+}
+.tab-btn .flag { font-size: 1.15rem; }
+
+/* === CONTENT === */
+.content-area {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+.country-panel { display: none; animation: fadeIn 0.4s ease; }
+.country-panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* === FICHA TÉCNICA === */
+.ficha {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--teal-500);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.ficha-title {
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--teal-800);
+  margin-bottom: 0.25rem;
+}
+.ficha-nivel {
+  display: inline-block;
+  background: var(--teal-100);
+  color: var(--teal-800);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.ficha-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.ficha-stat {
+  background: var(--slate-50);
+  border-radius: 8px;
+  padding: 0.85rem;
+  text-align: center;
+}
+.ficha-stat .val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--teal-700);
+  display: block;
+}
+.ficha-stat .label {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.15rem;
+}
+.integrantes {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--slate-500);
+}
+.integrantes strong { color: var(--slate-700); }
+
+/* === SECCIONES PREGUNTA === */
+.section-block {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+.section-header {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background 0.2s;
+  user-select: none;
+}
+.section-header:hover { background: var(--slate-50); }
+.section-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.section-header h3 {
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--slate-800);
+  flex: 1;
+}
+.section-arrow {
+  font-size: 1.2rem;
+  color: var(--slate-400);
+  transition: transform 0.3s ease;
+}
+.section-block.open .section-arrow { transform: rotate(180deg); }
+.section-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.section-block.open .section-body { max-height: 5000px; }
+.section-content {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--slate-100);
+  padding-top: 1rem;
+}
+.section-content p { margin-bottom: 0.85rem; }
+.section-content strong { color: var(--teal-800); }
+
+/* Color coding per section */
+.num-historia { background: var(--sky-100); color: var(--sky-700); }
+.num-norma { background: var(--teal-100); color: var(--teal-700); }
+.num-logros { background: var(--emerald-100); color: var(--emerald-600); }
+.num-stats { background: var(--amber-100); color: var(--amber-600); }
+.num-opioides { background: var(--violet-100); color: var(--violet-600); }
+.num-edu { background: var(--rose-100); color: var(--rose-500); }
+
+/* === DATA HIGHLIGHT === */
+.data-hl {
+  background: var(--teal-50);
+  border-left: 3px solid var(--teal-400);
+  padding: 0.85rem 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 0.75rem 0;
+  font-size: 0.9rem;
+}
+.data-hl.amber { background: var(--amber-100); border-color: var(--amber-500); }
+.data-hl.violet { background: var(--violet-100); border-color: var(--violet-600); }
+.data-hl.sky { background: var(--sky-50); border-color: var(--sky-500); }
+
+/* === COMPARATIVA === */
+.compare-box {
+  background: linear-gradient(135deg, var(--sky-50), var(--teal-50));
+  border: 1px solid var(--teal-200);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  margin: 0.75rem 0;
+}
+.compare-box h4 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--teal-700);
+  margin-bottom: 0.5rem;
+}
+.compare-box p { font-size: 0.9rem; }
+
+/* === LECCIÓN TERRITORIAL === */
+.leccion {
+  background: linear-gradient(135deg, var(--teal-700), var(--sky-800));
+  color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+.leccion h3 {
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+.leccion p { opacity: 0.9; font-size: 0.92rem; }
+
+/* === REFERENCES === */
+.refs {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--slate-200);
+}
+.refs h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--slate-400);
+  margin-bottom: 0.4rem;
+}
+.refs p {
+  font-size: 0.78rem;
+  color: var(--slate-500);
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+}
+
+/* === TIMELINE MINI === */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--teal-200);
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 0.85rem;
+  padding-left: 0.5rem;
+}
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--teal-500);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--teal-300);
+}
+.tl-year {
+  font-weight: 700;
+  color: var(--teal-700);
+  font-size: 0.85rem;
+}
+.tl-text { font-size: 0.88rem; color: var(--slate-600); }
+
+/* === EXPAND ALL BTN === */
+.expand-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--teal-50);
+  border: 1px solid var(--teal-200);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--teal-700);
+  margin-bottom: 1rem;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  transition: all 0.2s;
+}
+.expand-all:hover { background: var(--teal-100); }
+
+/* === FOOTER === */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.75rem;
+  color: var(--slate-400);
+  border-top: 1px solid var(--slate-200);
+  max-width: 960px;
+  margin: 0 auto;
+}
+.footer a { color: var(--teal-600); text-decoration: none; }
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.5rem; }
+  .tab-btn { font-size: 0.78rem; padding: 0.5rem 0.8rem; }
+  .ficha-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* === PRINT === */
+@media print {
+  .tab-nav { display: none; }
+  .country-panel { display: block !important; page-break-before: always; }
+  .section-body { max-height: none !important; }
+  .hero { background: var(--teal-800) !important; -webkit-print-color-adjust: exact; }
+}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida a propósito:
+   no depende de los tokens de cada archivo, que son distintos entre sí. */
+.nav-sesion{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D; color:#FAF6EF; padding:.55rem 1rem; font-size:.82rem;
+  display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .6rem; line-height:1.6;
+}
+.nav-sesion a{color:#F5EEDD; text-decoration:none; border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876; font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876; outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 3"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 3 &middot; 6 mar 2026</span><span class="ns-actual" aria-current="page">Panorama regional</span><a href="costa-rica.html">Costa Rica</a><a href="argentina.html">Argentina</a><a href="uruguay.html">Uruguay</a><a href="chile.html">Chile</a><a href="colombia-ante-el-espejo.html">Colombia ante el espejo</a><a href="guia-actividad.html">Guía de actividad</a><a href="desglose-normativo-colombia.html">Desglose normativo</a><a href="primer-corte-diagnostico-territorial.html">Primer corte</a></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <p class="hero-uni">Universidad Antonio Nariño · Facultad de Enfermería · Maestría en Cuidados Paliativos</p>
+    <h1>Cuidados Paliativos en Latinoamérica:<br>Cuatro Modelos de Referencia Regional</h1>
+    <p class="hero-sub">Asignatura: Contexto Histórico y Legal en Cuidados Paliativos — Sesión 3</p>
+    <div class="hero-meta">
+      <span>📅 Presentación: 6 de marzo de 2026</span>
+      <span>👨‍🏫 Prof. Jorge Wilhem Bogoya López</span>
+      <span>📊 Atlas CP Américas 2025 · Nivel 4</span>
+    </div>
+  </div>
+</header>
+
+<!-- TABS -->
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-country="cr"><span class="flag">🇨🇷</span> Costa Rica</button>
+  <button class="tab-btn" data-country="ar"><span class="flag">🇦🇷</span> Argentina</button>
+  <button class="tab-btn" data-country="uy"><span class="flag">🇺🇾</span> Uruguay</button>
+  <button class="tab-btn" data-country="cl"><span class="flag">🇨🇱</span> Chile</button>
+</nav>
+
+<!-- CONTENT -->
+<main class="content-area">
+
+<!-- ============================= COSTA RICA ============================= -->
+<div class="country-panel active" id="panel-cr">
+  <div class="ficha">
+    <div class="ficha-title">🇨🇷 Costa Rica</div>
+    <span class="ficha-nivel">Nivel 4 — Prestación Sistemáticamente Integrada (único 4b en LATAM, 2017)</span>
+    <div class="ficha-grid">
+      <div class="ficha-stat"><span class="val">~5,1 M</span><span class="label">Población</span></div>
+      <div class="ficha-stat"><span class="val">385</span><span class="label">S-DDD/millón hab./día</span></div>
+      <div class="ficha-stat"><span class="val">7</span><span class="label">Servicios Pediátricos</span></div>
+      <div class="ficha-stat"><span class="val">70–100%</span><span class="label">Disponib. Morfina Urbana</span></div>
+    </div>
+    <p class="integrantes"><strong>Grupo 1</strong> · modelo de referencia: Costa Rica</p>
+  </div>
+
+  <button class="expand-all" onclick="toggleAll('panel-cr')">▼ Expandir / Colapsar todas las secciones</button>
+
+  <!-- 1. Historia -->
+  <div class="section-block open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-historia">1</span>
+      <h3>Historia y Evolución</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Costa Rica constituye el caso más exitoso de integración de cuidados paliativos en un sistema de salud público en toda Latinoamérica. Su trayectoria es un modelo de cómo la voluntad política, articulada con la seguridad social universal, puede transformar el acceso al alivio del sufrimiento.</p>
+
+        <div class="timeline">
+          <div class="tl-item"><span class="tl-year">1991</span><span class="tl-text"> — Se inician los cuidados paliativos en la Clínica del Dolor del Hospital Calderón Guardia en San José, dentro de la Caja Costarricense de Seguro Social (CCSS). La enfermería lideró este proceso inicial junto con médicos pioneros.</span></div>
+          <div class="tl-item"><span class="tl-year">1994</span><span class="tl-text"> — Se crea la Fundación Pro-Clínica del Dolor y Cuidados Paliativos, que aportó soporte económico y logístico crítico, permitiendo ampliar el equipo interdisciplinario y la atención domiciliaria.</span></div>
+          <div class="tl-item"><span class="tl-year">1998</span><span class="tl-text"> — Promulgación de la Ley N.° 7756 de Beneficios para los Responsables de Pacientes en Fase Terminal, primer marco legal vinculado a la protección de cuidadores.</span></div>
+          <div class="tl-item"><span class="tl-year">1999</span><span class="tl-text"> — La Clínica del Dolor se transforma en el <strong>Centro Nacional de Control del Dolor y Cuidados Paliativos (CNCDyCP)</strong>, centro de referencia nacional dentro de la CCSS. Marca el paso de una iniciativa local a una política institucional.</span></div>
+          <div class="tl-item"><span class="tl-year">2009</span><span class="tl-text"> — Se crea la especialidad de Medicina Paliativa en la Escuela de Medicina de la Universidad de Costa Rica (UCR).</span></div>
+          <div class="tl-item"><span class="tl-year">2014</span><span class="tl-text"> — El Atlas ALCP clasifica a Costa Rica en Nivel 3a.</span></div>
+          <div class="tl-item"><span class="tl-year">2016–2020</span><span class="tl-text"> — Plan Nacional de Cuidados Paliativos del Ministerio de Salud, integrado en el Plan Nacional de Salud "Dr. Juan Guillermo Ortiz Guier". Se establecen 24 Clínicas del Dolor a nivel nacional según incidencia de cáncer por región.</span></div>
+          <div class="tl-item"><span class="tl-year">2017</span><span class="tl-text"> — Costa Rica alcanza el <strong>Nivel 4b</strong> en la clasificación global: el único país de Latinoamérica con prestación sistemáticamente integrada al máximo nivel.</span></div>
+          <div class="tl-item"><span class="tl-year">2022</span><span class="tl-text"> — Promulgación de la Ley de Cuidados Paliativos, consolidando el marco legal y garantizando el acceso en atención primaria por ley.</span></div>
+        </div>
+
+        <p>El papel de la CCSS —un sistema de seguridad social que cubre al 95% de la población— fue determinante. A diferencia de otros países donde los CP surgieron desde iniciativas privadas o académicas, en Costa Rica el crecimiento se dio <strong>dentro del sistema público</strong>, lo que explica su integración sistémica.</p>
+
+        <p>Entre las figuras pioneras destacan los profesionales que iniciaron la Clínica del Dolor en el Hospital Calderón Guardia y quienes lideraron la transformación al CNCDyCP. El voluntariado ha jugado un papel complementario importante, con organizaciones como el Albergue San Gabriel y Hospicio Los Ángeles de Desamparados (Alajuela).</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>López de Behm, E. & Morales Alpízar, C. (2005). Historia de los CP en Costa Rica dentro de la Seguridad Social. <em>Medicina Paliativa</em>, 12(2), 92–98.</p>
+          <p>Brenes Fernández, M., Brenes Fernández, J. & Núñez Rodríguez, C. Pasado y presente de los CP en Costa Rica. <em>Rev. Médica de Costa Rica y Centroamérica</em>, 605.</p>
+          <p>Zúñiga-Rodríguez et al. (2024). Caracterización del PAD del CNCDyCP de Costa Rica. <em>Rev. Terapéutica</em>, 18(1), 32–49.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Normatividad -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-norma">2</span>
+      <h3>Normatividad</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Costa Rica ha construido un andamiaje normativo que avanza progresivamente desde la protección de derechos hasta la garantía legal de acceso. El hito más reciente es la <strong>Ley de Cuidados Paliativos de 2022</strong>, que consagra el acceso a CP como derecho exigible e integra los cuidados paliativos en la atención primaria por mandato legal.</p>
+
+        <p>Los antecedentes normativos incluyen la <strong>Sentencia 3366-94</strong> de la Sala Constitucional (1994), que consagró el derecho a una muerte digna y sin dolor como derivado de la dignidad humana. Esta sentencia sentó jurisprudencia décadas antes de la ley específica. Posteriormente, la Ley 7756 de 1998 protegió a los cuidadores de pacientes terminales, y los planes nacionales de salud incorporaron progresivamente los CP.</p>
+
+        <p>La Ley de 2022 establece específicamente: acceso universal a CP en todos los niveles de atención; inclusión obligatoria en atención primaria; derecho a la información sobre pronóstico y opciones de cuidado; derecho al manejo del dolor; y atención domiciliaria como modalidad garantizada.</p>
+
+        <div class="compare-box">
+          <h4>🔄 Comparación con Colombia (Ley 1733 de 2014)</h4>
+          <p>Costa Rica incluye la <strong>integración en atención primaria por ley</strong>, algo que Colombia aún no ha implementado plenamente. La Ley 1733 consagra el derecho a CP pero no establece mecanismos específicos de integración en el primer nivel de atención. Además, Costa Rica cuenta con una autoridad nacional con <strong>estructura completa</strong> dentro del Ministerio de Salud para la coordinación de CP, mientras que en Colombia la articulación institucional sigue siendo fragmentada. El formulario nacional de opioides costarricense se actualiza periódicamente, algo que Colombia no ha logrado sistematizar.</p>
+        </div>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Sala Constitucional de Costa Rica. Sentencia 3366-94, 1994.</p>
+          <p>Ley N.° 7756 de Beneficios para los Responsables de Pacientes en Fase Terminal, 1998.</p>
+          <p>Ley de Cuidados Paliativos, Costa Rica, 2022.</p>
+          <p>Ministerio de Salud, Costa Rica. Plan Nacional de Cuidados Paliativos 2016–2020.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Logros -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-logros">3</span>
+      <h3>Logros y Aciertos</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Costa Rica es considerada el <strong>modelo a seguir en Latinoamérica</strong> según el Atlas de CP de las Américas 2025, y hay razones concretas para ello:</p>
+
+        <p><strong>Autoridad nacional con estructura completa:</strong> Dentro del Ministerio de Salud existe una estructura dedicada a la coordinación de CP, no como programa temporal sino como organismo permanente. Esto garantiza continuidad de políticas independientemente de cambios de gobierno.</p>
+
+        <p><strong>Formulario nacional de opioides actualizado periódicamente:</strong> A diferencia de muchos países donde la lista de medicamentos esenciales se revisa cada varios años, Costa Rica tiene un mecanismo de actualización periódica que permite incorporar nuevos fármacos y formulaciones. Esto se traduce en disponibilidad real: el 70–100% de las farmacias urbanas cuentan con morfina oral de liberación inmediata.</p>
+
+        <p><strong>Integración en atención primaria:</strong> Los CP no están confinados a hospitales de tercer nivel. Por ley, la atención primaria debe incluir competencias de CP básicos, lo que amplía la cobertura hacia zonas rurales y comunidades alejadas de centros hospitalarios.</p>
+
+        <p><strong>Red de 24 Clínicas del Dolor:</strong> Distribuidas según la incidencia de cáncer por región, estas unidades dentro de la CCSS aseguran desconcentración geográfica. El CNCDyCP opera como centro de referencia nacional para casos complejos y como centro de docencia e investigación.</p>
+
+        <p><strong>Voluntariado estructurado:</strong> Organizaciones como el Albergue San Gabriel y los Hospicios de Desamparados complementan la red pública con apoyo comunitario, cuidado domiciliario complementario y acompañamiento espiritual.</p>
+
+        <p><strong>Programa de Atención Domiciliaria (PAD):</strong> Desde 1991, el PAD del CNCDyCP ha atendido a miles de pacientes en sus hogares con equipos interdisciplinarios que incluyen enfermería, medicina paliativa, trabajo social, nutrición y psicología. Entre 2017 y 2021, el PAD incorporó 1.869 pacientes nuevos, el 68% con enfermedades oncológicas y 14,6% con enfermedades neurodegenerativas.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025. ATLANTES/EUNSA.</p>
+          <p>Zúñiga-Rodríguez et al. (2024). <em>Rev. Terapéutica</em>, 18(1), 32–49.</p>
+          <p>Picado Ovares, J.E. et al. (2021). Necesidades de cuidado paliativo en Costa Rica. EDNASSS-CCSS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Estadísticas -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-stats">4</span>
+      <h3>Estadísticas y Epidemiología</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Costa Rica tiene una población de aproximadamente <strong>5,1 millones de habitantes</strong>. A pesar de ser un país pequeño, su sistema de salud universal (CCSS cubre ~95% de la población) le permite una cobertura de CP proporcionalmente alta.</p>
+
+        <div class="data-hl">
+          <strong>Dato clave del Atlas 2025:</strong> Costa Rica, junto con Chile, EE.UU. y Uruguay, es uno de los únicos cuatro países de las Américas que superan la recomendación internacional de 2 servicios especializados de CP por cada 100.000 habitantes.
+        </div>
+
+        <p>El CNCDyCP reporta que entre las causas de ingreso al programa domiciliario predominan las enfermedades oncológicas (68%), seguidas de enfermedades neurodegenerativas (14,6%) y enfermedades crónicas avanzadas (10,9%). Esto refleja que Costa Rica ha avanzado en la integración de pacientes no oncológicos, aunque el componente oncológico sigue siendo mayoritario.</p>
+
+        <p>El país cuenta con <strong>7 servicios pediátricos especializados</strong>, cifra significativa para su tamaño poblacional. Cada año, unas 4.600 personas mueren de cáncer en Costa Rica, y se estima que el número de personas que requieren cuidados paliativos es considerablemente mayor al incluir enfermedades crónicas no oncológicas.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025.</p>
+          <p>Picado Ovares et al. (2021). Necesidades de cuidado paliativo en Costa Rica. EDNASSS-CCSS.</p>
+          <p>Ministerio de Salud, Costa Rica. Plan Nacional de Cuidados Paliativos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Opioides -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-opioides">5</span>
+      <h3>Uso de Opioides</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Costa Rica registra un consumo de <strong>385 S-DDD/millón hab./día</strong>, que aunque se encuentra ligeramente por debajo del promedio latinoamericano (428 S-DDD), se explica por el tamaño de la población y refleja un acceso real y no sobredimensionado.</p>
+
+        <div class="data-hl violet">
+          <strong>Contexto regional:</strong> El promedio de las Américas muestra enormes disparidades: desde 17 S-DDD en Venezuela hasta 18.178 S-DDD en EE.UU. Costa Rica se ubica en un rango de consumo adecuado con alta disponibilidad.
+        </div>
+
+        <p>La estrategia costarricense se basa en tres pilares: (1) un <strong>formulario nacional de opioides actualizado periódicamente</strong> que garantiza que los fármacos necesarios estén incluidos en la lista oficial; (2) <strong>disponibilidad en farmacias de atención primaria</strong>, no solo en hospitales, lo que elimina la barrera geográfica; y (3) la morfina oral de liberación inmediata disponible en el rango <strong>70–100% de centros urbanos</strong>.</p>
+
+        <p>Las barreras residuales incluyen: cobertura insuficiente en zonas rurales alejadas (especialmente en provincias como Limón, Guanacaste y Puntarenas), opiofobia persistente entre algunos profesionales de salud y la población general, y la necesidad de fortalecer la formación en prescripción de opioides en el pregrado.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025.</p>
+          <p>Bonilla, P. (2021). CP en Latinoamérica. <em>Rev. Nutrición Clínica y Metabolismo</em>, 4(2), 4–13.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Educación -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-edu">6</span>
+      <h3>Educación e Investigación</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Desde 2009, la Universidad de Costa Rica ofrece la <strong>especialidad de Medicina Paliativa</strong>, uno de los programas más tempranos en la región. El Atlas 2025 destaca que Costa Rica incluye formación para equipos interdisciplinares, no solo médicos.</p>
+
+        <p>El CNCDyCP funciona como <strong>centro de docencia e investigación</strong>, con cursos en Bioética y Gestión de Investigación, y un Comité de Bioética para la protección de participantes en investigación. El centro ha capacitado personal de salud a nivel nacional para las 24 Clínicas del Dolor distribuidas en el país.</p>
+
+        <p>El Atlas 2025 señala que Costa Rica cuenta con investigación institucional estructurada, aunque la producción científica indexada sigue siendo modesta comparada con Argentina o Chile. La fortaleza investigativa costarricense radica en la investigación aplicada y en la generación de datos epidemiológicos nacionales, como el estudio de Necesidades de Cuidado Paliativo (Picado Ovares et al., 2021).</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025.</p>
+          <p>Bonilla, P. (2021). CP en Latinoamérica. <em>Rev. Nutrición Clínica y Metabolismo</em>, 4(2), 4–13.</p>
+          <p>CNCDyCP, CCSS. Portal institucional: aissfa.ccss.sa.cr/paliativos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="leccion">
+    <h3>💡 Lección para mi territorio</h3>
+    <p>Costa Rica demuestra que la integración de los CP dentro del sistema de seguridad social pública —no paralelo a él— es la ruta más efectiva hacia la cobertura universal. Para los territorios colombianos, la lección es clara: los CP deben articularse con la atención primaria y con las EPS e IPS existentes, no depender de centros especializados aislados. Un formulario de opioides actualizado periódicamente y disponible en farmacias de primer nivel transformaría el acceso en regiones como Caquetá, Tolima o Córdoba.</p>
+  </div>
+</div>
+
+<!-- ============================= ARGENTINA ============================= -->
+<div class="country-panel" id="panel-ar">
+  <div class="ficha" style="border-left-color: var(--sky-500);">
+    <div class="ficha-title">🇦🇷 Argentina</div>
+    <span class="ficha-nivel" style="background: var(--sky-100); color: var(--sky-800);">Nivel 4 — Prestación Sistemáticamente Integrada</span>
+    <div class="ficha-grid">
+      <div class="ficha-stat"><span class="val" style="color: var(--sky-700);">~45,7 M</span><span class="label">Población</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--sky-700);">1.268</span><span class="label">S-DDD/millón hab./día</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--sky-700);">59</span><span class="label">Servicios Pediátricos</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--sky-700);">PrAO</span><span class="label">Programa Acceso Opioides</span></div>
+    </div>
+    <p class="integrantes"><strong>Grupo 2</strong> · modelo de referencia: Argentina</p>
+  </div>
+
+  <button class="expand-all" onclick="toggleAll('panel-ar')">▼ Expandir / Colapsar todas las secciones</button>
+
+  <!-- 1. Historia -->
+  <div class="section-block open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-historia">1</span>
+      <h3>Historia y Evolución</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Argentina es el país con mayor tradición en cuidados paliativos de Sudamérica y uno de los pioneros de la región. Su desarrollo combina iniciativas académicas, institucionales y de la sociedad civil que construyeron un movimiento robusto.</p>
+
+        <div class="timeline">
+          <div class="tl-item"><span class="tl-year">1985</span><span class="tl-text"> — Se funda la primera unidad de CP en el Instituto de Oncología Ángel H. Roffo de la Universidad de Buenos Aires. Paralelamente, Roberto Wenk inicia trabajo pionero en cuidados paliativos.</span></div>
+          <div class="tl-item"><span class="tl-year">1990s</span><span class="tl-text"> — Surge el movimiento hospice argentino. Se crean múltiples fundaciones y asociaciones, incluyendo la Fundación FEMEBA (Federación Médica de la Provincia de Buenos Aires) que desarrolla programas formativos. Se funda el Hospice Buen Samaritano.</span></div>
+          <div class="tl-item"><span class="tl-year">2001</span><span class="tl-text"> — La Resolución 934/2001 del Ministerio de Salud establece las primeras pautas de organización y funcionamiento en CP.</span></div>
+          <div class="tl-item"><span class="tl-year">2002</span><span class="tl-text"> — Los CP se incluyen en la cobertura de salud a nivel nacional. Se crea el Programa de Médicos Comunitarios que incluye formación en CP.</span></div>
+          <div class="tl-item"><span class="tl-year">2003</span><span class="tl-text"> — Se funda <strong>Pallium Latinoamérica</strong>, grupo de investigación y asistencia que se convierte en referente continental. Vilma Tripodoro inicia su trabajo en el Instituto Lanari (UBA).</span></div>
+          <div class="tl-item"><span class="tl-year">2012</span><span class="tl-text"> — Los CP son reconocidos formalmente como derecho del paciente en la legislación argentina.</span></div>
+          <div class="tl-item"><span class="tl-year">2016</span><span class="tl-text"> — Resolución 357/2016: Directrices de Organización y Funcionamiento en CP. Se crea el Programa Nacional de Cuidados Paliativos (Res. 1253-E/2016). Roberto Wenk lidera el encuentro regional de educación en CP.</span></div>
+          <div class="tl-item"><span class="tl-year">2022</span><span class="tl-text"> — Promulgación de la <strong>Ley N.° 27.678</strong>, Ley Nacional de Cuidados Paliativos, que consagra los CP como modelo de atención integral. Reglamentada por Decreto 311/2023.</span></div>
+        </div>
+
+        <p>Argentina es además <strong>sede de la ALCP</strong> (Asociación Latinoamericana de Cuidados Paliativos), lo que refleja su liderazgo organizacional en la región.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Lafferriere, J.N. (2023). Los CP en la normativa jurídica sobre salud en Argentina. <em>Rev. Argentina de Salud Pública</em>, 15, e113.</p>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025.</p>
+          <p>Bonilla, P. (2021). CP en Latinoamérica. <em>Rev. Nutrición Clínica y Metabolismo</em>, 4(2), 4–13.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Normatividad -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-norma">2</span>
+      <h3>Normatividad</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>La <strong>Ley 27.678 de 2022</strong> es la ley nacional de CP de Argentina. Su objetivo es asegurar el acceso de los pacientes a prestaciones integrales en CP en el ámbito público, privado y de la seguridad social. La ley define los CP como un "modelo de atención" (no solo un servicio), lo que implica un enfoque transversal al sistema de salud.</p>
+
+        <p><strong>Derechos que consagra:</strong> Equidad en el acceso; atención interdisciplinaria; acceso a terapias farmacológicas y no farmacológicas basadas en evidencia; respeto a la dignidad y autonomía; atención desde el período perinatal hasta personas mayores; acompañamiento en el duelo.</p>
+
+        <p><strong>Articulación provincial:</strong> Argentina tiene un sistema federal complejo. Existen <strong>125 normas vinculadas a CP</strong> (26 nacionales y 89 provinciales). Desde 1999, diversas provincias han aprobado leyes específicas: Buenos Aires (1999), Córdoba (2002), Río Negro (2003), Misiones (2006), Neuquén (2007), Entre Ríos (2010), Santa Fe (2010), Mendoza (2011), Chaco (2012), La Rioja (2014), Catamarca (2016), Corrientes (2017), San Juan (2019). La Ley 27.678 requiere adhesión provincial; a 2023, solo seis provincias habían adherido formalmente, lo que representa un desafío significativo para la implementación uniforme.</p>
+
+        <div class="compare-box">
+          <h4>🔄 Comparación con Colombia (Ley 1733 de 2014)</h4>
+          <p>Argentina presenta un marco normativo más extenso y multinivel que Colombia. Mientras la Ley 1733 colombiana es de alcance nacional directo, Argentina requiere adhesión provincial, lo que genera heterogeneidad. Sin embargo, la Ley 27.678 es más amplia en sus objetivos: promueve explícitamente la formación de grado y posgrado, la investigación, y el voluntariado. Colombia podría aprender del desarrollo normativo provincial argentino para impulsar ordenanzas departamentales específicas.</p>
+        </div>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Ley 27.678. Boletín Oficial de la República Argentina, 21 de julio de 2022.</p>
+          <p>Decreto 311/2023. Reglamentación de la Ley 27.678.</p>
+          <p>Lafferriere, J.N. (2023). <em>Rev. Argentina de Salud Pública</em>, 15, e113.</p>
+          <p>LegisAlud Argentina: legisalud.gov.ar/atlas/cuidados_paliativos.html</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Logros -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-logros">3</span>
+      <h3>Logros y Aciertos</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p><strong>Mayor número de servicios especializados en Sudamérica:</strong> Argentina lidera en cantidad absoluta de servicios de CP, con la red más extensa de equipos hospitalarios, domiciliarios y hospicios de la región.</p>
+
+        <p><strong>59 servicios pediátricos especializados:</strong> Cifra líder en Sudamérica. Esto incluye equipos en hospitales pediátricos de referencia como el Hospital Garrahan y el Hospital de Niños Ricardo Gutiérrez, con modelos de atención que han sido replicados en otros países.</p>
+
+        <p><strong>Sede de la ALCP:</strong> Argentina alberga la Asociación Latinoamericana de Cuidados Paliativos, lo que le confiere un rol articulador y de visibilidad regional.</p>
+
+        <p><strong>Estrategia PrAO (Programa de Acceso a Opioides):</strong> Modelo de política de medicamentos que buscó garantizar el acceso a opioides a nivel nacional mediante la distribución directa y la eliminación de barreras regulatorias. Aunque fue discontinuado en 2025, sentó precedentes importantes sobre cómo diseñar políticas de acceso a medicamentos esenciales.</p>
+
+        <p><strong>Pallium Latinoamérica:</strong> Grupo de investigación y asistencia fundado en Buenos Aires que ha producido evidencia científica regional, formado profesionales y contribuido a la visibilización de los CP en Latinoamérica. Vilma Tripodoro, investigadora de Pallium y del Instituto Lanari (UBA), lideró el Atlas de CP de las Américas 2025.</p>
+
+        <p><strong>Capacidad de formación académica:</strong> Universidades como la Universidad Austral, la UBA, y múltiples instituciones ofrecen programas de posgrado en CP.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Estadísticas -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-stats">4</span>
+      <h3>Estadísticas y Epidemiología</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Argentina tiene una población de aproximadamente <strong>45,7 millones de habitantes</strong>. La estimación de personas con sufrimiento grave relacionado con la salud es significativa dado el perfil epidemiológico del país, con alta prevalencia de enfermedades crónicas no transmisibles.</p>
+
+        <div class="data-hl amber">
+          <strong>Dato clave:</strong> Argentina lidera en Sudamérica con 59 servicios pediátricos especializados en CP y la mayor red de servicios para adultos. Sin embargo, existe una concentración significativa en Buenos Aires y las grandes ciudades, con déficit en provincias del norte y la Patagonia.
+        </div>
+
+        <p>El Atlas 2025 reporta que Argentina tiene una tasa de servicios por 100.000 habitantes que la posiciona entre los líderes regionales, aunque la distribución geográfica sigue siendo desigual. Comparativamente, Colombia tiene aproximadamente 51 millones de habitantes y una cobertura proporcionalmente menor de servicios especializados.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Opioides -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-opioides">5</span>
+      <h3>Uso de Opioides</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Argentina registra un consumo de <strong>1.268 S-DDD/millón hab./día</strong>, lo que equivale a aproximadamente <strong>tres veces el promedio latinoamericano</strong> (428 S-DDD). Esta cifra refleja una política de acceso a opioides más avanzada que la mayoría de los países de la región.</p>
+
+        <p><strong>Estrategia PrAO:</strong> El Programa de Acceso a Opioides fue una iniciativa del Ministerio de Salud que distribuyó opioides de forma centralizada a provincias y servicios, eliminando barreras burocráticas. Su discontinuación en 2025 representa un retroceso que amenaza el acceso, particularmente en provincias que dependían del suministro centralizado.</p>
+
+        <div class="data-hl violet">
+          <strong>Alerta del Atlas 2025:</strong> La disponibilidad de opioides en centros de atención primaria se ubica en el rango 30–70%, significativamente menor que en Costa Rica o Uruguay. Esto indica que, a pesar del alto consumo agregado, persisten barreras de acceso en el primer nivel de atención.
+        </div>
+
+        <p>Los retos incluyen: la desigualdad entre provincias; la opiofobia persistente; la falta de uniformidad en las regulaciones provinciales de prescripción; y la incertidumbre generada por la discontinuación del PrAO.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Educación -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-edu">6</span>
+      <h3>Educación e Investigación</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Argentina es líder regional en formación académica en CP. En 2016, Roberto Wenk lideró el encuentro regional de educación en CP (Wenk et al., 2016) que estableció estándares para la formación en Latinoamérica.</p>
+
+        <p><strong>Programas de posgrado:</strong> La Universidad Austral ofrece la Maestría en Cuidados Paliativos; la UBA tiene el Departamento de CP del Instituto Lanari; múltiples universidades ofrecen diplomas, cursos de especialización y fellowship. Argentina cuenta con reconocimiento oficial de la especialidad médica en CP.</p>
+
+        <p><strong>Pallium Latinoamérica</strong> ha sido el motor de la producción científica regional, con publicaciones en revistas indexadas, participación en estudios multicéntricos y liderazgo en el desarrollo de los Atlas de CP. El grupo ha contribuido a la visibilización académica de los CP en Latinoamérica y ha formado investigadores de múltiples países.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Wenk, R. et al. (2016). Encuentro regional de educación en CP. ALCP.</p>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025.</p>
+          <p>Bonilla, P. (2021). <em>Rev. Nutrición Clínica y Metabolismo</em>, 4(2), 4–13.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="leccion">
+    <h3>💡 Lección para mi territorio</h3>
+    <p>Argentina enseña que la construcción de CP desde la academia y la sociedad civil puede ser tan poderosa como desde el Estado. Para territorios colombianos con universidades activas (como Bucaramanga o Ibagué), la creación de grupos de investigación y asistencia tipo Pallium puede catalizar el desarrollo local. La experiencia del PrAO muestra que las políticas de acceso a opioides deben institucionalizarse legalmente, no depender de programas que pueden ser discontinuados.</p>
+  </div>
+</div>
+
+<!-- ============================= URUGUAY ============================= -->
+<div class="country-panel" id="panel-uy">
+  <div class="ficha" style="border-left-color: var(--emerald-600);">
+    <div class="ficha-title">🇺🇾 Uruguay</div>
+    <span class="ficha-nivel" style="background: var(--emerald-100); color: #065f46;">Nivel 4 — Prestación Sistemáticamente Integrada</span>
+    <div class="ficha-grid">
+      <div class="ficha-stat"><span class="val" style="color: var(--emerald-600);">~3,4 M</span><span class="label">Población</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--emerald-600);">728</span><span class="label">S-DDD/millón hab./día</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--emerald-600);">17</span><span class="label">Servicios Pediátricos</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--emerald-600);">2008</span><span class="label">1ª Ley CP en LATAM</span></div>
+    </div>
+    <p class="integrantes"><strong>Grupo 3</strong> · modelo de referencia: Uruguay</p>
+  </div>
+
+  <button class="expand-all" onclick="toggleAll('panel-uy')">▼ Expandir / Colapsar todas las secciones</button>
+
+  <!-- 1. Historia -->
+  <div class="section-block open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-historia">1</span>
+      <h3>Historia y Evolución</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Uruguay es el <strong>pionero continental en legislación de CP</strong>: fue el primer país latinoamericano en promulgar una ley específica de cuidados paliativos (2008). Su trayectoria demuestra que un país pequeño, con decisión política y un sistema de salud organizado, puede lograr cobertura sistemática.</p>
+
+        <p>Las primeras iniciativas de CP en Uruguay surgieron desde la academia y la clínica a finales de los años 1990 e inicios del 2000, con equipos hospitalarios que comenzaron a ofrecer atención paliativa dentro del sistema público (ASSE — Administración de los Servicios de Salud del Estado) y del sistema mutual.</p>
+
+        <p>En 2008, la <strong>Ley N.° 18.335</strong> sobre Derechos y Obligaciones de Pacientes y Usuarios incluyó disposiciones específicas sobre CP y el derecho a morir con dignidad. Posteriormente, el Ministerio de Salud Pública creó el <strong>Programa Nacional de Cuidados Paliativos</strong> con respaldo ministerial directo, estableciendo una autoridad nacional con estructura completa.</p>
+
+        <p>La evolución reciente incluye dos hitos legislativos fundamentales en 2025: la reglamentación de la <strong>Ley 20.179 de Cuidados Paliativos</strong> (9 de octubre de 2025) y la aprobación de la <strong>Ley de Eutanasia</strong> (15 de octubre de 2025), colocando a Uruguay en el centro del debate ético sobre el final de la vida en Latinoamérica.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Ley N.° 18.335, Uruguay, 2008. IMPO: impo.com.uy/bases/leyes/18335-2008</p>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025.</p>
+          <p>Bonilla, P. (2021). <em>Rev. Nutrición Clínica y Metabolismo</em>, 4(2), 4–13.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Normatividad -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-norma">2</span>
+      <h3>Normatividad</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>La <strong>Ley 18.335 de 2008</strong> fue la primera ley en Latinoamérica en incluir disposiciones específicas de CP. En su articulado original establecía el derecho a "morir con dignidad", definido como el derecho a morir en forma natural, en paz y sin dolor, evitando tanto la eutanasia como la futilidad terapéutica.</p>
+
+        <p>Uruguay es uno de los tres únicos países de las Américas (junto a Chile y EE.UU.) con <strong>política nacional de Planificación Anticipada de Decisiones (PDA)</strong>. Esto significa que existe un marco legal que permite a las personas expresar anticipadamente sus preferencias sobre el cuidado al final de la vida, con validez jurídica.</p>
+
+        <div class="data-hl sky">
+          <strong>Hito 2025 — Ley de Eutanasia:</strong> El 15 de octubre de 2025, el Senado uruguayo aprobó la ley de "Muerte digna" que legaliza la eutanasia. Uruguay se convierte así en el primer país de Latinoamérica en aprobar esta ley por vía parlamentaria. La ley regula el derecho de personas con enfermedades incurables e irreversibles que padezcan sufrimiento insoportable a solicitar el procedimiento. El artículo 9 modifica directamente la Ley 18.335 de CP. La simultánea reglamentación de la Ley de CP (9 de octubre) y la aprobación de la ley de eutanasia (15 de octubre) plantea un debate crucial para los paliativistas: ¿son complementarios o antagónicos?
+        </div>
+
+        <div class="compare-box">
+          <h4>🔄 Comparación con Colombia</h4>
+          <p>Colombia fue el primer país en despenalizar la eutanasia por vía judicial (Sentencia C-239/1997), mientras que Uruguay es el primero en legalizarla por vía legislativa en Latinoamérica. Sin embargo, Colombia tiene la Ley 1733 de CP desde 2014 y la Resolución 825 de 2018 sobre eutanasia en menores, lo que la sitúa en un desarrollo normativo más temprano pero con brechas de implementación persistentes. Uruguay tiene una PDA formalizada que Colombia no ha desarrollado plenamente.</p>
+        </div>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Ley 18.335, Uruguay, 2008.</p>
+          <p>Ley de Muerte Digna, Uruguay. Carpeta 341/2025, aprobada 15 de octubre de 2025.</p>
+          <p>Ley 20.179, Uruguay. Reglamentada 9 de octubre de 2025.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Logros -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-logros">3</span>
+      <h3>Logros y Aciertos</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p><strong>Autoridad nacional con estructura completa:</strong> El Ministerio de Salud Pública cuenta con una estructura dedicada a CP, con respaldo oficial incluyendo la participación en el proceso del Atlas de las Américas 2025.</p>
+
+        <p><strong>Cobertura sistemática en país pequeño:</strong> Con solo 3,4 millones de habitantes, Uruguay demuestra que el tamaño no es excusa. Su sistema de salud, basado en el Sistema Nacional Integrado de Salud (SNIS), permite articular lo público y lo privado bajo regulación estatal.</p>
+
+        <p><strong>17 servicios pediátricos especializados:</strong> Para una población de 3,4 millones, esto representa una de las tasas más altas del continente. Los CP pediátricos uruguayos se han desarrollado con énfasis en la atención domiciliaria y el apoyo familiar.</p>
+
+        <p><strong>Integración con atención primaria:</strong> Uruguay ha logrado que los CP se articulen con el primer nivel de atención, no queden confinados a los hospitales. La morfina oral de liberación inmediata tiene una disponibilidad del 70–100% en zonas urbanas.</p>
+
+        <p><strong>Educación obligatoria en pregrado:</strong> Según Bonilla (2021), Uruguay es uno de los dos únicos países de Latinoamérica donde <strong>todas las facultades de medicina incluyen formación obligatoria en CP</strong>. Esto es excepcional y explica en parte el alto nivel de integración del país.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Estadísticas -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-stats">4</span>
+      <h3>Estadísticas y Epidemiología</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Con <strong>3,4 millones de habitantes</strong>, Uruguay es el país más pequeño de los cuatro analizados, lo que hace aún más notable su clasificación en Nivel 4.</p>
+
+        <div class="data-hl">
+          <strong>Dato clave del Atlas 2025:</strong> Uruguay es uno de los cuatro países de las Américas que superan la recomendación internacional de 2 servicios especializados por cada 100.000 habitantes, junto con Chile, Costa Rica y EE.UU.
+        </div>
+
+        <p>Con 17 servicios pediátricos para 3,4 millones de personas, Uruguay tiene una de las tasas per cápita más altas de CP pediátricos en las Américas. La reflexión clave es: ¿cómo un país pequeño logra cobertura sistemática? La respuesta está en la combinación de voluntad política, integración en el sistema de salud y obligatoriedad de formación en pregrado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Opioides -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-opioides">5</span>
+      <h3>Uso de Opioides</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Uruguay registra un consumo de <strong>728 S-DDD/millón hab./día</strong>, significativamente superior al promedio latinoamericano (428 S-DDD). La disponibilidad urbana de morfina oral de liberación inmediata se ubica en el rango <strong>70–100%</strong>.</p>
+
+        <p>Las políticas que facilitan este acceso incluyen: regulación centralizada a través del Ministerio de Salud Pública; integración de opioides en el vademécum del SNIS; prescripción facilitada para médicos capacitados en CP; y distribución a través de la red de farmacias del sistema público y mutual.</p>
+
+        <p>Uruguay demuestra que un consumo moderado-alto de opioides, cuando está bien regulado y acompañado de formación profesional, se traduce en alivio real del sufrimiento sin los problemas de abuso documentados en otros contextos (como la crisis de opioides de EE.UU., donde el consumo es de 18.178 S-DDD).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Educación -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-edu">6</span>
+      <h3>Educación e Investigación</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>El logro más destacado de Uruguay en educación es que <strong>todas las facultades de medicina incluyen formación obligatoria en CP</strong> (Bonilla, 2021). Esto es excepcional en Latinoamérica, donde la mayoría de los países aún no han logrado esta integración curricular. En 20 de los 35 países de las Américas, los estudiantes de medicina no reciben formación obligatoria en CP.</p>
+
+        <p>Uruguay cuenta con programas de posgrado y celebra congresos nacionales específicos de CP con regularidad. El Atlas 2025 destaca que Uruguay incluye formación para equipos interdisciplinares, un enfoque que va más allá de la formación exclusivamente médica.</p>
+
+        <p>La producción científica, si bien más modesta que la de Argentina o Chile, es consistente y se beneficia de la articulación con redes internacionales como la ALCP y el IAHPC.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Bonilla, P. (2021). CP en Latinoamérica. <em>Rev. Nutrición Clínica y Metabolismo</em>, 4(2), 4–13.</p>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="leccion" style="background: linear-gradient(135deg, #065f46, #0f766e);">
+    <h3>💡 Lección para mi territorio</h3>
+    <p>Uruguay demuestra que el tamaño del país no determina la calidad de los CP. La lección es sobre <strong>formación obligatoria en pregrado</strong>: si todos los médicos y enfermeras egresaran con competencias básicas en CP, la cobertura se multiplicaría sin necesidad de esperar especialistas. Para territorios como Florencia (Caquetá) o Neiva (Huila), donde los especialistas son escasos, la formación universal en pregrado sería transformadora. El debate eutanasia vs. CP que Uruguay enfrenta hoy es una reflexión necesaria para los paliativistas colombianos.</p>
+  </div>
+</div>
+
+<!-- ============================= CHILE ============================= -->
+<div class="country-panel" id="panel-cl">
+  <div class="ficha" style="border-left-color: var(--rose-500);">
+    <div class="ficha-title">🇨🇱 Chile</div>
+    <span class="ficha-nivel" style="background: var(--rose-100); color: #9f1239;">Nivel 4 — Prestación Sistemáticamente Integrada</span>
+    <div class="ficha-grid">
+      <div class="ficha-stat"><span class="val" style="color: var(--rose-500);">~19,8 M</span><span class="label">Población</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--rose-500);">1.896</span><span class="label">S-DDD/millón hab./día</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--rose-500);">21</span><span class="label">Servicios Pediátricos</span></div>
+      <div class="ficha-stat"><span class="val" style="color: var(--rose-500);">Líder</span><span class="label">Consumo Opioides LATAM</span></div>
+    </div>
+    <p class="integrantes"><strong>Grupo 4</strong> · modelo de referencia: Chile</p>
+  </div>
+
+  <button class="expand-all" onclick="toggleAll('panel-cl')">▼ Expandir / Colapsar todas las secciones</button>
+
+  <!-- 1. Historia -->
+  <div class="section-block open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-historia">1</span>
+      <h3>Historia y Evolución</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Chile tiene una trayectoria singular: su desarrollo de CP se origina en el <strong>Programa Nacional de Cáncer</strong>, lo que le dio una base institucional sólida pero inicialmente limitada al ámbito oncológico. La expansión hacia enfermedades no oncológicas ha sido su gran desafío y logro reciente.</p>
+
+        <div class="timeline">
+          <div class="tl-item"><span class="tl-year">1990s</span><span class="tl-text"> — Se desarrollan los primeros programas nacionales de alivio del dolor dentro del Programa Nacional de Cáncer del Ministerio de Salud. Chile adopta tempranamente las guías de la OMS sobre el uso de opioides para el dolor oncológico.</span></div>
+          <div class="tl-item"><span class="tl-year">2005</span><span class="tl-text"> — Los CP oncológicos se incluyen en las <strong>Garantías Explícitas en Salud (GES/AUGE)</strong>, sistema que garantiza atención oportuna y de calidad para un grupo de patologías priorizadas. Esto significa financiamiento estatal garantizado para CP en cáncer.</span></div>
+          <div class="tl-item"><span class="tl-year">2007</span><span class="tl-text"> — Se estructura la red de unidades de CP hospitalarias a nivel nacional. Se publica un análisis histórico del desarrollo de CP en Chile (Del Río & Palma, Boletín Escuela de Medicina PUC, Vol. 32 N°1).</span></div>
+          <div class="tl-item"><span class="tl-year">2018</span><span class="tl-text"> — Se crea la <strong>Sociedad Médica de Cuidados Paliativos de Chile</strong>, que impulsa el reconocimiento de la especialidad y aboga por la ley de CP universales.</span></div>
+          <div class="tl-item"><span class="tl-year">2021</span><span class="tl-text"> — Promulgación de la <strong>Ley N.° 21.375</strong> que consagra los CP universales y los derechos de personas con enfermedades terminales o graves. Entra en vigencia el 21 de marzo de 2022. Presupuesto de $13 mil millones CLP para implementación.</span></div>
+          <div class="tl-item"><span class="tl-year">2023</span><span class="tl-text"> — Se publica el reglamento de la Ley 21.375 (Decreto Supremo N.° 41). Se avanza en la implementación hacia patologías no oncológicas.</span></div>
+        </div>
+
+        <p>Chile reconoce oficialmente la <strong>especialidad médica en Cuidados Paliativos</strong> a través de la Superintendencia de Salud, siendo uno de los pocos países de Latinoamérica con este reconocimiento formal.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Del Río, M.I. & Palma, A. (2007). CP: Historia y desarrollo. <em>Boletín Escuela de Medicina PUC</em>, 32(1).</p>
+          <p>Ley 21.375, Chile, 2021. BCN: bcn.cl/leychile/navegar?idNorma=1166846</p>
+          <p>OPS/OMS Chile (2021). Nueva ley consagra como derecho universal el acceso a CP.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Normatividad -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-norma">2</span>
+      <h3>Normatividad</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>La <strong>Ley 21.375 de 2021</strong> es una de las más completas de la región. Establece derechos explícitos para personas con enfermedades terminales o graves, incluyendo: derecho a ser informado sobre su estado de salud y pronóstico; derecho al manejo de síntomas; derecho a la atención domiciliaria; derecho al autocuidado y al acompañamiento familiar; y derecho a CP en todos los niveles de atención.</p>
+
+        <p>La ley exige además la <strong>incorporación de CP en la malla curricular de todas las carreras de la salud</strong>, un mandato legal que busca transformar la formación profesional a mediano plazo.</p>
+
+        <p>Chile es, junto con Uruguay y EE.UU., uno de los tres países de las Américas con <strong>política nacional de Planificación Anticipada de Decisiones (PDA)</strong>. Esto otorga un marco legal para que las personas expresen sus preferencias sobre el cuidado al final de la vida.</p>
+
+        <div class="compare-box">
+          <h4>🔄 Comparación con Colombia</h4>
+          <p>La Ley 21.375 chilena es más reciente que la Ley 1733 colombiana (2014) y se beneficia de los aprendizajes regionales. Mientras Colombia fue pionera en legislar sobre CP, Chile ha ido más allá al establecer: financiamiento específico ($13 mil millones CLP para el primer año); obligatoriedad de formación curricular; fortalecimiento de la atención primaria como eje; y PDA como política nacional. Colombia podría adoptar el modelo chileno de financiamiento etiquetado para CP.</p>
+        </div>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Ley N.° 21.375, Chile, promulgada 21 de octubre de 2021.</p>
+          <p>Decreto Supremo N.° 41 de 2022 (publicado 10 de enero de 2023). Reglamento de la Ley 21.375.</p>
+          <p>Ministerio de Salud de Chile: minsal.cl/ley-cuidados-paliativos/</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Logros y tensiones -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-logros">3</span>
+      <h3>Logros y Desafíos Pendientes</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p><strong>Mayor consumo de opioides de Latinoamérica:</strong> Con 1.896 S-DDD/millón hab./día, Chile lidera ampliamente la región. Esto refleja una política de acceso a opioides decidida y sostenida.</p>
+
+        <p><strong>Múltiples equipos técnicos en el Ministerio de Salud:</strong> Tanto para cáncer como para enfermedades no oncológicas, con coordinación a nivel ministerial.</p>
+
+        <p><strong>136 unidades de CP hospitalarias</strong> al momento de la promulgación de la ley, con plan de ampliación progresiva hacia la atención primaria y pacientes no oncológicos (meta: 5.000 pacientes nuevos el primer año).</p>
+
+        <p><strong>Reconocimiento oficial de la especialidad médica en CP</strong> por la Superintendencia de Salud, lo que legitima la formación y la práctica.</p>
+
+        <div class="data-hl amber">
+          <strong>Tensión identificada por el Atlas 2025:</strong> A pesar de estos logros, el Atlas señala <strong>fragmentación entre departamentos</strong> dentro del Ministerio e <strong>insuficiente financiamiento</strong> para la implementación plena de la ley. La cobertura rural sigue siendo débil, y la expansión a patologías no oncológicas está en proceso. Existe una tensión entre un marco legal avanzado y una implementación que aún no alcanza a todos los territorios.
+        </div>
+
+        <p>Esta tensión entre logros legales y brechas de implementación es particularmente instructiva para Colombia, que enfrenta el mismo desafío.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Estadísticas -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-stats">4</span>
+      <h3>Estadísticas y Epidemiología</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Chile tiene una población de aproximadamente <strong>19,8 millones de habitantes</strong>. Con 21 servicios pediátricos especializados y 136 unidades hospitalarias de CP, su tasa por 100.000 habitantes se compara favorablemente con la región.</p>
+
+        <div class="data-hl">
+          <strong>Dato clave:</strong> Chile, junto con Costa Rica, Uruguay y EE.UU., supera la recomendación internacional de 2 servicios especializados por cada 100.000 habitantes. Esto lo convierte en referente para países de tamaño similar como Colombia.
+        </div>
+
+        <p>La estimación de personas con sufrimiento grave relacionado con la salud en Chile es significativa. El envejecimiento poblacional y el aumento de enfermedades crónicas no transmisibles generan una demanda creciente que la Ley 21.375 busca atender. El hecho de que desde 2005 los CP oncológicos estén garantizados por el GES significa que una proporción importante de pacientes ya tiene cobertura, pero la brecha en enfermedades no oncológicas es el gran desafío pendiente.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Opioides -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-opioides">5</span>
+      <h3>Uso de Opioides</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Chile registra el <strong>mayor consumo de opioides de Latinoamérica: 1.896 S-DDD/millón hab./día</strong>, más de cuatro veces el promedio regional (428 S-DDD). Este dato refleja una política sostenida de acceso a opioides desde la integración de los CP en el GES en 2005.</p>
+
+        <p>Las políticas que explican este alto consumo incluyen: garantía legal de acceso a opioides para pacientes oncológicos desde 2005; inclusión de opioides en el vademécum GES; capacitación sostenida de prescriptores; y una regulación que facilita la prescripción dentro del sistema público.</p>
+
+        <div class="data-hl violet">
+          <strong>Alerta del Atlas 2025:</strong> A pesar del alto consumo agregado, la <strong>cobertura rural sigue siendo débil</strong>. Existe una brecha significativa entre la disponibilidad urbana y rural de opioides, lo que sugiere que las cifras nacionales enmascaran desigualdades territoriales importantes.
+        </div>
+
+        <p>Esta situación es análoga a Colombia, donde las cifras nacionales pueden no reflejar la realidad de departamentos como Caquetá, Putumayo o Guainía.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Educación -->
+  <div class="section-block">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num num-edu">6</span>
+      <h3>Educación e Investigación</h3>
+      <span class="section-arrow">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p>Chile reconoce oficialmente la especialidad médica en CP, lo que establece una ruta formativa clara y regulada. La Ley 21.375 exige además la incorporación de CP en la malla curricular de todas las carreras de salud, un mandato que está en proceso de implementación.</p>
+
+        <p>Existen programas de posgrado en múltiples universidades chilenas, incluyendo la Pontificia Universidad Católica de Chile y la Universidad de Chile. La Sociedad Médica de Cuidados Paliativos de Chile (creada en 2018) organiza congresos nacionales y promueve la investigación.</p>
+
+        <p>El Atlas 2025 identifica a Chile como un país con <strong>visibilidad académica consistente</strong>, con producción científica en revistas indexadas y participación en estudios multicéntricos regionales e internacionales.</p>
+
+        <div class="refs">
+          <h4>Fuentes verificables</h4>
+          <p>Sociedad Médica de Cuidados Paliativos de Chile: scpaliativosch.cl</p>
+          <p>Del Río, M.I. & Palma, A. (2007). <em>Boletín Escuela de Medicina PUC</em>, 32(1).</p>
+          <p>Tripodoro, V.A. et al. (2025). Atlas de CP de las Américas 2025.</p>
+          <p>Vindrola-Padros, C. et al. (2018). PC education in Latin America. <em>Palliative and Supportive Care</em>, 16(1), 107–117.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="leccion" style="background: linear-gradient(135deg, #9f1239, #be185d);">
+    <h3>💡 Lección para mi territorio</h3>
+    <p>Chile enseña dos cosas: primero, que la integración de CP en un sistema de garantías (GES) con financiamiento específico es la vía más efectiva para garantizar acceso real, no solo declarativo. Colombia podría impulsar la inclusión de CP en las Rutas Integrales de Atención en Salud (RIAS). Segundo, la tensión chilena entre logros legislativos y brechas rurales es un espejo para Colombia: la ley sin implementación territorial es insuficiente. Para los territorios colombianos donde ejercen los estudiantes, la lección es presionar por la implementación, no solo celebrar la normatividad.</p>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p><strong>Universidad Antonio Nariño</strong> · Maestría en Cuidados Paliativos · Sesión 3: Historia CP en Latinoamérica</p>
+  <p>Fuentes principales: <a href="https://www.unav.edu/web/atlantes-global-observatory-of-palliative-care" target="_blank">Atlas CP Américas 2025 (ATLANTES)</a> · <a href="https://cuidadospaliativos.org/" target="_blank">ALCP</a> · Bonilla, P. (2021). <em>Rev. Nutrición Clínica y Metabolismo</em>, 4(2).</p>
+  <p style="margin-top: 0.5rem;">Elaborado como material de apoyo docente · Prof. Jorge Wilhem Bogoya López · Febrero 2026</p>
+</footer>
+
+<script>
+// Tab navigation
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.country-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.country).classList.add('active');
+    window.scrollTo({ top: document.querySelector('.tab-nav').offsetTop - 10, behavior: 'smooth' });
+  });
+});
+
+// Accordion sections
+function toggleSection(header) {
+  header.parentElement.classList.toggle('open');
+}
+
+// Expand/collapse all in a panel
+function toggleAll(panelId) {
+  const panel = document.getElementById(panelId);
+  const blocks = panel.querySelectorAll('.section-block');
+  const allOpen = Array.from(blocks).every(b => b.classList.contains('open'));
+  blocks.forEach(b => {
+    if (allOpen) b.classList.remove('open');
+    else b.classList.add('open');
+  });
+}
+</script>
+
+</body>
+</html>

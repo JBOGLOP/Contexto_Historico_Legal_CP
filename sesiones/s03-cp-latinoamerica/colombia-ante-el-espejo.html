@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colombia ante el Espejo — Sesión 3, Segunda Parte (Ampliada)</title>
+<style>
+:root {
+  --bg: #f0f7fa;
+  --surface: #e6f0f5;
+  --surface2: #dce9f0;
+  --surface3: #d0e2ec;
+  --card: #ffffff;
+  --border: #bcd4e6;
+  --border-light: #a3c4d9;
+  --text: #2c4356;
+  --text-muted: #5a7a8f;
+  --heading: #0f2b3d;
+  --white: #ffffff;
+  --emerald: #059669;
+  --emerald-dim: #047857;
+  --teal: #0d9488;
+  --sky: #0284c7;
+  --blue: #0369a1;
+  --indigo: #4338ca;
+  --violet: #6d28d9;
+  --amber: #b45309;
+  --orange: #c2410c;
+  --rose: #be123c;
+  --red: #b91c1c;
+  --pink: #9d174d;
+  --serif:Georgia, 'Times New Roman', serif;
+  --sans:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --mono:ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace;
+  --radius: 10px;
+  --shadow: 0 4px 24px rgba(0,40,80,.08);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.72;
+  font-size: 15.5px;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════ HERO ═══════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 15% 85%, rgba(5,150,105,.12) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 85% 15%, rgba(2,132,199,.1) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(67,56,202,.05) 0%, transparent 40%);
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to top, var(--bg), transparent);
+  z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 920px; }
+
+.hero .tag {
+  display: inline-block;
+  padding: .35rem 1.4rem;
+  border: 1px solid var(--emerald);
+  color: var(--emerald);
+  border-radius: 999px;
+  font-size: .72rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  animation: fadeDown .7s ease;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  color: var(--heading);
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  font-weight: 900;
+  animation: fadeUp .7s ease .15s both;
+}
+
+.hero h1 em {
+  background: linear-gradient(135deg, var(--emerald), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.hero .subtitle {
+  font-size: 1.08rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 2.2rem;
+  animation: fadeUp .7s ease .3s both;
+  font-weight: 300;
+}
+
+.hero-badges {
+  display: flex;
+  gap: .8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp .7s ease .45s both;
+}
+
+.hero-badges span {
+  font-size: .75rem;
+  color: var(--text);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: .35rem .9rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ═══════════════════ NAV ═══════════════════ */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(240,247,250,.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: .55rem 1rem;
+  display: flex;
+  gap: .35rem;
+  overflow-x: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sticky-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .35rem .75rem;
+  border-radius: 6px;
+  transition: all .2s;
+  white-space: nowrap;
+}
+
+.sticky-nav a:hover, .sticky-nav a.active {
+  color: var(--emerald);
+  background: rgba(5,150,105,.1);
+}
+
+/* ═══════════════════ LAYOUT ═══════════════════ */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+section { padding: 4.5rem 0; }
+
+.section-label {
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  font-weight: 700;
+  margin-bottom: .5rem;
+  font-family: var(--mono);
+}
+
+h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  color: var(--heading);
+  margin-bottom: .6rem;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--heading);
+  margin: 2.2rem 0 .7rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--emerald);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin: 1.6rem 0 .5rem;
+  font-family: var(--mono);
+}
+
+p { margin-bottom: 1rem; }
+.lead { font-size: 1.05rem; color: var(--text); opacity: .85; font-weight: 300; }
+
+/* ═══════════════════ CARDS ═══════════════════ */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  margin: 1rem 0;
+  transition: border-color .3s, box-shadow .3s;
+}
+.card:hover { border-color: var(--emerald-dim); box-shadow: 0 4px 20px rgba(5,150,105,.1); }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  text-align: center;
+  transition: transform .25s, border-color .25s;
+}
+.stat-card:hover { transform: translateY(-2px); border-color: var(--border-light); }
+
+.stat-card .big {
+  font-family: var(--mono);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: .3rem;
+}
+
+.stat-card .label { font-size: .78rem; color: var(--text-muted); line-height: 1.35; }
+
+.c-green { color: var(--emerald); }
+.c-red { color: var(--rose); }
+.c-amber { color: var(--amber); }
+.c-sky { color: var(--sky); }
+.c-blue { color: var(--blue); }
+.c-violet { color: var(--violet); }
+.c-orange { color: var(--orange); }
+
+/* ═══════════════════ TABLES ═══════════════════ */
+.ind-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.18);
+}
+
+.ind-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: .84rem;
+  background: var(--surface);
+}
+
+.ind-table thead th {
+  background: var(--emerald-dim);
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+  padding: .75rem 1rem;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  white-space: nowrap;
+  position: sticky;
+  top: 44px;
+  z-index: 5;
+  border-bottom: 3px solid var(--emerald);
+}
+
+.ind-table thead th:first-child { min-width: 170px; border-radius: 10px 0 0 0; }
+.ind-table thead th:nth-child(2) { min-width: 210px; }
+.ind-table thead th:nth-child(3) { min-width: 65px; text-align: center; }
+.ind-table thead th:last-child { min-width: 220px; border-radius: 0 10px 0 0; }
+
+.ind-table td {
+  padding: .6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.ind-table tbody tr:hover td { background: rgba(16,185,129,.04); }
+.ind-table tbody tr:last-child td { border-bottom: none; }
+
+/* Section header rows (A. Empoderamiento, B. Políticas, etc.) */
+.ind-table .section-row td {
+  background: linear-gradient(90deg, rgba(16,185,129,.12) 0%, rgba(16,185,129,.04) 100%);
+  padding: .55rem 1rem;
+  border-bottom: 2px solid var(--emerald-dim);
+  border-top: 1px solid var(--border);
+}
+.ind-table .section-row h4 {
+  margin: 0;
+  padding: 0;
+  font-size: .78rem;
+  color: var(--emerald-dim);
+  letter-spacing: .08em;
+}
+.ind-table tbody tr:first-child.section-row td {
+  border-top: none;
+}
+
+/* Score badges */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: .75rem;
+}
+
+.score.s4 { background: rgba(5,150,105,.12); color: var(--emerald); }
+.score.s3 { background: rgba(180,83,9,.1); color: var(--amber); }
+.score.s2 { background: rgba(190,18,60,.08); color: var(--rose); }
+.score.s1 { background: rgba(185,28,28,.12); color: var(--red); }
+
+.badge {
+  display: inline-block;
+  padding: .12rem .5rem;
+  border-radius: 4px;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.badge.fort { background: rgba(5,150,105,.12); color: var(--emerald); }
+.badge.avance { background: rgba(180,83,9,.1); color: var(--amber); }
+.badge.brecha { background: rgba(190,18,60,.1); color: var(--rose); }
+.badge.nuevo { background: rgba(67,56,202,.12); color: var(--indigo); }
+
+/* ═══════════════════ TIMELINE ═══════════════════ */
+.timeline { position: relative; margin: 2rem 0; padding-left: 2.5rem; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: .65rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--emerald), var(--sky), var(--violet), var(--amber));
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 1.4rem;
+  padding: .9rem 1.1rem;
+  background: var(--surface2);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: border-color .25s;
+}
+
+.tl-item:hover { border-color: var(--emerald-dim); }
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -2.1rem;
+  top: 1.1rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--emerald);
+  border: 2px solid var(--bg);
+  z-index: 2;
+}
+
+.tl-item.key { border-left: 3px solid var(--amber); }
+.tl-item.key::before { background: var(--amber); }
+
+.tl-year { font-family: var(--mono); font-size: .78rem; color: var(--emerald); font-weight: 700; }
+.tl-norm { font-weight: 700; color: var(--heading); font-size: .9rem; }
+.tl-desc { font-size: .82rem; color: var(--text-muted); margin-top: .15rem; line-height: 1.5; }
+
+/* ═══════════════════ COMPARATIVE ═══════════════════ */
+.comp-wrap { overflow-x: auto; margin: 1.5rem 0; }
+
+.comp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: .78rem;
+  min-width: 700px;
+}
+
+.comp-table thead th {
+  background: var(--surface2);
+  color: var(--heading);
+  font-weight: 700;
+  padding: .65rem .55rem;
+  border-bottom: 2px solid var(--emerald-dim);
+  text-align: center;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  position: sticky;
+  top: 44px;
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.comp-table thead th:first-child { text-align: left; min-width: 130px; }
+.comp-table td { padding: .5rem .55rem; border-bottom: 1px solid var(--border); text-align: center; vertical-align: middle; }
+.comp-table td:first-child { text-align: left; font-weight: 600; color: var(--heading); }
+.comp-table .col-co { background: rgba(5,150,105,.06); }
+
+/* ═══════════════════ TERRITORIAL SECTION ═══════════════════ */
+.terr-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  margin: .8rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .25s, transform .25s;
+}
+.terr-card:hover { border-color: var(--emerald-dim); transform: translateY(-1px); }
+
+.terr-card .terr-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.terr-card .dept-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--heading);
+  font-weight: 700;
+  margin-bottom: .1rem;
+}
+
+.terr-card .dept-pop { font-size: .75rem; color: var(--text-muted); margin-bottom: .8rem; }
+
+.terr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: .6rem;
+  margin-top: .6rem;
+}
+
+.terr-metric {
+  background: var(--surface3);
+  border-radius: 6px;
+  padding: .5rem .7rem;
+  text-align: center;
+}
+
+.terr-metric .tm-val { font-family: var(--mono); font-weight: 700; font-size: 1.1rem; }
+.terr-metric .tm-lab { font-size: .68rem; color: var(--text-muted); line-height: 1.3; }
+
+.terr-note {
+  font-size: .78rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: .5rem;
+  padding-top: .5rem;
+  border-top: 1px dashed var(--border);
+}
+
+/* ═══════════════════ FORO MOMENTS ═══════════════════ */
+.moment {
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin: 1.8rem 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.moment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.moment.m1 { background: linear-gradient(135deg, rgba(5,150,105,.08), transparent 55%); }
+.moment.m1::before { background: var(--emerald); }
+.moment.m2 { background: linear-gradient(135deg, rgba(190,18,60,.06), transparent 55%); }
+.moment.m2::before { background: var(--rose); }
+.moment.m3 { background: linear-gradient(135deg, rgba(2,132,199,.06), transparent 55%); }
+.moment.m3::before { background: var(--sky); }
+
+.moment-header { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.moment-num { font-family: var(--mono); font-size: 1.8rem; font-weight: 700; opacity: .15; line-height: 1; }
+.moment-title { font-family: var(--serif); font-size: 1.3rem; color: var(--heading); }
+.moment-time { font-size: .72rem; color: var(--text-muted); font-weight: 700; margin-left: auto; white-space: nowrap; font-family: var(--mono); }
+
+.provoc {
+  background: rgba(180,83,9,.06);
+  border: 1px solid rgba(180,83,9,.2);
+  border-radius: 8px;
+  padding: .9rem 1.1rem;
+  margin: .8rem 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--amber);
+  line-height: 1.5;
+}
+
+.provoc::before { content: '« '; opacity: .4; }
+.provoc::after { content: ' »'; opacity: .4; }
+
+.orient-list { list-style: none; margin: .8rem 0; }
+.orient-list li {
+  padding: .45rem 0 .45rem 1.3rem;
+  position: relative;
+  border-bottom: 1px solid rgba(188,212,230,.7);
+  font-size: .88rem;
+}
+.orient-list li::before { content: '→'; position: absolute; left: 0; color: var(--emerald); font-weight: 700; }
+.orient-list li:last-child { border-bottom: none; }
+
+/* ═══════════════════ EUTHANASIA SECTION ═══════════════════ */
+.eut-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: .6rem;
+  margin: 1.5rem 0;
+}
+
+.eut-year {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .8rem;
+  text-align: center;
+}
+
+.eut-year .ey-y { font-family: var(--mono); font-size: .72rem; color: var(--text-muted); font-weight: 600; }
+.eut-year .ey-n { font-family: var(--mono); font-size: 1.6rem; font-weight: 700; }
+.eut-year .ey-l { font-size: .68rem; color: var(--text-muted); }
+
+.region-bar {
+  display: flex;
+  align-items: stretch;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem 0;
+  height: 48px;
+}
+
+.region-bar .rb-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0 .6rem;
+  white-space: nowrap;
+}
+
+/* ═══════════════════ OPIOID DATA ═══════════════════ */
+.opioid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: .7rem;
+  margin: 1.5rem 0;
+}
+
+.opioid-item {
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: .9rem;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: border-color .25s;
+}
+.opioid-item:hover { border-color: var(--border-light); }
+.opioid-item .region { font-weight: 700; color: var(--heading); font-size: .82rem; }
+.opioid-item .value { font-family: var(--mono); font-size: 1.5rem; font-weight: 700; margin: .2rem 0; }
+.opioid-item .unit { font-size: .68rem; color: var(--text-muted); }
+
+/* ═══════════════════ MATRIX ═══════════════════ */
+.matrix-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin: .7rem 0;
+}
+
+.matrix-field {
+  display: flex;
+  gap: .5rem;
+  padding: .35rem 0;
+  border-bottom: 1px dashed rgba(188,212,230,.6);
+  font-size: .86rem;
+}
+.matrix-field:last-child { border-bottom: none; }
+.matrix-field .f-label { color: var(--emerald); font-weight: 600; min-width: 190px; flex-shrink: 0; }
+.matrix-field .f-value { color: var(--text-muted); font-style: italic; }
+
+/* ═══════════════════ SOURCES ═══════════════════ */
+.source-list { columns: 1; list-style: none; margin: .8rem 0; }
+.source-list li {
+  padding: .35rem 0 .35rem .9rem;
+  font-size: .78rem;
+  color: var(--text-muted);
+  position: relative;
+  break-inside: avoid;
+  line-height: 1.5;
+}
+.source-list li::before { content: '■'; position: absolute; left: 0; color: var(--emerald); font-size: .55rem; top: .5rem; }
+
+/* ═══════════════════ QUOTE ═══════════════════ */
+.quote-block {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.quote-block::before {
+  content: '"';
+  font-family: var(--serif);
+  font-size: 7rem;
+  color: var(--emerald);
+  opacity: .12;
+  position: absolute;
+  top: -.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.quote-text {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  color: var(--heading);
+  font-style: italic;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.quote-author { color: var(--text-muted); font-size: .82rem; margin-top: .7rem; }
+
+/* ═══════════════════ MISC ═══════════════════ */
+.divider { height: 1px; background: linear-gradient(to right, transparent, var(--border), transparent); margin: 2.5rem 0; }
+
+.phase-bar {
+  display: flex;
+  align-items: stretch;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.5rem 0;
+  min-height: 76px;
+}
+.phase-bar .phase { flex: 1; padding: .9rem; display: flex; flex-direction: column; justify-content: center; }
+.phase-bar .phase:first-child { background: rgba(67,56,202,.08); }
+.phase-bar .phase:nth-child(2) { background: rgba(5,150,105,.08); }
+.phase-bar .phase:last-child { background: rgba(180,83,9,.06); }
+.phase-bar .phase-title { font-weight: 700; font-size: .73rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .15rem; }
+.phase-bar .phase-years { font-family: var(--mono); font-size: .68rem; color: var(--text-muted); }
+.phase-bar .phase-desc { font-size: .73rem; color: var(--text-muted); margin-top: .2rem; }
+
+.comp-pills { display: flex; gap: .35rem; flex-wrap: wrap; margin: .6rem 0; }
+.pill { padding: .2rem .6rem; border-radius: 999px; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.pill.ser { background: rgba(109,40,217,.1); color: var(--violet); }
+.pill.saber { background: rgba(3,105,161,.1); color: var(--blue); }
+.pill.hacer { background: rgba(5,150,105,.1); color: var(--emerald); }
+
+.tabs { display: flex; gap: .3rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.tab-btn {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: .4rem .9rem;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: .78rem;
+  font-weight: 600;
+  transition: all .2s;
+}
+.tab-btn:hover { border-color: var(--emerald-dim); color: var(--text); }
+.tab-btn.active { background: rgba(5,150,105,.1); border-color: var(--emerald); color: var(--emerald); }
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeUp .35s ease; }
+
+.callout {
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  font-size: .88rem;
+  border: 1px solid;
+}
+.callout.info { background: rgba(2,132,199,.06); border-color: rgba(2,132,199,.2); }
+.callout.warn { background: rgba(180,83,9,.06); border-color: rgba(180,83,9,.2); }
+.callout.danger { background: rgba(190,18,60,.06); border-color: rgba(190,18,60,.15); }
+
+footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--text-muted);
+  font-size: .78rem;
+  border-top: 1px solid var(--border);
+}
+footer .uni { font-weight: 700; color: var(--heading); font-size: .88rem; }
+
+/* ═══════════════════ ANIMATIONS ═══════════════════ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: translateY(0); } }
+
+.fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════ RESPONSIVE ═══════════════════ */
+@media (max-width: 768px) {
+  .hero-badges { flex-direction: column; gap: .4rem; }
+  .moment-header { flex-direction: column; align-items: flex-start; }
+  .moment-time { margin-left: 0; }
+  .matrix-field { flex-direction: column; gap: .15rem; }
+  .matrix-field .f-label { min-width: auto; }
+  .phase-bar { flex-direction: column; }
+  .terr-grid { grid-template-columns: repeat(2, 1fr); }
+  .sticky-nav { justify-content: flex-start; }
+  .region-bar { height: auto; flex-direction: column; }
+  .region-bar .rb-seg { padding: .4rem .6rem; }
+}
+
+/* Nota metodológica — añadida al homologar. Aclara qué promedio se usa
+   y por qué, sin alterar ninguna cifra del material original. */
+.ref-nota{text-decoration:none;font-weight:700}
+.nota-metodologica{
+  background:#FDF6E3; border-left:4px solid #C4A876; border-radius:8px;
+  padding:.9rem 1.15rem; margin:1rem 0 0; max-width:64ch;
+  font-size:.87rem; line-height:1.6;
+}
+.nota-metodologica p{margin:0}
+.nota-metodologica:target{box-shadow:0 0 0 3px rgba(196,168,118,.45)}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida a propósito:
+   no depende de los tokens de cada archivo, que son distintos entre sí. */
+.nav-sesion{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D; color:#FAF6EF; padding:.55rem 1rem; font-size:.82rem;
+  display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .6rem; line-height:1.6;
+}
+.nav-sesion a{color:#F5EEDD; text-decoration:none; border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876; font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876; outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 3"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 3 &middot; 6 mar 2026</span><a href="index.html">Panorama regional</a><a href="costa-rica.html">Costa Rica</a><a href="argentina.html">Argentina</a><a href="uruguay.html">Uruguay</a><a href="chile.html">Chile</a><span class="ns-actual" aria-current="page">Colombia ante el espejo</span><a href="guia-actividad.html">Guía de actividad</a><a href="desglose-normativo-colombia.html">Desglose normativo</a><a href="primer-corte-diagnostico-territorial.html">Primer corte</a></nav>
+
+<!-- ████████████████ HERO ████████████████ -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="tag">Sesión 3 · Segunda Parte · Versión Ampliada</span>
+    <h1>Colombia ante el <em>Espejo</em></h1>
+    <p class="subtitle">Foro guiado con diagnóstico territorial, datos departamentales, panorama de eutanasia y telesalud en cuidados paliativos — contrastado con cuatro modelos latinoamericanos</p>
+    <div class="hero-badges">
+      <span>📅 6 de marzo de 2026</span>
+      <span>📍 Presencial — Sede Circunvalar</span>
+      <span>⏱ 50 minutos</span>
+      <span>👥 13 estudiantes — Todos los territorios</span>
+    </div>
+  </div>
+</header>
+
+<!-- ████████████████ NAV ████████████████ -->
+<nav class="sticky-nav">
+  <a href="#proposito">Propósito</a>
+  <a href="#radiografia">Radiografía</a>
+  <a href="#territorios">Territorios</a>
+  <a href="#cronologia">Normatividad</a>
+  <a href="#comparativa">Comparativa</a>
+  <a href="#eutanasia">Eutanasia</a>
+  <a href="#telesalud">Telesalud</a>
+  <a href="#foro">Foro Guiado</a>
+  <a href="#matriz">Matriz</a>
+  <a href="#linea">Línea Tiempo</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
+
+<!-- ████████████████ 01 PROPÓSITO ████████████████ -->
+<section id="proposito">
+  <div class="container fade-in">
+    <span class="section-label">01 — Marco de la actividad</span>
+    <h2>Propósito del Foro</h2>
+    <p class="lead">Esta actividad sucede inmediatamente después de las cuatro exposiciones grupales sobre Costa Rica, Argentina, Uruguay y Chile. Su triple objetivo es:</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>🔍 Diagnóstico riguroso</h4>
+        <p>Ubicar a Colombia frente al espejo de los cuatro modelos latinoamericanos de Nivel 4, identificando fortalezas verificables y brechas críticas con datos del Atlas de CP de las Américas 2025.</p>
+      </div>
+      <div class="card">
+        <h4>🗺️ Conexión territorial</h4>
+        <p>Conectar el diagnóstico nacional con la realidad que cada estudiante vive en Caquetá, Córdoba, Tolima, Santander, Eje Cafetero, Antioquia, Bogotá y Huila — con datos departamentales concretos.</p>
+      </div>
+      <div class="card">
+        <h4>⚖️ Mirada integral</h4>
+        <p>Integrar dos temas emergentes — eutanasia y telesalud — que atraviesan el continuo del cuidado paliativo en Colombia y que generan tensiones éticas, territoriales y profesionales.</p>
+      </div>
+    </div>
+
+    <h3>Competencias activadas</h3>
+    <div class="comp-pills">
+      <span class="pill ser">SER — Postura crítica y propositiva frente a las inequidades</span>
+      <span class="pill saber">SABER — Integración datos Atlas + diagnósticos territoriales + marco legal</span>
+      <span class="pill hacer">SABER HACER — Formulación de propuesta concreta viable para el territorio propio</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 02 RADIOGRAFÍA ████████████████ -->
+<section id="radiografia">
+  <div class="container fade-in">
+    <span class="section-label">02 — Datos nacionales</span>
+    <h2>Radiografía de Colombia en Cuidados Paliativos</h2>
+    <p>Fuentes: Tripodoro, V. et al. (2025). <em>Atlas de Cuidados Paliativos de las Américas</em>, Reporte País Colombia, pp. 238–245. Datos macroeconómicos actualizados: Banco Mundial (2024), DANE (2025), PNUD IDH 2025.</p>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big c-sky">53.1 M</div><div class="label">Población total<br><small>DANE 2025</small></div></div>
+      <div class="stat-card"><div class="big c-amber">US$ 7.919</div><div class="label">PIB per cápita<br><small>Banco Mundial 2024</small></div></div>
+      <div class="stat-card"><div class="big c-violet">83 / 193</div><div class="label">Posición IDH mundial<br><small>PNUD 2025 · IDH 0,788</small></div></div>
+      <div class="stat-card"><div class="big c-blue">US$ 644</div><div class="label">Gasto salud per cápita<br><small>Banco Mundial 2024</small></div></div>
+      <div class="stat-card"><div class="big c-green">80 / 100</div><div class="label">Índice cobertura sanitaria</div></div>
+      <div class="stat-card"><div class="big c-red">107.900</div><div class="label">Personas con sufrimiento grave (SHS)<br><small>6.410 pediátricos</small></div></div>
+    </div>
+
+    <h3>16 Indicadores — Marco OMS</h3>
+    <p>Codificación: <span class="badge fort">Fortaleza (4/4)</span> <span class="badge avance">Avance parcial (3/4)</span> <span class="badge brecha">Brecha (1-2/4)</span></p>
+
+    <div class="ind-wrap">
+    <table class="ind-table">
+      <thead><tr><th>Indicador</th><th>Valor</th><th>Score</th><th>Hallazgo clave</th></tr></thead>
+      <tbody>
+        <tr class="section-row"><td colspan="4"><h4>A. Empoderamiento comunitario</h4></td></tr>
+        <tr><td>Organizaciones sociedad civil</td><td>ACCP, ASOCUPAC, OCCP, Presentes, Comunidades Compasivas</td><td><span class="score s4">4</span></td><td><span class="badge fort">Fortaleza</span> Red asociativa robusta</td></tr>
+        <tr class="section-row"><td colspan="4"><h4>B. Políticas de salud</h4></td></tr>
+        <tr><td>Plan nacional CP</td><td>Ley 1733/2014 + Plan OCCP 2022–2026</td><td><span class="score s4">4</span></td><td><span class="badge fort">Fortaleza</span> Marco legal pionero regional</td></tr>
+        <tr><td>Autoridad en el MdS</td><td>Subdirección ENT, sin departamento CP</td><td><span class="score s3">3</span></td><td><span class="badge avance">Avance</span> Gestión fragmentada EPS-IPS-territorios</td></tr>
+        <tr><td>CP en paquete básico salud</td><td>En lista esencial por decreto</td><td><span class="score s3">3</span></td><td><span class="badge avance">Avance</span> Incluidos por decreto, no en ley general</td></tr>
+        <tr><td>Voluntad Anticipada (DVA)</td><td>Regulado (Res. 2665/2018)</td><td><span class="score s3">3</span></td><td><span class="badge avance">Avance</span> Solo 10,5% IPS con formularios activos</td></tr>
+        <tr class="section-row"><td colspan="4"><h4>C. Investigación</h4></td></tr>
+        <tr><td>Producción científica</td><td>180 artículos PubMed (5 años)</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> Nivel emergente ajustado a población</td></tr>
+        <tr><td>Congresos y eventos</td><td>Congreso anual ACCP; ALCP Cartagena 2024</td><td><span class="score s4">4</span></td><td><span class="badge fort">Fortaleza</span></td></tr>
+        <tr class="section-row"><td colspan="4"><h4>D. Medicamentos</h4></td></tr>
+        <tr><td>Consumo opioides (S-DDD)</td><td>645 / millón hab. / día</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> Promedio LATAM: 428 <a href="#nota-sddd" class="ref-nota" aria-label="Ver nota metodológica sobre el promedio">&#8239;<sup>[nota]</sup></a> &middot; hemisférico: 1.313</td></tr>
+        <tr><td>Medicamentos esenciales (urbano)</td><td>10–30% disponibilidad</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> ~100% grandes ciudades, escasez en el resto</td></tr>
+        <tr><td>Morfina oral (urbano)</td><td>0–10%</td><td><span class="score s1">1</span></td><td><span class="badge brecha">Brecha crítica</span> Uno de los opioides menos disponibles</td></tr>
+        <tr><td>Morfina oral (rural)</td><td>0–10%</td><td><span class="score s1">1</span></td><td><span class="badge brecha">Brecha crítica</span> Prácticamente inaccesible</td></tr>
+        <tr class="section-row"><td colspan="4"><h4>E. Educación</h4></td></tr>
+        <tr><td>CP obligatorio Medicina</td><td>6 de 63 facultades (9,5%)</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> Ley 2241/2022 busca cambiar esto</td></tr>
+        <tr><td>CP obligatorio Enfermería</td><td>15 de 23 (65%)</td><td><span class="score s4">4</span></td><td><span class="badge fort">Fortaleza</span> Enfermería lidera formación paliativa</td></tr>
+        <tr><td>Especialización oficial</td><td>10 programas (incluyendo pediátrica 2024)</td><td><span class="score s4">4</span></td><td><span class="badge fort">Fortaleza</span></td></tr>
+        <tr class="section-row"><td colspan="4"><h4>F. Servicios</h4></td></tr>
+        <tr><td>Servicios especializados</td><td>627 inscritos REPS</td><td><span class="score s4">4</span></td><td><span class="badge fort">Fortaleza</span> Tasa 1,18/100K (mediana regional: 0,33)</td></tr>
+        <tr><td>Distribución geográfica</td><td>Concentración grandes ciudades</td><td><span class="score s3">3</span></td><td><span class="badge avance">Avance</span> 4 departamentos con 0 servicios</td></tr>
+        <tr><td>Servicios pediátricos</td><td>9 equipos especializados</td><td><span class="score s2">2</span></td><td><span class="badge brecha">Brecha</span> Solo 133 domiciliarios / 6.410 NNA con SHS</td></tr>
+      </tbody>
+    </table>
+<aside id="nota-sddd" class="nota-metodologica">
+  <p><strong>Nota metodológica &middot; el promedio de referencia.</strong> El promedio latinoamericano de referencia es <strong>428 S-DDD/mill&oacute;n/d&iacute;a</strong> (Atlas de Cuidados Paliativos de las Am&eacute;ricas). Las cifras globales o hemisf&eacute;ricas que incluyen a Norteam&eacute;rica elevan el indicador por encima de <strong>1.300 S-DDD</strong>, pero distorsionan la comparaci&oacute;n entre sistemas de salud con contextos socioecon&oacute;micos similares a los de Colombia. Cuando en otros materiales aparezca un promedio superior a 1.300, se trata del agregado hemisf&eacute;rico, no del latinoamericano.</p>
+</aside>
+    </div>
+
+    <h3>Consumo de opioides per cápita por región (OCCP, 2024)</h3>
+    <div class="opioid-grid">
+      <div class="opioid-item"><div class="region">Bogotá</div><div class="value c-green">18.12</div><div class="unit">mg per cápita</div></div>
+      <div class="opioid-item"><div class="region">Antioquia</div><div class="value c-green">9.80</div><div class="unit">mg per cápita</div></div>
+      <div class="opioid-item"><div class="region">Valle del Cauca</div><div class="value c-amber">7.15</div><div class="unit">mg per cápita</div></div>
+      <div class="opioid-item"><div class="region">Santander</div><div class="value c-amber">5.30</div><div class="unit">mg per cápita</div></div>
+      <div class="opioid-item"><div class="region">Chocó</div><div class="value c-red">0.60</div><div class="unit">mg per cápita</div></div>
+      <div class="opioid-item"><div class="region">Guajira</div><div class="value c-red">0.50</div><div class="unit">mg per cápita</div></div>
+      <div class="opioid-item"><div class="region">Vichada</div><div class="value c-red">0.22</div><div class="unit">mg per cápita</div></div>
+      <div class="opioid-item"><div class="region">Amazonas</div><div class="value c-red">0.19</div><div class="unit">mg per cápita</div></div>
+    </div>
+    <p style="font-size:.8rem;color:var(--text-muted)">El OCCP cifra la brecha de acceso a opioides del país en un orden de <strong style="color:var(--rose)">90 a 1</strong> entre la capital y los departamentos amazónicos. Fuente: OCCP / Universidad de La Sabana (2024).</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 03 TERRITORIOS — NUEVA SECCIÓN ████████████████ -->
+<section id="territorios">
+  <div class="container fade-in">
+    <span class="section-label">03 — Nuevo: Diagnóstico departamental</span>
+    <h2>Los Territorios de Nuestros Estudiantes</h2>
+    <p class="lead">Datos consolidados de los departamentos donde ejercen los 13 estudiantes de la maestría. Fuentes: OCCP Anuario 2016 (último reporte departamental completo), REPS, DANE proyecciones 2024, CAC 2024, consumo opioides OCCP 2024.</p>
+
+    <div class="callout warn">⚠️ <strong>Nota metodológica:</strong> Los datos del Anuario OCCP 2016 son los últimos disponibles con desagregación departamental completa. Los datos de consumo de opioides son de 2024 (OCCP). La realidad actual puede haber variado, pero la estructura de inequidad persiste. Parte del foro es precisamente contrastar estos datos con la experiencia directa de cada estudiante.</div>
+
+    <!-- CAQUETÁ -->
+    <div class="terr-card">
+      <div class="terr-accent" style="background:var(--rose)"></div>
+      <div style="padding-left:.8rem">
+        <div class="dept-name">🔴 Caquetá</div>
+        <div class="dept-pop">Población: ~404.000 hab. · Capital: Florencia · Región: Amazonía</div>
+        <div class="terr-grid">
+          <div class="terr-metric"><div class="tm-val c-red">3</div><div class="tm-lab">Servicios CP REPS (2016)</div></div>
+          <div class="terr-metric"><div class="tm-val c-red">0</div><div class="tm-lab">Especialistas CP</div></div>
+          <div class="terr-metric"><div class="tm-val c-red">~0.2</div><div class="tm-lab">mg opioides per cáp. (est.)</div></div>
+          <div class="terr-metric"><div class="tm-val c-red">0</div><div class="tm-lab">Programas formación CP</div></div>
+        </div>
+        <div class="terr-note">Departamento afectado por conflicto armado. La atención CP depende de remisiones a Bogotá o Neiva. El OCCP lo clasifica como territorio con necesidad crítica insatisfecha. Departamentos vecinos (Guaviare, Putumayo) reportan 0 servicios. Quien ejerza en este departamento puede contrastar estos datos con su realidad.</div>
+      </div>
+    </div>
+
+    <!-- CÓRDOBA -->
+    <div class="terr-card">
+      <div class="terr-accent" style="background:var(--orange)"></div>
+      <div style="padding-left:.8rem">
+        <div class="dept-name">🟠 Córdoba</div>
+        <div class="dept-pop">Población: ~1.880.000 hab. · Capital: Montería · Región: Caribe</div>
+        <div class="terr-grid">
+          <div class="terr-metric"><div class="tm-val c-orange">9</div><div class="tm-lab">Servicios CP REPS (2016)</div></div>
+          <div class="terr-metric"><div class="tm-val c-amber">1 baja / 8 med.</div><div class="tm-lab">Complejidad servicios</div></div>
+          <div class="terr-metric"><div class="tm-val c-red">~1.2</div><div class="tm-lab">mg opioides per cáp. (est.)</div></div>
+          <div class="terr-metric"><div class="tm-val c-red">0</div><div class="tm-lab">Programas formación CP</div></div>
+        </div>
+        <div class="terr-note">Predominio de mediana complejidad. No existe alta complejidad en CP, lo que obliga a remitir casos complejos. Las zonas rurales del alto Sinú y San Jorge tienen acceso prácticamente nulo. La Región Caribe concentra 22,5% de casos nuevos CP (CAC 2024) pero proporción menor de servicios.</div>
+      </div>
+    </div>
+
+    <!-- TOLIMA -->
+    <div class="terr-card">
+      <div class="terr-accent" style="background:var(--amber)"></div>
+      <div style="padding-left:.8rem">
+        <div class="dept-name">🟡 Tolima</div>
+        <div class="dept-pop">Población: ~1.340.000 hab. · Capital: Ibagué · Región: Andina</div>
+        <div class="terr-grid">
+          <div class="terr-metric"><div class="tm-val c-amber">14</div><div class="tm-lab">Servicios CP REPS (2016)</div></div>
+          <div class="terr-metric"><div class="tm-val c-amber">Med–alta</div><div class="tm-lab">Complejidad disponible</div></div>
+          <div class="terr-metric"><div class="tm-val c-amber">~3.5</div><div class="tm-lab">mg opioides per cáp. (est.)</div></div>
+          <div class="terr-metric"><div class="tm-val c-red">1</div><div class="tm-lab">Eutanasia realizada (2015–2024)</div></div>
+        </div>
+        <div class="terr-note">Ibagué cuenta con oferta intermedia, pero el sur del Tolima (Chaparral, Planadas) tiene acceso mínimo. Solo 1 procedimiento de eutanasia en toda la década 2015–2024 según DescLAB. Conviene verificar sobre el terreno la realidad del acceso a opioides en esta zona.</div>
+      </div>
+    </div>
+
+    <!-- SANTANDER -->
+    <div class="terr-card">
+      <div class="terr-accent" style="background:var(--sky)"></div>
+      <div style="padding-left:.8rem">
+        <div class="dept-name">🔵 Santander</div>
+        <div class="dept-pop">Población: ~2.280.000 hab. · Capital: Bucaramanga · Región: Nororiente</div>
+        <div class="terr-grid">
+          <div class="terr-metric"><div class="tm-val c-sky">22</div><div class="tm-lab">Servicios CP REPS (2016)</div></div>
+          <div class="terr-metric"><div class="tm-val c-amber">5.30</div><div class="tm-lab">mg opioides per cápita</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">HIC-FCV</div><div class="tm-lab">Centro especializado dolor</div></div>
+          <div class="terr-metric"><div class="tm-val c-red">2</div><div class="tm-lab">Eutanasias (2015–2024)</div></div>
+        </div>
+        <div class="terr-note">El Hospital Internacional de Colombia (HIC) de la Fundación Cardiovascular cuenta con Centro Especializado en Alivio del Dolor y Cuidado Paliativo. Pese a esto, solo 2 eutanasias en una década (vs. 448 en Bogotá). El consumo de opioides (5.30 mg) es 3.4 veces menor que Bogotá. Bucaramanga también alberga un centro de telemedicina pionero (UIS). Cabe contrastar la oferta urbana con la de la provincia santandereana.</div>
+      </div>
+    </div>
+
+    <!-- HUILA -->
+    <div class="terr-card">
+      <div class="terr-accent" style="background:var(--indigo)"></div>
+      <div style="padding-left:.8rem">
+        <div class="dept-name">🟣 Huila</div>
+        <div class="dept-pop">Población: ~1.100.000 hab. · Capital: Neiva · Región: Surcolombiana</div>
+        <div class="terr-grid">
+          <div class="terr-metric"><div class="tm-val c-violet">12</div><div class="tm-lab">Servicios CP REPS (2016)</div></div>
+          <div class="terr-metric"><div class="tm-val c-amber">Med–alta</div><div class="tm-lab">Complejidad disponible</div></div>
+          <div class="terr-metric"><div class="tm-val c-amber">~3.8</div><div class="tm-lab">mg opioides per cáp. (est.)</div></div>
+          <div class="terr-metric"><div class="tm-val c-amber">5</div><div class="tm-lab">Eutanasias (2015–2024)</div></div>
+        </div>
+        <div class="terr-note">Neiva, pese a tener menor población que Bucaramanga, registra más eutanasias (5 vs. 2) según DescLAB, lo que sugiere mayor articulación institucional en este derecho. El Huila es referente surcolombiano para Caquetá y Putumayo en servicios de alta complejidad.</div>
+      </div>
+    </div>
+
+    <!-- ANTIOQUIA -->
+    <div class="terr-card">
+      <div class="terr-accent" style="background:var(--emerald)"></div>
+      <div style="padding-left:.8rem">
+        <div class="dept-name">🟢 Antioquia</div>
+        <div class="dept-pop">Población: ~6.900.000 hab. · Capital: Medellín · Región: Andina/Pacífica</div>
+        <div class="terr-grid">
+          <div class="terr-metric"><div class="tm-val c-green">68+</div><div class="tm-lab">Servicios CP REPS</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">9.80</div><div class="tm-lab">mg opioides per cápita</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">445</div><div class="tm-lab">Eutanasias (42,6% nacional)</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">Cuna</div><div class="tm-lab">Dr. Tiberio Álvarez (~1980)</div></div>
+        </div>
+        <div class="terr-note">Cuna histórica de los CP en Colombia gracias al Dr. Tiberio Álvarez en la U. de Antioquia. Medellín concentra la mayor cantidad de eutanasias en el país (445 de 1.044 = 42,6%). Posee múltiples programas de formación, pero las subregiones (Urabá, Bajo Cauca) mantienen brechas severas.</div>
+      </div>
+    </div>
+
+    <!-- EJE CAFETERO -->
+    <div class="terr-card">
+      <div class="terr-accent" style="background:var(--teal)"></div>
+      <div style="padding-left:.8rem">
+        <div class="dept-name">🩵 Eje Cafetero (Caldas, Quindío, Risaralda)</div>
+        <div class="dept-pop">Población combinada: ~2.550.000 hab. · Capitales: Manizales, Armenia, Pereira</div>
+        <div class="terr-grid">
+          <div class="terr-metric"><div class="tm-val c-green">30+</div><div class="tm-lab">Servicios CP REPS combinados</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">Telesalud</div><div class="tm-lab">U. Caldas — 24 años experiencia</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">49</div><div class="tm-lab">Eutanasias Risaralda (4,69%)</div></div>
+          <div class="terr-metric"><div class="tm-val c-amber">43,75%</div><div class="tm-lab">Tasa aprobación eut. Risaralda</div></div>
+        </div>
+        <div class="terr-note">Risaralda tiene la tasa de aprobación de eutanasia más alta del país (43,75% en 2024). Manizales alberga Telesalud Colombia (U. de Caldas), con más de 24 años de experiencia y 105+ hospitales conectados en 20+ departamentos. Es un modelo potencialmente replicable para CP remotos.</div>
+      </div>
+    </div>
+
+    <!-- BOGOTÁ -->
+    <div class="terr-card">
+      <div class="terr-accent" style="background:linear-gradient(to bottom, var(--emerald), var(--sky))"></div>
+      <div style="padding-left:.8rem">
+        <div class="dept-name">🏙️ Bogotá D.C.</div>
+        <div class="dept-pop">Población: ~8.100.000 hab. · Distrito Capital</div>
+        <div class="terr-grid">
+          <div class="terr-metric"><div class="tm-val c-green">127</div><div class="tm-lab">IPS con CP registradas REPS</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">18.12</div><div class="tm-lab">mg opioides per cápita</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">448</div><div class="tm-lab">Eutanasias (42,9% nacional)</div></div>
+          <div class="terr-metric"><div class="tm-val c-green">7</div><div class="tm-lab">Especializaciones CP</div></div>
+        </div>
+        <div class="terr-note">Epicentro nacional: 1,50 servicios/100K hab., 7 especializaciones, 54 farmacias 24/7 con opioides, primer doctorado en CP iniciado en octubre 2025. HUSI tiene el único Centro de Atención Integral en Cuidados Paliativos del país. Sin embargo, Bogotá no es Colombia — el contraste con regiones como Caquetá es abismal.</div>
+      </div>
+    </div>
+
+    <div class="callout danger" style="margin-top:1.5rem">
+      🚨 <strong>La gran paradoja territorial:</strong> Colombia tiene más normas de CP (25+) que muchos países de la región, pero departamentos como Guainía, Vichada, Vaupés y Amazonas no reportan ni un solo servicio paliativo especializado. Departamentos como Putumayo, Guaviare, San Andrés y Arauca tampoco prestan el servicio (El Tiempo, 2018; OCCP, 2024). La norma no viaja sola.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 04 CRONOLOGÍA ████████████████ -->
+<section id="cronologia">
+  <div class="container fade-in">
+    <span class="section-label">04 — Marco normativo</span>
+    <h2>Cronología Normativa: 25 Normas, 17 Años</h2>
+    <p>Fuente: OCCP — Infografía cronológica de políticas públicas (2006–2023).</p>
+
+    <div class="phase-bar">
+      <div class="phase"><div class="phase-title" style="color:var(--indigo)">Fase Fundacional</div><div class="phase-years">2006 — 2013</div><div class="phase-desc">CP como componente del cáncer, no autónomos</div></div>
+      <div class="phase"><div class="phase-title" style="color:var(--emerald)">Consolidación</div><div class="phase-years">2014 — 2018</div><div class="phase-desc">Ley 1733 como piedra angular</div></div>
+      <div class="phase"><div class="phase-title" style="color:var(--amber)">Ampliación y Brechas</div><div class="phase-years">2019 — 2023</div><div class="phase-desc">Eutanasia, educación, cuidadores. Norma avanza, implementación no</div></div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('tab-all',this)">Cronología completa</button>
+      <button class="tab-btn" onclick="showTab('tab-key',this)">Solo hitos clave</button>
+    </div>
+
+    <div id="tab-all" class="tab-content active">
+      <div class="timeline">
+        <div class="tl-item"><span class="tl-year">2023</span> <span class="tl-norm">Ley 2297</span><div class="tl-desc">Acceso al servicio de cuidador.</div></div>
+        <div class="tl-item key"><span class="tl-year">2022</span> <span class="tl-norm">Ley 2241</span><div class="tl-desc">Fortalece educación en CP. Obliga integrar CP en planes de estudio de Ciencias de la Salud, Psicología y Trabajo Social. Modifica Art. 7 Ley 1733.</div></div>
+        <div class="tl-item key"><span class="tl-year">2021</span> <span class="tl-norm">Resolución 971</span><div class="tl-desc">Recepción, trámite y reporte de solicitudes de eutanasia. Comité del Derecho a Morir con Dignidad.</div></div>
+        <div class="tl-item"><span class="tl-year">2020</span> <span class="tl-norm">Ley 2055 + Res. 315</span><div class="tl-desc">Convención derechos personas mayores + Actualización listados sustancias fiscalizadas (base regulatoria opioides).</div></div>
+        <div class="tl-item"><span class="tl-year">2019</span> <span class="tl-norm">Resolución 3100</span><div class="tl-desc">Habilitación de prestadores de servicios de salud.</div></div>
+        <div class="tl-item key"><span class="tl-year">2018</span> <span class="tl-norm">Resolución 2665 + Lineamientos MdS</span><div class="tl-desc">Documento de Voluntad Anticipada (DVA) + Guía técnica nacional para atención integral en CP.</div></div>
+        <div class="tl-item"><span class="tl-year">2018</span> <span class="tl-norm">Resolución 285</span><div class="tl-desc">Derecho a morir con dignidad de Niños, Niñas y Adolescentes.</div></div>
+        <div class="tl-item"><span class="tl-year">2017</span> <span class="tl-norm">Res. 3202 + 1477</span><div class="tl-desc">Manual RIAS + Habilitación unidades funcionales atención cáncer.</div></div>
+        <div class="tl-item"><span class="tl-year">2016</span> <span class="tl-norm">Circulares 022 y 023</span><div class="tl-desc">Acceso a opioides + Derechos de pacientes en CP. Desarrollo directo de Ley 1733.</div></div>
+        <div class="tl-item"><span class="tl-year">2016</span> <span class="tl-norm">Res. 1441, 1416, 429</span><div class="tl-desc">Habilitación redes de prestadores, manual inscripción IPS, Política PAIS.</div></div>
+        <div class="tl-item key"><span class="tl-year">2015</span> <span class="tl-norm">Ley Estatutaria 1751</span><div class="tl-desc">Salud como derecho fundamental. Sustento constitucional para acceso universal a CP.</div></div>
+        <div class="tl-item key"><span class="tl-year">2014</span> <span class="tl-norm">⭐ Ley 1733 — Consuelo Devis Saavedra</span><div class="tl-desc">PIEDRA ANGULAR. Regula CP para enfermedades terminales, crónicas, degenerativas e irreversibles. Anterior a Argentina (2022), Chile (2021), Costa Rica (2022). Solo Uruguay (2008) la precede.</div></div>
+        <div class="tl-item"><span class="tl-year">2013</span> <span class="tl-norm">Res. 1841 y 1383</span><div class="tl-desc">Plan Decenal Salud Pública + Plan Decenal Control del Cáncer.</div></div>
+        <div class="tl-item key"><span class="tl-year">2010</span> <span class="tl-norm">⭐ Ley 1384 — Sandra Ceballos</span><div class="tl-desc">Primera mención legislativa explícita de CP (atención integral cáncer).</div></div>
+        <div class="tl-item"><span class="tl-year">2007</span> <span class="tl-norm">Decreto 4747</span><div class="tl-desc">Relaciones prestadores-pagadores de servicios de salud.</div></div>
+        <div class="tl-item"><span class="tl-year">2006</span> <span class="tl-norm">Resolución 1478</span><div class="tl-desc">Control y vigilancia de sustancias fiscalizadas. Base regulatoria cadena de opioides.</div></div>
+      </div>
+    </div>
+
+    <div id="tab-key" class="tab-content">
+      <div class="timeline">
+        <div class="tl-item key"><span class="tl-year">2022</span> <span class="tl-norm">Ley 2241</span><div class="tl-desc">Obligatoriedad educación CP en programas salud, psicología, trabajo social.</div></div>
+        <div class="tl-item key"><span class="tl-year">2021</span> <span class="tl-norm">Resolución 971</span><div class="tl-desc">Reglamentación eutanasia.</div></div>
+        <div class="tl-item key"><span class="tl-year">2018</span> <span class="tl-norm">Resolución 2665</span><div class="tl-desc">Documento de Voluntad Anticipada.</div></div>
+        <div class="tl-item key"><span class="tl-year">2015</span> <span class="tl-norm">Ley Estatutaria 1751</span><div class="tl-desc">Salud como derecho fundamental.</div></div>
+        <div class="tl-item key"><span class="tl-year">2014</span> <span class="tl-norm">⭐ Ley 1733</span><div class="tl-desc">Piedra angular de los CP en Colombia.</div></div>
+        <div class="tl-item key"><span class="tl-year">2010</span> <span class="tl-norm">⭐ Ley 1384</span><div class="tl-desc">Primera mención legislativa de CP.</div></div>
+        <div class="tl-item key"><span class="tl-year">2006</span> <span class="tl-norm">Resolución 1478</span><div class="tl-desc">Base regulatoria opioides.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 05 COMPARATIVA ████████████████ -->
+<section id="comparativa">
+  <div class="container fade-in">
+    <span class="section-label">05 — Espejo regional</span>
+    <h2>Colombia frente a los Cuatro Modelos</h2>
+
+    <div class="comp-wrap">
+    <table class="comp-table">
+      <thead><tr><th>Dimensión</th><th>🇨🇷 Costa Rica</th><th>🇦🇷 Argentina</th><th>🇺🇾 Uruguay</th><th>🇨🇱 Chile</th><th class="col-co">🇨🇴 Colombia</th></tr></thead>
+      <tbody>
+        <tr><td>Ley específica CP</td><td>2022</td><td>2022</td><td>2008</td><td>2021</td><td class="col-co"><span class="badge fort">2014</span></td></tr>
+        <tr><td>Autoridad dedicada MdS</td><td>Completa</td><td>Parcial</td><td>Completa</td><td>Parcial</td><td class="col-co"><span class="badge brecha">Incompleta</span></td></tr>
+        <tr><td>Opioides (S-DDD)</td><td>385</td><td>1.268</td><td>728</td><td>1.896</td><td class="col-co">645</td></tr>
+        <tr><td>Morfina oral 1er nivel</td><td>70–100%</td><td>30–70%</td><td>70–100%</td><td>30–70%</td><td class="col-co"><span class="badge brecha">0–10%</span></td></tr>
+        <tr><td>CP obligatorio Medicina</td><td>0/8</td><td>N/D</td><td>100%</td><td>N/D</td><td class="col-co">6/63 (9,5%)</td></tr>
+        <tr><td>CP obligatorio Enfermería</td><td>0/6</td><td>N/D</td><td>N/D</td><td>N/D</td><td class="col-co"><span class="badge fort">15/23 (65%)</span></td></tr>
+        <tr><td>Servicios / 100K hab.</td><td>3,0</td><td>N/D</td><td>N/D</td><td>N/D</td><td class="col-co"><span class="badge fort">1,18</span></td></tr>
+        <tr><td>Servicios pediátricos</td><td>7</td><td>59</td><td>17</td><td>21</td><td class="col-co"><span class="badge brecha">9</span></td></tr>
+        <tr><td>Eutanasia regulada</td><td>No</td><td>No</td><td>No</td><td>No</td><td class="col-co"><span class="badge nuevo">Sí (2015)</span></td></tr>
+        <tr><td>Telesalud en CP</td><td>Emergente</td><td>Emergente</td><td>OPS piloto</td><td>MINSAL piloto</td><td class="col-co"><span class="badge avance">OCCP modelo</span></td></tr>
+        <tr><td>DVA/PDA nacional</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td class="col-co"><span class="badge avance">10,5% uso</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="card" style="margin-top:1.2rem">
+      <h4>📖 Lectura rápida</h4>
+      <p><strong style="color:var(--emerald)">Fortalezas verificables:</strong> Ley pionera (2014), enfermería con 65% CP obligatorio, tasa de servicios 3.6× mediana regional, 10 especializaciones, único país con eutanasia regulada entre los cinco comparados, modelo de telesalud en desarrollo.</p>
+      <p><strong style="color:var(--rose)">Brechas críticas:</strong> Morfina oral 0–10% (dato más alarmante), solo 9,5% medicina con CP obligatorio, 9 equipos pediátricos para 6.410 NNA, DVA al 10,5%, sin departamento propio en el MdS, Plan Decenal 2022–2031 omite CP.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 06 EUTANASIA — NUEVA SECCIÓN ████████████████ -->
+<section id="eutanasia">
+  <div class="container fade-in">
+    <span class="section-label">06 — Nuevo: Continuo del fin de vida</span>
+    <h2>Eutanasia en Colombia: Una Década de Datos</h2>
+    <p class="lead">Colombia es el único país de los cinco comparados que tiene regulada la eutanasia. Fuente: DescLAB, «De Muerte Lenta #3» (septiembre 2025), datos con corte a diciembre 2024.</p>
+
+    <div class="callout info">💡 <strong>Los cuatro procedimientos regulados del fin de vida en Colombia:</strong> (1) Cuidados paliativos, (2) Adecuación del esfuerzo terapéutico, (3) Eutanasia, (4) Suicidio médicamente asistido. El enfermero/a participa directamente en los cuatro. — Fundación Pro Derecho a Morir Dignamente.</div>
+
+    <h3>Evolución 2015–2024: De 4 a 352</h3>
+    <div class="eut-timeline">
+      <div class="eut-year"><div class="ey-y">2015</div><div class="ey-n c-sky">4</div><div class="ey-l">inicio registro</div></div>
+      <div class="eut-year"><div class="ey-y">2016</div><div class="ey-n c-sky">10</div><div class="ey-l"></div></div>
+      <div class="eut-year"><div class="ey-y">2017</div><div class="ey-n c-sky">16</div><div class="ey-l"></div></div>
+      <div class="eut-year"><div class="ey-y">2018</div><div class="ey-n c-sky">26</div><div class="ey-l"></div></div>
+      <div class="eut-year"><div class="ey-y">2019</div><div class="ey-n c-blue">42</div><div class="ey-l"></div></div>
+      <div class="eut-year"><div class="ey-y">2020</div><div class="ey-n c-blue">53</div><div class="ey-l"></div></div>
+      <div class="eut-year"><div class="ey-y">2021</div><div class="ey-n c-violet">112</div><div class="ey-l">Corte elimina requisito terminal</div></div>
+      <div class="eut-year"><div class="ey-y">2022</div><div class="ey-n c-violet">181</div><div class="ey-l">primer adolescente</div></div>
+      <div class="eut-year"><div class="ey-y">2023</div><div class="ey-n c-orange">271</div><div class="ey-l">+49,7%</div></div>
+      <div class="eut-year"><div class="ey-y">2024</div><div class="ey-n c-red">352</div><div class="ey-l">1 cada 25 horas</div></div>
+    </div>
+
+    <div class="card-grid">
+      <div class="stat-card"><div class="big c-amber">1.044</div><div class="label">Procedimientos totales<br>2015–2024</div></div>
+      <div class="stat-card"><div class="big c-red">30,1%</div><div class="label">Tasa de aprobación 2024<br>(la más baja registrada)</div></div>
+      <div class="stat-card"><div class="big c-amber">2.491</div><div class="label">Solicitudes totales desde 2021<br>(inicio SRSE)</div></div>
+      <div class="stat-card"><div class="big c-sky">62,6</div><div class="label">Edad promedio<br>de solicitud (años)</div></div>
+    </div>
+
+    <h3>Concentración territorial: El espejo de la inequidad</h3>
+    <p>El 85,5% de los procedimientos de eutanasia se concentra en dos ciudades:</p>
+
+    <div class="region-bar">
+      <div class="rb-seg" style="flex:42.9;background:var(--emerald-dim)">Bogotá 42,9%</div>
+      <div class="rb-seg" style="flex:42.6;background:var(--blue)">Antioquia 42,6%</div>
+      <div class="rb-seg" style="flex:7.2;background:var(--violet)">Valle 7,2%</div>
+      <div class="rb-seg" style="flex:4.7;background:var(--amber)">Risaralda 4,7%</div>
+      <div class="rb-seg" style="flex:2.6;background:var(--border-light);color:var(--heading)">Otros 2,6%</div>
+    </div>
+
+    <div class="card-grid" style="margin-top:1rem">
+      <div class="card">
+        <h4>Diagnóstico principal</h4>
+        <p>El 74,6% corresponde a cáncer (estómago, páncreas, recto, pulmón). El 25,4% es no oncológico (ELA, dolor crónico intratable, EPOC, insuficiencia renal). La proporción no oncológica crece desde 2021 cuando la Corte eliminó el requisito de enfermedad terminal.</p>
+      </div>
+      <div class="card">
+        <h4>Voluntad anticipada y eutanasia</h4>
+        <p>El 49,8% de quienes accedieron a la eutanasia tenían DVA (antes: solo 23%). Crece el uso del documento, pero persiste el desconocimiento. Solo 53 de 124 IPS habilitadas han recibido solicitudes; solo 35 han realizado procedimientos.</p>
+      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top:1rem">
+      ⚖️ <strong>Tensión CP–Eutanasia:</strong> La eutanasia NO es lo opuesto a los CP. Son parte del mismo continuo de atención al final de la vida. El enfermero/a paliativista puede acompañar a un paciente que simultáneamente solicita eutanasia y recibe CP. La Ley 1733 garantiza ambos derechos. Sin embargo, en departamentos como Caquetá, Tolima, Santander o Córdoba, el acceso a ambos derechos es limitado — lo que genera un doble abandono: sin CP ni opción de muerte digna.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 07 TELESALUD — NUEVA SECCIÓN ████████████████ -->
+<section id="telesalud">
+  <div class="container fade-in">
+    <span class="section-label">07 — Nuevo: Innovación para cerrar brechas</span>
+    <h2>Telesalud y Cuidados Paliativos en Colombia</h2>
+    <p class="lead">Si la norma no viaja sola y los especialistas no llegan a todos los territorios, la telesalud puede ser el puente. El OCCP ha identificado un modelo emergente de CP por telesalud con impacto positivo. La Ley 2241/2022 ya contempla la telemedicina y la tele-asistencia para CP.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>📋 Marco legal existente</h4>
+        <p>La <strong>Ley 1419/2010</strong> reglamentó la telesalud en Colombia. La <strong>Resolución 2654/2019</strong> estableció parámetros para la telemedicina. La <strong>Ley 2241/2022</strong> (art. 3, parágrafo) incluyó explícitamente la telemedicina y la tele-asistencia como alternativas de monitoreo permanente para pacientes en CP, siempre que los pacientes y familias lo soliciten.</p>
+      </div>
+      <div class="card">
+        <h4>🏥 Experiencias colombianas</h4>
+        <p><strong>Telesalud U. Caldas:</strong> 24+ años, 105+ hospitales en 20+ departamentos. Diplomado Virtual en Manejo del Dolor y Cuidados Paliativos (2024). <strong>Costa Norte:</strong> Fundación Ser Social IPS + Global e-Health: 10.000+ consultas telemedicina y 113.324 teleorientaciones en 14 meses. <strong>OCCP:</strong> Modelo de CP por telesalud con evidencia de reducción de hospitalizaciones y mejora en control de síntomas.</p>
+      </div>
+      <div class="card">
+        <h4>🌎 Contexto regional</h4>
+        <p>La OPS facilitó en noviembre 2024 el intercambio de experiencias de telesalud entre Colombia, Uruguay y Bolivia. Colombia comparte su modelo como parte del Sistema General de Seguridad Social en Salud: telemedicina, teleeducación, teleorientación integradas.</p>
+      </div>
+    </div>
+
+    <h3>¿Qué puede hacer la telesalud por los CP?</h3>
+    <div class="card-grid">
+      <div class="stat-card"><div class="big" style="font-size:2rem">📡</div><div class="label"><strong>Teleconsulta</strong><br>Acceso a paliativista desde Florencia sin viajar a Bogotá</div></div>
+      <div class="stat-card"><div class="big" style="font-size:2rem">📊</div><div class="label"><strong>Telemonitoreo</strong><br>Control de síntomas, titulación de opioides a distancia</div></div>
+      <div class="stat-card"><div class="big" style="font-size:2rem">🎓</div><div class="label"><strong>Teleeducación</strong><br>Capacitación a enfermeras de 1er nivel en municipios sin especialistas</div></div>
+      <div class="stat-card"><div class="big" style="font-size:2rem">🤝</div><div class="label"><strong>Teleacompañamiento</strong><br>Apoyo psicosocial y de duelo para familias en zonas rurales</div></div>
+    </div>
+
+    <h3>Barreras y oportunidades (OCCP)</h3>
+    <div class="card-grid">
+      <div class="card" style="border-color:rgba(190,18,60,.25)">
+        <h4 style="color:var(--rose)">🚧 Barreras identificadas</h4>
+        <p>Falta de infraestructura tecnológica en regiones apartadas. Necesidad de capacitación del personal de salud. Barreras culturales y de confianza del paciente. Conectividad intermitente en zonas rurales. Ausencia de protocolos estandarizados para CP por telemedicina.</p>
+      </div>
+      <div class="card" style="border-color:rgba(5,150,105,.25)">
+        <h4 style="color:var(--emerald)">🌱 Facilitadores y oportunidades</h4>
+        <p>Marco legal que ya contempla tele-asistencia en CP (Ley 2241/2022). Experiencia de 24+ años de Telesalud Colombia. Pandemia COVID-19 aceleró adopción (Res. 521/2020 amplió habilitación). Los pacientes valoran la telemedicina como complemento (no reemplazo) de la presencialidad. Red de enfermería formada en CP como canal ideal de telemonitoreo.</p>
+      </div>
+    </div>
+
+    <div class="callout info" style="margin-top:1rem">
+      🎯 <strong>Conexión con sus territorios:</strong> Si un estudiante de Caquetá o Córdoba no tiene acceso a un paliativista, la telesalud puede convertir a la enfermera de su IPS en el nodo de conexión con un equipo especializado en Bogotá o Medellín. La Ley 2241/2022 da el marco legal. ¿Qué falta? Infraestructura, voluntad institucional y protocolos adaptados al territorio.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="quote-block">
+  <p class="quote-text">Cuidar está en nuestro chip genético. La pregunta no es si podemos, sino cómo organizamos ese cuidado para que llegue a todos — incluyendo a quienes deciden que es momento de partir.</p>
+  <p class="quote-author">— Reflexión del curso, Maestría en Cuidados Paliativos, UAN 2026</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 08 FORO GUIADO — AMPLIADO ████████████████ -->
+<section id="foro">
+  <div class="container fade-in">
+    <span class="section-label">08 — Dinámica central ampliada</span>
+    <h2>Foro Guiado: «Colombia ante el Espejo»</h2>
+    <p class="lead">Tres momentos, 50 minutos. Preguntas provocadoras ampliadas. Cada momento incluye ahora ejes de eutanasia y telesalud.</p>
+
+    <!-- MOMENTO 1 -->
+    <div class="moment m1">
+      <div class="moment-header">
+        <span class="moment-num">01</span>
+        <span class="moment-title">Lo que Colombia ya tiene</span>
+        <span class="moment-time">⏱ 10 min</span>
+      </div>
+
+      <div class="provoc">¿Qué vieron en los cuatro países que Colombia ya tiene — y que quizás no valoramos lo suficiente?</div>
+
+      <ul class="orient-list">
+        <li><strong>Marco legal pionero:</strong> Ley 1733 de 2014, anterior a Argentina, Chile y Costa Rica. 25+ normas complementarias. ¿Alguno de esos países tiene más normas? ¿Eso es necesariamente bueno?</li>
+        <li><strong>Enfermería como fortaleza:</strong> 65% de facultades con CP obligatorio — ustedes SON esa fortaleza. Costa Rica y Argentina reportan 0% en enfermería.</li>
+        <li><strong>Única con eutanasia regulada:</strong> Ninguno de los otros cuatro países tiene eutanasia regulada. Colombia tiene 10 años de registro, 1.044 procedimientos, y cuatro mecanismos de fin de vida. ¿Eso es un logro o una necesidad no resuelta por los CP?</li>
+        <li><strong>Modelo emergente de telesalud:</strong> Telesalud U. Caldas con 24+ años. El OCCP ya investiga CP por telemedicina. La Ley 2241 ya lo contempla. ¿Conocían la tele-asistencia como herramienta paliativa?</li>
+      </ul>
+
+      <div class="provoc">Si Colombia ya tiene todo esto en el papel, ¿por qué hay departamentos donde un paciente con dolor severo no tiene acceso ni a morfina ni a un paliativista ni a una teleconsulta?</div>
+    </div>
+
+    <!-- MOMENTO 2 -->
+    <div class="moment m2">
+      <div class="moment-header">
+        <span class="moment-num">02</span>
+        <span class="moment-title">Brechas Críticas</span>
+        <span class="moment-time">⏱ 15 min</span>
+      </div>
+
+      <div class="provoc">¿Qué tienen esos cuatro países que nosotros aún no hemos logrado, y cómo se siente esa brecha en el cuerpo de sus pacientes?</div>
+
+      <ul class="orient-list">
+        <li><strong>Morfina oral 0–10%:</strong> Costa Rica y Uruguay reportan 70–100% de disponibilidad. En Colombia la disponibilidad va de 18.12&nbsp;mg per cápita en Bogotá a 0.19&nbsp;mg en Amazonas; el OCCP cifra la brecha de acceso del país en un orden de 90 a 1. <em>Para quien ejerza en un departamento amazónico: ¿tienen sus pacientes acceso a morfina oral? ¿Qué pasa cuando no la hay?</em></li>
+        <li><strong>Eutanasia concentrada:</strong> El 85,5% de los procedimientos se concentran en Bogotá y Medellín. Tolima: 1 eutanasia en 10 años. Santander: 2. Córdoba: no reporta. <em>¿Qué pasa con el derecho a morir dignamente cuando no hay comité, no hay IPS habilitada, no hay especialista?</em></li>
+        <li><strong>Sin médicos formados:</strong> Solo 6 de 63 facultades de medicina con CP obligatorio. <em>Lucía (Córdoba): ¿Los médicos que llegan a tu unidad saben qué son los CP? ¿Has tenido que educarlos tú?</em></li>
+        <li><strong>CP pediátricos:</strong> Argentina tiene 59 equipos. Colombia: 9 para 6.410 niños con sufrimiento grave. <em>Para quien ejerza fuera de las grandes capitales: ¿hay equipo pediátrico paliativo en su institución?</em></li>
+        <li><strong>DVA al 10,5%:</strong> Reglamentado desde 2018 pero prácticamente no se usa. El 49,8% de los que accedieron a eutanasia tenían DVA — ¿y los demás? <em>¿Alguno de ustedes ha facilitado la suscripción de un DVA? ¿Saben cómo se hace?</em></li>
+        <li><strong>Telesalud: oportunidad no aprovechada:</strong> Existe el marco legal (Ley 2241/2022) y la tecnología, pero no hay protocolos estandarizados de CP por telemedicina para las regiones. <em>¿En su institución hay teleconsulta? ¿Se usa para CP o solo para otras especialidades?</em></li>
+      </ul>
+
+      <div class="provoc">¿La brecha entre norma e implementación es un problema de recursos, de voluntad política, de cultura institucional, o de las tres cosas?</div>
+
+      <div class="provoc">Si un paciente en Florencia necesita eutanasia y no hay comité, ¿debe viajar 10 horas a Bogotá para ejercer su derecho? ¿Y si necesita CP pero tampoco hay especialista?</div>
+    </div>
+
+    <!-- MOMENTO 3 -->
+    <div class="moment m3">
+      <div class="moment-header">
+        <span class="moment-num">03</span>
+        <span class="moment-title">Transferencias Posibles</span>
+        <span class="moment-time">⏱ 15 min</span>
+      </div>
+
+      <div class="provoc">De lo que presentaron sus compañeros sobre Costa Rica, Argentina, Uruguay y Chile — ¿qué podría funcionar en SU territorio y por qué?</div>
+
+      <p>Cada estudiante o pareja territorial nombra <strong>una transferencia concreta</strong>:</p>
+      <ul class="orient-list">
+        <li><strong>De Costa Rica:</strong> Formulario nacional de opioides actualizado periódicamente. ¿Viable para estandarizar acceso en Caquetá, Córdoba, Tolima?</li>
+        <li><strong>De Argentina (PrAO):</strong> Estrategia de acceso a opioides a nivel departamental. ¿Aplicable como modelo descentralizado para Huila o Santander?</li>
+        <li><strong>De Uruguay:</strong> CP obligatorio al 100% en medicina + CP en Plan Decenal. ¿La Ley 2241/2022 nos pone en esa ruta? ¿Qué falta para que se cumpla?</li>
+        <li><strong>De Chile:</strong> Articulación equipos oncológicos + no oncológicos con estructura ministerial. ¿Cómo resolver la fragmentación EPS-IPS-territorial?</li>
+        <li><strong>Propia de Colombia:</strong> ¿Y si la telesalud fuera la quinta transferencia? ¿Qué pasaría si cada IPS rural tuviera una enfermera formada en CP conectada por telemedicina con un equipo paliativo de Bogotá, Medellín o Manizales?</li>
+      </ul>
+
+      <div class="provoc">¿Cuál de estas transferencias podrían ustedes impulsar desde su rol como enfermeros/as en su territorio, sin esperar una nueva ley?</div>
+
+      <div class="provoc">La Cuenta de Alto Costo reporta que el 24,77% de casos nuevos de cáncer recibieron CP en 2024 — un aumento del 10,21%. La trayectoria es ascendente. ¿Qué papel juega cada uno de ustedes en que ese 24% se convierta en 50%?</div>
+
+      <div class="card" style="border-color:var(--sky);margin-top:1rem">
+        <h4 style="color:var(--sky)">💡 Dato para el cierre</h4>
+        <p>Colombia tiene cuatro procedimientos regulados de fin de vida. Tiene 25+ normas de CP. Tiene un modelo emergente de telesalud. Tiene enfermeras formadas en CP en el 65% de las facultades. Tiene a cada uno de ustedes volviendo a su territorio con esta maestría. La pregunta ya no es "¿qué le falta a la ley?" sino "¿qué puedo hacer yo con lo que ya existe?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 09 MATRIZ ████████████████ -->
+<section id="matriz">
+  <div class="container fade-in">
+    <span class="section-label">09 — Actividad de cierre</span>
+    <h2>«Mi Territorio en Cifras» — Matriz Territorial Ampliada</h2>
+    <p class="lead">⏱ 10 minutos finales. Cada estudiante completa individualmente. Incluye ahora preguntas sobre eutanasia y telesalud.</p>
+
+    <div class="matrix-card">
+      <div class="matrix-field"><span class="f-label">Nombre del estudiante</span><span class="f-value">________________________________</span></div>
+      <div class="matrix-field"><span class="f-label">Territorio / Departamento</span><span class="f-value">________________________________</span></div>
+      <div class="matrix-field"><span class="f-label">Institución donde ejerce</span><span class="f-value">________________________________</span></div>
+      <div class="matrix-field"><span class="f-label">Estimación servicios CP en su depto.</span><span class="f-value">________________________________</span></div>
+      <div class="matrix-field"><span class="f-label">¿Hay morfina oral en su institución?</span><span class="f-value">Sí / No / No sabe</span></div>
+      <div class="matrix-field"><span class="f-label">¿Existe equipo multidisciplinario CP?</span><span class="f-value">Sí / Parcial / No</span></div>
+      <div class="matrix-field"><span class="f-label">¿Hay atención domiciliaria paliativa?</span><span class="f-value">Sí / No / Limitada</span></div>
+      <div class="matrix-field"><span class="f-label">¿Su IPS tiene comité de eutanasia?</span><span class="f-value">Sí / No / No sabe</span></div>
+      <div class="matrix-field"><span class="f-label">¿Se usa telemedicina en su institución?</span><span class="f-value">Sí / No / En desarrollo</span></div>
+      <div class="matrix-field"><span class="f-label">¿Ha facilitado un DVA alguna vez?</span><span class="f-value">Sí / No</span></div>
+      <div class="matrix-field"><span class="f-label">Principal barrera CP en su territorio</span><span class="f-value">________________________________</span></div>
+      <div class="matrix-field"><span class="f-label">País modelo que más inspira y por qué</span><span class="f-value">________________________________</span></div>
+      <div class="matrix-field"><span class="f-label">Una acción concreta propuesta</span><span class="f-value">________________________________</span></div>
+    </div>
+
+    <p style="font-size:.82rem;color:var(--text-muted);margin-top:.8rem">Esta matriz NO tiene calificación numérica independiente. Es un insumo formativo cualitativo que alimenta la Línea de Tiempo evaluativa (25% primer corte, entrega 20 de marzo).</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 10 LÍNEA TIEMPO ████████████████ -->
+<section id="linea">
+  <div class="container fade-in">
+    <span class="section-label">10 — Puente evaluativo</span>
+    <h2>Hacia la Línea de Tiempo — 25% Primer Corte</h2>
+    <p>Entrega: <strong>20 de marzo de 2026</strong>. Debe integrar cuatro capas:</p>
+
+    <div class="card-grid">
+      <div class="card"><h4 style="color:var(--violet)">🌍 Hitos internacionales</h4><p>Mínimo 5: Cicely Saunders (1967), Kübler-Ross (1969), hospicios medievales, leyes de Uruguay (2008) / Colombia (2014) / Chile (2021), Comisión Lancet (2017), Resolución WHA 67.19 OMS (2014).</p></div>
+      <div class="card"><h4 style="color:var(--blue)">🇨🇴 Hitos colombianos</h4><p>Dr. Tiberio Álvarez (~1980), INC primera unidad CP (1985), Isa Fonnegra y Omega (1987), Ley 1384/2010, caso Evel Saavedra, Ley 1733/2014, Res. 971/2021 eutanasia, Ley 2241/2022, primer doctorado CP (2025).</p></div>
+      <div class="card"><h4 style="color:var(--emerald)">🗺️ Hitos territoriales</h4><p>Eventos de su propio departamento: creación de servicios, llegada de especialistas, primeros convenios, inicio telemedicina, barreras superadas. Usar datos de Sesión 2 y de este foro.</p></div>
+      <div class="card"><h4 style="color:var(--amber)">🔮 Reflexión prospectiva</h4><p>¿Hacia dónde van los CP en su territorio? ¿Qué transferencia es más viable? ¿Qué rol juega la telesalud? ¿Cómo se articula eutanasia y CP? ¿Qué papel juega usted?</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ████████████████ 11 FUENTES ████████████████ -->
+<section id="fuentes">
+  <div class="container fade-in">
+    <span class="section-label">11 — Bibliografía</span>
+    <h2>Fuentes de Consulta</h2>
+
+    <h3>Fuentes principales</h3>
+    <ul class="source-list">
+      <li>Tripodoro, V. et al. (2025). <em>Atlas de Cuidados Paliativos de las Américas.</em> Reporte País Colombia, pp. 238–245. Houston: IAHPC Press.</li>
+      <li>Bonilla, P. (2021). Cuidados paliativos en Latinoamérica. <em>Revista de Nutrición Clínica y Metabolismo</em>, 4(2), 4–13.</li>
+      <li>OCCP — Sánchez-Cárdenas, M. A. et al. (2025). Informe Técnico: Cuidados paliativos en Colombia 2024.</li>
+      <li>OCCP. Cronología políticas públicas con impacto en desarrollo CP [Infografía, 2006–2023].</li>
+      <li>OCCP & U. El Bosque / U. La Sabana. (2022). Plan Nacional CP 2022–2026.</li>
+      <li>OCCP. Anuario Departamental 2016 (Reporte por 32 departamentos + D.C.).</li>
+      <li>Conferencia Dr. Miguel Andrés Bayona Ospina. Historia CP en Colombia. Academia Nacional de Medicina.</li>
+    </ul>
+
+    <h3>Eutanasia</h3>
+    <ul class="source-list">
+      <li>DescLAB — Laboratorio de Derechos Económicos, Sociales y Culturales. (2025). <em>De Muerte Lenta #3: Panorama actual de las cifras y barreras del derecho a morir dignamente en Colombia.</em> Datos con corte a 31 de diciembre de 2024.</li>
+      <li>El Tiempo. (21 sep. 2025). Cada 25 horas se practica una eutanasia en Colombia.</li>
+      <li>El Espectador. (21 sep. 2025). Eutanasia en Colombia: 2024 registró 352 casos, la cifra más alta en 10 años.</li>
+      <li>Infobae Colombia. (22 sep. 2025). En una década Colombia registró 1.044 eutanasias.</li>
+    </ul>
+
+    <h3>Telesalud</h3>
+    <ul class="source-list">
+      <li>OCCP. (s.f.). Modelo de cuidados paliativos por telesalud en Colombia. Publicaciones OCCP.</li>
+      <li>Telesalud Colombia — Universidad de Caldas. (2024). 24 años salvando vidas a través de la tecnología.</li>
+      <li>OPS/OMS. (14 nov. 2024). OPS apoya fortalecimiento Programa Telesalud Bolivia a través de intercambio con Uruguay y Colombia.</li>
+      <li>ConsultorSalud. (7 dic. 2023). Telesalud: una realidad en crecimiento para la costa norte colombiana.</li>
+      <li>Revista Sanitaria de Investigación. (27 ene. 2022). El uso de la telemedicina en cuidados paliativos.</li>
+    </ul>
+
+    <h3>Marco legal colombiano</h3>
+    <ul class="source-list">
+      <li>Ley 1733/2014 (Consuelo Devis Saavedra). Ley 1384/2010 (Sandra Ceballos). Ley 2241/2022 (educación CP). Ley Estatutaria 1751/2015 (derecho salud). Ley 2297/2023 (cuidador).</li>
+      <li>Resolución 2665/2018 (DVA). Resolución 971/2021 (eutanasia). Resolución 285/2018 (muerte digna NNA). Circulares 022–023/2016 (opioides y derechos CP).</li>
+      <li>Ley 1419/2010 (telesalud). Resolución 2654/2019 (telemedicina).</li>
+    </ul>
+
+    <h3>Fuentes complementarias</h3>
+    <ul class="source-list">
+      <li>León, M. X. et al. (2024). Cuidados paliativos: una deuda que tiene Colombia. Universidad de La Sabana.</li>
+      <li>Cuenta de Alto Costo — CAC. (2024). Día mundial de los cuidados paliativos: indicadores Colombia.</li>
+      <li>Paz-Pitto, G. N. et al. (2024). Cuidados paliativos: desafíos y oportunidades. <em>Rev Mex Urol</em>, 84(3).</li>
+      <li>Diagama-Restrepo, S. et al. (2024). Percepción sobre formación en CP de los estudiantes de Cirugía General. <em>Rev Colomb Cir</em>, 39, 209–217.</li>
+      <li>El Tiempo. (14 feb. 2018). ¿Cómo acceder al servicio de cuidados paliativos en Colombia?</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p class="uni">Universidad Antonio Nariño — Facultad de Enfermería</p>
+  <p>Maestría en Cuidados Paliativos · Asignatura: Contexto Histórico y Legal de los Cuidados Paliativos</p>
+  <p>Docente: Jorge Wilhem Bogoya López · Sesión Presencial, 6 de marzo de 2026</p>
+  <p style="margin-top:.8rem;opacity:.4;font-size:.72rem">Material académico v2.1 — Datos macroeconómicos actualizados: PIB per cápita US$7.919 (BM 2024), gasto salud US$644 (BM 2024), IDH 83/193 (PNUD 2025), población 53.1M (DANE 2025). Fuentes CP: Atlas CP Américas 2025, OCCP, CAC, DescLAB y normativa oficial colombiana.</p>
+</footer>
+
+<script>
+// Intersection Observer
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Tab switching
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Sticky nav active state
+const secs = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.sticky-nav a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+});
+</script>
+</body>
+</html>

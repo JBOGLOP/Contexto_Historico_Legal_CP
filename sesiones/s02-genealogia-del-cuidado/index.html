@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 2 · Genealogía del cuidado · UAN 2026-I</title>
+<meta name="description" content="Sesión 2 de Contexto Histórico y Legal de los Cuidados Paliativos. Del pallium a la OMS: la genealogía de un concepto, los pioneros internacionales y el puente hacia Colombia.">
+<style>
+/* === tokens.css (copia en línea · ver _shared/tokens.css) =================
+   Unidad 1 → acento salvia. Ver el mapa de unidades en tokens.css.        */
+:root{
+  --terracota:#B85C3C; --terracota-dark:#9C4830; --terracota-soft:#EFD5C8;
+  --salvia:#7A8B6F;    --salvia-dark:#5C6E54;    --salvia-soft:#D9E0D2;
+  --arena:#C4A876;     --arena-dark:#8B7B5C;     --arena-deep:#6B5B40; --arena-soft:#F5EEDD;
+  --ambar:#D4A547;     --ambar-dark:#A07930;     --ambar-deep:#6B4F0F; --ambar-soft:#F4E4BC;
+  --charcoal:#2D2D2D;  --gris:#595959;           --gris-claro:#8A8A8A;
+  --blanco:#FFFFFF;    --crema:#FAF6EF;
+  --shadow-soft:0 2px 8px rgba(45,45,45,.08);
+  --shadow-medium:0 6px 20px rgba(45,45,45,.12);
+  --radius:12px; --radius-sm:8px;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --mono:'Courier New',monospace;
+  --serif:Georgia,'Times New Roman',serif;
+
+  --acento:var(--salvia); --acento-dark:var(--salvia-dark); --acento-soft:var(--salvia-soft);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--charcoal);background:var(--crema);line-height:1.62}
+:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+a{color:var(--acento-dark)}
+.envoltura{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+
+.nav-sesion{
+  font-family:var(--sans);background:var(--charcoal);color:var(--crema);
+  padding:.55rem 1rem;font-size:.82rem;display:flex;flex-wrap:wrap;
+  align-items:center;gap:.3rem .6rem;line-height:1.6;
+}
+.nav-sesion a{color:var(--arena-soft);text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:var(--arena)}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:var(--gris-claro)}
+@media print{.nav-sesion{display:none}}
+
+.saltar{position:absolute;left:-9999px;background:var(--charcoal);color:var(--crema);padding:.6rem 1rem;z-index:10}
+.saltar:focus{left:0}
+
+.hero{background:linear-gradient(160deg,var(--crema) 0%,var(--salvia-soft) 100%);
+  padding:clamp(2rem,6vw,3.5rem) 0 clamp(1.5rem,4vw,2.5rem);border-bottom:1px solid rgba(45,45,45,.08)}
+.hero__eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--acento-dark);font-weight:700;margin:0 0 .5rem}
+h1{font-size:clamp(1.6rem,4.5vw,2.6rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 .6rem}
+.hero__sub{font-size:1.02rem;color:var(--gris);max-width:54ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
+.chip{background:var(--blanco);border:1px solid rgba(45,45,45,.1);border-radius:999px;
+  padding:.28rem .85rem;font-size:.82rem;box-shadow:var(--shadow-soft)}
+
+section{padding:clamp(1.8rem,4vw,2.75rem) 0}
+h2{font-size:clamp(1.25rem,3vw,1.7rem);margin:0 0 .3rem;color:var(--charcoal)}
+h3{font-size:1.02rem;margin:0 0 .35rem;color:var(--acento-dark)}
+p{max-width:62ch}
+.intro{color:var(--gris);max-width:62ch;margin:0 0 1.4rem}
+
+.epigrafe{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.4vw,1.35rem);
+  color:var(--acento-dark);border-left:4px solid var(--acento);padding:.5em 0 .5em 1.1em;
+  max-width:52ch;margin:1.4rem 0 0}
+.epigrafe span{display:block;font-style:normal;font-family:var(--sans);font-size:.8rem;
+  color:var(--gris);margin-top:.6em}
+
+/* Guion de la sesión */
+.guion{display:grid;gap:.55rem;margin:0;padding:0;list-style:none}
+.guion li{display:grid;grid-template-columns:5.4rem 1fr;gap:.9rem;align-items:start;
+  background:var(--blanco);border-radius:var(--radius-sm);padding:.8rem 1rem;
+  box-shadow:var(--shadow-soft);border-left:3px solid var(--acento)}
+.guion .t{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--acento-dark);padding-top:.12rem}
+.guion strong{display:block;font-size:.96rem}
+.guion span.d{font-size:.88rem;color:var(--gris)}
+.guion li.pausa{border-left-color:var(--ambar);background:var(--ambar-soft)}
+.guion li.pausa .t{color:var(--ambar-deep)}
+@media (max-width:30rem){.guion li{grid-template-columns:1fr}.guion .t{padding-top:0}}
+
+/* Etapas del concepto */
+.etapas{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:1rem}
+.etapa{background:var(--blanco);border-radius:var(--radius);padding:1.1rem 1.25rem;
+  box-shadow:var(--shadow-soft);border-top:3px solid var(--acento)}
+.etapa .ep{font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--gris-claro)}
+.etapa h3{margin:.25rem 0 .35rem}
+.etapa p{margin:0;font-size:.92rem;color:var(--gris)}
+
+/* Tablas */
+.tabla-envoltura{overflow-x:auto;margin-top:1rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:34rem;background:var(--blanco);
+  border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-soft);font-size:.9rem}
+caption{text-align:left;font-size:.85rem;color:var(--gris);padding:0 0 .5rem}
+th,td{padding:.65rem .85rem;text-align:left;vertical-align:top;border-bottom:1px solid #ECE6DC}
+thead th{background:var(--acento-soft);color:var(--acento-dark);font-size:.78rem;
+  letter-spacing:.05em;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:none}
+td strong{color:var(--charcoal)}
+
+/* Preguntas provocadoras */
+.provocadora{background:var(--ambar-soft);border-left:5px solid var(--ambar);
+  border-radius:var(--radius-sm);padding:1rem 1.25rem;margin:0 0 .8rem;max-width:60ch}
+.provocadora .n{font-family:var(--mono);font-size:.73rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ambar-deep);display:block;margin-bottom:.3rem}
+.provocadora p{margin:0;font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--charcoal)}
+
+/* Pioneros */
+.pionero{background:var(--blanco);border-radius:var(--radius);padding:1.2rem 1.4rem;
+  box-shadow:var(--shadow-soft);border-left:4px solid var(--acento);margin-bottom:1rem}
+.pionero h3{font-size:1.1rem;margin-bottom:.15rem}
+.pionero .anos{font-family:var(--mono);font-size:.78rem;color:var(--gris-claro)}
+.pionero ol{margin:.7rem 0 0;padding-left:1.15rem;font-size:.93rem;color:var(--gris)}
+.pionero li{margin-bottom:.4rem}
+
+.nota{background:var(--blanco);border-left:4px solid var(--arena);border-radius:var(--radius-sm);
+  padding:1rem 1.2rem;box-shadow:var(--shadow-soft);font-size:.92rem;color:var(--gris);max-width:62ch}
+.nota strong{color:var(--charcoal)}
+
+.por-verificar{background:var(--ambar-soft);border-left:3px solid var(--ambar);
+  border-radius:var(--radius-sm);padding:.6rem .85rem;margin:.6rem 0 0;font-size:.82rem;
+  color:var(--ambar-deep);max-width:58ch}
+.por-verificar strong{color:var(--ambar-deep);font-family:var(--mono);font-size:.75rem;letter-spacing:.04em}
+
+.actividad{background:var(--arena-soft);border-radius:var(--radius);padding:1.3rem 1.5rem;
+  border-left:5px solid var(--arena)}
+.actividad h2{margin-top:0}
+
+footer{background:var(--charcoal);color:var(--crema);margin-top:2rem;padding:2rem 0;font-size:.87rem}
+footer a{color:var(--arena-soft)}
+footer p{margin:0 0 .5rem;max-width:62ch}
+.footer__legal{color:#B8B8B8;font-size:.8rem;margin-top:.9rem}
+
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<nav class="nav-sesion" aria-label="Navegación del curso">
+  <a class="ns-curso" href="../../index.html">← Contexto Histórico y Legal</a>
+  <span class="ns-meta">Sesión 2 · 20 feb 2026 · Unidad 1</span>
+  <a href="../s01-contexto-historico/index.html">← Anterior</a>
+  <a href="../s03-cp-latinoamerica/index.html">Siguiente: CP en Latinoamérica →</a>
+</nav>
+
+<header class="hero">
+  <div class="envoltura">
+    <p class="hero__eyebrow">Unidad 1 · Temas 1 y 2 · Encuentro sincrónico</p>
+    <h1>Genealogía del cuidado</h1>
+    <p class="hero__sub">
+      De las raíces ancestrales a la profesión del alivio. La historia de los cuidados
+      paliativos no comenzó en Londres en 1967: comenzó cada vez que alguien decidió acompañar
+      a otro en su vulnerabilidad.
+    </p>
+    <div class="meta">
+      <span class="chip">20 de febrero de 2026</span>
+      <span class="chip">Sincrónico · 90 minutos</span>
+      <span class="chip">Unidad 1 · Temas 1 y 2</span>
+    </div>
+    <p class="epigrafe">
+      Curar a veces, aliviar a menudo, cuidar siempre.
+      <span>Aforismo clásico de la medicina</span>
+    </p>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section>
+  <div class="envoltura">
+    <h2>Cómo transcurre la sesión</h2>
+    <p class="intro">
+      El diseño alterna exposición narrativa, reflexión individual y diálogo colectivo. Los
+      tiempos son orientativos: si una pregunta se extiende porque el grupo está realmente
+      metido, eso es señal de que va bien, no un problema de cronograma.
+    </p>
+
+    <ol class="guion">
+      <li><span class="t">0–10 min</span><span><strong>Apertura · El hilo de la historia</strong><span class="d">Conexión con la sesión 1 y con los saberes previos del grupo.</span></span></li>
+      <li><span class="t">10–35 min</span><span><strong>Tema 1 · Antecedentes y evolución</strong><span class="d">Del <em>pallium</em> a la OMS: la genealogía del concepto.</span></span></li>
+      <li class="pausa"><span class="t">35–40 min</span><span><strong>Pausa dialógica 1</strong><span class="d">Pregunta provocadora sobre el dolor total.</span></span></li>
+      <li><span class="t">40–65 min</span><span><strong>Tema 2 · Pioneros internacionales</strong><span class="d">Saunders, Kübler-Ross y el puente hacia Colombia.</span></span></li>
+      <li class="pausa"><span class="t">65–70 min</span><span><strong>Pausa dialógica 2</strong><span class="d">Interdisciplinariedad y Ley 1733 de 2014.</span></span></li>
+      <li><span class="t">70–85 min</span><span><strong>Cierre · Nuestra huella en la historia</strong><span class="d">Actividad proyectiva territorial.</span></span></li>
+      <li><span class="t">85–90 min</span><span><strong>Síntesis y compromiso</strong><span class="d">Recapitulación y actividad asincrónica.</span></span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Apertura: antes de que llegáramos con nuestros títulos</h2>
+    <p class="intro">
+      La sesión abre sin diapositivas. La pregunta se lanza al chat y las respuestas del grupo
+      se convierten en el material de la primera parte.
+    </p>
+
+    <div class="provocadora">
+      <span class="n">Pregunta generadora</span>
+      <p>
+        Antes de que existieran los hospitales, antes de que llegáramos nosotros con nuestros
+        títulos y nuestras batas… ¿cómo se cuidaba a los enfermos y a los moribundos en su
+        territorio? Piensen en sus abuelas, en las parteras, en los rezanderos, en los
+        sobanderos. ¿Qué hacían? ¿Qué sabían?
+      </p>
+    </div>
+
+    <p class="nota">
+      <strong>Por qué se abre así.</strong> Lo que el grupo describe —esas manos que cuidan sin
+      diploma— es la raíz más antigua de lo que hoy llamamos cuidados paliativos. En la tradición
+      <em>hospice</em> eso se llama <strong>cuidado total</strong>. Lo que cambió no fue la
+      intención de cuidar, sino cómo la organizamos.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Tema 1 · Del <em>pallium</em> al <em>hospice</em>: el viaje de una palabra</h2>
+    <p class="intro">
+      No una lista de fechas: la biografía de una idea. «Paliativo» viene del latín
+      <em>pallium</em>, manto. Un manto que cubre, que protege, que abriga.
+    </p>
+
+    <div class="etapas">
+      <div class="etapa">
+        <p class="ep">Siglos IV–XII</p>
+        <h3>El origen · <em>pallium</em></h3>
+        <p>
+          El manto que cubría a peregrinos, viajeros y enfermos en el mundo romano y medieval.
+          No era un concepto médico: era un gesto de hospitalidad. Los primeros hospicios
+          —de <em>hospitium</em>, lugar de acogida— eran refugios en las rutas de peregrinación.
+          El Hospice del Gran San Bernardo, en los Alpes suizos, fundado hacia 1050, es el
+          ejemplo: allí no se curaba, se cuidaba.
+        </p>
+      </div>
+      <div class="etapa">
+        <p class="ep">Siglos XVIII–XX</p>
+        <h3>El olvido · la era de la curación</h3>
+        <p>
+          Con la Ilustración y la revolución científica, la medicina se enfoca en curar. El
+          hospital deja de ser lugar de acogida y se vuelve laboratorio de intervenciones. Quien
+          no puede curarse pasa a ser el fracaso del sistema, el caso que se esconde al final del
+          pasillo. La deshumanización de la muerte llega a su punto crítico a mediados del
+          siglo XX.
+        </p>
+      </div>
+      <div class="etapa">
+        <p class="ep">1960 – hoy</p>
+        <h3>El renacimiento · la respuesta paliativa</h3>
+        <p>
+          El movimiento moderno no nace de la ciencia, sino de la <strong>indignación
+          compasiva</strong>: profesionales que dijeron «esto no puede seguir así». Los cuidados
+          paliativos no son una especialidad más; son una corrección histórica. Son la medicina
+          recordando lo que había olvidado.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Tres definiciones, tres capas</h2>
+    <p class="intro">
+      No se reemplazan entre sí: se acumulan. Cada una amplía lo que la anterior dejaba fuera.
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption>Evolución de la definición de cuidados paliativos</caption>
+        <thead>
+          <tr><th scope="col">Hito</th><th scope="col">Énfasis</th><th scope="col">Aporte clave</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>OMS, 1990</strong></td>
+            <td>Cuidado activo y total de la persona cuya enfermedad no responde a tratamiento curativo. Centrado en el control del dolor y otros síntomas.</td>
+            <td>Primera vez que un organismo internacional reconoce el cuidado de quien va a morir como disciplina legítima.</td>
+          </tr>
+          <tr>
+            <td><strong>OMS, 2002</strong></td>
+            <td>Mejora la calidad de vida de la persona y su familia. Prevención y alivio del sufrimiento. Aplicable desde etapas tempranas.</td>
+            <td>Incluye a la familia. Amplía más allá del cáncer. Introduce la dimensión espiritual.</td>
+          </tr>
+          <tr>
+            <td><strong>IAHPC · Consenso global, 2018–2020</strong></td>
+            <td>Cuidado holístico activo para personas de todas las edades con sufrimiento grave. Derecho humano universal.</td>
+            <td>Los CP como derecho humano. Todas las edades, incluida la pediatría. El sufrimiento serio como criterio, no solo el diagnóstico.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Los principios, leídos como respuesta a una crisis</h2>
+    <p class="intro">
+      Los principios fundamentales no son abstracciones: son respuestas a crisis históricas
+      concretas de deshumanización. Leerlos así evita memorizarlos y obliga a entender por qué
+      fueron necesarios.
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption>Cada principio responde a algo que salió mal</caption>
+        <thead>
+          <tr><th scope="col">Principio</th><th scope="col">Crisis a la que responde</th><th scope="col">Implicación práctica</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Autonomía</strong></td>
+            <td>Décadas de paternalismo médico en las que a la persona no se la consultaba sobre su propio cuerpo ni sobre su propio morir.</td>
+            <td>La persona decide. Se respetan las voluntades anticipadas y las decisiones informadas.</td>
+          </tr>
+          <tr>
+            <td><strong>Dignidad en el final de la vida</strong></td>
+            <td>La muerte tecnificada, aislada y deshumanizada de las unidades de cuidado intensivo del siglo XX.</td>
+            <td>Morir con sentido, acompañado, con control de síntomas y atención integral.</td>
+          </tr>
+          <tr>
+            <td><strong>Alivio del sufrimiento total</strong></td>
+            <td>Una medicina que solo trataba el dolor físico e ignoraba lo psicológico, lo social y lo espiritual.</td>
+            <td>El concepto de <strong>dolor total</strong> de Saunders: físico, emocional, social y espiritual.</td>
+          </tr>
+          <tr>
+            <td><strong>Cuidado de la familia</strong></td>
+            <td>El hospital expulsaba a las familias del proceso de enfermedad y de muerte.</td>
+            <td>La unidad de cuidado es la persona <em>y</em> su familia. El duelo anticipatorio forma parte del tratamiento.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="provocadora" style="margin-top:1.3rem">
+      <span class="n">Pausa dialógica 1 · pregunta provocadora</span>
+      <p>
+        Si el «dolor total» de Saunders incluye lo físico, lo emocional, lo social y lo
+        espiritual… ¿cuál de esas dimensiones creen que es la más desatendida hoy en el sistema
+        de salud colombiano? ¿Por qué?
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Tema 2 · Los pioneros</h2>
+
+    <div class="pionero">
+      <h3>Cicely Saunders</h3>
+      <p class="anos">1918 – 2005 · enfermera, trabajadora social y médica</p>
+      <p style="font-size:.94rem;color:var(--gris)">
+        Su momento fundacional fue la relación con <strong>David Tasma</strong>, un refugiado
+        polaco judío que agonizaba de cáncer en un hospital de Londres en 1948. Tasma le dejó
+        500 libras esterlinas y una frase que cambiaría la historia: <em>«Quiero ser una ventana
+        en tu hogar.»</em> Ese legado simbólico fue la semilla del St Christopher's Hospice,
+        inaugurado en 1967.
+      </p>
+      <p style="font-size:.94rem;color:var(--charcoal);margin-top:.7rem"><strong>Lo verdaderamente revolucionario no fue abrir un hospicio —ya existían— sino integrar tres cosas que nadie había juntado:</strong></p>
+      <ol>
+        <li><strong>Investigó el dolor con rigor.</strong> Demostró que la administración regular de analgésicos —no «a demanda»— previene el sufrimiento. Hoy parece obvio; en los años sesenta era una herejía.</li>
+        <li><strong>Creó el concepto de dolor total.</strong> El dolor no es solo físico: tiene dimensión emocional, social y espiritual. Tratar solo el cuerpo es tratar una cuarta parte del sufrimiento.</li>
+        <li><strong>Demostró que se podía hacer ciencia sin perder la humanidad.</strong> St Christopher's fue desde el primer día lugar de investigación y enseñanza, no un asilo de caridad.</li>
+      </ol>
+    </div>
+
+    <div class="pionero">
+      <h3>Elisabeth Kübler-Ross</h3>
+      <p class="anos">1926 – 2004 · psiquiatra</p>
+      <p style="font-size:.94rem;color:var(--gris)">
+        Si Saunders profesionalizó el cuidado, Kübler-Ross profesionalizó la conversación. Su
+        libro <em>Sobre la muerte y los moribundos</em> (1969) fue un acto de desobediencia
+        cultural: en una época en que la muerte era tabú médico, hizo algo radical — se sentó a
+        escuchar a quienes se estaban muriendo.
+      </p>
+      <p style="font-size:.94rem;color:var(--gris);margin-top:.6rem">
+        Su aporte central no fueron las cinco etapas, sino demostrar que quien muere
+        <strong>tiene voz, tiene proceso y tiene dignidad</strong>, y que escucharlo no es
+        debilidad clínica sino responsabilidad profesional.
+      </p>
+      <p class="nota" style="margin-top:.8rem;background:var(--crema)">
+        <strong>Matiz que la clase discute.</strong> El modelo de las cinco etapas ha sido
+        ampliamente revisado: hoy el duelo se entiende como un proceso no lineal. El aporte de
+        Kübler-Ross no fue un modelo cerrado, sino la apertura de un campo.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>El puente hacia Colombia</h2>
+    <p class="intro">
+      Estas ideas no se importaron solas: las trajeron personas concretas que las adaptaron a
+      una realidad distinta.
+    </p>
+
+    <div class="etapas">
+      <div class="etapa">
+        <p class="ep">Década de 1980</p>
+        <h3>Los primeros viajes</h3>
+        <p>
+          Médicos colombianos viajan a estudiar medicina paliativa en Europa y regresan con la
+          idea de crear unidades de dolor y de cuidados paliativos, en Medellín, Bogotá y Cali.
+        </p>
+      </div>
+      <div class="etapa">
+        <p class="ep">Década de 1990</p>
+        <h3>Las clínicas de dolor</h3>
+        <p>
+          Se crean las primeras clínicas de dolor en hospitales universitarios. La Asociación
+          Colombiana de Cuidados Paliativos empieza a articular esfuerzos. Los CP siguen siendo
+          asunto de las grandes ciudades.
+        </p>
+      </div>
+      <div class="etapa">
+        <p class="ep">Siglo XXI</p>
+        <h3>La Ley 1733 de 2014</h3>
+        <p>
+          La Ley Consuelo Devis Saavedra regula el derecho a los cuidados paliativos en Colombia
+          y marca un antes y un después. Pero la brecha entre la ley y la realidad territorial
+          sigue siendo enorme.
+        </p>
+      </div>
+    </div>
+
+    <p class="por-verificar">
+      <strong>[DATO POR VERIFICAR]</strong> La guía de la sesión menciona por su nombre a una
+      figura pionera de Medellín con un tratamiento de género que no concuerda con el de la
+      persona referida. Antes de publicar nombres propios de pioneros conviene contrastarlos
+      con fuente documental, de modo que aquí se describe el hito sin atribuirlo.
+    </p>
+
+    <div class="provocadora" style="margin-top:1.3rem">
+      <span class="n">Pausa dialógica 2 · pregunta provocadora 2</span>
+      <p>
+        Saunders era enfermera, trabajadora social y médica. Kübler-Ross era psiquiatra. Ninguna
+        de las dos se quedó en una sola disciplina. ¿Qué nos dice eso sobre cómo pensar los
+        cuidados paliativos hoy en nuestros territorios? ¿Estamos listos para la
+        interdisciplinariedad, o seguimos trabajando en silos?
+      </p>
+    </div>
+
+    <div class="provocadora">
+      <span class="n">Pausa dialógica 2 · pregunta provocadora 3</span>
+      <p>
+        La Ley 1733 de 2014 dice que todo colombiano tiene derecho a cuidados paliativos. Pero
+        ustedes viven la realidad de sus territorios. ¿Ese derecho se cumple? ¿Qué falta?
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <div class="actividad">
+      <h2>Cierre · Nuestra huella en la historia</h2>
+      <p style="font-size:.94rem;color:var(--gris)">
+        Cinco minutos de reflexión individual y después plenaria breve. El tránsito del
+        <strong>saber</strong> —el recorrido histórico— al <strong>saber hacer</strong> —el
+        propio papel investigativo en el territorio.
+      </p>
+
+      <div class="provocadora" style="background:var(--blanco);border-left-color:var(--arena);margin-top:1rem">
+        <span class="n" style="color:var(--arena-deep)">Consigna</span>
+        <p style="font-style:normal;font-family:var(--sans);font-size:.95rem">
+          Imagina que dentro de veinte años alguien escribe la historia de los cuidados
+          paliativos en Colombia, y hay un capítulo dedicado a tu departamento.
+        </p>
+        <ol style="font-size:.92rem;color:var(--gris);margin:.7rem 0 0;padding-left:1.15rem">
+          <li>¿Cuál es la realidad actual de los CP en tu territorio? Lo que hay y lo que falta.</li>
+          <li>¿Qué te gustaría que dijera ese capítulo sobre tu contribución?</li>
+          <li>¿Qué necesitas aprender en esta maestría para que esa huella sea posible?</li>
+        </ol>
+      </div>
+
+      <h3 style="margin-top:1.3rem;color:var(--arena-deep)">Actividad asincrónica · investigación territorial</h3>
+      <p style="font-size:.92rem;color:var(--gris);margin:0">
+        Cada participante investiga el estado actual de los cuidados paliativos en su
+        departamento o ciudad: ¿existen unidades de CP? ¿en qué hospitales? ¿desde cuándo? ¿con
+        qué recursos? ¿qué barreras identifican los profesionales locales?
+      </p>
+      <p style="font-size:.92rem;color:var(--gris);margin:.6rem 0 0">
+        <strong>Formato:</strong> publicación en el foro del curso, máximo 500 palabras, con al
+        menos una fuente documental o testimonial. Cada participante comenta la publicación de
+        al menos un compañero de otro departamento. <strong>Propósito:</strong> construir entre
+        todos un mapa vivo del estado de los CP en los territorios representados.
+      </p>
+    </div>
+
+    <p class="nota" style="margin-top:1.3rem">
+      <strong>Cómo se cierra.</strong> «Hoy no vinimos a memorizar fechas. Vinimos a entender de
+      dónde venimos para saber hacia dónde vamos. El cuidado paliativo nació mucho antes de tener
+      nombre, en las manos de quienes cuidaban sin diploma. La historia internacional es la
+      historia de personas que se negaron a aceptar que el sufrimiento fuera inevitable. Y
+      Colombia ya tiene una ley, pero la ley sin ustedes, sin su presencia en sus territorios,
+      es solo un papel. Ustedes son el siguiente capítulo.»
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="envoltura">
+    <p>
+      <strong>Sesión 2 · Genealogía del cuidado</strong><br>
+      Contexto Histórico y Legal de los Cuidados Paliativos · Código 37542001 ·
+      Maestría en Cuidado Paliativo · Facultad de Enfermería · Universidad Antonio Nariño
+    </p>
+    <p>
+      Docente: Jorge Wilhem Bogoya López ·
+      <a href="mailto:jbogoya63@uan.edu.co">jbogoya63@uan.edu.co</a>
+    </p>
+    <p class="footer__legal">
+      Construida a partir del guion del Encuentro Sincrónico n.º 2 y de la presentación de la
+      sesión. Las menciones a territorios concretos del guion original se han generalizado:
+      describen el mapa del grupo, no a personas identificables.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

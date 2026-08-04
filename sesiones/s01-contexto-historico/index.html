@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 1 · Contexto histórico de los cuidados paliativos · UAN 2026-I</title>
+<meta name="description" content="Sesión 1 de Contexto Histórico y Legal de los Cuidados Paliativos. De la muerte doméstica al hospital moderno, y del hospicio medieval a St Christopher's.">
+<style>
+/* === tokens.css (copia en línea · ver _shared/tokens.css) =================
+   Unidad 1 → acento salvia. Ver el mapa de unidades en tokens.css.        */
+:root{
+  --terracota:#B85C3C; --terracota-dark:#9C4830; --terracota-soft:#EFD5C8;
+  --salvia:#7A8B6F;    --salvia-dark:#5C6E54;    --salvia-soft:#D9E0D2;
+  --arena:#C4A876;     --arena-dark:#8B7B5C;     --arena-deep:#6B5B40; --arena-soft:#F5EEDD;
+  --ambar:#D4A547;     --ambar-dark:#A07930;     --ambar-deep:#6B4F0F; --ambar-soft:#F4E4BC;
+  --charcoal:#2D2D2D;  --gris:#595959;           --gris-claro:#8A8A8A;
+  --blanco:#FFFFFF;    --crema:#FAF6EF;
+  --shadow-soft:0 2px 8px rgba(45,45,45,.08);
+  --shadow-medium:0 6px 20px rgba(45,45,45,.12);
+  --radius:12px; --radius-sm:8px;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --mono:'Courier New',monospace;
+  --serif:Georgia,'Times New Roman',serif;
+
+  --acento:var(--salvia); --acento-dark:var(--salvia-dark); --acento-soft:var(--salvia-soft);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--charcoal);background:var(--crema);line-height:1.62}
+:focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+a{color:var(--acento-dark)}
+.envoltura{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+
+/* Navegación de sesión */
+.nav-sesion{
+  font-family:var(--sans);background:var(--charcoal);color:var(--crema);
+  padding:.55rem 1rem;font-size:.82rem;display:flex;flex-wrap:wrap;
+  align-items:center;gap:.3rem .6rem;line-height:1.6;
+}
+.nav-sesion a{color:var(--arena-soft);text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:var(--arena)}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:var(--gris-claro)}
+@media print{.nav-sesion{display:none}}
+
+.saltar{position:absolute;left:-9999px;background:var(--charcoal);color:var(--crema);padding:.6rem 1rem;z-index:10}
+.saltar:focus{left:0}
+
+/* Cabecera */
+.hero{background:linear-gradient(160deg,var(--crema) 0%,var(--salvia-soft) 100%);
+  padding:clamp(2rem,6vw,3.5rem) 0 clamp(1.5rem,4vw,2.5rem);border-bottom:1px solid rgba(45,45,45,.08)}
+.hero__eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--acento-dark);font-weight:700;margin:0 0 .5rem}
+h1{font-size:clamp(1.6rem,4.5vw,2.6rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 .6rem}
+.hero__sub{font-size:1.02rem;color:var(--gris);max-width:54ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
+.chip{background:var(--blanco);border:1px solid rgba(45,45,45,.1);border-radius:999px;
+  padding:.28rem .85rem;font-size:.82rem;box-shadow:var(--shadow-soft)}
+
+section{padding:clamp(1.8rem,4vw,2.75rem) 0}
+h2{font-size:clamp(1.25rem,3vw,1.7rem);margin:0 0 .3rem;color:var(--charcoal)}
+h3{font-size:1.02rem;margin:0 0 .35rem;color:var(--acento-dark)}
+p{max-width:62ch}
+.intro{color:var(--gris);max-width:62ch;margin:0 0 1.4rem}
+
+/* Pregunta de apertura */
+.pregunta{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.4vw,1.35rem);
+  color:var(--acento-dark);border-left:4px solid var(--acento);
+  padding:.5em 0 .5em 1.1em;max-width:52ch;margin:0 0 1rem;
+}
+.pregunta span{display:block;font-style:normal;font-family:var(--sans);
+  font-size:.8rem;color:var(--gris);margin-top:.6em}
+
+.lista-preguntas{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+.lista-preguntas li{
+  background:var(--blanco);border-radius:var(--radius-sm);padding:.85rem 1.05rem;
+  box-shadow:var(--shadow-soft);border-left:3px solid var(--acento);font-size:.95rem;
+}
+
+/* Línea de tiempo */
+.tl{position:relative;margin:0;padding:0 0 0 1.9rem;list-style:none}
+.tl::before{content:'';position:absolute;left:.42rem;top:.4rem;bottom:.4rem;
+  width:2px;background:linear-gradient(var(--salvia),var(--arena))}
+.tl>li{position:relative;margin-bottom:1.5rem}
+.tl>li::before{content:'';position:absolute;left:-1.62rem;top:.42rem;width:.72rem;height:.72rem;
+  border-radius:50%;background:var(--acento);border:2px solid var(--crema)}
+.tl__年{display:block}
+.tl__anno{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.06em;
+  color:var(--acento-dark);text-transform:uppercase}
+.tl h3{margin:.1rem 0 .3rem}
+.tl p{margin:0;font-size:.94rem;color:var(--gris)}
+
+/* Bloques de contraste */
+.contraste{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));margin-top:1rem}
+.contraste>div{background:var(--blanco);border-radius:var(--radius);padding:1.1rem 1.25rem;
+  box-shadow:var(--shadow-soft);border-top:3px solid var(--acento)}
+.contraste>div.otro{border-top-color:var(--terracota)}
+.contraste>div.otro h3{color:var(--terracota-dark)}
+.contraste ul{margin:.4rem 0 0;padding-left:1.05rem;font-size:.93rem;color:var(--gris)}
+.contraste li{margin-bottom:.3rem}
+
+/* Cita */
+.cita{background:var(--blanco);border-radius:var(--radius);padding:1.4rem 1.6rem;
+  box-shadow:var(--shadow-medium);border-left:5px solid var(--acento);max-width:56ch}
+.cita blockquote{margin:0;font-family:var(--serif);font-size:clamp(1.05rem,2.3vw,1.3rem);
+  line-height:1.5;color:var(--charcoal)}
+.cita figcaption{margin-top:.8rem;font-size:.85rem;color:var(--gris)}
+.cita .original{display:block;margin-top:.5rem;font-style:italic;color:var(--gris-claro);font-size:.82rem}
+
+/* Actividad */
+.actividad{background:var(--arena-soft);border-radius:var(--radius);padding:1.3rem 1.5rem;
+  border-left:5px solid var(--arena)}
+.actividad h2{margin-top:0}
+.partes{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:1rem}
+.parte{background:var(--blanco);border-radius:var(--radius-sm);padding:1rem 1.15rem;box-shadow:var(--shadow-soft)}
+.parte h3{color:var(--arena-deep)}
+.parte ol{margin:.5rem 0 0;padding-left:1.1rem;font-size:.9rem;color:var(--gris)}
+.parte li{margin-bottom:.35rem}
+.parte .peso{font-family:var(--mono);font-size:.75rem;color:var(--arena-deep);font-weight:700}
+
+.nota{background:var(--blanco);border-left:4px solid var(--arena);border-radius:var(--radius-sm);
+  padding:1rem 1.2rem;box-shadow:var(--shadow-soft);font-size:.92rem;color:var(--gris);max-width:62ch}
+.nota strong{color:var(--charcoal)}
+
+/* Dato en disputa: se rotula, no se resuelve. Ver METODO §9. */
+.por-verificar{
+  background:var(--ambar-soft);border-left:3px solid var(--ambar);border-radius:var(--radius-sm);
+  padding:.6rem .85rem;margin:.6rem 0 0;font-size:.82rem;color:var(--ambar-deep);max-width:58ch;
+}
+.por-verificar strong{color:var(--ambar-deep);font-family:var(--mono);font-size:.75rem;letter-spacing:.04em}
+
+footer{background:var(--charcoal);color:var(--crema);margin-top:2rem;padding:2rem 0;font-size:.87rem}
+footer a{color:var(--arena-soft)}
+footer p{margin:0 0 .5rem;max-width:62ch}
+.footer__legal{color:#B8B8B8;font-size:.8rem;margin-top:.9rem}
+
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<nav class="nav-sesion" aria-label="Navegación del curso">
+  <a class="ns-curso" href="../../index.html">← Contexto Histórico y Legal</a>
+  <span class="ns-meta">Sesión 1 · 6 feb 2026 · Unidad 1</span>
+  <a href="../s02-genealogia-del-cuidado/index.html">Siguiente: Genealogía del cuidado →</a>
+</nav>
+
+<header class="hero">
+  <div class="envoltura">
+    <p class="hero__eyebrow">Unidad 1 · Tema 1 · Sesión presencial</p>
+    <h1>Contexto histórico de los cuidados paliativos</h1>
+    <p class="hero__sub">
+      Antecedentes históricos, evolución de la definición y principios del cuidado paliativo.
+      Cómo el morir dejó de ser un asunto doméstico y pasó a ser un asunto médico — y qué se
+      perdió en el traslado.
+    </p>
+    <div class="meta">
+      <span class="chip">6 de febrero de 2026</span>
+      <span class="chip">Presencial · 2 horas</span>
+      <span class="chip">Unidad 1 · Tema 1</span>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section>
+  <div class="envoltura">
+    <h2>Con qué empieza la sesión</h2>
+    <p class="intro">
+      La clase no abre con una definición, sino con una pregunta incómoda que se responde
+      mirando dos escenas del morir.
+    </p>
+
+    <p class="pregunta">
+      ¿En cuál de estas dos escenas hay más «cuidado», y dónde reside la autoridad sobre el
+      proceso de morir?
+      <span>Pregunta de apertura</span>
+    </p>
+
+    <h3>Y antes de la historia formal, la historia propia</h3>
+    <ul class="lista-preguntas">
+      <li>¿Dónde murieron sus abuelos o bisabuelos, y dónde creen que morirán ustedes?</li>
+      <li>¿Quién estuvo presente en esas muertes? ¿Familia, personal de salud, ambos, nadie?</li>
+      <li>¿Qué diferencias perciben entre esas experiencias y lo que consideran hoy una «buena muerte»?</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Dos regímenes del morir</h2>
+    <p class="intro">
+      El recorrido de la sesión es el tránsito de un régimen al otro. No es un progreso lineal:
+      es un intercambio, con lo que se gana y lo que se pierde.
+    </p>
+
+    <div class="contraste">
+      <div>
+        <h3>La muerte doméstica y ritualizada</h3>
+        <p style="font-size:.82rem;color:var(--gris-claro);margin:0 0 .4rem;font-family:var(--mono)">Edad Media – siglo XVIII</p>
+        <ul>
+          <li>Evento doméstico, familiar y comunitario</li>
+          <li>Ocurría en casa, acompañada de rituales</li>
+          <li>Muerte pública y anticipada</li>
+          <li>Quien moría dirigía su propia despedida</li>
+          <li>Integrada al ciclo natural de la vida</li>
+          <li>La medicina acompañaba; no pretendía vencer a la muerte</li>
+        </ul>
+      </div>
+      <div class="otro">
+        <h3>La muerte hospitalaria</h3>
+        <p style="font-size:.82rem;color:var(--gris-claro);margin:0 0 .4rem;font-family:var(--mono)">siglo XIX – siglo XX</p>
+        <ul>
+          <li>Anestesia, antisepsia, cirugía, microbiología</li>
+          <li>La muerte pasa a leerse como fracaso médico</li>
+          <li>El hospital se convierte en centro tecnológico</li>
+          <li>De institución de acogida a laboratorio de intervenciones</li>
+          <li>La autoridad sobre el morir se desplaza a la medicina</li>
+          <li>Morir en la soledad de una unidad de cuidado intensivo</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="nota" style="margin-top:1.2rem">
+      <strong>La paradoja que abre el campo.</strong> El hospital del siglo XIX transformó
+      instituciones caritativas para pobres y moribundos —hospicios, <em>hôtels-Dieu</em>— en
+      centros donde el objetivo era curar. Los beneficios fueron innegables. Pero quedó una
+      pregunta sin respuesta institucional: <strong>¿qué hacer con quienes no pueden curarse?</strong>
+      Los cuidados paliativos nacen como respuesta tardía a esa pregunta.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Del refugio medieval a St Christopher's</h2>
+    <p class="intro">
+      El hospicio no nació como institución clínica. Nació como hospitalidad, y tardó
+      ochocientos años en volverse también ciencia.
+    </p>
+
+    <ol class="tl">
+      <li>
+        <span class="tl__anno">Siglos IV – XII · <em>hospitium</em></span>
+        <h3>Hospitalidad y acogida</h3>
+        <p>
+          El <em>hospitium</em> era lugar de acogida, no de tratamiento: refugio en las rutas de
+          peregrinación para quien estaba cansado, enfermo o moribundo. Cuidado compasivo, sin
+          pretensión científica.
+        </p>
+      </li>
+      <li>
+        <span class="tl__anno">1842 · Lyon, Francia</span>
+        <h3>Jeanne Garnier y los «Calvarios»</h3>
+        <p>
+          Madame Jeanne Garnier funda los Calvarios, hospicios dedicados específicamente a
+          mujeres con cáncer incurable. Es la primera vez que el término <em>hospice</em> se
+          vincula al cuidado de quien va a morir.
+        </p>
+      </li>
+      <li>
+        <span class="tl__anno">1879 · Dublín</span>
+        <h3>Our Lady's Hospice</h3>
+        <p>Las Hermanas Irlandesas de la Caridad abren el hospicio de Nuestra Señora.</p>
+      </li>
+      <li>
+        <span class="tl__anno">1905 · Londres</span>
+        <h3>St Joseph's Hospice</h3>
+        <p>
+          La misma orden funda St Joseph's. Estos hospicios ofrecían cuidado caritativo, pero
+          carecían de un enfoque clínico riguroso para el control del dolor y de otros síntomas.
+          <strong>El cuidado era compasivo, pero no científico.</strong>
+        </p>
+      </li>
+      <li>
+        <span class="tl__anno">1918 – 2005 · Cicely Saunders</span>
+        <h3>Enfermera, trabajadora social y médica</h3>
+        <p>
+          Enfermera durante la Segunda Guerra Mundial en el St Thomas's Hospital de Londres.
+          Trabajadora social desde 1947, tras una lesión de espalda que le impidió seguir en
+          enfermería. Se gradúa como médica en 1957, movida por el propósito de transformar
+          el cuidado de quienes se acercan al final de la vida.
+        </p>
+        <p class="por-verificar">
+          <strong>[DATO POR VERIFICAR]</strong> La presentación original indica que se graduó
+          «a los 33 años». Nacida en 1918, en 1957 habría cumplido 39. Pendiente de contrastar
+          con la fuente antes de fijar la edad.
+        </p>
+      </li>
+      <li>
+        <span class="tl__anno">1967 · Sureste de Londres</span>
+        <h3>St Christopher's Hospice</h3>
+        <p>
+          Lo revolucionario no fue abrir un hospicio —ya existían—, sino que desde el primer día
+          fuera a la vez lugar de cuidado, de investigación y de enseñanza. No un asilo de
+          caridad: un centro académico que tomó en serio a quien se está muriendo.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>La frase que fundó el campo</h2>
+    <figure class="cita">
+      <blockquote>
+        Usted importa porque es usted, y usted importa hasta el último momento de su vida.
+        Haremos todo lo posible no solo para ayudarle a morir en paz, sino también para que
+        viva hasta que muera.
+      </blockquote>
+      <figcaption>
+        Dame Cicely Saunders (1918–2005)
+        <span class="original">«You matter because you are you, and you matter to the end of your
+        life. We will do all we can not only to help you die peacefully, but also to live until
+        you die.»</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <div class="actividad">
+      <h2>Actividad preparatoria para la sesión 2</h2>
+      <p style="color:var(--arena-deep);font-weight:600;margin:0 0 .3rem">
+        «Del cuidado personal al cuidado universal: tejiendo historias, territorios y conceptos»
+      </p>
+      <p style="font-size:.93rem;color:var(--gris)">
+        Documento integrado de <strong>máximo 2.000 palabras</strong>. Así como Cicely Saunders
+        tuvo un «porqué» personal —David Tasma—, cada participante tiene el suyo. La actividad
+        pide tejer la historia propia con la historia formal del campo, y la del propio
+        territorio con la historia nacional.
+      </p>
+
+      <div class="partes">
+        <div class="parte">
+          <p class="peso">Parte A · 500–600 palabras</p>
+          <h3>Mi historia en la historia</h3>
+          <p style="font-size:.9rem;color:var(--gris);margin:0">Narrativa reflexiva en primera persona, no cuestionario.</p>
+          <ol>
+            <li><strong>El momento bisagra.</strong> ¿Qué experiencia o persona despertó el interés por los cuidados paliativos?</li>
+            <li><strong>Del porqué al para qué.</strong> ¿Qué idea equivocada sobre los CP tenía y cómo ha cambiado?</li>
+            <li><strong>El cuidado como vocación.</strong> ¿Qué significa cuidar? ¿Cuándo sintió que el modelo curativo era insuficiente?</li>
+            <li><strong>Compromiso territorial.</strong> ¿Qué cambio concreto espera generar en su territorio?</li>
+          </ol>
+        </div>
+        <div class="parte">
+          <p class="peso">Parte B · 600 palabras</p>
+          <h3>Cuidados paliativos en mi territorio</h3>
+          <p style="font-size:.9rem;color:var(--gris);margin:0">Investigación local, con al menos una fuente.</p>
+          <ol>
+            <li><strong>Investigación histórica.</strong> ¿Cuándo llegaron los CP a su territorio? Instituciones pioneras, hitos.</li>
+            <li><strong>Radiografía actual.</strong> Recursos existentes, brechas, poblaciones excluidas, acceso a opioides.</li>
+            <li><strong>Visión de futuro.</strong> Qué debería existir en cinco años y qué papel puede jugar usted.</li>
+          </ol>
+          <p style="font-size:.87rem;color:var(--arena-deep);margin:.6rem 0 0">
+            Se acompaña de un recurso visual: infografía, mapa conceptual o línea de tiempo.
+          </p>
+        </div>
+      </div>
+
+      <p class="nota" style="margin-top:1.1rem;background:var(--blanco)">
+        <strong>Cuatro ideas que la actividad pide desmontar:</strong> cuidados paliativos no es
+        igual a muerte; no es solo manejo del dolor; no es solo para personas con cáncer; y no
+        es «rendirse».
+      </p>
+
+      <p class="nota" style="margin-top:.8rem;background:var(--blanco)">
+        <strong>Sobre el punto de comparación nacional.</strong> La consigna sitúa el inicio
+        formal de los cuidados paliativos en Colombia en <strong>1985</strong>, en el Instituto
+        Nacional de Cancerología de Bogotá, y pide calcular cuántos años tardaron en llegar al
+        propio territorio. Si no hay información publicada, <strong>la ausencia de datos es un
+        dato</strong> y se documenta como hallazgo.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="envoltura">
+    <h2>Qué se lleva de esta sesión a la siguiente</h2>
+    <p class="intro">
+      La sesión 2 recoge exactamente donde esta termina: si aquí vimos que el hospicio pasó de
+      la caridad a la ciencia, allí veremos cómo se construyó el nombre —<em>pallium</em>, el
+      manto— y cómo la definición fue cambiando hasta convertirse en un derecho humano.
+    </p>
+    <p class="nota">
+      <strong>El hilo.</strong> La historia de los cuidados paliativos no empieza en Londres en
+      1967. Empieza cada vez que alguien decidió acompañar a otro en su vulnerabilidad. Lo que
+      cambió no fue la intención de cuidar, sino cómo la organizamos.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="envoltura">
+    <p>
+      <strong>Sesión 1 · Contexto histórico de los cuidados paliativos</strong><br>
+      Contexto Histórico y Legal de los Cuidados Paliativos · Código 37542001 ·
+      Maestría en Cuidado Paliativo · Facultad de Enfermería · Universidad Antonio Nariño
+    </p>
+    <p>
+      Docente: Jorge Wilhem Bogoya López ·
+      <a href="mailto:jbogoya63@uan.edu.co">jbogoya63@uan.edu.co</a>
+    </p>
+    <p class="footer__legal">
+      Reconstruida a partir de la presentación dictada el 6 de febrero de 2026 y de la consigna
+      de la actividad preparatoria. Las imágenes de la presentación original no se reproducen
+      aquí: su procedencia no está documentada.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
