@@ -37,27 +37,35 @@ morfina oral entre Bogotá y los departamentos amazónicos sigue siendo del orde
 
 ## Material publicado
 
-### Sesión 7 · 8 de mayo de 2026 — Marco normativo y voluntad anticipada
+**Las ocho sesiones están publicadas.** Cada una vive en `sesiones/sNN-slug/`; el
+[índice del sitio](https://jboglop.github.io/Contexto_Historico_Legal_CP/) es la vía natural de
+entrada.
+
+| # | Fecha | Sesión | Material |
+|---|---|---|---|
+| 1 | 6 feb | Contexto histórico | [Sesión](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesiones/s01-contexto-historico/) |
+| 2 | 20 feb | Genealogía del cuidado | [Sesión](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesiones/s02-genealogia-del-cuidado/) |
+| 3 | 6 mar | CP en América Latina | [Panorama regional](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesiones/s03-cp-latinoamerica/) · Colombia ante el espejo · guía de actividad · desglose normativo · primer corte · cuatro fichas país |
+| 4 | 20 mar | Marcos globales de política | [Encuentro sincrónico](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesiones/s04-marcos-globales/) · versión para Moodle |
+| 5 | 10 abr | Colombia y América Latina | [Plan de sesión](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesiones/s05-colombia-y-america-latina/) · asignación grupal · cuatro ejes de trabajo |
+| 6 | 24 abr | Legislación internacional | [Plan de clase](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesiones/s06-legal-internacional/) · actividad Doña Carmen · marco legal colombiano · informe integrador · plataforma interactiva |
+| 7 | 8 may | Marco normativo y voluntad anticipada | [Actividad DVA](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesiones/s07-legal-latinoamerica-dva/) · marco normativo · jurisprudencia 2023–2026 |
+| 8 | 29 may | Resolución 813 de 2026 · cierre | [Análisis interactivo](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesiones/s08-resolucion-813/) |
+
+### Documentos descargables
 
 | Archivo | Qué es |
 |---|---|
-| [`actividad_dva_personal.html`](https://jboglop.github.io/Contexto_Historico_Legal_CP/actividad_dva_personal.html) | Plan de sesión interactivo · 6 momentos · 58 minutos · cronómetros y lista de verificación de 20 variables |
-| [`sesion_marco_normativo_jurisprudencial_uan_2026.html`](https://jboglop.github.io/Contexto_Historico_Legal_CP/sesion_marco_normativo_jurisprudencial_uan_2026.html) | Sesión sobre marco normativo y jurisprudencial, con informe integrador |
-| [`marco_normativo_jurisprudencial_cp_2023_2026.html`](https://jboglop.github.io/Contexto_Historico_Legal_CP/marco_normativo_jurisprudencial_cp_2023_2026.html) | Documento de referencia · jurisprudencia 2023–2026 |
 | [`plantilla_dva_personal.docx`](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/plantilla_dva_personal.docx) | Plantilla de voluntad anticipada · 20 variables · Resolución 2665 de 2018 |
 | [`fundamentacion_dva.docx`](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/fundamentacion_dva.docx) | Fundamentación normativa y operacional |
+| [`Res_813/Resolucion-No-813-de-2026-1.pdf`](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/Res_813/Resolucion-No-813-de-2026-1.pdf) | Texto oficial de la Resolución 813 |
 
-### Sesión 8 · 29 de mayo de 2026 — Resolución 813 de 2026
-
-| Archivo | Qué es |
-|---|---|
-| [`Res_813/index_res813.html`](https://jboglop.github.io/Contexto_Historico_Legal_CP/Res_813/index_res813.html) | Análisis interactivo de la Resolución 813 · muerte digna en Colombia |
-| [`Res_813/Resolucion-No-813-de-2026-1.pdf`](https://github.com/JBOGLOP/Contexto_Historico_Legal_CP/raw/main/Res_813/Resolucion-No-813-de-2026-1.pdf) | Texto oficial |
-
-### Sesiones 1 – 6
-
-Se dictaron completas. Su material está en el archivo del curso y se publicará aquí tras la
-homologación de paleta, tipografía y portabilidad. El índice del sitio ya documenta su contenido.
+> **Las direcciones antiguas siguen funcionando.** Las sesiones 7 y 8 vivían en la raíz del
+> repositorio y sus URLs se compartieron con los estudiantes. Al agruparlas con el resto quedó
+> una página de redirección en cada ruta anterior: **ningún enlace compartido deja de servir.**
+>
+> Los tres archivos descargables **no** se movieron. Un `.pdf` o un `.docx` no admite página de
+> redirección: se serviría con el tipo MIME equivocado y no abriría.
 
 ---
 
