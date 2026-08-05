@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grupo 2 — CEPAL y RIAS · 10 abr 2026 · UAN</title>
+<style>
+:root{
+  --gc:#2471a3;--gcd:#1a4f72;--gcm:#1f5f8a;--gcl:#d6eaf8;--gc0:#ebf5fb;
+  --g:#c5943a;--gl:#f2d98c;--go:#fffdf5;
+  --r2:#c0392b;
+  --ink:#1a2732;--im:#2e4057;--is:#4a6275;
+  --w:#fff;--sf:#f5f8f9;--bd:#c8dde9;--bd2:#dce9f2;--r:6px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia, 'Times New Roman', serif;color:var(--ink);background:var(--sf);max-width:860px;margin:0 auto;padding:0 22px 80px;line-height:1.74;font-size:.94rem}
+header{background:linear-gradient(135deg,var(--gcd) 0%,var(--gcm) 55%,#2575a8 100%);color:var(--w);padding:32px 36px 26px;border-radius:0 0 12px 12px;margin-bottom:28px;position:relative;overflow:hidden}
+header::after{content:'';position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
+.lbl{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gl);margin-bottom:7px}
+header h1{font-size:1.48rem;font-weight:700;line-height:1.26;margin-bottom:5px}
+.sub{font-size:.85rem;color:rgba(255,255,255,.73);font-style:italic;margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:6px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.67rem}
+.pills span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);padding:3px 9px;border-radius:20px}
+.pills b{color:var(--gl)}
+.integ{display:flex;flex-wrap:wrap;gap:0;background:var(--w);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:24px;overflow:hidden}
+.integ-item{flex:1;min-width:200px;padding:12px 16px;border-right:1px solid var(--bd)}
+.integ-item:last-child{border-right:none}
+.integ-item .rol{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.63rem;font-weight:700;color:var(--gc);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.integ-item .nombre{font-weight:600;font-size:.91rem;color:var(--ink)}
+.integ-item .cod{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.73rem;color:var(--is)}
+h2{font-size:1.1rem;color:var(--gcd);margin:26px 0 10px;padding-bottom:5px;border-bottom:2px solid var(--bd)}
+h3{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.93rem;font-weight:600;color:var(--gcm);margin:13px 0 5px}
+p{margin-bottom:9px}
+ul,ol{padding-left:22px;margin:5px 0 10px}
+li{margin-bottom:4px}
+a{color:var(--gc);text-underline-offset:3px}
+strong{color:var(--ink)}
+.box{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:15px 17px;margin:11px 0;box-shadow:0 1px 5px rgba(0,0,0,.04)}
+.box.azul{border-left:4px solid var(--gc);background:var(--gc0)}
+.box.gold{border-left:4px solid var(--g);background:var(--go)}
+.box.ddhh{border-left:4px solid #8e44ad;background:#f9f5fb}
+.tag{display:inline-block;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.6rem;padding:2px 6px;border-radius:2px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;vertical-align:middle;margin-right:3px}
+.tag-t{background:#e8daef;color:#6c3483}
+.tag-c{background:var(--gcl);color:var(--gcd)}
+.tag-p{background:#fdebd0;color:#935116}
+.lectura{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:13px 15px;margin:9px 0}
+.lectura .num{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.66rem;font-weight:700;color:var(--gc);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.lectura .titulo{font-weight:600;font-size:.91rem;color:var(--ink);margin-bottom:5px}
+.lectura .guia{font-size:.84rem;color:var(--im);line-height:1.62}
+.pqs{counter-reset:pq;list-style:none;padding:0}
+.pqs li{counter-increment:pq;display:flex;gap:10px;margin-bottom:10px;background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;font-size:.9rem;color:var(--im)}
+.pqs li::before{content:counter(pq);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-weight:700;font-size:.88rem;color:var(--w);background:var(--gc);min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:10px 0}
+th{background:var(--gcd);color:var(--w);padding:7px 11px;text-align:left;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.67rem;text-transform:uppercase;letter-spacing:.07em}
+td{padding:8px 11px;border-bottom:1px solid var(--bd2);background:var(--w);vertical-align:top}
+.tm{font-weight:600;color:var(--gc);white-space:nowrap;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.8rem}
+.hrow td{background:#f0f7fc;text-align:center;font-style:italic;color:var(--g);font-weight:600;font-size:.82rem}
+.refs p{font-size:.82rem;line-height:1.65;margin-bottom:7px;padding-left:18px;text-indent:-18px}
+.print-btn{position:fixed;bottom:20px;right:20px;background:var(--gc);color:var(--w);border:none;padding:10px 18px;border-radius:30px;cursor:pointer;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.78rem;font-weight:600;box-shadow:0 3px 14px rgba(0,0,0,.2)}
+@media print{.print-btn{display:none}header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.integ{break-inside:avoid}}
+@media(max-width:580px){header{padding:20px}header h1{font-size:1.2rem}.integ-item{min-width:160px}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida: cada
+   archivo trae su propia paleta y no puede depender de ella. */
+.nav-sesion{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D;color:#FAF6EF;padding:.55rem 1rem;font-size:.82rem;display:flex;
+  flex-wrap:wrap;align-items:center;gap:.3rem .6rem;line-height:1.6}
+.nav-sesion a{color:#F5EEDD;text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876;font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876;outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style></head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 5"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 5 &middot; 10 abr 2026</span><a href="index.html">Plan de sesión</a><a href="asignacion-grupal.html">Asignación grupal</a><a href="g1-ops-maite.html">G1 · OPS/MAITE</a><span class="ns-actual" aria-current="page">G2 · CEPAL/RIAS</span><a href="g3-alcp-gpc.html">G3 · ALCP/GPC</a><a href="g4-mesa-integracion.html">G4 · Mesa territorial</a><a href="../s04-marcos-globales/index.html">&larr; Sesi&oacute;n 4</a></nav>
+
+<header>
+  <div class="lbl">Aula invertida · Grupo 2 · Sesión presencial 10 de abril de 2026 · UAN Maestría en Cuidado Paliativo</div>
+  <h1>CEPAL y RIAS: los cuidados paliativos como derecho humano y las rutas colombianas</h1>
+  <div class="sub">Unidad 2 · Topics 2 y 3 — Marco regional CEPAL (Consenso Montevideo C.29) ↔ Política nacional Colombia (RIAS)</div>
+  <div class="pills">
+    <span>📅 <b>Clase:</b> 10 abr 2026 · 8:00–10:00 am · Presencial</span>
+    <span>📖 <b>Lecturas:</b> Antes del 10 de abril</span>
+    <span>🎤 <b>Exposición:</b> 8:59–9:11 am · 8 min + 4 min preguntas</span>
+  </div>
+</header>
+<!-- ROL -->
+<h2>¿Qué analiza este grupo?</h2>
+<div class="box azul">
+  <p>Este grupo trabaja el eje <strong>CEPAL como marco de derechos</strong> y las <strong>Rutas Integrales de Atención en Salud (RIAS)</strong> como expresión colombiana de ese enfoque. La apuesta central de la CEPAL va más allá del envejecimiento: en el <em>Consenso de Montevideo</em> adoptó en 2013 la Medida C.29, que insta a garantizar el acceso a CP como condición para asegurar una muerte digna. La investigadora Tania Pastrana, en un capítulo publicado por la CEPAL en 2022, fundamenta los CP como derecho humano. La pregunta es si las RIAS colombianas operacionalizan ese derecho o lo diluyen.</p>
+</div>
+
+<div class="box gold">
+  <h3 style="color:var(--g);margin:0 0 6px">Pregunta articuladora</h3>
+  <p style="font-style:italic;font-size:.96rem">«¿Cómo conceptualiza la CEPAL los cuidados paliativos como derecho humano, más allá del envejecimiento? ¿Qué transforma enmarcar los CP como derecho y no como servicio médico? ¿Las Rutas Integrales de Atención en Salud colombianas garantizan ese derecho en el territorio o lo integran de forma invisible?»</p>
+</div>
+
+<!-- LECTURA COMPARTIDA -->
+<h2>Lectura compartida — TODOS los grupos</h2>
+<div class="lectura">
+  <div class="num"><span class="tag tag-t">Todos los grupos</span> Lectura 1</div>
+  <div class="titulo">OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Historias OPS.</div>
+  <div class="guia">Entrevista con la Dra. Patricia Bonilla (presidenta ALCP) y el Dr. Mark Stoltenberg (Harvard/OPS). Dato clave: solo el <strong>7% de los pacientes que necesitan CP en Latinoamérica los reciben</strong>. Cubre opioides, cuidado domiciliario, agotamiento de equipos y voluntariado. <strong>Cada grupo debe citarla al menos una vez en su exposición.</strong></div>
+  <p style="margin-top:8px"><a href="https://www.paho.org/es/historias/cuidados-paliativos-americas" target="_blank">paho.org/es/historias/cuidados-paliativos-americas</a></p>
+</div>
+
+<!-- LECTURAS ESPECÍFICAS -->
+<h2>Lecturas específicas del Grupo 2 <span class="tag tag-c">Trabajo en casa · Antes del 10 abr</span></h2>
+
+<div class="lectura">
+  <div class="num">Lectura 2</div>
+  <div class="titulo">CEPAL. (2013). <em>Consenso de Montevideo sobre Población y Desarrollo — Medida Prioritaria C.29: Desarrollo y acceso a cuidados paliativos.</em></div>
+  <div class="guia">El Consenso fue adoptado el <strong>15 de agosto de 2013</strong> por 38 países miembros y asociados de la CEPAL en Montevideo. La <strong>Medida C.29</strong> establece: <em>"Favorecer el desarrollo y acceso a cuidados paliativos, para asegurar una muerte digna y sin dolor."</em> Explora la plataforma de seguimiento: qué indicador tiene asignado (C.5: porcentaje de centros de salud que incluyen CP como prestación básica), cuáles son sus líneas de acción, y qué dice sobre la relación entre denegación del alivio del dolor y trato inhumano según el Relator Especial de la ONU sobre la Tortura (2013).</div>
+  <p style="margin-top:7px"><a href="https://consensomontevideo.cepal.org/es/medidas-prioritarias/c29-desarrollo-y-acceso-cuidados-paliativos" target="_blank">consensomontevideo.cepal.org/es/medidas-prioritarias/c29-desarrollo-y-acceso-cuidados-paliativos</a></p>
+</div>
+
+<div class="lectura">
+  <div class="num">Lectura 3</div>
+  <div class="titulo">Pastrana, T. (2022). Derecho a los cuidados paliativos. En S. Huenchuan (ed.), <em>Visión multidisciplinaria de los derechos humanos de las personas mayores</em> (cap. VII, pp. 135–148). CEPAL. (LC/MEX/TS.2022/4).</div>
+  <div class="guia">Este capítulo es el texto más directo que la CEPAL tiene sobre CP como derecho humano. Tania Pastrana es una de las investigadoras más reconocidas en CP de América Latina. Leer completo (14 páginas). Identifica: (1) el marco de derechos humanos que fundamenta el acceso a CP; (2) la distinción entre CP como "servicio médico" vs. "derecho" y qué cambia en la práctica; (3) el estado de desarrollo de los CP en la región según la autora; (4) qué instrumentos internacionales obligan a los Estados a garantizar CP. También conecta con la Convención Interamericana sobre Protección de los Derechos Humanos de las Personas Mayores (2015).</div>
+  <p style="margin-top:7px"><a href="https://repositorio.cepal.org/handle/11362/48239" target="_blank">repositorio.cepal.org/handle/11362/48239</a></p>
+</div>
+
+<div class="lectura">
+  <div class="num">Lectura 4 <span class="tag tag-p">En línea + impreso</span></div>
+  <div class="titulo">MinSalud Colombia. (2018). <em>Rutas Integrales de Atención en Salud (RIAS) — Resolución 3280 de 2018.</em></div>
+  <div class="guia">Explora la página temática del MinSalud sobre RIAS. Punto clave: <strong>no existe una RIAS autónoma de cuidados paliativos</strong>. La paliación se integra transversalmente en las rutas de condiciones específicas (cáncer, enfermedades crónicas, envejecimiento, etc.). Identifica en qué componentes de las RIAS aparece la palabra "paliación" o "paliativo", y reflexiona sobre qué significa que los CP sean transversales y no una ruta propia. Consulta también los Lineamientos de CP del MinSalud (2018) como instrumento complementario.</div>
+  <p style="margin-top:7px"><a href="https://www.minsalud.gov.co/salud/publica/ssr/paginas/rutas-integrales-de-atencion-en-salud-rias.aspx" target="_blank">minsalud.gov.co → Rutas Integrales de Atención en Salud</a></p>
+</div>
+
+<div class="box ddhh" style="margin-top:16px">
+  <h3 style="color:#8e44ad;margin:0 0 5px">💡 Dato clave para enriquecer el análisis</h3>
+  <p style="font-size:.87rem">El Relator Especial de la ONU sobre la Tortura y Otros Tratos Crueles (informe A/HRC/22/53, 2013) estableció que <strong>la denegación del acceso a medicamentos para el alivio del dolor puede constituir trato inhumano, cruel o degradante</strong>. Este argumento de derechos humanos eleva los CP de una discusión técnica-sanitaria a una discusión de justicia. ¿Colombia respeta ese estándar en los departamentos periféricos donde trabajan ustedes?</p>
+</div>
+
+<!-- PREGUNTAS -->
+<h2>Para llegar preparado/a — responde antes de clase</h2>
+<p style="font-size:.84rem;color:var(--is);margin-bottom:12px">Los tres integrantes deben haber reflexionado individualmente sobre estas preguntas. No es necesario escribir respuestas largas: basta con poder argumentarlas oralmente en clase.</p>
+
+<ol class="pqs">
+  <li>¿Qué establece la Medida C.29 del Consenso de Montevideo? ¿Cuándo fue adoptada? ¿Qué indicador de seguimiento tiene asignado (C.5)? ¿Qué países de la región la han implementado con legislación específica?</li>
+  <li>Según Pastrana (2022), ¿en qué instrumentos internacionales de derechos humanos se fundamenta el acceso a los CP? ¿Qué cambia cuando los CP se enmarcan como derecho y no como servicio médico?</li>
+  <li>El Consenso de Montevideo vincula la denegación del alivio del dolor con trato inhumano. ¿Qué implicaciones concretas tiene esto para Colombia, donde el acceso a morfina oral es limitado en varios departamentos?</li>
+  <li>¿Qué son las RIAS? ¿Por qué no existe una RIAS autónoma de CP en Colombia? ¿En qué rutas existentes aparece la paliación y con qué peso? ¿Eso es suficiente?</li>
+  <li>¿Quién cuida a los pacientes paliativos en el departamento al que perteneces? ¿Hay apoyo institucional a cuidadores familiares? ¿Hay perspectiva de género en ese cuidado?</li>
+</ol>
+
+<!-- EN CLASE -->
+<h2>¿Qué harán en clase el 10 de abril?</h2>
+
+<table>
+<thead><tr><th style="width:110px">Hora</th><th>Qué hace el Grupo 2</th></tr></thead>
+<tbody>
+<tr><td class="tm">8:00–8:10</td><td><strong>Encuadre.</strong> Cada integrante dice en una frase lo que leyó y qué le sorprendió o generó preguntas.</td></tr>
+<tr><td class="tm">8:10–8:30</td><td><strong>Fase 1 — Estructura teórica (20 min).</strong> El grupo articula el Consenso C.29 y las RIAS: ¿qué propone la CEPAL? ¿las RIAS operacionalizan ese derecho? ¿qué se pierde entre el mandato internacional y la ruta colombiana?</td></tr>
+<tr><td class="tm">8:30–8:45</td><td><strong>Fase 2 — Territorio (15 min).</strong> Cada integrante aporta desde su departamento: ¿quién cuida a los pacientes paliativos? ¿hay apoyo a cuidadores? ¿las RIAS llegan al primer nivel?</td></tr>
+<tr class="hrow"><td colspan="2">— Transición 2 min — escuchan exposición del Grupo 1 —</td></tr>
+<tr><td class="tm">8:59–9:11</td><td><strong>Exposición del Grupo 2 (12 min).</strong> 8 min de presentación + 4 min de preguntas del Grupo 4 y apertura. <strong>Los tres integrantes deben intervenir oralmente.</strong> No se requiere PowerPoint; se permite tablero u oral estructurado. Si usan diapositivas: máximo 5 láminas.</td></tr>
+</tbody>
+</table>
+
+<div class="box gold" style="margin-top:14px">
+  <h3 style="color:var(--g);margin:0 0 7px">Estructura sugerida para los 8 minutos de exposición</h3>
+  <ol style="font-size:.88rem;color:var(--im)">
+    <li><strong>Min 0–1:</strong> ¿Qué es el Consenso de Montevideo y por qué importa la Medida C.29?</li>
+    <li><strong>Min 1–3:</strong> Los CP como derecho humano — argumento de Pastrana (2022) y el Relator de la ONU.</li>
+    <li><strong>Min 3–5:</strong> Las RIAS colombianas — ¿dónde están los CP? ¿qué garantizan y qué no?</li>
+    <li><strong>Min 5–7:</strong> Evidencia desde sus territorios: ¿quién cuida? ¿hay apoyo a cuidadores?</li>
+    <li><strong>Min 7–8:</strong> Cita la lectura compartida (Bonilla, 2021) y plantea la pregunta articuladora.</li>
+  </ol>
+</div>
+
+<!-- REFERENCIAS -->
+<h2>Referencias (APA 7)</h2>
+<div class="box refs">
+  <p>OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Organización Panamericana de la Salud. https://www.paho.org/es/historias/cuidados-paliativos-americas</p>
+  <p>CEPAL. (2013). <em>Consenso de Montevideo sobre Población y Desarrollo</em> (LC/L.3697). Comisión Económica para América Latina y el Caribe. https://consensomontevideo.cepal.org/es/medidas-prioritarias/c29-desarrollo-y-acceso-cuidados-paliativos</p>
+  <p>Pastrana, T. (2022). Derecho a los cuidados paliativos. En S. Huenchuan (ed.), <em>Visión multidisciplinaria de los derechos humanos de las personas mayores</em> (pp. 135–148). Comisión Económica para América Latina y el Caribe. (LC/MEX/TS.2022/4). https://repositorio.cepal.org/handle/11362/48239</p>
+  <p>Ministerio de Salud y Protección Social. (2018). <em>Resolución 3280 de 2018: Por medio de la cual se adoptan los lineamientos técnicos y operativos de la Ruta Integral de Atención para la Promoción y Mantenimiento de la Salud.</em> Ministerio de Salud y Protección Social de Colombia. https://www.minsalud.gov.co/salud/publica/ssr/paginas/rutas-integrales-de-atencion-en-salud-rias.aspx</p>
+</div>
+
+<p style="font-size:.75rem;color:var(--is);margin-top:12px;text-align:center">Maestría en Cuidados Paliativos · Facultad de Enfermería · Universidad Antonio Nariño · 2026-I</p>
+<button class="print-btn" onclick="window.print()">🖨 Imprimir</button>
+</body>
+</html>

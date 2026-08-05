@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sesión Presencial — 10 de abril 2026 | UAN</title>
+<style>
+:root{--t:#1a7373;--td:#0d4a4a;--tl:#d4f0ec;--t0:#edf9f7;--g:#c5943a;--gl:#f2d98c;--ink:#1a2732;--im:#2e4057;--is:#4a6275;--w:#fff;--sf:#f5f8f9;--bd:#cce0dc;--r:6px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia, 'Times New Roman', serif;color:var(--ink);background:var(--sf);max-width:860px;margin:0 auto;padding:0 20px 60px;line-height:1.7;font-size:.94rem}
+header{background:var(--td);color:var(--w);padding:32px 36px 28px;border-radius:0 0 var(--r) var(--r);margin-bottom:32px}
+header h1{font-size:1.6rem;margin-bottom:4px}
+header p{font-size:.84rem;color:rgba(255,255,255,.7);font-style:italic}
+header .info{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:.74rem}
+header .info span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);padding:3px 10px;border-radius:3px}
+header .info b{color:var(--gl)}
+h2{font-size:1.25rem;color:var(--td);margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--bd)}
+h3{font-size:1.05rem;color:var(--t);margin:18px 0 8px}
+p{margin-bottom:10px}
+ul,ol{padding-left:22px;margin:6px 0 12px}
+li{margin-bottom:4px}
+a{color:var(--t)}
+.box{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:16px 18px;margin:12px 0;box-shadow:0 1px 8px rgba(0,0,0,.04)}
+.box h3{margin-top:0}
+.box.gold{border-left:4px solid var(--g);background:#fffdf5}
+.box.teal{border-left:4px solid var(--t);background:var(--t0)}
+.tag{display:inline-block;font-size:.6rem;padding:2px 6px;border-radius:2px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;vertical-align:middle;margin-right:4px}
+.tag-casa{background:var(--tl);color:var(--td)}
+.tag-clase{background:#fdebd0;color:#935116}
+.tag-todos{background:#e8daef;color:#7d3c98}
+
+/* CRONOGRAMA */
+table{width:100%;border-collapse:collapse;font-size:.86rem;margin:10px 0 18px}
+th{background:var(--td);color:var(--w);padding:8px 12px;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+td{padding:8px 12px;border-bottom:1px solid var(--bd);vertical-align:top;background:var(--w)}
+tr:last-child td{border-bottom:none}
+.tm{font-weight:600;color:var(--t);white-space:nowrap}
+.trans td{background:#f8f4e8;text-align:center;font-style:italic;color:var(--g);font-weight:600}
+
+/* GRUPO CARDS */
+.grupo{border:1px solid var(--bd);border-radius:var(--r);margin:14px 0;overflow:hidden}
+.grupo-h{padding:12px 16px;display:flex;align-items:center;gap:10px}
+.grupo-h .n{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:var(--w);flex-shrink:0}
+.grupo-h .titulo{font-weight:700;font-size:.92rem;line-height:1.25}
+.grupo-h .sub{font-size:.74rem;color:var(--is);font-style:italic}
+.grupo-b{padding:14px 16px;background:var(--w);border-top:1px solid var(--bd);font-size:.88rem;color:var(--im)}
+.grupo-b h4{font-size:.88rem;color:var(--ink);margin:10px 0 4px;font-weight:700}
+.grupo-b h4:first-child{margin-top:0}
+
+.g1 .grupo-h{background:#e8f5f3} .g1 .n{background:var(--t)}
+.g2 .grupo-h{background:#d6eaf8} .g2 .n{background:#2471a3}
+.g3 .grupo-h{background:#fdf3e7} .g3 .n{background:#e67e22}
+.g4 .grupo-h{background:#f4ecf7} .g4 .n{background:#7d3c98}
+
+.print-btn{position:fixed;bottom:20px;right:20px;background:var(--t);color:var(--w);border:none;padding:10px 18px;border-radius:30px;cursor:pointer;font-size:.8rem;font-weight:600;box-shadow:0 3px 12px rgba(0,0,0,.15)}
+@media print{.print-btn{display:none}header{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:600px){header{padding:20px}header h1{font-size:1.3rem}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida: cada
+   archivo trae su propia paleta y no puede depender de ella. */
+.nav-sesion{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D;color:#FAF6EF;padding:.55rem 1rem;font-size:.82rem;display:flex;
+  flex-wrap:wrap;align-items:center;gap:.3rem .6rem;line-height:1.6}
+.nav-sesion a{color:#F5EEDD;text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876;font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876;outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style></head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 5"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 5 &middot; 10 abr 2026</span><span class="ns-actual" aria-current="page">Plan de sesión</span><a href="asignacion-grupal.html">Asignación grupal</a><a href="g1-ops-maite.html">G1 · OPS/MAITE</a><a href="g2-cepal-rias.html">G2 · CEPAL/RIAS</a><a href="g3-alcp-gpc.html">G3 · ALCP/GPC</a><a href="g4-mesa-integracion.html">G4 · Mesa territorial</a><a href="../s04-marcos-globales/index.html">&larr; Sesi&oacute;n 4</a></nav>
+
+<header>
+  <h1>Marcos regionales y nacionales de política paliativa</h1>
+  <p>Unidad 2 · Topics 2 y 3 · Estructura teórica + aplicación territorial</p>
+  <div class="info">
+    <span>📅 <b>10 abr 2026</b> · Presencial</span>
+    <span>⏱ <b>120 min</b> · 8:00–10:00</span>
+    <span>👥 <b>4 grupos de 3</b></span>
+    <span>📖 <b>Lectura previa + trabajo en clase</b></span>
+  </div>
+</header>
+
+<!-- CRONOGRAMA -->
+<h2>Cronograma de la sesión</h2>
+
+<table>
+<thead><tr><th style="width:90px">Hora</th><th style="width:120px">Momento</th><th>Qué ocurre</th></tr></thead>
+<tbody>
+<tr><td class="tm">8:00–8:10<br>10 min</td><td><b>Encuadre</b></td><td>Activación de lecturas: cada grupo dice en 1 frase qué leyó y qué le sorprendió. Entrega de material complementario impreso. Explicación de la consigna y tiempos.</td></tr>
+<tr><td class="tm">8:10–8:30<br>20 min</td><td><b>Trabajo grupal<br>Fase 1: Teoría</b></td><td>Cada grupo articula la estructura teórica de sus dos instrumentos (regional + colombiano). Responden: ¿qué es? ¿qué dice sobre CP? ¿cómo se implementa? ¿cómo se conectan ambos instrumentos? El Grupo 4 prepara preguntas cruzadas.</td></tr>
+<tr><td class="tm">8:30–8:45<br>15 min</td><td><b>Trabajo grupal<br>Fase 2: Territorio</b></td><td>Cada integrante aporta desde su departamento: ¿cómo se expresa este eje en mi región? ¿qué falta? ¿qué propongo? El grupo sintetiza para la exposición.</td></tr>
+<tr class="trans"><td colspan="3">— Transición · 2 min —</td></tr>
+<tr><td class="tm">8:47–8:59<br>12 min</td><td><b>Exposición G1</b></td><td>8 min presentación + 2 min preguntas Grupo 4 + 2 min preguntas abiertas</td></tr>
+<tr><td class="tm">8:59–9:11<br>12 min</td><td><b>Exposición G2</b></td><td>Misma estructura: 8 + 2 + 2</td></tr>
+<tr><td class="tm">9:11–9:23<br>12 min</td><td><b>Exposición G3</b></td><td>Misma estructura: 8 + 2 + 2</td></tr>
+<tr><td class="tm">9:23–9:35<br>12 min</td><td><b>Exposición G4</b><br>Integración</td><td>8 min síntesis: convergencias, brechas, mapa territorial. 4 min diálogo abierto.</td></tr>
+<tr><td class="tm">9:35–9:50<br>15 min</td><td><b>Cierre docente</b></td><td>(a) Hallazgos no vistos por los grupos. (b) Distinción política pública vs. ley — puente a Unidad 3. (c) Pregunta articuladora: «Si la legislación es avanzada, ¿por qué 7 de cada 10 mueren sin CP?»</td></tr>
+<tr><td class="tm">9:50–10:00<br>10 min</td><td><b>Reflexión</b></td><td>Cada estudiante escribe 3 líneas: «¿Qué instrumento tiene mayor potencial en mi territorio y qué le falta para activarse?» Tres voluntarios comparten. Conexión con Segundo Producto (24 de abril).</td></tr>
+</tbody>
+</table>
+<p style="font-size:.8rem;color:var(--is)">Total: 10+20+15+2+48+15+10 = <b>120 min</b> ✓</p>
+
+<!-- GRUPOS -->
+<h2>Asignación por grupos</h2>
+
+<div class="box teal">
+  <h3>Lectura compartida — TODOS los grupos</h3>
+  <p><span class="tag tag-todos">TODOS</span> <span class="tag tag-casa">EN CASA</span></p>
+  <p>OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em><br>
+  <a href="https://www.paho.org/es/historias/cuidados-paliativos-americas" target="_blank">https://www.paho.org/es/historias/cuidados-paliativos-americas</a></p>
+  <p style="font-size:.84rem;color:var(--is)">Entrevista a la Dra. Patricia Bonilla (ALCP) y el Dr. Mark Stoltenberg (Harvard/OPS). Cubre: acceso (7% en Latinoamérica), opioides, talento humano, Proyecto ECHO, cuidado domiciliario. Cada grupo la cita al menos una vez en su exposición.</p>
+</div>
+
+<!-- G1 -->
+<div class="grupo g1">
+  <div class="grupo-h">
+    <div class="n">1</div>
+    <div><div class="titulo">Eje 1: Política sanitaria — del marco regional al modelo de atención</div>
+    <div class="sub">OPS (Resolución CD62.R8, 2025) ↔ PAIS / MAITE (Resolución 2626/2019)</div></div>
+  </div>
+  <div class="grupo-b">
+    <h4>Pregunta articuladora</h4>
+    <p>¿Cómo integra la OPS los CP dentro de su estrategia de ENT y cómo recoge Colombia esa orientación en el MAITE? ¿Qué se pierde en la traducción?</p>
+    <h4>Lecturas en casa <span class="tag tag-casa">PREVIAS</span></h4>
+    <ul>
+      <li>Lectura compartida OPS (2021) <span class="tag tag-todos">TODOS</span></li>
+      <li>OPS — Página temática «Cuidados paliativos»: <a href="https://www.paho.org/es/temas/cuidados-paliativos" target="_blank">paho.org/es/temas/cuidados-paliativos</a></li>
+      <li>MinSalud — Resolución 2626 de 2019 (MAITE), artículos 1-8: <a href="https://www.minsalud.gov.co/Normatividad_Nuevo/Resolución%20No.%202626%20de%202019.pdf" target="_blank">PDF MinSalud</a></li>
+    </ul>
+    <h4>Material en clase <span class="tag tag-clase">IMPRESO</span></h4>
+    <ul>
+      <li>Fragmento de la Resolución CD62.R8 / Documento CD62/8 (secciones sobre CP)</li>
+      <li>Tabla comparativa: WHA67.19 → CD62.R8 → PAIS/MAITE</li>
+    </ul>
+    <h4>En la exposición deben cubrir</h4>
+    <ol>
+      <li>Qué es la CD62.R8: naturaleza, alcance, por qué CP están integrados en ENT y no como plan independiente.</li>
+      <li>Qué es el MAITE: la «paliación y muerte digna» como componente del continuo de atención.</li>
+      <li>Conexión: ¿la CD62.R8 influyó en el MAITE? ¿Qué compromisos de Colombia ante la OPS se reflejan?</li>
+      <li>Territorio: ¿en su departamento hay indicadores de paliación activos en el MAITE?</li>
+    </ol>
+  </div>
+</div>
+
+<!-- G2 -->
+<div class="grupo g2">
+  <div class="grupo-h">
+    <div class="n">2</div>
+    <div><div class="titulo">Eje 2: Derecho al cuidado — de la agenda social a las rutas de atención</div>
+    <div class="sub">CEPAL (Envejecimiento y derechos, 2022) ↔ RIAS + Lineamientos CP MinSalud (2018)</div></div>
+  </div>
+  <div class="grupo-b">
+    <h4>Pregunta articuladora</h4>
+    <p>¿Cómo conceptualiza la CEPAL el cuidado como derecho humano y cómo se traduce eso en las RIAS colombianas? ¿Existe un derecho al CP más allá de la norma escrita?</p>
+    <h4>Lecturas en casa <span class="tag tag-casa">PREVIAS</span></h4>
+    <ul>
+      <li>Lectura compartida OPS (2021) <span class="tag tag-todos">TODOS</span></li>
+      <li>CEPAL (2022). <em>Envejecimiento en ALC: inclusión y derechos</em> — Resumen Ejecutivo + capítulo sobre derecho al cuidado: <a href="https://www.cepal.org/en/publications/48568" target="_blank">cepal.org/publications/48568</a></li>
+      <li>MinSalud (2018). <em>Lineamientos para la Atención Integral en CP</em> — secciones de organización de servicios: <a href="https://www.minsalud.gov.co/salud/publica/PENT/Paginas/cuidados-paliativos.aspx" target="_blank">MinSalud</a></li>
+    </ul>
+    <h4>Material en clase <span class="tag tag-clase">IMPRESO</span></h4>
+    <ul>
+      <li>Datos clave CEPAL: transición demográfica, género y cuidado no remunerado</li>
+      <li>Esquema visual de las RIAS: dónde aparece la paliación y dónde no</li>
+    </ul>
+    <h4>En la exposición deben cubrir</h4>
+    <ol>
+      <li>CEPAL: el cuidado como triple derecho (recibir, cuidar, autocuidado). Perspectiva de género. Convención Interamericana (2015).</li>
+      <li>RIAS: <em>no existe RIAS autónoma de CP</em> — la paliación se integra transversalmente. Los Lineamientos 2018 como instrumento operativo.</li>
+      <li>Conexión: ¿la CEPAL propone sistemas de cuidado de largo plazo y Colombia los tiene? ¿Las RIAS cumplen esa función?</li>
+      <li>Territorio: ¿quién cuida a los pacientes paliativos en su departamento? ¿Hay apoyo a cuidadores?</li>
+    </ol>
+  </div>
+</div>
+
+<!-- G3 -->
+<div class="grupo g3">
+  <div class="grupo-h">
+    <div class="n">3</div>
+    <div><div class="titulo">Eje 3: Evidencia y práctica — del atlas comparado a la guía clínica</div>
+    <div class="sub">ALCP / Atlas 2025 ↔ GPC de Cuidado Paliativo (GPC No. 58, MinSalud-IETS, 2016)</div></div>
+  </div>
+  <div class="grupo-b">
+    <h4>Pregunta articuladora</h4>
+    <p>¿Qué revela el Atlas 2025 sobre Colombia y en qué medida la GPC 2016 responde a las brechas documentadas? ¿Es la GPC conocida y usada en primer nivel?</p>
+    <h4>Lecturas en casa <span class="tag tag-casa">PREVIAS</span></h4>
+    <ul>
+      <li>Lectura compartida OPS (2021) <span class="tag tag-todos">TODOS</span></li>
+      <li>Nota de prensa U. de Navarra sobre Atlas 2025: <a href="https://www.unav.edu/noticias/-/contents/31/10/2025/casi-3-millones-de-personas-requieren-cuidados-paliativos-cada-ano-en-las-americas-pero-solo-10-paises-los-incluyen-como-servicio-garantizado/content/lovPblW1fC70/193314722" target="_blank">unav.edu</a></li>
+      <li>MinSalud-IETS (2016). <em>GPC de Cuidado Paliativo (versión corta)</em> — introducción + apartados de implementación colombiana: <a href="http://gpc.minsalud.gov.co/gpc_sites/Repositorio/Otros_conv/GPC_paliativo/Version_cortapaliativo2016_04_20.pdf" target="_blank">PDF versión corta</a></li>
+    </ul>
+    <h4>Material en clase <span class="tag tag-clase">IMPRESO</span></h4>
+    <ul>
+      <li>Tabla de cifras clave del Atlas ALCP 2025</li>
+      <li>Datos del OCCP por departamento: <a href="https://www.occp.com.co/" target="_blank">occp.com.co</a></li>
+    </ul>
+    <h4>En la exposición deben cubrir</h4>
+    <ol>
+      <li>Atlas 2025: cifras clave (2.984.970 personas, 10 países, 0,33 servicios/100.000 hab, disparidades en opioides).</li>
+      <li>GPC No. 58: estructura, ajustes para Colombia, a quién va dirigida, nivel de adopción real.</li>
+      <li>Conexión: el Atlas mide, la GPC orienta. ¿Qué indicadores mejoraría Colombia si la GPC se implementara en primer nivel?</li>
+      <li>Territorio: ¿conocían la GPC antes de esta asignatura? ¿Cuántos servicios de CP tiene su departamento?</li>
+    </ol>
+  </div>
+</div>
+
+<!-- G4 -->
+<div class="grupo g4">
+  <div class="grupo-h">
+    <div class="n">4</div>
+    <div><div class="titulo">Mesa de Integración Territorial</div>
+    <div class="sub">Rol transversal: preguntas cruzadas + síntesis de convergencias y brechas</div></div>
+  </div>
+  <div class="grupo-b">
+    <h4>Qué hacen diferente</h4>
+    <p>No presentan un eje temático propio. Escuchan, preguntan y sintetizan.</p>
+    <h4>Lecturas en casa <span class="tag tag-casa">PREVIAS</span></h4>
+    <ul>
+      <li>Lectura compartida OPS (2021) <span class="tag tag-todos">TODOS</span></li>
+      <li>OCCP (2024). Informe Técnico — explorar datos por departamento y dominios de servicios y opioides: <a href="https://www.occp.com.co/" target="_blank">occp.com.co</a></li>
+      <li>Sánchez-Cárdenas et al. (2023). Política pública en CP en Colombia. <em>Rev Cuidarte, 14</em>(2): <a href="https://doi.org/10.15649/cuidarte.2501" target="_blank">DOI</a></li>
+    </ul>
+    <h4>Durante el trabajo grupal (35 min)</h4>
+    <ol>
+      <li>Revisar las preguntas articuladoras de los 3 grupos.</li>
+      <li>Preparar al menos 2 preguntas territoriales para cada grupo (6 total).</li>
+      <li>Diseñar un esquema de síntesis: convergencias / brechas / implicaciones territoriales.</li>
+    </ol>
+    <h4>Durante las exposiciones</h4>
+    <p>Después de cada presentación: 2 min para formular preguntas de tensión territorial.</p>
+    <h4>Su exposición (12 min)</h4>
+    <p>8 min: (a) 3 convergencias entre los ejes, (b) 2 brechas no cubiertas, (c) mapa territorial breve. 4 min: diálogo abierto.</p>
+  </div>
+</div>
+
+<!-- GUÍA DE TRABAJO -->
+<h2>Guía de trabajo grupal en clase</h2>
+
+<div class="box">
+  <h3>Fase 1 — Estructura teórica (20 min)</h3>
+  <p>Cada grupo responde por escrito para sus dos instrumentos:</p>
+  <ol>
+    <li><b>¿Qué es?</b> Naturaleza (resolución, guía, atlas). ¿Quién lo emite? ¿Qué fuerza tiene?</li>
+    <li><b>¿Qué dice sobre CP?</b> ¿Son el foco o un componente integrado? ¿Qué población cubre?</li>
+    <li><b>¿Cómo se implementa?</b> ¿Cómo llega al territorio? ¿Quién financia? ¿Quién vigila?</li>
+    <li><b>¿Cómo se conectan?</b> ¿El regional influyó al colombiano? ¿Se complementan o se ignoran?</li>
+  </ol>
+</div>
+
+<div class="box">
+  <h3>Fase 2 — Aplicación territorial (15 min)</h3>
+  <p>Cada integrante aporta desde su departamento. El grupo sintetiza:</p>
+  <ol>
+    <li><b>¿Cómo se expresa este eje aquí?</b> Un ejemplo concreto por departamento.</li>
+    <li><b>¿Qué falta?</b> La brecha más significativa entre instrumento y práctica.</li>
+    <li><b>¿Qué proponemos?</b> Una recomendación realista vinculada a uno de los instrumentos.</li>
+  </ol>
+</div>
+
+<div class="box gold">
+  <h3>Formato de la exposición</h3>
+  <p>No se requiere PowerPoint. Pueden usar tablero, papelógrafo u oral estructurado. Si quieren diapositivas: máximo 6 láminas. <b>Los tres integrantes deben intervenir.</b> Duración estricta: 8 minutos. Cronómetro visible.</p>
+</div>
+
+<!-- CIERRE DOCENTE -->
+<h2>Notas para el cierre docente (9:35–9:50)</h2>
+
+<div class="box teal">
+  <h3>Lo que el docente agrega (no repite)</h3>
+  <ol>
+    <li><b>Los opioides como hilo transversal</b> — la OPS los menciona, la CEPAL los ignora, el Atlas los documenta como la brecha más dramática, y la GPC los prescribe sin que estén disponibles. Ningún grupo «dueña» este tema pero es el que más duele en el territorio.</li>
+    <li><b>La coincidencia 2014</b> — WHA67.19 (OMS) y Ley 1733 (Colombia) se aprobaron el mismo año. ¿Coincidencia o causalidad? Esto abre la puerta a la Unidad 3.</li>
+    <li><b>Política pública ≠ ley</b> — todo lo trabajado hoy son instrumentos de política. La Unidad 3 trabaja normas con fuerza vinculante. Pregunta: <em>«Si la legislación colombiana es de las más avanzadas, ¿por qué 7 de cada 10 personas con enfermedad avanzada mueren sin CP?»</em></li>
+  </ol>
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨 Imprimir</button>
+
+</body>
+</html>

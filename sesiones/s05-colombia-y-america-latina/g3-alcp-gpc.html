@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grupo 3 — ALCP y GPC · 10 abr 2026 · UAN</title>
+<style>
+:root{
+  --gc:#c0782a;--gcd:#7e4a10;--gcm:#a0621e;--gcl:#fde8c8;--gc0:#fef5eb;
+  --g:#c5943a;--gl:#f2d98c;--go:#fffdf5;
+  --r2:#c0392b;
+  --ink:#1a2732;--im:#2e4057;--is:#4a6275;
+  --w:#fff;--sf:#f5f8f9;--bd:#e8cfa8;--bd2:#f0dbbf;--r:6px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia, 'Times New Roman', serif;color:var(--ink);background:var(--sf);max-width:860px;margin:0 auto;padding:0 22px 80px;line-height:1.74;font-size:.94rem}
+header{background:linear-gradient(135deg,var(--gcd) 0%,var(--gcm) 55%,#b8712f 100%);color:var(--w);padding:32px 36px 26px;border-radius:0 0 12px 12px;margin-bottom:28px;position:relative;overflow:hidden}
+header::after{content:'';position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
+.lbl{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gl);margin-bottom:7px}
+header h1{font-size:1.48rem;font-weight:700;line-height:1.26;margin-bottom:5px}
+.sub{font-size:.85rem;color:rgba(255,255,255,.73);font-style:italic;margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:6px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.67rem}
+.pills span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);padding:3px 9px;border-radius:20px}
+.pills b{color:var(--gl)}
+.integ{display:flex;flex-wrap:wrap;gap:0;background:var(--w);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:24px;overflow:hidden}
+.integ-item{flex:1;min-width:200px;padding:12px 16px;border-right:1px solid var(--bd)}
+.integ-item:last-child{border-right:none}
+.integ-item .rol{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.63rem;font-weight:700;color:var(--gc);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.integ-item .nombre{font-weight:600;font-size:.91rem;color:var(--ink)}
+.integ-item .cod{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.73rem;color:var(--is)}
+h2{font-size:1.1rem;color:var(--gcd);margin:26px 0 10px;padding-bottom:5px;border-bottom:2px solid var(--bd)}
+h3{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.93rem;font-weight:600;color:var(--gcm);margin:13px 0 5px}
+p{margin-bottom:9px}
+ul,ol{padding-left:22px;margin:5px 0 10px}
+li{margin-bottom:4px}
+a{color:var(--gc);text-underline-offset:3px}
+strong{color:var(--ink)}
+.box{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:15px 17px;margin:11px 0;box-shadow:0 1px 5px rgba(0,0,0,.04)}
+.box.naranja{border-left:4px solid var(--gc);background:var(--gc0)}
+.box.gold{border-left:4px solid var(--g);background:var(--go)}
+.box.cifras{background:var(--gcd);color:var(--w);border:none}
+.box.cifras h3{color:var(--gl)}
+.box.cifras p,.box.cifras li{color:rgba(255,255,255,.88)}
+.tag{display:inline-block;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.6rem;padding:2px 6px;border-radius:2px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;vertical-align:middle;margin-right:3px}
+.tag-t{background:#e8daef;color:#6c3483}
+.tag-c{background:var(--gcl);color:var(--gcd)}
+.tag-p{background:#d4f0ec;color:#0d4a4a}
+.lectura{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:13px 15px;margin:9px 0}
+.lectura .num{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.66rem;font-weight:700;color:var(--gc);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.lectura .titulo{font-weight:600;font-size:.91rem;color:var(--ink);margin-bottom:5px}
+.lectura .guia{font-size:.84rem;color:var(--im);line-height:1.62}
+.pqs{counter-reset:pq;list-style:none;padding:0}
+.pqs li{counter-increment:pq;display:flex;gap:10px;margin-bottom:10px;background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;font-size:.9rem;color:var(--im)}
+.pqs li::before{content:counter(pq);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-weight:700;font-size:.88rem;color:var(--w);background:var(--gc);min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:10px 0}
+th{background:var(--gcd);color:var(--w);padding:7px 11px;text-align:left;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.67rem;text-transform:uppercase;letter-spacing:.07em}
+td{padding:8px 11px;border-bottom:1px solid var(--bd2);background:var(--w);vertical-align:top}
+.tm{font-weight:600;color:var(--gc);white-space:nowrap;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.8rem}
+.hrow td{background:#fef9f2;text-align:center;font-style:italic;color:var(--g);font-weight:600;font-size:.82rem}
+.refs p{font-size:.82rem;line-height:1.65;margin-bottom:7px;padding-left:18px;text-indent:-18px}
+.print-btn{position:fixed;bottom:20px;right:20px;background:var(--gc);color:var(--w);border:none;padding:10px 18px;border-radius:30px;cursor:pointer;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.78rem;font-weight:600;box-shadow:0 3px 14px rgba(0,0,0,.2)}
+@media print{.print-btn{display:none}header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.integ{break-inside:avoid}}
+@media(max-width:580px){header{padding:20px}header h1{font-size:1.2rem}.integ-item{min-width:160px}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida: cada
+   archivo trae su propia paleta y no puede depender de ella. */
+.nav-sesion{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D;color:#FAF6EF;padding:.55rem 1rem;font-size:.82rem;display:flex;
+  flex-wrap:wrap;align-items:center;gap:.3rem .6rem;line-height:1.6}
+.nav-sesion a{color:#F5EEDD;text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876;font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876;outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style></head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 5"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 5 &middot; 10 abr 2026</span><a href="index.html">Plan de sesión</a><a href="asignacion-grupal.html">Asignación grupal</a><a href="g1-ops-maite.html">G1 · OPS/MAITE</a><a href="g2-cepal-rias.html">G2 · CEPAL/RIAS</a><span class="ns-actual" aria-current="page">G3 · ALCP/GPC</span><a href="g4-mesa-integracion.html">G4 · Mesa territorial</a><a href="../s04-marcos-globales/index.html">&larr; Sesi&oacute;n 4</a></nav>
+
+<header>
+  <div class="lbl">Aula invertida · Grupo 3 · Sesión presencial 10 de abril de 2026 · UAN Maestría en Cuidado Paliativo</div>
+  <h1>ALCP y GPC: del atlas de evidencia regional a la guía clínica colombiana</h1>
+  <div class="sub">Unidad 2 · Topics 2 y 3 — Marco regional ALCP (Atlas 2025 · Plan Estratégico 2024-2030) ↔ Política nacional Colombia (GPC No. 58)</div>
+  <div class="pills">
+    <span>📅 <b>Clase:</b> 10 abr 2026 · 8:00–10:00 am · Presencial</span>
+    <span>📖 <b>Lecturas:</b> Antes del 10 de abril</span>
+    <span>🎤 <b>Exposición:</b> 9:11–9:23 am · 8 min + 4 min preguntas</span>
+  </div>
+</header>
+<!-- ROL -->
+<h2>¿Qué analiza este grupo?</h2>
+<div class="box naranja">
+  <p>Este grupo trabaja el eje de la <strong>ALCP como productor de evidencia regional</strong> y la <strong>Guía de Práctica Clínica (GPC No. 58) del MinSalud-IETS (2016)</strong> como instrumento nacional de orientación clínica. El <em>Atlas de Cuidados Paliativos en las Américas 2025</em>, presentado en Manizales en octubre de 2025, aporta cifras inéditas sobre la región. La pregunta es si la GPC colombiana responde a las brechas que el Atlas documenta, y qué significa que Colombia sea un país "establecido" cuando los territorios muestran realidades muy distintas.</p>
+</div>
+
+<div class="box gold">
+  <h3 style="color:var(--g);margin:0 0 6px">Pregunta articuladora</h3>
+  <p style="font-style:italic;font-size:.96rem">«¿Qué revelan los datos del Atlas ALCP 2025 sobre Colombia y la región? ¿La GPC No. 58 (2016) responde a las brechas documentadas? ¿Qué significa que Colombia figure como país "establecido" cuando persisten disparidades profundas en acceso a opioides y servicios entre Bogotá y los departamentos periféricos?»</p>
+</div>
+
+<!-- CIFRAS CLAVE -->
+<h2>Cifras clave del Atlas ALCP 2025 — para llegar sabiendo</h2>
+<div class="box cifras">
+  <h3>Atlas de Cuidados Paliativos en las Américas 2025</h3>
+  <p style="font-size:.84rem;margin-bottom:8px">Presentado el 31 de octubre de 2025 en Manizales, Colombia. Dirigido por Carlos Centeno (ATLANTES/U. Navarra, Centro Colaborador OMS). 141 consultores de 35 países.</p>
+  <ul style="font-size:.88rem">
+    <li><strong>~2.984.970 personas</strong> necesitan CP cada año en las Américas (~110.000 son niños)</li>
+    <li>Solo <strong>10 países (28,5%)</strong> incluyen CP como servicio garantizado en atención primaria</li>
+    <li><strong>10.526 servicios especializados</strong> en las Américas (2.865 en Latinoamérica)</li>
+    <li>Promedio regional: <strong>0,33 servicios/100.000 hab.</strong> — la OMS recomienda <strong>2,0 por 100.000</strong></li>
+    <li>Solo Chile, Costa Rica, EE. UU. y Uruguay superan la ratio recomendada</li>
+    <li>Colombia: clasificada como país <strong>"establecido"</strong> (nivel 3 de 5 en la escala OMS)</li>
+    <li>Opioides: de <strong>17 DDD/millón</strong> (Venezuela) a <strong>18.178 DDD/millón</strong> (EE. UU.)</li>
+    <li>En 20 de 35 países los estudiantes de medicina <strong>no reciben formación obligatoria</strong> en CP</li>
+  </ul>
+</div>
+
+<!-- LECTURA COMPARTIDA -->
+<h2>Lectura compartida — TODOS los grupos</h2>
+<div class="lectura">
+  <div class="num"><span class="tag tag-t">Todos los grupos</span> Lectura 1</div>
+  <div class="titulo">OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Historias OPS.</div>
+  <div class="guia">Entrevista con la Dra. Patricia Bonilla (ALCP) y el Dr. Stoltenberg (Harvard/OPS). Dato central: solo el <strong>7% de los pacientes que necesitan CP en Latinoamérica los reciben</strong>. <strong>Cítala al menos una vez en tu exposición.</strong></div>
+  <p style="margin-top:8px"><a href="https://www.paho.org/es/historias/cuidados-paliativos-americas" target="_blank">paho.org/es/historias/cuidados-paliativos-americas</a></p>
+</div>
+
+<!-- LECTURAS ESPECÍFICAS -->
+<h2>Lecturas específicas del Grupo 3 <span class="tag tag-c">Trabajo en casa · Antes del 10 abr</span></h2>
+
+<div class="lectura">
+  <div class="num">Lectura 2</div>
+  <div class="titulo">ATLANTES/ALCP/IAHPC. (2025). <em>Atlas de Cuidados Paliativos en las Américas 2025.</em> [Nota de prensa]. Universidad de Navarra / ATLANTES.</div>
+  <div class="guia">Lee la nota de prensa completa de la Universidad de Navarra (31 oct. 2025). Registra las cifras clave en el recuadro de arriba y verifica que las puedas explicar con tus propias palabras. Dato adicional: el Atlas está publicado como libro (ISBN 9788431340698, EUNSA) y como artículo indexado en el <em>Journal of Pain and Symptom Management</em> (2025). El grupo investigador ATLANTES y la ALCP colaboraron con 141 expertos de 35 países — es la edición más amplia del atlas hasta la fecha. La metodología usa los <strong>14 indicadores de la OMS</strong> (marco 2021), un avance respecto a ediciones anteriores que usaban indicadores propios de la ALCP.</div>
+  <p style="margin-top:7px"><a href="https://www.unav.edu/noticias/-/contents/31/10/2025/casi-3-millones-de-personas-requieren-cuidados-paliativos-cada-ano-en-las-americas-pero-solo-10-paises-los-incluyen-como-servicio-garantizado/content/lovPblW1fC70/193314722" target="_blank">unav.edu → noticias → Atlas 2025 cuidados paliativos Américas</a></p>
+</div>
+
+<div class="lectura">
+  <div class="num">Lectura 3</div>
+  <div class="titulo">ALCP. (2024). <em>Plan Estratégico 2024-2030.</em> Asociación Latinoamericana de Cuidados Paliativos.</div>
+  <div class="guia">Leer la <strong>introducción y las Líneas Estratégicas 1, 2 y 4</strong>. La LE-1 es cabildeo e incidencia en política pública; la LE-2 es educación e investigación; la LE-4 es <em>acceso a opioides y medicamentos esenciales</em> (la más directamente vinculada a las brechas del Atlas). Identifica qué metas concretas propone la ALCP para el acceso a morfina en la región y cómo se relaciona con la situación de Colombia.</div>
+  <p style="margin-top:7px"><a href="https://cuidadospaliativos.org/uploads/2024/7/plan-estrategico-alcp-2024-2030.pdf" target="_blank">cuidadospaliativos.org → Plan Estratégico ALCP 2024-2030 (PDF)</a></p>
+</div>
+
+<div class="lectura">
+  <div class="num">Lectura 4 <span class="tag tag-p">Docente / repositorio MinSalud</span></div>
+  <div class="titulo">MinSalud Colombia / IETS. (2016). <em>Guía de Práctica Clínica para la atención de pacientes en Cuidado Paliativo (GPC No. 58) — Versión corta.</em></div>
+  <div class="guia">Leer: <strong>alcance, población objeto, preguntas clínicas cubiertas e implementación colombiana</strong>. Identifica: ¿a quién va dirigida la GPC? ¿qué nivel de atención cubre? ¿fue adoptada formalmente por las EPS? ¿conocías esta guía antes de este curso? Reflexiona: si la GPC existe desde 2016, ¿por qué los indicadores de cobertura del OCCP siguen siendo bajos?</div>
+  <p style="margin-top:7px"><a href="http://gpc.minsalud.gov.co/gpc_sites/Repositorio/Otros_conv/GPC_paliativo/Version_cortapaliativo2016_04_20.pdf" target="_blank">gpc.minsalud.gov.co → GPC paliativo, versión corta (PDF)</a></p>
+</div>
+
+<!-- PREGUNTAS -->
+<h2>Para llegar preparado/a — responde antes de clase</h2>
+<p style="font-size:.84rem;color:var(--is);margin-bottom:12px">Los tres integrantes deben haber reflexionado individualmente sobre estas preguntas.</p>
+
+<ol class="pqs">
+  <li>¿Cuántas personas necesitan CP cada año en las Américas según el Atlas 2025? ¿Cuántos países los garantizan en atención primaria? ¿Cuál es la ratio de servicios en la región y qué dice eso frente a la meta de la OMS?</li>
+  <li>Colombia figura como país "establecido" en el Atlas 2025. ¿Qué significa esa categoría? ¿Qué elementos tiene Colombia que la llevan a ese nivel? ¿Qué elementos le faltan para avanzar al siguiente nivel?</li>
+  <li>¿Cuáles son las 7 líneas estratégicas del Plan ALCP 2024-2030? ¿Cuál es la más urgente para el contexto de tu departamento y por qué?</li>
+  <li>¿Qué es la GPC No. 58? ¿A quién va dirigida? ¿Cuál es su nivel de adopción real en el primer nivel de atención? ¿Conocías esta guía antes de este curso?</li>
+  <li>El Atlas mide, la GPC orienta. ¿Qué indicadores del OCCP 2024 mejorarían si la GPC No. 58 se implementara sistemáticamente en el primer nivel de atención en tu departamento?</li>
+</ol>
+
+<!-- EN CLASE -->
+<h2>¿Qué harán en clase el 10 de abril?</h2>
+
+<table>
+<thead><tr><th style="width:110px">Hora</th><th>Qué hace el Grupo 3</th></tr></thead>
+<tbody>
+<tr><td class="tm">8:00–8:10</td><td><strong>Encuadre.</strong> Cada integrante dice en una frase lo que leyó y qué le sorprendió.</td></tr>
+<tr><td class="tm">8:10–8:30</td><td><strong>Fase 1 — Estructura teórica (20 min).</strong> El grupo analiza el Atlas 2025 y la GPC: ¿qué mide el Atlas? ¿qué orienta la GPC? ¿se complementan o coexisten sin diálogo? ¿qué deja sin cubrir el Plan Estratégico ALCP?</td></tr>
+<tr><td class="tm">8:30–8:45</td><td><strong>Fase 2 — Territorio (15 min).</strong> Consultar el OCCP por departamento. ¿Cuántos servicios de CP tiene el departamento al que perteneces? ¿Hay acceso a morfina oral? ¿Se conoce y usa la GPC en primer nivel?</td></tr>
+<tr class="hrow"><td colspan="2">— Escuchan exposiciones de G1 y G2 —</td></tr>
+<tr><td class="tm">9:11–9:23</td><td><strong>Exposición del Grupo 3 (12 min).</strong> 8 min de presentación + 4 min de preguntas del Grupo 4 y apertura. <strong>Los tres integrantes deben intervenir.</strong> No se requiere PowerPoint; si usan diapositivas: máximo 5 láminas.</td></tr>
+</tbody>
+</table>
+
+<div class="box gold" style="margin-top:14px">
+  <h3 style="color:var(--g);margin:0 0 7px">Estructura sugerida para los 8 minutos de exposición</h3>
+  <ol style="font-size:.88rem;color:var(--im)">
+    <li><strong>Min 0–1:</strong> Las cifras del Atlas 2025 que más impactan — contexto regional.</li>
+    <li><strong>Min 1–3:</strong> Colombia en el Atlas: ¿qué significa "establecido"? Brechas de opioides y servicios.</li>
+    <li><strong>Min 3–5:</strong> La GPC No. 58 — qué orienta, a quién y con qué adopción real.</li>
+    <li><strong>Min 5–7:</strong> Lo que el Atlas mide vs. lo que la GPC propone — ¿hay diálogo entre ambos? Evidencia territorial.</li>
+    <li><strong>Min 7–8:</strong> Cita la lectura compartida (Bonilla, 2021) y plantea la pregunta articuladora.</li>
+  </ol>
+</div>
+
+<!-- REFERENCIAS -->
+<h2>Referencias (APA 7)</h2>
+<div class="box refs">
+  <p>OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Organización Panamericana de la Salud. https://www.paho.org/es/historias/cuidados-paliativos-americas</p>
+  <p>Centeno, C., De Lima, L., Garralda, E., Pastrana, T., Rhee, J. Y., &amp; Clark, D. (2025). <em>Atlas de Cuidados Paliativos en las Américas 2025</em> (ISBN 9788431340698). EUNSA / ATLANTES / ALCP / IAHPC. [Nota de prensa U. Navarra: https://www.unav.edu/noticias/-/contents/31/10/2025/...]</p>
+  <p>ALCP. (2024). <em>Plan Estratégico 2024-2030.</em> Asociación Latinoamericana de Cuidados Paliativos. https://cuidadospaliativos.org/uploads/2024/7/plan-estrategico-alcp-2024-2030.pdf</p>
+  <p>Ministerio de Salud y Protección Social / IETS. (2016). <em>Guía de Práctica Clínica para la atención de pacientes en Cuidado Paliativo (GPC No. 58) — Versión corta.</em> Ministerio de Salud y Protección Social de Colombia. http://gpc.minsalud.gov.co/gpc_sites/Repositorio/Otros_conv/GPC_paliativo/Version_cortapaliativo2016_04_20.pdf</p>
+</div>
+
+<p style="font-size:.75rem;color:var(--is);margin-top:12px;text-align:center">Maestría en Cuidados Paliativos · Facultad de Enfermería · Universidad Antonio Nariño · 2026-I</p>
+<button class="print-btn" onclick="window.print()">🖨 Imprimir</button>
+</body>
+</html>

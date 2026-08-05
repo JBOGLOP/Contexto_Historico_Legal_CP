@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grupo 4 — Mesa de Integración · 10 abr 2026 · UAN</title>
+<style>
+:root{
+  --gc:#7d3c98;--gcd:#4a235a;--gcm:#6c3483;--gcl:#e8daef;--gc0:#f5eef8;
+  --g:#c5943a;--gl:#f2d98c;--go:#fffdf5;
+  --r2:#c0392b;
+  --ink:#1a2732;--im:#2e4057;--is:#4a6275;
+  --w:#fff;--sf:#f5f8f9;--bd:#d7bfe3;--bd2:#e5d0ee;--r:6px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia, 'Times New Roman', serif;color:var(--ink);background:var(--sf);max-width:860px;margin:0 auto;padding:0 22px 80px;line-height:1.74;font-size:.94rem}
+header{background:linear-gradient(135deg,var(--gcd) 0%,var(--gcm) 55%,#8044a0 100%);color:var(--w);padding:32px 36px 26px;border-radius:0 0 12px 12px;margin-bottom:28px;position:relative;overflow:hidden}
+header::after{content:'';position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
+.lbl{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gl);margin-bottom:7px}
+header h1{font-size:1.48rem;font-weight:700;line-height:1.26;margin-bottom:5px}
+.sub{font-size:.85rem;color:rgba(255,255,255,.73);font-style:italic;margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:6px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.67rem}
+.pills span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);padding:3px 9px;border-radius:20px}
+.pills b{color:var(--gl)}
+.integ{display:flex;flex-wrap:wrap;gap:0;background:var(--w);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:24px;overflow:hidden}
+.integ-item{flex:1;min-width:200px;padding:12px 16px;border-right:1px solid var(--bd)}
+.integ-item:last-child{border-right:none}
+.integ-item .rol{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.63rem;font-weight:700;color:var(--gc);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.integ-item .nombre{font-weight:600;font-size:.91rem;color:var(--ink)}
+.integ-item .cod{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.73rem;color:var(--is)}
+h2{font-size:1.1rem;color:var(--gcd);margin:26px 0 10px;padding-bottom:5px;border-bottom:2px solid var(--bd)}
+h3{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.93rem;font-weight:600;color:var(--gcm);margin:13px 0 5px}
+p{margin-bottom:9px}
+ul,ol{padding-left:22px;margin:5px 0 10px}
+li{margin-bottom:4px}
+a{color:var(--gc);text-underline-offset:3px}
+strong{color:var(--ink)}
+.box{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:15px 17px;margin:11px 0;box-shadow:0 1px 5px rgba(0,0,0,.04)}
+.box.morado{border-left:4px solid var(--gc);background:var(--gc0)}
+.box.gold{border-left:4px solid var(--g);background:var(--go)}
+.box.dark{background:var(--gcd);color:var(--w);border:none}
+.box.dark h3{color:var(--gl)}
+.box.dark p,.box.dark li{color:rgba(255,255,255,.88)}
+.box.dark a{color:var(--gl)}
+.tag{display:inline-block;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.6rem;padding:2px 6px;border-radius:2px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;vertical-align:middle;margin-right:3px}
+.tag-t{background:#e8daef;color:#6c3483}
+.tag-c{background:var(--gcl);color:var(--gcd)}
+.tag-dif{background:#d4f0ec;color:#0d4a4a}
+.lectura{background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:13px 15px;margin:9px 0}
+.lectura .num{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.66rem;font-weight:700;color:var(--gc);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.lectura .titulo{font-weight:600;font-size:.91rem;color:var(--ink);margin-bottom:5px}
+.lectura .guia{font-size:.84rem;color:var(--im);line-height:1.62}
+.pqs{counter-reset:pq;list-style:none;padding:0}
+.pqs li{counter-increment:pq;display:flex;gap:10px;margin-bottom:10px;background:var(--w);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;font-size:.9rem;color:var(--im)}
+.pqs li::before{content:counter(pq);font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-weight:700;font-size:.88rem;color:var(--w);background:var(--gc);min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pq-grupo{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px}
+.pq-g1{color:#1a7373}
+.pq-g2{color:#2471a3}
+.pq-g3{color:#c0782a}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:10px 0}
+th{background:var(--gcd);color:var(--w);padding:7px 11px;text-align:left;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.67rem;text-transform:uppercase;letter-spacing:.07em}
+td{padding:8px 11px;border-bottom:1px solid var(--bd2);background:var(--w);vertical-align:top}
+.tm{font-weight:600;color:var(--gc);white-space:nowrap;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.8rem}
+.hrow td{background:#f7f0fb;text-align:center;font-style:italic;color:var(--g);font-weight:600;font-size:.82rem}
+.refs p{font-size:.82rem;line-height:1.65;margin-bottom:7px;padding-left:18px;text-indent:-18px}
+.print-btn{position:fixed;bottom:20px;right:20px;background:var(--gc);color:var(--w);border:none;padding:10px 18px;border-radius:30px;cursor:pointer;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:.78rem;font-weight:600;box-shadow:0 3px 14px rgba(0,0,0,.2)}
+@media print{.print-btn{display:none}header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.integ{break-inside:avoid}}
+@media(max-width:580px){header{padding:20px}header h1{font-size:1.2rem}.integ-item{min-width:160px}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida: cada
+   archivo trae su propia paleta y no puede depender de ella. */
+.nav-sesion{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D;color:#FAF6EF;padding:.55rem 1rem;font-size:.82rem;display:flex;
+  flex-wrap:wrap;align-items:center;gap:.3rem .6rem;line-height:1.6}
+.nav-sesion a{color:#F5EEDD;text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876;font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876;outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style></head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 5"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 5 &middot; 10 abr 2026</span><a href="index.html">Plan de sesión</a><a href="asignacion-grupal.html">Asignación grupal</a><a href="g1-ops-maite.html">G1 · OPS/MAITE</a><a href="g2-cepal-rias.html">G2 · CEPAL/RIAS</a><a href="g3-alcp-gpc.html">G3 · ALCP/GPC</a><span class="ns-actual" aria-current="page">G4 · Mesa territorial</span><a href="../s04-marcos-globales/index.html">&larr; Sesi&oacute;n 4</a></nav>
+
+<header>
+  <div class="lbl">Aula invertida · Grupo 4 · Sesión presencial 10 de abril de 2026 · UAN Maestría en Cuidado Paliativo</div>
+  <h1>Mesa de Integración Territorial: síntesis, convergencias y brechas</h1>
+  <div class="sub">Unidad 2 · Topics 2 y 3 — Rol transversal: escuchar, preguntar, sintetizar y conectar marcos regionales con realidades territoriales</div>
+  <div class="pills">
+    <span>📅 <b>Clase:</b> 10 abr 2026 · 8:00–10:00 am · Presencial</span>
+    <span>📖 <b>Lecturas:</b> Antes del 10 de abril</span>
+    <span>🎤 <b>Exposición:</b> 9:23–9:35 am · 8 min síntesis + 4 min diálogo</span>
+  </div>
+</header>
+<!-- ROL -->
+<h2>¿Qué hace este grupo?</h2>
+<div class="box morado">
+  <p>El Grupo 4 tiene un <strong>rol diferente al de los demás</strong>. No presenta un eje temático propio. Su función es <strong>escuchar, preguntar y sintetizar</strong>. Al finalizar las exposiciones de los tres grupos temáticos, el Grupo 4 presenta una síntesis integradora que identifica convergencias entre los marcos regionales (OPS, CEPAL, ALCP) y las brechas entre esos marcos y las realidades territoriales de Colombia.</p>
+  <p>Para hacer eso bien, el Grupo 4 necesita llegar con <strong>conocimiento panorámico</strong> de los tres ejes temáticos y con <strong>datos duros del OCCP</strong> sobre los departamentos representados en el curso.</p>
+</div>
+
+<div class="box gold">
+  <h3 style="color:var(--g);margin:0 0 6px">Pregunta articuladora de la síntesis</h3>
+  <p style="font-style:italic;font-size:.96rem">«¿Qué converge entre los mandatos de la OPS, la CEPAL y la ALCP respecto a los cuidados paliativos? ¿Qué brechas persisten entre lo que esos marcos proponen y lo que ocurre en los territorios colombianos? ¿Qué instrumento tiene mayor potencial para transformar la situación del territorio al que pertenece cada integrante?»</p>
+</div>
+
+<!-- LECTURA COMPARTIDA -->
+<h2>Lectura compartida — TODOS los grupos</h2>
+<div class="lectura">
+  <div class="num"><span class="tag tag-t">Todos los grupos</span> Lectura 1</div>
+  <div class="titulo">OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Historias OPS.</div>
+  <div class="guia">Entrevista con la Dra. Patricia Bonilla (ALCP) y el Dr. Stoltenberg (Harvard/OPS). <strong>Para el Grupo 4, esta lectura es especialmente importante</strong> porque permite formular preguntas cruzadas a los tres grupos: ¿cómo responde el marco de la OPS a los problemas que Bonilla describe? ¿cómo lo hace el Consenso de Montevideo? ¿qué dice el Atlas 2025 de ALCP al respecto? <strong>Cítala en tu síntesis al menos una vez.</strong></div>
+  <p style="margin-top:8px"><a href="https://www.paho.org/es/historias/cuidados-paliativos-americas" target="_blank">paho.org/es/historias/cuidados-paliativos-americas</a></p>
+</div>
+
+<!-- LECTURAS ESPECÍFICAS -->
+<h2>Lecturas específicas del Grupo 4 <span class="tag tag-c">Trabajo en casa · Antes del 10 abr</span></h2>
+
+<div class="lectura">
+  <div class="num">Lectura 2</div>
+  <div class="titulo">OCCP. (2024). <em>Informe Técnico 2024.</em> Observatorio Colombiano de Cuidados Paliativos.</div>
+  <div class="guia">Explora el informe técnico en el sitio del OCCP. Busca activamente los datos de los <strong>departamentos representados por el curso</strong> (Caquetá, Tolima, Santander, Córdoba, Neiva/Huila, Eje Cafetero, Bogotá y otros donde trabajen los estudiantes). Para cada territorio, registra: (1) número de servicios de CP habilitados, (2) datos de consumo de opioides, (3) cobertura por niveles de atención. Este material es el insumo empírico para la síntesis territorial del Grupo 4.</div>
+  <p style="margin-top:7px"><a href="https://www.occp.com.co/" target="_blank">occp.com.co → Informes técnicos 2024</a></p>
+</div>
+
+<div class="lectura">
+  <div class="num">Lectura 3</div>
+  <div class="titulo">Sánchez-Cárdenas, M. A., et al. (2023). Política pública en cuidados paliativos en Colombia. <em>Revista Cuidarte, 14</em>(2), e2501.</div>
+  <div class="guia">Leer el artículo completo. Identifica: (1) cuáles son los principales obstáculos de política pública que los autores documentan para los CP en Colombia; (2) qué distancia encuentran entre la norma escrita (Ley 1733/2014, MAITE, GPC) y la implementación territorial; (3) qué recomendaciones de política proponen. Este artículo es el puente entre el nivel normativo (lo que dicen los marcos) y el nivel territorial (lo que pasa en la práctica).</div>
+  <p style="margin-top:7px"><a href="https://doi.org/10.15649/cuidarte.2501" target="_blank">doi.org/10.15649/cuidarte.2501</a></p>
+</div>
+
+<div class="lectura">
+  <div class="num">Lectura 4 <span class="tag tag-dif">Trabajo preparatorio</span></div>
+  <div class="titulo">Preguntas articuladoras de los Grupos 1, 2 y 3 — Revisar antes de clase</div>
+  <div class="guia">Antes de clase, revisa las preguntas articuladoras de los otros tres grupos (están en sus guías, entregadas por el docente). Prepara <strong>al menos 2 preguntas territoriales por cada grupo</strong> — es decir, 6 preguntas en total. No son preguntas de contenido abstracto: son preguntas que conectan los marcos regionales con la realidad del territorio. Por ejemplo: «¿Cómo se expresa la ausencia de resolución regional propia de CP de la OPS en la situación del Caquetá?» o «¿La Medida C.29 del Consenso de Montevideo tiene algún mecanismo de seguimiento para Colombia?».</div>
+</div>
+
+<!-- PREGUNTAS PARA PREPARAR -->
+<h2>Para llegar preparado/a — preguntas por grupo y síntesis propia</h2>
+<p style="font-size:.84rem;color:var(--is);margin-bottom:12px">Prepara respuestas propias a estas preguntas Y formula 2 preguntas para hacer a cada grupo durante la clase.</p>
+
+<h3 style="color:#1a7373">Preguntas de preparación — Grupo 1 (OPS y MAITE)</h3>
+<ol class="pqs">
+  <li><span class="pq-grupo pq-g1">Para el Grupo 1</span>La OPS no tiene resolución regional propia sobre CP. ¿Qué diferencia práctica tiene eso frente a un país como Colombia que sí tiene la Ley 1733/2014? ¿Cuál pesa más?</li>
+  <li><span class="pq-grupo pq-g1">Para el Grupo 1</span>¿En cuál de las 8 líneas del MAITE se puede ubicar la paliación? ¿Esa ubicación garantiza que la paliación se implemente o puede pasar desapercibida?</li>
+</ol>
+
+<h3 style="color:#2471a3">Preguntas de preparación — Grupo 2 (CEPAL y RIAS)</h3>
+<ol class="pqs">
+  <li><span class="pq-grupo pq-g2">Para el Grupo 2</span>Si la denegación del alivio del dolor puede constituir trato inhumano según la ONU, ¿qué mecanismo jurídico tiene un paciente colombiano en un departamento periférico para exigir acceso a morfina?</li>
+  <li><span class="pq-grupo pq-g2">Para el Grupo 2</span>Las RIAS integran la paliación transversalmente pero no tienen una ruta autónoma de CP. ¿Eso facilita o dificulta la garantía del derecho en el territorio?</li>
+</ol>
+
+<h3 style="color:#c0782a">Preguntas de preparación — Grupo 3 (ALCP y GPC)</h3>
+<ol class="pqs">
+  <li><span class="pq-grupo pq-g3">Para el Grupo 3</span>El Atlas 2025 clasifica a Colombia como país "establecido". ¿Cómo se ve esa clasificación desde Caquetá, Córdoba o Neiva? ¿La clasificación nacional oculta inequidades territoriales profundas?</li>
+  <li><span class="pq-grupo pq-g3">Para el Grupo 3</span>La GPC No. 58 tiene casi 10 años. ¿Sigue siendo útil como orientadora de práctica o requiere actualización urgente según los datos del Atlas 2025?</li>
+</ol>
+
+<h3>Preguntas de preparación para la síntesis propia</h3>
+<ol class="pqs">
+  <li>¿Cuáles son las 3 convergencias más importantes entre los mandatos de OPS (CD62.R8), CEPAL (Consenso C.29) y ALCP (Atlas 2025)? ¿En qué coinciden los tres marcos?</li>
+  <li>¿Cuáles son las 2 brechas más críticas entre lo que dicen esos marcos y lo que muestran los datos del OCCP 2024 para los departamentos del curso? Argumenta con cifras.</li>
+</ol>
+
+<!-- EN CLASE -->
+<h2>¿Qué harán en clase el 10 de abril?</h2>
+
+<table>
+<thead><tr><th style="width:110px">Hora</th><th>Qué hace el Grupo 4</th></tr></thead>
+<tbody>
+<tr><td class="tm">8:00–8:10</td><td><strong>Encuadre.</strong> Cada integrante dice en una frase lo que leyó y qué le genera preguntas para los demás grupos.</td></tr>
+<tr><td class="tm">8:10–8:30</td><td><strong>Fase 1 — Preparación (20 min).</strong> Revisar las preguntas articuladoras de los 3 grupos. Distribuir las 6 preguntas territoriales (2 por grupo). Construir el esquema de síntesis: convergencias / brechas / implicaciones.</td></tr>
+<tr><td class="tm">8:30–8:45</td><td><strong>Fase 2 — Verificación territorial (15 min).</strong> Cruzar los datos del OCCP con los departamentos representados. ¿Qué patrón emerge? ¿Hay diferencias entre territorios con alta presencia institucional vs. territorios periféricos?</td></tr>
+<tr class="hrow"><td colspan="2">— Escucha activa: Exposiciones G1 (8:47), G2 (8:59), G3 (9:11) — Formular preguntas al cierre de cada una —</td></tr>
+<tr><td class="tm">9:23–9:35</td><td><strong>Exposición del Grupo 4 — Síntesis integradora (12 min).</strong> 8 min: (a) 3 convergencias entre los marcos, (b) 2 brechas críticas con datos del OCCP, (c) mapa territorial: ¿qué departamento está mejor posicionado y por qué? 4 min: diálogo abierto con la clase. <strong>Los tres integrantes deben intervenir.</strong></td></tr>
+</tbody>
+</table>
+
+<!-- ESTRUCTURA SÍNTESIS -->
+<div class="box dark" style="margin-top:16px">
+  <h3>Estructura sugerida para los 8 minutos de síntesis</h3>
+  <ol style="font-size:.88rem">
+    <li><strong>Min 0–1:</strong> Encuadre — "Los tres grupos analizaron X. ¿Qué hay en común y qué falta?"</li>
+    <li><strong>Min 1–3:</strong> Las 3 convergencias — ¿en qué coinciden OPS, CEPAL y ALCP sobre los CP?</li>
+    <li><strong>Min 3–5:</strong> Las 2 brechas más críticas — con datos del OCCP 2024 y Sánchez-Cárdenas (2023).</li>
+    <li><strong>Min 5–7:</strong> El mapa territorial del curso — diferencias entre departamentos, ¿quién está mejor? ¿por qué?</li>
+    <li><strong>Min 7–8:</strong> La pregunta que el curso se lleva — ¿qué instrumento tiene mayor potencial transformador en tu territorio?</li>
+  </ol>
+</div>
+
+<div class="box gold" style="margin-top:12px">
+  <h3 style="color:var(--g);margin:0 0 6px">Nota sobre el rol del Grupo 4</h3>
+  <p style="font-size:.88rem">No se evalúa por la cantidad de datos que presenta, sino por la <strong>calidad de la síntesis</strong> y la <strong>agudeza de las preguntas territoriales</strong>. La exposición del Grupo 4 es la que más impacto puede tener sobre toda la clase porque conecta lo abstracto (marcos internacionales) con lo concreto (la situación de sus territorios). Aprovéchenla.</p>
+</div>
+
+<!-- REFERENCIAS -->
+<h2>Referencias (APA 7)</h2>
+<div class="box refs">
+  <p>OPS/PAHO. (2021). <em>Cuidados paliativos en las Américas.</em> Organización Panamericana de la Salud. https://www.paho.org/es/historias/cuidados-paliativos-americas</p>
+  <p>Observatorio Colombiano de Cuidados Paliativos. (2024). <em>Informe Técnico 2024.</em> OCCP. https://www.occp.com.co/</p>
+  <p>Sánchez-Cárdenas, M. A., Gómez-Rúa, M., Martínez-Caballero, C. M., &amp; González-Romero, M. (2023). Política pública en cuidados paliativos en Colombia. <em>Revista Cuidarte, 14</em>(2), e2501. https://doi.org/10.15649/cuidarte.2501</p>
+</div>
+
+<p style="font-size:.75rem;color:var(--is);margin-top:12px;text-align:center">Maestría en Cuidados Paliativos · Facultad de Enfermería · Universidad Antonio Nariño · 2026-I</p>
+<button class="print-btn" onclick="window.print()">🖨 Imprimir</button>
+</body>
+</html>

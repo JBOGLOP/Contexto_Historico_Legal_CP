@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe integrador · Actividad grupal · U3 Tema 1 · 24/04/2026</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --ink-soft:#3a3a3a;
+    --paper:#fbfaf7; --paper-alt:#f3f1ea;
+    --line:#d9d4c7;
+    --accent:#5a3a1e; --accent-soft:#b8945f;
+    --hard-law:#7a2b2b; --soft-law:#4a6b8a;
+    --g1:#0e6b66; --g2:#2e5f9e; --g3:#c55a1a; --g4:#6a3d91;
+    --ok:#2e7d4e; --warn:#c55a1a; --miss:#a3332a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Georgia, 'Times New Roman', serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px}
+  .label,nav,button,.tag,.meta,.chip,th{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+  header{background:#fff;border-bottom:1px solid var(--line);padding:34px 0 26px}
+  .breadcrumb{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  h1{font-size:34px;line-height:1.15;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+  .subtitle{font-style:italic;color:var(--ink-soft);font-size:19px;margin-bottom:22px}
+
+  .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 28px;padding:18px 22px;background:var(--paper-alt);border-left:3px solid var(--accent);border-radius:0 4px 4px 0}
+  .meta-item{font-size:14px}
+  .meta-label{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:3px}
+  .meta-val{color:var(--ink);font-weight:500}
+
+  nav.tabs{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:50;margin-top:24px}
+  .tabs-inner{display:flex;gap:2px;overflow-x:auto;padding:0 28px;max-width:1180px;margin:0 auto}
+  .tab-btn{background:none;border:none;font-size:13px;font-weight:500;padding:16px 14px;color:var(--ink-soft);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+  .tab-btn:hover{color:var(--ink);background:var(--paper-alt)}
+  .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+  .tab-btn .num{display:inline-block;font-size:10px;color:var(--accent-soft);margin-right:6px;font-weight:600;letter-spacing:.05em}
+
+  main{padding:44px 0 80px}
+  section.tab-panel{display:none;animation:fadeIn .3s ease}
+  section.tab-panel.active{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  h2{font-size:28px;font-weight:700;margin-bottom:10px;letter-spacing:-.005em;color:var(--accent)}
+  h2 .h2-num{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:14px;color:var(--accent-soft);font-weight:600;letter-spacing:.1em;display:block;margin-bottom:4px}
+  h3{font-size:21px;font-weight:600;margin:34px 0 12px;color:var(--ink);letter-spacing:-.005em}
+  h4{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:24px 0 10px;color:var(--accent)}
+  p{margin-bottom:14px}
+  .lede{font-size:17.5px;color:var(--ink-soft);font-style:italic;margin-bottom:24px}
+
+  /* ============ DIAGNÓSTICO GENERAL ============ */
+  .status-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0 30px}
+  .status-card{background:#fff;border:1px solid var(--line);padding:18px 20px;border-radius:6px;border-top:4px solid}
+  .status-card.g1{border-top-color:var(--g1)}
+  .status-card.g2{border-top-color:var(--g2)}
+  .status-card.g3{border-top-color:var(--g3)}
+  .status-card.g4{border-top-color:var(--g4)}
+  .status-card .sc-group{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:11px;letter-spacing:.12em;font-weight:700;margin-bottom:4px}
+  .status-card.g1 .sc-group{color:var(--g1)}
+  .status-card.g2 .sc-group{color:var(--g2)}
+  .status-card.g3 .sc-group{color:var(--g3)}
+  .status-card.g4 .sc-group{color:var(--g4)}
+  .status-card .sc-inst{font-weight:600;font-size:14px;margin-bottom:10px;line-height:1.3}
+  .status-card .sc-score{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:28px;font-weight:700;letter-spacing:-.01em}
+  .status-card .sc-score.done{color:var(--ok)}
+  .status-card .sc-score.miss{color:var(--miss)}
+  .status-card .sc-label{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:11px;color:var(--ink-soft);margin-top:2px}
+
+  .callout{padding:22px 26px;border-radius:4px;margin:22px 0;border-left:4px solid}
+  .callout-miss{background:#fbedeb;border-color:var(--miss)}
+  .callout-miss::before{content:'HALLAZGO CRÍTICO';font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:10.5px;letter-spacing:.14em;font-weight:700;color:var(--miss);display:block;margin-bottom:8px}
+  .callout-ok{background:#e9f3ec;border-color:var(--ok)}
+  .callout-ok::before{content:'HALLAZGO POSITIVO';font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:10.5px;letter-spacing:.14em;font-weight:700;color:var(--ok);display:block;margin-bottom:8px}
+  .callout-warn{background:#fff5ed;border-color:var(--warn)}
+  .callout-warn::before{content:'SEÑAL PEDAGÓGICA';font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:10.5px;letter-spacing:.14em;font-weight:700;color:var(--warn);display:block;margin-bottom:8px}
+
+  /* ============ GROUP ANALYSIS ============ */
+  .group-block{background:#fff;border:1px solid var(--line);border-radius:6px;margin:22px 0;overflow:hidden}
+  .group-block-header{padding:18px 24px;color:#fff}
+  .group-block.g1 .group-block-header{background:var(--g1)}
+  .group-block.g2 .group-block-header{background:var(--g2)}
+  .group-block.g3 .group-block-header{background:var(--g3)}
+  .group-block.g4 .group-block-header{background:var(--g4)}
+  .group-block-header .gb-chip{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:11px;letter-spacing:.12em;opacity:.85;display:block;margin-bottom:3px}
+  .group-block-header .gb-title{font-weight:700;font-size:19px;line-height:1.25}
+  .group-block-header .gb-status{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:12px;margin-top:6px;opacity:.9}
+
+  .q-block{padding:20px 24px;border-bottom:1px solid var(--line)}
+  .q-block:last-child{border-bottom:none}
+  .q-title{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .q-sub{font-size:14px;color:var(--ink-soft);font-style:italic;margin-bottom:12px}
+  .q-response{background:var(--paper-alt);padding:14px 18px;border-radius:4px;font-size:14.5px;line-height:1.6;margin-bottom:12px;border-left:3px solid var(--accent-soft)}
+  .q-response.empty{font-style:italic;color:var(--miss);background:#fbedeb;border-color:var(--miss)}
+  .q-response blockquote{font-style:italic;color:var(--ink);padding:6px 12px;border-left:2px solid var(--accent-soft);margin:8px 0;font-size:14px}
+  .q-feedback{font-size:14px;line-height:1.6;color:var(--ink)}
+  .q-feedback strong{color:var(--accent)}
+
+  .chip-tag{display:inline-block;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:3px;margin-right:6px;margin-bottom:4px}
+  .chip-ok{background:#d7ecdd;color:var(--ok)}
+  .chip-miss{background:#f5dbd7;color:var(--miss)}
+  .chip-hard{background:#f5e3e3;color:var(--hard-law)}
+  .chip-soft{background:#e4eaf2;color:var(--soft-law)}
+
+  /* ============ INTEGRATIVE TABLE ============ */
+  .integ-table-wrap{overflow-x:auto;margin:18px 0}
+  table.integ{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;min-width:900px}
+  table.integ th{text-align:left;padding:12px 14px;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);font-weight:600;vertical-align:top}
+  table.integ th.g1-h{background:var(--g1)}
+  table.integ th.g2-h{background:var(--g2)}
+  table.integ th.g3-h{background:var(--g3)}
+  table.integ th.g4-h{background:var(--g4)}
+  table.integ td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  table.integ td.q-lbl{background:var(--paper-alt);font-weight:600;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);white-space:nowrap}
+  table.integ tr:last-child td{border-bottom:none}
+  table.integ td.empty{color:var(--miss);font-style:italic;font-size:12.5px}
+
+  /* ============ 5 VÍAS SYNTHESIS ============ */
+  .via-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:18px 0;border-left:4px solid var(--accent)}
+  .via-card .via-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .via-num-big{background:var(--accent);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;flex-shrink:0}
+  .via-title-big{font-weight:600;font-size:17px}
+  .via-contrib{font-size:14.5px;line-height:1.65;color:var(--ink)}
+  .via-contrib strong{color:var(--accent)}
+
+  /* ============ RECOMENDACIONES ============ */
+  .rec-list{list-style:none;margin:16px 0}
+  .rec-list li{position:relative;padding:14px 18px 14px 48px;background:#fff;border:1px solid var(--line);border-radius:4px;margin-bottom:10px;font-size:15px;line-height:1.6}
+  .rec-list li::before{content:counter(rec);counter-increment:rec;position:absolute;left:14px;top:14px;width:24px;height:24px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:12px;font-weight:700}
+  .rec-list{counter-reset:rec}
+  .rec-list li strong{color:var(--accent)}
+
+  /* ============ CLOSING ============ */
+  .pregunta-cierre{font-size:20px;line-height:1.5;font-style:italic;padding:24px 28px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:4px;margin:22px 0}
+  .nota-docente{background:#fffef5;border:1px dashed #c4a95e;padding:18px 22px;border-radius:4px;margin:20px 0;font-size:14px;color:var(--ink-soft);line-height:1.6}
+  .nota-docente::before{content:'NOTA DOCENTE';font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;font-size:10px;letter-spacing:.14em;font-weight:700;color:#8c6d20;display:block;margin-bottom:6px}
+
+  @media print{nav.tabs{display:none}section.tab-panel{display:block !important;page-break-before:always}section.tab-panel:first-of-type{page-break-before:auto}}
+  @media (max-width:680px){h1{font-size:26px}}
+</style>
+<style>
+/* Navegación de sesión — añadida al homologar. Autocontenida: cada
+   archivo trae su propia paleta y no puede depender de ella. */
+.nav-sesion{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#2D2D2D;color:#FAF6EF;padding:.55rem 1rem;font-size:.82rem;display:flex;
+  flex-wrap:wrap;align-items:center;gap:.3rem .6rem;line-height:1.6}
+.nav-sesion a{color:#F5EEDD;text-decoration:none;border-bottom:1px solid transparent}
+.nav-sesion a:hover,.nav-sesion a:focus{border-bottom-color:#C4A876}
+.nav-sesion .ns-curso{font-weight:700}
+.nav-sesion .ns-meta{color:#A6A6A6}
+.nav-sesion .ns-actual{color:#C4A876;font-weight:700}
+.nav-sesion :focus-visible{outline:2px solid #C4A876;outline-offset:2px}
+@media print{.nav-sesion{display:none}}
+</style></head>
+<body>
+<nav class="nav-sesion" aria-label="Navegacion de la sesion 6"><a class="ns-curso" href="../../index.html">&larr; Contexto Hist&oacute;rico y Legal</a><span class="ns-meta">Sesi&oacute;n 6 &middot; 24 abr 2026</span><a href="index.html">Plan de clase</a><a href="actividad-dona-carmen.html">Actividad · Doña Carmen</a><a href="marco-legal-colombia.html">Marco legal colombiano</a><span class="ns-actual" aria-current="page">Informe integrador</span><a href="plataforma-interactiva.html">Plataforma interactiva</a><a href="../s05-colombia-y-america-latina/index.html">&larr; Sesi&oacute;n 5</a><a href="../../actividad_dva_personal.html">Sesi&oacute;n 7 &rarr;</a></nav>
+
+<header>
+  <div class="wrap">
+    <div class="breadcrumb">Maestría en Cuidados Paliativos · UAN · Unidad 3 · Tema 1</div>
+    <h1>Informe integrador · Actividad grupal</h1>
+    <p class="subtitle">Análisis por grupo y síntesis colectiva en las cinco vías jurídicas · Sesión del 24 de abril de 2026</p>
+
+    <div class="meta-grid">
+      <div class="meta-item"><span class="meta-label">Actividad</span><span class="meta-val">Doña Carmen · Análisis jurídico inducido por caso</span></div>
+      <div class="meta-item"><span class="meta-label">Ventana</span><span class="meta-val">9:08–9:28 · 20 min en breakout rooms</span></div>
+      <div class="meta-item"><span class="meta-label">Respuestas recibidas</span><span class="meta-val">4 de 4 grupos · última entrega G3 a las 9:31 a.m.</span></div>
+      <div class="meta-item"><span class="meta-label">Docente</span><span class="meta-val">Jorge Wilhem Bogoya López</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" data-tab="diagnostico"><span class="num">01</span>Diagnóstico general</button>
+    <button class="tab-btn" data-tab="g1"><span class="num">02</span>G1 · WHA67.19</button>
+    <button class="tab-btn" data-tab="g2"><span class="num">03</span>G2 · A-70</button>
+    <button class="tab-btn" data-tab="g3"><span class="num">04</span>G3 · Méndez</button>
+    <button class="tab-btn" data-tab="g4"><span class="num">05</span>G4 · Res. CND</button>
+    <button class="tab-btn" data-tab="comparativa"><span class="num">06</span>Tabla comparativa</button>
+    <button class="tab-btn" data-tab="sintesis"><span class="num">07</span>Síntesis · 5 vías</button>
+    <button class="tab-btn" data-tab="cierre"><span class="num">08</span>Cierre pedagógico</button>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<!-- ============ 01 DIAGNÓSTICO ============ -->
+<section class="tab-panel active" id="diagnostico">
+  <h2><span class="h2-num">SECCIÓN 01</span>Diagnóstico general de la actividad</h2>
+  <p class="lede">Qué llegó al formulario, qué faltó, y qué señales pedagógicas deja la participación diferencial.</p>
+
+  <div class="status-grid">
+    <div class="status-card g1">
+      <div class="sc-group">GRUPO 1 · OPS/MAITE</div>
+      <div class="sc-inst">WHA67.19 (2014)</div>
+      <div class="sc-score done">4 / 4</div>
+      <div class="sc-label">Enviado 24/04/2026 · 9:17 a.m.</div>
+    </div>
+    <div class="status-card g2">
+      <div class="sc-group">GRUPO 2 · CEPAL/RIAS</div>
+      <div class="sc-inst">Convención A-70 (2015)</div>
+      <div class="sc-score done">4 / 4</div>
+      <div class="sc-label">Enviado 24/04/2026 · 9:08 a.m.</div>
+    </div>
+    <div class="status-card g3">
+      <div class="sc-group">GRUPO 3 · ALCP/GPC</div>
+      <div class="sc-inst">Informe Méndez (2013)</div>
+      <div class="sc-score done">4 / 4</div>
+      <div class="sc-label">Enviado 24/04/2026 · 9:31 a.m.</div>
+    </div>
+    <div class="status-card g4">
+      <div class="sc-group">GRUPO 4 · Mesa de Integración Territorial</div>
+      <div class="sc-inst">Res. 53/4 y 54/6 CND</div>
+      <div class="sc-score done">4 / 4</div>
+      <div class="sc-label">Enviado 24/04/2026 · 8:58 a.m.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-ok">
+    <p><strong>Los cuatro grupos entregaron.</strong> La estrategia de aula invertida diseñada para esta sesión cumplió su objetivo: la exposición teórica de las cinco vías jurídicas puede emerger realmente del análisis grupal. Todas las entregas alcanzaron 4/4 en conceptos clave y clasificaron correctamente su instrumento.</p>
+  </div>
+
+  <div class="callout callout-ok">
+    <p>Cada entrega aporta un ángulo distinto de alto valor académico: <strong>G1</strong> articula la invocabilidad judicial de soft law (tutela, línea jurisprudencial de la Corte Constitucional) y moviliza evidencia empírica cuantitativa (76,43% de prescriptores reportan problemas de disponibilidad); <strong>G2</strong> identifica las dos declaraciones interpretativas colombianas y el edadismo clínico como barrera cultural; <strong>G3</strong> construye el argumento Méndez con claridad y ancla territorialmente en Tolima (Chaparral, Líbano, remisión a Ibagué); <strong>G4</strong> mapea la cadena normativa colombiana y produce datos territoriales diferenciados de tres departamentos.</p>
+  </div>
+
+  <div class="callout callout-warn">
+    <p>La <strong>asimetría de participación</strong> (G4 solo vs. tres grupos ausentes) es un dato pedagógico que vale nombrar en la plenaria del 8 de mayo. Puede reflejar: dificultades de conectividad en zonas dispersas, confusión sobre la herramienta de envío, subestimación del valor del registro escrito, o que el trabajo sí se realizó verbalmente en las salas pero no quedó documentado. Esta última hipótesis es la más probable — conviene verificarla directamente con los grupos antes de emitir juicio evaluativo.</p>
+  </div>
+
+  <h3>Qué ofrece este informe</h3>
+  <p>Para cerrar el ciclo pedagógico de la sesión sin descartar el trabajo de G4 ni penalizar prematuramente a los otros grupos, este informe presenta: <strong>(a)</strong> el análisis riguroso de la respuesta de G4 con retroalimentación por pregunta; <strong>(b)</strong> el análisis modelo que habría producido cada uno de los grupos ausentes, fundamentado en el material del curso y pensado como insumo docente para la plenaria del 8 de mayo o para devolver a cada grupo como referencia; <strong>(c)</strong> la tabla comparativa integrada de los cuatro instrumentos; y <strong>(d)</strong> la síntesis en las cinco vías jurídicas, que es el producto teórico colectivo que la sesión debía construir.</p>
+</section>
+
+<!-- ============ 02 G1 ============ -->
+<section class="tab-panel" id="g1">
+  <div class="group-block g1">
+    <div class="group-block-header">
+      <span class="gb-chip">GRUPO 1 · OPS/PAHO ↔ MAITE · OPS/MAITE</span>
+      <div class="gb-title">WHA67.19 · 67ª Asamblea Mundial de la Salud (OMS, 2014)</div>
+      <div class="gb-status">Estado: ENTREGA COMPLETA · 24/04/2026 · 9:17 a.m. · Conceptos clave 4/4</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">① Clasificación jurídica</div>
+      <div class="q-sub">¿Hard law o soft law? ¿Qué tipo de obligación genera?</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«Su fuerza normativa deriva de su naturaleza de <strong>soft law con autoridad interpretativa</strong>, pues concreta el contenido de obligaciones preexistentes del derecho a la salud y del deber estatal de garantizar disponibilidad de medicamentos esenciales y cuidados paliativos integrados.</p>
+        <p>Obligaciones que genera: obligaciones de regulación, obligaciones de implementación y garantía, y obligaciones mínimas de cumplimiento inmediato.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-soft">Clasificación correcta</span>
+        <span class="chip-tag chip-ok">Tipología de obligaciones precisa</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Clasificación correcta y conceptualmente sofisticada. La noción de <em>«soft law con autoridad interpretativa»</em> es el encuadre jurídicamente más riguroso: la WHA67.19 no es vinculante por sí misma, pero concreta el contenido del Art. 12 del PIDESC (hard law), lo que le da fuerza indirecta. La tripartición de obligaciones (regulación / implementación y garantía / cumplimiento inmediato) reproduce el esquema clásico del CESCR (Observación General No. 14) y distingue correctamente las obligaciones progresivas de las inmediatas. <em>Oportunidad de profundización:</em> esta tipología se articula explícitamente con el <strong>test de razonabilidad progresiva</strong> del CESCR — útil para la plenaria del 8 de mayo al conectar con el análisis de G2 sobre declaraciones de Colombia a la Convención A-70.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">② Aplicación al caso de Doña Carmen</div>
+      <div class="q-sub">¿Protege a Doña Carmen? Argumento para su hija.</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«Respecto de su invocabilidad judicial, aunque un paciente no demandaría "solo" con fundamento en WHA67.19, sí puede invocarla para <strong>reforzar una acción de tutela</strong> basada en derechos fundamentales como salud, vida digna e integridad personal, y apoyarse en la Ley Consuelo Devis Saavedra.</p>
+        <p>La Corte Constitucional de Colombia ha utilizado instrumentos internacionales no vinculantes para precisar el alcance de derechos constitucionales cuando desarrollan obligaciones convencionales o principios constitucionales.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Invocabilidad judicial articulada</span>
+        <span class="chip-tag chip-ok">Conexión Ley 1733 + tutela</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Respuesta jurídicamente precisa: el grupo no infla la fuerza del instrumento («no demandaría solo con fundamento en WHA67.19») y construye correctamente la ruta de exigibilidad indirecta vía acción de tutela + Ley 1733 + derechos fundamentales. La referencia a la línea jurisprudencial de la Corte Constitucional sobre uso de soft law para precisar alcance de derechos constitucionales es un hallazgo de alto nivel académico que excede lo solicitado. <em>Oportunidad de profundización:</em> las sentencias T-499/2020, T-322/2017 y T-423/2017 son ejemplos concretos donde la Corte ha invocado estándares OMS para resolver tutelas en CP. Citarlas en la sesión del 8 de mayo convertiría el argumento en operativo.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">③ Obligación para Colombia</div>
+      <div class="q-sub">¿Qué debería hacer? ¿Lo está haciendo?</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«Para cumplir de manera sustantiva la WHA67.19, Colombia debería garantizar cuatro condiciones estructurales: disponibilidad continua de medicamentos esenciales para dolor severo —incluidos opioides en todos los niveles de atención—, cobertura territorial efectiva de servicios de CP, financiamiento trazable para implementación y monitoreo, e integración de CP en redes primarias, rurales e interculturales, especialmente en departamentos históricamente rezagados.</p>
+        <p>En el plano normativo, el país ha avanzado con la Ley 1733 de 2014 y desarrollos secundarios, e incluso ha fortalecido herramientas a través del OCCP; sin embargo, el cumplimiento sigue siendo parcial:</p>
+        <ul style="margin:8px 0 8px 22px">
+          <li><strong>OCCP 2024:</strong> persistencia de desigualdades departamentales en servicios, consumo de opioides y capacidad instalada; brechas visibles en territorios dispersos y amazónicos.</li>
+          <li><strong>Atlas ALCP 2025:</strong> progresos regulatorios, pero sin resolver cobertura ni acceso equitativo; inequidades territoriales y densidad insuficiente de servicios especializados.</li>
+          <li><strong>Evidencia empírica:</strong> <span style="background:var(--highlight);padding:0 4px">76,43 % de prescriptores reportan problemas de disponibilidad y 74,6 % dificultades de acceso a opioides</span> — contradice el núcleo operativo de WHA67.19 sobre acceso efectivo a medicamentos esenciales.</li>
+          <li><strong>Desigualdades geográficas:</strong> la expansión de servicios no se ha traducido en acceso funcional equivalente en zonas rurales o periféricas.</li>
+        </ul>
+        <p>En Colombia hay normas secundarias, resoluciones del Ministerio de Salud y sentencias de la Corte Constitucional que refuerzan el cumplimiento.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Cuatro condiciones estructurales</span>
+        <span class="chip-tag chip-ok">Evidencia cuantitativa movilizada</span>
+        <span class="chip-tag chip-ok">Triangulación OCCP + ALCP + estudios</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Respuesta con el mayor soporte empírico de los tres envíos del día. La especificación de <strong>cuatro condiciones estructurales</strong> (disponibilidad · cobertura · financiamiento · integración) traduce la obligación programática de la WHA67.19 en indicadores verificables — es exactamente el ejercicio de operacionalización que pide la consigna. Los datos del 76,43 % y 74,6 % son <em>la primera evidencia cuantitativa de incumplimiento</em> que aparece en las tres entregas y convierte el diagnóstico de «cumplimiento parcial» en dato exigible. La triangulación OCCP 2024 + Atlas ALCP 2025 + estudios empíricos es metodológicamente sólida. <em>Sugerencia para la plenaria:</em> estos porcentajes merecen anclarse bibliográficamente en la sesión del 8 de mayo (la fuente probable es Vargas-Escobar et al. 2022 o Sánchez-Cárdenas et al. 2023 — verificar).</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">④ Conexión territorial</div>
+      <div class="q-sub">Desde los departamentos del grupo.</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«En <strong>Risaralda</strong> y en <strong>Bogotá</strong>, no solo uno, hay miles de casos similares. Si bien algunos pacientes recurren a la ley, el cumplimiento no se ve ni en 72 horas.</p>
+        <p>Llega al punto que el profesional de la salud, no por omisión, prefiere enviar otros medicamentos adyuvantes, alternativos, que no tienen igual eficacia pero logran algo de calidad de vida mientras el paciente resuelve las dificultades administrativas y logísticas de la entrega de medicamentos.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Dos departamentos identificados</span>
+        <span class="chip-tag chip-ok">Mecanismo de adaptación profesional</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Aporte con un hallazgo clínico de alto valor: <strong>la sustitución por adyuvantes</strong> como estrategia profesional de adaptación al incumplimiento estatal. No es omisión, no es negligencia — es una forma de resistencia pragmática que permite sostener algo de calidad de vida mientras el sistema se desatasca. Este patrón dialoga con el «edadismo clínico» descrito por G2 y con las «barreras administrativas» documentadas por G4: los tres son mecanismos cotidianos que <em>rellenan</em> la brecha de implementación, y que paradójicamente pueden contribuir a invisibilizarla. El hecho de que Bogotá aparezca también — no solo los departamentos periféricos — es un dato potente: matiza la narrativa de que la paradoja es solo periférica. <em>Oportunidad de profundización:</em> cuantificar esta práctica en Risaralda o Bogotá convertiría el hallazgo cualitativo en evidencia movilizable para la plenaria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 G2 ============ -->
+<section class="tab-panel" id="g2">
+  <div class="group-block g2">
+    <div class="group-block-header">
+      <span class="gb-chip">GRUPO 2 · CEPAL ↔ RIAS · CEPAL/RIAS</span>
+      <div class="gb-title">Convención Interamericana A-70 · OEA (2015)</div>
+      <div class="gb-status">Estado: ENTREGA COMPLETA · 24/04/2026 · 9:08 a.m. · Conceptos clave 4/4</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">① Clasificación jurídica</div>
+      <div class="q-sub">¿Hard law o soft law? ¿Qué tipo de obligación genera?</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«[Hard law] El instrumento es hard law. El 27 de septiembre de 2022, el Estado colombiano depositó el instrumento de adhesión de la Convención Interamericana sobre la Protección de los Derechos Humanos de las Personas Mayores en la sede de la OEA, en Washington, D.C., con lo cual genera obligaciones atribuibles ante un tribunal internacional.</p>
+        <p>Aunque en este instrumento de adhesión se menciona y aclara:</p>
+        <blockquote>«La República de Colombia reconoce que la naturaleza progresiva de los derechos de contenido económico, social y cultural es un elemento esencial en su materialización y garantía efectiva. Por lo tanto, las obligaciones de este tipo previstas en la Convención deberán interpretarse como obligaciones de medio y no de resultado, sujetas a las capacidades institucionales y a los lineamientos del sistema legal nacional. Esta interpretación deberá aplicarse en particular a los artículos 4, 8, 12, 17, 24 y 31 de la Convención.»</blockquote>
+        <blockquote>«La República de Colombia declara en relación con los artículos 4, 6 y 18 de la Convención, que las obligaciones allí previstas deberán cumplirse de conformidad y en armonía con los requisitos formales y sustantivos de las disposiciones en la materia vigentes en el ordenamiento jurídico colombiano.»</blockquote>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Clasificación correcta</span>
+        <span class="chip-tag chip-ok">Declaraciones interpretativas identificadas</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Clasificación correcta con fecha precisa del depósito (27/09/2022). El hallazgo clave es la identificación de las <strong>dos declaraciones interpretativas</strong> con que Colombia ratificó el tratado — un dato que la mayoría de los análisis jurídicos no recoge y que modifica sustantivamente la fuerza exigible del instrumento. La distinción entre obligaciones «de medio» y «de resultado» (arts. 4, 8, 12, 17, 24, 31) es un matiz de derecho internacional sofisticado: el Estado se compromete a desplegar esfuerzos razonables, no a garantizar el resultado. Esto impacta directamente el caso: Colombia puede defenderse ante la CIDH argumentando que desplegó medios conforme a su capacidad institucional. <em>Oportunidad de profundización:</em> el Art. 19 m) sobre disponibilidad de medicamentos esenciales <strong>no está incluido</strong> en la declaración de «obligaciones de medio», lo que lo convierte en la vía más fuerte para argumentar el caso de Doña Carmen — precisamente lo que el grupo hace en la Pregunta 2.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">② Aplicación al caso de Doña Carmen</div>
+      <div class="q-sub">¿Protege a Doña Carmen? Argumento para su hija.</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«Sí, este instrumento protege a Doña Carmen y permite hacerlo exigible por vía jurídica:</p>
+        <ul style="margin:8px 0 8px 22px">
+          <li><strong>Artículo 4:</strong> los Estados adoptarán medidas para prevenir, sancionar y erradicar prácticas contrarias a la Convención, incluidas las que constituyan malos tratos o penas crueles, inhumanos o degradantes.</li>
+          <li><strong>Artículo 6:</strong> derecho a la vida y a la dignidad en la vejez; acceso no discriminatorio a cuidados integrales, incluidos los cuidados paliativos; manejo apropiado del dolor; evitación del sufrimiento innecesario.</li>
+          <li><strong>Artículo 10:</strong> derecho a no ser sometido a tortura ni a penas o tratos crueles, inhumanos o degradantes. Soportar dolor por falta del medicamento configura un trato cruel e inhumano.</li>
+          <li><strong>Artículo 19 (inciso m):</strong> garantizar a la persona mayor la disponibilidad y el acceso a los medicamentos esenciales de la OMS, <strong>incluyendo los fiscalizados necesarios para los cuidados paliativos</strong>.</li>
+          <li><strong>Artículo 36:</strong> sistema de peticiones individuales ante la Comisión Interamericana de Derechos Humanos.</li>
+        </ul>
+        <p>Aunque el instrumento de adhesión colombiano plantea algunos artículos como obligaciones de medio y no de resultado, son varios los artículos infringidos en este caso, diferentes a los mencionados en esa declaración.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Cinco artículos movilizados</span>
+        <span class="chip-tag chip-ok">Argumento jurídico articulado</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Análisis muy sólido. El grupo construye un argumento jurídico multicapa (arts. 4 → 6 → 10 → 19 → 36) que convierte la pregunta «¿hay una ley que nos proteja?» en una respuesta afirmativa y concreta. Especialmente valioso el cierre: reconocer la existencia de las declaraciones interpretativas <em>y</em> argumentar que el Art. 19 m) (medicamentos fiscalizados para CP) queda fuera de ellas es el tipo de precisión que distingue el análisis jurídico del comentario general. El Art. 10 (tortura) enlaza directamente con la Vía 2 que debía desarrollar G3 — esta conexión, si se destaca en la plenaria del 8 de mayo, ayuda a suplir la ausencia del análisis de Méndez.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">③ Obligación para Colombia</div>
+      <div class="q-sub">¿Qué debería hacer? ¿Lo está haciendo?</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«La adhesión de Colombia a la Convención en 2022 convirtió este instrumento en hard law, lo que genera obligaciones y acciones concretas para el Estado, especialmente ante casos de vulnerabilidad extrema como el de Doña Carmen:</p>
+        <ul style="margin:8px 0 8px 22px">
+          <li><strong>Acceso a cuidados paliativos (Art. 6):</strong> acceso no discriminatorio, manejo del dolor, evitación del sufrimiento innecesario.</li>
+          <li><strong>Atención preferencial y oportuna:</strong> atención universal, equitativa y oportuna. En situaciones donde la salud o la vida están en riesgo, la actuación debe ser especialmente rápida. Las referencias médicas no deberían tardar 72 horas ante un dolor severo.</li>
+          <li><strong>Protección contra tratos crueles e inhumanos (Art. 10):</strong> permitir que un paciente terminal soporte EVA 9/10 por falta de gestión administrativa configura violación.</li>
+          <li><strong>Disponibilidad de medicamentos esenciales (Art. 19 m):</strong> asegurar el acceso a medicamentos fiscalizados como la morfina; corregir el desabastecimiento en farmacias hospitalarias de territorios como Caquetá.</li>
+          <li><strong>Ajustes presupuestarios y administrativos:</strong> fortalecer medidas legislativas, administrativas y presupuestarias para trato diferenciado y preferencial.</li>
+          <li><strong>Rendición de cuentas ante organismos internacionales:</strong> sujeción al sistema de peticiones individuales ante la CIDH.</li>
+        </ul>
+        <p><strong>¿La está cumpliendo?</strong> En el caso de Doña Carmen el Estado no está cumpliendo: inexistencia de medicamentos en la farmacia del hospital; falta de oportunidad (sistema de referencia de 72 horas); omisión de ajustes razonables — aunque Colombia declaró ciertos artículos como «obligaciones de medio», el acceso a la salud y la protección contra el sufrimiento innecesario son derechos fundamentales que el Estado debe asegurar mediante medidas administrativas y presupuestarias adecuadas.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Diagnóstico operativo</span>
+        <span class="chip-tag chip-ok">Cumplimiento analizado con evidencia</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Transición impecable de la obligación formal al diagnóstico de cumplimiento. El argumento de cierre es clave: incluso aceptando las declaraciones interpretativas colombianas, el Estado no puede escudarse tras ellas para legitimar la inexistencia absoluta del medicamento ni un sistema de referencia de 72 horas, porque son <em>medidas administrativas y presupuestarias mínimas</em>, no de resultado. <em>Sugerencia para la plenaria:</em> este argumento se fortalece citando el <strong>estándar de razonabilidad progresiva</strong> del CESCR (Observación General No. 3): las obligaciones progresivas no autorizan regresividad ni inacción, y requieren el uso del máximo de recursos disponibles.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">④ Conexión territorial</div>
+      <div class="q-sub">Desde los departamentos del grupo.</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«Desde nuestro territorio y a pesar de las políticas públicas contundentes en Colombia, aún es posible evidenciar que la mayoría de los pacientes adultos mayores tienen limitaciones en el acceso a los servicios. El promedio de vida aumentó, pero las condiciones para garantizar una vida digna y el goce de una vida plena aún no son evidentes. En muchas instituciones no hay un protocolo específico de atención al adulto mayor; se normaliza el sufrimiento de esta población como "es propio por la edad" — como si por ser mayores el dolor se sintiera menos o pudieran aguantar más.</p>
+        <p>Cada día observamos más adultos mayores independientes y robustos; sin embargo, a la mayoría no se les enseña cómo tener una vejez exitosa. Es común ver en salas de urgencias y hospitalización minimizar el manejo porque se asume que todo es por la edad, o que los opioides entrañan más riesgo (y sí los hay, pero con entrenamiento y personal calificado no tendría que ser un problema). Los síntomas son atribuidos al famoso: <em>"es que se queja mucho, ha de ser por la edad"</em>.</p>
+        <p>Es importante fortalecer las políticas públicas en la atención en salud del adulto mayor, no minimizar esfuerzos por el goce de una vida digna. Envejecer debe ser una etapa más, con mayor cuidado por la vulnerabilidad propia de los años, pero con la convicción de que los derechos fundamentales jamás se pierden ni se disminuyen: los roles cambian, pero la humanidad no.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Barrera cultural identificada</span>
+        <span class="chip-tag chip-ok">Narrativa profesional valiosa</span>
+        <span class="chip-tag" style="background:#fff5ed;color:var(--warn)">⚠ Sin dato departamental específico</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Aporte conceptualmente potente: identificar el <strong>edadismo clínico</strong> («es que se queja mucho, ha de ser por la edad») como barrera cultural al cumplimiento del Art. 6 de la Convención es un hallazgo de alto valor. Esta barrera es invisible en los indicadores cuantitativos (consumo de opioides, número de IPS) pero opera como el filtro que explica por qué, aun donde hay disponibilidad formal, el adulto mayor no accede. <em>Oportunidad de profundización:</em> la respuesta no ancla el análisis en un departamento o municipio específico, como sí lo hizo G4. Para la plenaria del 8 de mayo, valdría la pena que el grupo complete con: ¿en qué IPS concretas de sus departamentos se ha observado este patrón? ¿Hay protocolos de atención a adulto mayor en las instituciones donde ejercen? Esto convierte el hallazgo cultural en evidencia territorial operacional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 G3 ============ -->
+<section class="tab-panel" id="g3">
+  <div class="group-block g3">
+    <div class="group-block-header">
+      <span class="gb-chip">GRUPO 3 · ALCP/Atlas ↔ GPC No. 58 · ALCP/GPC</span>
+      <div class="gb-title">Informe Relator Méndez · A/HRC/22/53 (ONU, 2013)</div>
+      <div class="gb-status">Estado: ENTREGA COMPLETA · 24/04/2026 · 9:31 a.m. · Conceptos clave 4/4</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">① Clasificación jurídica</div>
+      <div class="q-sub">¿Hard law o soft law? ¿Qué tipo de obligación genera?</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«[Soft law] Es un informe elaborado por Juan E. Méndez, Relator Especial autorizado por las Naciones Unidas. El informe como tal no genera obligaciones exigibles por sí mismo; sin embargo, al ser la interpretación de un tratado vinculante, sirve como insumo para criterio interpretativo y puede ser usado por jueces. Colombia tiene obligaciones de respetar, proteger y garantizar la Carta de Derechos Humanos, pues hace parte desde 1985 de la jurisdicción obligatoria de la Corte Internacional de Derechos Humanos.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-soft">Clasificación correcta</span>
+        <span class="chip-tag chip-ok">Anclaje en tratado vinculante</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Clasificación correcta. El grupo identifica bien el doble plano: el informe en sí no es vinculante, pero <em>interpreta</em> un tratado que sí lo es. La referencia a la jurisdicción obligatoria contenciosa aceptada por Colombia en 1985 es un dato preciso que refuerza la exigibilidad indirecta. <em>Precisión técnica:</em> la «Corte Internacional de Derechos Humanos» es denominación imprecisa — se refiere probablemente a la <strong>Corte Interamericana de Derechos Humanos</strong> (San José), cuya jurisdicción Colombia aceptó por el Decreto 2110 de 1988. Conviene corregirlo para la sesión del 8 de mayo. El tratado vinculante que el informe Méndez interpreta es específicamente la Convención contra la Tortura (ratificada por Colombia en 1987) y el Art. 7 del PIDCP.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">② Aplicación al caso de Doña Carmen</div>
+      <div class="q-sub">¿Protege a Doña Carmen? Argumento para su hija.</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«Sí, la protege. La protección proviene de la <strong>Convención contra la Tortura y Otros Tratos o Penas Crueles, Inhumanos o Degradantes</strong>, interpretada por el informe del Relator Especial. Además, Naciones Unidas ha dicho que negar medicamentos como la morfina, cuando una persona tiene dolor intenso, puede ser un <strong>trato inhumano</strong>. Su mamá tiene derecho a que le alivien el dolor, y el sistema debe garantizar ese tratamiento de forma oportuna.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Tratado vinculante identificado</span>
+        <span class="chip-tag chip-ok">Argumento accesible para la hija</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Argumento sólido y pedagógicamente bien calibrado: identifica el tratado vinculante (Convención contra la Tortura) y traduce la doctrina Méndez a un lenguaje comprensible para la hija de Doña Carmen («negar la morfina puede ser un trato inhumano»). <em>Oportunidad de profundización:</em> el argumento gana fuerza si se destaca el elemento específico que aporta Méndez (A/HRC/22/53, 2013) respecto al informe previo de Nowak (2009): la denegación puede configurar trato cruel <strong>incluso por omisión</strong> cuando el Estado tiene conocimiento del sufrimiento evitable. Es el matiz jurídico más provocador de la Vía 2 y el grupo puede recuperarlo explícitamente para la plenaria.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">③ Obligación para Colombia</div>
+      <div class="q-sub">¿Qué debería hacer? ¿Lo está haciendo?</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«Colombia tiene una obligación clara: <strong>evitar el sufrimiento grave evitable</strong>, lo que en salud implica garantizar cuidados paliativos efectivos.</p>
+        <ul style="margin:8px 0 8px 22px">
+          <li><strong>Ley 1733 de 2014:</strong> reconoce el derecho a cuidados paliativos desde el diagnóstico.</li>
+          <li><strong>Baja cobertura efectiva:</strong> solo una fracción de quienes necesitan cuidados paliativos los recibe; aproximadamente <strong>41%</strong> de quienes mueren los requieren.</li>
+        </ul>
+        <p>Existe ley y reconocimiento del derecho, pero persisten brechas graves en acceso, especialmente en zonas rurales, donde pacientes siguen sufriendo dolor evitable por falta de medicamentos, servicios y oportunidad.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Obligación jurídica precisa</span>
+        <span class="chip-tag chip-ok">Dato cuantitativo (41%)</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> La formulación «evitar el sufrimiento grave evitable» es el núcleo exacto de la obligación derivada del marco Méndez — conciso y jurídicamente preciso. El dato del 41% es un indicador de necesidad de CP al final de la vida consistente con estimaciones de la Worldwide Hospice Palliative Care Alliance y de la ALCP. <em>Oportunidad de profundización:</em> para reforzar el argumento Méndez conviene articular el <strong>umbral del conocimiento estatal</strong>: OCCP, ASOCUPAC, Atlas ALCP 2025 y GPC No. 58 del MinSalud-IETS han documentado la brecha, por lo que Colombia no puede alegar desconocimiento. Esto es precisamente el elemento que convierte la omisión en potencial responsabilidad internacional según el estándar Méndez.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">④ Conexión territorial</div>
+      <div class="q-sub">Desde los departamentos del grupo.</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«En <strong>Tolima</strong>, en municipios como <strong>Chaparral</strong> o <strong>Líbano</strong>, hemos observado que pacientes con dolor oncológico no siempre tienen acceso inmediato a morfina en hospitales de primer nivel y deben ser remitidos a Ibagué, lo que genera demoras y sufrimiento evitable. Esto evidencia una brecha entre la Ley 1733 y la realidad, constituyendo un incumplimiento en el acceso oportuno a cuidados paliativos.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Municipios concretos</span>
+        <span class="chip-tag chip-ok">Patrón de remisión documentado</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Respuesta territorialmente precisa: Chaparral y Líbano son municipios del sur y norte de Tolima respectivamente, con distancia significativa a Ibagué. El patrón descrito — dolor oncológico en primer nivel + ausencia de morfina + remisión + demora — reproduce exactamente la estructura del caso de Doña Carmen en Caquetá, confirmando que la Vía 2 (Méndez) no es una abstracción jurídica: tiene municipios identificables en varios departamentos. <em>Convergencia con los otros grupos:</em> el patrón de Tolima + el patrón de Caquetá-Córdoba-Antioquia de G4 + el patrón de Risaralda-Bogotá de G1 configuran un mapa empírico convergente. <strong>Cinco departamentos documentados por los cuatro grupos como incumplidores de la obligación de evitar sufrimiento grave evitable.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 G4 ============ -->
+<section class="tab-panel" id="g4">
+  <div class="group-block g4">
+    <div class="group-block-header">
+      <span class="gb-chip">GRUPO 4 · Mesa de Integración Territorial · Mesa de Integración Territorial</span>
+      <div class="gb-title">Resoluciones 53/4 (2010) y 54/6 (2011) · Comisión de Estupefacientes</div>
+      <div class="gb-status">Estado: ENTREGA COMPLETA · 24/04/2026 · 8:58 a.m. · Conceptos clave 4/4</div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">① Clasificación jurídica</div>
+      <div class="q-sub">¿Hard law o soft law? ¿Qué tipo de obligación genera?</div>
+      <div class="q-response">
+        <strong>Respuesta del grupo:</strong>
+        <p style="margin:8px 0 0">[Soft law] «SOFT LAW Res. 53/4 y 54/6 CND. Resoluciones emitidas por la Comisión de Estupefacientes CND en el marco del Consejo Económico y Social de las Naciones Unidas (ECOSOC), instrumento normativo de carácter no vinculante. En este sentido, no corresponden a tratados internacionales ni generan obligaciones jurídicas exigibles ante tribunales internacionales. Su contenido tiene un carácter orientador, programático y persuasivo para los Estados miembros, en este caso Colombia. Sin embargo, sí produce obligaciones de conducta basadas en la buena fe, tales como la adopción de políticas públicas alineadas con sus recomendaciones, como es el caso de la promulgación de: Resolución 1478 de 2006 (control y disponibilidad de estupefacientes); Decreto 2200 de 2005 y 780 de 2016 (dispensación); Ley 1733 de 2014 (Ley Consuelo Devis Saavedra: derecho a cuidados paliativos); Política Nacional de Cuidados Paliativos (2016).»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Clasificación correcta</span>
+        <span class="chip-tag chip-ok">Fundamentación sólida</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> La clasificación es correcta y la fundamentación es precisa: diferenciar entre «no vinculante ante tribunal internacional» y «obligación de conducta basada en la buena fe» es una distinción jurídica fina y bien introducida. El mapeo de la cadena normativa colombiana (Res. 1478/2006 → Decreto 2200/2005 y 780/2016 → Ley 1733/2014 → Política Nacional 2016) es un aporte que excede lo solicitado y <strong>anticipa el contenido de la sesión del 8 de mayo</strong>. Sugerencia de precisión: la Res. 53/4 y 54/6 se enmarcan en la Convención Única sobre Estupefacientes de 1961 (que sí es hard law, ratificada por Colombia); esto refuerza el argumento del grupo sobre por qué, pese a ser soft law, sí arrastran obligaciones de conducta por la vía del tratado matriz.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">② Aplicación al caso de Doña Carmen</div>
+      <div class="q-sub">¿Protege a Doña Carmen? Argumento para su hija.</div>
+      <div class="q-response">
+        <p><strong>Respuesta del grupo:</strong></p>
+        <p>«Sí, las Resoluciones 53/4 (2010) y 54/6 (2011) protegen a Doña Carmen como lineamientos internacionales que obligan a los Estados a garantizar acceso a medicamentos controlados para fines médicos. Hay que aclarar que no son leyes exigibles. La Resolución 53/4 (2010) establece que los Estados deben garantizar la disponibilidad adecuada de estupefacientes para el tratamiento del dolor y sufrimiento:</p>
+        <blockquote>«Reafirmando el importante papel encomendado a la Junta Internacional de Fiscalización de Estupefacientes a fin de asegurar, en cooperación con los gobiernos, la disponibilidad de estupefacientes para fines médicos y científicos e impedir el tráfico y el uso ilícitos de estupefacientes, como se establece en el párrafo 4 del artículo 9 de la Convención de 1961, enmendada por el Protocolo de 1972.»</blockquote>
+        <p>Finalmente, lo anterior fue la base para promulgar la Ley de Cuidados Paliativos 1733 de 2014, que protege a los pacientes.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Conceptos clave presentes</span>
+        <span class="chip-tag chip-ok">Cita textual del instrumento</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> La respuesta es sólida: identifica el párrafo operativo, lo cita textualmente y lo conecta con la Convención Única de 1961. La advertencia «hay que aclarar que no son leyes exigibles» mantiene la honestidad jurídica y el grupo no infla la fuerza del instrumento. Oportunidad de profundización: el argumento para la hija de Doña Carmen podría incluir el concepto de <strong>«doble obligación»</strong> — disponibilidad para fines médicos <em>y</em> prevención del desvío — porque ese es el núcleo normativo específico que permite explicar por qué el hospital no tiene morfina pese a la ley: Colombia ha cumplido la obligación de control con mucha más agresividad que la obligación de acceso, y esa asimetría es la que produce el caso de Doña Carmen.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">③ Obligación para Colombia</div>
+      <div class="q-sub">¿Qué debería hacer? ¿Lo está haciendo?</div>
+      <div class="q-response">
+        <strong>Respuesta del grupo:</strong>
+        <p style="margin:8px 0 0">«Colombia, para cumplir el instrumento, debe hacer seguimiento al indicador que se evalúa mediante el cálculo de consumo anual de medicamentos opioides. Debe fortalecer el programa de monitoreo para el uso y distribución de medicamentos opioides en el territorio nacional. Se recomienda aumentar el número de establecimientos habilitados con disponibilidad 24/7 para dispensación de medicamentos de control. Como recomendación de la asamblea se requiere promover la colaboración para garantizar el suministro adecuado de medicamentos esenciales. Se debe revisar y, cuando sea necesario, actualizar las legislaciones y políticas sobre fiscalización de medicamentos, siguiendo las directrices de la OMS para mejorar el acceso y uso adecuado de medicamentos. Se debe actualizar las listas nacionales de medicamentos esenciales según sea necesario, considerando la inclusión reciente de analgésicos y medicamentos para cuidados paliativos.</p>
+        <p>Según lo estipulado en la Ley 1733, aún no se puede garantizar la distribución 24/7 de medicamentos opioides porque aún no se conocen los derechos y deberes de los pacientes, porque existen aún monopolios de ventas de medicamentos limitando la disponibilidad en todos los departamentos, y porque es necesario reforzar la educación.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Conecta con realidad colombiana</span>
+        <span class="chip-tag chip-ok">Diagnóstico operativo</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Excelente transición de la obligación formal al diagnóstico operativo. Las tres causales que el grupo identifica — desconocimiento de derechos por parte del paciente, monopolios de distribución, déficit educativo del personal sanitario — son hallazgos consistentes con la literatura disponible (Sánchez-Cárdenas et al., 2023; Vargas-Escobar et al., 2022). Oportunidad de profundización: la JIFE (Junta Internacional de Fiscalización de Estupefacientes) publica anualmente los datos de consumo de opioides por país; la cifra colombiana ha sido históricamente baja y ese dato empírico, junto con el OCCP 2024, es el indicador objetivo de incumplimiento de la obligación de disponibilidad adecuada.</p>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-title">④ Conexión territorial</div>
+      <div class="q-sub">Desde los departamentos del grupo.</div>
+      <div class="q-response">
+        <strong>Respuesta del grupo:</strong>
+        <p style="margin:8px 0 0"><strong>Caquetá (2023):</strong> «Consumo de opioides 1.12, lo cual es más de 10 veces menor que el promedio nacional, con una sola farmacia 24/7. Esto limita la dispensación de medicamentos de control y casos como el de Doña Carmen se pueden repetir por la necesidad.»</p>
+        <p><strong>Córdoba:</strong> «Evidencia disponible desde la práctica clínica y la observación del sistema de salud sugiere un incumplimiento parcial y persistente de las obligaciones, especialmente en lo relacionado con la disponibilidad y accesibilidad oportuna de opioides para el manejo del dolor. En municipios e incluso dentro de Montería: la morfina oral no está disponible de manera regular en hospitales y clínicas de primer y segundo nivel; existen barreras administrativas para la dispensación, incluso cuando hay prescripción médica (trámites, autorizaciones, falta de recetarios oficiales); la remisión a niveles de mayor complejidad se convierte en la principal solución, lo que genera retrasos incompatibles con el alivio del dolor agudo.»</p>
+        <p><strong>Antioquia (diferencial):</strong> «Cumplimientos en Medellín y Valle de Aburrá: IPS especializadas con equipos interdisciplinarios, programas domiciliarios consolidados, acceso relativamente estable a morfina oral y parenteral en alta complejidad. Fuera del Valle de Aburrá, incumplimientos: bajo número de servicios de CP en Oriente, Suroeste, Urabá y Bajo Cauca; pacientes deben viajar horas para obtener una fórmula o reclamar un medicamento controlado; desconocimiento por parte de muchos médicos generales que también pueden realizar las formulaciones de opioides.»</p>
+      </div>
+      <div class="q-feedback">
+        <span class="chip-tag chip-ok">Referencia territorial concreta</span>
+        <span class="chip-tag chip-ok">Diagnóstico diferencial</span>
+        <span class="chip-tag chip-ok">Tres departamentos contrastados</span>
+        <p style="margin-top:10px"><strong>Retroalimentación.</strong> Respuesta sobresaliente. No solo ofrece un departamento, sino tres, con diagnóstico diferenciado: Caquetá (incumplimiento con dato cuantitativo), Córdoba (incumplimiento con barreras administrativas específicas), Antioquia (cumplimiento urbano vs. incumplimiento periurbano y rural). La observación sobre Antioquia es especialmente potente porque reproduce, a escala subdepartamental, la misma paradoja colombiana que se ve a escala nacional: la brecha entre Medellín/Valle de Aburrá y el resto reproduce la brecha entre Bogotá y las periferias. Esta es una contribución que enriquece el marco teórico del curso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 TABLA COMPARATIVA ============ -->
+<section class="tab-panel" id="comparativa">
+  <h2><span class="h2-num">SECCIÓN 06</span>Tabla comparativa integradora</h2>
+  <p class="lede">Las cuatro dimensiones de la consigna, cruzadas con los cuatro instrumentos asignados. Donde no hubo respuesta grupal, se consigna el análisis modelo.</p>
+
+  <div class="integ-table-wrap">
+    <table class="integ">
+      <thead>
+        <tr>
+          <th style="width:13%"> </th>
+          <th class="g1-h">G1 · WHA67.19 <br><span style="font-weight:400;opacity:.85">(envío completo)</span></th>
+          <th class="g2-h">G2 · Convención A-70 <br><span style="font-weight:400;opacity:.85">(envío completo)</span></th>
+          <th class="g3-h">G3 · Informe Méndez <br><span style="font-weight:400;opacity:.85">(envío completo)</span></th>
+          <th class="g4-h">G4 · Res. 53/4 y 54/6 <br><span style="font-weight:400;opacity:.85">(envío completo)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="q-lbl">① Clasificación</td>
+          <td><span class="chip-tag chip-soft">Soft law con autoridad interpretativa</span> Concreta obligaciones del derecho a la salud. Tres tipos de obligación: regulación, implementación/garantía, cumplimiento inmediato.</td>
+          <td><span class="chip-tag chip-hard">Hard law</span> Tratado interamericano. Único vinculante del sistema OEA que menciona CP. Peticiones individuales ante CIDH (Art. 36).</td>
+          <td><span class="chip-tag chip-soft">Soft law</span> Informe de Relator Especial ONU. Interpreta tratados vinculantes (Convención contra la Tortura, PIDCP Art. 7). Colombia bajo jurisdicción obligatoria de la Corte IDH desde 1985/1988.</td>
+          <td><span class="chip-tag chip-soft">Soft law</span> Resoluciones de la CND/ECOSOC. Obligaciones de conducta basadas en buena fe; ancladas en la Convención Única de 1961 (hard law).</td>
+        </tr>
+        <tr>
+          <td class="q-lbl">② Aplicación al caso</td>
+          <td>No demandable aisladamente, pero <strong>invocable para reforzar acción de tutela</strong> + Ley 1733. La Corte Constitucional ha usado soft law para precisar alcance de derechos fundamentales.</td>
+          <td>Protección multicapa: <strong>Arts. 4, 6, 10, 19 m) y 36</strong>. El Art. 19 m) (medicamentos fiscalizados para CP) queda fuera de la declaración de obligaciones de medio. Vía del Art. 36: peticiones individuales ante la CIDH.</td>
+          <td>Protección vía <strong>Convención contra la Tortura</strong> interpretada por Méndez. Negar morfina ante dolor intenso puede configurar trato inhumano. Argumento accesible: «el sistema debe garantizar el tratamiento de forma oportuna».</td>
+          <td>Las Res. 53/4 y 54/6 obligan al Estado a <strong>disponibilidad adecuada de estupefacientes para tratamiento del dolor</strong>. Base normativa para la Ley 1733 de 2014.</td>
+        </tr>
+        <tr>
+          <td class="q-lbl">③ Obligación para Colombia</td>
+          <td><strong>Cuatro condiciones estructurales:</strong> disponibilidad, cobertura territorial, financiamiento trazable, integración en APS rural/intercultural. Incumplimiento con evidencia: <strong>76,43%</strong> prescriptores con problemas de disponibilidad, <strong>74,6%</strong> dificultades de acceso.</td>
+          <td>Colombia Estado Parte desde 27/09/2022 con <strong>dos declaraciones interpretativas</strong> (obligaciones «de medio», arts. 4, 8, 12, 17, 24, 31). Incumplimiento en el caso: inexistencia de morfina, referencia de 72 h, omisión de ajustes administrativos. La progresividad no autoriza inacción.</td>
+          <td>Obligación núcleo: <strong>evitar el sufrimiento grave evitable</strong>. Ley 1733/2014 reconoce el derecho, pero cobertura efectiva baja: ~<strong>41%</strong> de quienes mueren requieren CP. Brechas graves en zonas rurales.</td>
+          <td>Seguimiento del consumo anual de opioides (JIFE); fortalecer monitoreo; aumentar farmacias 24/7; actualizar listas de medicamentos esenciales. Incumplimiento por desconocimiento de derechos, monopolios y déficit educativo.</td>
+        </tr>
+        <tr>
+          <td class="q-lbl">④ Conexión territorial</td>
+          <td><strong>Risaralda y Bogotá:</strong> miles de casos similares; cumplimiento no se ve ni en 72 h. <strong>Hallazgo clínico:</strong> sustitución profesional por adyuvantes como estrategia de adaptación al incumplimiento estatal.</td>
+          <td><strong>Hallazgo cultural:</strong> edadismo clínico («es que se queja mucho, ha de ser por la edad»). Ausencia de protocolos específicos para adulto mayor; minimización de opioides por grupo etario. <span style="color:var(--warn)">⚠ Falta departamento/municipio concreto.</span></td>
+          <td><strong>Tolima:</strong> Chaparral y Líbano sin morfina inmediata en primer nivel; remisión a Ibagué genera demoras y sufrimiento evitable. Brecha entre Ley 1733 y realidad.</td>
+          <td><strong>Caquetá:</strong> consumo 1.12 (2023), una farmacia 24/7. <strong>Córdoba:</strong> morfina no disponible en primer/segundo nivel en Montería; barreras administrativas. <strong>Antioquia:</strong> cumplimiento en Valle de Aburrá vs. incumplimiento en Oriente, Suroeste, Urabá, Bajo Cauca.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="nota-docente">
+    La tabla funciona como instrumento de devolución: permite a cada grupo ver su respuesta (o la ausencia de ella) en paralelo con los otros tres análisis. Puede proyectarse al inicio de la sesión del 8 de mayo como punto de partida, y pedir a G1, G2 y G3 que contrasten el análisis modelo con lo que trabajaron verbalmente en la sala el 24 de abril (si es que lo trabajaron).
+  </div>
+</section>
+
+<!-- ============ 07 SÍNTESIS 5 VÍAS ============ -->
+<section class="tab-panel" id="sintesis">
+  <h2><span class="h2-num">SECCIÓN 07</span>Síntesis colectiva · Las cinco vías jurídicas</h2>
+  <p class="lede">Este es el producto teórico que la sesión debía construir: el marco de las cinco vías de fundamentación del derecho a los CP, con la contribución de cada grupo identificada.</p>
+
+  <div class="via-card">
+    <div class="via-head">
+      <div class="via-num-big">1</div>
+      <div class="via-title-big">Derecho a la salud</div>
+    </div>
+    <div class="via-contrib">
+      PIDESC Art. 12 (hard law · Colombia parte), Observación General No. 14 del CESCR (2000), Recomendación General No. 27 CEDAW (2010), Observación General No. 15 CRC (2013), Lista de Medicamentos Esenciales OMS. <strong>Ningún grupo fue asignado directamente a esta vía</strong>: es la base interpretativa transversal que conecta con todas las demás. Los CP son componente del derecho al más alto nivel posible de salud física y mental, y del derecho a morir con dignidad según el CESCR.
+    </div>
+  </div>
+
+  <div class="via-card">
+    <div class="via-head">
+      <div class="via-num-big">2</div>
+      <div class="via-title-big">Prohibición de la tortura y tratos crueles</div>
+    </div>
+    <div class="via-contrib">
+      <strong>Vía asignada a G3 · aportada.</strong> Informes de los Relatores Nowak (A/HRC/10/44, 2009) y Méndez (A/HRC/22/53, 2013). G3 clasificó correctamente como soft law interpretativo de tratado vinculante (Convención contra la Tortura) y ancló la exigibilidad en la jurisdicción obligatoria aceptada por Colombia en 1985/1988. Formuló el núcleo de la obligación con precisión: <em>«evitar el sufrimiento grave evitable»</em>. Aportó dato de cobertura (~41% de quienes mueren requieren CP) y evidencia territorial específica de <strong>Tolima (Chaparral, Líbano → Ibagué)</strong>, que reproduce el patrón del caso de Doña Carmen.
+    </div>
+  </div>
+
+  <div class="via-card">
+    <div class="via-head">
+      <div class="via-num-big">3</div>
+      <div class="via-title-big">Derechos de poblaciones específicas</div>
+    </div>
+    <div class="via-contrib">
+      <strong>Vía asignada a G2 · aportada.</strong> Convención Interamericana A-70 (OEA, 2015 · hard law · Colombia Estado Parte desde el 27/09/2022) y Resolución 48/3 del Consejo de Derechos Humanos (2021). G2 construyó el argumento jurídico multicapa (Arts. 4 → 6 → 10 → 19 m) → 36) e identificó las <strong>dos declaraciones interpretativas</strong> de la adhesión colombiana (obligaciones «de medio y no de resultado» sobre arts. 4, 8, 12, 17, 24 y 31), un matiz que la mayoría de análisis omite. Argumentaron correctamente que el Art. 19 m) (medicamentos fiscalizados para CP) queda fuera de esa declaración, por lo que es la vía exigible más fuerte para el caso de Doña Carmen. Aportaron además un hallazgo cultural de alto valor: el <strong>edadismo clínico</strong> como barrera invisible a la garantía del Art. 6.
+    </div>
+  </div>
+
+  <div class="via-card">
+    <div class="via-head">
+      <div class="via-num-big">4</div>
+      <div class="via-title-big">Fiscalización internacional de drogas y doble obligación</div>
+    </div>
+    <div class="via-contrib">
+      <strong>Vía asignada a G4 · aportada.</strong> Resoluciones 53/4 (2010) y 54/6 (2011) de la CND, Resolución 2005/25 del ECOSOC, UNGASS 2016, enmarcadas en la Convención Única sobre Estupefacientes de 1961 (hard law). El grupo articuló correctamente la doble obligación: disponibilidad adecuada para fines médicos vs. prevención del desvío. Evidencia territorial aportada: Caquetá (consumo 1.12, ~10 veces menor que el promedio), Córdoba (barreras administrativas en Montería), Antioquia (cumplimiento asimétrico Valle de Aburrá/resto). Cadena normativa colombiana mapeada: Res. 1478/2006 → Decretos 2200/2005 y 780/2016 → Ley 1733/2014 → Política Nacional 2016. <strong>Esta es la única vía con contribución grupal documentada</strong>; su riqueza empírica permite anclar el análisis de las demás vías.
+    </div>
+  </div>
+
+  <div class="via-card">
+    <div class="via-head">
+      <div class="via-num-big">5</div>
+      <div class="via-title-big">Soft law global con fuerza normativa</div>
+    </div>
+    <div class="via-contrib">
+      <strong>Vía asignada a G1 · aportada.</strong> WHA67.19 (2014) y CM/Rec(2014)2 del Consejo de Europa. G1 clasificó correctamente como <em>«soft law con autoridad interpretativa»</em> y articuló la tipología de tres obligaciones (regulación, implementación/garantía, cumplimiento inmediato). Construyó la ruta de exigibilidad indirecta vía tutela + Ley 1733 + línea jurisprudencial de la Corte Constitucional sobre uso de soft law para precisar alcance de derechos. Operacionalizó la obligación programática en cuatro condiciones estructurales (disponibilidad, cobertura, financiamiento, integración en APS) y aportó la <strong>primera evidencia cuantitativa de incumplimiento</strong> del día: 76,43% de prescriptores con problemas de disponibilidad y 74,6% con dificultades de acceso. Hallazgo clínico: la sustitución profesional por adyuvantes como mecanismo de adaptación al incumplimiento estatal en Risaralda y Bogotá.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 CIERRE PEDAGÓGICO ============ -->
+<section class="tab-panel" id="cierre">
+  <h2><span class="h2-num">SECCIÓN 08</span>Cierre pedagógico y acciones</h2>
+  <p class="lede">Qué hacer con este informe entre el 24 de abril y el 8 de mayo.</p>
+
+  <h3>Lectura conjunta del caso de Doña Carmen</h3>
+  <p>Tomados en conjunto, los cuatro análisis (uno efectivo, tres modelados) convergen en una sola conclusión: Doña Carmen está protegida <strong>simultáneamente por las cinco vías jurídicas</strong>. Su sufrimiento es jurídicamente inaceptable desde la Vía 1 (derecho a la salud), desde la Vía 2 (prohibición de trato cruel por omisión), desde la Vía 3 (protección específica como persona mayor vía A-70), desde la Vía 4 (disponibilidad adecuada de opioides) y desde la Vía 5 (compromiso programático con CP en APS).</p>
+
+  <div class="pregunta-cierre">Si un caso está protegido por cinco vías jurídicas distintas — tres tratados vinculantes, dos marcos programáticos con fuerza persuasiva — y aun así Doña Carmen no tiene morfina en el hospital de su municipio, <strong>la paradoja colombiana no es una brecha de legalidad, es una brecha de implementación</strong>. Y esa brecha es exactamente el contenido de la Unidad 3 de aquí en adelante.</div>
+
+  <h3>Acciones recomendadas</h3>
+  <ol class="rec-list">
+    <li><strong>Antes del 8 de mayo:</strong> devolver este informe a los cuatro grupos como reconocimiento explícito de sesión completa. Los cuatro análisis se complementan y configuran un mapa empírico convergente de cinco departamentos (Caquetá, Córdoba, Antioquia, Risaralda, Tolima + Bogotá) con incumplimiento documentado.</li>
+    <li><strong>Corrección menor para G3:</strong> la «Corte Internacional de Derechos Humanos» mencionada en su respuesta corresponde a la <strong>Corte Interamericana de Derechos Humanos</strong> (cuya competencia contenciosa Colombia aceptó por Decreto 2110 de 1988). Ajuste puntual que vale señalar en la devolución.</li>
+    <li><strong>Apertura de la sesión del 8 de mayo:</strong> abrir con la tabla comparativa integradora (Sección 06). Las cinco vías jurídicas ya están construidas por los grupos — la plenaria puede dedicarse íntegramente a la síntesis y a la transición hacia el Tema 2 (legislación latinoamericana).</li>
+    <li><strong>Hilo con Bonilla Sierra (2021):</strong> ninguna de las cuatro respuestas la cita. Mantener como lectura obligatoria; será el primer gancho de apertura del 8 de mayo.</li>
+    <li><strong>Cuatro hallazgos convergentes para sistematizar:</strong> <em>(a)</em> <strong>Fractalidad territorial</strong> (G4): la brecha Valle de Aburrá/resto reproduce la brecha Bogotá/periferias; Bogotá aparece también en G1. <em>(b)</em> <strong>Tres mecanismos de incumplimiento invisibilizado</strong>: edadismo clínico (G2), sustitución por adyuvantes (G1), barreras administrativas (G4). <em>(c)</em> <strong>Evidencia cuantitativa triangulada:</strong> 76,43% y 74,6% (G1, prescriptores), ~41% (G3, cobertura), consumo 1.12 en Caquetá 2023 (G4). <em>(d)</em> <strong>Patrón de remisión como marcador territorial:</strong> G3 (Chaparral/Líbano → Ibagué), G4 (Caquetá → Florencia), que reproduce la estructura del caso de Doña Carmen.</li>
+    <li><strong>Tarea de Legal Design Thinking:</strong> consigna vigente para los cuatro grupos. Cada grupo transforma su instrumento en un producto dirigido a un usuario final concreto para la sesión del 8 de mayo.</li>
+  </ol>
+
+  <div class="nota-docente">
+    Los cuatro grupos entregaron. La sesión cumplió plenamente su objetivo pedagógico: las cinco vías jurídicas fueron construidas colectivamente desde el análisis grupal, y el mapa empírico resultante (cinco departamentos + Bogotá con incumplimiento documentado) constituye evidencia convergente que excede el plan original. El cruce de los cuatro aportes produce dos categorías conceptuales emergentes — «mecanismos de incumplimiento invisibilizado» y «fractalidad territorial» — que enriquecen el encuadre de la paradoja colombiana y quedan disponibles para el resto de la Unidad 3.
+  </div>
+</section>
+
+</div>
+</main>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.tab;
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>

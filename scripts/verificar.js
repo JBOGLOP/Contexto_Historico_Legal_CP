@@ -49,6 +49,11 @@ titulo('1 · Enlaces locales rotos  (§7.1)');
       if (/^(https?:|mailto:|#|data:|javascript:)/i.test(r)) continue;
       // plantillas JS (`${...}`) se rellenan en tiempo de ejecución
       if (r.includes('${')) continue;
+      // config.js lleva los secretos y está en .gitignore: NUNCA existe en
+      // el repositorio, solo en el equipo del docente. El 404 es inofensivo
+      // —la página sigue y abre en modo consulta— y que falte es la señal
+      // de que los secretos no se publicaron. Ver docs/ENDURECER_EXAMEN.md.
+      if (/(^|\/)config(\.local)?\.js$/.test(r)) continue;
       const limpio = r.split('#')[0].split('?')[0];
       if (!limpio) continue;
       let d = path.resolve(path.dirname(f), decodeURIComponent(limpio));
@@ -108,7 +113,10 @@ titulo('3 · Rastros de datos personales  (§7.3)');
     [/Meeting started:|Participants:/g,        'cabecera de transcripción',  'duro'],
     // El correo institucional del docente es público y debe aparecer.
     // Lo que no puede aparecer es el de ningún estudiante.
-    [/\b(?!jbogoya63@uan\.edu\.co)[\w.%-]+@(?!ejemplo|example)[\w.-]+\.[a-z]{2,}\b/gi, 'correo electrónico', 'duro'],
+    // Se excluyen además los dominios de relleno que usan los placeholder
+    // de formulario: marcarlos entrena a ignorar los avisos de verdad.
+    [/\b(?!jbogoya63@uan\.edu\.co)[\w.%-]+@(?!ejemplo|example|correo\.|dominio|tucorreo|midominio|test\.|mail\.com\b)[\w.-]+\.[a-z]{2,}\b/gi,
+     'correo electrónico', 'duro'],
     [/conformaci[oó]n de grupos/gi,           'sección «conformación de grupos»', 'blando'],
     [/integrantes\s*:/gi,                     'lista de integrantes',        'blando'],
   ];
@@ -148,8 +156,17 @@ titulo('4 · Lenguaje de la asignatura  (§7.4)');
       const ctx = src.slice(Math.max(0, m.index - 160), m.index + 160)
                      .replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
       if (EXCEPCIONES.test(ctx)) EXCEPCIONES.lastIndex = 0;
-      // ¿Es paráfrasis de una norma o sentencia? Entonces se conserva.
-      const norma = /\b(Ley|Sentencia|Resoluci[oó]n|Decreto|Convenci[oó]n|art[íi]culo|C-\d|T-\d)\b/i.test(ctx);
+      // ¿Es paráfrasis de una norma, sentencia o instrumento? Se conserva.
+      // La lista nació corta y dejó pasar dos casos reales: «Art. 10»
+      // abreviado, y una recomendación del Consejo de Europa resumida en
+      // una celda de tabla. Un detector que no reconoce la voz de la norma
+      // empuja a reescribir citas.
+      const norma = new RegExp(
+        '\\b(Ley|Sentencia|Resoluci[oó]n|Decreto|Circular|Convenci[oó]n|Consenso|Pacto|' +
+        'Tratado|Protocolo|Declaraci[oó]n|Recomendaci[oó]n|Rec\\(|Directriz|Lineamiento|' +
+        'art[íi]culo|Art\\.|soft ?law|hard ?law|jurisprudencia|Corte|[CT]-\\d)', 'i'
+      ).test(ctx);   // sin \b de cierre: tras «Art.» un punto y un espacio
+                     // no forman límite de palabra y el patrón nunca casaba.
       // ¿Se está enunciando la propia regla? «X, no Y» / «en vez de Y».
       // Es el falso positivo del §7.4: el término aparece porque se discute
       // la palabra, no porque se use.
