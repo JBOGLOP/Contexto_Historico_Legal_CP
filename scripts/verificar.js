@@ -153,8 +153,16 @@ titulo('4 · Lenguaje de la asignatura  (§7.4)');
     if (rel(f).startsWith('scripts/')) continue;
     const src = fs.readFileSync(f, 'utf8');
     for (const m of src.matchAll(REGLA)) {
-      const ctx = src.slice(Math.max(0, m.index - 160), m.index + 160)
-                     .replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+      const limpia = t => t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ');
+      // El texto PREVIO se recorta del original, no se busca dentro del
+      // contexto ya normalizado: un término partido por un salto de línea
+      // («paciente\n   terminal») deja de coincidir consigo mismo al
+      // colapsar los espacios, y entonces indexOf devuelve -1 y el «antes»
+      // acaba conteniendo texto de después.
+      const antes = limpia(src.slice(Math.max(0, m.index - 160), m.index));
+      const ctx   = (antes + limpia(m[0] + src.slice(m.index + m[0].length,
+                                                     m.index + m[0].length + 160))).trim();
+      const termino = limpia(m[0]).trim();
       if (EXCEPCIONES.test(ctx)) EXCEPCIONES.lastIndex = 0;
       // ¿Es paráfrasis de una norma, sentencia o instrumento? Se conserva.
       // La lista nació corta y dejó pasar dos casos reales: «Art. 10»
@@ -171,9 +179,9 @@ titulo('4 · Lenguaje de la asignatura  (§7.4)');
       // Es el falso positivo del §7.4: el término aparece porque se discute
       // la palabra, no porque se use.
       const menciona = /\b(no|nunca|jam[áa]s|en (?:vez|lugar) de|antes que|frente a)\b[^.]{0,40}$/i
-                         .test(ctx.slice(0, ctx.indexOf(m[0])));
-      if (menciona) { console.log(gris('  ok    ') + `${rel(f)}  —  «${m[0]}» enuncia la regla, no la infringe`); continue; }
-      console.log((norma ? amar('  CITA  ') : rojo('  TERM  ')) + `${rel(f)}  —  «${m[0]}»`);
+                         .test(antes);
+      if (menciona) { console.log(gris('  ok    ') + `${rel(f)}  —  «${termino}» enuncia la regla, no la infringe`); continue; }
+      console.log((norma ? amar('  CITA  ') : rojo('  TERM  ')) + `${rel(f)}  —  «${termino}»`);
       console.log(gris(`          …${ctx.slice(0, 150)}…`));
       console.log(gris(norma ? '          → parafrasea una norma: CONSERVAR, verificar a mano'
                              : '          → voz del curso: cambiar a «persona con enfermedad avanzada»'));
